@@ -25,7 +25,9 @@
 
 ## Overview
 
-This project builds a reproducible grant-prioritization pipeline for a selected North Carolina state agency.
+This project builds a reproducible grant-prioritization pipeline for the **North Carolina Department of Health and Human Services (NC DHHS)**.
+
+> **Selected agency: NC DHHS.** User: the DHHS federal-grants coordinator. Details: [`agency/agency_profile.md`](agency/agency_profile.md).
 
 The goal is not simply to find grants containing similar keywords. The system should answer a more useful decision-making question:
 
@@ -39,7 +41,7 @@ The system combines:
 - transparent scoring,
 - and human validation.
 
-The qualifier implementation will focus on **one selected NC state agency**, but the architecture is designed so the same pipeline could later be configured for another agency by replacing the agency profile, strategic priorities, and scoring criteria.
+The qualifier implementation focuses on **one NC state agency, NC DHHS**, but the architecture is designed so the same pipeline could later be configured for another agency by replacing the agency profile, strategic priorities, and scoring criteria.
 
 ---
 
