@@ -180,7 +180,7 @@ solveathon-grants/
 │   ├── llm_cache.py              ✅
 │   ├── text_utils.py             ✅  HTML stripping, verbatim-quote check
 │   ├── config.py                 ✅
-│   ├── scoring.py
+│   ├── scoring.py                  ✅  Layer 4 deterministic ranking
 │   ├── keyword_baseline.py
 │   ├── validation.py
 │   └── pipeline.py
@@ -752,39 +752,53 @@ Python -> final score
 
 ---
 
-# 17. Proposed Scoring Framework
+# 17. Scoring Framework
 
-The exact scoring weights should be finalized after selecting the agency.
-
-A possible starting point:
+**Implemented in `src/scoring.py`.** The final ranking is deterministic: AI supplies structured judgments, Layer 1 supplies objective features, and Python applies fixed weights from `agency/priorities.json → layer4_scoring`.
 
 ```text
-Strategic Alignment       35%
-Operational Fit           20%
+Strategic Alignment       30%
+Operational Fit           25%
 Financial Value           15%
 Deadline Feasibility      15%
 Eligibility Confidence    15%
+                          ----
+                          100%
 ```
 
-Example:
+Strategic alignment and operational fit carry **55% together** because the first question is whether a grant meaningfully advances NCDHHS priorities and can realistically be administered. Financial value, deadline feasibility, and eligibility confidence remain material without overpowering mission fit.
 
 ```python
 final_score = (
-    strategic_alignment * 0.35
-    + operational_fit * 0.20
-    + financial_value * 0.15
-    + deadline_feasibility * 0.15
-    + eligibility_confidence * 0.15
+    strategic_alignment * 0.30
+    + operational_fit * 0.25
+    + financial_value_score * 0.15
+    + deadline_score * 0.15
+    + eligibility_confidence_score * 0.15
 )
 ```
+
+Scores are reported on a **0–100 scale**.
+
+### Missing deadline rule
+
+A missing deadline is not treated as a zero. For an **open** grant with no deadline in the dataset, Layer 4 drops the deadline component, re-normalizes the remaining 85% of available weight, then subtracts a **3-point uncertainty penalty** from the 100-point score. This means a perfect grant with a known feasible deadline scores 100, while an otherwise perfect open grant with an unknown deadline scores 97.
+
+Forecast grants are different: they are expected to lack a normal close date. Layer 4 drops the deadline component, re-normalizes the other criteria, applies **no missing-deadline penalty**, and sends them to `watchlist.csv`.
+
+### Evidence rule
+
+Layer 4 uses Layer 3's evidence-checked fields. If the strategic evidence quote could not be verified against the grant text, Layer 4 subtracts a configurable **5-point evidence penalty** rather than silently trusting the model's strategic score.
 
 ---
 
 # 18. Eligibility as a Gate
 
-Eligibility may deserve special treatment.
+Eligibility has special treatment.
 
-If a grant is confirmed to be legally unavailable to the agency, its financial or strategic attractiveness becomes irrelevant.
+Layer 4 uses the **verified applicant role and verified eligibility quote** from Layer 3. `lead`, `partner`, and `atypical` all receive full eligibility-confidence credit when the evidence is verified; whether NCDHHS is a natural lead applicant is already reflected in operational fit and should not be double-penalized. `unclear` receives partial credit.
+
+If a grant is confirmed with verified evidence to be legally unavailable to the agency, its financial or strategic attractiveness becomes irrelevant.
 
 Therefore:
 
@@ -821,7 +835,7 @@ Deadline Feasibility         7/10
 Eligibility Confidence      10/10
 
 Final Score:
-8.55 / 10
+84.5 / 100
 ```
 
 Output explanation:
@@ -1186,10 +1200,14 @@ award_ceiling
 cost_sharing
 eligibility_status
 strategic_priority
-strategic_alignment_score
-operational_fit_score
+strategic_alignment
+operational_fit
 financial_value_score
 deadline_score
+eligibility_confidence_score
+missing_deadline_penalty
+strategic_evidence_penalty
+score_status
 final_score
 reason
 main_risk

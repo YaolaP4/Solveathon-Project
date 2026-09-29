@@ -2,23 +2,31 @@
   "agency_name": "North Carolina Department of Health and Human Services (NCDHHS)",
   "agency_short": "NCDHHS",
   "source": "NCDHHS Strategic Plan 2023-2025, https://www.osbm.nc.gov/strategic-plan-ncdhhs/open",
-
   "mission": "In collaboration with our partners, the North Carolina Department of Health and Human Services provides essential services to improve the health, safety, and well-being of all North Carolinians.",
-
   "user": "The NCDHHS federal-grants coordinator who reviews new Grants.gov postings each week, decides which are worth pursuing, and routes each one to the division that would own the application.",
-
   "as_of_date": "2026-09-30",
-
   "strategic_priorities": [
     {
       "id": "G1",
       "name": "Health Access",
       "description": "Advance health access by increasing opportunity and outcomes for people who face greater health and situational challenges.",
       "objectives": [
-        {"id": "G1.O1", "text": "Build a culture and structure for increasing health access and reducing health disparities across the Department."},
-        {"id": "G1.O2", "text": "Use data, metrics and dashboards to track health disparities and outcomes and make benefits easier to apply for."},
-        {"id": "G1.O3", "text": "Mitigate barriers to health services: telehealth and broadband, language access, culturally competent communication, rural and underserved primary care."},
-        {"id": "G1.O4", "text": "Invest in partner capacity: community health workers, community-based organizations, justice-involved people's health access, Medicaid expansion enrollment."}
+        {
+          "id": "G1.O1",
+          "text": "Build a culture and structure for increasing health access and reducing health disparities across the Department."
+        },
+        {
+          "id": "G1.O2",
+          "text": "Use data, metrics and dashboards to track health disparities and outcomes and make benefits easier to apply for."
+        },
+        {
+          "id": "G1.O3",
+          "text": "Mitigate barriers to health services: telehealth and broadband, language access, culturally competent communication, rural and underserved primary care."
+        },
+        {
+          "id": "G1.O4",
+          "text": "Invest in partner capacity: community health workers, community-based organizations, justice-involved people's health access, Medicaid expansion enrollment."
+        }
       ]
     },
     {
@@ -26,10 +34,22 @@
       "name": "Child and Family Well-Being",
       "description": "Promote child and family well-being by making it easier for children and families to access the healthcare, programs, and supports they need.",
       "objectives": [
-        {"id": "G2.O1", "text": "Meet the behavioral and mental health needs of children and families (youth mental health first aid, school health records, NC-PAL, specialty care for children with complex needs)."},
-        {"id": "G2.O2", "text": "Reform child welfare and social services to improve safety, permanency and well-being (foster care, child welfare information systems, county support)."},
-        {"id": "G2.O3", "text": "Increase food security for children and families (WIC, FNS/SNAP enrollment, NCCARE360 referrals, breastfeeding support, Healthy Opportunities pilots)."},
-        {"id": "G2.O4", "text": "Improve women's health and birth outcomes (prenatal care, maternal and newborn levels of care, doulas, reproductive life planning, infant mortality)."}
+        {
+          "id": "G2.O1",
+          "text": "Meet the behavioral and mental health needs of children and families (youth mental health first aid, school health records, NC-PAL, specialty care for children with complex needs)."
+        },
+        {
+          "id": "G2.O2",
+          "text": "Reform child welfare and social services to improve safety, permanency and well-being (foster care, child welfare information systems, county support)."
+        },
+        {
+          "id": "G2.O3",
+          "text": "Increase food security for children and families (WIC, FNS/SNAP enrollment, NCCARE360 referrals, breastfeeding support, Healthy Opportunities pilots)."
+        },
+        {
+          "id": "G2.O4",
+          "text": "Improve women's health and birth outcomes (prenatal care, maternal and newborn levels of care, doulas, reproductive life planning, infant mortality)."
+        }
       ]
     },
     {
@@ -37,11 +57,26 @@
       "name": "Behavioral Health and Resilience",
       "description": "Support behavioral health and resilience through coordinated systems of care that make mental health and substance use services easy to access and reduce stigma.",
       "objectives": [
-        {"id": "G3.O1", "text": "Integrate behavioral and physical health care (Collaborative Care, certified community behavioral health clinics, Tailored Care Management)."},
-        {"id": "G3.O2", "text": "Expand behavioral health supports for people involved in the justice system (capacity restoration, diversion, re-entry)."},
-        {"id": "G3.O3", "text": "Increase access to crisis services (988, suicide prevention, statewide behavioral health referral network)."},
-        {"id": "G3.O4", "text": "Turn the tide on the opioid and substance use crisis (evidence-based treatment, harm reduction, drug checking, collegiate recovery)."},
-        {"id": "G3.O5", "text": "Improve behavioral health data infrastructure (behavioral health holds data, syndromic surveillance, electronic health records in state psychiatric hospitals)."}
+        {
+          "id": "G3.O1",
+          "text": "Integrate behavioral and physical health care (Collaborative Care, certified community behavioral health clinics, Tailored Care Management)."
+        },
+        {
+          "id": "G3.O2",
+          "text": "Expand behavioral health supports for people involved in the justice system (capacity restoration, diversion, re-entry)."
+        },
+        {
+          "id": "G3.O3",
+          "text": "Increase access to crisis services (988, suicide prevention, statewide behavioral health referral network)."
+        },
+        {
+          "id": "G3.O4",
+          "text": "Turn the tide on the opioid and substance use crisis (evidence-based treatment, harm reduction, drug checking, collegiate recovery)."
+        },
+        {
+          "id": "G3.O5",
+          "text": "Improve behavioral health data infrastructure (behavioral health holds data, syndromic surveillance, electronic health records in state psychiatric hospitals)."
+        }
       ]
     },
     {
@@ -49,10 +84,22 @@
       "name": "Strong and Inclusive Workforce",
       "description": "Build a strong and inclusive workforce that supports early learning, health, and wellness across North Carolina.",
       "objectives": [
-        {"id": "G4.O1", "text": "Invest in the caregiving and direct care workforce serving older adults and people with disabilities."},
-        {"id": "G4.O2", "text": "Invest in the early childhood workforce (teacher credentialing, educator compensation)."},
-        {"id": "G4.O3", "text": "Make NCDHHS an equitable workplace (recruitment, training, retention of Department staff)."},
-        {"id": "G4.O4", "text": "Support the public health and child welfare workforce at state and local levels."}
+        {
+          "id": "G4.O1",
+          "text": "Invest in the caregiving and direct care workforce serving older adults and people with disabilities."
+        },
+        {
+          "id": "G4.O2",
+          "text": "Invest in the early childhood workforce (teacher credentialing, educator compensation)."
+        },
+        {
+          "id": "G4.O3",
+          "text": "Make NCDHHS an equitable workplace (recruitment, training, retention of Department staff)."
+        },
+        {
+          "id": "G4.O4",
+          "text": "Support the public health and child welfare workforce at state and local levels."
+        }
       ]
     },
     {
@@ -60,38 +107,115 @@
       "name": "Operational Excellence",
       "description": "Achieve operational excellence by enabling efficient, effective, and innovative processes and services.",
       "objectives": [
-        {"id": "G5.O1", "text": "Foster data-driven decision-making (data infrastructure, integration, dashboards, staff data skills)."},
-        {"id": "G5.O2", "text": "Be effective stewards of state resources (tracking federal funding and block grants, contracting, websites, energy, invoicing)."},
-        {"id": "G5.O3", "text": "Work across departments through shared processes and collaboration."}
+        {
+          "id": "G5.O1",
+          "text": "Foster data-driven decision-making (data infrastructure, integration, dashboards, staff data skills)."
+        },
+        {
+          "id": "G5.O2",
+          "text": "Be effective stewards of state resources (tracking federal funding and block grants, contracting, websites, energy, invoicing)."
+        },
+        {
+          "id": "G5.O3",
+          "text": "Work across departments through shared processes and collaboration."
+        }
       ]
     }
   ],
-
   "divisions": [
-    {"id": "DPH",     "name": "Division of Public Health", "scope": "disease prevention and surveillance, epidemiology, immunization, chronic disease, environmental health, maternal and child health, WIC, local health departments, public health preparedness, laboratory"},
-    {"id": "DMHDDSUS","name": "Division of Mental Health, Developmental Disabilities and Substance Use Services", "scope": "mental health, substance use and opioid services, intellectual and developmental disabilities, crisis services and 988, behavioral health for justice-involved people"},
-    {"id": "MEDICAID","name": "NC Medicaid (Division of Health Benefits)", "scope": "Medicaid and CHIP coverage, managed care, Medicaid expansion, Healthy Opportunities pilots, provider reimbursement"},
-    {"id": "DCFW",    "name": "Division of Child and Family Well-Being", "scope": "child behavioral health, school health, food and nutrition programs for children and families, home visiting, early intervention"},
-    {"id": "DSS",     "name": "Division of Social Services", "scope": "child welfare, foster care, adoption, adult protective services, FNS/SNAP administration, TANF/Work First, child support"},
-    {"id": "DAGING",  "name": "Division of Aging", "scope": "older adults, family caregivers, adult services, Older Americans Act programs"},
-    {"id": "DCDEE",   "name": "Division of Child Development and Early Education", "scope": "child care, early learning, NC Pre-K, child care subsidy, early childhood workforce"},
-    {"id": "ORH",     "name": "Office of Rural Health", "scope": "rural and underserved primary care, safety-net clinics, rural hospitals, health workforce shortage areas, farmworker health"},
-    {"id": "DEIPD",   "name": "Division of Employment and Independence for People with Disabilities", "scope": "vocational rehabilitation, independent living, employment for people with disabilities"},
-    {"id": "DSBDHH",  "name": "Divisions of Services for the Blind / Deaf and Hard of Hearing", "scope": "services and accessibility for people who are blind, deaf, or hard of hearing"},
-    {"id": "DHSR",    "name": "Division of Health Service Regulation", "scope": "licensing and certification of health facilities, emergency medical services, certificate of need"},
-    {"id": "DSOHF",   "name": "Division of State Operated Healthcare Facilities", "scope": "state psychiatric hospitals, developmental centers, alcohol and drug treatment centers"},
-    {"id": "OSEC",    "name": "Office of the Secretary / central administration", "scope": "department-wide data, IT, HR, finance, and cross-division initiatives"}
+    {
+      "id": "DPH",
+      "name": "Division of Public Health",
+      "scope": "disease prevention and surveillance, epidemiology, immunization, chronic disease, environmental health, maternal and child health, WIC, local health departments, public health preparedness, laboratory"
+    },
+    {
+      "id": "DMHDDSUS",
+      "name": "Division of Mental Health, Developmental Disabilities and Substance Use Services",
+      "scope": "mental health, substance use and opioid services, intellectual and developmental disabilities, crisis services and 988, behavioral health for justice-involved people"
+    },
+    {
+      "id": "MEDICAID",
+      "name": "NC Medicaid (Division of Health Benefits)",
+      "scope": "Medicaid and CHIP coverage, managed care, Medicaid expansion, Healthy Opportunities pilots, provider reimbursement"
+    },
+    {
+      "id": "DCFW",
+      "name": "Division of Child and Family Well-Being",
+      "scope": "child behavioral health, school health, food and nutrition programs for children and families, home visiting, early intervention"
+    },
+    {
+      "id": "DSS",
+      "name": "Division of Social Services",
+      "scope": "child welfare, foster care, adoption, adult protective services, FNS/SNAP administration, TANF/Work First, child support"
+    },
+    {
+      "id": "DAGING",
+      "name": "Division of Aging",
+      "scope": "older adults, family caregivers, adult services, Older Americans Act programs"
+    },
+    {
+      "id": "DCDEE",
+      "name": "Division of Child Development and Early Education",
+      "scope": "child care, early learning, NC Pre-K, child care subsidy, early childhood workforce"
+    },
+    {
+      "id": "ORH",
+      "name": "Office of Rural Health",
+      "scope": "rural and underserved primary care, safety-net clinics, rural hospitals, health workforce shortage areas, farmworker health"
+    },
+    {
+      "id": "DEIPD",
+      "name": "Division of Employment and Independence for People with Disabilities",
+      "scope": "vocational rehabilitation, independent living, employment for people with disabilities"
+    },
+    {
+      "id": "DSBDHH",
+      "name": "Divisions of Services for the Blind / Deaf and Hard of Hearing",
+      "scope": "services and accessibility for people who are blind, deaf, or hard of hearing"
+    },
+    {
+      "id": "DHSR",
+      "name": "Division of Health Service Regulation",
+      "scope": "licensing and certification of health facilities, emergency medical services, certificate of need"
+    },
+    {
+      "id": "DSOHF",
+      "name": "Division of State Operated Healthcare Facilities",
+      "scope": "state psychiatric hospitals, developmental centers, alcohol and drug treatment centers"
+    },
+    {
+      "id": "OSEC",
+      "name": "Office of the Secretary / central administration",
+      "scope": "department-wide data, IT, HR, finance, and cross-division initiatives"
+    }
   ],
-
   "layer2_routing": {
     "_comment": "Probability cutoffs on Jev's per-option probabilities. A grant is deprioritized only when Jev is confident it is irrelevant or not ours; everything else goes to Layer 3. Defaults are deliberately conservative (recall over precision) and must be re-tuned on the labeled validation sample.",
     "deprioritize_if_p_none_at_least": 0.85,
     "deprioritize_if_p_none_or_weak_at_least": 0.95,
-    "deprioritize_if_p_ineligible_at_least": 0.90
+    "deprioritize_if_p_ineligible_at_least": 0.9
   },
-
   "layer3": {
     "max_grants": null,
     "_comment": "null = deep-analyze every grant Layer 2 routes to deep review. Set an integer to cap cost; overflow is logged, never silently dropped."
+  },
+  "layer4_scoring": {
+    "_comment": "Deterministic final ranking. Weights sum to 1.0. Forecasts omit deadline and re-normalize without penalty. Open grants with a missing deadline re-normalize, then receive a small uncertainty penalty on the 100-point final scale.",
+    "weights": {
+      "strategic_alignment": 0.3,
+      "operational_fit": 0.25,
+      "financial_value_score": 0.15,
+      "deadline_score": 0.15,
+      "eligibility_confidence_score": 0.15
+    },
+    "eligibility_confidence_by_verified_role": {
+      "lead": 10,
+      "partner": 10,
+      "atypical": 10,
+      "unclear": 5,
+      "ineligible": 0
+    },
+    "missing_open_deadline_penalty_points": 3,
+    "unverified_strategic_evidence_penalty_points": 5
   }
 }
