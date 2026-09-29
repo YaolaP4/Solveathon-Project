@@ -1,0 +1,8 @@
+.env
+__pycache__/
+.pytest_cache/
+*.pyc
+.ipynb_checkpoints/
+# Mock (fake) outputs from --mock dry runs; never commit them
+data/cache_mock/
+data/results/mock/
