@@ -835,7 +835,7 @@ Deadline Feasibility         7/10
 Eligibility Confidence      10/10
 
 Final Score:
-85.0 / 100
+84.5 / 100
 ```
 
 Output explanation:
