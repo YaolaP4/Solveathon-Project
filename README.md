@@ -1,5 +1,28 @@
 # NC Solve-a-thon Grant Prioritization System
 
+> ## 📌 Update log — read this first
+>
+> ### 2026-09-29: Agency chosen, Layers 2–3 built, 8 plan changes (Pavan)
+>
+> **Agency: NC DHHS.** It has the largest realistic grant pool, and its strategic plan explicitly asks to maximize federal resources. User, criteria and rationale: [`agency/agency_profile.md`](agency/agency_profile.md). Goals, objectives and divisions: [`agency/priorities.json`](agency/priorities.json).
+>
+> **Layers 2 and 3 are implemented** (`src/semantic_triage.py`, `src/deep_analysis.py`, 23 tests in `tests/`). Until Layers 0–1 exist they read a temporary stand-in (`src/interim_layer01.py`).
+>
+> **What Layer 0/1 needs to produce:** `data/processed/grants_features.csv` with at least these columns: `grant_id` (= `opportunity_id`), `opportunity_title`, `agency_name`, `summary_description`, `applicant_types`, `applicant_eligibility_description`, `opportunity_assistance_listings`, `funding_instruments`, `is_forecast`, `hard_filtered` (bool). Once that file exists, Layer 2 uses it automatically and `interim_layer01.py` can be deleted.
+>
+> | # | Change | Why (from the data or rubric) | Who acts | Section |
+> |---|---|---|---|---|
+> | 1 | Layers 2–3 also predict the **owning DHHS division** and the **applicant role** (lead / partner / atypical / ineligible / unclear). | 609 of 689 NIH grants list "state governments", so structured eligibility can't tell us whether DHHS is the intended applicant. Routing to a division is also the user's actual job. | Done (L2/L3) | §11, §15 |
+> | 2 | Layer 2 confidence = **Jev's per-option probabilities**, not a self-reported "confidence" number. | Jev's API returns a probability for every answer; self-reported LLM confidence is poorly calibrated. | Done (L2) | §12 |
+> | 3 | Layer 3 must give **verbatim evidence quotes**, which Python checks against the grant text. Failures and Layer 2 vs 3 disagreements go to `ai_error_log.csv`. | The submission requires "one place the AI was wrong and how you caught it". This catches such cases automatically. | Done (L3) | §15 |
+> | 4 | **Every model response is cached and committed.** Reruns need no API key. | "No paid tools required": judges can reproduce our ranking for free. | Done (L2/L3) | §32 |
+> | 5 | **Forecast watchlist:** the 559 forecasted grants (34%) get their own "coming soon" list instead of a deadline penalty. | They have no close date. The challenge story says money goes "to states that found the posting first". | **Layer 1 + 4** | §7, §29 |
+> | 6 | **Fixed `as_of_date`** (`2026-09-30`, in `priorities.json`) for all date math. | The data was pulled on 2026-08-18 and we submit on 09-30. Using "today" would change results between runs. | **Layer 1** | §7 |
+> | 7 | **Stratified, blind validation labels**, with recall reported alongside a confidence interval. | Only about 5% of grants are relevant, so a random sample of 100 would contain about 5 relevant grants and give a meaningless recall estimate. | **Layer 5** | §21 |
+> | 8 | **Keyword/TF-IDF baseline** kept as a *comparison*, not a feature. | "No bonus points for complexity that does not improve the matches." We need to show that Jev beats keyword matching. | **Layer 5** | §26 |
+>
+> Also for Layer 0: **1,040 of the 1,662 summaries contain raw HTML** (`<p>`, `&amp;`…). `src/text_utils.strip_html()` already handles it; reuse it.
+
 ## Overview
 
 This project builds a reproducible grant-prioritization pipeline for a selected North Carolina state agency.
@@ -64,7 +87,7 @@ Jev
     v
 LAYER 3
 Deep Grant Evaluation
-Stronger model / detailed reasoning
+Muse Spark 1.3 + Python evidence checks
     |
     v
 LAYER 4
@@ -114,45 +137,58 @@ An agency employee should be able to understand the ranking without needing to u
 
 # 4. Repository Structure
 
-A proposed project structure:
+Project structure (✅ = exists now, others still to build):
 
 ```text
 solveathon-grants/
 │
-├── README.md
+├── README.md                     ✅
 │
-├── requirements.txt
+├── requirements.txt              ✅
 │
-├── .env.example
+├── .env.example                  ✅  (copy to .env, add AI_GATEWAY_API_KEY)
 │
 │
 ├── data/
 │   ├── raw/
-│   │   └── grants.csv
+│   │   └── grants.csv            ✅  (starter-kit export, 1,662 grants)
 │   ├── processed/
-│   │   └── grants_cleaned.csv
+│   │   ├── grants_cleaned.csv        (Layer 0)
+│   │   └── grants_features.csv       (Layer 1 → input to Layer 2)
+│   ├── cache/                    ✅  every model response, committed (see §32)
 │   └── results/
+│       ├── jev_outputs.csv       ✅  Layer 2
+│       ├── deep_analysis.csv     ✅  Layer 3
+│       ├── ai_error_log.csv      ✅  Layer 3 checks: unverified quotes, L2/L3 disagreements
 │       ├── ranked_grants.csv
-│       ├── jev_outputs.csv
+│       ├── watchlist.csv             (forecasted grants)
 │       └── validation_sample.csv
 │
 ├── agency/
-│   ├── agency_profile.md
-│   ├── strategic_plan.txt
-│   └── priorities.json
+│   ├── agency_profile.md         ✅  user, criteria, why DHHS
+│   └── priorities.json           ✅  goals, objectives, divisions, as_of_date, thresholds
 │
 ├── src/
 │   ├── clean_data.py
 │   ├── deterministic.py
-│   ├── semantic_triage.py
-│   ├── deep_analysis.py
+│   ├── interim_layer01.py        ✅  TEMPORARY stand-in for Layers 0–1
+│   ├── semantic_triage.py        ✅  Layer 2
+│   ├── deep_analysis.py          ✅  Layer 3
+│   ├── clients.py                ✅  Jev + Muse Spark API clients (+ mock clients)
+│   ├── llm_cache.py              ✅
+│   ├── text_utils.py             ✅  HTML stripping, verbatim-quote check
+│   ├── config.py                 ✅
 │   ├── scoring.py
+│   ├── keyword_baseline.py
 │   ├── validation.py
 │   └── pipeline.py
 │
+├── tests/
+│   └── test_layers23.py          ✅
+│
 ├── prompts/
-│   ├── jev_triage.txt
-│   └── deep_analysis.txt
+│   ├── jev_triage.json           ✅
+│   └── deep_analysis.txt         ✅
 │
 ├── notebooks/
 │   └── analysis.ipynb
@@ -167,44 +203,36 @@ solveathon-grants/
 
 # 5. Agency Configuration
 
-The first major project decision is choosing one NC state agency.
+**Selected agency: NC Department of Health and Human Services (NCDHHS).** For the reasoning, the user and the draft criteria, see [`agency/agency_profile.md`](agency/agency_profile.md).
 
-The pipeline should not hard-code every agency-specific decision into the Python source.
-
-Instead, agency information should be stored as configuration.
-
-Example:
+The pipeline does not hard-code agency-specific decisions into the Python source. Agency information is stored as configuration in [`agency/priorities.json`](agency/priorities.json):
 
 ```json
 {
-  "agency_name": "NC Department of Public Instruction",
-
-  "mission": "Support public schools and improve educational outcomes across North Carolina.",
+  "agency_name": "North Carolina Department of Health and Human Services (NCDHHS)",
+  "mission": "... provides essential services to improve the health, safety, and well-being of all North Carolinians.",
+  "user": "The NCDHHS federal-grants coordinator who ...",
+  "as_of_date": "2026-09-30",
 
   "strategic_priorities": [
-    {
-      "id": "P1",
-      "name": "Student Outcomes",
-      "description": "Improve academic performance and student success."
-    },
-    {
-      "id": "P2",
-      "name": "Data-Informed Decision Making",
-      "description": "Improve statewide education analytics, data systems, and evidence-based policymaking."
-    },
-    {
-      "id": "P3",
-      "name": "Educator Workforce",
-      "description": "Improve recruitment, development, and retention of educators."
-    },
-    {
-      "id": "P4",
-      "name": "Technology Modernization",
-      "description": "Modernize educational technology and operational systems."
-    }
-  ]
+    {"id": "G1", "name": "Health Access", "objectives": [{"id": "G1.O1", "text": "..."}, "..."]},
+    {"id": "G2", "name": "Child and Family Well-Being", "...": "..."},
+    {"id": "G3", "name": "Behavioral Health and Resilience", "...": "..."},
+    {"id": "G4", "name": "Strong and Inclusive Workforce", "...": "..."},
+    {"id": "G5", "name": "Operational Excellence", "...": "..."}
+  ],
+
+  "divisions": [
+    {"id": "DPH", "name": "Division of Public Health", "scope": "..."},
+    {"id": "DMHDDSUS", "name": "Division of Mental Health, Developmental Disabilities and Substance Use Services", "scope": "..."},
+    "... 13 divisions/offices in total"
+  ],
+
+  "layer2_routing": {"deprioritize_if_p_none_at_least": 0.85, "...": "..."}
 }
 ```
+
+The five goals and their 20 objectives come from the NCDHHS Strategic Plan 2023–2025.
 
 This makes the underlying architecture reusable.
 
@@ -294,8 +322,12 @@ If something can be determined directly from the data, it should be handled here
 ### Deadline
 
 ```text
-days_until_close = close_date - current_date
+days_until_close = close_date - as_of_date
 ```
+
+> **Update (2026-09-29): use the fixed `as_of_date` from `agency/priorities.json` (`2026-09-30`), never `today()`.** The data was exported on 2026-08-18 and we submit on 2026-09-30. A fixed date gives the same result on every run and avoids recommending grants that closed before we submit.
+
+> **Update (2026-09-29): forecasts are a separate track, not a missing deadline.** 559 of the 1,662 records (34%) have `is_forecast = True`. For these, `close_date` is always empty and `forecasted_close_date` / `forecasted_post_date` are usually filled. Do **not** hard-filter them or give them a zero deadline score. Add a `track` column (`open` / `forecast`). Layers 2–3 already triage both tracks, and Layer 4 should rank forecasts into a separate `watchlist.csv` ("prepare for these now").
 
 Possible flags:
 
@@ -427,9 +459,14 @@ It is not acceptable for Layer 1 to silently eliminate excellent opportunities.
 
 # 9. Layer 2 — Fast Semantic Triage
 
-## Proposed Tool
+## Tool
 
-Jev
+Jev (`typesafe-ai/jev`, via the Vercel AI Gateway `/v1/evaluate` endpoint). **Implemented in `src/semantic_triage.py`.**
+
+```bash
+python src/semantic_triage.py           # real run: needs AI_GATEWAY_API_KEY, or a filled cache
+python src/semantic_triage.py --mock    # dry run with fake answers (outputs go to data/results/mock/)
+```
 
 ## Purpose
 
@@ -452,40 +489,22 @@ Jev is intended for fast structured classification and decision tasks.
 
 Instead of asking it to generate long explanations, the system asks for a small number of structured outputs.
 
-Example conceptual input:
+Jev does not take a free-form prompt. It takes a structured **`state`** (the facts) plus typed **`choice` questions**, each with a fixed set of options, and it answers every question in one round trip. **For each question it returns a probability for every option.**
 
-```text
-AGENCY:
-NC Department of Public Instruction
-
-PRIORITIES:
-- student achievement
-- educator workforce
-- statewide data systems
-- education technology
-- school safety
-
-GRANT TITLE:
-...
-
-GRANT DESCRIPTION:
-...
-
-ELIGIBILITY:
-...
-```
-
-Desired structured output:
+Input `state` (built per grant in `grant_state()`):
 
 ```json
 {
-  "domain_relevance": "strong",
-  "matched_priority": "P2",
-  "strategic_alignment": 9,
-  "eligibility": "likely",
-  "confidence": 0.93
+  "task": "You are triaging federal grant opportunities for NCDHHS. Mission: ... The person using these results is ...",
+  "grant": {
+    "title": "...", "federal_agency": "...", "assistance_listings": "93.243|...",
+    "funding_instruments": "...", "applicant_types": "...",
+    "eligibility_text": "...", "summary": "... (HTML stripped, ≤3,000 chars)"
+  }
 }
 ```
+
+The questions are stored in [`prompts/jev_triage.json`](prompts/jev_triage.json); goal and division options are filled from `priorities.json`.
 
 ---
 
@@ -495,27 +514,30 @@ The semantic triage layer should avoid producing one unexplained final score.
 
 Instead, it produces multiple independent signals.
 
-Proposed schema:
+**Implemented questions** (all `choice`, each returning a probability per option):
 
-```json
-{
-  "domain_relevance": "none | weak | moderate | strong",
+| Question | Options | Why |
+|---|---|---|
+| `domain_relevance` | none / weak / moderate / strong | Is the *funded activity* DHHS's kind of work? |
+| `matched_goal` | G1–G5 / none | Which strategic goal it advances |
+| `applicant_role` | lead / partner / atypical / ineligible / unclear | Replaces the earlier "eligibility" field. "Atypical" means technically eligible but designed for someone else (e.g. an NIH R01 grant that lists every applicant type) |
+| `owning_division` | 13 DHHS divisions / none | Who would own the application: the coordinator's routing decision |
 
-  "strategic_alignment": 0,
+> **Update (2026-09-29).** We dropped `confidence` (a self-reported number is poorly calibrated) and `implementation_fit` (Layer 3 judges operational fit with evidence). We added `applicant_role` and `owning_division`.
 
-  "matched_priorities": [
-    "P1",
-    "P3"
-  ],
+Output `data/results/jev_outputs.csv`, one row per grant:
 
-  "eligibility_assessment":
-    "eligible | likely | uncertain | unlikely | ineligible",
-
-  "implementation_fit":
-    "low | medium | high",
-
-  "confidence": 0.0
-}
+```text
+grant_id, opportunity_title, track (open/forecast),
+domain_relevance, domain_relevance_p, domain_relevance_probs (JSON of all options),
+matched_goal,  matched_goal_p,  matched_goal_probs,
+applicant_role, applicant_role_p, applicant_role_probs,
+owning_division, owning_division_p, owning_division_probs,
+expected_relevance      # none=0, weak=1/3, moderate=2/3, strong=1, weighted by probability
+p_lead_or_partner
+triage_priority         # expected_relevance × (0.5 + 0.5 × p_lead_or_partner); orders the Layer 3 queue only
+route, route_reason     # deep_review / deprioritized
+model, prompt_version, from_cache
 ```
 
 ---
@@ -558,6 +580,16 @@ Strong irrelevance + extremely high confidence
 
 The system should preserve deprioritized grants so they can later be sampled during validation.
 
+> **Update (2026-09-29): confidence = Jev's own probabilities.** A grant is deprioritized **only** if one of these holds (cutoffs are in `priorities.json → layer2_routing`):
+>
+> ```text
+> P(domain_relevance = none)          ≥ 0.85
+> P(domain_relevance ∈ {none, weak})  ≥ 0.95
+> P(applicant_role = ineligible)      ≥ 0.90
+> ```
+>
+> Everything else goes to Layer 3, including every uncertain case. These cutoffs are deliberately conservative starting values. **Layer 5 should tune them on the labeled sample** to hit a recall target (e.g. ≥ 95% of human-labeled relevant grants reach Layer 3). If Jev's answer is missing, the grant goes to deep review and is never dropped.
+
 ---
 
 # 13. Layer 3 — Deep Evaluation
@@ -576,6 +608,13 @@ This layer may use:
 - a stronger general-purpose language model,
 - detailed manual analysis,
 - or a combination of both.
+
+> **Update (2026-09-29): implemented in `src/deep_analysis.py`** with **Muse Spark 1.3 contributor** (`meta/muse-spark-1.3-contributor`, via the Vercel AI Gateway's OpenAI-compatible chat endpoint, temperature 0). It runs on every grant Layer 2 routes to `deep_review`, highest `triage_priority` first. `layer3.max_grants` in `priorities.json` can cap it; grants over the cap are logged, never silently dropped. Gateway list prices are $0.10 per million input tokens and $0.20 per million output tokens, so even all ~1,300 grants would cost well under $1.
+>
+> ```bash
+> python src/deep_analysis.py           # real run (reads data/results/jev_outputs.csv)
+> python src/deep_analysis.py --mock    # dry run on mock Layer 2 output
+> ```
 
 The purpose is not to reprocess all grants.
 
@@ -647,30 +686,42 @@ What could make this grant less valuable than it initially appears?
 
 A major goal of Layer 3 should be to generate evidence, not just opinions.
 
-Example structured output:
+**Implemented output schema** (prompt: [`prompts/deep_analysis.txt`](prompts/deep_analysis.txt)):
 
 ```json
 {
   "strategic_alignment": 9,
+  "matched_goal": "G3",
+  "matched_objective": "G3.O4",
+  "strategic_reason": "Funds medication treatment for opioid use disorder, a named G3 strategy.",
+  "strategic_evidence_quote": "<copied verbatim from the grant summary>",
 
-  "strategic_reason":
-    "Supports statewide longitudinal education data and evidence-based policymaking.",
+  "applicant_role": "lead",
+  "eligibility_evidence_quote": "<copied verbatim from the eligibility text>",
+  "owning_division": "DMHDDSUS",
 
-  "eligibility_status": "eligible",
-
-  "eligibility_evidence":
-    "State educational agencies are explicitly listed as eligible applicants.",
-
-  "implementation_fit": 8,
-
-  "deadline_feasibility": 6,
-
-  "major_risk":
-    "Application deadline is less than one month away.",
-
-  "recommended_for_review": true
+  "operational_fit": 8,
+  "operational_reason": "...",
+  "restrictions": ["cost sharing 20%", "..."],
+  "major_risk": "...",
+  "recommended_for_review": true,
+  "one_line_rationale": "≤30 words for the budget director (used in the submitted top-results list)"
 }
 ```
+
+> **Update (2026-09-29): deadlines and award size were removed from Layer 3.** `deadline_feasibility` and financial value are objective, so Layer 1 computes them and Layer 4 scores them. The model only judges what requires reading.
+
+## Python checks on the model's answers (the "caught the AI being wrong" mechanism)
+
+Every Layer 3 answer is checked before anyone trusts it. Every failure is written to **`data/results/ai_error_log.csv`**:
+
+| Check | What happens |
+|---|---|
+| **Verbatim quotes**: each quote must appear in the grant text (ignoring case, whitespace, HTML, curly quotes; `...` fragments must appear in order) | `strategic_quote_verified` / `eligibility_quote_verified` columns. If the model claims `lead`/`partner` but its eligibility quote isn't in the text, **`applicant_role_verified` is downgraded to `unclear`** |
+| **Schema validation**: scores 0–10, goal/objective/division ids exist in `priorities.json`, objective belongs to the goal | One automatic retry that tells the model what was wrong; if the answer is still invalid, the grant is marked `invalid_output` |
+| **Layer 2 vs Layer 3 disagreement** | Jev said none/weak but Layer 3 scored alignment ≥ 7 (**a possible Layer 2 false negative**); Jev said strong but Layer 3 scored ≤ 3; role or division mismatch |
+
+Layer 4 should score from the **verified** fields (`applicant_role_verified`, and penalize `strategic_quote_verified = False`). The error log feeds `docs/failure_modes.md` and the "where the AI was wrong" part of the submission.
 
 ---
 
@@ -801,6 +852,13 @@ For example:
 100–150 randomly selected grants
 ```
 
+> **Update (2026-09-29): stratify the sample, and label blind.** Only about 5% of grants are relevant to DHHS, so a purely random sample of 100 contains about 5 relevant grants. A recall estimate from 5 grants is meaningless: finding 4 of 5 gives a 95% confidence interval of about 38–96%. Instead:
+>
+> 1. **Stratify** (for example: 40 from Layer 2's `deep_review` set with high `triage_priority`, 40 from lower-priority `deep_review`, 40 from `deprioritized`, 20 from the hard-filtered set) and weight by stratum size when estimating recall.
+> 2. **Label blind.** Two teammates label each grant using only the grant text and our criteria, *before* looking at any model output. Record where the two labelers disagree; that's our measure of how ambiguous the task is.
+> 3. **Report recall with a confidence interval** (e.g. Wilson interval), not a single number.
+> 4. The `deprioritized` stratum is where Layer 2 false negatives hide. Look at every "relevant" label found there.
+
 Each grant receives a human label.
 
 Example:
@@ -920,10 +978,10 @@ Example:
 
 ```text
 Agency:
-"educator retention"
+"grow the Direct Care workforce" (DHHS G4.O1)
 
 Grant:
-"reducing K–12 teacher attrition"
+"training and retaining home health aides and personal care assistants"
 ```
 
 ### Broad Grant Descriptions
@@ -1007,6 +1065,8 @@ Limitation:
 Lexical matching does not always understand synonyms or deeper semantic meaning.
 
 Therefore it should remain a supporting feature rather than the primary semantic classifier.
+
+> **Update (2026-09-29): build this as a baseline to compare against, not as a feature** (`src/keyword_baseline.py`, Layer 5). Rank all grants by TF-IDF similarity to the strategic-plan text. On the labeled sample, compare its recall and precision against Jev's routing. The rubric gives "no bonus points for complexity that does not improve the matches", so this comparison is our evidence that the AI layer earns its place. If the baseline turns out to be as good, that's an honest finding and worth reporting too.
 
 ---
 
@@ -1099,6 +1159,13 @@ The final ranked file may be stored as:
 data/results/ranked_grants.csv
 ```
 
+> **Update (2026-09-29): two lists, not one.**
+>
+> - **Top open opportunities** (`ranked_grants.csv`): grants you can apply for now.
+> - **Watchlist** (`watchlist.csv`): the best *forecasted* grants, ranked on the same criteria except deadline, with the forecasted post/close dates. The message to the user is "start preparing now; these open soon." This is the "find it first" advantage from the challenge brief.
+>
+> Every row also carries the **owning division** and a **verified eligibility quote**, so the coordinator knows who to forward it to and why we believe DHHS can apply.
+
 ---
 
 # 30. Recommended Output Fields
@@ -1175,6 +1242,8 @@ stored prompts
 scoring weights
 ```
 
+> **Update (2026-09-29): model responses are cached and committed.** Every Jev and Muse Spark response is saved in `data/cache/<layer>/` as JSON, together with the model id, prompt-version hash, request hash and retrieval time. On a rerun, the pipeline reads the cache instead of calling the API, so **anyone (including judges) can reproduce our exact ranking with no API key and no cost.** Editing a prompt or `priorities.json` changes the hash, and only the affected calls are re-run. `--mock` runs write to `data/cache_mock/` and `data/results/mock/`, which are git-ignored and can never be mixed with real results.
+
 Important parameters should not be hidden inside notebooks.
 
 They should be stored in:
@@ -1217,24 +1286,26 @@ rather than buried inside Python scripts.
 
 ```text
 Tool:
-Jev
+Jev (typesafe-ai/jev), Vercel AI Gateway /v1/evaluate
 
 Purpose:
 Initial semantic grant triage.
 
 Input:
-Agency description
-Strategic priorities
-Grant title
-Grant description
-Eligibility description
+Agency mission and user (from priorities.json)
+Grant title, federal agency, assistance listings, funding instrument
+Structured applicant types
+Eligibility text, summary (HTML stripped, ≤3,000 chars)
 
-Output:
+Output (4 choice questions, probability for every option):
 Domain relevance
-Matched strategic priority
-Eligibility assessment
-Implementation fit
-Confidence
+Matched strategic goal
+Applicant role (lead / partner / atypical / ineligible / unclear)
+Owning DHHS division
+
+Confidence handling:
+Jev's own per-option probabilities. Deprioritize only above conservative
+cutoffs; everything uncertain goes to Layer 3.
 
 Decision authority:
 Jev does not produce the final ranking.
@@ -1250,6 +1321,15 @@ Performed deterministically in Python.
 If a stronger language model is used for Layer 3:
 
 ```text
+Model:
+Muse Spark 1.3 contributor (meta/muse-spark-1.3-contributor), Vercel AI Gateway,
+temperature 0. "Contributor" tier: the provider may train on inputs. Acceptable here
+because every input is public Grants.gov and strategic-plan text.
+
+Output checks:
+Verbatim-quote verification, schema validation with one retry,
+Layer 2 vs Layer 3 disagreement log → data/results/ai_error_log.csv
+
 Purpose:
 Analyze difficult or highly ranked candidate grants.
 
@@ -1585,7 +1665,7 @@ Jev
 ### Deep Analysis
 
 ```text
-Strong general-purpose LLM and/or manual review
+Muse Spark 1.3 contributor (Vercel AI Gateway) + Python evidence checks
 ```
 
 ### Final Ranking
@@ -1614,17 +1694,18 @@ Streamlit
 
 Before implementation is finalized:
 
-- [ ] Choose the target NC agency.
-- [ ] Define the target agency employee/user.
-- [ ] Extract strategic priorities.
-- [ ] Finalize 3–5 grant evaluation criteria.
+- [x] Choose the target NC agency. → **NCDHHS**
+- [x] Define the target agency employee/user. → **DHHS federal-grants coordinator** (draft, `agency/agency_profile.md`)
+- [x] Extract strategic priorities. → 5 goals, 20 objectives, 13 divisions in `priorities.json`
+- [ ] Finalize 3–5 grant evaluation criteria. (draft in `agency/agency_profile.md`; team to confirm)
 - [ ] Determine hard filters.
 - [ ] Determine scoring weights.
-- [ ] Define Jev output schema.
-- [ ] Determine Jev confidence thresholds.
-- [ ] Decide whether TF-IDF improves performance.
-- [ ] Choose the deep-analysis model.
-- [ ] Create a validation sample.
+- [x] Define Jev output schema. → §11
+- [ ] Determine Jev confidence thresholds. (conservative defaults set; tune on labeled sample)
+- [ ] Decide whether TF-IDF improves performance. (now a baseline comparison, §26)
+- [x] Choose the deep-analysis model. → Muse Spark 1.3 contributor
+- [ ] Create a validation sample. (stratified + blind, §21)
+- [ ] Run Layers 2–3 for real once `AI_GATEWAY_API_KEY` is in `.env`, and commit `data/cache/`.
 - [ ] Determine the final number of grants shown.
 - [ ] Build the presentation narrative.
 
