@@ -6,3 +6,5 @@ __pycache__/
 # Mock (fake) outputs from --mock dry runs; never commit them
 data/cache_mock/
 data/results/mock/
+# Rebuilt from data/raw by clean_data.py / deterministic.py in seconds
+data/processed/*.csv
