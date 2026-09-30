@@ -271,6 +271,11 @@ def load_inputs(out_dir: Path) -> pd.DataFrame:
     features = pd.read_csv(config.LAYER1_OUTPUT)
     deep = pd.read_csv(deep_path)
     if "status" in deep.columns:
+        failed = deep[deep["status"] != "ok"]
+        if len(failed):
+            print(f"WARNING: {len(failed)} grants have no valid Layer 3 analysis "
+                  f"({failed['status'].value_counts().to_dict()}) and are NOT ranked. "
+                  f"See ai_error_log.csv; rerun deep_analysis.py to retry.")
         deep = deep[deep["status"] == "ok"].copy()
 
     required_features = {"grant_id", "is_forecast", "financial_value_score", "deadline_score"}
