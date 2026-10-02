@@ -190,19 +190,44 @@
     }
   ],
   "layer1": {
-    "_comment": "Objective features. deadline_score: 0 when the grant closes within zero_at_or_below_days of as_of_date, 10 at full_at_or_above_days or more, linear in between (a state agency needs internal sign-off, so under a week is not realistic). financial_value_score: log scale on the best per-award estimate, 0 at zero_at_award, 10 at full_at_award.",
-    "deadline_score": {
-      "zero_at_or_below_days": 7,
-      "full_at_or_above_days": 60,
-      "rolling_deadline_score": 8
-    },
-    "rolling_deadline_pattern": "anytime|continuing basis|ongoing basis|year-round|rolling|no submission deadline|accepted on a continu",
-    "financial_value_score": {
-      "zero_at_award": 50000,
-      "full_at_award": 5000000,
-      "missing_award_score": 4,
-      "cost_share_penalty_points": 1.5
-    }
+    "_comment": "Objective thresholds for Layer 1 (src/deterministic.py). Nothing here is semantic. deadline_score_points are [days_until_close, score 0-10] anchors, linearly interpolated; past the last anchor the score stays at its value. financial_value_score is log-scaled between the two USD anchors; total_only_cap limits grants where only total program funding (not a per-award figure) is known.",
+    "data_pulled_date": "2026-08-18",
+    "close_date_placeholder_year_min": 2090,
+    "deadline_days": [
+      7,
+      14,
+      30
+    ],
+    "deadline_score_points": [
+      [
+        0,
+        0
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        14,
+        4
+      ],
+      [
+        30,
+        7
+      ],
+      [
+        60,
+        10
+      ]
+    ],
+    "large_award_usd": 1000000,
+    "few_awards_max": 3,
+    "min_description_chars": 100,
+    "broad_applicant_types_min": 12,
+    "financial_log_min_usd": 100000,
+    "financial_log_max_usd": 10000000,
+    "financial_total_only_cap": 7.0,
+    "financial_unknown_score": 5.0
   },
   "layer2_routing": {
     "_comment": "Probability cutoffs on Jev's per-option probabilities. A grant is deprioritized only when Jev is confident it is irrelevant or not ours; everything else goes to Layer 3. Defaults are deliberately conservative (recall over precision) and must be re-tuned on the labeled validation sample.",

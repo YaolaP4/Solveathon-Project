@@ -35,7 +35,7 @@ import pandas as pd
 
 import config
 from keyword_baseline import OUTPUT as BASELINE
-from text_utils import truncate
+from text_utils import strip_html, truncate
 
 VAL = config.DATA / "validation"
 LABELS = VAL / "labels.csv"
@@ -76,8 +76,8 @@ def write_sheet(sample: pd.DataFrame) -> pd.DataFrame:
         "title": sample["opportunity_title"],
         "federal_agency": sample["agency_name"],
         "applicant_types": sample["applicant_types"].fillna("").str.replace(";", ", "),
-        "eligibility_text": sample["applicant_eligibility_description"].fillna("").map(lambda t: truncate(t, 1500)),
-        "summary": sample["summary_description"].fillna("").map(lambda t: truncate(t, 2000)),
+        "eligibility_text": sample["applicant_eligibility_description"].fillna("").map(lambda t: truncate(strip_html(t), 1500)),
+        "summary": sample["summary_description"].fillna("").map(lambda t: truncate(strip_html(t), 2000)),
         "url": sample["url"],
     })
     for c in LABEL_COLUMNS:

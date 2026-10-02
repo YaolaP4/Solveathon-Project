@@ -1,113 +1,102 @@
-"""Layer 0 - data cleaning and normalization. No judgments about relevance.
+"""Layer 0 - data cleaning and normalization. No judgment about relevance.
 
-Reads data/raw/grants.csv (the starter-kit Grants.gov export) and writes
-data/processed/grants_cleaned.csv plus data/processed/data_quality.json.
-
-What it does:
-  * grant_id = opportunity_id; exact duplicate ids removed
-  * dates -> ISO dates; numbers -> numeric
-  * placeholder amounts (0, 999,999,999, 2^31) -> missing, and counted
-  * booleans normalized
-  * HTML stripped from free text (1,040 of 1,662 summaries contain HTML)
-  * applicant_types normalized to a sorted ';'-list
-  * grant_text = title + summary + eligibility (for keyword matching)
-  * data-quality flags: missing summary / eligibility / deadline / award info
-
-Usage:
     python src/clean_data.py
-"""
 
-import json
+Reads  data/raw/grants.csv
+Writes data/processed/grants_cleaned.csv
+
+What it does: parse dates and numbers, normalize booleans, drop exact duplicate
+opportunity ids, add `grant_id` (= opportunity_id) and plain-text helper columns.
+
+What it deliberately does NOT do:
+  * Text columns (title, summary, eligibility, applicant types, listings, ...) stay
+    exactly as exported, raw HTML and trailing spaces included. Layers 2-3 strip HTML
+    themselves when they build prompts, and unchanged text keeps their cached model
+    responses valid. HTML-free versions are added as `summary_text` and `grant_text`.
+  * Blanks stay blank. A blank `is_cost_sharing` is unknown, not False.
+  * Zero award amounts are kept as 0 here; Layer 1 decides they are placeholders.
+"""
 
 import pandas as pd
 
 import config
 from text_utils import strip_html
 
-DATE_COLUMNS = ["post_date", "close_date", "archive_date", "forecasted_post_date",
-                "forecasted_close_date", "forecasted_award_date", "forecasted_project_start_date"]
-MONEY_COLUMNS = ["award_floor", "award_ceiling", "estimated_total_program_funding"]
-TEXT_COLUMNS = ["opportunity_title", "summary_description", "applicant_eligibility_description",
-                "close_date_description", "funding_category_description", "agency_contact_description"]
-# Values Grants.gov uses as "no real number" (seen in this dataset: 999,999,999 and 2^31).
-PLACEHOLDER_AMOUNTS = {999999999.0, 2147483647.0, 2147483648.0}
-PLACEHOLDER_COUNTS = {9999.0}
-
 CLEANED = config.DATA / "processed" / "grants_cleaned.csv"
-QUALITY = config.DATA / "processed" / "data_quality.json"
+
+DATE_COLS = ["post_date", "close_date", "archive_date", "forecasted_post_date",
+             "forecasted_close_date", "forecasted_award_date", "forecasted_project_start_date"]
+NUM_COLS = ["award_floor", "award_ceiling", "estimated_total_program_funding",
+            "expected_number_of_awards"]
+BOOL_COLS = ["is_forecast", "is_cost_sharing"]
+TEXT_COLS = ["opportunity_title", "opportunity_status", "agency_name", "top_level_agency_name",
+             "summary_description", "applicant_types", "applicant_eligibility_description",
+             "opportunity_assistance_listings", "funding_instruments"]
+_BOOL_MAP = {"true": True, "yes": True, "1": True, "false": False, "no": False, "0": False}
 
 
-def to_bool(s: pd.Series) -> pd.Series:
-    return s.map(lambda v: {"true": True, "false": False}.get(str(v).strip().lower())).astype("boolean")
-
-
-def clean_amount(s: pd.Series, placeholders: set) -> tuple[pd.Series, int]:
-    s = pd.to_numeric(s, errors="coerce")
-    bad = s.isin(placeholders) | (s <= 0)
-    return s.mask(bad), int(bad.sum())
-
-
-def normalize_applicant_types(v) -> str:
-    if not isinstance(v, str) or not v.strip():
-        return ""
-    return ";".join(sorted({t.strip().lower() for t in v.split(";") if t.strip()}))
+def to_bool(series: pd.Series) -> pd.Series:
+    """'True'/'False' -> bool; anything else (blank, junk) -> <NA>."""
+    return series.astype(str).str.strip().str.lower().map(_BOOL_MAP).astype("boolean")
 
 
 def clean(raw: pd.DataFrame) -> tuple[pd.DataFrame, dict]:
+    """Return the cleaned frame plus a small report of what was fixed or dropped."""
     df = raw.copy()
-    quality = {"raw_rows": len(df)}
+    report = {"rows_in": len(df)}
 
-    df = df.rename(columns={"opportunity_id": "grant_id"})
-    df["grant_id"] = df["grant_id"].astype(str).str.strip()
-    quality["duplicate_ids_removed"] = int(df["grant_id"].duplicated().sum())
-    df = df.drop_duplicates("grant_id", keep="first")
-    # Same title under different opportunity numbers: kept, but flagged for review.
-    df["duplicate_title"] = df["opportunity_title"].duplicated(keep=False)
-    quality["rows_sharing_a_title"] = int(df["duplicate_title"].sum())
+    # Text is kept exactly as exported (no trimming): Layers 2-3 build their prompts, and
+    # their cache keys, from these strings. Only the status is trimmed, because Layer 1
+    # compares it against fixed words.
+    for c in TEXT_COLS:
+        df[c] = df[c].fillna("").astype(str) if c in df else ""
+    df["opportunity_status"] = df["opportunity_status"].str.strip()
 
-    for c in DATE_COLUMNS:
-        df[c] = pd.to_datetime(df[c], errors="coerce").dt.date
-    placeholder_counts = {}
-    for c in MONEY_COLUMNS:
-        df[c], placeholder_counts[c] = clean_amount(df[c], PLACEHOLDER_AMOUNTS)
-    df["expected_number_of_awards"], placeholder_counts["expected_number_of_awards"] = clean_amount(
-        df["expected_number_of_awards"], PLACEHOLDER_COUNTS)
-    quality["placeholder_or_zero_amounts_set_missing"] = placeholder_counts
+    # Dates and numbers. Count values that were present but unparseable.
+    report["unparseable"] = {}
+    for c in DATE_COLS + NUM_COLS:
+        if c not in df:
+            df[c] = pd.NaT if c in DATE_COLS else float("nan")
+            continue
+        present = df[c].astype(str).str.strip() != ""
+        parsed = (pd.to_datetime(df[c], errors="coerce") if c in DATE_COLS
+                  else pd.to_numeric(df[c], errors="coerce"))
+        bad = int((present & parsed.isna()).sum())
+        if bad:
+            report["unparseable"][c] = bad
+        df[c] = parsed
 
-    for c in ["is_cost_sharing", "is_forecast"]:
-        df[c] = to_bool(df[c])
+    for c in BOOL_COLS:
+        df[c] = to_bool(df[c]) if c in df else pd.array([pd.NA] * len(df), dtype="boolean")
+    report["is_forecast_unknown"] = int(df["is_forecast"].isna().sum())
+    df["is_forecast"] = df["is_forecast"].fillna(False)
 
-    quality["summaries_with_html"] = int(df["summary_description"].fillna("").str.contains(r"<[a-zA-Z]").sum())
-    for c in TEXT_COLUMNS:
-        df[c] = df[c].map(strip_html)
-    df["applicant_types"] = df["applicant_types"].map(normalize_applicant_types)
+    df["opportunity_id"] = df["opportunity_id"].astype(str).str.strip()
+    dup = df.duplicated("opportunity_id", keep="first")
+    report["duplicate_ids_dropped"] = int(dup.sum())
+    df = df[~dup].copy()
+    df["grant_id"] = df["opportunity_id"]
 
-    df["grant_text"] = (df["opportunity_title"] + "\n" + df["summary_description"] + "\n"
-                        + df["applicant_eligibility_description"]).str.strip()
+    df["summary_text"] = df["summary_description"].map(strip_html)
+    df["grant_text"] = (df["opportunity_title"] + "\n" + df["summary_text"]
+                        + "\n" + df["applicant_eligibility_description"].map(strip_html))
 
-    df["missing_summary"] = df["summary_description"].str.len() < 20
-    df["missing_eligibility_description"] = df["applicant_eligibility_description"].str.len() == 0
-    df["missing_close_date"] = df["close_date"].isna() & ~df["is_forecast"].fillna(False)
-    df["missing_award_amount"] = df[["award_ceiling", "award_floor", "estimated_total_program_funding"]].isna().all(axis=1)
-    df["malformed"] = df["opportunity_title"].str.len() == 0
-
-    for flag in ["missing_summary", "missing_eligibility_description", "missing_close_date",
-                 "missing_award_amount", "malformed"]:
-        quality[flag] = int(df[flag].sum())
-    quality["clean_rows"] = len(df)
-    return df, quality
+    report["rows_out"] = len(df)
+    return df.sort_values("grant_id", kind="stable").reset_index(drop=True), report
 
 
-def run() -> pd.DataFrame:
-    raw = pd.read_csv(config.RAW_GRANTS)
-    df, quality = clean(raw)
+def main() -> None:
+    raw = pd.read_csv(config.RAW_GRANTS, dtype=str, keep_default_na=False)
+    df, report = clean(raw)
     CLEANED.parent.mkdir(parents=True, exist_ok=True)
     df.to_csv(CLEANED, index=False)
-    QUALITY.write_text(json.dumps(quality, indent=2), encoding="utf-8")
-    print(f"Layer 0: {quality['raw_rows']} raw -> {quality['clean_rows']} clean rows -> {CLEANED}")
-    print(json.dumps(quality, indent=2))
-    return df
+    print(f"Layer 0: {report['rows_in']} rows in, {report['rows_out']} out "
+          f"({report['duplicate_ids_dropped']} duplicate ids dropped) -> {CLEANED}")
+    if report["unparseable"]:
+        print(f"  WARNING unparseable values (turned into blanks): {report['unparseable']}")
+    if report["is_forecast_unknown"]:
+        print(f"  WARNING {report['is_forecast_unknown']} rows had no is_forecast value; treated as open")
 
 
 if __name__ == "__main__":
-    run()
+    main()

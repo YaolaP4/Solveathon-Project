@@ -126,8 +126,8 @@ def load_grants() -> pd.DataFrame:
     if not config.LAYER1_OUTPUT.exists():
         import clean_data
         import deterministic
-        clean_data.run()
-        deterministic.run()
+        clean_data.main()
+        deterministic.main()
     df = pd.read_csv(config.LAYER1_OUTPUT)
     source = config.LAYER1_OUTPUT
     missing = [c for c in REQUIRED_COLUMNS if c not in df.columns]

@@ -35,16 +35,18 @@ def build(ranked: pd.DataFrame, agency: dict, n: int, forecast: bool) -> pd.Data
     for r in live.itertuples():
         if forecast:
             when = f"forecast close {r.forecasted_close_date}" if pd.notna(r.forecasted_close_date) else "forecast, no date"
-            if _truthy(getattr(r, "stale_forecast", False)):
+            if _truthy(getattr(r, "forecast_check_now", False)):
+                when += " (forecast post date passed - may already be open, check Grants.gov now)"
+            if _truthy(getattr(r, "forecast_close_passed", False)):
                 when += " (date passed - check if posted)"
-        elif pd.notna(r.close_date):
-            when = f"{r.close_date} ({int(r.days_until_close)} days)"
+        elif pd.notna(r.close_date_real):
+            when = f"{str(r.close_date_real)[:10]} ({int(r.days_until_close)} days)"
         else:
             when = "rolling" if _truthy(getattr(r, "rolling_deadline", False)) else "not stated"
         evidence = "verified quote" if _truthy(r.eligibility_quote_verified) else "UNVERIFIED - check eligibility"
         rows.append({
             "rank": r.rank, "grant": r.opportunity_title, "score": r.final_score, "deadline": when,
-            "award (est.)": _money(r.award_estimate),
+            "award (est.)": _money(r.award_value_usd),
             "owner": divisions.get(r.owning_division, r.owning_division),
             "goal": goals.get(r.matched_goal, r.matched_goal),
             "why": r.one_line_rationale, "main risk": r.major_risk,

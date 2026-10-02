@@ -28,9 +28,9 @@ import validation
 
 def main(mock: bool) -> None:
     print("=== Layer 0: clean ===")
-    clean_data.run()
+    clean_data.main()
     print("\n=== Layer 1: deterministic features ===")
-    deterministic.run()
+    deterministic.main()
     print("\n=== Layer 5 baseline: keyword TF-IDF ===")
     keyword_baseline.run()
 

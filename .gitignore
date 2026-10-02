@@ -1,4 +1,8 @@
+# Secrets: never commit. Only the placeholder template is tracked.
 .env
+.env.*
+!.env.example
+*.key
 __pycache__/
 .pytest_cache/
 *.pyc
