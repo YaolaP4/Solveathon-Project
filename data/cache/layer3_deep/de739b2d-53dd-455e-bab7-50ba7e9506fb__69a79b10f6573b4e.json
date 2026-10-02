@@ -1,0 +1,30 @@
+{
+ "grant_id": "de739b2d-53dd-455e-bab7-50ba7e9506fb",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "69a79b10f6573b4e34660555ff849f657351c6fd671305e960e4189fdd607486",
+ "retrieved_at": "2026-10-02T20:02:37+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 3,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O2",
+   "strategic_reason": "The grant provides access to biomarker and behavioral data on tobacco use that could support tracking health disparities and outcomes, but it is a research resource rather than a direct program or service investment.",
+   "strategic_evidence_quote": "biospecimens (urine, plasma, serum, and genomic DNA) and related research data on behaviors, attitudes, biomarkers and health outcomes associated with tobacco use in the U.S.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 4,
+   "operational_reason": "DPH has epidemiology and chronic disease surveillance functions, but biospecimen access for external investigator research is outside its typical service and program operations.",
+   "restrictions": [
+    "Foreign components, as defined in the NIH Grants Policy Statement, are not allowed."
+   ],
+   "major_risk": "The X01 mechanism provides access to biospecimens and data rather than funding for state-level services, so it may have little direct financial or programmatic value for NCDHHS.",
+   "recommended_for_review": false,
+   "one_line_rationale": "NIH X01 biospecimen/data access for tobacco research is not service funding; despite state eligibility, operational fit for NCDHHS is weak."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 3,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O2\",\n  \"strategic_reason\": \"The grant provides access to biomarker and behavioral data on tobacco use that could support tracking health disparities and outcomes, but it is a research resource rather than a direct program or service investment.\",\n  \"strategic_evidence_quote\": \"biospecimens (urine, plasma, serum, and genomic DNA) and related research data on behaviors, attitudes, biomarkers and health outcomes associated with tobacco use in the U.S.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 4,\n  \"operational_reason\": \"DPH has epidemiology and chronic disease surveillance functions, but biospecimen access for external investigator research is outside its typical service and program operations.\",\n  \"restrictions\": [\"Foreign components, as defined in the NIH Grants Policy Statement, are not allowed.\"],\n  \"major_risk\": \"The X01 mechanism provides access to biospecimens and data rather than funding for state-level services, so it may have little direct financial or programmatic value for NCDHHS.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"NIH X01 biospecimen/data access for tobacco research is not service funding; despite state eligibility, operational fit for NCDHHS is weak.\"\n}"
+  ]
+ }
+}

@@ -1,0 +1,32 @@
+{
+ "grant_id": "efa5065c-2676-4b1a-b17f-d7e42dcfb3e4",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "f5837fc658f0bd139084fdd0f944f6382895ab53b86ebb24b8b99a4e324ce139",
+ "retrieved_at": "2026-10-02T20:01:01+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 5,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "The grant funds clinical trials to develop and test behavior change interventions for dental, oral, and craniofacial conditions, which could help reduce oral health disparities and advance health equity.",
+   "strategic_evidence_quote": "Studies appropriate for this announcement include clinical trials to develop and test behavior change interventions related to dental, oral, or craniofacial conditions.",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 4,
+   "operational_reason": "DPH has oral health promotion and surveillance functions, but an NIH UG3/UH3 investigator-initiated clinical trial requires research infrastructure, IRB, and clinical trial management beyond its routine public health operations.",
+   "restrictions": [
+    "Milestone-driven UG3 planning phase for up to 2 years with possible UH3 transition only if scientific milestones and feasibility requirements are met",
+    "UG3/UH3 application must be submitted as a single application",
+    "Clinical Trial Required"
+   ],
+   "major_risk": "This is an investigator-initiated NIH clinical trial cooperative agreement; NCDHHS likely lacks the clinical research infrastructure to compete with academic dental research centers, and UH3 implementation funding is not guaranteed after the UG3 planning phase.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Fits oral health disparities under G1.O1 but is an NIH investigator-initiated clinical trial, not a state service program; DPH lacks competitive research infrastructure."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 5,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"The grant funds clinical trials to develop and test behavior change interventions for dental, oral, and craniofacial conditions, which could help reduce oral health disparities and advance health equity.\",\n  \"strategic_evidence_quote\": \"Studies appropriate for this announcement include clinical trials to develop and test behavior change interventions related to dental, oral, or craniofacial conditions.\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 4,\n  \"operational_reason\": \"DPH has oral health promotion and surveillance functions, but an NIH UG3/UH3 investigator-initiated clinical trial requires research infrastructure, IRB, and clinical trial management beyond its routine public health operations.\",\n  \"restrictions\": [\n    \"Milestone-driven UG3 planning phase for up to 2 years with possible UH3 transition only if scientific milestones and feasibility requirements are met\",\n    \"UG3/UH3 application must be submitted as a single application\",\n    \"Clinical Trial Required\"\n  ],\n  \"major_risk\": \"This is an investigator-initiated NIH clinical trial cooperative agreement; NCDHHS likely lacks the clinical research infrastructure to compete with academic dental research centers, and UH3 implementation funding is not guaranteed after the UG3 planning phase.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Fits oral health disparities under G1.O1 but is an NIH investigator-initiated clinical trial, not a state service program; DPH lacks competitive research infrastructure.\"\n}"
+  ]
+ }
+}

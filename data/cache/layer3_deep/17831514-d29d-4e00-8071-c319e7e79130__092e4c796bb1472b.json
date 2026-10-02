@@ -1,0 +1,32 @@
+{
+ "grant_id": "17831514-d29d-4e00-8071-c319e7e79130",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "092e4c796bb1472b5c1cf27cfd140669562f7a0a8cd628d0a7522c0c94680e87",
+ "retrieved_at": "2026-10-02T20:01:58+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 4,
+   "matched_goal": "G5",
+   "matched_objective": "G5.O1",
+   "strategic_reason": "The grant funds statewide crash data system modernization and standardized electronic data transfer, which most closely aligns with G5.O1's focus on data infrastructure, integration, and data-driven decision-making.",
+   "strategic_evidence_quote": "modernization of States’ crash data collection systems",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "State crash data owners and custodians for each of the 50 States, the District of Columbia; the Commonwealth of Puerto Rico; the United States Virgin Islands; Guam; American Samoa; the Commonwealth of the Northern Mariana Islands; and the Secretary of the Interior, acting on behalf of an Indian Tribe.",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "No NCDHHS division owns or operates the statewide crash data repository; that function sits with the state transportation/motor vehicle agency rather than health and human services.",
+   "restrictions": [
+    "State match: recipients must contribute at least twenty (20) percent of State funds for eligible activity costs.",
+    "Data-transfer deadline: recipients must certify they will electronically transfer crash data to NHTSA beginning no later than five years from the effective date of award.",
+    "Coordination: if multiple state entities are responsible for the crash data repository, the State must appoint one point of contact for the application."
+   ],
+   "major_risk": "NCDHHS is likely not the statewide crash data owner or custodian, so this opportunity probably belongs with NCDOT and would require interagency coordination plus a state match for a system outside DHHS authority.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Crash data system modernization aligns with operational data infrastructure, but NCDHHS does not own crash data; it likely belongs to NCDOT, so not recommended."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 4,\n  \"matched_goal\": \"G5\",\n  \"matched_objective\": \"G5.O1\",\n  \"strategic_reason\": \"The grant funds statewide crash data system modernization and standardized electronic data transfer, which most closely aligns with G5.O1's focus on data infrastructure, integration, and data-driven decision-making.\",\n  \"strategic_evidence_quote\": \"modernization of States’ crash data collection systems\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"State crash data owners and custodians for each of the 50 States, the District of Columbia; the Commonwealth of Puerto Rico; the United States Virgin Islands; Guam; American Samoa; the Commonwealth of the Northern Mariana Islands; and the Secretary of the Interior, acting on behalf of an Indian Tribe.\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"No NCDHHS division owns or operates the statewide crash data repository; that function sits with the state transportation/motor vehicle agency rather than health and human services.\",\n  \"restrictions\": [\n    \"State match: recipients must contribute at least twenty (20) percent of State funds for eligible activity costs.\",\n    \"Data-transfer deadline: recipients must certify they will electronically transfer crash data to NHTSA beginning no later than five years from the effective date of award.\",\n    \"Coordination: if multiple state entities are responsible for the crash data repository, the State must appoint one point of contact for the application.\"\n  ],\n  \"major_risk\": \"NCDHHS is likely not the statewide crash data owner or custodian, so this opportunity probably belongs with NCDOT and would require interagency coordination plus a state match for a system outside DHHS authority.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Crash data system modernization aligns with operational data infrastructure, but NCDHHS does not own crash data; it likely belongs to NCDOT, so not recommended.\"\n}"
+  ]
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "grant_id": "ba699726-91ac-405c-b9b6-d13c91085555",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "51e593a984448c000d60ada6f9961e36599d80183e3f3f6c47c7642e4ccd940d",
+ "retrieved_at": "2026-10-02T20:00:29+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 1,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds commercial motor vehicle safety planning to reduce crashes and injuries, but no NCDHHS strategic objective addresses highway or commercial vehicle safety.",
+   "strategic_evidence_quote": "reduce the number and severity of crashes, injuries, and fatalities and hazardous material incidents involving commercial motor vehicles",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "NCDHHS divisions do not regulate commercial motor vehicles or administer highway safety programs, so the Department lacks the authority and infrastructure to lead this grant.",
+   "restrictions": [],
+   "major_risk": "The grant is outside NCDHHS's mission and would likely belong with the state's transportation or highway safety agency, so it offers little value to the Department.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Funds commercial vehicle safety planning, a transportation and highway safety function outside NCDHHS's health and human services mission; no division fits."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 1,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds commercial motor vehicle safety planning to reduce crashes and injuries, but no NCDHHS strategic objective addresses highway or commercial vehicle safety.\",\n  \"strategic_evidence_quote\": \"reduce the number and severity of crashes, injuries, and fatalities and hazardous material incidents involving commercial motor vehicles\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"NCDHHS divisions do not regulate commercial motor vehicles or administer highway safety programs, so the Department lacks the authority and infrastructure to lead this grant.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The grant is outside NCDHHS's mission and would likely belong with the state's transportation or highway safety agency, so it offers little value to the Department.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Funds commercial vehicle safety planning, a transportation and highway safety function outside NCDHHS's health and human services mission; no division fits.\"\n}"
+  ]
+ }
+}

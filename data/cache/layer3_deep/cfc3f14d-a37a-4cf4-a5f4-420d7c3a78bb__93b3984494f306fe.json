@@ -1,0 +1,31 @@
+{
+ "grant_id": "cfc3f14d-a37a-4cf4-a5f4-420d7c3a78bb",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "93b3984494f306fe3d748a7988aa780ff00b5eccc92b9ac24d5941ed83615947",
+ "retrieved_at": "2026-10-02T19:48:10+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O2",
+   "strategic_reason": "Funds Housing Choice Vouchers to prevent foster care placement or delay reunification and to house youth aging out of foster care, directly supporting child welfare safety, permanency, and well-being.",
+   "strategic_evidence_quote": "Those for whom the lack of adequate housing is a primary factor in the imminent placement of a child (or children) in out-of-home care, or a delay in the discharge of a child to the family from out-of-home care.",
+   "applicant_role": "partner",
+   "eligibility_evidence_quote": "public_and_indian_housing_authorities",
+   "owning_division": "DSS",
+   "operational_fit": 8,
+   "operational_reason": "DSS is North Carolina's public child welfare agency and already oversees foster care, permanency, and out-of-home care, so it could serve as the required PCWA partner and identify or refer eligible families and youth.",
+   "restrictions": [
+    "Applicants limited to public and Indian housing authorities",
+    "Requires partnership with public child welfare agencies"
+   ],
+   "major_risk": "NCDHHS cannot apply directly because only public and Indian housing authorities are eligible, so the Department would depend on a housing authority to lead and administer the award.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Strong fit for DSS as the required child welfare partner, but only PHAs can apply; worth routing if a North Carolina housing authority will lead."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O2\",\n  \"strategic_reason\": \"Funds Housing Choice Vouchers to prevent foster care placement or delay reunification and to house youth aging out of foster care, directly supporting child welfare safety, permanency, and well-being.\",\n  \"strategic_evidence_quote\": \"Those for whom the lack of adequate housing is a primary factor in the imminent placement of a child (or children) in out-of-home care, or a delay in the discharge of a child to the family from out-of-home care.\",\n  \"applicant_role\": \"partner\",\n  \"eligibility_evidence_quote\": \"public_and_indian_housing_authorities\",\n  \"owning_division\": \"DSS\",\n  \"operational_fit\": 8,\n  \"operational_reason\": \"DSS is North Carolina's public child welfare agency and already oversees foster care, permanency, and out-of-home care, so it could serve as the required PCWA partner and identify or refer eligible families and youth.\",\n  \"restrictions\": [\n    \"Applicants limited to public and Indian housing authorities\",\n    \"Requires partnership with public child welfare agencies\"\n  ],\n  \"major_risk\": \"NCDHHS cannot apply directly because only public and Indian housing authorities are eligible, so the Department would depend on a housing authority to lead and administer the award.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Strong fit for DSS as the required child welfare partner, but only PHAs can apply; worth routing if a North Carolina housing authority will lead.\"\n}"
+  ]
+ }
+}

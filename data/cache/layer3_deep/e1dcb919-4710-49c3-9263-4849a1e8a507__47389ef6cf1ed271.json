@@ -1,0 +1,31 @@
+{
+ "grant_id": "e1dcb919-4710-49c3-9263-4849a1e8a507",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "47389ef6cf1ed271db3bdb1e4ce1a0cb56f0a912333376979244c746fdbf13e6",
+ "retrieved_at": "2026-10-02T19:59:42+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 6,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O1",
+   "strategic_reason": "The grant funds clinical trials of post-acute mental health service delivery and therapeutic interventions, generating evidence that could strengthen integrated behavioral health and coordinated care models.",
+   "strategic_evidence_quote": "evaluate the effectiveness of therapeutic and service delivery interventions for the post-acute management of mental health conditions affecting youth, adults, and older adults.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DMHDDSUS",
+   "operational_fit": 6,
+   "operational_reason": "DMHDDSUS oversees mental health services and could manage the grant with academic research partners, but it is not a typical lead for a rigorous NIH clinical trial.",
+   "restrictions": [
+    "Clinical Trial Required",
+    "statistically powered to provide a definitive answer"
+   ],
+   "major_risk": "This is research funding rather than service funding, and leading a clinical trial would require substantial research infrastructure and likely academic partnerships that NCDHHS does not typically have.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Fits our mental health mission, but as an R01 clinical trial it requires research infrastructure better suited to an academic partner than a state services division."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 6,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O1\",\n  \"strategic_reason\": \"The grant funds clinical trials of post-acute mental health service delivery and therapeutic interventions, generating evidence that could strengthen integrated behavioral health and coordinated care models.\",\n  \"strategic_evidence_quote\": \"evaluate the effectiveness of therapeutic and service delivery interventions for the post-acute management of mental health conditions affecting youth, adults, and older adults.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DMHDDSUS\",\n  \"operational_fit\": 6,\n  \"operational_reason\": \"DMHDDSUS oversees mental health services and could manage the grant with academic research partners, but it is not a typical lead for a rigorous NIH clinical trial.\",\n  \"restrictions\": [\n    \"Clinical Trial Required\",\n    \"statistically powered to provide a definitive answer\"\n  ],\n  \"major_risk\": \"This is research funding rather than service funding, and leading a clinical trial would require substantial research infrastructure and likely academic partnerships that NCDHHS does not typically have.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Fits our mental health mission, but as an R01 clinical trial it requires research infrastructure better suited to an academic partner than a state services division.\"\n}"
+  ]
+ }
+}

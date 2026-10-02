@@ -218,9 +218,13 @@ def test_real_row_counts_and_tracks(real):
 
 def test_real_hard_filters_are_only_expired_or_archived_open_grants(real):
     _, f = real
-    assert set(f["hard_filter_reason"].unique()) <= {"", "closed_before_as_of_date", "archived_before_as_of_date"}
+    assert set(f["hard_filter_reason"].unique()) <= {"", "closed_before_as_of_date", "archived_before_as_of_date",
+                                                   "administrative_award_transfer_notice"}
     archived = f["hard_filter_reason"] == "archived_before_as_of_date"
-    assert f["hard_filtered"].sum() == f["expired"].sum() + archived.sum() == 342
+    admin = f["hard_filter_reason"] == "administrative_award_transfer_notice"
+    assert f["hard_filtered"].sum() == f["expired"].sum() + archived.sum() + admin.sum() == 359
+    # 15 CDC "RFA-xx-18-000" placeholders + NIH successor-in-interest / Type 7
+    assert admin.sum() == 17
     # Archived grants are posted grants with no real close date whose archive date has passed.
     assert archived.sum() == 12 and f.loc[archived, "missing_deadline"].all()
     assert not f.loc[f["is_forecast"], "hard_filtered"].any()

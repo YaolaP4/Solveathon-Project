@@ -1,0 +1,28 @@
+{
+ "grant_id": "7c64599b-3598-4d6b-9e0a-ab9f50f867ae",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "a3bcde17899961aa39fcdbc3e63f9178c1221d2fe14d5199f73a254e16787a1e",
+ "retrieved_at": "2026-10-02T19:49:49+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 3,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "CDC-funded injury prevention and control programs can support state and community efforts to reduce injury-related disparities, a broad fit with the Department's health equity objective.",
+   "strategic_evidence_quote": "Injury Prevention and Control Research and State and Community Based Programs",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "States, Universities, County, Small Business, Non-Profits Organization,",
+   "owning_division": "DPH",
+   "operational_fit": 7,
+   "operational_reason": "DPH houses injury and violence prevention, epidemiology, and public health readiness functions, so it is a natural home for a CDC injury prevention cooperative agreement.",
+   "restrictions": [],
+   "major_risk": "The announcement provides almost no programmatic detail beyond 'Submit application as necessary,' so the scope, deliverables, and administrative burden cannot be assessed before committing DPH time.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Broad injury-prevention listing could align with DPH public health work, but the announcement lacks enough programmatic detail to warrant review."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 3,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"CDC-funded injury prevention and control programs can support state and community efforts to reduce injury-related disparities, a broad fit with the Department's health equity objective.\",\n  \"strategic_evidence_quote\": \"Injury Prevention and Control Research and State and Community Based Programs\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"States, Universities, County, Small Business, Non-Profits Organization,\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 7,\n  \"operational_reason\": \"DPH houses injury and violence prevention, epidemiology, and public health readiness functions, so it is a natural home for a CDC injury prevention cooperative agreement.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The announcement provides almost no programmatic detail beyond 'Submit application as necessary,' so the scope, deliverables, and administrative burden cannot be assessed before committing DPH time.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Broad injury-prevention listing could align with DPH public health work, but the announcement lacks enough programmatic detail to warrant review.\"\n}"
+  ]
+ }
+}

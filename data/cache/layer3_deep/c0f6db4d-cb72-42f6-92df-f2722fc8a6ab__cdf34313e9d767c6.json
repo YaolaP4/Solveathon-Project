@@ -1,0 +1,28 @@
+{
+ "grant_id": "c0f6db4d-cb72-42f6-92df-f2722fc8a6ab",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "cdf34313e9d767c698712f485d393106499afea90b28e00cfdc6cc5819893b8a",
+ "retrieved_at": "2026-10-02T19:50:00+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 2,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The assistance listing indicates injury prevention and control, but the posting provides no substantive program detail tying the activity to a named NCDHHS strategic objective.",
+   "strategic_evidence_quote": "",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "States, Universities, County, Small Business, Non-Profits Organization,",
+   "owning_division": "DPH",
+   "operational_fit": 7,
+   "operational_reason": "The Division of Public Health is the natural owner for CDC injury prevention and control work because it already handles public health surveillance, epidemiology, and prevention programs.",
+   "restrictions": [],
+   "major_risk": "The summary text contains no real program description, so scope, requirements, and fit cannot be verified; the Type 6 reference may signal a change-of-grantee or non-competing action rather than a clear new funding opportunity.",
+   "recommended_for_review": false,
+   "one_line_rationale": "CDC injury prevention could fit Public Health, but the posting lacks program detail and Type 6 suggests a change-of-grantee action, not a clear new pursuit."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 2,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The assistance listing indicates injury prevention and control, but the posting provides no substantive program detail tying the activity to a named NCDHHS strategic objective.\",\n  \"strategic_evidence_quote\": \"\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"States, Universities, County, Small Business, Non-Profits Organization,\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 7,\n  \"operational_reason\": \"The Division of Public Health is the natural owner for CDC injury prevention and control work because it already handles public health surveillance, epidemiology, and prevention programs.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The summary text contains no real program description, so scope, requirements, and fit cannot be verified; the Type 6 reference may signal a change-of-grantee or non-competing action rather than a clear new funding opportunity.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"CDC injury prevention could fit Public Health, but the posting lacks program detail and Type 6 suggests a change-of-grantee action, not a clear new pursuit.\"\n}"
+  ]
+ }
+}

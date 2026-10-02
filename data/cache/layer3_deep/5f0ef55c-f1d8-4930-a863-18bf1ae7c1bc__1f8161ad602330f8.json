@@ -1,0 +1,28 @@
+{
+ "grant_id": "5f0ef55c-f1d8-4930-a863-18bf1ae7c1bc",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "1f8161ad602330f85de1fb6d66de4bf6da7f6a05faa8a0df57a738a54f13468a",
+ "retrieved_at": "2026-10-02T19:50:34+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 2,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The assistance listing indicates a CDC injury prevention and control research/state-and-community program, but no listed NCDHHS objective names injury prevention, so the strategic link is not direct.",
+   "strategic_evidence_quote": "",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "States",
+   "owning_division": "DPH",
+   "operational_fit": 6,
+   "operational_reason": "DPH is the department's public health division and could plausibly administer a CDC injury prevention and control cooperative agreement, but the posting lacks program details to confirm fit.",
+   "restrictions": [],
+   "major_risk": "The announcement supplies almost no substantive program information, making it impossible to verify scope, requirements, or whether this is a current actionable opportunity.",
+   "recommended_for_review": false,
+   "one_line_rationale": "CDC injury prevention program could fit DPH, but the posting lacks detail and maps to no named NCDHHS objective; not worth coordinator time."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 2,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The assistance listing indicates a CDC injury prevention and control research/state-and-community program, but no listed NCDHHS objective names injury prevention, so the strategic link is not direct.\",\n  \"strategic_evidence_quote\": \"\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"States\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 6,\n  \"operational_reason\": \"DPH is the department's public health division and could plausibly administer a CDC injury prevention and control cooperative agreement, but the posting lacks program details to confirm fit.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The announcement supplies almost no substantive program information, making it impossible to verify scope, requirements, or whether this is a current actionable opportunity.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"CDC injury prevention program could fit DPH, but the posting lacks detail and maps to no named NCDHHS objective; not worth coordinator time.\"\n}"
+  ]
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "grant_id": "4e2240c3-a6ef-4034-be00-8d27dca92c4a",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "c414dfaef8034837025f597d1e7e8f01b585f6ac59e743e2ac201f85bb19504c",
+ "retrieved_at": "2026-10-02T19:51:11+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 4,
+   "matched_goal": "G5",
+   "matched_objective": "G5.O1",
+   "strategic_reason": "The grant funds enhanced national prion disease surveillance and diagnostic data collection, which could support data-driven public health decision-making.",
+   "strategic_evidence_quote": "The purpose is to continue an active surveillance program to help confirm suspected and clinically diagnosed cases of human prion disease and to monitor the occurrence of potentially emerging human prion diseases in the United States.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 5,
+   "operational_reason": "DPH conducts disease surveillance and laboratory work, but this award requires a specialized national prion diagnostic center that is not a routine NCDHHS laboratory function.",
+   "restrictions": [],
+   "major_risk": "The cooperative agreement likely continues an existing CDC-funded national center, so NCDHHS would face strong incumbency and would need specialized prion diagnostic laboratory capacity it may not have.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Low strategic fit; national prion diagnostic surveillance is not a named NCDHHS objective and requires specialized lab capacity beyond DPH's routine disease surveillance."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 4,\n  \"matched_goal\": \"G5\",\n  \"matched_objective\": \"G5.O1\",\n  \"strategic_reason\": \"The grant funds enhanced national prion disease surveillance and diagnostic data collection, which could support data-driven public health decision-making.\",\n  \"strategic_evidence_quote\": \"The purpose is to continue an active surveillance program to help confirm suspected and clinically diagnosed cases of human prion disease and to monitor the occurrence of potentially emerging human prion diseases in the United States.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 5,\n  \"operational_reason\": \"DPH conducts disease surveillance and laboratory work, but this award requires a specialized national prion diagnostic center that is not a routine NCDHHS laboratory function.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The cooperative agreement likely continues an existing CDC-funded national center, so NCDHHS would face strong incumbency and would need specialized prion diagnostic laboratory capacity it may not have.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Low strategic fit; national prion diagnostic surveillance is not a named NCDHHS objective and requires specialized lab capacity beyond DPH's routine disease surveillance.\"\n}"
+  ]
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "grant_id": "2288fb30-cdca-431b-b6a8-7b30e611fdab",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "14c9b079a4e564b6517d057b6163f2c2ccffbc22973af4f9042f068bf71202e0",
+ "retrieved_at": "2026-10-02T19:25:06+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 2,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "No listed objective addresses disaster medical surge, hospital preparedness, or catastrophic response.",
+   "strategic_evidence_quote": "Funding for one demonstration project that will help identify issues, develop leading practices, and demonstrate the potential effectiveness and viability of the RDHRS concept.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "political subdivisions, states, emergency medical services organizations",
+   "owning_division": "DPH",
+   "operational_fit": 8,
+   "operational_reason": "DPH already leads public health preparedness and works with local medical response partners including trauma systems and HCCs.",
+   "restrictions": [],
+   "major_risk": "Only one national demonstration project will be funded, making an award highly competitive and unlikely.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Does not advance listed goals and funds only one national pilot, despite fitting DPH preparedness work."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 2,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"No listed objective addresses disaster medical surge, hospital preparedness, or catastrophic response.\",\n  \"strategic_evidence_quote\": \"Funding for one demonstration project that will help identify issues, develop leading practices, and demonstrate the potential effectiveness and viability of the RDHRS concept.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"political subdivisions, states, emergency medical services organizations\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 8,\n  \"operational_reason\": \"DPH already leads public health preparedness and works with local medical response partners including trauma systems and HCCs.\",\n  \"restrictions\": [],\n  \"major_risk\": \"Only one national demonstration project will be funded, making an award highly competitive and unlikely.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Does not advance listed goals and funds only one national pilot, despite fitting DPH preparedness work.\"\n}"
+  ]
+ }
+}

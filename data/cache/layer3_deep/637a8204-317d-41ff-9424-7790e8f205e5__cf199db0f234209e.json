@@ -1,0 +1,30 @@
+{
+ "grant_id": "637a8204-317d-41ff-9424-7790e8f205e5",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "cf199db0f234209ea2c1ee9449c0451f6b3b84e3af36eda1de7e4bee1334459a",
+ "retrieved_at": "2026-10-02T19:58:01+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O4",
+   "strategic_reason": "The grant funds research on prenatal alcohol exposure prevention and FASD interventions, which directly supports improving women's health and birth outcomes.",
+   "strategic_evidence_quote": "This Notice of Funding Opportunity (NOFO) focuses on prevention and intervention strategies for fetal alcohol spectrum disorders (FASD) throughout the lifespan.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 5,
+   "operational_reason": "DPH houses maternal and child health, WIC, and public health surveillance programs, but a phased NIH clinical/translational research award is not its usual service delivery or funding mechanism.",
+   "restrictions": [
+    "Transition to the R33 phase is contingent on NIAAA evaluation of R61 milestones"
+   ],
+   "major_risk": "The grant is an NIH exploratory/developmental research mechanism requiring research or clinical trial infrastructure and milestone-gated continuation, which may exceed NCDHHS's typical program capacity.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Strong G2.O4 maternal and child health alignment, but NIH research structure and milestone risk mean DPH should assess feasibility, likely with an academic partner."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O4\",\n  \"strategic_reason\": \"The grant funds research on prenatal alcohol exposure prevention and FASD interventions, which directly supports improving women's health and birth outcomes.\",\n  \"strategic_evidence_quote\": \"This Notice of Funding Opportunity (NOFO) focuses on prevention and intervention strategies for fetal alcohol spectrum disorders (FASD) throughout the lifespan.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 5,\n  \"operational_reason\": \"DPH houses maternal and child health, WIC, and public health surveillance programs, but a phased NIH clinical/translational research award is not its usual service delivery or funding mechanism.\",\n  \"restrictions\": [\"Transition to the R33 phase is contingent on NIAAA evaluation of R61 milestones\"],\n  \"major_risk\": \"The grant is an NIH exploratory/developmental research mechanism requiring research or clinical trial infrastructure and milestone-gated continuation, which may exceed NCDHHS's typical program capacity.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Strong G2.O4 maternal and child health alignment, but NIH research structure and milestone risk mean DPH should assess feasibility, likely with an academic partner.\"\n}"
+  ]
+ }
+}

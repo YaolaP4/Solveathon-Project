@@ -1,0 +1,31 @@
+{
+ "grant_id": "b8b51aae-68fc-448a-bbca-5fbfd229a841",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "38eaa95a722a7e917a9aff2daca34d9c3964c03d3f48ab9a7a061ac650c78058",
+ "retrieved_at": "2026-10-02T19:26:40+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 2,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "This funds manufactured-food regulatory standards and food safety enforcement, which is not named in any NCDHHS strategic objective.",
+   "strategic_evidence_quote": "The purpose of the NOFO is to advance efforts for a nationally integrated food safety system (IFSS) by supporting Manufactured Food Regulatory Program Standards (MFRPS), dietary supplement safety and oversight programs, improved state compliance and enforcement infrastructure, and state Food Protection Task Force (FPTF) programs.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "limits eligibility to State, local, territorial, and tribal agencies and non-profit training entities that collaborate with 1 or more institutions of higher education.",
+   "owning_division": "DPH",
+   "operational_fit": 6,
+   "operational_reason": "DPH handles environmental health but manufactured-food regulation requires specific regulatory authority and information-sharing infrastructure.",
+   "restrictions": [
+    "Must have or be willing to enter into a 20.88 information disclosure agreement with FDA",
+    "Must have or be willing to procure a commissioning certificate to facilitate information sharing"
+   ],
+   "major_risk": "Applicant must have responsibility and authority for food regulation, which NCDHHS may not hold for manufactured foods.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Food safety regulation doesn't match NCDHHS strategic goals and likely sits outside DHHS authority."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 2,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"This funds manufactured-food regulatory standards and food safety enforcement, which is not named in any NCDHHS strategic objective.\",\n  \"strategic_evidence_quote\": \"The purpose of the NOFO is to advance efforts for a nationally integrated food safety system (IFSS) by supporting Manufactured Food Regulatory Program Standards (MFRPS), dietary supplement safety and oversight programs, improved state compliance and enforcement infrastructure, and state Food Protection Task Force (FPTF) programs.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"limits eligibility to State, local, territorial, and tribal agencies and non-profit training entities that collaborate with 1 or more institutions of higher education.\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 6,\n  \"operational_reason\": \"DPH handles environmental health but manufactured-food regulation requires specific regulatory authority and information-sharing infrastructure.\",\n  \"restrictions\": [\n    \"Must have or be willing to enter into a 20.88 information disclosure agreement with FDA\",\n    \"Must have or be willing to procure a commissioning certificate to facilitate information sharing\"\n  ],\n  \"major_risk\": \"Applicant must have responsibility and authority for food regulation, which NCDHHS may not hold for manufactured foods.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Food safety regulation doesn't match NCDHHS strategic goals and likely sits outside DHHS authority.\"\n}"
+  ]
+ }
+}

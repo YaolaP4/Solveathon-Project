@@ -1,0 +1,28 @@
+{
+ "grant_id": "ff7edf5f-3dc8-4e2b-94a9-c4e9b1e06d3c",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "2f4bd0ac8164d0bb5b36a23ad9a9d5839b4c0e352d7bf4b52bc9be8e37fb3f73",
+ "retrieved_at": "2026-10-02T19:59:40+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 4,
+   "matched_goal": "G4",
+   "matched_objective": "G4.O4",
+   "strategic_reason": "The grant would help build the occupational health workforce pipeline, which is adjacent to public health workforce support, but it is aimed at academic trainees rather than state or local health department staff.",
+   "strategic_evidence_quote": "NIOSH is mandated to provide an adequate supply of qualified personnel to carry out the purposes of the Occupational Safety and Health Act",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "ERCs are academic institutions that provide high-quality interdisciplinary graduate and post-graduate training, research training, continuing education, and outreach",
+   "owning_division": "DPH",
+   "operational_fit": 3,
+   "operational_reason": "DPH supports public health workforce and occupational health surveillance, but it does not operate a university-based graduate occupational safety and health training center.",
+   "restrictions": [],
+   "major_risk": "NCDHHS is not an academic institution and would be an atypical lead, so an application would likely be noncompetitive or ineligible.",
+   "recommended_for_review": false,
+   "one_line_rationale": "This funds university-based occupational safety and health training centers; NCDHHS is not an academic ERC and would have limited role."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 4,\n  \"matched_goal\": \"G4\",\n  \"matched_objective\": \"G4.O4\",\n  \"strategic_reason\": \"The grant would help build the occupational health workforce pipeline, which is adjacent to public health workforce support, but it is aimed at academic trainees rather than state or local health department staff.\",\n  \"strategic_evidence_quote\": \"NIOSH is mandated to provide an adequate supply of qualified personnel to carry out the purposes of the Occupational Safety and Health Act\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"ERCs are academic institutions that provide high-quality interdisciplinary graduate and post-graduate training, research training, continuing education, and outreach\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 3,\n  \"operational_reason\": \"DPH supports public health workforce and occupational health surveillance, but it does not operate a university-based graduate occupational safety and health training center.\",\n  \"restrictions\": [],\n  \"major_risk\": \"NCDHHS is not an academic institution and would be an atypical lead, so an application would likely be noncompetitive or ineligible.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"This funds university-based occupational safety and health training centers; NCDHHS is not an academic ERC and would have limited role.\"\n}"
+  ]
+ }
+}

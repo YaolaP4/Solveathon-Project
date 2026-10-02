@@ -1,0 +1,30 @@
+{
+ "grant_id": "2f7653ca-0a87-4ffc-95bb-f40387906f8c",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "9ac909e97d5ccf476f3336e5386c36deb2bc6a7637e425119ae5e7b29ad6bb58",
+ "retrieved_at": "2026-10-02T19:48:03+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 2,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The assistance listing suggests an injury prevention and control program, which is public health work but does not directly map to a named NCDHHS strategic objective.",
+   "strategic_evidence_quote": "",
+   "applicant_role": "unclear",
+   "eligibility_evidence_quote": "States, Universities, County, Small Business, Non-Profits Organization,",
+   "owning_division": "DPH",
+   "operational_fit": 7,
+   "operational_reason": "DPH would be the most natural home for a CDC Injury Prevention and Control cooperative agreement because it already handles epidemiology, surveillance, and injury and violence prevention programs.",
+   "restrictions": [
+    "Limited to Type 6 applications"
+   ],
+   "major_risk": "The announcement has no substantive project description and appears limited to Type 6 successor-in-interest applications, so it may not be a competitive opportunity NCDHHS can pursue.",
+   "recommended_for_review": false,
+   "one_line_rationale": "No substantive program description is provided and this appears limited to Type 6 applications, so no clear NCDHHS strategic or division fit can be determined."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 2,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The assistance listing suggests an injury prevention and control program, which is public health work but does not directly map to a named NCDHHS strategic objective.\",\n  \"strategic_evidence_quote\": \"\",\n  \"applicant_role\": \"unclear\",\n  \"eligibility_evidence_quote\": \"States, Universities, County, Small Business, Non-Profits Organization,\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 7,\n  \"operational_reason\": \"DPH would be the most natural home for a CDC Injury Prevention and Control cooperative agreement because it already handles epidemiology, surveillance, and injury and violence prevention programs.\",\n  \"restrictions\": [\"Limited to Type 6 applications\"],\n  \"major_risk\": \"The announcement has no substantive project description and appears limited to Type 6 successor-in-interest applications, so it may not be a competitive opportunity NCDHHS can pursue.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"No substantive program description is provided and this appears limited to Type 6 applications, so no clear NCDHHS strategic or division fit can be determined.\"\n}"
+  ]
+ }
+}

@@ -1,0 +1,32 @@
+{
+ "grant_id": "162979f5-6831-4553-9522-450d46d92b6d",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "d7bf8331dd9145ef08ab170712f23aa46f4fbbff064f4e48a637d494e298a21e",
+ "retrieved_at": "2026-10-02T19:58:24+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 4,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O2",
+   "strategic_reason": "The grant funds statistical and data management centers that collect, monitor, and analyze HIV clinical trial data, which aligns with using data and metrics to track health outcomes and disparities.",
+   "strategic_evidence_quote": "SDMCs manage clinical and laboratory data submitted by CTUs and the LC ensuring data quality, regulatory compliance, and continual reporting of protocol and site performance.",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 3,
+   "operational_reason": "DPH conducts disease prevention and surveillance, but this grant requires specialized multi-site clinical trials statistical and data management leadership that is not a core state health department function.",
+   "restrictions": [
+    "Requires coordination with a Leadership and Operations Center, Laboratory Center, and Clinical Trials Units",
+    "Continual reporting of protocol and site performance",
+    "Must follow NIH data sharing policies"
+   ],
+   "major_risk": "Highly specialized NIH research infrastructure award; NCDHHS would compete with academic research organizations and likely lacks a comparable clinical trials data coordinating center portfolio.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Funds HIV clinical trials data centers; relevant to public health but highly specialized research infrastructure outside NCDHHS's core service role, better suited to academic partners."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 4,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O2\",\n  \"strategic_reason\": \"The grant funds statistical and data management centers that collect, monitor, and analyze HIV clinical trial data, which aligns with using data and metrics to track health outcomes and disparities.\",\n  \"strategic_evidence_quote\": \"SDMCs manage clinical and laboratory data submitted by CTUs and the LC ensuring data quality, regulatory compliance, and continual reporting of protocol and site performance.\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 3,\n  \"operational_reason\": \"DPH conducts disease prevention and surveillance, but this grant requires specialized multi-site clinical trials statistical and data management leadership that is not a core state health department function.\",\n  \"restrictions\": [\n    \"Requires coordination with a Leadership and Operations Center, Laboratory Center, and Clinical Trials Units\",\n    \"Continual reporting of protocol and site performance\",\n    \"Must follow NIH data sharing policies\"\n  ],\n  \"major_risk\": \"Highly specialized NIH research infrastructure award; NCDHHS would compete with academic research organizations and likely lacks a comparable clinical trials data coordinating center portfolio.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Funds HIV clinical trials data centers; relevant to public health but highly specialized research infrastructure outside NCDHHS's core service role, better suited to academic partners.\"\n}"
+  ]
+ }
+}

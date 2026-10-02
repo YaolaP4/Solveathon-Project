@@ -1,0 +1,28 @@
+{
+ "grant_id": "f3ba2089-bbc7-4029-8b05-d6d11354d6db",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "50dcdfbfb1ebe72274df652c4ef0578631163d12708ccb9daae45aa5de034864",
+ "retrieved_at": "2026-10-02T19:52:17+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 3,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O4",
+   "strategic_reason": "The grant funds community-based organizations to provide supportive housing for homeless veterans, a vulnerable population, which aligns broadly with the Department's objective to invest in community-based partner capacity and reduce health access barriers.",
+   "strategic_evidence_quote": "provide transitional housing with wraparound supportive services to assist vulnerable Veterans move into permanent housing",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "none",
+   "operational_fit": 1,
+   "operational_reason": "No listed NCDHHS division operates VA-funded transitional housing for veterans, so the program would require new infrastructure rather than extending an existing function.",
+   "restrictions": [],
+   "major_risk": "This is only a forecast, not an open notice of funding, and NCDHHS is not a traditional GPD provider, so staff effort could be spent on an opportunity the agency likely would not lead.",
+   "recommended_for_review": false,
+   "one_line_rationale": "No open NOFO and no clear NCDHHS division; VA-funded veteran transitional housing is outside current agency programs."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 3,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O4\",\n  \"strategic_reason\": \"The grant funds community-based organizations to provide supportive housing for homeless veterans, a vulnerable population, which aligns broadly with the Department's objective to invest in community-based partner capacity and reduce health access barriers.\",\n  \"strategic_evidence_quote\": \"provide transitional housing with wraparound supportive services to assist vulnerable Veterans move into permanent housing\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 1,\n  \"operational_reason\": \"No listed NCDHHS division operates VA-funded transitional housing for veterans, so the program would require new infrastructure rather than extending an existing function.\",\n  \"restrictions\": [],\n  \"major_risk\": \"This is only a forecast, not an open notice of funding, and NCDHHS is not a traditional GPD provider, so staff effort could be spent on an opportunity the agency likely would not lead.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"No open NOFO and no clear NCDHHS division; VA-funded veteran transitional housing is outside current agency programs.\"\n}"
+  ]
+ }
+}

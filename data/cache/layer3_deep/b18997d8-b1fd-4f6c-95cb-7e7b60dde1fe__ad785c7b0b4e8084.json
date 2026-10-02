@@ -1,0 +1,31 @@
+{
+ "grant_id": "b18997d8-b1fd-4f6c-95cb-7e7b60dde1fe",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "ad785c7b0b4e808414df2fd3b89d90a38a975b0db36372b79585675bf699e279",
+ "retrieved_at": "2026-10-02T19:54:22+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O4",
+   "strategic_reason": "Funds testing of SBIRT/P for ATOD use and misuse in populations experiencing health disparities, an evidence-based substance use intervention aligned with NCDHHS's substance use crisis objective.",
+   "strategic_evidence_quote": "test innovative approaches to implementing SBIRT/P for alcohol, tobacco, and other drugs (ATOD) use and misuse in adult populations that experience health disparities",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DMHDDSUS",
+   "operational_fit": 6,
+   "operational_reason": "DMHDDSUS manages state substance use prevention and treatment services and could administer an SBIRT/P implementation research grant, though clinical trial work would require research partners.",
+   "restrictions": [
+    "Clinical Trial Required",
+    "Should leverage collaborations with healthcare and community partners"
+   ],
+   "major_risk": "NIH R01 clinical trial funds research rather than direct services and requires clinical research infrastructure that NCDHHS may not have, making it less valuable as a programmatic award.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Directly aligns with DMHDDSUS substance use objectives, but as an NIH clinical trial it may be better pursued with research partners than as direct service funding."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O4\",\n  \"strategic_reason\": \"Funds testing of SBIRT/P for ATOD use and misuse in populations experiencing health disparities, an evidence-based substance use intervention aligned with NCDHHS's substance use crisis objective.\",\n  \"strategic_evidence_quote\": \"test innovative approaches to implementing SBIRT/P for alcohol, tobacco, and other drugs (ATOD) use and misuse in adult populations that experience health disparities\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DMHDDSUS\",\n  \"operational_fit\": 6,\n  \"operational_reason\": \"DMHDDSUS manages state substance use prevention and treatment services and could administer an SBIRT/P implementation research grant, though clinical trial work would require research partners.\",\n  \"restrictions\": [\n    \"Clinical Trial Required\",\n    \"Should leverage collaborations with healthcare and community partners\"\n  ],\n  \"major_risk\": \"NIH R01 clinical trial funds research rather than direct services and requires clinical research infrastructure that NCDHHS may not have, making it less valuable as a programmatic award.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Directly aligns with DMHDDSUS substance use objectives, but as an NIH clinical trial it may be better pursued with research partners than as direct service funding.\"\n}"
+  ]
+ }
+}

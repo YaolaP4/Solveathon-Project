@@ -1,0 +1,30 @@
+{
+ "grant_id": "0ff3ace3-70fb-4ef7-b6ba-b93a899a2707",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "59fa4d66d0de5868aaee8c0cae265313d398f20273a523a5f23af894235b5bf8",
+ "retrieved_at": "2026-10-02T19:22:46+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "Tracking, preventing and controlling STIs in disproportionately impacted populations directly advances reducing health disparities.",
+   "strategic_evidence_quote": "The purpose of this NOFO is to track, prevent, and control three common STIs: syphilis, gonorrhea, and chlamydia.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "All fifty (50) states, the District of Columbia, the US Virgin Islands and Puerto Rico are eligible to apply.",
+   "owning_division": "DPH",
+   "operational_fit": 10,
+   "operational_reason": "STI surveillance, prevention and control is core ongoing work of public health epidemiology and local health departments.",
+   "restrictions": [
+    "Required collaboration with partners to address interconnected comorbidities and sexual health"
+   ],
+   "major_risk": "Formula-based statewide award may be modest relative to ongoing surveillance, prevention and coordination workload.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Directly funds state STI prevention and surveillance, core DPH work advancing health access and reducing disparities."
+  },
+  "attempts": [
+   "{\"strategic_alignment\": 8, \"matched_goal\": \"G1\", \"matched_objective\": \"G1.O1\", \"strategic_reason\": \"Tracking, preventing and controlling STIs in disproportionately impacted populations directly advances reducing health disparities.\", \"strategic_evidence_quote\": \"The purpose of this NOFO is to track, prevent, and control three common STIs: syphilis, gonorrhea, and chlamydia.\", \"applicant_role\": \"lead\", \"eligibility_evidence_quote\": \"All fifty (50) states, the District of Columbia, the US Virgin Islands and Puerto Rico are eligible to apply.\", \"owning_division\": \"DPH\", \"operational_fit\": 10, \"operational_reason\": \"STI surveillance, prevention and control is core ongoing work of public health epidemiology and local health departments.\", \"restrictions\": [\"Required collaboration with partners to address interconnected comorbidities and sexual health\"], \"major_risk\": \"Formula-based statewide award may be modest relative to ongoing surveillance, prevention and coordination workload.\", \"recommended_for_review\": true, \"one_line_rationale\": \"Directly funds state STI prevention and surveillance, core DPH work advancing health access and reducing disparities.\"}"
+  ]
+ }
+}

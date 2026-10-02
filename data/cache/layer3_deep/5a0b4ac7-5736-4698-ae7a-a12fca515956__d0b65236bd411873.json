@@ -1,0 +1,31 @@
+{
+ "grant_id": "5a0b4ac7-5736-4698-ae7a-a12fca515956",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "d0b65236bd411873b221fc2fdca3e3c23741c645820d6e3f76d229a719d57fe7",
+ "retrieved_at": "2026-10-02T19:58:46+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 2,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O2",
+   "strategic_reason": "The field epidemiology sites collect biological and environmental data on chronic kidney disease in agricultural/rural populations, which could inform NCDHHS health disparity tracking, though the grant is extramural research rather than direct service or dashboard work.",
+   "strategic_evidence_quote": "This NOFO requests renewal applications for the Field Epidemiology Sites that will continue to identify, recruit, and retain participants in CKDu endemic areas, conduct study visits, and collect biological and environmental samples.",
+   "applicant_role": "unclear",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 3,
+   "operational_reason": "DPH has relevant epidemiology, environmental health, and chronic disease surveillance capacity, but this would be international field research under a limited NIH consortium rather than routine state public health practice.",
+   "restrictions": [
+    "Limited competition renewal for existing CURE Field Epidemiology Sites",
+    "Field work in CKDu endemic areas with biological and environmental sample collection"
+   ],
+   "major_risk": "Limited competition means NCDHHS may not be eligible unless it is already a CURE field epidemiology site, and the focus on CKDu endemic areas in low- and middle-income countries limits direct value to North Carolina.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Limited-competition NIH research renewal for CKDu field sites, mostly outside the U.S.; not a practical NCDHHS fit despite public-health overlap."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 2,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O2\",\n  \"strategic_reason\": \"The field epidemiology sites collect biological and environmental data on chronic kidney disease in agricultural/rural populations, which could inform NCDHHS health disparity tracking, though the grant is extramural research rather than direct service or dashboard work.\",\n  \"strategic_evidence_quote\": \"This NOFO requests renewal applications for the Field Epidemiology Sites that will continue to identify, recruit, and retain participants in CKDu endemic areas, conduct study visits, and collect biological and environmental samples.\",\n  \"applicant_role\": \"unclear\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 3,\n  \"operational_reason\": \"DPH has relevant epidemiology, environmental health, and chronic disease surveillance capacity, but this would be international field research under a limited NIH consortium rather than routine state public health practice.\",\n  \"restrictions\": [\n    \"Limited competition renewal for existing CURE Field Epidemiology Sites\",\n    \"Field work in CKDu endemic areas with biological and environmental sample collection\"\n  ],\n  \"major_risk\": \"Limited competition means NCDHHS may not be eligible unless it is already a CURE field epidemiology site, and the focus on CKDu endemic areas in low- and middle-income countries limits direct value to North Carolina.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Limited-competition NIH research renewal for CKDu field sites, mostly outside the U.S.; not a practical NCDHHS fit despite public-health overlap.\"\n}"
+  ]
+ }
+}

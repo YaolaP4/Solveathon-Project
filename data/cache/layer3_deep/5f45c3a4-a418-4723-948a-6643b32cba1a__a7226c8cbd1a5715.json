@@ -1,0 +1,28 @@
+{
+ "grant_id": "5f45c3a4-a418-4723-948a-6643b32cba1a",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "a7226c8cbd1a57159696190043bb9e876f8578f598a7f2127703519088162285",
+ "retrieved_at": "2026-10-02T19:51:56+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O2",
+   "strategic_reason": "The grant funds longitudinal data collection and analysis on health outcomes for people with spina bifida, which supports tracking disparities and outcomes for a population facing greater health challenges.",
+   "strategic_evidence_quote": "collect high-quality longitudinal data on children and adults with spina bifida (SB) who receive care in specialized spina bifida clinics participating in the National Spina Bifida Patient Registry (NSBPR)",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 7,
+   "operational_reason": "DPH already conducts birth defects surveillance and epidemiology, so managing or coordinating spina bifida registry data is an extension of its existing role.",
+   "restrictions": [],
+   "major_risk": "Success depends on recruiting and retaining specialized spina bifida clinics already participating in the NSBPR, which NCDHHS does not directly operate.",
+   "recommended_for_review": true,
+   "one_line_rationale": "This CDC cooperative agreement funds spina bifida registry data to improve care; it fits DPH surveillance and health access data goals."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O2\",\n  \"strategic_reason\": \"The grant funds longitudinal data collection and analysis on health outcomes for people with spina bifida, which supports tracking disparities and outcomes for a population facing greater health challenges.\",\n  \"strategic_evidence_quote\": \"collect high-quality longitudinal data on children and adults with spina bifida (SB) who receive care in specialized spina bifida clinics participating in the National Spina Bifida Patient Registry (NSBPR)\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 7,\n  \"operational_reason\": \"DPH already conducts birth defects surveillance and epidemiology, so managing or coordinating spina bifida registry data is an extension of its existing role.\",\n  \"restrictions\": [],\n  \"major_risk\": \"Success depends on recruiting and retaining specialized spina bifida clinics already participating in the NSBPR, which NCDHHS does not directly operate.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"This CDC cooperative agreement funds spina bifida registry data to improve care; it fits DPH surveillance and health access data goals.\"\n}"
+  ]
+ }
+}

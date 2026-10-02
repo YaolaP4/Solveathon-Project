@@ -1,0 +1,31 @@
+{
+ "grant_id": "4802584e-01a8-4435-9ce9-710fbc85cba0",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "c13cce38502af301ee5c5ce86d9fd05b35c409cce8ee0ba3e8b907f18d0016a8",
+ "retrieved_at": "2026-10-02T19:55:37+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 0,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds flood mitigation for NFIP-insured properties, which is outside NCDHHS's health and human services strategic goals and objectives.",
+   "strategic_evidence_quote": "FMA funds a variety of flood mitigation activities that are designed to reduce flood risk to NFIP policyholders in an effort to reduce the NFIP’s financial exposure.",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "makes federal funds available to states, U.S. territories, federally recognized Indian/Native American Tribal Governments, and local governments",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "No NCDHHS division administers FEMA flood mitigation or NFIP-related hazard mitigation; this role sits with state emergency management and hazard mitigation, not health and human services.",
+   "restrictions": [
+    "Funding is limited to buildings and structures insured under the National Flood Insurance Program (NFIP) and within NFIP-participating communities.",
+    "Local governments must apply through their State or Territory, so a state applicant would need to administer subawards."
+   ],
+   "major_risk": "NCDHHS is not the state's floodplain or hazard mitigation agency, so pursuing this FEMA grant would be outside its authority and require capabilities it does not have.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Flood mitigation for NFIP-insured properties is outside NCDHHS's health and human services mission; no division has authority to administer FEMA hazard mitigation; route to emergency management."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 0,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds flood mitigation for NFIP-insured properties, which is outside NCDHHS's health and human services strategic goals and objectives.\",\n  \"strategic_evidence_quote\": \"FMA funds a variety of flood mitigation activities that are designed to reduce flood risk to NFIP policyholders in an effort to reduce the NFIP’s financial exposure.\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"makes federal funds available to states, U.S. territories, federally recognized Indian/Native American Tribal Governments, and local governments\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"No NCDHHS division administers FEMA flood mitigation or NFIP-related hazard mitigation; this role sits with state emergency management and hazard mitigation, not health and human services.\",\n  \"restrictions\": [\n    \"Funding is limited to buildings and structures insured under the National Flood Insurance Program (NFIP) and within NFIP-participating communities.\",\n    \"Local governments must apply through their State or Territory, so a state applicant would need to administer subawards.\"\n  ],\n  \"major_risk\": \"NCDHHS is not the state's floodplain or hazard mitigation agency, so pursuing this FEMA grant would be outside its authority and require capabilities it does not have.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Flood mitigation for NFIP-insured properties is outside NCDHHS's health and human services mission; no division has authority to administer FEMA hazard mitigation; route to emergency management.\"\n}"
+  ]
+ }
+}

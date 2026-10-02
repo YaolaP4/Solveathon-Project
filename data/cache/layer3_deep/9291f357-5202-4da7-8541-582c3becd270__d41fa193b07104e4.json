@@ -1,0 +1,28 @@
+{
+ "grant_id": "9291f357-5202-4da7-8541-582c3becd270",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "d41fa193b07104e4700fbb7b99efa69d667283773ca82d1cd572a4ec77862a86",
+ "retrieved_at": "2026-10-02T19:49:17+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 10,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O3",
+   "strategic_reason": "The grant directly funds demonstration of a universal symbol to prompt requests for language assistance services, which is a named language-access barrier mitigation under G1.O3.",
+   "strategic_evidence_quote": "demonstration projects that support and evaluate the use of a universal symbol to inform people about the availability of language assistance services in health settings",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "Eligible applicants include any private nonprofit or public entity located in a State.",
+   "owning_division": "DPH",
+   "operational_fit": 8,
+   "operational_reason": "DPH already coordinates local health departments and public health access initiatives, so it can realistically pilot and evaluate the symbol in health settings.",
+   "restrictions": [],
+   "major_risk": "The universal symbol was still being developed in FY2024, so the intervention is unproven and the likely 12-month demonstration period may yield limited evidence.",
+   "recommended_for_review": true,
+   "one_line_rationale": "This grant directly funds language-access demonstrations aligned with G1.O3; DPH could run it through local health departments."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 10,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O3\",\n  \"strategic_reason\": \"The grant directly funds demonstration of a universal symbol to prompt requests for language assistance services, which is a named language-access barrier mitigation under G1.O3.\",\n  \"strategic_evidence_quote\": \"demonstration projects that support and evaluate the use of a universal symbol to inform people about the availability of language assistance services in health settings\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"Eligible applicants include any private nonprofit or public entity located in a State.\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 8,\n  \"operational_reason\": \"DPH already coordinates local health departments and public health access initiatives, so it can realistically pilot and evaluate the symbol in health settings.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The universal symbol was still being developed in FY2024, so the intervention is unproven and the likely 12-month demonstration period may yield limited evidence.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"This grant directly funds language-access demonstrations aligned with G1.O3; DPH could run it through local health departments.\"\n}"
+  ]
+ }
+}

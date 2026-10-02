@@ -1,0 +1,28 @@
+{
+ "grant_id": "1fc0e15a-85eb-4a37-b792-002fbfce5582",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "cc11e722f241c2ec77e06855cc5dbb61d46f487f9b9c580917f57b92ad224ff1",
+ "retrieved_at": "2026-10-02T19:57:17+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 3,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "The grant builds cancer epidemiology cohorts that could ultimately generate evidence to reduce cancer-related health disparities, but it does not directly fund health access or services.",
+   "strategic_evidence_quote": "supports the establishment of the next generation of cancer epidemiology cohorts to address specific knowledge gaps in cancer etiology and survivorship.",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 4,
+   "operational_reason": "DPH oversees chronic disease epidemiology and surveillance, but prospective cancer cohort research is typically led by academic institutions rather than the state health department.",
+   "restrictions": [],
+   "major_risk": "NCDHHS would likely be an atypical lead for a long-term NIH research cohort, requiring substantial academic partnerships and research infrastructure that DPH does not routinely operate.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Large NIH cancer cohort research grant only indirectly fits NCDHHS health access goals; DPH could partner but is not a natural lead."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 3,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"The grant builds cancer epidemiology cohorts that could ultimately generate evidence to reduce cancer-related health disparities, but it does not directly fund health access or services.\",\n  \"strategic_evidence_quote\": \"supports the establishment of the next generation of cancer epidemiology cohorts to address specific knowledge gaps in cancer etiology and survivorship.\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 4,\n  \"operational_reason\": \"DPH oversees chronic disease epidemiology and surveillance, but prospective cancer cohort research is typically led by academic institutions rather than the state health department.\",\n  \"restrictions\": [],\n  \"major_risk\": \"NCDHHS would likely be an atypical lead for a long-term NIH research cohort, requiring substantial academic partnerships and research infrastructure that DPH does not routinely operate.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Large NIH cancer cohort research grant only indirectly fits NCDHHS health access goals; DPH could partner but is not a natural lead.\"\n}"
+  ]
+ }
+}

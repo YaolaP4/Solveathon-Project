@@ -1,0 +1,31 @@
+{
+ "grant_id": "eba5be60-4531-4ddf-aa56-6b1d419155ce",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "e976ce9814b550056ca45505a20a54b07deabd36c689c08c1fd79029d332c1d3",
+ "retrieved_at": "2026-10-02T19:47:52+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 3,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds state food testing laboratory capacity and food defense preparedness, which supports public health laboratory infrastructure but does not directly advance a named NCDHHS strategic objective.",
+   "strategic_evidence_quote": "enhance the capacity and capabilities of state human and animal food testing laboratories in support of an integrated food safety system (IFSS)",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 8,
+   "operational_reason": "DPH operates the state public health laboratory and environmental health programs, making this laboratory capacity cooperative agreement a natural extension of its existing work.",
+   "restrictions": [
+    "Applicant organizations applying for product testing tracks must be accredited to ISO 17025 in at least one human or animal food testing method applicable to the discipline for which they are applying.",
+    "Applicant organizations applying to any track other than Whole Genome Sequencing must have a valid 20.88 agreement with FDA prior to the time of application."
+   ],
+   "major_risk": "The opportunity may be limited to existing FDA-aligned food testing laboratories because it requires ISO 17025 accreditation and a valid 20.88 agreement with FDA prior to application.",
+   "recommended_for_review": true,
+   "one_line_rationale": "This FDA cooperative agreement funds state food testing laboratory capacity which fits DPH's public health laboratory and environmental health role though it is not tied to named NCDHHS strategic objective."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 3,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds state food testing laboratory capacity and food defense preparedness, which supports public health laboratory infrastructure but does not directly advance a named NCDHHS strategic objective.\",\n  \"strategic_evidence_quote\": \"enhance the capacity and capabilities of state human and animal food testing laboratories in support of an integrated food safety system (IFSS)\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 8,\n  \"operational_reason\": \"DPH operates the state public health laboratory and environmental health programs, making this laboratory capacity cooperative agreement a natural extension of its existing work.\",\n  \"restrictions\": [\n    \"Applicant organizations applying for product testing tracks must be accredited to ISO 17025 in at least one human or animal food testing method applicable to the discipline for which they are applying.\",\n    \"Applicant organizations applying to any track other than Whole Genome Sequencing must have a valid 20.88 agreement with FDA prior to the time of application.\"\n  ],\n  \"major_risk\": \"The opportunity may be limited to existing FDA-aligned food testing laboratories because it requires ISO 17025 accreditation and a valid 20.88 agreement with FDA prior to application.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"This FDA cooperative agreement funds state food testing laboratory capacity which fits DPH's public health laboratory and environmental health role though it is not tied to named NCDHHS strategic objective.\"\n}"
+  ]
+ }
+}

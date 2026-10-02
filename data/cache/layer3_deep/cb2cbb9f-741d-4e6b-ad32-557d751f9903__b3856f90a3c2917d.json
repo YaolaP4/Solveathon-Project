@@ -1,0 +1,28 @@
+{
+ "grant_id": "cb2cbb9f-741d-4e6b-ad32-557d751f9903",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "b3856f90a3c2917db06c019001d39ad1d17f9e0da481888a624f0bbbe41efda7",
+ "retrieved_at": "2026-10-02T19:50:47+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 7,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O2",
+   "strategic_reason": "The grant funds home studies and post-release services to place children in safe homes and support their well-being, which directly parallels the child welfare safety, permanency, and well-being focus of G2.O2.",
+   "strategic_evidence_quote": "The goal is to make sure children are placed in safe homes and have the support they need to thrive while their immigration cases move forward.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DSS",
+   "operational_fit": 6,
+   "operational_reason": "DSS already performs child welfare, home safety, and permanency work, but this program serves a federal immigration-specific population rather than its usual state child welfare caseload.",
+   "restrictions": [],
+   "major_risk": "NCDHHS does not have routine jurisdiction over unaccompanied alien children, and this ORR program is typically operated by nonprofits with immigration case management experience, making it an unfamiliar compliance-heavy program rather than a core state child welfare function.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Fits G2.O2 child safety and permanency and state child welfare expertise in DSS, but serves a federal immigration-specific population with high ORR compliance demands."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 7,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O2\",\n  \"strategic_reason\": \"The grant funds home studies and post-release services to place children in safe homes and support their well-being, which directly parallels the child welfare safety, permanency, and well-being focus of G2.O2.\",\n  \"strategic_evidence_quote\": \"The goal is to make sure children are placed in safe homes and have the support they need to thrive while their immigration cases move forward.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DSS\",\n  \"operational_fit\": 6,\n  \"operational_reason\": \"DSS already performs child welfare, home safety, and permanency work, but this program serves a federal immigration-specific population rather than its usual state child welfare caseload.\",\n  \"restrictions\": [],\n  \"major_risk\": \"NCDHHS does not have routine jurisdiction over unaccompanied alien children, and this ORR program is typically operated by nonprofits with immigration case management experience, making it an unfamiliar compliance-heavy program rather than a core state child welfare function.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Fits G2.O2 child safety and permanency and state child welfare expertise in DSS, but serves a federal immigration-specific population with high ORR compliance demands.\"\n}"
+  ]
+ }
+}

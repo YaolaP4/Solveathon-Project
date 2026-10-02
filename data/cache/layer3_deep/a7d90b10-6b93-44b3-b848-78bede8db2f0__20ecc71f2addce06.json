@@ -1,0 +1,31 @@
+{
+ "grant_id": "a7d90b10-6b93-44b3-b848-78bede8db2f0",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "20ecc71f2addce0610d5c9a1801a3005ab7ca3d914f67efb0a1903bb1dd90579",
+ "retrieved_at": "2026-10-02T19:53:59+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 4,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O2",
+   "strategic_reason": "The center would improve collection and analysis of injury and illness data for agricultural youth, helping track health disparities and outcomes for a population with greater health challenges.",
+   "strategic_evidence_quote": "Improve the collection and analysis of injury, illness, and fatality data for youth working and living in AgFF environments.",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 4,
+   "operational_reason": "DPH houses epidemiology and injury/illness surveillance, but leading a national NIOSH research center would require academic occupational safety research partners beyond its usual role.",
+   "restrictions": [
+    "Cooperative agreement with substantial federal involvement",
+    "Must maintain capacity for national-scope research, implementation, dissemination, and related activities"
+   ],
+   "major_risk": "A single national center is likely to be awarded to an established agricultural safety research institution, and NCDHHS would need significant research capacity and partnerships to be competitive.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Relevant childhood agricultural injury data aligns with health-disparity data goals, but a national NIOSH research center is outside typical NCDHHS service role and likely better led by a university."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 4,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O2\",\n  \"strategic_reason\": \"The center would improve collection and analysis of injury and illness data for agricultural youth, helping track health disparities and outcomes for a population with greater health challenges.\",\n  \"strategic_evidence_quote\": \"Improve the collection and analysis of injury, illness, and fatality data for youth working and living in AgFF environments.\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 4,\n  \"operational_reason\": \"DPH houses epidemiology and injury/illness surveillance, but leading a national NIOSH research center would require academic occupational safety research partners beyond its usual role.\",\n  \"restrictions\": [\n    \"Cooperative agreement with substantial federal involvement\",\n    \"Must maintain capacity for national-scope research, implementation, dissemination, and related activities\"\n  ],\n  \"major_risk\": \"A single national center is likely to be awarded to an established agricultural safety research institution, and NCDHHS would need significant research capacity and partnerships to be competitive.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Relevant childhood agricultural injury data aligns with health-disparity data goals, but a national NIOSH research center is outside typical NCDHHS service role and likely better led by a university.\"\n}"
+  ]
+ }
+}

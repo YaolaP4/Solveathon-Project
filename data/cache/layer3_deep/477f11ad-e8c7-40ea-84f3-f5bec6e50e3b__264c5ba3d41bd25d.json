@@ -1,0 +1,28 @@
+{
+ "grant_id": "477f11ad-e8c7-40ea-84f3-f5bec6e50e3b",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "264c5ba3d41bd25dfb9664e9ba221f456f113b308bd55d6a456928976da15675",
+ "retrieved_at": "2026-10-02T19:45:58+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O4",
+   "strategic_reason": "This NOFO funds state perinatal quality collaboratives that improve care for pregnant and postpartum women and newborns, directly supporting G2.O4's focus on improving women's health and birth outcomes.",
+   "strategic_evidence_quote": "The purpose of this multi-component NOFO is to improve the health of pregnant and postpartum women and their newborns through quality improvement.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 9,
+   "operational_reason": "DPH already houses maternal and child health programs and quality improvement work, so this is an extension of its existing role.",
+   "restrictions": [],
+   "major_risk": "The cooperative agreement's expected strategies include building data systems and developing partnerships, so it may carry substantial infrastructure and coordination burden before improving outcomes.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Directly funds quality improvement for maternal and newborn outcomes, a DPH maternal-child health priority under G2.O4."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O4\",\n  \"strategic_reason\": \"This NOFO funds state perinatal quality collaboratives that improve care for pregnant and postpartum women and newborns, directly supporting G2.O4's focus on improving women's health and birth outcomes.\",\n  \"strategic_evidence_quote\": \"The purpose of this multi-component NOFO is to improve the health of pregnant and postpartum women and their newborns through quality improvement.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DPH already houses maternal and child health programs and quality improvement work, so this is an extension of its existing role.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The cooperative agreement's expected strategies include building data systems and developing partnerships, so it may carry substantial infrastructure and coordination burden before improving outcomes.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Directly funds quality improvement for maternal and newborn outcomes, a DPH maternal-child health priority under G2.O4.\"\n}"
+  ]
+ }
+}

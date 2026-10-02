@@ -1,0 +1,30 @@
+{
+ "grant_id": "72bd1f82-d3f8-4226-872e-fc254dd21a6a",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "8ae5a1a6e1d9febf2e6080571dd6f75e4f6c0bcc13593b0a5947ea8789c44c96",
+ "retrieved_at": "2026-10-02T19:57:32+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 7,
+   "matched_goal": "G5",
+   "matched_objective": "G5.O1",
+   "strategic_reason": "The grant funds using longitudinal data systems to provide evidence for state program and policy decisions, aligning with NCDHHS's goal to foster data-driven decision-making.",
+   "strategic_evidence_quote": "state agencies’ use of their statewide longitudinal data systems (SLDSs) to provide evidence for their own program and policy decisions",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "Eligible State agencies may apply alone, or in conjunction with research organizations such as universities and research firms, and/or with other appropriate organizations (such as other State agencies or local educational agencies).",
+   "owning_division": "DCFW",
+   "operational_fit": 5,
+   "operational_reason": "DCFW has the early intervention role for young children with disabilities but does not control the K-12 SLDS or special education policy authority, so it would need DPI and research partners.",
+   "restrictions": [
+    "Applications must include the State agency or State postsecondary system responsible for the education issue, program, or policy to be examined."
+   ],
+   "major_risk": "The core data and policy authority sits with the State educational agency, so NCDHHS would likely be limited to early intervention and would need significant research capacity to compete.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Special education SLDS work is primarily DPI/SEA; NCDHHS fits only through early intervention and lacks the research/data-system role, so it is not a priority."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 7,\n  \"matched_goal\": \"G5\",\n  \"matched_objective\": \"G5.O1\",\n  \"strategic_reason\": \"The grant funds using longitudinal data systems to provide evidence for state program and policy decisions, aligning with NCDHHS's goal to foster data-driven decision-making.\",\n  \"strategic_evidence_quote\": \"state agencies’ use of their statewide longitudinal data systems (SLDSs) to provide evidence for their own program and policy decisions\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"Eligible State agencies may apply alone, or in conjunction with research organizations such as universities and research firms, and/or with other appropriate organizations (such as other State agencies or local educational agencies).\",\n  \"owning_division\": \"DCFW\",\n  \"operational_fit\": 5,\n  \"operational_reason\": \"DCFW has the early intervention role for young children with disabilities but does not control the K-12 SLDS or special education policy authority, so it would need DPI and research partners.\",\n  \"restrictions\": [\n    \"Applications must include the State agency or State postsecondary system responsible for the education issue, program, or policy to be examined.\"\n  ],\n  \"major_risk\": \"The core data and policy authority sits with the State educational agency, so NCDHHS would likely be limited to early intervention and would need significant research capacity to compete.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Special education SLDS work is primarily DPI/SEA; NCDHHS fits only through early intervention and lacks the research/data-system role, so it is not a priority.\"\n}"
+  ]
+ }
+}

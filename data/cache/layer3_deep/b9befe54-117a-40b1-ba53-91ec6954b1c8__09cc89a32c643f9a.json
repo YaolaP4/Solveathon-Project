@@ -1,0 +1,28 @@
+{
+ "grant_id": "b9befe54-117a-40b1-ba53-91ec6954b1c8",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "09cc89a32c643f9a62680fe2a342764419728000923d6658a9e3acc27f7d3a06",
+ "retrieved_at": "2026-10-02T19:26:16+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O1",
+   "strategic_reason": "It funds navigation and peer support for families of children with special health care needs to access services, advancing care for children with complex needs.",
+   "strategic_evidence_quote": "provide information, education, technical assistance, and peer support to families of children and youth with special health care needs (CYSHCN) and the professionals who serve them",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "Eligible applicants include any domestic public or private entity.",
+   "owning_division": "DPH",
+   "operational_fit": 8,
+   "operational_reason": "DPH already leads maternal and child health work including services for children with special health care needs.",
+   "restrictions": [],
+   "major_risk": "Program is historically family-led peer support, so a state-agency-led application may be less competitive or credible to families.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Helps families of children with special health needs navigate care, supporting child well-being; DPH maternal-child health could lead."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O1\",\n  \"strategic_reason\": \"It funds navigation and peer support for families of children with special health care needs to access services, advancing care for children with complex needs.\",\n  \"strategic_evidence_quote\": \"provide information, education, technical assistance, and peer support to families of children and youth with special health care needs (CYSHCN) and the professionals who serve them\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"Eligible applicants include any domestic public or private entity.\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 8,\n  \"operational_reason\": \"DPH already leads maternal and child health work including services for children with special health care needs.\",\n  \"restrictions\": [],\n  \"major_risk\": \"Program is historically family-led peer support, so a state-agency-led application may be less competitive or credible to families.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Helps families of children with special health needs navigate care, supporting child well-being; DPH maternal-child health could lead.\"\n}"
+  ]
+ }
+}

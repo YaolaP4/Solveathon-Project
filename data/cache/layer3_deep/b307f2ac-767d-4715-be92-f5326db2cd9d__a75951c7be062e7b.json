@@ -1,0 +1,30 @@
+{
+ "grant_id": "b307f2ac-767d-4715-be92-f5326db2cd9d",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "a75951c7be062e7bdbee16b8992b05458a18596cd32cfb41c0467cb3efeac475",
+ "retrieved_at": "2026-10-02T19:56:35+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 1,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds construction worker safety and health research, which does not advance any named NCDHHS strategic objective.",
+   "strategic_evidence_quote": "serve as a leader in research translation and research-to-practice for the protection of construction workers in the U.S.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "none",
+   "operational_fit": 1,
+   "operational_reason": "No NCDHHS division has an occupational safety and health research or construction-safety mission; North Carolina occupational safety is led by the Department of Labor.",
+   "restrictions": [
+    "Collaborations with other academic institutions, nonprofit organizations, and other occupational safety and health-focused groups are expected."
+   ],
+   "major_risk": "NCDHHS would be outside its program authority and would need to build construction safety research capacity from scratch against established NIOSH-funded academic centers.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Does not fit NCDHHS strategic goals; construction safety research is NIOSH/NC Department of Labor territory, and no DHHS division owns this work."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 1,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds construction worker safety and health research, which does not advance any named NCDHHS strategic objective.\",\n  \"strategic_evidence_quote\": \"serve as a leader in research translation and research-to-practice for the protection of construction workers in the U.S.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 1,\n  \"operational_reason\": \"No NCDHHS division has an occupational safety and health research or construction-safety mission; North Carolina occupational safety is led by the Department of Labor.\",\n  \"restrictions\": [\"Collaborations with other academic institutions, nonprofit organizations, and other occupational safety and health-focused groups are expected.\"],\n  \"major_risk\": \"NCDHHS would be outside its program authority and would need to build construction safety research capacity from scratch against established NIOSH-funded academic centers.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Does not fit NCDHHS strategic goals; construction safety research is NIOSH/NC Department of Labor territory, and no DHHS division owns this work.\"\n}"
+  ]
+ }
+}

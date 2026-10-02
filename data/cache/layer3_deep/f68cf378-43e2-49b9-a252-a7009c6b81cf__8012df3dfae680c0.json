@@ -1,0 +1,28 @@
+{
+ "grant_id": "f68cf378-43e2-49b9-a252-a7009c6b81cf",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "8012df3dfae680c0833ea6fdb49a9e160d5345e4d363904fd93b1e1dfd902c9d",
+ "retrieved_at": "2026-10-02T19:46:02+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O4",
+   "strategic_reason": "MIECHV home visiting directly advances G2.O4 by delivering voluntary, evidence-based services to pregnant women and families with young children to improve maternal and child health and birth outcomes.",
+   "strategic_evidence_quote": "improve maternal and child health, early childhood development, and family well-being by providing pregnant women and families with young children voluntary, evidence-based home visiting services.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "All 50 states and 6 jurisdictions serving the District of Columbia, Puerto Rico, Guam, the U.S. Virgin Islands, the Commonwealth of the Northern Mariana Islands, and American Samoa.",
+   "owning_division": "DCFW",
+   "operational_fit": 10,
+   "operational_reason": "DCFW's existing portfolio explicitly includes home visiting and early intervention, so administering this grant is an extension of current division work.",
+   "restrictions": [],
+   "major_risk": "The eligibility structure allows currently funded nonprofit organizations to apply if the state does not, so NCDHHS could lose state leadership or face incumbent competition.",
+   "recommended_for_review": true,
+   "one_line_rationale": "MIECHV directly funds home visiting that improves maternal and child health and birth outcomes; NCDHHS's Child and Family Well-Being division already runs home visiting, making this a strong fit."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O4\",\n  \"strategic_reason\": \"MIECHV home visiting directly advances G2.O4 by delivering voluntary, evidence-based services to pregnant women and families with young children to improve maternal and child health and birth outcomes.\",\n  \"strategic_evidence_quote\": \"improve maternal and child health, early childhood development, and family well-being by providing pregnant women and families with young children voluntary, evidence-based home visiting services.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"All 50 states and 6 jurisdictions serving the District of Columbia, Puerto Rico, Guam, the U.S. Virgin Islands, the Commonwealth of the Northern Mariana Islands, and American Samoa.\",\n  \"owning_division\": \"DCFW\",\n  \"operational_fit\": 10,\n  \"operational_reason\": \"DCFW's existing portfolio explicitly includes home visiting and early intervention, so administering this grant is an extension of current division work.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The eligibility structure allows currently funded nonprofit organizations to apply if the state does not, so NCDHHS could lose state leadership or face incumbent competition.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"MIECHV directly funds home visiting that improves maternal and child health and birth outcomes; NCDHHS's Child and Family Well-Being division already runs home visiting, making this a strong fit.\"\n}"
+  ]
+ }
+}

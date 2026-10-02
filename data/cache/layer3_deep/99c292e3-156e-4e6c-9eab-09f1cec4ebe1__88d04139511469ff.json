@@ -1,0 +1,30 @@
+{
+ "grant_id": "99c292e3-156e-4e6c-9eab-09f1cec4ebe1",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "88d04139511469ff2c619f4f2194a56f8d68d4408890d038847caee4426d8113",
+ "retrieved_at": "2026-10-02T19:53:53+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O3",
+   "strategic_reason": "This funds research on navigation models that triage mental health acuity and link families to mental health services, directly building the evidence base for NCDHHS's behavioral health referral and access work under G3.O3.",
+   "strategic_evidence_quote": "The purpose of this NOFO is to build research about the effectiveness, implementation, and optimization of family navigation ED diversion models for non-urgent mental health problems.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DMHDDSUS",
+   "operational_fit": 5,
+   "operational_reason": "DMHDDSUS oversees mental health and crisis/referral services, so the topic fits, but an R01 clinical trial is research-focused and would require academic and data infrastructure beyond its usual service operations.",
+   "restrictions": [
+    "Clinical Trial Required"
+   ],
+   "major_risk": "The grant only funds research and development of evidence, not service delivery; NCDHHS may not have the research infrastructure to lead an NIH R01 clinical trial without university partners.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Aligns with G3.O3 mental health referral and diversion, but NIH R01 research would likely require academic partners."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O3\",\n  \"strategic_reason\": \"This funds research on navigation models that triage mental health acuity and link families to mental health services, directly building the evidence base for NCDHHS's behavioral health referral and access work under G3.O3.\",\n  \"strategic_evidence_quote\": \"The purpose of this NOFO is to build research about the effectiveness, implementation, and optimization of family navigation ED diversion models for non-urgent mental health problems.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DMHDDSUS\",\n  \"operational_fit\": 5,\n  \"operational_reason\": \"DMHDDSUS oversees mental health and crisis/referral services, so the topic fits, but an R01 clinical trial is research-focused and would require academic and data infrastructure beyond its usual service operations.\",\n  \"restrictions\": [\n    \"Clinical Trial Required\"\n  ],\n  \"major_risk\": \"The grant only funds research and development of evidence, not service delivery; NCDHHS may not have the research infrastructure to lead an NIH R01 clinical trial without university partners.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Aligns with G3.O3 mental health referral and diversion, but NIH R01 research would likely require academic partners.\"\n}"
+  ]
+ }
+}

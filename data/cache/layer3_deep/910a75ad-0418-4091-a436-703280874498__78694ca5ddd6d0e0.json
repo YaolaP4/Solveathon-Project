@@ -1,0 +1,28 @@
+{
+ "grant_id": "910a75ad-0418-4091-a436-703280874498",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "78694ca5ddd6d0e0ba3a667491f95d078b2807ac8ba8e1b73b3cc1069846468e",
+ "retrieved_at": "2026-10-02T19:26:01+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O2",
+   "strategic_reason": "The program expands enhanced child welfare practices through courts and social services to improve safety and healthy development for young children in child welfare, matching child-welfare reform to improve safety, permanency and well-being.",
+   "strategic_evidence_quote": "The Infant-Toddler Court Program's (ITCP) National Resource Center (NRC) helps states and communities to strengthen and expand use of enhanced child welfare practices in communities across the country that bring together courts, social services, and families to improve the safety, healthy development, and nurturing relationships of families with young children involved with the child welfare system.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "Any domestic public or private entity, including an Indian tribe or tribal organization (as those terms are defined at 25 U.S.C. 5304) (formerly cited as 25 U.S.C. 450b)) is eligible to apply.",
+   "owning_division": "DSS",
+   "operational_fit": 3,
+   "operational_reason": "DSS owns child welfare but operating a national resource center serving all states and courts nationally is outside its state-focused authority and partnerships.",
+   "restrictions": [],
+   "major_risk": "This funds a single national resource center serving the whole country, so NCDHHS would compete against national organizations to work outside North Carolina.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Supports child-welfare safety goals but funds a single national center, not North Carolina services, making state operation an awkward fit."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O2\",\n  \"strategic_reason\": \"The program expands enhanced child welfare practices through courts and social services to improve safety and healthy development for young children in child welfare, matching child-welfare reform to improve safety, permanency and well-being.\",\n  \"strategic_evidence_quote\": \"The Infant-Toddler Court Program's (ITCP) National Resource Center (NRC) helps states and communities to strengthen and expand use of enhanced child welfare practices in communities across the country that bring together courts, social services, and families to improve the safety, healthy development, and nurturing relationships of families with young children involved with the child welfare system.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"Any domestic public or private entity, including an Indian tribe or tribal organization (as those terms are defined at 25 U.S.C. 5304) (formerly cited as 25 U.S.C. 450b)) is eligible to apply.\",\n  \"owning_division\": \"DSS\",\n  \"operational_fit\": 3,\n  \"operational_reason\": \"DSS owns child welfare but operating a national resource center serving all states and courts nationally is outside its state-focused authority and partnerships.\",\n  \"restrictions\": [],\n  \"major_risk\": \"This funds a single national resource center serving the whole country, so NCDHHS would compete against national organizations to work outside North Carolina.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Supports child-welfare safety goals but funds a single national center, not North Carolina services, making state operation an awkward fit.\"\n}"
+  ]
+ }
+}

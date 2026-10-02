@@ -1,0 +1,28 @@
+{
+ "grant_id": "01a1f3ea-fac9-40f9-8414-6aa74edc8a21",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "669da3b6d815477d60c41a0ee54ab80144786b7dca074215e1df3f8479d25a95",
+ "retrieved_at": "2026-10-02T19:26:06+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O3",
+   "strategic_reason": "The program funds rural network planning to expand access and coordinate basic health care, directly matching mitigation of barriers in rural and underserved primary care.",
+   "strategic_evidence_quote": "The Rural Health Network Development Planning Program supports the planning and development of rural integrated health care networks with specific focus on collaboration of entities to establish or improve local capacity and care coordination in underserved communities.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "All domestic public or private, non-profit or for-profit entities including domestic faith-based and community-based organizations, tribes and tribal organizations.",
+   "owning_division": "ORH",
+   "operational_fit": 9,
+   "operational_reason": "Office of Rural Health already supports rural primary care, safety-net clinics, and underserved areas, aligning with rural network development.",
+   "restrictions": [],
+   "major_risk": "Planning-focused award builds collaboration and capacity but does not sustain services without follow-on implementation funding.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Expands rural care access via networks, directly advancing health access goals; Office of Rural Health could lead as experienced rural-serving state applicant."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O3\",\n  \"strategic_reason\": \"The program funds rural network planning to expand access and coordinate basic health care, directly matching mitigation of barriers in rural and underserved primary care.\",\n  \"strategic_evidence_quote\": \"The Rural Health Network Development Planning Program supports the planning and development of rural integrated health care networks with specific focus on collaboration of entities to establish or improve local capacity and care coordination in underserved communities.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"All domestic public or private, non-profit or for-profit entities including domestic faith-based and community-based organizations, tribes and tribal organizations.\",\n  \"owning_division\": \"ORH\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"Office of Rural Health already supports rural primary care, safety-net clinics, and underserved areas, aligning with rural network development.\",\n  \"restrictions\": [],\n  \"major_risk\": \"Planning-focused award builds collaboration and capacity but does not sustain services without follow-on implementation funding.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Expands rural care access via networks, directly advancing health access goals; Office of Rural Health could lead as experienced rural-serving state applicant.\"\n}"
+  ]
+ }
+}

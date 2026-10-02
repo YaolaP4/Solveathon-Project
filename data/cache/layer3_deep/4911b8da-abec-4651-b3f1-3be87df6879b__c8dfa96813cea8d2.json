@@ -1,0 +1,30 @@
+{
+ "grant_id": "4911b8da-abec-4651-b3f1-3be87df6879b",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "c8dfa96813cea8d284d181015c7cc20b7d53350e6e8e950df1e997515317392f",
+ "retrieved_at": "2026-10-02T19:45:55+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O2",
+   "strategic_reason": "The grant funds HIV behavioral surveillance data to track disparities and identify gaps in prevention access among disproportionately affected populations, which directly supports data-driven health equity tracking.",
+   "strategic_evidence_quote": "The purpose of this NOFO is to support ongoing bio-behavioral surveillance among populations disproportionately affected by HIV.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "State governments.",
+   "owning_division": "DPH",
+   "operational_fit": 10,
+   "operational_reason": "DPH already conducts communicable disease surveillance, HIV prevention epidemiology, and works with local health departments, so this is an extension of existing public health surveillance work.",
+   "restrictions": [
+    "All NHBS participants will be offered an HIV test and linked to appropriate prevention or care services based on test results."
+   ],
+   "major_risk": "The program requires sustained field recruitment of hard-to-reach populations and delivery of HIV testing and linkage services, which may be operationally heavier than a typical data-only surveillance grant.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Funds HIV behavioral surveillance to track disparities and guide prevention, directly fitting DPH's existing disease surveillance and epidemiology role."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O2\",\n  \"strategic_reason\": \"The grant funds HIV behavioral surveillance data to track disparities and identify gaps in prevention access among disproportionately affected populations, which directly supports data-driven health equity tracking.\",\n  \"strategic_evidence_quote\": \"The purpose of this NOFO is to support ongoing bio-behavioral surveillance among populations disproportionately affected by HIV.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"State governments.\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 10,\n  \"operational_reason\": \"DPH already conducts communicable disease surveillance, HIV prevention epidemiology, and works with local health departments, so this is an extension of existing public health surveillance work.\",\n  \"restrictions\": [\n    \"All NHBS participants will be offered an HIV test and linked to appropriate prevention or care services based on test results.\"\n  ],\n  \"major_risk\": \"The program requires sustained field recruitment of hard-to-reach populations and delivery of HIV testing and linkage services, which may be operationally heavier than a typical data-only surveillance grant.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Funds HIV behavioral surveillance to track disparities and guide prevention, directly fitting DPH's existing disease surveillance and epidemiology role.\"\n}"
+  ]
+ }
+}

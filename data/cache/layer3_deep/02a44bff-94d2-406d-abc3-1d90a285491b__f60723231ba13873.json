@@ -1,0 +1,30 @@
+{
+ "grant_id": "02a44bff-94d2-406d-abc3-1d90a285491b",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "f60723231ba1387329805c0907162bfa17e669418d9fcf885ab5dfaf6597b6f6",
+ "retrieved_at": "2026-10-02T19:56:22+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 2,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The funded activity supports global antimicrobial resistance, healthcare-associated infection, and emerging infectious disease surveillance in low- and middle-income countries, which is not linked to any NCDHHS strategic goal or objective focused on North Carolina residents.",
+   "strategic_evidence_quote": "The proposed international hybrid Notice of Funding Opportunity (NOFO) will link non-research implementation with targeted research that advances CDC's mission to address antimicrobial resistance (AR) across multiple bacterial and fungal pathogens, healthcare-associated infections (HAIs), and emerging infectious disease threats including viral pathogens across healthcare, community, and environmental settings in low and middle-income countries.",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "Open to any type of entity",
+   "owning_division": "none",
+   "operational_fit": 1,
+   "operational_reason": "No NCDHHS division has authority or a state-level mission to implement international antimicrobial resistance and healthcare-associated infection programs in low- and middle-income countries.",
+   "restrictions": [
+    "Geographic scope limited to low and middle-income countries"
+   ],
+   "major_risk": "The grant funds work in low- and middle-income countries, so it would not directly improve health outcomes for North Carolinians and would be outside NCDHHS's normal state-level authority.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Global CDC grant for antibiotic-resistant infections in low- and middle-income countries has no state-level objective or clear NCDHHS division owner, so it is not a fit."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 2,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The funded activity supports global antimicrobial resistance, healthcare-associated infection, and emerging infectious disease surveillance in low- and middle-income countries, which is not linked to any NCDHHS strategic goal or objective focused on North Carolina residents.\",\n  \"strategic_evidence_quote\": \"The proposed international hybrid Notice of Funding Opportunity (NOFO) will link non-research implementation with targeted research that advances CDC's mission to address antimicrobial resistance (AR) across multiple bacterial and fungal pathogens, healthcare-associated infections (HAIs), and emerging infectious disease threats including viral pathogens across healthcare, community, and environmental settings in low and middle-income countries.\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"Open to any type of entity\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 1,\n  \"operational_reason\": \"No NCDHHS division has authority or a state-level mission to implement international antimicrobial resistance and healthcare-associated infection programs in low- and middle-income countries.\",\n  \"restrictions\": [\n    \"Geographic scope limited to low and middle-income countries\"\n  ],\n  \"major_risk\": \"The grant funds work in low- and middle-income countries, so it would not directly improve health outcomes for North Carolinians and would be outside NCDHHS's normal state-level authority.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Global CDC grant for antibiotic-resistant infections in low- and middle-income countries has no state-level objective or clear NCDHHS division owner, so it is not a fit.\"\n}"
+  ]
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "grant_id": "37efefe8-206e-4b39-9322-46f874c6193a",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "0d9967124dfe8b96fc345ac559033c5fad218f26ca16199c53587e7d1640105a",
+ "retrieved_at": "2026-10-02T19:51:29+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 2,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The summary text only describes a Type 6 application submission and does not identify a funded activity that clearly advances a named NCDHHS strategic objective.",
+   "strategic_evidence_quote": "",
+   "applicant_role": "unclear",
+   "eligibility_evidence_quote": "States",
+   "owning_division": "DPH",
+   "operational_fit": 7,
+   "operational_reason": "DPH is the likely state public health owner for CDC injury prevention and control programs because it already runs epidemiology, prevention, and local health department partnerships.",
+   "restrictions": [],
+   "major_risk": "The posting appears to be only a Type 6 change-of-grantee submission, not a standard open competition, and it lacks project-specific details to confirm NCDHHS fit.",
+   "recommended_for_review": false,
+   "one_line_rationale": "CDC injury prevention could fit DPH, but the posting is only a Type 6 instruction with no project details, so it is not a clear competitive opportunity."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 2,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The summary text only describes a Type 6 application submission and does not identify a funded activity that clearly advances a named NCDHHS strategic objective.\",\n  \"strategic_evidence_quote\": \"\",\n  \"applicant_role\": \"unclear\",\n  \"eligibility_evidence_quote\": \"States\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 7,\n  \"operational_reason\": \"DPH is the likely state public health owner for CDC injury prevention and control programs because it already runs epidemiology, prevention, and local health department partnerships.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The posting appears to be only a Type 6 change-of-grantee submission, not a standard open competition, and it lacks project-specific details to confirm NCDHHS fit.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"CDC injury prevention could fit DPH, but the posting is only a Type 6 instruction with no project details, so it is not a clear competitive opportunity.\"\n}"
+  ]
+ }
+}

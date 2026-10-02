@@ -1,0 +1,28 @@
+{
+ "grant_id": "e9c27c69-7360-4e0f-beb5-7ef69876f00c",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "2799cc7410eeb17ab77bc321168fac67c8895884fdd32c5f53d1abcbb5418a89",
+ "retrieved_at": "2026-10-02T19:55:00+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O4",
+   "strategic_reason": "The grant funds research on the natural history of newborn screening disorders to improve early identification and interventions, supporting improved newborn and infant outcomes.",
+   "strategic_evidence_quote": "A comprehensive understanding of the natural history of a condition is necessary to facilitate appropriate interventions for infants identified by newborn screening.",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 6,
+   "operational_reason": "DPH operates newborn screening and maternal/child health surveillance, but an NIH R01 natural history study likely exceeds its routine clinical research capacity without academic partners.",
+   "restrictions": [],
+   "major_risk": "This is an investigator-initiated R01 requiring long-term natural history research infrastructure and likely academic medical center collaboration; NCDHHS may be better suited as a partner than the lead applicant.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Newborn screening natural-history research aligns with DPH infant-health goals; NCDHHS is eligible but likely better as a partner than lead."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O4\",\n  \"strategic_reason\": \"The grant funds research on the natural history of newborn screening disorders to improve early identification and interventions, supporting improved newborn and infant outcomes.\",\n  \"strategic_evidence_quote\": \"A comprehensive understanding of the natural history of a condition is necessary to facilitate appropriate interventions for infants identified by newborn screening.\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 6,\n  \"operational_reason\": \"DPH operates newborn screening and maternal/child health surveillance, but an NIH R01 natural history study likely exceeds its routine clinical research capacity without academic partners.\",\n  \"restrictions\": [],\n  \"major_risk\": \"This is an investigator-initiated R01 requiring long-term natural history research infrastructure and likely academic medical center collaboration; NCDHHS may be better suited as a partner than the lead applicant.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Newborn screening natural-history research aligns with DPH infant-health goals; NCDHHS is eligible but likely better as a partner than lead.\"\n}"
+  ]
+ }
+}

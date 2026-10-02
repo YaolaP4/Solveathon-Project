@@ -1,0 +1,28 @@
+{
+ "grant_id": "5218f1fc-2da9-4358-9d77-5159417c4331",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "118e0c8f89eff15795bb68db70326d1992bd6fea020c95f1d961c04abc87c873",
+ "retrieved_at": "2026-10-02T19:51:05+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 4,
+   "matched_goal": "G1",
+   "matched_objective": "none",
+   "strategic_reason": "The assistance listing identifies CDC injury prevention and control research and state/community programs, which broadly supports public health prevention under G1 but does not name a specific NCDHHS objective.",
+   "strategic_evidence_quote": "",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "States",
+   "owning_division": "DPH",
+   "operational_fit": 8,
+   "operational_reason": "DPH already houses injury prevention and surveillance and partners with local health departments, so it could implement a CDC injury-prevention cooperative agreement.",
+   "restrictions": [],
+   "major_risk": "The synopsis is nearly empty and is specific to Type 6 applications, so it may be a continuation or successor-in-interest action rather than an opportunity NCDHHS can compete for.",
+   "recommended_for_review": false,
+   "one_line_rationale": "CDC injury-prevention funding would fit DPH, but this Type 6 notice lacks detail and may not be open for a new NCDHHS application."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 4,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The assistance listing identifies CDC injury prevention and control research and state/community programs, which broadly supports public health prevention under G1 but does not name a specific NCDHHS objective.\",\n  \"strategic_evidence_quote\": \"\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"States\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 8,\n  \"operational_reason\": \"DPH already houses injury prevention and surveillance and partners with local health departments, so it could implement a CDC injury-prevention cooperative agreement.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The synopsis is nearly empty and is specific to Type 6 applications, so it may be a continuation or successor-in-interest action rather than an opportunity NCDHHS can compete for.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"CDC injury-prevention funding would fit DPH, but this Type 6 notice lacks detail and may not be open for a new NCDHHS application.\"\n}"
+  ]
+ }
+}

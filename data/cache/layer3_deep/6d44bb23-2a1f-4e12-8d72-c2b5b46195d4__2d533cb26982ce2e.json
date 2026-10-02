@@ -1,0 +1,30 @@
+{
+ "grant_id": "6d44bb23-2a1f-4e12-8d72-c2b5b46195d4",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "2d533cb26982ce2ebcf9fc1fe0bb41b30620f70ffdf9ca4ca79117e839b50633",
+ "retrieved_at": "2026-10-02T19:46:28+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O4",
+   "strategic_reason": "The grant funds alcohol epidemiology and population-level prevention of excessive alcohol use, which supports NCDHHS's objective to reduce substance use-related harm through public health prevention capacity.",
+   "strategic_evidence_quote": "The purpose of this NOFO is to build state capacity in alcohol epidemiology and provide the tools and information needed to perform core public health functions related to excessive alcohol use prevention in states.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 9,
+   "operational_reason": "DPH already conducts disease surveillance, epidemiology, and chronic disease prevention, so building alcohol epidemiology capacity is an extension of its existing public health functions.",
+   "restrictions": [
+    "Applicants must be physically located and operate in the state or territory for which work is proposed."
+   ],
+   "major_risk": "The NOFO requires applicants to choose either Component 1 or Component 2 but not both, so the state may have to choose between building its own alcohol epidemiology capacity and receiving external technical assistance.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Fits NCDHHS substance-use prevention goal and DPH epidemiology role; state eligible and CDC funding supports alcohol prevention infrastructure."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O4\",\n  \"strategic_reason\": \"The grant funds alcohol epidemiology and population-level prevention of excessive alcohol use, which supports NCDHHS's objective to reduce substance use-related harm through public health prevention capacity.\",\n  \"strategic_evidence_quote\": \"The purpose of this NOFO is to build state capacity in alcohol epidemiology and provide the tools and information needed to perform core public health functions related to excessive alcohol use prevention in states.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DPH already conducts disease surveillance, epidemiology, and chronic disease prevention, so building alcohol epidemiology capacity is an extension of its existing public health functions.\",\n  \"restrictions\": [\n    \"Applicants must be physically located and operate in the state or territory for which work is proposed.\"\n  ],\n  \"major_risk\": \"The NOFO requires applicants to choose either Component 1 or Component 2 but not both, so the state may have to choose between building its own alcohol epidemiology capacity and receiving external technical assistance.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Fits NCDHHS substance-use prevention goal and DPH epidemiology role; state eligible and CDC funding supports alcohol prevention infrastructure.\"\n}"
+  ]
+ }
+}

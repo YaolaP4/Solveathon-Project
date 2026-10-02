@@ -1,0 +1,28 @@
+{
+ "grant_id": "91d0d477-b844-4189-8880-bd7a2876b24e",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "cf588fe6611f3401106c0eb780370fd9bbbbfd0e64aeb2550a7d500c65ea6f5e",
+ "retrieved_at": "2026-10-02T19:46:30+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O4",
+   "strategic_reason": "This cooperative agreement funds surveillance and case-control research to prevent birth defects and stillbirths, which are core adverse birth outcomes and infant mortality concerns under NCDHHS's women's health and birth outcomes objective.",
+   "strategic_evidence_quote": "prevent the occurrence of birth defects and stillbirths",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 9,
+   "operational_reason": "DPH already houses maternal and child health, epidemiology, vital-event surveillance, and birth defects surveillance/registry functions, so it could directly operate this CDC-funded surveillance and study.",
+   "restrictions": [],
+   "major_risk": "The work is complex and infrastructure-heavy: it requires modernizing surveillance via electronic case reporting, conducting stillbirth surveillance, and supporting a case-control study, which is more than routine registry operations.",
+   "recommended_for_review": true,
+   "one_line_rationale": "CDC funds state birth defects and stillbirth surveillance and research, squarely fitting DPH maternal and child health epidemiology with no obvious state-eligibility barrier."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O4\",\n  \"strategic_reason\": \"This cooperative agreement funds surveillance and case-control research to prevent birth defects and stillbirths, which are core adverse birth outcomes and infant mortality concerns under NCDHHS's women's health and birth outcomes objective.\",\n  \"strategic_evidence_quote\": \"prevent the occurrence of birth defects and stillbirths\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DPH already houses maternal and child health, epidemiology, vital-event surveillance, and birth defects surveillance/registry functions, so it could directly operate this CDC-funded surveillance and study.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The work is complex and infrastructure-heavy: it requires modernizing surveillance via electronic case reporting, conducting stillbirth surveillance, and supporting a case-control study, which is more than routine registry operations.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"CDC funds state birth defects and stillbirth surveillance and research, squarely fitting DPH maternal and child health epidemiology with no obvious state-eligibility barrier.\"\n}"
+  ]
+ }
+}

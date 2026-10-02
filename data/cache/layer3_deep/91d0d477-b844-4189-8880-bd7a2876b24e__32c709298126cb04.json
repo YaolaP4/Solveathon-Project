@@ -1,0 +1,28 @@
+{
+ "grant_id": "91d0d477-b844-4189-8880-bd7a2876b24e",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "32c709298126cb045e7e25cebaac750319ae610c6ef3c0618483128b40c61cf9",
+ "retrieved_at": "2026-10-02T19:25:11+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O4",
+   "strategic_reason": "The funded birth-defects and stillbirth surveillance and risk-factor research directly advances improving women's health and birth outcomes including infant mortality.",
+   "strategic_evidence_quote": "Birth defects affect about three percent of all births in the United States and are a leading cause of infant mortality, morbidity, and healthcare costs; the causes of two-thirds of birth defects remain unknown.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 9,
+   "operational_reason": "DPH already owns birth-defects surveillance, epidemiology, and maternal and child health functions needed to run this program.",
+   "restrictions": [],
+   "major_risk": "Running modernized surveillance plus a case-control study across up to three components will demand substantial epidemiologic and data capacity.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Fits child birth-outcomes goal; DPH already does maternal-child surveillance and could lead stillbirth/birth-defects work."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O4\",\n  \"strategic_reason\": \"The funded birth-defects and stillbirth surveillance and risk-factor research directly advances improving women's health and birth outcomes including infant mortality.\",\n  \"strategic_evidence_quote\": \"Birth defects affect about three percent of all births in the United States and are a leading cause of infant mortality, morbidity, and healthcare costs; the causes of two-thirds of birth defects remain unknown.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DPH already owns birth-defects surveillance, epidemiology, and maternal and child health functions needed to run this program.\",\n  \"restrictions\": [],\n  \"major_risk\": \"Running modernized surveillance plus a case-control study across up to three components will demand substantial epidemiologic and data capacity.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Fits child birth-outcomes goal; DPH already does maternal-child surveillance and could lead stillbirth/birth-defects work.\"\n}"
+  ]
+ }
+}

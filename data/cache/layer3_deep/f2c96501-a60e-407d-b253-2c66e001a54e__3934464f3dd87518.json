@@ -1,0 +1,28 @@
+{
+ "grant_id": "f2c96501-a60e-407d-b253-2c66e001a54e",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "3934464f3dd87518c27fd01ca834885fb4b454d275d8ba6b5b613c3716034a5f",
+ "retrieved_at": "2026-10-02T19:56:49+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 3,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O4",
+   "strategic_reason": "The grant funds a Service Coordinator position that assesses resident needs and links them to supportive services, similar to community health worker or navigation capacity for underserved populations.",
+   "strategic_evidence_quote": "hire a Service Coordinator who assesses the needs of Public and Indian housing residents and links them to local training and supportive services that will enable participants to move along the self-sufficiency continuum.",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "other_native_american_tribal_organizations, other, public_and_indian_housing_authorities, nonprofits_non_higher_education_with_501c3, nonprofits_non_higher_education_without_501c3, federally_recognized_native_american_tribal_governments",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "NCDHHS is a state agency and does not own public or Indian housing, and HUD lists only housing authorities, tribes/TDHEs, resident associations, and multifamily owners as eligible applicants.",
+   "restrictions": [],
+   "major_risk": "NCDHHS is not an eligible applicant type, so the agency could only support a housing authority or tribal partner and would not control the award.",
+   "recommended_for_review": false,
+   "one_line_rationale": "State agencies are not among HUD's eligible ROSS-SC applicants, so NCDHHS cannot lead; the health access alignment is real but would require a housing authority or tribal partner."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 3,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O4\",\n  \"strategic_reason\": \"The grant funds a Service Coordinator position that assesses resident needs and links them to supportive services, similar to community health worker or navigation capacity for underserved populations.\",\n  \"strategic_evidence_quote\": \"hire a Service Coordinator who assesses the needs of Public and Indian housing residents and links them to local training and supportive services that will enable participants to move along the self-sufficiency continuum.\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"other_native_american_tribal_organizations, other, public_and_indian_housing_authorities, nonprofits_non_higher_education_with_501c3, nonprofits_non_higher_education_without_501c3, federally_recognized_native_american_tribal_governments\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"NCDHHS is a state agency and does not own public or Indian housing, and HUD lists only housing authorities, tribes/TDHEs, resident associations, and multifamily owners as eligible applicants.\",\n  \"restrictions\": [],\n  \"major_risk\": \"NCDHHS is not an eligible applicant type, so the agency could only support a housing authority or tribal partner and would not control the award.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"State agencies are not among HUD's eligible ROSS-SC applicants, so NCDHHS cannot lead; the health access alignment is real but would require a housing authority or tribal partner.\"\n}"
+  ]
+ }
+}

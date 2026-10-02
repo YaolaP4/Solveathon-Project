@@ -1,0 +1,30 @@
+{
+ "grant_id": "3820f2c5-4b44-47ad-8a29-9f6084d60bb2",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "d74338dd640b18730a823a12db7bf21aec803eaad778a76ead024cae354e34ad",
+ "retrieved_at": "2026-10-02T19:50:58+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O4",
+   "strategic_reason": "The grant funds pilot and feasibility studies for substance use prevention and treatment/recovery services research, directly supporting NCDHHS's objective to turn the tide on the opioid and substance use crisis.",
+   "strategic_evidence_quote": "pilot and feasibility studies in preparation for efficacy, effectiveness and/or services research trials",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DMHDDSUS",
+   "operational_fit": 7,
+   "operational_reason": "DMHDDSUS already leads substance use and opioid crisis initiatives and could house a research preparation grant, though it would likely need academic or community research partners.",
+   "restrictions": [
+    "Applicants must engage relevant end users in study design, execution, and interpretation"
+   ],
+   "major_risk": "Applications are not being solicited at this time, so this forecast may never become an active competition or may require research infrastructure NCDHHS does not routinely operate.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Forecast NIH research grant on substance use and HIV prevention aligns with G3.O4 and DMHDDSUS, but is not yet solicited; monitor and explore research partners."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O4\",\n  \"strategic_reason\": \"The grant funds pilot and feasibility studies for substance use prevention and treatment/recovery services research, directly supporting NCDHHS's objective to turn the tide on the opioid and substance use crisis.\",\n  \"strategic_evidence_quote\": \"pilot and feasibility studies in preparation for efficacy, effectiveness and/or services research trials\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DMHDDSUS\",\n  \"operational_fit\": 7,\n  \"operational_reason\": \"DMHDDSUS already leads substance use and opioid crisis initiatives and could house a research preparation grant, though it would likely need academic or community research partners.\",\n  \"restrictions\": [\n    \"Applicants must engage relevant end users in study design, execution, and interpretation\"\n  ],\n  \"major_risk\": \"Applications are not being solicited at this time, so this forecast may never become an active competition or may require research infrastructure NCDHHS does not routinely operate.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Forecast NIH research grant on substance use and HIV prevention aligns with G3.O4 and DMHDDSUS, but is not yet solicited; monitor and explore research partners.\"\n}"
+  ]
+ }
+}

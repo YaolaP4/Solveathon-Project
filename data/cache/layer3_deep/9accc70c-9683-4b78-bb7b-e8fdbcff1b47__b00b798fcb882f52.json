@@ -1,0 +1,28 @@
+{
+ "grant_id": "9accc70c-9683-4b78-bb7b-e8fdbcff1b47",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "b00b798fcb882f52040a9b763d962f583aa1493792415d33bb3d0d530fdbea87",
+ "retrieved_at": "2026-10-02T19:50:00+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 7,
+   "matched_goal": "G4",
+   "matched_objective": "G4.O4",
+   "strategic_reason": "By funding research that helps state and local decision-makers understand health workforce needs, this grant advances G4.O4 to support the public health and child welfare workforce at state and local levels.",
+   "strategic_evidence_quote": "The Health Workforce Research Centers support research that helps decision-makers at the federal, state, and local levels understand health workforce needs.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "ORH",
+   "operational_fit": 7,
+   "operational_reason": "ORH already tracks health workforce shortage areas and supports safety-net providers, so a health workforce research center fits its existing role, though it may need an academic partner.",
+   "restrictions": [],
+   "major_risk": "As a cooperative agreement research center, the award likely expects a national academic research infrastructure and may be a poor fit for a state operating agency without a university partner.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Funds health workforce research that supports state workforce planning and rural shortage analysis, but likely fits academic partners; ORH should explore a partnered proposal."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 7,\n  \"matched_goal\": \"G4\",\n  \"matched_objective\": \"G4.O4\",\n  \"strategic_reason\": \"By funding research that helps state and local decision-makers understand health workforce needs, this grant advances G4.O4 to support the public health and child welfare workforce at state and local levels.\",\n  \"strategic_evidence_quote\": \"The Health Workforce Research Centers support research that helps decision-makers at the federal, state, and local levels understand health workforce needs.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"ORH\",\n  \"operational_fit\": 7,\n  \"operational_reason\": \"ORH already tracks health workforce shortage areas and supports safety-net providers, so a health workforce research center fits its existing role, though it may need an academic partner.\",\n  \"restrictions\": [],\n  \"major_risk\": \"As a cooperative agreement research center, the award likely expects a national academic research infrastructure and may be a poor fit for a state operating agency without a university partner.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Funds health workforce research that supports state workforce planning and rural shortage analysis, but likely fits academic partners; ORH should explore a partnered proposal.\"\n}"
+  ]
+ }
+}

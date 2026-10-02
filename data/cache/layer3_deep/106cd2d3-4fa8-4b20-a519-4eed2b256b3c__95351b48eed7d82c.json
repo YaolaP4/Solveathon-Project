@@ -1,0 +1,28 @@
+{
+ "grant_id": "106cd2d3-4fa8-4b20-a519-4eed2b256b3c",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "95351b48eed7d82c95c4636427ca7ee260c1f1a5c9d76256bb1765d5a6c68d8d",
+ "retrieved_at": "2026-10-02T19:53:30+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 5,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O3",
+   "strategic_reason": "The grant supports pragmatic and implementation trials in routine clinical care in settings such as public health clinics and federally qualified health centers, which could test interventions that mitigate access barriers in rural and underserved primary care.",
+   "strategic_evidence_quote": "support large-scale pragmatic trials that test intervention effectiveness in routine clinical care and/or implementation trials that evaluate strategies for delivering interventions within health care settings.",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 4,
+   "operational_reason": "DPH has public health surveillance and chronic disease expertise and can partner with local health departments, but large NIH clinical and implementation trials are outside its core service delivery role.",
+   "restrictions": [],
+   "major_risk": "Applications are not being solicited at this time and the broad research focus would require substantial trial infrastructure and academic partners to be competitive.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Broad NIH research notice not currently soliciting applications; weak direct fit with NCDHHS service objectives and unclear operational owner."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 5,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O3\",\n  \"strategic_reason\": \"The grant supports pragmatic and implementation trials in routine clinical care in settings such as public health clinics and federally qualified health centers, which could test interventions that mitigate access barriers in rural and underserved primary care.\",\n  \"strategic_evidence_quote\": \"support large-scale pragmatic trials that test intervention effectiveness in routine clinical care and/or implementation trials that evaluate strategies for delivering interventions within health care settings.\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 4,\n  \"operational_reason\": \"DPH has public health surveillance and chronic disease expertise and can partner with local health departments, but large NIH clinical and implementation trials are outside its core service delivery role.\",\n  \"restrictions\": [],\n  \"major_risk\": \"Applications are not being solicited at this time and the broad research focus would require substantial trial infrastructure and academic partners to be competitive.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Broad NIH research notice not currently soliciting applications; weak direct fit with NCDHHS service objectives and unclear operational owner.\"\n}"
+  ]
+ }
+}

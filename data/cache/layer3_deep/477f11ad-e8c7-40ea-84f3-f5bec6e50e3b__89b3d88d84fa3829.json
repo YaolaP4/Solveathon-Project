@@ -1,0 +1,28 @@
+{
+ "grant_id": "477f11ad-e8c7-40ea-84f3-f5bec6e50e3b",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "89b3d88d84fa3829cee92a24adddc04383b8e54d33a1dac1fb3cfffbc9582d41",
+ "retrieved_at": "2026-10-02T19:23:25+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O4",
+   "strategic_reason": "The grant funds perinatal quality improvement to improve health of pregnant and postpartum women and newborns, directly advancing women's health and birth outcomes.",
+   "strategic_evidence_quote": "The purpose of this multi-component NOFO is to improve the health of pregnant and postpartum women and their newborns through quality improvement.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "Bona fide agents applying on behalf of state, territorial, local, and tribal government organizations.",
+   "owning_division": "DPH",
+   "operational_fit": 9,
+   "operational_reason": "DPH already leads maternal and child health work with health facilities and local partners, matching PQC quality-improvement implementation.",
+   "restrictions": [],
+   "major_risk": "Success depends on existing statewide PQC capacity and hospital participation for data-driven quality improvement.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Directly advances birth-outcomes goal via hospital quality improvement led by Public Health's maternal-health programs."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O4\",\n  \"strategic_reason\": \"The grant funds perinatal quality improvement to improve health of pregnant and postpartum women and newborns, directly advancing women's health and birth outcomes.\",\n  \"strategic_evidence_quote\": \"The purpose of this multi-component NOFO is to improve the health of pregnant and postpartum women and their newborns through quality improvement.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"Bona fide agents applying on behalf of state, territorial, local, and tribal government organizations.\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DPH already leads maternal and child health work with health facilities and local partners, matching PQC quality-improvement implementation.\",\n  \"restrictions\": [],\n  \"major_risk\": \"Success depends on existing statewide PQC capacity and hospital participation for data-driven quality improvement.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Directly advances birth-outcomes goal via hospital quality improvement led by Public Health's maternal-health programs.\"\n}"
+  ]
+ }
+}

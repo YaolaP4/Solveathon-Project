@@ -1,0 +1,31 @@
+{
+ "grant_id": "785bf1c9-11f8-4133-b550-70bcd2df50a2",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "eeb4dd01592eb42cbfa19768b2c20340aaa4066a7caa48e9b2e43f89145d9bbc",
+ "retrieved_at": "2026-10-02T19:29:53+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 6,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O4",
+   "strategic_reason": "Training staff to deliver high-quality family planning and teen pregnancy prevention services directly supports improving women's health and birth outcomes including reproductive life planning.",
+   "strategic_evidence_quote": "provide training and technical assistance to all OPA-funded Title X family planning service delivery grantees and all OPA-funded Teen Pregnancy Prevention (TPP) Program recipients",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "To receive funding from the Title X program, you must be a public or private non-profit entity.",
+   "owning_division": "DPH",
+   "operational_fit": 3,
+   "operational_reason": "DPH covers maternal and child health and family planning but does not operate a national training center serving all federal grantees.",
+   "restrictions": [
+    "Only one national applicant will be funded through 2 cooperative agreements",
+    "Single application with 2 distinct parts and non-competing continuation application required each year"
+   ],
+   "major_risk": "Only one applicant will be funded nationally to serve all OPA grantees, so competition is intense and direct benefit to North Carolina is indirect.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Fits women's health goals but funds one national training center, not NC services; poor fit for a state agency."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 6,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O4\",\n  \"strategic_reason\": \"Training staff to deliver high-quality family planning and teen pregnancy prevention services directly supports improving women's health and birth outcomes including reproductive life planning.\",\n  \"strategic_evidence_quote\": \"provide training and technical assistance to all OPA-funded Title X family planning service delivery grantees and all OPA-funded Teen Pregnancy Prevention (TPP) Program recipients\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"To receive funding from the Title X program, you must be a public or private non-profit entity.\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 3,\n  \"operational_reason\": \"DPH covers maternal and child health and family planning but does not operate a national training center serving all federal grantees.\",\n  \"restrictions\": [\n    \"Only one national applicant will be funded through 2 cooperative agreements\",\n    \"Single application with 2 distinct parts and non-competing continuation application required each year\"\n  ],\n  \"major_risk\": \"Only one applicant will be funded nationally to serve all OPA grantees, so competition is intense and direct benefit to North Carolina is indirect.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Fits women's health goals but funds one national training center, not NC services; poor fit for a state agency.\"\n}"
+  ]
+ }
+}

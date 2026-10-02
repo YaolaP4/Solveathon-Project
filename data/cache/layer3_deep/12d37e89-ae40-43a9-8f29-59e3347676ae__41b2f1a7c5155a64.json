@@ -1,0 +1,31 @@
+{
+ "grant_id": "12d37e89-ae40-43a9-8f29-59e3347676ae",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "41b2f1a7c5155a64b34200a73fb2140505013c65f64e56b224bd462c79f6013d",
+ "retrieved_at": "2026-10-02T20:01:40+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 2,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds emergency supplements to existing NIH research awards, which does not directly advance any named NCDHHS strategic objective.",
+   "strategic_evidence_quote": "funds may be available for applications based on a presidentially declared disaster under the Stafford Act, a public health emergency declared by the Secretary, HHS, or other local, regional or national disaster",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 4,
+   "operational_reason": "DPH could manage this only if it already holds an NIH award and an applicable emergency NOSI is issued, but this is research funding rather than routine public health service funding.",
+   "restrictions": [
+    "Must be an existing NIH award recipient because this is a competitive revision to existing NIH awards",
+    "Only applications submitted in response to an Emergency NOSI published by an NIH awarding component may apply"
+   ],
+   "major_risk": "The mechanism is limited to existing NIH awardees responding to a specific Emergency NOSI, so NCDHHS is unlikely to be eligible or to have a relevant active award.",
+   "recommended_for_review": false,
+   "one_line_rationale": "No clear fit with NCDHHS strategic objectives; emergency NIH research supplements require an existing NIH award and an emergency NOSI, so routine review is not warranted."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 2,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds emergency supplements to existing NIH research awards, which does not directly advance any named NCDHHS strategic objective.\",\n  \"strategic_evidence_quote\": \"funds may be available for applications based on a presidentially declared disaster under the Stafford Act, a public health emergency declared by the Secretary, HHS, or other local, regional or national disaster\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 4,\n  \"operational_reason\": \"DPH could manage this only if it already holds an NIH award and an applicable emergency NOSI is issued, but this is research funding rather than routine public health service funding.\",\n  \"restrictions\": [\n    \"Must be an existing NIH award recipient because this is a competitive revision to existing NIH awards\",\n    \"Only applications submitted in response to an Emergency NOSI published by an NIH awarding component may apply\"\n  ],\n  \"major_risk\": \"The mechanism is limited to existing NIH awardees responding to a specific Emergency NOSI, so NCDHHS is unlikely to be eligible or to have a relevant active award.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"No clear fit with NCDHHS strategic objectives; emergency NIH research supplements require an existing NIH award and an emergency NOSI, so routine review is not warranted.\"\n}"
+  ]
+ }
+}

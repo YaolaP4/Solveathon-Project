@@ -1,0 +1,30 @@
+{
+ "grant_id": "1352d10d-0bd9-4288-8c31-d540b962174b",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "b97504527aec75ac524d37e35fccca326658c222d3d5a3707641aa1cdca74d56",
+ "retrieved_at": "2026-10-02T19:53:28+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 7,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O1",
+   "strategic_reason": "The grant would build evidence on family navigation models that divert non-urgent mental health concerns from emergency departments into mental health services, supporting integrated behavioral health access under G3.O1.",
+   "strategic_evidence_quote": "build research about the effectiveness, implementation, and optimization of family navigation ED diversion models for non-urgent mental health problems",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DMHDDSUS",
+   "operational_fit": 5,
+   "operational_reason": "DMHDDSUS has authority over public mental health and crisis systems, but it does not routinely lead NIH clinical trials and would need a strong research partner to execute this grant.",
+   "restrictions": [
+    "Clinical Trial Required"
+   ],
+   "major_risk": "This is an NIH R34 research planning grant rather than a service implementation award, so NCDHHS would need substantial research infrastructure and an academic partner to compete, and it may not directly fund current mental health services.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Directly relevant to mental health access, but it is an NIH clinical-trial research grant; NCDHHS would likely be a research partner, not a service funder, so low priority."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 7,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O1\",\n  \"strategic_reason\": \"The grant would build evidence on family navigation models that divert non-urgent mental health concerns from emergency departments into mental health services, supporting integrated behavioral health access under G3.O1.\",\n  \"strategic_evidence_quote\": \"build research about the effectiveness, implementation, and optimization of family navigation ED diversion models for non-urgent mental health problems\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DMHDDSUS\",\n  \"operational_fit\": 5,\n  \"operational_reason\": \"DMHDDSUS has authority over public mental health and crisis systems, but it does not routinely lead NIH clinical trials and would need a strong research partner to execute this grant.\",\n  \"restrictions\": [\n    \"Clinical Trial Required\"\n  ],\n  \"major_risk\": \"This is an NIH R34 research planning grant rather than a service implementation award, so NCDHHS would need substantial research infrastructure and an academic partner to compete, and it may not directly fund current mental health services.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Directly relevant to mental health access, but it is an NIH clinical-trial research grant; NCDHHS would likely be a research partner, not a service funder, so low priority.\"\n}"
+  ]
+ }
+}

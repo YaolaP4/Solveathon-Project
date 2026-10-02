@@ -78,6 +78,13 @@ _ROLLING = re.compile(r"anytime|continuing basis|ongoing basis|year-round|rollin
 # Rolling grants whose money can run out are effectively first-come, first-served.
 _FUNDS_LIMITED = re.compile(r"first[- ]come|until (all )?(available )?funds|funds (are|have been) (expended|exhausted)"
                             r"|processed as (they are )?received|while funds last", re.I)
+# Research and training mechanisms (NIH-style activity codes). A state DHHS cannot realistically
+# lead these, but may partner with a university on them. Deliberately excludes U60/U58/U50
+# (CDC state cooperative agreements), U13 (conferences) and U18 (e.g. FDA lab capacity grants).
+_RESEARCH_CODE = re.compile(r"\b(R\d{2}|K\d{2}|F\d{2}|T\d{2}|P\d{2}|U01|U19|U24|U54|U2C|UG3|UH3|X01|DP[1-5])\b")
+# Administrative notices, not funding opportunities: they exist only to move an existing award to a
+# new organization (CDC "RFA-xx-18-000 ... Type 6 Applications", NIH successor-in-interest / Type 7).
+_ADMIN_NOTICE = re.compile(r"type 6 application|successor[- ]in[- ]interest|change of recipient organization", re.I)
 # Values Grants.gov uses as "no real number" in this export: $999,999,999 and 2^31 (a software
 # maximum) as amounts, 9,999 as a number of awards. Read as money they would win "largest award".
 PLACEHOLDER_AMOUNTS = {999_999_999.0, 2_147_483_647.0, 2_147_483_648.0}
@@ -256,6 +263,16 @@ def add_listing_and_quality_features(df: pd.DataFrame, cfg: dict) -> None:
     df["n_assistance_listings"] = codes.map(len)
     df["aln_is_hhs"] = codes.map(lambda cs: any(c.startswith("93.") for c in cs))
     agency_code = df["agency_code"] if "agency_code" in df else pd.Series("", index=df.index)
+    # ...plus the bare CDC placeholders titled only "RFA-XX-18-000" ("Submit application as necessary.").
+    df["administrative_notice"] = (df["opportunity_title"] + " " + df["summary_text"]).map(
+        lambda t: bool(_ADMIN_NOTICE.search(str(t)))) | df["opportunity_title"].str.strip().str.fullmatch(
+        r"RFA-[A-Z]{2}-\d{2}-000")
+    # Research mechanism: an NIH opportunity, or a research/training activity code in the title.
+    is_nih = agency_code.str.upper().str.startswith("HHS-NIH")
+    code = df["opportunity_title"].map(lambda t: (_RESEARCH_CODE.search(str(t)) or [None])[0])
+    df["research_mechanism"] = is_nih | code.notna()
+    df["research_mechanism_reason"] = np.where(code.notna(), "activity code " + code.fillna(""),
+                                               np.where(is_nih, "NIH opportunity", ""))
     df["federal_agency_is_hhs"] = (
         df["top_level_agency_name"].eq("Department of Health and Human Services")
         | agency_code.str.upper().str.startswith("HHS"))
@@ -278,9 +295,9 @@ def add_hard_filters(df: pd.DataFrame, cfg: dict) -> None:
     # A posted grant past its archive date no longer accepts applications, even when the
     # export has no close date (12 such grants say "Funding Opportunity is Archived").
     archived = ~df["is_forecast"] & df["archive_date_passed"] & ~df["expired"]
-    reason = np.select([df["expired"], archived, bad_status],
+    reason = np.select([df["expired"], archived, bad_status, df["administrative_notice"]],
                        ["closed_before_as_of_date", "archived_before_as_of_date",
-                        ("status_" + status).to_numpy()], "")
+                        ("status_" + status).to_numpy(), "administrative_award_transfer_notice"], "")
     df["hard_filter_reason"] = reason
     df["hard_filtered"] = df["hard_filter_reason"] != ""
 
@@ -371,6 +388,8 @@ def report_markdown(df: pd.DataFrame, cfg: dict) -> str:
         f"- state grants but text says higher-ed / tribal / individuals only: "
         f"{n(df['state_government_listed'] & (df['text_higher_ed_only'] | df['text_tribal_only'] | df['text_individuals_only']))}",
         f"- applicant slugs not in our known list: {unknown or 'none'}", "",
+        "## Research mechanisms (moved to the research-partnerships list in Layer 4)",
+        f"- research mechanism: {n(df['research_mechanism'])} (of which still open or forecast: {n(kept['research_mechanism'])})", "",
         "## HHS signals",
         f"- assistance listing 93.x: {n(df['aln_is_hhs'])}",
         f"- federal agency is HHS: {n(df['federal_agency_is_hhs'])}", "",

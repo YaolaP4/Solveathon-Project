@@ -1,0 +1,28 @@
+{
+ "grant_id": "1d55627c-531e-4a60-95e0-719b256179bf",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "d477926391a991d5028a5daafb4761ab99f66cea88f1b20538c23687961d426c",
+ "retrieved_at": "2026-10-02T19:45:44+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "Funding a comprehensive HIV care and treatment system for low-income people with HIV directly advances G1.O1's aim to increase health access and reduce disparities for populations facing greater health challenges.",
+   "strategic_evidence_quote": "The purpose of this program is to provide funding to states and territories to develop and/or enhance access to a comprehensive system of high-quality HIV care and treatment for low-income people with HIV.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "The 50 states, the District of Columbia, Guam, the Commonwealth of Puerto Rico, and the U.S. Virgin Islands are eligible to apply for Ryan White HIV/AIDS Program Part B Base, AIDS Drug Assistance Program Base, and Minority AIDS Initiative funding.",
+   "owning_division": "DPH",
+   "operational_fit": 10,
+   "operational_reason": "DPH's disease prevention and surveillance, epidemiology, and population health responsibilities align directly with operating a statewide HIV care and treatment system for low-income people with HIV.",
+   "restrictions": [],
+   "major_risk": "As a formula award, this may be an expected annual allocation rather than new discretionary funding, so the main burden is compliance and the amount is largely predetermined.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Core DPH work: Ryan White HIV care and AIDS Drug Assistance Program funding advances G1 health access for low-income North Carolinians with HIV."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"Funding a comprehensive HIV care and treatment system for low-income people with HIV directly advances G1.O1's aim to increase health access and reduce disparities for populations facing greater health challenges.\",\n  \"strategic_evidence_quote\": \"The purpose of this program is to provide funding to states and territories to develop and/or enhance access to a comprehensive system of high-quality HIV care and treatment for low-income people with HIV.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"The 50 states, the District of Columbia, Guam, the Commonwealth of Puerto Rico, and the U.S. Virgin Islands are eligible to apply for Ryan White HIV/AIDS Program Part B Base, AIDS Drug Assistance Program Base, and Minority AIDS Initiative funding.\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 10,\n  \"operational_reason\": \"DPH's disease prevention and surveillance, epidemiology, and population health responsibilities align directly with operating a statewide HIV care and treatment system for low-income people with HIV.\",\n  \"restrictions\": [],\n  \"major_risk\": \"As a formula award, this may be an expected annual allocation rather than new discretionary funding, so the main burden is compliance and the amount is largely predetermined.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Core DPH work: Ryan White HIV care and AIDS Drug Assistance Program funding advances G1 health access for low-income North Carolinians with HIV.\"\n}"
+  ]
+ }
+}

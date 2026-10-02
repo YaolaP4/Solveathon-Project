@@ -1,0 +1,31 @@
+{
+ "grant_id": "3021f11a-dd6c-4d15-9406-c2d7594a2e79",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "6b31f00b9ef1b190eb3959608638d731af48a288ba3848365efd0eebd4556851",
+ "retrieved_at": "2026-10-02T19:58:49+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 5,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O1",
+   "strategic_reason": "The grant funds research on system-level mental health care interventions to improve access, engagement, continuity, and quality, which aligns with DMHDDSUS's work to integrate and improve behavioral health care delivery.",
+   "strategic_evidence_quote": "developing and testing empirically informed patient-, provider- and system-level interventions to improve mental health care access, engagement, continuity, efficiency, and quality",
+   "applicant_role": "partner",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DMHDDSUS",
+   "operational_fit": 4,
+   "operational_reason": "DMHDDSUS oversees behavioral health services and could contribute practice sites, data, or partnerships, but it is not a research organization and likely cannot lead an NIH P50 center.",
+   "restrictions": [
+    "Applications must propose research that maximizes synergies across various components of the mental health research ecosystem",
+    "Applications are also expected to include research activities that facilitate the widespread sharing of data, methods, and resources"
+   ],
+   "major_risk": "This is a large research infrastructure grant, so NCDHHS would likely be only a partner and the award would not directly fund mental health services.",
+   "recommended_for_review": false,
+   "one_line_rationale": "NIH research center grant for mental health services research; NCDHHS is not a research institution, so value is mainly as a partner, not an owner."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 5,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O1\",\n  \"strategic_reason\": \"The grant funds research on system-level mental health care interventions to improve access, engagement, continuity, and quality, which aligns with DMHDDSUS's work to integrate and improve behavioral health care delivery.\",\n  \"strategic_evidence_quote\": \"developing and testing empirically informed patient-, provider- and system-level interventions to improve mental health care access, engagement, continuity, efficiency, and quality\",\n  \"applicant_role\": \"partner\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DMHDDSUS\",\n  \"operational_fit\": 4,\n  \"operational_reason\": \"DMHDDSUS oversees behavioral health services and could contribute practice sites, data, or partnerships, but it is not a research organization and likely cannot lead an NIH P50 center.\",\n  \"restrictions\": [\n    \"Applications must propose research that maximizes synergies across various components of the mental health research ecosystem\",\n    \"Applications are also expected to include research activities that facilitate the widespread sharing of data, methods, and resources\"\n  ],\n  \"major_risk\": \"This is a large research infrastructure grant, so NCDHHS would likely be only a partner and the award would not directly fund mental health services.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"NIH research center grant for mental health services research; NCDHHS is not a research institution, so value is mainly as a partner, not an owner.\"\n}"
+  ]
+ }
+}

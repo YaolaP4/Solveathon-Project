@@ -1,0 +1,28 @@
+{
+ "grant_id": "b9bdeaa2-068f-4aa9-960a-948c0b0a9bfd",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "20921bfb08adf86eff685a31a1558021006ec51b00a11027ef782c8b80a45e7d",
+ "retrieved_at": "2026-10-02T19:47:29+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O4",
+   "strategic_reason": "The center improves home visiting services that support maternal and infant health, which directly advances work to improve birth outcomes and early childhood well-being.",
+   "strategic_evidence_quote": "improve the quality of home visiting services and outcomes for families",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DCFW",
+   "operational_fit": 9,
+   "operational_reason": "DCFW already oversees home visiting and early intervention, so a home visiting research and improvement center fits its existing role and partners.",
+   "restrictions": [],
+   "major_risk": "The cooperative agreement center may require national evaluation and research capacity rather than direct home visiting services, creating administrative and competitive risk.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Funds a home visiting improvement center that advances G2.O4; DCFW already oversees home visiting, so a strong fit."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O4\",\n  \"strategic_reason\": \"The center improves home visiting services that support maternal and infant health, which directly advances work to improve birth outcomes and early childhood well-being.\",\n  \"strategic_evidence_quote\": \"improve the quality of home visiting services and outcomes for families\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DCFW\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DCFW already oversees home visiting and early intervention, so a home visiting research and improvement center fits its existing role and partners.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The cooperative agreement center may require national evaluation and research capacity rather than direct home visiting services, creating administrative and competitive risk.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Funds a home visiting improvement center that advances G2.O4; DCFW already oversees home visiting, so a strong fit.\"\n}"
+  ]
+ }
+}

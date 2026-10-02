@@ -1,0 +1,31 @@
+{
+ "grant_id": "6bc69d9c-87b7-4329-962c-16c8e3ad553d",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "93a2d16a436d6f9e9308c15762c416464221fcb56f7fca52b1542fd8f367cb1f",
+ "retrieved_at": "2026-10-02T19:50:17+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O3",
+   "strategic_reason": "The grant directly funds development of rural residency programs that train physicians to practice in rural and underserved areas, advancing the rural primary care access strategy under G1.O3.",
+   "strategic_evidence_quote": "It does this by developing new, accredited, sustainable rural residency programs, including rural track programs (RTPs).",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "ORH",
+   "operational_fit": 7,
+   "operational_reason": "ORH already focuses on rural health workforce shortages and safety-net providers, but it does not directly operate residency programs and would need clinical training partners to implement.",
+   "restrictions": [
+    "Long-term sustainability funding must come from viable and stable sources, such as Medicare, Medicaid, and other public or private sources.",
+    "greater than 50 percent of their total time in residency"
+   ],
+   "major_risk": "The grant provides only start-up funding, so the new rural residency program could fail after the grant if long-term Medicare, Medicaid, or other stable funding does not materialize.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Strong fit with G1.O3 rural primary care access and ORH workforce mission; could pursue with clinical partners but sustainability after start-up is key risk."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O3\",\n  \"strategic_reason\": \"The grant directly funds development of rural residency programs that train physicians to practice in rural and underserved areas, advancing the rural primary care access strategy under G1.O3.\",\n  \"strategic_evidence_quote\": \"It does this by developing new, accredited, sustainable rural residency programs, including rural track programs (RTPs).\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"ORH\",\n  \"operational_fit\": 7,\n  \"operational_reason\": \"ORH already focuses on rural health workforce shortages and safety-net providers, but it does not directly operate residency programs and would need clinical training partners to implement.\",\n  \"restrictions\": [\n    \"Long-term sustainability funding must come from viable and stable sources, such as Medicare, Medicaid, and other public or private sources.\",\n    \"greater than 50 percent of their total time in residency\"\n  ],\n  \"major_risk\": \"The grant provides only start-up funding, so the new rural residency program could fail after the grant if long-term Medicare, Medicaid, or other stable funding does not materialize.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Strong fit with G1.O3 rural primary care access and ORH workforce mission; could pursue with clinical partners but sustainability after start-up is key risk.\"\n}"
+  ]
+ }
+}

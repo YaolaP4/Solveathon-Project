@@ -1,0 +1,30 @@
+{
+ "grant_id": "1c7b3701-9028-4d4f-8c74-e9f1aa1b2194",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "5f11bd7fa4dcf4d06e81737b07f91aba008693829dda3cdfba7fc040f9872920",
+ "retrieved_at": "2026-10-02T19:52:47+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 5,
+   "matched_goal": "G5",
+   "matched_objective": "G5.O1",
+   "strategic_reason": "The grant funds information-sharing and research tools that support data infrastructure and data-driven decision-making for food safety, which aligns broadly with G5.O1 but is not a named NCDHHS food safety objective.",
+   "strategic_evidence_quote": "support the development, support, and promotion of innovative information sharing and research tools hosted on the Integrated Food Safety System (IFSS) collaboration/research portal",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "Only current recipients under RFA-FD-20-023 are eligible to apply for this funding opportunity.",
+   "owning_division": "DPH",
+   "operational_fit": 6,
+   "operational_reason": "DPH is the state public health division with environmental health and food safety responsibilities and would be the natural owner, though the portal-specific scope is narrower than its usual regulatory work.",
+   "restrictions": [
+    "Only current recipients under RFA-FD-20-023 are eligible to apply."
+   ],
+   "major_risk": "NCDHHS is likely ineligible unless it is already a current recipient under RFA-FD-20-023, making this grant unwinnable for most applicants.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Only current recipients under RFA-FD-20-023 may apply; unless NCDHHS holds that award, this is not an opportunity, and food-safety portal work is only a loose data-infrastructure fit."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 5,\n  \"matched_goal\": \"G5\",\n  \"matched_objective\": \"G5.O1\",\n  \"strategic_reason\": \"The grant funds information-sharing and research tools that support data infrastructure and data-driven decision-making for food safety, which aligns broadly with G5.O1 but is not a named NCDHHS food safety objective.\",\n  \"strategic_evidence_quote\": \"support the development, support, and promotion of innovative information sharing and research tools hosted on the Integrated Food Safety System (IFSS) collaboration/research portal\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"Only current recipients under RFA-FD-20-023 are eligible to apply for this funding opportunity.\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 6,\n  \"operational_reason\": \"DPH is the state public health division with environmental health and food safety responsibilities and would be the natural owner, though the portal-specific scope is narrower than its usual regulatory work.\",\n  \"restrictions\": [\n    \"Only current recipients under RFA-FD-20-023 are eligible to apply.\"\n  ],\n  \"major_risk\": \"NCDHHS is likely ineligible unless it is already a current recipient under RFA-FD-20-023, making this grant unwinnable for most applicants.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Only current recipients under RFA-FD-20-023 may apply; unless NCDHHS holds that award, this is not an opportunity, and food-safety portal work is only a loose data-infrastructure fit.\"\n}"
+  ]
+ }
+}

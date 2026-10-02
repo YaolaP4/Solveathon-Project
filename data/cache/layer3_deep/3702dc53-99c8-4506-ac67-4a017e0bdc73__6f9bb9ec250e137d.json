@@ -1,0 +1,28 @@
+{
+ "grant_id": "3702dc53-99c8-4506-ac67-4a017e0bdc73",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "6f9bb9ec250e137dd7e0d96851af88ba1c5d19e4f209b71198eac11dc4dbafa7",
+ "retrieved_at": "2026-10-02T19:57:27+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O1",
+   "strategic_reason": "The grant funds research to optimize and implement evidence-based mental health practices for older adults with serious mental illness, directly supporting integrated behavioral and physical health care.",
+   "strategic_evidence_quote": "The purpose of this notice of funding opportunity (NOFO) is to foster research that will inform and support the optimization, delivery, sustainability, and effectiveness of empirically-supported practices for addressing the mental health needs of older adults with serious mental illness (SMI).",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DMHDDSUS",
+   "operational_fit": 6,
+   "operational_reason": "DMHDDSUS has authority over mental health services and evidence-based practice implementation, but conducting an NIH R01 would require research infrastructure and likely an academic partner.",
+   "restrictions": [],
+   "major_risk": "It is a research grant with no direct service dollars and NCDHHS may not have the research infrastructure to compete effectively as a lead applicant.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Aligns with behavioral health integration objective but is a research grant likely needing a university partner; worth review if DMHDDSUS has research capacity."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O1\",\n  \"strategic_reason\": \"The grant funds research to optimize and implement evidence-based mental health practices for older adults with serious mental illness, directly supporting integrated behavioral and physical health care.\",\n  \"strategic_evidence_quote\": \"The purpose of this notice of funding opportunity (NOFO) is to foster research that will inform and support the optimization, delivery, sustainability, and effectiveness of empirically-supported practices for addressing the mental health needs of older adults with serious mental illness (SMI).\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DMHDDSUS\",\n  \"operational_fit\": 6,\n  \"operational_reason\": \"DMHDDSUS has authority over mental health services and evidence-based practice implementation, but conducting an NIH R01 would require research infrastructure and likely an academic partner.\",\n  \"restrictions\": [],\n  \"major_risk\": \"It is a research grant with no direct service dollars and NCDHHS may not have the research infrastructure to compete effectively as a lead applicant.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Aligns with behavioral health integration objective but is a research grant likely needing a university partner; worth review if DMHDDSUS has research capacity.\"\n}"
+  ]
+ }
+}

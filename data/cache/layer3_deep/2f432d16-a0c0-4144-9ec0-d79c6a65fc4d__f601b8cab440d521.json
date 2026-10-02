@@ -1,0 +1,28 @@
+{
+ "grant_id": "2f432d16-a0c0-4144-9ec0-d79c6a65fc4d",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "f601b8cab440d521ef855c6e4e6582e9d57059f66bdbfd6ae972b167335ecab1",
+ "retrieved_at": "2026-10-02T19:52:48+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O2",
+   "strategic_reason": "The grant funds rigorous evaluation of child sexual abuse and problematic sexual behavior prevention programs and policies in youth-serving organizations, including group foster care, directly supporting child welfare safety and well-being.",
+   "strategic_evidence_quote": "rigorously evaluate programs and policies for their impact on primary prevention of child sexual abuse (CSA) or problematic sexual behavior (PSB) among youth",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DSS",
+   "operational_fit": 7,
+   "operational_reason": "DSS oversees child welfare and foster care and can partner with researchers to evaluate prevention policies in youth-serving settings, though it is not primarily a research division.",
+   "restrictions": [],
+   "major_risk": "It is an investigator-initiated research grant rather than direct service funding, so it cannot pay for child welfare services and requires substantial evaluation and research capacity.",
+   "recommended_for_review": true,
+   "one_line_rationale": "CDC research grant to evaluate prevention of child sexual abuse and problematic sexual behavior aligns with DSS child welfare safety and foster care, but is research, not direct services."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O2\",\n  \"strategic_reason\": \"The grant funds rigorous evaluation of child sexual abuse and problematic sexual behavior prevention programs and policies in youth-serving organizations, including group foster care, directly supporting child welfare safety and well-being.\",\n  \"strategic_evidence_quote\": \"rigorously evaluate programs and policies for their impact on primary prevention of child sexual abuse (CSA) or problematic sexual behavior (PSB) among youth\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DSS\",\n  \"operational_fit\": 7,\n  \"operational_reason\": \"DSS oversees child welfare and foster care and can partner with researchers to evaluate prevention policies in youth-serving settings, though it is not primarily a research division.\",\n  \"restrictions\": [],\n  \"major_risk\": \"It is an investigator-initiated research grant rather than direct service funding, so it cannot pay for child welfare services and requires substantial evaluation and research capacity.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"CDC research grant to evaluate prevention of child sexual abuse and problematic sexual behavior aligns with DSS child welfare safety and foster care, but is research, not direct services.\"\n}"
+  ]
+ }
+}

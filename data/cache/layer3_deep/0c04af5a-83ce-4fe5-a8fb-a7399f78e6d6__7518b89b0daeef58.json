@@ -1,0 +1,32 @@
+{
+ "grant_id": "0c04af5a-83ce-4fe5-a8fb-a7399f78e6d6",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "7518b89b0daeef58b03c436af4888dce568f6eb428e5dda8bde978faadae4dae",
+ "retrieved_at": "2026-10-02T19:55:51+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O1",
+   "strategic_reason": "The NOFO funds effectiveness trials of mental health treatment and services interventions in community settings, including services interventions to improve access and equity, which aligns with integrating and coordinating behavioral health care.",
+   "strategic_evidence_quote": "clinical trials to evaluate the effectiveness of patient-, provider-, organizational-, or systems-level services interventions to improve access, continuity, quality, equity, and/or value of mental health services.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DMHDDSUS",
+   "operational_fit": 4,
+   "operational_reason": "DMHDDSUS manages mental health services and policy, but will not typically have the investigator-led clinical trial infrastructure required for an NIH R01.",
+   "restrictions": [
+    "Clinical Trial Required",
+    "Requires adequately powered trial with pilot data",
+    "Collaborative R01 is used for multisite trials when two or more sites are necessary"
+   ],
+   "major_risk": "The biggest risk is that this is an NIH research grant requiring clinical trial capacity and federal research grants management that NCDHHS may not have as a service agency.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Strong mental health goal alignment, but an NIH R01 effectiveness trial is research-heavy and likely better suited to university partners than NCDHHS service divisions."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O1\",\n  \"strategic_reason\": \"The NOFO funds effectiveness trials of mental health treatment and services interventions in community settings, including services interventions to improve access and equity, which aligns with integrating and coordinating behavioral health care.\",\n  \"strategic_evidence_quote\": \"clinical trials to evaluate the effectiveness of patient-, provider-, organizational-, or systems-level services interventions to improve access, continuity, quality, equity, and/or value of mental health services.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DMHDDSUS\",\n  \"operational_fit\": 4,\n  \"operational_reason\": \"DMHDDSUS manages mental health services and policy, but will not typically have the investigator-led clinical trial infrastructure required for an NIH R01.\",\n  \"restrictions\": [\n    \"Clinical Trial Required\",\n    \"Requires adequately powered trial with pilot data\",\n    \"Collaborative R01 is used for multisite trials when two or more sites are necessary\"\n  ],\n  \"major_risk\": \"The biggest risk is that this is an NIH research grant requiring clinical trial capacity and federal research grants management that NCDHHS may not have as a service agency.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Strong mental health goal alignment, but an NIH R01 effectiveness trial is research-heavy and likely better suited to university partners than NCDHHS service divisions.\"\n}"
+  ]
+ }
+}

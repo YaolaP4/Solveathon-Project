@@ -1,0 +1,28 @@
+{
+ "grant_id": "16dd4363-d3e1-44e7-81b8-eaf8f573d0d1",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "13599d9b47f1985658e4d4cfe0530539b5d9d82b0aaaa2547ea46ea7d35bc8a8",
+ "retrieved_at": "2026-10-02T19:50:57+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 7,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O3",
+   "strategic_reason": "The program would train maternal and child health nutrition professionals and improve nutrition services for mothers, children, and families, which aligns with increasing food security and nutrition access for children and families through WIC and related supports.",
+   "strategic_evidence_quote": "improve the nutrition and overall well-being of mothers, children, and families",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "Domestic* non-profit private institutions of higher education are eligible to apply.",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "No NCDHHS division is eligible to apply because HRSA limits applicants to private non-profit institutions of higher education, even though DPH has related maternal and child health nutrition responsibilities.",
+   "restrictions": [],
+   "major_risk": "NCDHHS is not an eligible applicant, so the agency could only participate as a partner or technical assistance recipient if a private university takes the lead.",
+   "recommended_for_review": false,
+   "one_line_rationale": "NCDHHS cannot apply directly; HRSA limits eligibility to private non-profit universities, so this does not fit an agency-owned application despite aligning with maternal child nutrition priorities."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 7,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O3\",\n  \"strategic_reason\": \"The program would train maternal and child health nutrition professionals and improve nutrition services for mothers, children, and families, which aligns with increasing food security and nutrition access for children and families through WIC and related supports.\",\n  \"strategic_evidence_quote\": \"improve the nutrition and overall well-being of mothers, children, and families\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"Domestic* non-profit private institutions of higher education are eligible to apply.\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"No NCDHHS division is eligible to apply because HRSA limits applicants to private non-profit institutions of higher education, even though DPH has related maternal and child health nutrition responsibilities.\",\n  \"restrictions\": [],\n  \"major_risk\": \"NCDHHS is not an eligible applicant, so the agency could only participate as a partner or technical assistance recipient if a private university takes the lead.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"NCDHHS cannot apply directly; HRSA limits eligibility to private non-profit universities, so this does not fit an agency-owned application despite aligning with maternal child nutrition priorities.\"\n}"
+  ]
+ }
+}

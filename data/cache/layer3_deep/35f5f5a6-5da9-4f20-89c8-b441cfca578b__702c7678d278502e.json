@@ -1,0 +1,28 @@
+{
+ "grant_id": "35f5f5a6-5da9-4f20-89c8-b441cfca578b",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "702c7678d278502e96e96a05a1f61e889f25c3fed9694b573e06dc293bcb9fc0",
+ "retrieved_at": "2026-10-02T19:54:42+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 3,
+   "matched_goal": "G4",
+   "matched_objective": "G4.O4",
+   "strategic_reason": "The program funds graduate training for health professionals, which is broadly workforce-related but does not directly fund NCDHHS's named state or local public health and child welfare workforce strategies.",
+   "strategic_evidence_quote": "The LEAH program trains health care professionals who can address chronic disease prevention in adolescents and young adults.",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "Domestic* non-profit private institutions of higher education are eligible to apply.",
+   "owning_division": "none",
+   "operational_fit": 1,
+   "operational_reason": "The agency is not an institution of higher education and no NCDHHS division runs graduate medical education programs.",
+   "restrictions": [],
+   "major_risk": "NCDHHS is not eligible to apply because the grant is limited to academic institutions, so the agency could not receive or directly administer the funds.",
+   "recommended_for_review": false,
+   "one_line_rationale": "NCDHHS is not eligible: LEAH funds academic graduate training programs, not state agencies, so this grant is not a fit."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 3,\n  \"matched_goal\": \"G4\",\n  \"matched_objective\": \"G4.O4\",\n  \"strategic_reason\": \"The program funds graduate training for health professionals, which is broadly workforce-related but does not directly fund NCDHHS's named state or local public health and child welfare workforce strategies.\",\n  \"strategic_evidence_quote\": \"The LEAH program trains health care professionals who can address chronic disease prevention in adolescents and young adults.\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"Domestic* non-profit private institutions of higher education are eligible to apply.\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 1,\n  \"operational_reason\": \"The agency is not an institution of higher education and no NCDHHS division runs graduate medical education programs.\",\n  \"restrictions\": [],\n  \"major_risk\": \"NCDHHS is not eligible to apply because the grant is limited to academic institutions, so the agency could not receive or directly administer the funds.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"NCDHHS is not eligible: LEAH funds academic graduate training programs, not state agencies, so this grant is not a fit.\"\n}"
+  ]
+ }
+}

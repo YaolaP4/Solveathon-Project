@@ -1,0 +1,32 @@
+{
+ "grant_id": "59462b36-6d05-4832-a628-427f72260f3d",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "38cc7a362fc19d54947234d7106f3406acf4ba8a212761839dba303228e05213",
+ "retrieved_at": "2026-10-02T19:48:39+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 0,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds construction or renovation of state/tribal veterans extended care facilities, which does not advance any NCDHHS strategic objective.",
+   "strategic_evidence_quote": "Grants are available to State and Tribal Governments for construction or renovations of State/Tribal owned and operated Veterans Extended Care Facilities.",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "ONLY STATE AND TRIBAL GOVERNMENTS MAY APPLY.",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "No NCDHHS division owns, operates, or funds state veterans homes; this function is typically outside the department's authority.",
+   "restrictions": [
+    "State cost share: VA participation may not exceed 65% of total project costs, leaving at least 35% to the state.",
+    "Build America, Buy America Act domestic sourcing requirements apply to iron, steel, manufactured products, and construction materials.",
+    "A complete initial application with detailed project checklist items is due via Grants.gov by April 15 for priority list consideration."
+   ],
+   "major_risk": "NCDHHS likely does not own or operate state veterans homes, so the department could be an atypical or unauthorized applicant for a capital project it would not run.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Funds construction or renovation of state veterans homes, which NCDHHS does not operate; better fit for NC Department of Military and Veterans Affairs, with 35% state match required."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 0,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds construction or renovation of state/tribal veterans extended care facilities, which does not advance any NCDHHS strategic objective.\",\n  \"strategic_evidence_quote\": \"Grants are available to State and Tribal Governments for construction or renovations of State/Tribal owned and operated Veterans Extended Care Facilities.\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"ONLY STATE AND TRIBAL GOVERNMENTS MAY APPLY.\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"No NCDHHS division owns, operates, or funds state veterans homes; this function is typically outside the department's authority.\",\n  \"restrictions\": [\n    \"State cost share: VA participation may not exceed 65% of total project costs, leaving at least 35% to the state.\",\n    \"Build America, Buy America Act domestic sourcing requirements apply to iron, steel, manufactured products, and construction materials.\",\n    \"A complete initial application with detailed project checklist items is due via Grants.gov by April 15 for priority list consideration.\"\n  ],\n  \"major_risk\": \"NCDHHS likely does not own or operate state veterans homes, so the department could be an atypical or unauthorized applicant for a capital project it would not run.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Funds construction or renovation of state veterans homes, which NCDHHS does not operate; better fit for NC Department of Military and Veterans Affairs, with 35% state match required.\"\n}"
+  ]
+ }
+}

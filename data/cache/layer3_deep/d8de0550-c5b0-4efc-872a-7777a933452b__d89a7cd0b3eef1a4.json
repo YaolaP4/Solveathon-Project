@@ -1,0 +1,32 @@
+{
+ "grant_id": "d8de0550-c5b0-4efc-872a-7777a933452b",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "d89a7cd0b3eef1a435298115daefc3e49f1b5a6f4df012a4d8efc5709371e1bd",
+ "retrieved_at": "2026-10-02T19:55:31+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 0,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The funded activity is international anti-trafficking intervention and evaluation, not one of NCDHHS's named health, child and family, behavioral health, workforce, or operational objectives.",
+   "strategic_evidence_quote": "The goal of PEMS is to measurably and substantially reduce the prevalence of human trafficking and the harms associated with the crime in targeted populations through innovative interventions driven by research, monitoring, evaluation, and learning, and the expansion of partnerships with government, academia, civil society organizations, international organizations and the private sector.",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "Any commercial, international, educational, or non-profit organization(s), including any faith-based, community-based, or public international organization(s) are eligible to apply if and when a Statement of Intent and/or a Notice of Funding Opportunity is published.",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "The program is a U.S. Department of State international anti-trafficking grant, outside the authority and existing role of North Carolina health and human services divisions.",
+   "restrictions": [
+    "This is a Notice of Intent; the TIP Office is not accepting applications at this time.",
+    "International programs to combat human trafficking; projects are not North Carolina-specific.",
+    "A valid Unique Entity Identifier is required for organizations selected for an award."
+   ],
+   "major_risk": "This is an international State Department opportunity for which NCDHHS is not an eligible applicant, and the work does not align with a named NCDHHS objective.",
+   "recommended_for_review": false,
+   "one_line_rationale": "International anti-trafficking grant from U.S. State Department; NCDHHS is not an eligible applicant and the work does not advance a named NCDHHS objective."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 0,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The funded activity is international anti-trafficking intervention and evaluation, not one of NCDHHS's named health, child and family, behavioral health, workforce, or operational objectives.\",\n  \"strategic_evidence_quote\": \"The goal of PEMS is to measurably and substantially reduce the prevalence of human trafficking and the harms associated with the crime in targeted populations through innovative interventions driven by research, monitoring, evaluation, and learning, and the expansion of partnerships with government, academia, civil society organizations, international organizations and the private sector.\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"Any commercial, international, educational, or non-profit organization(s), including any faith-based, community-based, or public international organization(s) are eligible to apply if and when a Statement of Intent and/or a Notice of Funding Opportunity is published.\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"The program is a U.S. Department of State international anti-trafficking grant, outside the authority and existing role of North Carolina health and human services divisions.\",\n  \"restrictions\": [\n    \"This is a Notice of Intent; the TIP Office is not accepting applications at this time.\",\n    \"International programs to combat human trafficking; projects are not North Carolina-specific.\",\n    \"A valid Unique Entity Identifier is required for organizations selected for an award.\"\n  ],\n  \"major_risk\": \"This is an international State Department opportunity for which NCDHHS is not an eligible applicant, and the work does not align with a named NCDHHS objective.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"International anti-trafficking grant from U.S. State Department; NCDHHS is not an eligible applicant and the work does not advance a named NCDHHS objective.\"\n}"
+  ]
+ }
+}

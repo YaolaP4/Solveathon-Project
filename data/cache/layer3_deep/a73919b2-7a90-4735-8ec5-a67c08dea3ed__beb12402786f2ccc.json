@@ -1,0 +1,28 @@
+{
+ "grant_id": "a73919b2-7a90-4735-8ec5-a67c08dea3ed",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "beb12402786f2cccd85db4c6bb1ef2ace9f94321a2f966a9fd9dbcde4e5d142f",
+ "retrieved_at": "2026-10-02T19:28:00+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 6,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O3",
+   "strategic_reason": "Strengthening the HIV care and treatment system helps mitigate barriers to health services for people facing greater health challenges.",
+   "strategic_evidence_quote": "to provide tools, training and technical assistance (TA) to RWHAP Parts A and B recipients and their planning bodies to support integrated HIV prevention and care planning",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 4,
+   "operational_reason": "DPH handles HIV prevention and surveillance, but operating a national TA center for all RWHAP recipients is outside its statewide role.",
+   "restrictions": [],
+   "major_risk": "Requires delivering nationwide training and TA rather than direct North Carolina services, stretching staff beyond statewide mission.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Supports HIV care access (G1) but funds national training, not NC services, an atypical role for DPH."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 6,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O3\",\n  \"strategic_reason\": \"Strengthening the HIV care and treatment system helps mitigate barriers to health services for people facing greater health challenges.\",\n  \"strategic_evidence_quote\": \"to provide tools, training and technical assistance (TA) to RWHAP Parts A and B recipients and their planning bodies to support integrated HIV prevention and care planning\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 4,\n  \"operational_reason\": \"DPH handles HIV prevention and surveillance, but operating a national TA center for all RWHAP recipients is outside its statewide role.\",\n  \"restrictions\": [],\n  \"major_risk\": \"Requires delivering nationwide training and TA rather than direct North Carolina services, stretching staff beyond statewide mission.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Supports HIV care access (G1) but funds national training, not NC services, an atypical role for DPH.\"\n}"
+  ]
+ }
+}

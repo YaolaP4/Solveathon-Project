@@ -1,0 +1,30 @@
+{
+ "grant_id": "6076b54f-ab56-4ed2-81f5-8b43c030a4c0",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "56569bd821c7da99581ae9a7f8ee5780f617538bc9333209228891602182f10d",
+ "retrieved_at": "2026-10-02T19:29:42+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O3",
+   "strategic_reason": "The grant funds comprehensive preventive and primary care in medically underserved communities, directly advancing rural and underserved primary care access.",
+   "strategic_evidence_quote": "providing grants to support the delivery of comprehensive, high-quality preventive and primary health care services in the United States and its territories",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "ORH",
+   "operational_fit": 3,
+   "operational_reason": "ORH supports safety-net and underserved primary care but does not directly operate Health Center Program-compliant clinics.",
+   "restrictions": [
+    "Limited to service areas announced in the Service Area Announcement Table (SAAT)"
+   ],
+   "major_risk": "NCDHHS does not operate Health Center Program sites, so it would have to become a full FQHC operator in a pre-defined service area.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Supports underserved primary care under G1, but NCDHHS doesn't operate health centers, so direct application fits poorly."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O3\",\n  \"strategic_reason\": \"The grant funds comprehensive preventive and primary care in medically underserved communities, directly advancing rural and underserved primary care access.\",\n  \"strategic_evidence_quote\": \"providing grants to support the delivery of comprehensive, high-quality preventive and primary health care services in the United States and its territories\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"ORH\",\n  \"operational_fit\": 3,\n  \"operational_reason\": \"ORH supports safety-net and underserved primary care but does not directly operate Health Center Program-compliant clinics.\",\n  \"restrictions\": [\"Limited to service areas announced in the Service Area Announcement Table (SAAT)\"],\n  \"major_risk\": \"NCDHHS does not operate Health Center Program sites, so it would have to become a full FQHC operator in a pre-defined service area.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Supports underserved primary care under G1, but NCDHHS doesn't operate health centers, so direct application fits poorly.\"\n}"
+  ]
+ }
+}

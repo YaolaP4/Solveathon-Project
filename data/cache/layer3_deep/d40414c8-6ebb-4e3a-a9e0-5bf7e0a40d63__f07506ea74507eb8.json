@@ -1,0 +1,34 @@
+{
+ "grant_id": "d40414c8-6ebb-4e3a-a9e0-5bf7e0a40d63",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "f07506ea74507eb8d0e1e63c38e148ef90fc8ec4cfbae4270e00dbcdc6ed6f16",
+ "retrieved_at": "2026-10-02T19:46:55+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 10,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O4",
+   "strategic_reason": "The grant directly funds improved maternal health and birth outcomes by scaling self-measured blood pressure during pregnancy and postpartum.",
+   "strategic_evidence_quote": "With a special focus on underserved and rural communities, including maternity care deserts, the initiative seeks equitable detection and control of HTN, improved maternal and fetal outcomes, and reductions in admissions and morbidity from HTN-related complications.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "Any private (either profit or nonprofit) or public entity located in a State is eligible to apply for an award under this opportunity.",
+   "owning_division": "DPH",
+   "operational_fit": 9,
+   "operational_reason": "DPH already houses maternal and child health and chronic disease programs and can implement this through local health departments and safety-net partners.",
+   "restrictions": [
+    "Must fully implement project within the first six months of award",
+    "Must evaluate processes and outcomes throughout the project",
+    "Must document and share findings and results with HHS and others",
+    "Requires a non-competing continuation application for the second budget period",
+    "Focus on underserved and rural communities, including maternity care deserts"
+   ],
+   "major_risk": "The initiative requires full implementation within six months and is time-limited to 24 months, so readiness and sustainability planning are immediate challenges.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Directly funds maternal health improvement under G2.O4; DPH can lead with local health partners."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 10,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O4\",\n  \"strategic_reason\": \"The grant directly funds improved maternal health and birth outcomes by scaling self-measured blood pressure during pregnancy and postpartum.\",\n  \"strategic_evidence_quote\": \"With a special focus on underserved and rural communities, including maternity care deserts, the initiative seeks equitable detection and control of HTN, improved maternal and fetal outcomes, and reductions in admissions and morbidity from HTN-related complications.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"Any private (either profit or nonprofit) or public entity located in a State is eligible to apply for an award under this opportunity.\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DPH already houses maternal and child health and chronic disease programs and can implement this through local health departments and safety-net partners.\",\n  \"restrictions\": [\n    \"Must fully implement project within the first six months of award\",\n    \"Must evaluate processes and outcomes throughout the project\",\n    \"Must document and share findings and results with HHS and others\",\n    \"Requires a non-competing continuation application for the second budget period\",\n    \"Focus on underserved and rural communities, including maternity care deserts\"\n  ],\n  \"major_risk\": \"The initiative requires full implementation within six months and is time-limited to 24 months, so readiness and sustainability planning are immediate challenges.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Directly funds maternal health improvement under G2.O4; DPH can lead with local health partners.\"\n}"
+  ]
+ }
+}

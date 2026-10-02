@@ -1,0 +1,28 @@
+{
+ "grant_id": "a17265a0-a839-4e4a-b114-49c9254cd4a7",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "fc0e941f5a7d12347f9427eb5abc511d42567a0ea3c67d79fa78df93fb561884",
+ "retrieved_at": "2026-10-02T19:58:31+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 2,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds pre-kindergarten through grade 12 biomedical science education and STEM career awareness, which does not directly advance a named NCDHHS health, child welfare, behavioral health, or workforce objective.",
+   "strategic_evidence_quote": "The overarching goal of this NIH Science Education Partnership Award (SEPA) program is to support educational activities that increase understanding of biomedical research among pre-college (pre-kindergarten to grade12) individuals, and to encourage awareness of and continued interest in careers in science, technology, engineering, and mathematics (STEM).",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "none",
+   "operational_fit": 2,
+   "operational_reason": "NCDHHS divisions deliver health and human services but do not have a core program in preK-12 biomedical science education or STEM curriculum delivery.",
+   "restrictions": [],
+   "major_risk": "The program is outside NCDHHS's core service delivery and would require building K-12 educational partnerships that the Department does not currently operate.",
+   "recommended_for_review": false,
+   "one_line_rationale": "This NIH award funds preK-12 STEM and biomedical science education, which does not directly fit an NCDHHS health or human services objective."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 2,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds pre-kindergarten through grade 12 biomedical science education and STEM career awareness, which does not directly advance a named NCDHHS health, child welfare, behavioral health, or workforce objective.\",\n  \"strategic_evidence_quote\": \"The overarching goal of this NIH Science Education Partnership Award (SEPA) program is to support educational activities that increase understanding of biomedical research among pre-college (pre-kindergarten to grade12) individuals, and to encourage awareness of and continued interest in careers in science, technology, engineering, and mathematics (STEM).\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 2,\n  \"operational_reason\": \"NCDHHS divisions deliver health and human services but do not have a core program in preK-12 biomedical science education or STEM curriculum delivery.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The program is outside NCDHHS's core service delivery and would require building K-12 educational partnerships that the Department does not currently operate.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"This NIH award funds preK-12 STEM and biomedical science education, which does not directly fit an NCDHHS health or human services objective.\"\n}"
+  ]
+ }
+}

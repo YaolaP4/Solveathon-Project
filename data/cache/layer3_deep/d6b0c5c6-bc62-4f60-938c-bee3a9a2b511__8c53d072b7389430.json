@@ -1,0 +1,30 @@
+{
+ "grant_id": "d6b0c5c6-bc62-4f60-938c-bee3a9a2b511",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "8c53d072b738943077a6b09d582de801ff6cd89faa578213b2a68b06861255bc",
+ "retrieved_at": "2026-10-02T19:48:03+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "The grant funds infrastructure and capacity to expand access to family-centered HIV care for low-income women, infants, children, and youth, which advances health access and reduces disparities.",
+   "strategic_evidence_quote": "The purpose of this supplemental funding is to strengthen organizational infrastructure and increase capacity to develop, enhance, or expand access to high quality family-centered HIV care services.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 9,
+   "operational_reason": "DPH already manages communicable disease prevention, maternal and child health, and local public health partnerships, so expanding family-centered HIV care capacity fits its existing public health role.",
+   "restrictions": [
+    "Must provide RWHAP Part D family-centered care in outpatient or ambulatory care settings to low income women, infants, children, and youth with HIV in the entire service area identified in the FY 2027 NOFO."
+   ],
+   "major_risk": "NCDHHS may not be a current RWHAP Part D recipient or may not directly provide outpatient family-centered HIV care, making this a competitive new-applicant path rather than an easy supplemental add-on.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Fits G1 health access and DPH communicable disease/maternal child health; state governments are eligible, but NCDHHS must provide Part D outpatient HIV care."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"The grant funds infrastructure and capacity to expand access to family-centered HIV care for low-income women, infants, children, and youth, which advances health access and reduces disparities.\",\n  \"strategic_evidence_quote\": \"The purpose of this supplemental funding is to strengthen organizational infrastructure and increase capacity to develop, enhance, or expand access to high quality family-centered HIV care services.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DPH already manages communicable disease prevention, maternal and child health, and local public health partnerships, so expanding family-centered HIV care capacity fits its existing public health role.\",\n  \"restrictions\": [\n    \"Must provide RWHAP Part D family-centered care in outpatient or ambulatory care settings to low income women, infants, children, and youth with HIV in the entire service area identified in the FY 2027 NOFO.\"\n  ],\n  \"major_risk\": \"NCDHHS may not be a current RWHAP Part D recipient or may not directly provide outpatient family-centered HIV care, making this a competitive new-applicant path rather than an easy supplemental add-on.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Fits G1 health access and DPH communicable disease/maternal child health; state governments are eligible, but NCDHHS must provide Part D outpatient HIV care.\"\n}"
+  ]
+ }
+}

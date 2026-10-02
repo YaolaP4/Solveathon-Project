@@ -1,0 +1,32 @@
+{
+ "grant_id": "67e06df1-e563-43fa-8fd0-46f3cbbc9aef",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "0f024ce279e4614911ab2de532f9315acb0d95550e39c50a050029d8c4a3bc06",
+ "retrieved_at": "2026-10-02T20:00:27+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 3,
+   "matched_goal": "G5",
+   "matched_objective": "G5.O1",
+   "strategic_reason": "The Coordinating Center's data collection, evaluation, and common metrics work loosely fits NCDHHS's data-driven decision-making objective, but it is a national library-network role rather than NCDHHS data infrastructure.",
+   "strategic_evidence_quote": "The NCC will manage network-wide evaluation activities, including the development of tools and systems for data collection and analysis, and will lead the common metrics initiative and related reporting.",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "none",
+   "operational_fit": 1,
+   "operational_reason": "No division has a health-information-library or national coordinating-center mandate, and the work is outside NCDHHS's direct service and regulatory roles.",
+   "restrictions": [
+    "Must coordinate with the Network Training Center and Regional Medical Libraries",
+    "Network-wide evaluation, data collection, and common metrics reporting required",
+    "National scope and operation of public-facing platforms such as the NNLM website"
+   ],
+   "major_risk": "NCDHHS would be competing against established library and information-network organizations with NIH partnerships, and the grant is distant from state health service priorities.",
+   "recommended_for_review": false,
+   "one_line_rationale": "National library network coordinating center is outside NCDHHS's health service mission and divisional expertise; although state governments are eligible, operational fit is too low to pursue."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 3,\n  \"matched_goal\": \"G5\",\n  \"matched_objective\": \"G5.O1\",\n  \"strategic_reason\": \"The Coordinating Center's data collection, evaluation, and common metrics work loosely fits NCDHHS's data-driven decision-making objective, but it is a national library-network role rather than NCDHHS data infrastructure.\",\n  \"strategic_evidence_quote\": \"The NCC will manage network-wide evaluation activities, including the development of tools and systems for data collection and analysis, and will lead the common metrics initiative and related reporting.\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 1,\n  \"operational_reason\": \"No division has a health-information-library or national coordinating-center mandate, and the work is outside NCDHHS's direct service and regulatory roles.\",\n  \"restrictions\": [\n    \"Must coordinate with the Network Training Center and Regional Medical Libraries\",\n    \"Network-wide evaluation, data collection, and common metrics reporting required\",\n    \"National scope and operation of public-facing platforms such as the NNLM website\"\n  ],\n  \"major_risk\": \"NCDHHS would be competing against established library and information-network organizations with NIH partnerships, and the grant is distant from state health service priorities.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"National library network coordinating center is outside NCDHHS's health service mission and divisional expertise; although state governments are eligible, operational fit is too low to pursue.\"\n}"
+  ]
+ }
+}

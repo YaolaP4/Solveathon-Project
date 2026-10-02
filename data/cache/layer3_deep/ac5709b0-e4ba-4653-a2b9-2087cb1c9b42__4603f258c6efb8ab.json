@@ -1,0 +1,31 @@
+{
+ "grant_id": "ac5709b0-e4ba-4653-a2b9-2087cb1c9b42",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "4603f258c6efb8abfbea6ea9f14f0c2c78afbe418aa25492a474dacee0b0ad1e",
+ "retrieved_at": "2026-10-02T20:01:51+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 0,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The funded activity is international anti-trafficking prevalence research and pilot programming in partner countries, which does not advance a named NCDHHS domestic health or human services objective.",
+   "strategic_evidence_quote": "The goal of PEMS is to measurably and substantially reduce the prevalence of human trafficking in targeted populations in partner countries and jurisdictions",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "Any commercial, international, educational, or non-profit organization(s), including any faith-based, community-based, or public international organization(s) are eligible to apply",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "No NCDHHS division has the authority or international role to run State Department anti-trafficking research and pilot programs in partner countries.",
+   "restrictions": [
+    "Notice of Intent only; applications are not being accepted at this time.",
+    "Selected organizations must obtain a valid Unique Entity Identifier."
+   ],
+   "major_risk": "This is a Notice of Intent, not an open funding opportunity, and state agencies are not listed as eligible applicants.",
+   "recommended_for_review": false,
+   "one_line_rationale": "International State Department anti-trafficking research grant, not currently accepting applications and state agencies are not listed as eligible; no NCDHHS division fit."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 0,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The funded activity is international anti-trafficking prevalence research and pilot programming in partner countries, which does not advance a named NCDHHS domestic health or human services objective.\",\n  \"strategic_evidence_quote\": \"The goal of PEMS is to measurably and substantially reduce the prevalence of human trafficking in targeted populations in partner countries and jurisdictions\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"Any commercial, international, educational, or non-profit organization(s), including any faith-based, community-based, or public international organization(s) are eligible to apply\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"No NCDHHS division has the authority or international role to run State Department anti-trafficking research and pilot programs in partner countries.\",\n  \"restrictions\": [\n    \"Notice of Intent only; applications are not being accepted at this time.\",\n    \"Selected organizations must obtain a valid Unique Entity Identifier.\"\n  ],\n  \"major_risk\": \"This is a Notice of Intent, not an open funding opportunity, and state agencies are not listed as eligible applicants.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"International State Department anti-trafficking research grant, not currently accepting applications and state agencies are not listed as eligible; no NCDHHS division fit.\"\n}"
+  ]
+ }
+}

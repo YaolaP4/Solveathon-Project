@@ -1,0 +1,31 @@
+{
+ "grant_id": "bd5d4bd5-e3f3-48e7-8016-33c79aaafd57",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "dcc322a128bada6ac1b464ff934068b3f50aeaee04994a32ea521eb299d3d96b",
+ "retrieved_at": "2026-10-02T20:02:24+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 1,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds international child-trafficking projects under a U.S.-foreign government compact, not a named NCDHHS objective serving North Carolinians.",
+   "strategic_evidence_quote": "projects to combat all forms of child trafficking as part of a potential Child Protection Compact (CPC) between the United States and a recipient country proposed by the applicant.",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "U.S. government agencies",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "This grant requires implementing foreign child-trafficking programs in a recipient country, which is outside NCDHHS's state-level health and human services authority.",
+   "restrictions": [
+    "Work must take place in a recipient country proposed by the applicant",
+    "Requires a multi-year plan developed jointly between the United States and another government"
+   ],
+   "major_risk": "This is a U.S. Department of State international assistance program for foreign-country projects, so NCDHHS is neither an eligible applicant nor a natural implementing agency.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Foreign child-trafficking assistance does not fit NCDHHS's state-level health and human services role; state agencies are not listed as eligible, so no division should pursue it."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 1,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds international child-trafficking projects under a U.S.-foreign government compact, not a named NCDHHS objective serving North Carolinians.\",\n  \"strategic_evidence_quote\": \"projects to combat all forms of child trafficking as part of a potential Child Protection Compact (CPC) between the United States and a recipient country proposed by the applicant.\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"U.S. government agencies\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"This grant requires implementing foreign child-trafficking programs in a recipient country, which is outside NCDHHS's state-level health and human services authority.\",\n  \"restrictions\": [\n    \"Work must take place in a recipient country proposed by the applicant\",\n    \"Requires a multi-year plan developed jointly between the United States and another government\"\n  ],\n  \"major_risk\": \"This is a U.S. Department of State international assistance program for foreign-country projects, so NCDHHS is neither an eligible applicant nor a natural implementing agency.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Foreign child-trafficking assistance does not fit NCDHHS's state-level health and human services role; state agencies are not listed as eligible, so no division should pursue it.\"\n}"
+  ]
+ }
+}

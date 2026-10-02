@@ -1,0 +1,31 @@
+{
+ "grant_id": "41024895-69ca-49fb-9312-128fc5316777",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "b0e30ec1a0fcda6cdbfa8ed074c7ce02d2eb53b19358656964d3090ed4850143",
+ "retrieved_at": "2026-10-02T19:52:39+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 7,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O2",
+   "strategic_reason": "The grant funds respiratory pathogen surveillance and vaccine-effectiveness evidence, which would strengthen DPH's ability to track outcomes and use data to improve protection against influenza.",
+   "strategic_evidence_quote": "This network provides evidence needed to improve the effectiveness of influenza and other respiratory pathogen vaccines.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 8,
+   "operational_reason": "DPH already leads immunization, disease surveillance, epidemiology, and public health laboratory work, so this CDC immunization research cooperative agreement is an extension of its core functions.",
+   "restrictions": [
+    "You are required to apply for either Component A (VE and correlates of protection) or B (Coordination and surge capacity) but not both.",
+    "Funding instrument: cooperative_agreement"
+   ],
+   "major_risk": "The network requires active enrollment and systematic respiratory pathogen testing of outpatients, which is clinical research infrastructure that may go beyond DPH's routine surveillance capacity.",
+   "recommended_for_review": true,
+   "one_line_rationale": "CDC immunization research cooperative agreement aligned with DPH immunization and disease surveillance; generates vaccine-effectiveness evidence but requires clinical enrollment and lab capacity."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 7,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O2\",\n  \"strategic_reason\": \"The grant funds respiratory pathogen surveillance and vaccine-effectiveness evidence, which would strengthen DPH's ability to track outcomes and use data to improve protection against influenza.\",\n  \"strategic_evidence_quote\": \"This network provides evidence needed to improve the effectiveness of influenza and other respiratory pathogen vaccines.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 8,\n  \"operational_reason\": \"DPH already leads immunization, disease surveillance, epidemiology, and public health laboratory work, so this CDC immunization research cooperative agreement is an extension of its core functions.\",\n  \"restrictions\": [\n    \"You are required to apply for either Component A (VE and correlates of protection) or B (Coordination and surge capacity) but not both.\",\n    \"Funding instrument: cooperative_agreement\"\n  ],\n  \"major_risk\": \"The network requires active enrollment and systematic respiratory pathogen testing of outpatients, which is clinical research infrastructure that may go beyond DPH's routine surveillance capacity.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"CDC immunization research cooperative agreement aligned with DPH immunization and disease surveillance; generates vaccine-effectiveness evidence but requires clinical enrollment and lab capacity.\"\n}"
+  ]
+ }
+}

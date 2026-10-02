@@ -1,0 +1,28 @@
+{
+ "grant_id": "770eae58-b245-4431-a4b8-7b1aca9e917f",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "90746a245f4ab197b8a784a606deb896080262e22506daca8b5d182fe2d02fe4",
+ "retrieved_at": "2026-10-02T19:28:43+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O4",
+   "strategic_reason": "Title X family planning, preconception care, and reproductive goals counseling directly advance women's health and birth outcomes including reproductive life planning.",
+   "strategic_evidence_quote": "voluntary family planning projects [that] offer a broad range of acceptable and effective family planning methods and services (including natural family planning methods, infertility services, and services for adolescents).",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "Any public or private nonprofit entity is eligible to apply.",
+   "owning_division": "DPH",
+   "operational_fit": 9,
+   "operational_reason": "DPH already operates maternal and child health and local health department clinical services that align with Title X family planning delivery.",
+   "restrictions": [],
+   "major_risk": "Award amount and competition are uncertain with funding pending FY 2027 budget enactment and strict Title X statutory compliance.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Supports women's health and birth outcomes via family planning services that public health clinics already provide."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O4\",\n  \"strategic_reason\": \"Title X family planning, preconception care, and reproductive goals counseling directly advance women's health and birth outcomes including reproductive life planning.\",\n  \"strategic_evidence_quote\": \"voluntary family planning projects [that] offer a broad range of acceptable and effective family planning methods and services (including natural family planning methods, infertility services, and services for adolescents).\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"Any public or private nonprofit entity is eligible to apply.\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DPH already operates maternal and child health and local health department clinical services that align with Title X family planning delivery.\",\n  \"restrictions\": [],\n  \"major_risk\": \"Award amount and competition are uncertain with funding pending FY 2027 budget enactment and strict Title X statutory compliance.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Supports women's health and birth outcomes via family planning services that public health clinics already provide.\"\n}"
+  ]
+ }
+}

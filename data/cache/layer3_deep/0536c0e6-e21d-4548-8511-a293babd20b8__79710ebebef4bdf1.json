@@ -1,0 +1,31 @@
+{
+ "grant_id": "0536c0e6-e21d-4548-8511-a293babd20b8",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "79710ebebef4bdf14cbfff6469443f3415415fdb0f4a20927c01d4c924915cec",
+ "retrieved_at": "2026-10-02T19:58:07+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 5,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O2",
+   "strategic_reason": "The grant funds cancer epidemiology cohort research that can track cancer outcomes and disparities, supporting data use to reduce health disparities.",
+   "strategic_evidence_quote": "support research in cancer epidemiology cohort studies that address specific knowledge gaps in cancer etiology and survivorship",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 4,
+   "operational_reason": "DPH houses chronic disease epidemiology and surveillance and could manage or partner on cancer cohort research, but this U01 research grant is outside its routine public health service delivery.",
+   "restrictions": [
+    "support for cohort infrastructure and/or maintenance, continued follow-up",
+    "sharing of data and biospecimen resources as appropriate"
+   ],
+   "major_risk": "NCDHHS likely lacks an existing cancer epidemiology cohort and the long-term research infrastructure needed to compete successfully for this NCI U01.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Cancer epidemiology research aligns with data/outcome tracking under G1.O2, but DPH's routine service and surveillance role makes a large NIH cohort study a stretch."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 5,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O2\",\n  \"strategic_reason\": \"The grant funds cancer epidemiology cohort research that can track cancer outcomes and disparities, supporting data use to reduce health disparities.\",\n  \"strategic_evidence_quote\": \"support research in cancer epidemiology cohort studies that address specific knowledge gaps in cancer etiology and survivorship\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 4,\n  \"operational_reason\": \"DPH houses chronic disease epidemiology and surveillance and could manage or partner on cancer cohort research, but this U01 research grant is outside its routine public health service delivery.\",\n  \"restrictions\": [\n    \"support for cohort infrastructure and/or maintenance, continued follow-up\",\n    \"sharing of data and biospecimen resources as appropriate\"\n  ],\n  \"major_risk\": \"NCDHHS likely lacks an existing cancer epidemiology cohort and the long-term research infrastructure needed to compete successfully for this NCI U01.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Cancer epidemiology research aligns with data/outcome tracking under G1.O2, but DPH's routine service and surveillance role makes a large NIH cohort study a stretch.\"\n}"
+  ]
+ }
+}

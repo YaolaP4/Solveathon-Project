@@ -1,0 +1,28 @@
+{
+ "grant_id": "e0b00d08-7c83-4488-8b55-94bd733a57fa",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "5d0c8cf2404125a6b4ab3344283e5c13dc59a6ac232a8ff4ab668aa9183459a0",
+ "retrieved_at": "2026-10-02T20:01:23+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 2,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds investigator-initiated occupational safety and health research, which is not among NCDHHS's named strategic goals or objectives, though it touches worker health broadly.",
+   "strategic_evidence_quote": "improve understanding of the risks and conditions associated with occupational diseases and injuries",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 3,
+   "operational_reason": "DPH has occupational and environmental epidemiology capacity, but an NIOSH R01 is an academic research mechanism and not an extension of its usual service or surveillance programs.",
+   "restrictions": [],
+   "major_risk": "As an investigator-initiated research grant outside NCDHHS named priorities, it would consume substantial research capacity with low strategic return for a state health services agency.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Occupational health research falls outside named NCDHHS strategic goals; while state governments are eligible, DPH would be an atypical R01 lead and the grant is better suited to academic researchers."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 2,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds investigator-initiated occupational safety and health research, which is not among NCDHHS's named strategic goals or objectives, though it touches worker health broadly.\",\n  \"strategic_evidence_quote\": \"improve understanding of the risks and conditions associated with occupational diseases and injuries\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 3,\n  \"operational_reason\": \"DPH has occupational and environmental epidemiology capacity, but an NIOSH R01 is an academic research mechanism and not an extension of its usual service or surveillance programs.\",\n  \"restrictions\": [],\n  \"major_risk\": \"As an investigator-initiated research grant outside NCDHHS named priorities, it would consume substantial research capacity with low strategic return for a state health services agency.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Occupational health research falls outside named NCDHHS strategic goals; while state governments are eligible, DPH would be an atypical R01 lead and the grant is better suited to academic researchers.\"\n}"
+  ]
+ }
+}

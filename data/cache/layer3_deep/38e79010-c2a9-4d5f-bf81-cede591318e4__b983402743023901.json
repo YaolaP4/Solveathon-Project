@@ -1,0 +1,30 @@
+{
+ "grant_id": "38e79010-c2a9-4d5f-bf81-cede591318e4",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "b9834027430239014ce6b6e96c86b60eabf4102ce97a6f103a3ef969ff25ec63",
+ "retrieved_at": "2026-10-02T19:47:14+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 6,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "The grant funds a collaborative healthcare and public health network to improve safety and quality in varied settings including rural hospitals, supporting structures that reduce health disparities.",
+   "strategic_evidence_quote": "This Program will create a collaborative network of healthcare systems, facilities and public health partners to rapidly detect, respond to, and prevent threats to patient and healthcare worker safety.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 9,
+   "operational_reason": "DPH already leads disease prevention, surveillance, epidemiology, public health preparedness, and local health department coordination, so this healthcare-safety and infection-prevention network is an extension of existing work.",
+   "restrictions": [
+    "Requires a network of healthcare systems/facilities partnering with public health departments and other entities with relevant expertise."
+   ],
+   "major_risk": "The Department does not directly operate most of the healthcare facilities named in the NOFO, so the program's value depends heavily on voluntary participation and coordination across independent hospitals and nursing homes.",
+   "recommended_for_review": true,
+   "one_line_rationale": "CDC-funded healthcare infection-prevention network aligns with DPH disease surveillance and rural health equity work; state agencies are eligible, so this merits review."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 6,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"The grant funds a collaborative healthcare and public health network to improve safety and quality in varied settings including rural hospitals, supporting structures that reduce health disparities.\",\n  \"strategic_evidence_quote\": \"This Program will create a collaborative network of healthcare systems, facilities and public health partners to rapidly detect, respond to, and prevent threats to patient and healthcare worker safety.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DPH already leads disease prevention, surveillance, epidemiology, public health preparedness, and local health department coordination, so this healthcare-safety and infection-prevention network is an extension of existing work.\",\n  \"restrictions\": [\n    \"Requires a network of healthcare systems/facilities partnering with public health departments and other entities with relevant expertise.\"\n  ],\n  \"major_risk\": \"The Department does not directly operate most of the healthcare facilities named in the NOFO, so the program's value depends heavily on voluntary participation and coordination across independent hospitals and nursing homes.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"CDC-funded healthcare infection-prevention network aligns with DPH disease surveillance and rural health equity work; state agencies are eligible, so this merits review.\"\n}"
+  ]
+ }
+}

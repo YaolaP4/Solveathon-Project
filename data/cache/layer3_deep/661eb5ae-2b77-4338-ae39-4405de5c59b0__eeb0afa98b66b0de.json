@@ -1,0 +1,34 @@
+{
+ "grant_id": "661eb5ae-2b77-4338-ae39-4405de5c59b0",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "eeb0afa98b66b0de032ad073ebcbfd1af479271dde50cc01cb24cd462707ceb3",
+ "retrieved_at": "2026-10-02T19:52:27+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 5,
+   "matched_goal": "G2",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds prevention of violence among youth aged 10 to 24 years, which advances the broad child and family safety and well-being goal under G2, though it does not map directly to a named objective.",
+   "strategic_evidence_quote": "expand the evidence base for the prevention of violence among youth aged 10 to 24 years",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 8,
+   "operational_reason": "DPH already houses injury and violence prevention and epidemiology functions, so it could coordinate the community-focused evaluation and partnerships, likely with academic collaborators.",
+   "restrictions": [
+    "The proposed YVPCs should focus activities on communities with rates of youth violence that are higher than the national average.",
+    "YVPCs should conduct a rigorous evaluation of at least two distinct violence prevention approaches.",
+    "These approaches must address at least two of the priority research areas specified in the funding announcement to reduce rates of youth violence in the selected communities.",
+    "establish a youth advisory council in each intervention community",
+    "YVPCs should integrate training activities for early career researchers in youth violence prevention."
+   ],
+   "major_risk": "This is an investigator-initiated research center grant, so without an academic research partner NCDHHS may struggle to compete and comply with the rigorous evaluation requirements.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Fits DPH injury and violence prevention and G2 child well-being; research-heavy center grant likely requires academic partners."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 5,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds prevention of violence among youth aged 10 to 24 years, which advances the broad child and family safety and well-being goal under G2, though it does not map directly to a named objective.\",\n  \"strategic_evidence_quote\": \"expand the evidence base for the prevention of violence among youth aged 10 to 24 years\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 8,\n  \"operational_reason\": \"DPH already houses injury and violence prevention and epidemiology functions, so it could coordinate the community-focused evaluation and partnerships, likely with academic collaborators.\",\n  \"restrictions\": [\n    \"The proposed YVPCs should focus activities on communities with rates of youth violence that are higher than the national average.\",\n    \"YVPCs should conduct a rigorous evaluation of at least two distinct violence prevention approaches.\",\n    \"These approaches must address at least two of the priority research areas specified in the funding announcement to reduce rates of youth violence in the selected communities.\",\n    \"establish a youth advisory council in each intervention community\",\n    \"YVPCs should integrate training activities for early career researchers in youth violence prevention.\"\n  ],\n  \"major_risk\": \"This is an investigator-initiated research center grant, so without an academic research partner NCDHHS may struggle to compete and comply with the rigorous evaluation requirements.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Fits DPH injury and violence prevention and G2 child well-being; research-heavy center grant likely requires academic partners.\"\n}"
+  ]
+ }
+}

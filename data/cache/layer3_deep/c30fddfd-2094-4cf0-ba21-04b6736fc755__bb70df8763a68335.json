@@ -1,0 +1,31 @@
+{
+ "grant_id": "c30fddfd-2094-4cf0-ba21-04b6736fc755",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "bb70df8763a683352cc625a3257c4b4aa0daca8672a502913074ff0eb8e85e0b",
+ "retrieved_at": "2026-10-02T19:50:10+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O3",
+   "strategic_reason": "The grant directly funds comprehensive preventive and primary health care services in medically underserved communities, matching the rural and underserved primary care focus of G1.O3.",
+   "strategic_evidence_quote": "improves the health of medically underserved communities and populations by providing grants to support the delivery of comprehensive, high-quality preventive and primary health care services",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "ORH",
+   "operational_fit": 6,
+   "operational_reason": "ORH supports rural and safety-net primary care providers and shortage-area policy, but NCDHHS does not directly operate a Health Center Program service delivery site.",
+   "restrictions": [
+    "Service areas available for competition are limited to those announced in the Service Area Announcement Table (SAAT) or a Service Area Competition-Additional Area (SAC-AA).",
+    "Competition is tied to a funded service area where an existing awarded health center cannot continue providing services."
+   ],
+   "major_risk": "Health Center Program SAC applicants must directly operate a comprehensive primary care delivery site with a patient-majority governing board; NCDHHS lacks direct health center operations and would be an atypical, less competitive applicant.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Strong health access alignment, but NCDHHS is an atypical direct health center operator and ORH does not run primary care clinics, so likely not a viable state application."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O3\",\n  \"strategic_reason\": \"The grant directly funds comprehensive preventive and primary health care services in medically underserved communities, matching the rural and underserved primary care focus of G1.O3.\",\n  \"strategic_evidence_quote\": \"improves the health of medically underserved communities and populations by providing grants to support the delivery of comprehensive, high-quality preventive and primary health care services\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"ORH\",\n  \"operational_fit\": 6,\n  \"operational_reason\": \"ORH supports rural and safety-net primary care providers and shortage-area policy, but NCDHHS does not directly operate a Health Center Program service delivery site.\",\n  \"restrictions\": [\n    \"Service areas available for competition are limited to those announced in the Service Area Announcement Table (SAAT) or a Service Area Competition-Additional Area (SAC-AA).\",\n    \"Competition is tied to a funded service area where an existing awarded health center cannot continue providing services.\"\n  ],\n  \"major_risk\": \"Health Center Program SAC applicants must directly operate a comprehensive primary care delivery site with a patient-majority governing board; NCDHHS lacks direct health center operations and would be an atypical, less competitive applicant.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Strong health access alignment, but NCDHHS is an atypical direct health center operator and ORH does not run primary care clinics, so likely not a viable state application.\"\n}"
+  ]
+ }
+}

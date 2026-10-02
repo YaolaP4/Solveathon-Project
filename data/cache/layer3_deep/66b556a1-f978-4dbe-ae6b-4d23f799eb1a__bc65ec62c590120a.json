@@ -1,0 +1,30 @@
+{
+ "grant_id": "66b556a1-f978-4dbe-ae6b-4d23f799eb1a",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "bc65ec62c590120a64d91299ff0fdd295e06ce07b02b13c140d3419ebd933bcb",
+ "retrieved_at": "2026-10-02T19:59:40+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 2,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds occupational safety and health research, which is not among NCDHHS's named strategic objectives.",
+   "strategic_evidence_quote": "The NIOSH Small Research grant mechanism (R03) supports occupational safety and health research projects that can be carried out with limited resources",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 4,
+   "operational_reason": "DPH is the closest fit because it houses epidemiology, environmental health, and disease surveillance, but occupational health research is not a named DPH priority.",
+   "restrictions": [
+    "Foreign components, as defined in the HHS Grants Policy Statement, are not allowed."
+   ],
+   "major_risk": "The grant addresses occupational safety and health research, which is outside NCDHHS's stated strategic goals and likely has a stronger home with universities or the state's labor agency.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Eligible as a state agency but funds occupational safety research not named in NCDHHS goals, with no clear division fit; likely not worth pursuing."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 2,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds occupational safety and health research, which is not among NCDHHS's named strategic objectives.\",\n  \"strategic_evidence_quote\": \"The NIOSH Small Research grant mechanism (R03) supports occupational safety and health research projects that can be carried out with limited resources\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 4,\n  \"operational_reason\": \"DPH is the closest fit because it houses epidemiology, environmental health, and disease surveillance, but occupational health research is not a named DPH priority.\",\n  \"restrictions\": [\n    \"Foreign components, as defined in the HHS Grants Policy Statement, are not allowed.\"\n  ],\n  \"major_risk\": \"The grant addresses occupational safety and health research, which is outside NCDHHS's stated strategic goals and likely has a stronger home with universities or the state's labor agency.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Eligible as a state agency but funds occupational safety research not named in NCDHHS goals, with no clear division fit; likely not worth pursuing.\"\n}"
+  ]
+ }
+}

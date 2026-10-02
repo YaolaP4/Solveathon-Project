@@ -1,0 +1,28 @@
+{
+ "grant_id": "fedda8fc-2bb6-4237-b981-8cf04bfeedc5",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "9788248b66e018c05f6fd87652bf9321220993a9d0279d926148c7bcdc9ebcd6",
+ "retrieved_at": "2026-10-02T19:52:30+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O3",
+   "strategic_reason": "The grant funds evaluation of primary prevention approaches to reduce suicide among youth, which directly supports NCDHHS's suicide prevention objective under behavioral health crisis services.",
+   "strategic_evidence_quote": "evaluate primary prevention-focused approaches to reduce suicide and interpersonal violence among youth and young adults (ages 10 to 24 years).",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DMHDDSUS",
+   "operational_fit": 7,
+   "operational_reason": "DMHDDSUS already leads suicide prevention and crisis services, but this is an investigator-initiated research grant requiring evaluation research capacity.",
+   "restrictions": [],
+   "major_risk": "The grant supports evaluation research rather than direct program implementation, so NCDHHS would need research/evaluation infrastructure or an academic partner to compete.",
+   "recommended_for_review": true,
+   "one_line_rationale": "CDC research grant to evaluate youth suicide prevention approaches; fits DMHDDSUS suicide prevention and crisis work, though it funds evaluation rather than services."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O3\",\n  \"strategic_reason\": \"The grant funds evaluation of primary prevention approaches to reduce suicide among youth, which directly supports NCDHHS's suicide prevention objective under behavioral health crisis services.\",\n  \"strategic_evidence_quote\": \"evaluate primary prevention-focused approaches to reduce suicide and interpersonal violence among youth and young adults (ages 10 to 24 years).\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DMHDDSUS\",\n  \"operational_fit\": 7,\n  \"operational_reason\": \"DMHDDSUS already leads suicide prevention and crisis services, but this is an investigator-initiated research grant requiring evaluation research capacity.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The grant supports evaluation research rather than direct program implementation, so NCDHHS would need research/evaluation infrastructure or an academic partner to compete.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"CDC research grant to evaluate youth suicide prevention approaches; fits DMHDDSUS suicide prevention and crisis work, though it funds evaluation rather than services.\"\n}"
+  ]
+ }
+}

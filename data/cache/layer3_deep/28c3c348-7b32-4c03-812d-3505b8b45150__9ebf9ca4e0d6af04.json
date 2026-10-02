@@ -1,0 +1,28 @@
+{
+ "grant_id": "28c3c348-7b32-4c03-812d-3505b8b45150",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "9ebf9ca4e0d6af042feb96ef82aa68799d68d02df8d961ece0cfb8d9795b77f9",
+ "retrieved_at": "2026-10-02T19:51:10+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 5,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "CDC injury prevention and control research and state and community programs can reduce injury-related disparities and improve health outcomes, supporting the Department-wide objective to build a culture and structure for reducing health disparities.",
+   "strategic_evidence_quote": "",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "States, Universities, County, Small Business, Non-Profits Organization,",
+   "owning_division": "DPH",
+   "operational_fit": 8,
+   "operational_reason": "DPH already leads injury and violence prevention, epidemiology, and community-based prevention programs, so it could administer a CDC injury prevention cooperative agreement.",
+   "restrictions": [],
+   "major_risk": "The supplied text gives no programmatic details beyond 'Type 6 Applications,' so the actual scope, requirements, and fit could differ from the broad injury prevention listing.",
+   "recommended_for_review": true,
+   "one_line_rationale": "State-eligible CDC injury prevention funding likely fits DPH's injury prevention and public health mission, though details are thin."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 5,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"CDC injury prevention and control research and state and community programs can reduce injury-related disparities and improve health outcomes, supporting the Department-wide objective to build a culture and structure for reducing health disparities.\",\n  \"strategic_evidence_quote\": \"\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"States, Universities, County, Small Business, Non-Profits Organization,\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 8,\n  \"operational_reason\": \"DPH already leads injury and violence prevention, epidemiology, and community-based prevention programs, so it could administer a CDC injury prevention cooperative agreement.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The supplied text gives no programmatic details beyond 'Type 6 Applications,' so the actual scope, requirements, and fit could differ from the broad injury prevention listing.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"State-eligible CDC injury prevention funding likely fits DPH's injury prevention and public health mission, though details are thin.\"\n}"
+  ]
+ }
+}

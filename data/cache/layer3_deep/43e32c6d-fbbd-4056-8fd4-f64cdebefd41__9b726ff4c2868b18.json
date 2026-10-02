@@ -1,0 +1,31 @@
+{
+ "grant_id": "43e32c6d-fbbd-4056-8fd4-f64cdebefd41",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "9b726ff4c2868b18e12040b0360529023df739d7071ae8da0dcbcfc6cd07ff51",
+ "retrieved_at": "2026-10-02T19:55:59+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 5,
+   "matched_goal": "G4",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds research and translation to advance worker well-being, which aligns broadly with the workforce health goal but does not target a specific named NCDHHS workforce objective.",
+   "strategic_evidence_quote": "advance worker well-being",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 4,
+   "operational_reason": "DPH has epidemiology, surveillance, and chronic disease capacity but no dedicated occupational health research center, so leading this U19 would require new research infrastructure and academic partnerships.",
+   "restrictions": [
+    "All projects must use the NIOSH Worker Well-Being Questionnaire (WellBQ) and share data with the HERO Worker Well-Being Clearinghouse",
+    "Large Research Projects require economic evaluation"
+   ],
+   "major_risk": "NCDHHS would be competing against established academic occupational health research centers with limited in-house occupational health research infrastructure.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Research center grant on worker well-being; broad workforce alignment but weak operational fit and heavy research infrastructure, so not a strong NCDHHS lead."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 5,\n  \"matched_goal\": \"G4\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds research and translation to advance worker well-being, which aligns broadly with the workforce health goal but does not target a specific named NCDHHS workforce objective.\",\n  \"strategic_evidence_quote\": \"advance worker well-being\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 4,\n  \"operational_reason\": \"DPH has epidemiology, surveillance, and chronic disease capacity but no dedicated occupational health research center, so leading this U19 would require new research infrastructure and academic partnerships.\",\n  \"restrictions\": [\n    \"All projects must use the NIOSH Worker Well-Being Questionnaire (WellBQ) and share data with the HERO Worker Well-Being Clearinghouse\",\n    \"Large Research Projects require economic evaluation\"\n  ],\n  \"major_risk\": \"NCDHHS would be competing against established academic occupational health research centers with limited in-house occupational health research infrastructure.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Research center grant on worker well-being; broad workforce alignment but weak operational fit and heavy research infrastructure, so not a strong NCDHHS lead.\"\n}"
+  ]
+ }
+}

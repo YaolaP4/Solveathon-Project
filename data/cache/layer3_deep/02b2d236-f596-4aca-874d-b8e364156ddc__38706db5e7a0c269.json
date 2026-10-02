@@ -1,0 +1,31 @@
+{
+ "grant_id": "02b2d236-f596-4aca-874d-b8e364156ddc",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "38706db5e7a0c26966993b578bd9d326991581947be2b109b4eb081b07c3da84",
+ "retrieved_at": "2026-10-02T19:24:39+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O4",
+   "strategic_reason": "The grant funds regional evidence-based SUD prevention, treatment and recovery networks that directly advance the opioid crisis objective.",
+   "strategic_evidence_quote": "develop and/or expand behavioral health systems of care through formalized networks",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "You can apply if you are a domestic public or private, non-profit or for-profit entity.",
+   "owning_division": "DMHDDSUS",
+   "operational_fit": 8,
+   "operational_reason": "DMHDDSUS already oversees substance use and opioid services and behavioral health systems coordination statewide.",
+   "restrictions": [
+    "Limited to communities in rural areas",
+    "Requires implementation through formalized networks"
+   ],
+   "major_risk": "Rural regional network implementation requires extensive local partners and sustained coordination capacity.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Directly funds rural opioid treatment networks, core to behavioral health goal; state can lead via mental health division."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O4\",\n  \"strategic_reason\": \"The grant funds regional evidence-based SUD prevention, treatment and recovery networks that directly advance the opioid crisis objective.\",\n  \"strategic_evidence_quote\": \"develop and/or expand behavioral health systems of care through formalized networks\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"You can apply if you are a domestic public or private, non-profit or for-profit entity.\",\n  \"owning_division\": \"DMHDDSUS\",\n  \"operational_fit\": 8,\n  \"operational_reason\": \"DMHDDSUS already oversees substance use and opioid services and behavioral health systems coordination statewide.\",\n  \"restrictions\": [\n    \"Limited to communities in rural areas\",\n    \"Requires implementation through formalized networks\"\n  ],\n  \"major_risk\": \"Rural regional network implementation requires extensive local partners and sustained coordination capacity.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Directly funds rural opioid treatment networks, core to behavioral health goal; state can lead via mental health division.\"\n}"
+  ]
+ }
+}

@@ -1,0 +1,33 @@
+{
+ "grant_id": "d40414c8-6ebb-4e3a-a9e0-5bf7e0a40d63",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "18737997c4180c5bc55d38da77a322281777e725cdf098381bc3f2baf54d0d76",
+ "retrieved_at": "2026-10-02T19:26:19+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O4",
+   "strategic_reason": "The initiative funds home blood-pressure monitoring during pregnancy and postpartum to improve maternal and fetal outcomes, directly advancing women's health and birth outcomes.",
+   "strategic_evidence_quote": "accelerate nation-wide implementation of SMBP (self-measured blood pressure) during pregnancy and postpartum",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "Any private (either profit or nonprofit) or public entity located in a State is eligible to apply for an award under this opportunity.",
+   "owning_division": "DPH",
+   "operational_fit": 8,
+   "operational_reason": "DPH already leads maternal and child health, chronic disease prevention, and local health department partnerships relevant to pregnancy hypertension detection and control.",
+   "restrictions": [
+    "Must fully implement project within first six months of award",
+    "Must evaluate processes and outcomes throughout period of performance",
+    "Must document and share findings with HHS and others",
+    "Must plan for sustainability beyond OWH support"
+   ],
+   "major_risk": "Six-month full-implementation deadline and 24-month time-limited project may be difficult to achieve in rural maternity care deserts.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Funds pregnancy hypertension home monitoring to improve birth outcomes, directly fitting women's health goal and Public Health's maternal role as lead applicant."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O4\",\n  \"strategic_reason\": \"The initiative funds home blood-pressure monitoring during pregnancy and postpartum to improve maternal and fetal outcomes, directly advancing women's health and birth outcomes.\",\n  \"strategic_evidence_quote\": \"accelerate nation-wide implementation of SMBP (self-measured blood pressure) during pregnancy and postpartum\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"Any private (either profit or nonprofit) or public entity located in a State is eligible to apply for an award under this opportunity.\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 8,\n  \"operational_reason\": \"DPH already leads maternal and child health, chronic disease prevention, and local health department partnerships relevant to pregnancy hypertension detection and control.\",\n  \"restrictions\": [\n    \"Must fully implement project within first six months of award\",\n    \"Must evaluate processes and outcomes throughout period of performance\",\n    \"Must document and share findings with HHS and others\",\n    \"Must plan for sustainability beyond OWH support\"\n  ],\n  \"major_risk\": \"Six-month full-implementation deadline and 24-month time-limited project may be difficult to achieve in rural maternity care deserts.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Funds pregnancy hypertension home monitoring to improve birth outcomes, directly fitting women's health goal and Public Health's maternal role as lead applicant.\"\n}"
+  ]
+ }
+}

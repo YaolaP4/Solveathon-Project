@@ -1,0 +1,31 @@
+{
+ "grant_id": "39dec6be-55d0-4622-9703-fd1b7909fb1c",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "353403aa9ce1aa2afdc9adffe2805b7066707f05d90af361b9971e148c3abd5a",
+ "retrieved_at": "2026-10-02T19:28:35+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 10,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O3",
+   "strategic_reason": "The grant funds a center connecting providers to interpreters and translators, directly mitigating language-access barriers to health services.",
+   "strategic_evidence_quote": "We intend for the funded project to create a National Coordinating Center to connect health and human service professionals with qualified health language interpreters and translators to improve access to language services for individuals limited English proficiency.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "Eligible applicants include any private nonprofit or public entity located in a State.",
+   "owning_division": "OSEC",
+   "operational_fit": 3,
+   "operational_reason": "OSEC could house a cross-cutting language-access hub, but building and running a national technical center with a CBO network is outside its normal statewide role.",
+   "restrictions": [
+    "Time-limited demonstration project with expectation to consider approaches to sustainability beyond OMH support",
+    "Must develop/host technical components, engage a collaborative network of community-based organizations, and promote the Center nationally"
+   ],
+   "major_risk": "NCDHHS would have to build and sustain national infrastructure outside its statewide mission for a single time-limited award.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Directly funds language-access barrier reduction under Health Access, but requires NCDHHS to build and run a national center."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 10,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O3\",\n  \"strategic_reason\": \"The grant funds a center connecting providers to interpreters and translators, directly mitigating language-access barriers to health services.\",\n  \"strategic_evidence_quote\": \"We intend for the funded project to create a National Coordinating Center to connect health and human service professionals with qualified health language interpreters and translators to improve access to language services for individuals limited English proficiency.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"Eligible applicants include any private nonprofit or public entity located in a State.\",\n  \"owning_division\": \"OSEC\",\n  \"operational_fit\": 3,\n  \"operational_reason\": \"OSEC could house a cross-cutting language-access hub, but building and running a national technical center with a CBO network is outside its normal statewide role.\",\n  \"restrictions\": [\n    \"Time-limited demonstration project with expectation to consider approaches to sustainability beyond OMH support\",\n    \"Must develop/host technical components, engage a collaborative network of community-based organizations, and promote the Center nationally\"\n  ],\n  \"major_risk\": \"NCDHHS would have to build and sustain national infrastructure outside its statewide mission for a single time-limited award.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Directly funds language-access barrier reduction under Health Access, but requires NCDHHS to build and run a national center.\"\n}"
+  ]
+ }
+}

@@ -1,0 +1,32 @@
+{
+ "grant_id": "ea6d9f3d-6f68-4eb7-9afd-5000d2e3a3c8",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "e2e8d6aad07b2926548d2114d75a8495507900124e219a2b5920d5e7bede7398",
+ "retrieved_at": "2026-10-02T19:52:47+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 4,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O4",
+   "strategic_reason": "The NOFO-funded centers address AgFF workers' elevated substance use disorder and suicide risk through research, education, training, and outreach, which partially advances NCDHHS's substance use crisis objective.",
+   "strategic_evidence_quote": "AgFF workers also face increased risk of poor mental health, death by suicide, and substance use disorder.",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "ORH",
+   "operational_fit": 3,
+   "operational_reason": "ORH has farmworker health and rural access programs but lacks the occupational safety research infrastructure needed to lead a NIOSH center.",
+   "restrictions": [
+    "Requires close collaboration with NIOSH AgFF program leadership, other AgFF Centers, and academic and community partners.",
+    "Expected to demonstrate significant, widespread, and sustained local and regional impact.",
+    "Emphasis on multidisciplinary intervention and implementation research."
+   ],
+   "major_risk": "This is a specialized research-center cooperative agreement likely aimed at academic occupational safety programs, so NCDHHS would face high scientific competition and may lack the infrastructure to lead successfully.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Eligible but weak fit: AgFF mental health/substance use touches G3.O4, yet NIOSH research centers require occupational safety research capacity NCDHHS lacks."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 4,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O4\",\n  \"strategic_reason\": \"The NOFO-funded centers address AgFF workers' elevated substance use disorder and suicide risk through research, education, training, and outreach, which partially advances NCDHHS's substance use crisis objective.\",\n  \"strategic_evidence_quote\": \"AgFF workers also face increased risk of poor mental health, death by suicide, and substance use disorder.\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"ORH\",\n  \"operational_fit\": 3,\n  \"operational_reason\": \"ORH has farmworker health and rural access programs but lacks the occupational safety research infrastructure needed to lead a NIOSH center.\",\n  \"restrictions\": [\n    \"Requires close collaboration with NIOSH AgFF program leadership, other AgFF Centers, and academic and community partners.\",\n    \"Expected to demonstrate significant, widespread, and sustained local and regional impact.\",\n    \"Emphasis on multidisciplinary intervention and implementation research.\"\n  ],\n  \"major_risk\": \"This is a specialized research-center cooperative agreement likely aimed at academic occupational safety programs, so NCDHHS would face high scientific competition and may lack the infrastructure to lead successfully.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Eligible but weak fit: AgFF mental health/substance use touches G3.O4, yet NIOSH research centers require occupational safety research capacity NCDHHS lacks.\"\n}"
+  ]
+ }
+}

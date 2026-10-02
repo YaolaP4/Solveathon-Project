@@ -1,0 +1,28 @@
+{
+ "grant_id": "1d55627c-531e-4a60-95e0-719b256179bf",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "246abaffbd251c59bde83e77220e385058f98e36935ace6a9992e8e6df50f4c2",
+ "retrieved_at": "2026-10-02T19:22:47+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O3",
+   "strategic_reason": "The program funds enhanced access to HIV care and treatment for low-income people, directly mitigating barriers to health services.",
+   "strategic_evidence_quote": "to develop and/or enhance access to a comprehensive system of high-quality HIV care and treatment for low-income people with HIV.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "The 50 states, the District of Columbia, Guam, the Commonwealth of Puerto Rico, and the U.S. Virgin Islands are eligible to apply for Ryan White HIV/AIDS Program Part B Base, AIDS Drug Assistance Program Base, and Minority AIDS Initiative funding.",
+   "owning_division": "DPH",
+   "operational_fit": 9,
+   "operational_reason": "DPH already leads disease prevention, surveillance, and HIV-related public health services through local health departments.",
+   "restrictions": [],
+   "major_risk": "As formula funding, the award may largely continue existing baseline work rather than provide new flexible resources.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Funds state HIV care for low-income residents, directly advancing health access via Public Health's existing disease programs."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O3\",\n  \"strategic_reason\": \"The program funds enhanced access to HIV care and treatment for low-income people, directly mitigating barriers to health services.\",\n  \"strategic_evidence_quote\": \"to develop and/or enhance access to a comprehensive system of high-quality HIV care and treatment for low-income people with HIV.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"The 50 states, the District of Columbia, Guam, the Commonwealth of Puerto Rico, and the U.S. Virgin Islands are eligible to apply for Ryan White HIV/AIDS Program Part B Base, AIDS Drug Assistance Program Base, and Minority AIDS Initiative funding.\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DPH already leads disease prevention, surveillance, and HIV-related public health services through local health departments.\",\n  \"restrictions\": [],\n  \"major_risk\": \"As formula funding, the award may largely continue existing baseline work rather than provide new flexible resources.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Funds state HIV care for low-income residents, directly advancing health access via Public Health's existing disease programs.\"\n}"
+  ]
+ }
+}

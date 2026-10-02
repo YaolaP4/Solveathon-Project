@@ -1,0 +1,28 @@
+{
+ "grant_id": "830a45d7-9fd9-4000-bef1-4ec4e813664b",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "6dd09e2b9e6ba237a2bcb19423265353b7784cf8e397948a375724333a22cabd",
+ "retrieved_at": "2026-10-02T19:54:27+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 6,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O3",
+   "strategic_reason": "The grant funds planning for cancer prevention and control clinical trials, including screening and early detection, which connects to reducing health access barriers and disparities.",
+   "strategic_evidence_quote": "The purpose of this NOFO is to facilitate well planned clinical trials across the cancer prevention and control spectrum aimed at improving prevention/ interception, cancer-related health behaviors, screening, early detection, healthcare delivery, management of treatment-related symptoms, supportive care, and the long-term outcomes of cancer survivors.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 5,
+   "operational_reason": "DPH runs cancer prevention and screening programs, but planning clinical trials would likely require academic or clinical research partners beyond its usual public health operations.",
+   "restrictions": [],
+   "major_risk": "This is a research planning grant for future clinical trials, not direct service delivery, so NCDHHS would need clinical research capacity or strong academic partners to use it well.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Eligible and relevant to DPH cancer prevention and screening, but it is a research planning grant requiring academic partners; route to DPH for feasibility assessment."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 6,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O3\",\n  \"strategic_reason\": \"The grant funds planning for cancer prevention and control clinical trials, including screening and early detection, which connects to reducing health access barriers and disparities.\",\n  \"strategic_evidence_quote\": \"The purpose of this NOFO is to facilitate well planned clinical trials across the cancer prevention and control spectrum aimed at improving prevention/ interception, cancer-related health behaviors, screening, early detection, healthcare delivery, management of treatment-related symptoms, supportive care, and the long-term outcomes of cancer survivors.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 5,\n  \"operational_reason\": \"DPH runs cancer prevention and screening programs, but planning clinical trials would likely require academic or clinical research partners beyond its usual public health operations.\",\n  \"restrictions\": [],\n  \"major_risk\": \"This is a research planning grant for future clinical trials, not direct service delivery, so NCDHHS would need clinical research capacity or strong academic partners to use it well.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Eligible and relevant to DPH cancer prevention and screening, but it is a research planning grant requiring academic partners; route to DPH for feasibility assessment.\"\n}"
+  ]
+ }
+}

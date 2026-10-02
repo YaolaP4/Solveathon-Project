@@ -1,0 +1,28 @@
+{
+ "grant_id": "ee00bde7-db1e-43d4-a6de-4a78b572cc31",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "c95b0f272104aee01cc37771c7357ac50c6c6ebaca86086021b5b8c7adc7a621",
+ "retrieved_at": "2026-10-02T19:58:50+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 0,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds U.S. Department of Labor dislocated worker reemployment and disaster recovery employment, which is not among NCDHHS health, child, family, behavioral health, or workforce objectives.",
+   "strategic_evidence_quote": "Updated National Dislocated Worker Grant Program Guidance and Application Information",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "State workforce agencies administering WIOA formula funds",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "NCDHHS is not North Carolina's WIOA state workforce agency and no division administers dislocated worker employment or training grants.",
+   "restrictions": [],
+   "major_risk": "NCDHHS is not an eligible applicant, so any involvement would be indirect through the state workforce agency rather than a direct NCDHHS grant.",
+   "recommended_for_review": false,
+   "one_line_rationale": "This is a U.S. Department of Labor dislocated worker grant outside NCDHHS eligibility and mission; the state workforce agency is the correct applicant."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 0,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds U.S. Department of Labor dislocated worker reemployment and disaster recovery employment, which is not among NCDHHS health, child, family, behavioral health, or workforce objectives.\",\n  \"strategic_evidence_quote\": \"Updated National Dislocated Worker Grant Program Guidance and Application Information\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"State workforce agencies administering WIOA formula funds\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"NCDHHS is not North Carolina's WIOA state workforce agency and no division administers dislocated worker employment or training grants.\",\n  \"restrictions\": [],\n  \"major_risk\": \"NCDHHS is not an eligible applicant, so any involvement would be indirect through the state workforce agency rather than a direct NCDHHS grant.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"This is a U.S. Department of Labor dislocated worker grant outside NCDHHS eligibility and mission; the state workforce agency is the correct applicant.\"\n}"
+  ]
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "grant_id": "d5ad163e-bd0c-40e6-8f98-8d416f6b177f",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "b2d59d3c629b3c1196338d9bdde3e45bb374da4637346ed171fc4943408562bc",
+ "retrieved_at": "2026-10-02T19:51:01+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 3,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The assistance listing supports injury prevention and control research and state/community programs, which is public health work but does not state a specific NCDHHS strategic objective.",
+   "strategic_evidence_quote": "",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "States",
+   "owning_division": "DPH",
+   "operational_fit": 7,
+   "operational_reason": "DPH already handles public health surveillance, epidemiology, and injury prevention, so it could plausibly manage a CDC injury-control cooperative agreement.",
+   "restrictions": [],
+   "major_risk": "The posting contains no program description or award details, so the proposed fit and requirements cannot be verified from the announcement.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Eligible state agency and DPH fit for CDC injury control, but the posting lacks program specifics needed to justify routing."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 3,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The assistance listing supports injury prevention and control research and state/community programs, which is public health work but does not state a specific NCDHHS strategic objective.\",\n  \"strategic_evidence_quote\": \"\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"States\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 7,\n  \"operational_reason\": \"DPH already handles public health surveillance, epidemiology, and injury prevention, so it could plausibly manage a CDC injury-control cooperative agreement.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The posting contains no program description or award details, so the proposed fit and requirements cannot be verified from the announcement.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Eligible state agency and DPH fit for CDC injury control, but the posting lacks program specifics needed to justify routing.\"\n}"
+  ]
+ }
+}

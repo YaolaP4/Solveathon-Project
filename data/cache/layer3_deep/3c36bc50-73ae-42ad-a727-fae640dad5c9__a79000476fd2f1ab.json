@@ -1,0 +1,32 @@
+{
+ "grant_id": "3c36bc50-73ae-42ad-a727-fae640dad5c9",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "a79000476fd2f1ab1377c1011eadab8110b6e10d76df165a5eceed25db930c08",
+ "retrieved_at": "2026-10-02T19:23:40+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O3",
+   "strategic_reason": "The grant funds implementation of evidence-informed suicide prevention strategies to reduce suicide morbidity and mortality, directly advancing crisis and suicide prevention access.",
+   "strategic_evidence_quote": "a comprehensive public health approach to suicide prevention in the United States",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "1 Letter of Commitment (LOC) from state or territorial health department leadership",
+   "owning_division": "DPH",
+   "operational_fit": 8,
+   "operational_reason": "DPH already leads injury surveillance, epidemiology, and multi-sector prevention partnerships required for data-driven suicide prevention.",
+   "restrictions": [
+    "Requires 1 LOC plus 7 LOS from surveillance data managers, Tier 1-3 partners, and multi-sector partners with specific filenames",
+    "Requires dedicated staffing including 0.25 FTE program manager, 0.75 FTE epidemiologist, and 0.5 FTE behavioral, communications, and evaluation specialists",
+    "Requires data access and collaboration for morbidity/mortality and syndromic surveillance to track outcomes"
+   ],
+   "major_risk": "Forecast only with applications not yet solicited and extensive letter, staffing, and data requirements that trigger nonresponsive if incomplete.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Directly funds statewide suicide prevention to cut deaths, fitting behavioral health resilience; health department can lead with surveillance partners."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O3\",\n  \"strategic_reason\": \"The grant funds implementation of evidence-informed suicide prevention strategies to reduce suicide morbidity and mortality, directly advancing crisis and suicide prevention access.\",\n  \"strategic_evidence_quote\": \"a comprehensive public health approach to suicide prevention in the United States\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"1 Letter of Commitment (LOC) from state or territorial health department leadership\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 8,\n  \"operational_reason\": \"DPH already leads injury surveillance, epidemiology, and multi-sector prevention partnerships required for data-driven suicide prevention.\",\n  \"restrictions\": [\n    \"Requires 1 LOC plus 7 LOS from surveillance data managers, Tier 1-3 partners, and multi-sector partners with specific filenames\",\n    \"Requires dedicated staffing including 0.25 FTE program manager, 0.75 FTE epidemiologist, and 0.5 FTE behavioral, communications, and evaluation specialists\",\n    \"Requires data access and collaboration for morbidity/mortality and syndromic surveillance to track outcomes\"\n  ],\n  \"major_risk\": \"Forecast only with applications not yet solicited and extensive letter, staffing, and data requirements that trigger nonresponsive if incomplete.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Directly funds statewide suicide prevention to cut deaths, fitting behavioral health resilience; health department can lead with surveillance partners.\"\n}"
+  ]
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "grant_id": "441d2761-0d9c-42ae-a3da-905ce4ed0ca4",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "ea0115b049f61f868466e7ed1c0cd0a67f2b099ab1c9b50762a35f97b420067d",
+ "retrieved_at": "2026-10-02T19:47:08+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O4",
+   "strategic_reason": "The grant directly funds infectious disease testing, treatment, prevention, and data improvements for people who use drugs, which advances harm reduction and the substance use crisis response under G3.O4.",
+   "strategic_evidence_quote": "strengthen services to prevent the infectious disease consequences of drug use in high impact settings serving people who use drugs (PWUD)",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 9,
+   "operational_reason": "DPH already leads communicable disease prevention, HIV/HCV surveillance, and harm reduction-related public health work, so this grant is an extension of its existing infectious disease prevention role.",
+   "restrictions": [],
+   "major_risk": "The biennial biobehavioral survey of people who use drugs requires specialized field data collection, privacy safeguards, and community partnerships that may exceed routine public health surveillance capacity.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Directly funds infectious disease testing and harm reduction for people who use drugs, fitting DPH disease prevention and G3.O4 substance use crisis priorities."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O4\",\n  \"strategic_reason\": \"The grant directly funds infectious disease testing, treatment, prevention, and data improvements for people who use drugs, which advances harm reduction and the substance use crisis response under G3.O4.\",\n  \"strategic_evidence_quote\": \"strengthen services to prevent the infectious disease consequences of drug use in high impact settings serving people who use drugs (PWUD)\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DPH already leads communicable disease prevention, HIV/HCV surveillance, and harm reduction-related public health work, so this grant is an extension of its existing infectious disease prevention role.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The biennial biobehavioral survey of people who use drugs requires specialized field data collection, privacy safeguards, and community partnerships that may exceed routine public health surveillance capacity.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Directly funds infectious disease testing and harm reduction for people who use drugs, fitting DPH disease prevention and G3.O4 substance use crisis priorities.\"\n}"
+  ]
+ }
+}

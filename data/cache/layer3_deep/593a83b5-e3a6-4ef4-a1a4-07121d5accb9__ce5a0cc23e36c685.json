@@ -1,0 +1,32 @@
+{
+ "grant_id": "593a83b5-e3a6-4ef4-a1a4-07121d5accb9",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "ce5a0cc23e36c685ef99f3370baf3aab75d3d0ad7961b0c58e691f8fba386953",
+ "retrieved_at": "2026-10-02T19:56:15+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 7,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "The grant directly funds community-based strategies to reduce HIV/HCV/syphilis-related health disparities among an underserved population, aligning with G1.O1's focus on building structures to reduce health disparities.",
+   "strategic_evidence_quote": "reduce HIV/HCV/syphilis-related health disparities among the AI/AN population",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "Urban Indian organization as defined by 25 U.S.C. 1603(29), that is currently administering a contract or receiving an award pursuant to 25 U.S.C. 1653.",
+   "owning_division": "DPH",
+   "operational_fit": 4,
+   "operational_reason": "DPH has relevant HIV/HCV/STI prevention and surveillance capacity, but the grant is limited to tribal and urban Indian organization applicants, not state agencies.",
+   "restrictions": [
+    "Limited to American Indian/Alaska Native communities and Indian Country",
+    "Eligible applicants are federally recognized tribes, tribal organizations, or urban Indian organizations",
+    "Urban Indian organizations must provide proof of nonprofit status"
+   ],
+   "major_risk": "NCDHHS appears ineligible as a state agency because eligible applicant types are tribal governments, tribal organizations, and urban Indian organizations.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Eligible applicants are tribes, tribal organizations, and urban Indian organizations, so NCDHHS cannot lead; despite relevance to HIV/HCV disparities, this is not a state-agency fit."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 7,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"The grant directly funds community-based strategies to reduce HIV/HCV/syphilis-related health disparities among an underserved population, aligning with G1.O1's focus on building structures to reduce health disparities.\",\n  \"strategic_evidence_quote\": \"reduce HIV/HCV/syphilis-related health disparities among the AI/AN population\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"Urban Indian organization as defined by 25 U.S.C. 1603(29), that is currently administering a contract or receiving an award pursuant to 25 U.S.C. 1653.\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 4,\n  \"operational_reason\": \"DPH has relevant HIV/HCV/STI prevention and surveillance capacity, but the grant is limited to tribal and urban Indian organization applicants, not state agencies.\",\n  \"restrictions\": [\n    \"Limited to American Indian/Alaska Native communities and Indian Country\",\n    \"Eligible applicants are federally recognized tribes, tribal organizations, or urban Indian organizations\",\n    \"Urban Indian organizations must provide proof of nonprofit status\"\n  ],\n  \"major_risk\": \"NCDHHS appears ineligible as a state agency because eligible applicant types are tribal governments, tribal organizations, and urban Indian organizations.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Eligible applicants are tribes, tribal organizations, and urban Indian organizations, so NCDHHS cannot lead; despite relevance to HIV/HCV disparities, this is not a state-agency fit.\"\n}"
+  ]
+ }
+}

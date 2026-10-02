@@ -1,0 +1,28 @@
+{
+ "grant_id": "8e1f564e-26b9-47d2-b838-486402d83eae",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "3fd637f3fb326cbf65b6970bb336ea785e1581c02d5311a27e94fcce8954b75a",
+ "retrieved_at": "2026-10-02T19:52:07+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 7,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O4",
+   "strategic_reason": "The center funds implementation research to scale integrated evidence-based care for OUD and chronic pain, directly supporting the Department's opioid and substance use crisis objective.",
+   "strategic_evidence_quote": "This initiative will test different implementation strategies and other approaches to address scalability and sustainability of evidence based practices for CP and OUD from a health system perspective.",
+   "applicant_role": "partner",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DMHDDSUS",
+   "operational_fit": 6,
+   "operational_reason": "DMHDDSUS oversees substance use and opioid services, but this is a research-coordination center rather than a direct services or implementation program.",
+   "restrictions": [],
+   "major_risk": "This is only a forecast notice, not an open solicitation, and the U2C center award is a research-coordination mechanism likely to go to an academic institution rather than a state services agency.",
+   "recommended_for_review": false,
+   "one_line_rationale": "NIH forecast for a research center on integrated chronic pain and OUD; aligns with DMHDDSUS opioid work but is not open and likely fits academic partners."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 7,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O4\",\n  \"strategic_reason\": \"The center funds implementation research to scale integrated evidence-based care for OUD and chronic pain, directly supporting the Department's opioid and substance use crisis objective.\",\n  \"strategic_evidence_quote\": \"This initiative will test different implementation strategies and other approaches to address scalability and sustainability of evidence based practices for CP and OUD from a health system perspective.\",\n  \"applicant_role\": \"partner\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DMHDDSUS\",\n  \"operational_fit\": 6,\n  \"operational_reason\": \"DMHDDSUS oversees substance use and opioid services, but this is a research-coordination center rather than a direct services or implementation program.\",\n  \"restrictions\": [],\n  \"major_risk\": \"This is only a forecast notice, not an open solicitation, and the U2C center award is a research-coordination mechanism likely to go to an academic institution rather than a state services agency.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"NIH forecast for a research center on integrated chronic pain and OUD; aligns with DMHDDSUS opioid work but is not open and likely fits academic partners.\"\n}"
+  ]
+ }
+}

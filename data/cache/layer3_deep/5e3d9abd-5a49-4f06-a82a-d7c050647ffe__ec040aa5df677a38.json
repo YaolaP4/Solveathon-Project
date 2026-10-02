@@ -1,0 +1,28 @@
+{
+ "grant_id": "5e3d9abd-5a49-4f06-a82a-d7c050647ffe",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "ec040aa5df677a38c03586668e7c6440b0fde66fa5c08044632e4fcf132e6560",
+ "retrieved_at": "2026-10-02T19:54:34+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O3",
+   "strategic_reason": "The grant funds research on peer support interventions to reduce suicide risk, which directly builds the evidence base for suicide prevention and crisis services NCDHHS supports.",
+   "strategic_evidence_quote": "research on the preliminary effectiveness of peer support intervention strategies for reducing suicide risk in clinical and community practice settings",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DMHDDSUS",
+   "operational_fit": 6,
+   "operational_reason": "DMHDDSUS oversees suicide prevention, crisis services, and peer support policy, but would likely need an academic or clinical research partner to run an NIH R01 trial.",
+   "restrictions": [],
+   "major_risk": "This is a research grant rather than service funding, and NCDHHS would need strong clinical trial research partners to be competitive as a lead applicant.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Strong strategic fit with suicide prevention and 988/crisis work; DMHDDSUS could lead or partner with researchers, but it would not fund direct services."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O3\",\n  \"strategic_reason\": \"The grant funds research on peer support interventions to reduce suicide risk, which directly builds the evidence base for suicide prevention and crisis services NCDHHS supports.\",\n  \"strategic_evidence_quote\": \"research on the preliminary effectiveness of peer support intervention strategies for reducing suicide risk in clinical and community practice settings\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DMHDDSUS\",\n  \"operational_fit\": 6,\n  \"operational_reason\": \"DMHDDSUS oversees suicide prevention, crisis services, and peer support policy, but would likely need an academic or clinical research partner to run an NIH R01 trial.\",\n  \"restrictions\": [],\n  \"major_risk\": \"This is a research grant rather than service funding, and NCDHHS would need strong clinical trial research partners to be competitive as a lead applicant.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Strong strategic fit with suicide prevention and 988/crisis work; DMHDDSUS could lead or partner with researchers, but it would not fund direct services.\"\n}"
+  ]
+ }
+}

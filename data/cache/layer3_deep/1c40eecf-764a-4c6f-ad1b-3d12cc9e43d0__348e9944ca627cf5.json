@@ -1,0 +1,30 @@
+{
+ "grant_id": "1c40eecf-764a-4c6f-ad1b-3d12cc9e43d0",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "348e9944ca627cf5ea370c8e4c3563bce94b49f58a8d91e9ec951a5f91df14e2",
+ "retrieved_at": "2026-10-02T19:52:44+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G5",
+   "matched_objective": "G5.O1",
+   "strategic_reason": "The grant funds development and advancement of interoperable health IT and standards, which directly supports the Department's objective to strengthen data infrastructure and integration for data-driven decision-making.",
+   "strategic_evidence_quote": "address well-documented and fast emerging challenges inhibiting the development, use, and/or advancement of well-designed, interoperable health IT, which is scalable across the health care industry.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "units oflocal or state government",
+   "owning_division": "OSEC",
+   "operational_fit": 8,
+   "operational_reason": "OSEC oversees department-wide data and IT and is the natural home for a health IT standards and interoperability project spanning multiple divisions.",
+   "restrictions": [
+    "For-profit organizations may participate in projects as members of a consortia or as a sub-recipient only."
+   ],
+   "major_risk": "The FY23 funding focus will be released later through a Special Emphasis Notice, so the actual project priorities and fit are not yet known.",
+   "recommended_for_review": true,
+   "one_line_rationale": "LEAP funds interoperable health IT and standards, aligning with NCDHHS's data infrastructure objective; OSEC could pursue it, though FY23 priorities await a Special Emphasis Notice."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G5\",\n  \"matched_objective\": \"G5.O1\",\n  \"strategic_reason\": \"The grant funds development and advancement of interoperable health IT and standards, which directly supports the Department's objective to strengthen data infrastructure and integration for data-driven decision-making.\",\n  \"strategic_evidence_quote\": \"address well-documented and fast emerging challenges inhibiting the development, use, and/or advancement of well-designed, interoperable health IT, which is scalable across the health care industry.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"units oflocal or state government\",\n  \"owning_division\": \"OSEC\",\n  \"operational_fit\": 8,\n  \"operational_reason\": \"OSEC oversees department-wide data and IT and is the natural home for a health IT standards and interoperability project spanning multiple divisions.\",\n  \"restrictions\": [\n    \"For-profit organizations may participate in projects as members of a consortia or as a sub-recipient only.\"\n  ],\n  \"major_risk\": \"The FY23 funding focus will be released later through a Special Emphasis Notice, so the actual project priorities and fit are not yet known.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"LEAP funds interoperable health IT and standards, aligning with NCDHHS's data infrastructure objective; OSEC could pursue it, though FY23 priorities await a Special Emphasis Notice.\"\n}"
+  ]
+ }
+}

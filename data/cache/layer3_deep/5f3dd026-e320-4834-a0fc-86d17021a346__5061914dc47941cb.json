@@ -1,0 +1,28 @@
+{
+ "grant_id": "5f3dd026-e320-4834-a0fc-86d17021a346",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "5061914dc47941cb78e961249c2254faf6bef5d2a37530f002bf5c72d17fcb46",
+ "retrieved_at": "2026-10-02T19:47:07+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O4",
+   "strategic_reason": "The grant funds a maternal health quality improvement technical assistance center that supports best practices to make birth safer and improve maternal health outcomes, directly advancing NCDHHS's objective to improve women's health and birth outcomes.",
+   "strategic_evidence_quote": "AIM is a quality improvement initiative to support best practices that make birth safer, improve maternal health outcomes, and save lives.",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "any domestic public or private entity",
+   "owning_division": "DPH",
+   "operational_fit": 5,
+   "operational_reason": "DPH has maternal and child health expertise, but this grant requires operating a national technical assistance center for all states and territories, which is broader than its state-focused authority.",
+   "restrictions": [],
+   "major_risk": "NCDHHS would be applying to run a single national technical assistance center, competing with established national organizations and taking on nationwide responsibilities rather than deploying resources directly in North Carolina.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Strong fit with G2.O4 maternal health, but this national TA center role is outside NCDHHS's state-focused operations and likely highly competitive."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O4\",\n  \"strategic_reason\": \"The grant funds a maternal health quality improvement technical assistance center that supports best practices to make birth safer and improve maternal health outcomes, directly advancing NCDHHS's objective to improve women's health and birth outcomes.\",\n  \"strategic_evidence_quote\": \"AIM is a quality improvement initiative to support best practices that make birth safer, improve maternal health outcomes, and save lives.\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"any domestic public or private entity\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 5,\n  \"operational_reason\": \"DPH has maternal and child health expertise, but this grant requires operating a national technical assistance center for all states and territories, which is broader than its state-focused authority.\",\n  \"restrictions\": [],\n  \"major_risk\": \"NCDHHS would be applying to run a single national technical assistance center, competing with established national organizations and taking on nationwide responsibilities rather than deploying resources directly in North Carolina.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Strong fit with G2.O4 maternal health, but this national TA center role is outside NCDHHS's state-focused operations and likely highly competitive.\"\n}"
+  ]
+ }
+}

@@ -1,0 +1,30 @@
+{
+ "grant_id": "568fb3c7-74aa-436e-83b3-7cfc226ae206",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "2c9eeff3a7a469cd440905a255947fa82e3feea766e0abdc97dc50b6f29fe8b7",
+ "retrieved_at": "2026-10-02T20:02:43+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 4,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O3",
+   "strategic_reason": "The grant would fund early-stage dissemination and implementation research on communication disorders, which could build evidence for reducing communication-related barriers to health access.",
+   "strategic_evidence_quote": "This funding opportunity aims to support early-stage D&I research in NIDCD mission areas of hearing, balance, taste, smell, voice, speech, and language.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DSBDHH",
+   "operational_fit": 3,
+   "operational_reason": "DSBDHH is the closest subject-matter division for deaf and hard-of-hearing services, but it is a service and accessibility division without the NIH research infrastructure needed to lead an R21.",
+   "restrictions": [
+    "Applications involving foreign subawards/subcontracts submitted in response to this NOFO will be deemed noncompliant and will not be considered for funding."
+   ],
+   "major_risk": "This is an early-stage research grant rather than a services or program grant, and the likely owning division lacks NIH research capacity and would need academic research partners.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Early-stage NIH communication disorders research is peripheral to NCDHHS service divisions; DSBDHH lacks research capacity, so it is not a strong fit."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 4,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O3\",\n  \"strategic_reason\": \"The grant would fund early-stage dissemination and implementation research on communication disorders, which could build evidence for reducing communication-related barriers to health access.\",\n  \"strategic_evidence_quote\": \"This funding opportunity aims to support early-stage D&I research in NIDCD mission areas of hearing, balance, taste, smell, voice, speech, and language.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DSBDHH\",\n  \"operational_fit\": 3,\n  \"operational_reason\": \"DSBDHH is the closest subject-matter division for deaf and hard-of-hearing services, but it is a service and accessibility division without the NIH research infrastructure needed to lead an R21.\",\n  \"restrictions\": [\n    \"Applications involving foreign subawards/subcontracts submitted in response to this NOFO will be deemed noncompliant and will not be considered for funding.\"\n  ],\n  \"major_risk\": \"This is an early-stage research grant rather than a services or program grant, and the likely owning division lacks NIH research capacity and would need academic research partners.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Early-stage NIH communication disorders research is peripheral to NCDHHS service divisions; DSBDHH lacks research capacity, so it is not a strong fit.\"\n}"
+  ]
+ }
+}

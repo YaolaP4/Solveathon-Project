@@ -1,0 +1,28 @@
+{
+ "grant_id": "25f595e2-1671-4aae-a760-e3487a3d282c",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "c7a2662b2564ccb173f260210b4aa288318ebd158f56c9acb31bd1ef1b101b78",
+ "retrieved_at": "2026-10-02T19:59:27+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 2,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds emergency care clinical trial infrastructure, which does not directly implement a named NCDHHS strategic objective.",
+   "strategic_evidence_quote": "The SIREN Network performs clinical trials that impact the care of individuals with a non-stroke neurological and cardiovascular emergency in the pre-hospital or emergency department setting.",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "none",
+   "operational_fit": 2,
+   "operational_reason": "No division operates emergency clinical trial enrollment hubs; DHSR regulates EMS but would not run a multi-site NIH clinical research network.",
+   "restrictions": [],
+   "major_risk": "The work requires hospital-based emergency department clinical trial operations that NCDHHS does not perform, so the agency would likely be a peripheral partner rather than a credible lead.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Emergency care clinical trial infrastructure has no clear NCDHHS strategic objective or division owner; a state health department would be an atypical partner, not a lead."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 2,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds emergency care clinical trial infrastructure, which does not directly implement a named NCDHHS strategic objective.\",\n  \"strategic_evidence_quote\": \"The SIREN Network performs clinical trials that impact the care of individuals with a non-stroke neurological and cardiovascular emergency in the pre-hospital or emergency department setting.\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 2,\n  \"operational_reason\": \"No division operates emergency clinical trial enrollment hubs; DHSR regulates EMS but would not run a multi-site NIH clinical research network.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The work requires hospital-based emergency department clinical trial operations that NCDHHS does not perform, so the agency would likely be a peripheral partner rather than a credible lead.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Emergency care clinical trial infrastructure has no clear NCDHHS strategic objective or division owner; a state health department would be an atypical partner, not a lead.\"\n}"
+  ]
+ }
+}

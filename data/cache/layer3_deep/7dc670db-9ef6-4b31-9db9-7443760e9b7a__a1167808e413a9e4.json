@@ -1,0 +1,28 @@
+{
+ "grant_id": "7dc670db-9ef6-4b31-9db9-7443760e9b7a",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "a1167808e413a9e489662610ce61c18ca7425e8d2814c5def31c719d23695342",
+ "retrieved_at": "2026-10-02T19:56:44+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 5,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "The Coordinating Center would build research infrastructure for studies on integrating oral health into medical care, supporting NCDHHS's goal to build structure for increasing health access and reducing disparities.",
+   "strategic_evidence_quote": "Supported studies will focus on integrating oral health care into medical care (whole-person health).",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 3,
+   "operational_reason": "DPH's Oral Health Section conducts public health dental surveillance and prevention programs, but it does not operate a national clinical research data coordinating center, so this would require substantial new research infrastructure.",
+   "restrictions": [],
+   "major_risk": "This is a forecast for a national NIH coordinating center where academic data coordinating centers are strong competitors, so NCDHHS would likely spend substantial effort with low success probability.",
+   "recommended_for_review": false,
+   "one_line_rationale": "NIH dental research coordinating center does not match NCDHHS service delivery role; DPH could partner but not lead."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 5,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"The Coordinating Center would build research infrastructure for studies on integrating oral health into medical care, supporting NCDHHS's goal to build structure for increasing health access and reducing disparities.\",\n  \"strategic_evidence_quote\": \"Supported studies will focus on integrating oral health care into medical care (whole-person health).\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 3,\n  \"operational_reason\": \"DPH's Oral Health Section conducts public health dental surveillance and prevention programs, but it does not operate a national clinical research data coordinating center, so this would require substantial new research infrastructure.\",\n  \"restrictions\": [],\n  \"major_risk\": \"This is a forecast for a national NIH coordinating center where academic data coordinating centers are strong competitors, so NCDHHS would likely spend substantial effort with low success probability.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"NIH dental research coordinating center does not match NCDHHS service delivery role; DPH could partner but not lead.\"\n}"
+  ]
+ }
+}

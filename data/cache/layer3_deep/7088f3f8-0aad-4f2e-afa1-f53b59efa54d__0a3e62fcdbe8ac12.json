@@ -1,0 +1,30 @@
+{
+ "grant_id": "7088f3f8-0aad-4f2e-afa1-f53b59efa54d",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "0a3e62fcdbe8ac1271f4d426f8f0c11b87882fb30c361630309d0f6fc836ad79",
+ "retrieved_at": "2026-10-02T19:57:11+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 7,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O4",
+   "strategic_reason": "Training pediatric and reproductive health providers in environmental health supports G2.O4 by building workforce capacity to reduce environmental risks to maternal and infant health.",
+   "strategic_evidence_quote": "The goal of the Pediatric and Reproductive Environmental Health Scholars (PREHS) program is to create a strong network of healthcare professionals who possess the skills and knowledge to address the complexities of pediatric and reproductive environmental health.",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 5,
+   "operational_reason": "DPH houses environmental health and maternal and child health programs, but this NIH scholar-training mechanism requires academic research mentorship and clinical training infrastructure that DPH would have to build through partnerships.",
+   "restrictions": [
+    "Scholars may not lead an independent clinical trial; they may only obtain research experience in a clinical trial led by a mentor or co-mentor."
+   ],
+   "major_risk": "It is an NIH research training award requiring academic research and clinical mentors, so NCDHHS is unlikely to be competitive as a lead applicant and the direct program benefit is limited.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Supports maternal and child environmental health training through DPH, but as an NIH clinician-scholar training grant it likely fits academic institutions better than NCDHHS."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 7,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O4\",\n  \"strategic_reason\": \"Training pediatric and reproductive health providers in environmental health supports G2.O4 by building workforce capacity to reduce environmental risks to maternal and infant health.\",\n  \"strategic_evidence_quote\": \"The goal of the Pediatric and Reproductive Environmental Health Scholars (PREHS) program is to create a strong network of healthcare professionals who possess the skills and knowledge to address the complexities of pediatric and reproductive environmental health.\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 5,\n  \"operational_reason\": \"DPH houses environmental health and maternal and child health programs, but this NIH scholar-training mechanism requires academic research mentorship and clinical training infrastructure that DPH would have to build through partnerships.\",\n  \"restrictions\": [\n    \"Scholars may not lead an independent clinical trial; they may only obtain research experience in a clinical trial led by a mentor or co-mentor.\"\n  ],\n  \"major_risk\": \"It is an NIH research training award requiring academic research and clinical mentors, so NCDHHS is unlikely to be competitive as a lead applicant and the direct program benefit is limited.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Supports maternal and child environmental health training through DPH, but as an NIH clinician-scholar training grant it likely fits academic institutions better than NCDHHS.\"\n}"
+  ]
+ }
+}

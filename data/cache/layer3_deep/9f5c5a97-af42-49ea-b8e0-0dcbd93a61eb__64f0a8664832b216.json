@@ -1,0 +1,31 @@
+{
+ "grant_id": "9f5c5a97-af42-49ea-b8e0-0dcbd93a61eb",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "64f0a8664832b21656f3938ebd2d401c7dc32b8109a4d3d434565f26a1d1cf8c",
+ "retrieved_at": "2026-10-02T19:55:42+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 4,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O2",
+   "strategic_reason": "The funded SIPs use public health data and applied research to inform practice and improve access to cancer and chronic disease prevention, which is directionally aligned with NCDHHS's objective to use data to track disparities and improve outcomes.",
+   "strategic_evidence_quote": "inform public health practice through high-quality applied health promotion and disease prevention public health research in real-world settings",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "Only applicants approved for funding under CDC NOFO RFA-DP-24-004 Health Promotion and Disease Prevention Research Centers (PRCs)* are eligible to apply for SIP supplemental funding under this announcement.",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "No NCDHHS division can apply because the supplement is limited to existing CDC Prevention Research Centers; DPH would be the closest programmatic fit only as a possible collaborator with UNC-Chapel Hill.",
+   "restrictions": [
+    "Eligibility is limited to the 20 existing Prevention Research Centers funded under CDC RFA-DP-24-004.",
+    "Special eligibility requirements may apply to each individual SIP."
+   ],
+   "major_risk": "The Department cannot apply directly and would only benefit if the eligible University of North Carolina at Chapel Hill PRC agrees to include NCDHHS as a partner.",
+   "recommended_for_review": false,
+   "one_line_rationale": "NCDHHS is not an eligible applicant; only existing CDC Prevention Research Centers can receive this supplement, though UNC-Chapel Hill could be a potential partner."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 4,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O2\",\n  \"strategic_reason\": \"The funded SIPs use public health data and applied research to inform practice and improve access to cancer and chronic disease prevention, which is directionally aligned with NCDHHS's objective to use data to track disparities and improve outcomes.\",\n  \"strategic_evidence_quote\": \"inform public health practice through high-quality applied health promotion and disease prevention public health research in real-world settings\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"Only applicants approved for funding under CDC NOFO RFA-DP-24-004 Health Promotion and Disease Prevention Research Centers (PRCs)* are eligible to apply for SIP supplemental funding under this announcement.\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"No NCDHHS division can apply because the supplement is limited to existing CDC Prevention Research Centers; DPH would be the closest programmatic fit only as a possible collaborator with UNC-Chapel Hill.\",\n  \"restrictions\": [\n    \"Eligibility is limited to the 20 existing Prevention Research Centers funded under CDC RFA-DP-24-004.\",\n    \"Special eligibility requirements may apply to each individual SIP.\"\n  ],\n  \"major_risk\": \"The Department cannot apply directly and would only benefit if the eligible University of North Carolina at Chapel Hill PRC agrees to include NCDHHS as a partner.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"NCDHHS is not an eligible applicant; only existing CDC Prevention Research Centers can receive this supplement, though UNC-Chapel Hill could be a potential partner.\"\n}"
+  ]
+ }
+}

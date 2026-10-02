@@ -1,0 +1,30 @@
+{
+ "grant_id": "ce0af039-93ef-4a21-879f-9ac3aca06b0d",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "60ceb6c0ddd930ee7321c5f7acf2b19cde89bc85a7624cee2a5104a514c2189a",
+ "retrieved_at": "2026-10-02T19:53:46+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "The grant directly funds minority health and health equity research, outreach, communications, and training, which advances NCDHHS's goal of reducing health disparities and building capacity for health access.",
+   "strategic_evidence_quote": "strengthen and advance minority health and health equity focused research, outreach, and communications as well as support training and mentoring of diverse students, fellows, and/or researchers.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 7,
+   "operational_reason": "DPH's public health, epidemiology, health equity, and community outreach portfolio is the closest fit for leading a minority health equity research and training consortium.",
+   "restrictions": [
+    "Cooperative agreement (U01) structure requires coordination across a multi-recipient consortium."
+   ],
+   "major_risk": "FDA research consortium may demand clinical or regulatory research expertise and consortium coordination that NCDHHS divisions do not routinely have, with benefits mostly in research capacity rather than direct services.",
+   "recommended_for_review": true,
+   "one_line_rationale": "FDA health equity research and training consortium fits Goal 1 reducing health disparities; DPH could lead with research and community partners."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"The grant directly funds minority health and health equity research, outreach, communications, and training, which advances NCDHHS's goal of reducing health disparities and building capacity for health access.\",\n  \"strategic_evidence_quote\": \"strengthen and advance minority health and health equity focused research, outreach, and communications as well as support training and mentoring of diverse students, fellows, and/or researchers.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 7,\n  \"operational_reason\": \"DPH's public health, epidemiology, health equity, and community outreach portfolio is the closest fit for leading a minority health equity research and training consortium.\",\n  \"restrictions\": [\n    \"Cooperative agreement (U01) structure requires coordination across a multi-recipient consortium.\"\n  ],\n  \"major_risk\": \"FDA research consortium may demand clinical or regulatory research expertise and consortium coordination that NCDHHS divisions do not routinely have, with benefits mostly in research capacity rather than direct services.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"FDA health equity research and training consortium fits Goal 1 reducing health disparities; DPH could lead with research and community partners.\"\n}"
+  ]
+ }
+}

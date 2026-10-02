@@ -1,0 +1,32 @@
+{
+ "grant_id": "fdbbc33d-4c2a-4e18-9914-2be7debcc880",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "e2e5e44d4a464957e15d3fe1cf12d954c67572e6e430204f8e190ced36832965",
+ "retrieved_at": "2026-10-02T19:54:53+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 4,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O3",
+   "strategic_reason": "The grant funds research on integrating oral health care into medical care, which aligns with mitigating barriers to primary care services.",
+   "strategic_evidence_quote": "Supported studies will focus on integrating oral health care into medical care (whole-person health).",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 3,
+   "operational_reason": "DPH has oral health programs but lacks the national practice-based research network, single IRB, and multi-site clinical trial infrastructure this center requires.",
+   "restrictions": [
+    "Applications are not being solicited at this time",
+    "managing a single IRB",
+    "coordinating study deployment across multiple U.S. geographic regions (i.e., Nodes)"
+   ],
+   "major_risk": "This is only a forecast, so it is not actionable now; if it becomes active, NCDHHS would still lack the national dental research network and single IRB infrastructure expected of the lead applicant.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Forecast only; national dental practice-based research infrastructure is outside NCDHHS's direct service and research authority despite some oral health relevance."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 4,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O3\",\n  \"strategic_reason\": \"The grant funds research on integrating oral health care into medical care, which aligns with mitigating barriers to primary care services.\",\n  \"strategic_evidence_quote\": \"Supported studies will focus on integrating oral health care into medical care (whole-person health).\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 3,\n  \"operational_reason\": \"DPH has oral health programs but lacks the national practice-based research network, single IRB, and multi-site clinical trial infrastructure this center requires.\",\n  \"restrictions\": [\n    \"Applications are not being solicited at this time\",\n    \"managing a single IRB\",\n    \"coordinating study deployment across multiple U.S. geographic regions (i.e., Nodes)\"\n  ],\n  \"major_risk\": \"This is only a forecast, so it is not actionable now; if it becomes active, NCDHHS would still lack the national dental research network and single IRB infrastructure expected of the lead applicant.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Forecast only; national dental practice-based research infrastructure is outside NCDHHS's direct service and research authority despite some oral health relevance.\"\n}"
+  ]
+ }
+}

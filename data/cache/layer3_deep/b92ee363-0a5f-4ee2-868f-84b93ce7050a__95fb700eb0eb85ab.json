@@ -1,0 +1,30 @@
+{
+ "grant_id": "b92ee363-0a5f-4ee2-868f-84b93ce7050a",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "95fb700eb0eb85abcce0e29a71bf8f479c2cb2f60c9f9563ef14a59fa5b44ad4",
+ "retrieved_at": "2026-10-02T19:59:39+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 2,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds academic research infrastructure that could generate evidence on persistent health challenges but does not directly implement a named NCDHHS objective.",
+   "strategic_evidence_quote": "support the development of innovative research centers to foster nursing-led programs that promote community-partnered research to address persistent health challenges",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "No NCDHHS division operates a School of Nursing or manages NIH P20 research centers, so it could not realistically own the proposed center.",
+   "restrictions": [
+    "should meaningfully engage the community throughout all activities"
+   ],
+   "major_risk": "The award is structured around a School or College of Nursing, so NCDHHS would at most be a community partner and is unlikely to lead or receive the core award.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Academic nursing research center grant does not fit NCDHHS service authority or operations; better suited to a university nursing school, with NCDHHS only as a possible partner."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 2,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds academic research infrastructure that could generate evidence on persistent health challenges but does not directly implement a named NCDHHS objective.\",\n  \"strategic_evidence_quote\": \"support the development of innovative research centers to foster nursing-led programs that promote community-partnered research to address persistent health challenges\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"No NCDHHS division operates a School of Nursing or manages NIH P20 research centers, so it could not realistically own the proposed center.\",\n  \"restrictions\": [\n    \"should meaningfully engage the community throughout all activities\"\n  ],\n  \"major_risk\": \"The award is structured around a School or College of Nursing, so NCDHHS would at most be a community partner and is unlikely to lead or receive the core award.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Academic nursing research center grant does not fit NCDHHS service authority or operations; better suited to a university nursing school, with NCDHHS only as a possible partner.\"\n}"
+  ]
+ }
+}

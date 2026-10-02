@@ -2,6 +2,16 @@
 
 > ## 📌 Update log — read this first
 >
+> ### 2026-10-02: First real run; results, presentation notes, and fixes the results exposed (Pavan)
+>
+> **Results:** [`data/results/top_results.md`](data/results/top_results.md). **Presentation script and numbers:** [`docs/presentation_notes.md`](docs/presentation_notes.md). **Failures:** [`docs/failure_modes.md`](docs/failure_modes.md) (F1–F8).
+>
+> - **Run:** 1,662 grants → 359 removed by rules → **1,303 screened by Jev** (about a minute) → 283 to in-depth review → **270 analyzed by DeepSeek V4 Pro** with verified quotes (269/270 and 267/270 found word-for-word) → lists of **28 open program grants, 112 forecasts, 130 research partnerships**. Total AI cost **$3.23**. `python src/pipeline.py` now reproduces everything from `data/cache/` in **6 seconds with no API key**.
+> - **Top results:** #1 open is Title X Family Planning (98/100). The watchlist leads with Ryan White HIV Part B / ADAP, MIECHV home visiting, drug-use infectious-disease prevention, and Preschool Development B-5. Two are flagged "may already be open, check Grants.gov now". The keyword baseline ranks Ryan White Part B **#670**.
+> - **Layer 3 model changed** from Muse Spark to **DeepSeek V4 Pro**: Meta's provider blocked the account after 62 grants, treating HIV/STI/overdose grant text as policy violations (§13, F6). 13 low-priority grants weren't analyzed because the API key's $3 spending cap was reached; raise the cap and rerun `deep_analysis.py` to finish them (about $0.20).
+> - **Fixes the results exposed:** NIH-style research awards now go to a separate research-partnerships list (F7; they had taken 7 of the first top 10); 17 administrative "award transfer" notices are hard-filtered (F8); Jev questions declare `type: choice` (the first real call returned HTTP 400).
+> - **Still needed:** two people label `data/validation/labels.csv` (90 grants, blind), then `python src/validation.py evaluate` gives recall with a confidence interval. Also fill in the spot-check sheet `data/validation/spotcheck.csv`.
+>
 > ### 2026-09-30: Layers 0, 1 and 5 built; Layer 4 reviewed; one-command pipeline (Pavan)
 >
 > **Every layer now exists.** 43 tests pass (`python -m pytest tests -q`).
@@ -113,7 +123,7 @@ Jev
     v
 LAYER 3
 Deep Grant Evaluation
-Muse Spark 1.3 + Python evidence checks
+DeepSeek V4 Pro + Python evidence checks
     |
     v
 LAYER 4
@@ -210,7 +220,7 @@ solveathon-grants/
 │   ├── keyword_baseline.py       ✅  Layer 5 baseline
 │   ├── validation.py             ✅  Layer 5: sample / spotcheck / evaluate
 │   ├── report.py                 ✅  top_results.md
-│   ├── clients.py                ✅  Jev + Muse Spark API clients (+ mock clients)
+│   ├── clients.py                ✅  Jev + Layer 3 chat-model API clients (+ mock clients)
 │   ├── llm_cache.py              ✅
 │   ├── text_utils.py             ✅  HTML stripping, verbatim-quote check
 │   └── config.py                 ✅
@@ -335,7 +345,7 @@ df["grant_text"] = (
 data/processed/grants_cleaned.csv
 ```
 
-> **Implemented: `python src/clean_data.py`** (Mayank's version, adopted 2026-10-02). Parses dates and numbers, normalizes booleans (a blank `is_cost_sharing` stays *unknown*, not False), drops duplicate ids (0 in this data), and adds `grant_id`, `summary_text` (HTML stripped; 1,040 summaries contain HTML) and `grant_text`. **The original text columns are kept byte-for-byte as exported**, so the prompts sent to Jev and Muse Spark are built from the original text and the cached answers stay valid even if the cleaning code changes. Zero and placeholder amounts are judged in Layer 1, not here.
+> **Implemented: `python src/clean_data.py`** (Mayank's version, adopted 2026-10-02). Parses dates and numbers, normalizes booleans (a blank `is_cost_sharing` stays *unknown*, not False), drops duplicate ids (0 in this data), and adds `grant_id`, `summary_text` (HTML stripped; 1,040 summaries contain HTML) and `grant_text`. **The original text columns are kept byte-for-byte as exported**, so the prompts sent to Jev and the Layer 3 model are built from the original text and the cached answers stay valid even if the cleaning code changes. Zero and placeholder amounts are judged in Layer 1, not here.
 
 ---
 
@@ -653,7 +663,17 @@ This layer may use:
 - detailed manual analysis,
 - or a combination of both.
 
-> **Update (2026-09-29): implemented in `src/deep_analysis.py`** with **Muse Spark 1.3 contributor** (`meta/muse-spark-1.3-contributor`, via the Vercel AI Gateway's OpenAI-compatible chat endpoint, temperature 0). It runs on every grant Layer 2 routes to `deep_review`, highest `triage_priority` first. `layer3.max_grants` in `priorities.json` can cap it; grants over the cap are logged, never silently dropped. Gateway list prices are $0.10 per million input tokens and $0.20 per million output tokens, so even all ~1,300 grants would cost well under $1.
+> **Implemented in `src/deep_analysis.py`.** **Model: DeepSeek V4 Pro** (`deepseek/deepseek-v4-pro`, via the Vercel AI Gateway's OpenAI-compatible chat endpoint, temperature 0). It runs on every grant Layer 2 routes to `deep_review`, highest `triage_priority` first. `layer3.max_grants` in `priorities.json` can cap it; grants over the cap are logged, never silently dropped. The model is a single setting (`DEEP_MODEL` in `src/config.py` or `.env`).
+>
+> **Why not Muse Spark, the original plan (2026-10-02).** We started on Meta's cheap Muse Spark 1.3 "contributor" model. After 62 of 298 grants, Meta's provider **restricted the account for "repeated policy violations"**. The inputs were ordinary public Grants.gov text, but DHHS grants routinely discuss HIV, STIs, sexual violence and overdoses, and the provider's safety filter evidently treated that as a violation. We chose a replacement by testing three affordable models on the 8 most sensitive grants Muse had already analyzed:
+>
+> | Model | Valid JSON | Quotes verified | Agreement with Muse (role / division) | Est. cost, 298 grants |
+> |---|---|---|---|---|
+> | **DeepSeek V4 Pro (chosen)** | 8/8 | 8/8 | **100% / 100%** | ~$2.50 |
+> | DeepSeek V4 Flash | 8/8 | 8/8 | 88% / 100% | ~$0.30 |
+> | GLM 5.3 Flash | 8/8 | 7/8 | 88% / 100% | ~$0.20 |
+>
+> None refused the sensitive grants. The 62 Muse answers stay in `data/cache/layer3_deep/` as a cross-model check (see `docs/presentation_notes.md`). Lesson for a real deployment: **a public-health agency's normal subject matter can trip a commercial model's safety filter**, so the pipeline must be able to swap models. This one could, because the model is a single setting and the results were cached.
 >
 > ```bash
 > python src/deep_analysis.py           # real run (reads data/results/jev_outputs.csv)
@@ -1326,7 +1346,7 @@ stored prompts
 scoring weights
 ```
 
-> **Update (2026-09-29): model responses are cached and committed.** Every Jev and Muse Spark response is saved in `data/cache/<layer>/` as JSON, together with the model id, prompt-version hash, request hash and retrieval time. On a rerun, the pipeline reads the cache instead of calling the API, so **anyone (including judges) can reproduce our exact ranking with no API key and no cost.** Editing a prompt or `priorities.json` changes the hash, and only the affected calls are re-run. `--mock` runs write to `data/cache_mock/` and `data/results/mock/`, which are git-ignored and can never be mixed with real results.
+> **Update (2026-09-29): model responses are cached and committed.** Every Jev and Layer 3 model response is saved in `data/cache/<layer>/` as JSON, together with the model id, prompt-version hash, request hash and retrieval time. On a rerun, the pipeline reads the cache instead of calling the API, so **anyone (including judges) can reproduce our exact ranking with no API key and no cost.** Editing a prompt or `priorities.json` changes the hash, and only the affected calls are re-run. `--mock` runs write to `data/cache_mock/` and `data/results/mock/`, which are git-ignored and can never be mixed with real results.
 
 Important parameters should not be hidden inside notebooks.
 
@@ -1406,9 +1426,10 @@ If a stronger language model is used for Layer 3:
 
 ```text
 Model:
-Muse Spark 1.3 contributor (meta/muse-spark-1.3-contributor), Vercel AI Gateway,
-temperature 0. "Contributor" tier: the provider may train on inputs. Acceptable here
-because every input is public Grants.gov and strategic-plan text.
+DeepSeek V4 Pro (deepseek/deepseek-v4-pro), Vercel AI Gateway, temperature 0.
+Replaced Muse Spark 1.3 contributor after Meta's provider blocked the account
+(safety filter vs. HIV/STI/overdose grant text; see Section 13). Every input is
+public Grants.gov and strategic-plan text.
 
 Output checks:
 Verbatim-quote verification, schema validation with one retry,
@@ -1749,7 +1770,7 @@ Jev
 ### Deep Analysis
 
 ```text
-Muse Spark 1.3 contributor (Vercel AI Gateway) + Python evidence checks
+DeepSeek V4 Pro (Vercel AI Gateway) + Python evidence checks
 ```
 
 ### Final Ranking
@@ -1787,7 +1808,7 @@ Before implementation is finalized:
 - [x] Define Jev output schema. → §11
 - [ ] Determine Jev confidence thresholds. (conservative defaults set; tune on labeled sample)
 - [ ] Decide whether TF-IDF improves performance. (baseline built; `validation.py evaluate` answers this once labels exist)
-- [x] Choose the deep-analysis model. → Muse Spark 1.3 contributor
+- [x] Choose the deep-analysis model. → DeepSeek V4 Pro (Muse Spark was blocked; §13)
 - [x] Create a validation sample. → `data/validation/labels.csv`, 90 grants, stratified + blind (§20)
 - [ ] **Label the validation sample** (two labelers, Y/N)
 - [ ] Run Layers 2–3 for real once `AI_GATEWAY_API_KEY` is in `.env`, and commit `data/cache/`.

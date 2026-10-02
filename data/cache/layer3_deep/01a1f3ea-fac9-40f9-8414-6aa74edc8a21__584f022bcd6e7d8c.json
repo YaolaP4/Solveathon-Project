@@ -1,0 +1,31 @@
+{
+ "grant_id": "01a1f3ea-fac9-40f9-8414-6aa74edc8a21",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "584f022bcd6e7d8c4c98cdd4d52df41991b5f0767d01c6bf48931d7268da1f45",
+ "retrieved_at": "2026-10-02T19:46:56+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O3",
+   "strategic_reason": "Directly advances G1.O3 by funding planning and development of rural integrated health care networks to expand access and coordinate care in underserved rural communities.",
+   "strategic_evidence_quote": "The Rural Health Network Development Planning Program supports the planning and development of rural integrated health care networks with specific focus on collaboration of entities to establish or improve local capacity and care coordination in underserved communities.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "ORH",
+   "operational_fit": 10,
+   "operational_reason": "ORH already focuses on rural and underserved primary care, safety-net clinics, rural hospitals, and health workforce shortage areas, so this planning grant fits its existing role.",
+   "restrictions": [
+    "Applicant organization must have demonstrated experience serving, or capacity to serve, rural underserved populations.",
+    "Program requires collaboration of entities/network participants, which adds coordination effort."
+   ],
+   "major_risk": "It is a planning/network development grant, not direct service funding, so NCDHHS would need committed rural partners to turn the plan into improved access.",
+   "recommended_for_review": true,
+   "one_line_rationale": "This HRSA planning grant aligns with NCDHHS's rural health access goal and ORH's role by funding rural network planning."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O3\",\n  \"strategic_reason\": \"Directly advances G1.O3 by funding planning and development of rural integrated health care networks to expand access and coordinate care in underserved rural communities.\",\n  \"strategic_evidence_quote\": \"The Rural Health Network Development Planning Program supports the planning and development of rural integrated health care networks with specific focus on collaboration of entities to establish or improve local capacity and care coordination in underserved communities.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"ORH\",\n  \"operational_fit\": 10,\n  \"operational_reason\": \"ORH already focuses on rural and underserved primary care, safety-net clinics, rural hospitals, and health workforce shortage areas, so this planning grant fits its existing role.\",\n  \"restrictions\": [\n    \"Applicant organization must have demonstrated experience serving, or capacity to serve, rural underserved populations.\",\n    \"Program requires collaboration of entities/network participants, which adds coordination effort.\"\n  ],\n  \"major_risk\": \"It is a planning/network development grant, not direct service funding, so NCDHHS would need committed rural partners to turn the plan into improved access.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"This HRSA planning grant aligns with NCDHHS's rural health access goal and ORH's role by funding rural network planning.\"\n}"
+  ]
+ }
+}

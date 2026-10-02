@@ -1,0 +1,28 @@
+{
+ "grant_id": "e65c6bdf-15d4-410c-9be4-e55308bd2be2",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "81901bad093a1f33b4e3630eb96256a05fb0fddb82a44fe9fc912bebb40d73f2",
+ "retrieved_at": "2026-10-02T19:51:03+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 3,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The assistance listing indicates injury prevention and control research and state/community programs, which is public health work but does not map directly to a named NCDHHS objective.",
+   "strategic_evidence_quote": "",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "States, Universities, County, Small Business, Non-Profits Organization,",
+   "owning_division": "DPH",
+   "operational_fit": 6,
+   "operational_reason": "DPH already manages CDC-funded public health prevention, surveillance, and epidemiology programs and could house injury prevention and control work.",
+   "restrictions": [],
+   "major_risk": "The announcement provides no program description or funding details, so its scope, commitments, and value cannot be evaluated from the supplied text.",
+   "recommended_for_review": false,
+   "one_line_rationale": "CDC injury prevention listing has no program details or named NCDHHS objective; DPH could house it, but the posting is too sparse to prioritize."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 3,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The assistance listing indicates injury prevention and control research and state/community programs, which is public health work but does not map directly to a named NCDHHS objective.\",\n  \"strategic_evidence_quote\": \"\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"States, Universities, County, Small Business, Non-Profits Organization,\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 6,\n  \"operational_reason\": \"DPH already manages CDC-funded public health prevention, surveillance, and epidemiology programs and could house injury prevention and control work.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The announcement provides no program description or funding details, so its scope, commitments, and value cannot be evaluated from the supplied text.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"CDC injury prevention listing has no program details or named NCDHHS objective; DPH could house it, but the posting is too sparse to prioritize.\"\n}"
+  ]
+ }
+}

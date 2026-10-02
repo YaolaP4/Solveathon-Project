@@ -1,0 +1,28 @@
+{
+ "grant_id": "441d2761-0d9c-42ae-a3da-905ce4ed0ca4",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "637044509e471963b1abf73233c41aa68c2bba438614e6bb1f31a578b6f4ff83",
+ "retrieved_at": "2026-10-02T19:26:41+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O4",
+   "strategic_reason": "The grant funds infectious disease testing, treatment and prevention services for people who use drugs, directly advancing the opioid and substance use crisis objective centered on harm reduction.",
+   "strategic_evidence_quote": "Component 2 will increase support the availability and use of infectious disease testing, treatment and prevention services in high-impact settings serving PWUD.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 8,
+   "operational_reason": "DPH already leads disease surveillance and infectious disease testing and prevention through local health partners.",
+   "restrictions": [],
+   "major_risk": "Component 1 requires conducting biennial surveys including a biobehavioral survey of PWUD, creating heavy data collection burden.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Fits opioid crisis goal by funding HIV/hepatitis testing for people who use drugs, building on public health's existing disease prevention work."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O4\",\n  \"strategic_reason\": \"The grant funds infectious disease testing, treatment and prevention services for people who use drugs, directly advancing the opioid and substance use crisis objective centered on harm reduction.\",\n  \"strategic_evidence_quote\": \"Component 2 will increase support the availability and use of infectious disease testing, treatment and prevention services in high-impact settings serving PWUD.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 8,\n  \"operational_reason\": \"DPH already leads disease surveillance and infectious disease testing and prevention through local health partners.\",\n  \"restrictions\": [],\n  \"major_risk\": \"Component 1 requires conducting biennial surveys including a biobehavioral survey of PWUD, creating heavy data collection burden.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Fits opioid crisis goal by funding HIV/hepatitis testing for people who use drugs, building on public health's existing disease prevention work.\"\n}"
+  ]
+ }
+}

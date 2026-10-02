@@ -1,0 +1,28 @@
+{
+ "grant_id": "d9551b09-3a45-4dc1-a343-3f09521de9aa",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "8279f1445fe7016b5ad223765d9989517eea2642d7d24b55e27f024935ca95ee",
+ "retrieved_at": "2026-10-02T19:24:54+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O4",
+   "strategic_reason": "Supports standardized fetal, infant and child fatality review and prevention to improve birth outcomes and reduce infant mortality.",
+   "strategic_evidence_quote": "Fetal, Infant, and Child Death Review Program",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 9,
+   "operational_reason": "DPH already leads maternal and child health, surveillance, and local health department partnerships for fatality review and prevention.",
+   "restrictions": [],
+   "major_risk": "Appears structured as national leadership and technical assistance for all state and local teams, which may exceed a single state agency's capacity.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Fits child well-being and infant mortality goals with DPH as natural lead, but national TA scope may limit value for North Carolina alone."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O4\",\n  \"strategic_reason\": \"Supports standardized fetal, infant and child fatality review and prevention to improve birth outcomes and reduce infant mortality.\",\n  \"strategic_evidence_quote\": \"Fetal, Infant, and Child Death Review Program\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DPH already leads maternal and child health, surveillance, and local health department partnerships for fatality review and prevention.\",\n  \"restrictions\": [],\n  \"major_risk\": \"Appears structured as national leadership and technical assistance for all state and local teams, which may exceed a single state agency's capacity.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Fits child well-being and infant mortality goals with DPH as natural lead, but national TA scope may limit value for North Carolina alone.\"\n}"
+  ]
+ }
+}

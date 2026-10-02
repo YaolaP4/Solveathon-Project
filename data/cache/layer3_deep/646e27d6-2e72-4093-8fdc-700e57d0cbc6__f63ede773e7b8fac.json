@@ -1,0 +1,28 @@
+{
+ "grant_id": "646e27d6-2e72-4093-8fdc-700e57d0cbc6",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "f63ede773e7b8fac773a7c8a34767942f88b43f04fd7bee0e98e6f0599088853",
+ "retrieved_at": "2026-10-02T20:00:06+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O4",
+   "strategic_reason": "This directly supports G2.O4 by funding access to ECHO cohort data and biospecimens to study high-priority areas of maternal and child health.",
+   "strategic_evidence_quote": "The purpose of this Program Announcement with Special Receipt, Referral, and/or Review Considerations (PAR) is to solicit applications to access limited identifiable data or biospecimens from the ECHO Cohort to study high-priority areas of maternal and child health.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 8,
+   "operational_reason": "DPH already leads maternal and child health epidemiology and surveillance, so analyzing ECHO cohort data and biospecimens fits its existing research role.",
+   "restrictions": [],
+   "major_risk": "The award is for access to existing ECHO cohort data and biospecimens rather than direct service or implementation funding, so its value depends on DPH having the analysis capacity to use the resource.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Aligns with G2.O4 maternal and child health; DPH could analyze ECHO cohort data on birth outcomes, but it is data access rather than new service funding."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O4\",\n  \"strategic_reason\": \"This directly supports G2.O4 by funding access to ECHO cohort data and biospecimens to study high-priority areas of maternal and child health.\",\n  \"strategic_evidence_quote\": \"The purpose of this Program Announcement with Special Receipt, Referral, and/or Review Considerations (PAR) is to solicit applications to access limited identifiable data or biospecimens from the ECHO Cohort to study high-priority areas of maternal and child health.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 8,\n  \"operational_reason\": \"DPH already leads maternal and child health epidemiology and surveillance, so analyzing ECHO cohort data and biospecimens fits its existing research role.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The award is for access to existing ECHO cohort data and biospecimens rather than direct service or implementation funding, so its value depends on DPH having the analysis capacity to use the resource.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Aligns with G2.O4 maternal and child health; DPH could analyze ECHO cohort data on birth outcomes, but it is data access rather than new service funding.\"\n}"
+  ]
+ }
+}

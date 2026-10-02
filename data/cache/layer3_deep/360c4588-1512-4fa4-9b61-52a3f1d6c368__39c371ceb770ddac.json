@@ -1,0 +1,28 @@
+{
+ "grant_id": "360c4588-1512-4fa4-9b61-52a3f1d6c368",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "39c371ceb770ddac97b2ccb750600e33dafd06c1d6bb886b985e5247b53402c9",
+ "retrieved_at": "2026-10-02T19:58:56+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 4,
+   "matched_goal": "G5",
+   "matched_objective": "G5.O1",
+   "strategic_reason": "The grant supports AI-enabled, multimodal data integration for clinical decision support, which partially aligns with the Department's data-driven decision-making objective.",
+   "strategic_evidence_quote": "support development of innovative, reliable, cost-effective, and sustainable multimodal AI-based clinical decision support (CDS) tools",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "OSEC",
+   "operational_fit": 3,
+   "operational_reason": "OSEC houses department-wide data and IT functions, but developing and clinically validating imaging-based AI software is outside NCDHHS's existing role and authority.",
+   "restrictions": [],
+   "major_risk": "The project requires development and clinical translation of AI-based Software as a Medical Device, a technically complex research activity with no clear NCDHHS operational owner or clinical delivery setting.",
+   "recommended_for_review": false,
+   "one_line_rationale": "NIH imaging AI research is outside NCDHHS's service delivery role and lacks a clear division owner despite a general data-driven decision-making link."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 4,\n  \"matched_goal\": \"G5\",\n  \"matched_objective\": \"G5.O1\",\n  \"strategic_reason\": \"The grant supports AI-enabled, multimodal data integration for clinical decision support, which partially aligns with the Department's data-driven decision-making objective.\",\n  \"strategic_evidence_quote\": \"support development of innovative, reliable, cost-effective, and sustainable multimodal AI-based clinical decision support (CDS) tools\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"OSEC\",\n  \"operational_fit\": 3,\n  \"operational_reason\": \"OSEC houses department-wide data and IT functions, but developing and clinically validating imaging-based AI software is outside NCDHHS's existing role and authority.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The project requires development and clinical translation of AI-based Software as a Medical Device, a technically complex research activity with no clear NCDHHS operational owner or clinical delivery setting.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"NIH imaging AI research is outside NCDHHS's service delivery role and lacks a clear division owner despite a general data-driven decision-making link.\"\n}"
+  ]
+ }
+}

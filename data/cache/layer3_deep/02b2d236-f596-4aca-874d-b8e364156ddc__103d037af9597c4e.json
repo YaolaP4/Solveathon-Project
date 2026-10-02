@@ -1,0 +1,31 @@
+{
+ "grant_id": "02b2d236-f596-4aca-874d-b8e364156ddc",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "103d037af9597c4e933d1a14cb572b2c59874361c2705cacd6da75915ae0dbe3",
+ "retrieved_at": "2026-10-02T19:46:22+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 10,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O4",
+   "strategic_reason": "The grant directly funds evidence-based substance use disorder prevention, treatment, and recovery services, which is the core of NCDHHS's opioid and substance use crisis objective.",
+   "strategic_evidence_quote": "funding to communities in rural areas to develop and/or expand behavioral health systems of care through formalized networks that expand operational and clinical service capacity regionally through coordinated implementation of evidence-based SUD prevention, treatment, recovery, and related services.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "You can apply if you are a domestic public or private, non-profit or for-profit entity.",
+   "owning_division": "DMHDDSUS",
+   "operational_fit": 9,
+   "operational_reason": "DMHDDSUS already oversees substance use and opioid response services, so managing a rural SUD systems-development grant is an extension of its current work, though it would need rural network partners.",
+   "restrictions": [
+    "Rural area focus",
+    "Formalized network requirement"
+   ],
+   "major_risk": "The grant requires formalized networks and targets rural communities, so NCDHHS would need strong local partnerships to implement it effectively.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Directly funds rural substance use prevention, treatment, and recovery systems; strong fit with DMHDDSUS opioid/substance use work, though it requires rural network partners."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 10,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O4\",\n  \"strategic_reason\": \"The grant directly funds evidence-based substance use disorder prevention, treatment, and recovery services, which is the core of NCDHHS's opioid and substance use crisis objective.\",\n  \"strategic_evidence_quote\": \"funding to communities in rural areas to develop and/or expand behavioral health systems of care through formalized networks that expand operational and clinical service capacity regionally through coordinated implementation of evidence-based SUD prevention, treatment, recovery, and related services.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"You can apply if you are a domestic public or private, non-profit or for-profit entity.\",\n  \"owning_division\": \"DMHDDSUS\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DMHDDSUS already oversees substance use and opioid response services, so managing a rural SUD systems-development grant is an extension of its current work, though it would need rural network partners.\",\n  \"restrictions\": [\n    \"Rural area focus\",\n    \"Formalized network requirement\"\n  ],\n  \"major_risk\": \"The grant requires formalized networks and targets rural communities, so NCDHHS would need strong local partnerships to implement it effectively.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Directly funds rural substance use prevention, treatment, and recovery systems; strong fit with DMHDDSUS opioid/substance use work, though it requires rural network partners.\"\n}"
+  ]
+ }
+}

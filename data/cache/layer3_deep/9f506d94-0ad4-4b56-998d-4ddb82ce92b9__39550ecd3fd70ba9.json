@@ -1,0 +1,28 @@
+{
+ "grant_id": "9f506d94-0ad4-4b56-998d-4ddb82ce92b9",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "39550ecd3fd70ba921ca9bfd92697f4b05adfd4ab708eea56646311dc771ef73",
+ "retrieved_at": "2026-10-02T19:52:48+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 5,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "The project's explicit focus on equity in clinical guideline dissemination supports G1.O1's goal of building structures to reduce health disparities and increase health access.",
+   "strategic_evidence_quote": "To support dissemination of clinical practice guidelines, particularly those whose development was previously supported by FDA cooperative agreements.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 5,
+   "operational_reason": "DPH could manage dissemination of clinical guidance through its clinical and health-equity programs, but this FDA guideline-specific work is outside its core public health functions.",
+   "restrictions": [],
+   "major_risk": "The grant targets dissemination of guidelines previously supported by FDA cooperative agreements; NCDHHS may not have such products or established clinical specialty networks.",
+   "recommended_for_review": false,
+   "one_line_rationale": "FDA clinical-guideline dissemination is a moderate equity fit for DPH, but NCDHHS likely lacks FDA-supported guidelines and clinical networks to be competitive."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 5,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"The project's explicit focus on equity in clinical guideline dissemination supports G1.O1's goal of building structures to reduce health disparities and increase health access.\",\n  \"strategic_evidence_quote\": \"To support dissemination of clinical practice guidelines, particularly those whose development was previously supported by FDA cooperative agreements.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 5,\n  \"operational_reason\": \"DPH could manage dissemination of clinical guidance through its clinical and health-equity programs, but this FDA guideline-specific work is outside its core public health functions.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The grant targets dissemination of guidelines previously supported by FDA cooperative agreements; NCDHHS may not have such products or established clinical specialty networks.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"FDA clinical-guideline dissemination is a moderate equity fit for DPH, but NCDHHS likely lacks FDA-supported guidelines and clinical networks to be competitive.\"\n}"
+  ]
+ }
+}

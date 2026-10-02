@@ -1,0 +1,31 @@
+{
+ "grant_id": "785bf1c9-11f8-4133-b550-70bcd2df50a2",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "91f36587b9387e3cc44cf25d79a7cfff1bd3bec653636bf3157c342229a3e719",
+ "retrieved_at": "2026-10-02T19:49:33+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 7,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O4",
+   "strategic_reason": "This grant builds the Title X family planning and teen pregnancy prevention workforce, which directly advances NCDHHS's goal of improving reproductive life planning and birth outcomes.",
+   "strategic_evidence_quote": "National Training Center for Title X and Teen Pregnancy Prevention (TPP)",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "To receive funding from the Title X program, you must be a public or private non-profit entity.",
+   "owning_division": "DPH",
+   "operational_fit": 5,
+   "operational_reason": "DPH has subject-matter expertise in family planning and adolescent health, but running a national training center for all OPA grantees is broader than its usual state-level role.",
+   "restrictions": [
+    "Single application must cover both Title X and TPP components in two distinct parts under PA-FPT-25-001",
+    "National scope requires training and technical assistance for all OPA-funded Title X grantees and all OPA-funded TPP recipients"
+   ],
+   "major_risk": "Only one applicant will be funded nationally, so NCDHHS would compete for a single national training center award outside its state-focused service delivery role.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Funds a national training center for Title X family planning and teen pregnancy prevention; aligns with DPH reproductive health work, but national scope and single award make it competitive."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 7,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O4\",\n  \"strategic_reason\": \"This grant builds the Title X family planning and teen pregnancy prevention workforce, which directly advances NCDHHS's goal of improving reproductive life planning and birth outcomes.\",\n  \"strategic_evidence_quote\": \"National Training Center for Title X and Teen Pregnancy Prevention (TPP)\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"To receive funding from the Title X program, you must be a public or private non-profit entity.\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 5,\n  \"operational_reason\": \"DPH has subject-matter expertise in family planning and adolescent health, but running a national training center for all OPA grantees is broader than its usual state-level role.\",\n  \"restrictions\": [\n    \"Single application must cover both Title X and TPP components in two distinct parts under PA-FPT-25-001\",\n    \"National scope requires training and technical assistance for all OPA-funded Title X grantees and all OPA-funded TPP recipients\"\n  ],\n  \"major_risk\": \"Only one applicant will be funded nationally, so NCDHHS would compete for a single national training center award outside its state-focused service delivery role.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Funds a national training center for Title X family planning and teen pregnancy prevention; aligns with DPH reproductive health work, but national scope and single award make it competitive.\"\n}"
+  ]
+ }
+}

@@ -1,0 +1,30 @@
+{
+ "grant_id": "22227ca0-7530-42d3-858a-473b82a81d80",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "4a192bf783eb5ec26ff3c29a62e9eb26e4883bb6f012ff9caddedbbc023b9f05",
+ "retrieved_at": "2026-10-02T19:51:49+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 3,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "No NCDHHS strategic objective explicitly covers retail food safety or foodborne illness risk reduction, though the work is a core public health function.",
+   "strategic_evidence_quote": "reduce the occurrence of food-borne illness risk factors",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "Competition will be limited to non-profit national organizations affiliated with one or more institutions of higher learning whose membership includes state, local, tribal and territorial regulatory personnel whose primary duties include retail food safety",
+   "owning_division": "DPH",
+   "operational_fit": 8,
+   "operational_reason": "DPH oversees environmental health and local health department food safety programs, so it could participate as a regulatory partner if a national organization invited it.",
+   "restrictions": [
+    "Lead applicant must be a non-profit national organization affiliated with an institution of higher learning; state agencies such as NCDHHS cannot apply as lead."
+   ],
+   "major_risk": "NCDHHS is not an eligible lead applicant, so the grant has value only if a national nonprofit selects NCDHHS as a partner or beneficiary.",
+   "recommended_for_review": false,
+   "one_line_rationale": "State agencies are not eligible lead applicants; no NCDHHS strategic objective directly matches retail food safety, so it is not worth pursuing as an applicant."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 3,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"No NCDHHS strategic objective explicitly covers retail food safety or foodborne illness risk reduction, though the work is a core public health function.\",\n  \"strategic_evidence_quote\": \"reduce the occurrence of food-borne illness risk factors\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"Competition will be limited to non-profit national organizations affiliated with one or more institutions of higher learning whose membership includes state, local, tribal and territorial regulatory personnel whose primary duties include retail food safety\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 8,\n  \"operational_reason\": \"DPH oversees environmental health and local health department food safety programs, so it could participate as a regulatory partner if a national organization invited it.\",\n  \"restrictions\": [\n    \"Lead applicant must be a non-profit national organization affiliated with an institution of higher learning; state agencies such as NCDHHS cannot apply as lead.\"\n  ],\n  \"major_risk\": \"NCDHHS is not an eligible lead applicant, so the grant has value only if a national nonprofit selects NCDHHS as a partner or beneficiary.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"State agencies are not eligible lead applicants; no NCDHHS strategic objective directly matches retail food safety, so it is not worth pursuing as an applicant.\"\n}"
+  ]
+ }
+}

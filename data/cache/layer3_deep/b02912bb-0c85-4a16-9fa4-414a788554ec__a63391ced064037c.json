@@ -1,0 +1,30 @@
+{
+ "grant_id": "b02912bb-0c85-4a16-9fa4-414a788554ec",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "a63391ced064037cbc4ebdb8421796d3dca302e00b5a1e4ffdba75b67498d65d",
+ "retrieved_at": "2026-10-02T19:57:43+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 4,
+   "matched_goal": "G2",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds youth health promotion through essential public health services, which broadly supports NCDHHS's child and family well-being goal but does not map to a named objective.",
+   "strategic_evidence_quote": "New cohort of NPHR awards designed to fund Tribes and Tribal Orgs to provide Essential Public Health Services",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "Tribes, Tribal Organizations, Urban Organizations",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "NCDHHS is a state health department, not a Tribe, Tribal Organization, or Urban Organization, so no division can directly run this IHS cooperative agreement under the stated eligibility.",
+   "restrictions": [
+    "Eligibility limited to Tribes, Tribal Organizations, and Urban Organizations"
+   ],
+   "major_risk": "NCDHHS appears ineligible to apply directly, so the grant would be valuable only through a tribal or urban Indian partner and likely cannot be led by the Department.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Youth health broadly fits child and family well-being, but IHS limits applicants to tribes, tribal organizations, and urban organizations; NCDHHS cannot apply directly."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 4,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds youth health promotion through essential public health services, which broadly supports NCDHHS's child and family well-being goal but does not map to a named objective.\",\n  \"strategic_evidence_quote\": \"New cohort of NPHR awards designed to fund Tribes and Tribal Orgs to provide Essential Public Health Services\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"Tribes, Tribal Organizations, Urban Organizations\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"NCDHHS is a state health department, not a Tribe, Tribal Organization, or Urban Organization, so no division can directly run this IHS cooperative agreement under the stated eligibility.\",\n  \"restrictions\": [\n    \"Eligibility limited to Tribes, Tribal Organizations, and Urban Organizations\"\n  ],\n  \"major_risk\": \"NCDHHS appears ineligible to apply directly, so the grant would be valuable only through a tribal or urban Indian partner and likely cannot be led by the Department.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Youth health broadly fits child and family well-being, but IHS limits applicants to tribes, tribal organizations, and urban organizations; NCDHHS cannot apply directly.\"\n}"
+  ]
+ }
+}

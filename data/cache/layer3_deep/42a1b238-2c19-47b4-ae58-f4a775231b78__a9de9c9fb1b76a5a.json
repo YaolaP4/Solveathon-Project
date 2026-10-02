@@ -1,0 +1,31 @@
+{
+ "grant_id": "42a1b238-2c19-47b4-ae58-f4a775231b78",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "a9de9c9fb1b76a5aa0ce1c51298c9465a969a800729aef13be3c03c8be42781e",
+ "retrieved_at": "2026-10-02T19:46:37+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 6,
+   "matched_goal": "G4",
+   "matched_objective": "G4.O4",
+   "strategic_reason": "The agreement can fund hiring surge staff for public health emergency response, which supports the state and local public health workforce under emergency conditions.",
+   "strategic_evidence_quote": "Upon occurrence of a PHE, CDC can rapidly fund specific applicants to accelerate public health crisis response activities such as coordinating emergency operations, hiring surge staff, and conducting needs assessments to determine the resources necessary to address the public health crisis.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "This NOFO is intended for states, political subdivisions of states, and other public entities as specified in section 317(a) of the Public Health Service Act (42 USC § 247(b)).",
+   "owning_division": "DPH",
+   "operational_fit": 9,
+   "operational_reason": "DPH already coordinates public health preparedness, epidemiology, local health department support, and laboratory response, so this cooperative agreement is an extension of its existing emergency response role.",
+   "restrictions": [
+    "Applicants must submit response organizational charts and work plans; if missing, the application is non-responsive and receives no further review.",
+    "Applicants must describe how this funding will not duplicate or supplant other federal funding."
+   ],
+   "major_risk": "This NOFO only creates an approved but unfunded roster; actual funding is contingent on CDC determining a public health emergency exists and on future appropriations, so it may never result in award money.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Aligns with public health workforce surge staffing and DPH preparedness role; only creates an unfunded roster until CDC activates an emergency."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 6,\n  \"matched_goal\": \"G4\",\n  \"matched_objective\": \"G4.O4\",\n  \"strategic_reason\": \"The agreement can fund hiring surge staff for public health emergency response, which supports the state and local public health workforce under emergency conditions.\",\n  \"strategic_evidence_quote\": \"Upon occurrence of a PHE, CDC can rapidly fund specific applicants to accelerate public health crisis response activities such as coordinating emergency operations, hiring surge staff, and conducting needs assessments to determine the resources necessary to address the public health crisis.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"This NOFO is intended for states, political subdivisions of states, and other public entities as specified in section 317(a) of the Public Health Service Act (42 USC § 247(b)).\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DPH already coordinates public health preparedness, epidemiology, local health department support, and laboratory response, so this cooperative agreement is an extension of its existing emergency response role.\",\n  \"restrictions\": [\n    \"Applicants must submit response organizational charts and work plans; if missing, the application is non-responsive and receives no further review.\",\n    \"Applicants must describe how this funding will not duplicate or supplant other federal funding.\"\n  ],\n  \"major_risk\": \"This NOFO only creates an approved but unfunded roster; actual funding is contingent on CDC determining a public health emergency exists and on future appropriations, so it may never result in award money.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Aligns with public health workforce surge staffing and DPH preparedness role; only creates an unfunded roster until CDC activates an emergency.\"\n}"
+  ]
+ }
+}

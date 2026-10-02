@@ -1,0 +1,28 @@
+{
+ "grant_id": "ed62aa8d-6a01-4e52-931c-7c47f1facda6",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "cf6fed8d5a01354698e4ebc5801c0ef55e4452ec1b0982f19386206c327089d3",
+ "retrieved_at": "2026-10-02T19:25:30+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O4",
+   "strategic_reason": "The program funds statewide maternal safety and quality improvement that directly advances improving women's health and birth outcomes.",
+   "strategic_evidence_quote": "improve the quality and safety of maternity care, improve maternal health outcomes, and reduce preventable maternal mortality and severe maternal morbidity",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "Applicants can apply if you are capable of carrying out data-driven maternal safety and quality improvement initiatives in the areas of obstetrics and gynecology or maternal health.",
+   "owning_division": "DPH",
+   "operational_fit": 9,
+   "operational_reason": "DPH already leads maternal and child health and quality improvement with clinical and local health partners.",
+   "restrictions": [],
+   "major_risk": "Statewide bundle implementation may require intensive hospital coordination and sustained quality-improvement staffing.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Strengthens state maternal safety work Public Health already leads, advancing birth outcomes."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O4\",\n  \"strategic_reason\": \"The program funds statewide maternal safety and quality improvement that directly advances improving women's health and birth outcomes.\",\n  \"strategic_evidence_quote\": \"improve the quality and safety of maternity care, improve maternal health outcomes, and reduce preventable maternal mortality and severe maternal morbidity\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"Applicants can apply if you are capable of carrying out data-driven maternal safety and quality improvement initiatives in the areas of obstetrics and gynecology or maternal health.\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DPH already leads maternal and child health and quality improvement with clinical and local health partners.\",\n  \"restrictions\": [],\n  \"major_risk\": \"Statewide bundle implementation may require intensive hospital coordination and sustained quality-improvement staffing.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Strengthens state maternal safety work Public Health already leads, advancing birth outcomes.\"\n}"
+  ]
+ }
+}

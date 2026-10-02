@@ -1,0 +1,28 @@
+{
+ "grant_id": "bd144b0c-06ec-4fce-bde4-a8cc5669bd86",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "3a3c704d4024e882edb8ee6a6ffba55766e9a20485afd0cccd5740adaf97bd6a",
+ "retrieved_at": "2026-10-02T19:50:17+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 3,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The posting lists a CDC injury prevention and control funding program, but the summary does not describe a funded activity that maps to a named NCDHHS objective.",
+   "strategic_evidence_quote": "",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "States",
+   "owning_division": "DPH",
+   "operational_fit": 5,
+   "operational_reason": "DPH is the likely owner for injury prevention and control programs because it oversees disease and injury prevention and surveillance, but no specific activities are described in the posting.",
+   "restrictions": [],
+   "major_risk": "The posting contains almost no programmatic detail beyond the assistance listing and summary, so the actual scope, requirements, and value cannot be assessed.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Injury prevention could fit DPH, but the notice lacks programmatic detail and lists only Type 6 applications, so routing value is unclear."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 3,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The posting lists a CDC injury prevention and control funding program, but the summary does not describe a funded activity that maps to a named NCDHHS objective.\",\n  \"strategic_evidence_quote\": \"\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"States\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 5,\n  \"operational_reason\": \"DPH is the likely owner for injury prevention and control programs because it oversees disease and injury prevention and surveillance, but no specific activities are described in the posting.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The posting contains almost no programmatic detail beyond the assistance listing and summary, so the actual scope, requirements, and value cannot be assessed.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Injury prevention could fit DPH, but the notice lacks programmatic detail and lists only Type 6 applications, so routing value is unclear.\"\n}"
+  ]
+ }
+}

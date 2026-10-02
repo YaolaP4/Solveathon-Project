@@ -22,7 +22,7 @@ PROMPTS = ROOT / "prompts"
 
 # Models (both reached through the Vercel AI Gateway with one key)
 JEV_MODEL = os.getenv("JEV_MODEL", "typesafe-ai/jev")
-DEEP_MODEL = os.getenv("DEEP_MODEL", "meta/muse-spark-1.3-contributor")
+DEEP_MODEL = os.getenv("DEEP_MODEL", "deepseek/deepseek-v4-pro")
 GATEWAY_EVALUATE_URL = "https://ai-gateway.vercel.sh/v1/evaluate"
 GATEWAY_CHAT_URL = "https://ai-gateway.vercel.sh/v1/chat/completions"
 REQUEST_TIMEOUT_S = 90

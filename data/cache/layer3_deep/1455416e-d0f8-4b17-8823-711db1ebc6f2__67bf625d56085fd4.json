@@ -1,0 +1,33 @@
+{
+ "grant_id": "1455416e-d0f8-4b17-8823-711db1ebc6f2",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "67bf625d56085fd4bb32f59a67b8605eed7c0562b6031d5b23fb9bc31213472b",
+ "retrieved_at": "2026-10-02T19:47:40+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O3",
+   "strategic_reason": "The grant directly funds community-based approaches that address barriers to health care and social services and social determinants of health to reduce dementia disparities, aligning with G1.O3's focus on mitigating barriers to health services for underserved groups.",
+   "strategic_evidence_quote": "demonstration projects to support innovative evidence-based/informed and community-focused approaches that reduce disparities impacting brain health as people age",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "Eligible applicants include any private nonprofit or public entity located in a State.",
+   "owning_division": "DPH",
+   "operational_fit": 7,
+   "operational_reason": "DPH already leads chronic disease prevention, health equity, and community-based interventions, so it could run a dementia-disparities demonstration with local partners and epidemiologic support.",
+   "restrictions": [
+    "Applications must be submitted through Grants.gov, and applicants must have an active SAM.gov registration when submitting an application.",
+    "For multi-year projects, recipients must submit a non-competing continuation (NCC) application for each budget period after the first.",
+    "Recipients of awards must not restrict participation in the project on the basis of race, color, religion, sex, national origin, or other protected characteristic.",
+    "We expect award recipients under this opportunity to consider approaches to sustainability beyond the end of the support provided by OMH."
+   ],
+   "major_risk": "This is a time-limited demonstration project with continuation funding contingent on federal priorities, and OMH expects sustainability planning beyond the grant period.",
+   "recommended_for_review": true,
+   "one_line_rationale": "State-eligible minority health grant that fits G1/O3 by funding community strategies to reduce dementia disparities; DPH can lead using its chronic disease and health equity capacity."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O3\",\n  \"strategic_reason\": \"The grant directly funds community-based approaches that address barriers to health care and social services and social determinants of health to reduce dementia disparities, aligning with G1.O3's focus on mitigating barriers to health services for underserved groups.\",\n  \"strategic_evidence_quote\": \"demonstration projects to support innovative evidence-based/informed and community-focused approaches that reduce disparities impacting brain health as people age\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"Eligible applicants include any private nonprofit or public entity located in a State.\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 7,\n  \"operational_reason\": \"DPH already leads chronic disease prevention, health equity, and community-based interventions, so it could run a dementia-disparities demonstration with local partners and epidemiologic support.\",\n  \"restrictions\": [\n    \"Applications must be submitted through Grants.gov, and applicants must have an active SAM.gov registration when submitting an application.\",\n    \"For multi-year projects, recipients must submit a non-competing continuation (NCC) application for each budget period after the first.\",\n    \"Recipients of awards must not restrict participation in the project on the basis of race, color, religion, sex, national origin, or other protected characteristic.\",\n    \"We expect award recipients under this opportunity to consider approaches to sustainability beyond the end of the support provided by OMH.\"\n  ],\n  \"major_risk\": \"This is a time-limited demonstration project with continuation funding contingent on federal priorities, and OMH expects sustainability planning beyond the grant period.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"State-eligible minority health grant that fits G1/O3 by funding community strategies to reduce dementia disparities; DPH can lead using its chronic disease and health equity capacity.\"\n}"
+  ]
+ }
+}

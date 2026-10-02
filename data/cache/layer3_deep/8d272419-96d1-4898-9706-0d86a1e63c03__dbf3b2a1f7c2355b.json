@@ -1,0 +1,28 @@
+{
+ "grant_id": "8d272419-96d1-4898-9706-0d86a1e63c03",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "dbf3b2a1f7c2355b197602d33cb679b9ef3aed05996d67f028d45067bbb794c3",
+ "retrieved_at": "2026-10-02T19:24:57+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G5",
+   "matched_objective": "G5.O1",
+   "strategic_reason": "The grant funds ECE technology and analytic infrastructure to generate actionable information for decision-making, directly advancing data-driven decision-making.",
+   "strategic_evidence_quote": "make targeted, one-year investments in statewide early care and education (ECE) technology and analytic data infrastructure",
+   "applicant_role": "unclear",
+   "eligibility_evidence_quote": "Specific states and territories are eligible and will be identified in the NOFO.",
+   "owning_division": "DCDEE",
+   "operational_fit": 9,
+   "operational_reason": "DCDEE already oversees child care, early learning and NC Pre-K and works across the mixed-delivery system this grant targets.",
+   "restrictions": [],
+   "major_risk": "North Carolina may not be among the specific states identified as eligible in the NOFO, making effort ineligible.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Supports early childhood data systems DCDEE already runs, aiding data-driven decisions, but NC eligibility must be confirmed in NOFO."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G5\",\n  \"matched_objective\": \"G5.O1\",\n  \"strategic_reason\": \"The grant funds ECE technology and analytic infrastructure to generate actionable information for decision-making, directly advancing data-driven decision-making.\",\n  \"strategic_evidence_quote\": \"make targeted, one-year investments in statewide early care and education (ECE) technology and analytic data infrastructure\",\n  \"applicant_role\": \"unclear\",\n  \"eligibility_evidence_quote\": \"Specific states and territories are eligible and will be identified in the NOFO.\",\n  \"owning_division\": \"DCDEE\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DCDEE already oversees child care, early learning and NC Pre-K and works across the mixed-delivery system this grant targets.\",\n  \"restrictions\": [],\n  \"major_risk\": \"North Carolina may not be among the specific states identified as eligible in the NOFO, making effort ineligible.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Supports early childhood data systems DCDEE already runs, aiding data-driven decisions, but NC eligibility must be confirmed in NOFO.\"\n}"
+  ]
+ }
+}

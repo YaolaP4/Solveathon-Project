@@ -1,0 +1,28 @@
+{
+ "grant_id": "112cb2a2-971d-4d2c-ab72-d8c74b02baa1",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "3f848f705addd8b57b334e0910fa9d1d273bdb76c805c176ac8bb4ae5877bcd4",
+ "retrieved_at": "2026-10-02T19:55:07+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "The grant funds a coordinating center to build research infrastructure for multi-site clinical and behavioral interventions to reduce health disparities, directly supporting NCDHHS's objective to build structure for reducing health disparities.",
+   "strategic_evidence_quote": "The overarching goals of the EmbraceHealth Network are to establish and maintain an efficient and nimble infrastructure to conduct research to address emerging, urgent, or chronic health needs among populations that experience health disparities.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 5,
+   "operational_reason": "DPH has relevant epidemiology, chronic disease, and health disparities work, but leading a national NIH clinical research coordinating center would be a significant expansion beyond its usual public health operations.",
+   "restrictions": [],
+   "major_risk": "This is only a forecast, not an active solicitation, and it requires operating a national multi-site clinical research coordinating center, which is outside NCDHHS's typical service-delivery role.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Forecast NIH coordinating center for health disparities clinical research; aligns with G1.O1 and DPH, but requires national research infrastructure beyond typical DHHS operations."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"The grant funds a coordinating center to build research infrastructure for multi-site clinical and behavioral interventions to reduce health disparities, directly supporting NCDHHS's objective to build structure for reducing health disparities.\",\n  \"strategic_evidence_quote\": \"The overarching goals of the EmbraceHealth Network are to establish and maintain an efficient and nimble infrastructure to conduct research to address emerging, urgent, or chronic health needs among populations that experience health disparities.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 5,\n  \"operational_reason\": \"DPH has relevant epidemiology, chronic disease, and health disparities work, but leading a national NIH clinical research coordinating center would be a significant expansion beyond its usual public health operations.\",\n  \"restrictions\": [],\n  \"major_risk\": \"This is only a forecast, not an active solicitation, and it requires operating a national multi-site clinical research coordinating center, which is outside NCDHHS's typical service-delivery role.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Forecast NIH coordinating center for health disparities clinical research; aligns with G1.O1 and DPH, but requires national research infrastructure beyond typical DHHS operations.\"\n}"
+  ]
+ }
+}

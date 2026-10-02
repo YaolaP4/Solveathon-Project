@@ -1,0 +1,30 @@
+{
+ "grant_id": "131fabad-5506-431b-b87a-e564f1d8dcc4",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "e988c01a9c88d16fb3fa30f2300ba161b4694e56ab985ed14596fba8d16b0979",
+ "retrieved_at": "2026-10-02T20:01:06+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 6,
+   "matched_goal": "G5",
+   "matched_objective": "G5.O1",
+   "strategic_reason": "The grant funds clinical informatics methods and tools that enable data-driven discovery and evidence-based decision-making, which aligns with NCDHHS's objective to foster data-driven decision-making through stronger data infrastructure and use.",
+   "strategic_evidence_quote": "This NOFO will support research focused on the design, implementation, and evaluation of clinical informatics tools and methods that enable data-driven discovery, promote evidence-based decision-making, and support personalized and precision health care.",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "OSEC",
+   "operational_fit": 4,
+   "operational_reason": "OSEC has department-wide data and IT responsibilities, but leading an NIH clinical informatics R01 would require research infrastructure and academic informatics expertise that NCDHHS does not typically operate.",
+   "restrictions": [
+    "No foreign subawards/subcontracts; applications involving them will be deemed noncompliant"
+   ],
+   "major_risk": "This is an investigator-initiated NIH R01 requiring substantial research and informatics capacity that NCDHHS would likely need a university partner to supply, so it may be difficult to lead and win.",
+   "recommended_for_review": false,
+   "one_line_rationale": "It aligns with data-driven decision-making but is an NIH research grant requiring informatics research capacity that makes NCDHHS an atypical applicant rather than a direct operational fit."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 6,\n  \"matched_goal\": \"G5\",\n  \"matched_objective\": \"G5.O1\",\n  \"strategic_reason\": \"The grant funds clinical informatics methods and tools that enable data-driven discovery and evidence-based decision-making, which aligns with NCDHHS's objective to foster data-driven decision-making through stronger data infrastructure and use.\",\n  \"strategic_evidence_quote\": \"This NOFO will support research focused on the design, implementation, and evaluation of clinical informatics tools and methods that enable data-driven discovery, promote evidence-based decision-making, and support personalized and precision health care.\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"OSEC\",\n  \"operational_fit\": 4,\n  \"operational_reason\": \"OSEC has department-wide data and IT responsibilities, but leading an NIH clinical informatics R01 would require research infrastructure and academic informatics expertise that NCDHHS does not typically operate.\",\n  \"restrictions\": [\"No foreign subawards/subcontracts; applications involving them will be deemed noncompliant\"],\n  \"major_risk\": \"This is an investigator-initiated NIH R01 requiring substantial research and informatics capacity that NCDHHS would likely need a university partner to supply, so it may be difficult to lead and win.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"It aligns with data-driven decision-making but is an NIH research grant requiring informatics research capacity that makes NCDHHS an atypical applicant rather than a direct operational fit.\"\n}"
+  ]
+ }
+}

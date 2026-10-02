@@ -1,0 +1,28 @@
+{
+ "grant_id": "c4c4d1db-a57c-47fc-aac0-4d78290582fc",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "b1be298d64cd7d46baebe1af4234b2add35d3657b141b68f69d00e159d1d3e43",
+ "retrieved_at": "2026-10-02T19:56:12+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 7,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "The grant directly funds non-pharmacological interventions to reduce sleep health disparities, which aligns with NCDHHS's objective to reduce health disparities across the Department.",
+   "strategic_evidence_quote": "support non-pharmacological interventions to promote sleep health, reduce sleep health disparities, and examine sleep as a modifiable factor to reduce health disparities for other health outcomes among populations that experience health disparities.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 5,
+   "operational_reason": "DPH has chronic disease, epidemiology, and health equity work, but an NIH R01 requires dedicated research infrastructure and sleep investigators that the division may need to secure through academic partners.",
+   "restrictions": [],
+   "major_risk": "NCDHHS may lack the sleep health research investigators and R01 grant infrastructure needed to compete with academic medical centers, so a lead application could be costly and unlikely to fund.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Supports sleep health interventions to reduce disparities, fitting DPH health equity goals, though R01 research capacity may require academic partners."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 7,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"The grant directly funds non-pharmacological interventions to reduce sleep health disparities, which aligns with NCDHHS's objective to reduce health disparities across the Department.\",\n  \"strategic_evidence_quote\": \"support non-pharmacological interventions to promote sleep health, reduce sleep health disparities, and examine sleep as a modifiable factor to reduce health disparities for other health outcomes among populations that experience health disparities.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 5,\n  \"operational_reason\": \"DPH has chronic disease, epidemiology, and health equity work, but an NIH R01 requires dedicated research infrastructure and sleep investigators that the division may need to secure through academic partners.\",\n  \"restrictions\": [],\n  \"major_risk\": \"NCDHHS may lack the sleep health research investigators and R01 grant infrastructure needed to compete with academic medical centers, so a lead application could be costly and unlikely to fund.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Supports sleep health interventions to reduce disparities, fitting DPH health equity goals, though R01 research capacity may require academic partners.\"\n}"
+  ]
+ }
+}

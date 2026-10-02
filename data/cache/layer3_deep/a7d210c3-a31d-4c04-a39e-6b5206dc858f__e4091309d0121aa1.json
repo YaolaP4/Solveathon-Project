@@ -1,0 +1,28 @@
+{
+ "grant_id": "a7d210c3-a31d-4c04-a39e-6b5206dc858f",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "e4091309d0121aa1ba8a7cb7508729faf45ca28cba1d857524d8499bc065f5b0",
+ "retrieved_at": "2026-10-02T19:54:54+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O4",
+   "strategic_reason": "This grant funds research on reducing prenatal alcohol exposure and FASD, which directly supports improving women's health and birth outcomes under G2.O4.",
+   "strategic_evidence_quote": "prevention approaches to reduce prenatal alcohol exposure and incidence of FASD",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 6,
+   "operational_reason": "DPH's maternal and child health and epidemiology programs address prenatal health and birth outcomes, so this research planning grant would extend existing prevention work, though it would likely require academic research partners.",
+   "restrictions": [],
+   "major_risk": "It is an NIH research planning grant rather than a service program, so success requires research infrastructure and competition with academic institutions.",
+   "recommended_for_review": true,
+   "one_line_rationale": "NIH planning grant for FASD prevention and intervention aligns with G2.O4 birth outcomes; DPH could lead with research partners, but it is research, not direct service funding."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O4\",\n  \"strategic_reason\": \"This grant funds research on reducing prenatal alcohol exposure and FASD, which directly supports improving women's health and birth outcomes under G2.O4.\",\n  \"strategic_evidence_quote\": \"prevention approaches to reduce prenatal alcohol exposure and incidence of FASD\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 6,\n  \"operational_reason\": \"DPH's maternal and child health and epidemiology programs address prenatal health and birth outcomes, so this research planning grant would extend existing prevention work, though it would likely require academic research partners.\",\n  \"restrictions\": [],\n  \"major_risk\": \"It is an NIH research planning grant rather than a service program, so success requires research infrastructure and competition with academic institutions.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"NIH planning grant for FASD prevention and intervention aligns with G2.O4 birth outcomes; DPH could lead with research partners, but it is research, not direct service funding.\"\n}"
+  ]
+ }
+}

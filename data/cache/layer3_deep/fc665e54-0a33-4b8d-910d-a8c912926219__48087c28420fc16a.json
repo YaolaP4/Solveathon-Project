@@ -1,0 +1,28 @@
+{
+ "grant_id": "fc665e54-0a33-4b8d-910d-a8c912926219",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "48087c28420fc16ac60e6b204180258448a5e34c6a74c677e58d32134736f45b",
+ "retrieved_at": "2026-10-02T19:56:26+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O2",
+   "strategic_reason": "The grant funds CMS data analysis to identify and evaluate health disparities among Medicare and Medicaid/CHIP enrollees, directly supporting the Department's goal of using data to track disparities and outcomes.",
+   "strategic_evidence_quote": "identify, document, assess, and evaluate health disparities among Medicare and Medicaid and CHIP enrollees",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "public_and_state_institutions_of_higher_education, nonprofits_non_higher_education_with_501c3, private_institutions_of_higher_education",
+   "owning_division": "MEDICAID",
+   "operational_fit": 4,
+   "operational_reason": "NC Medicaid would be the natural internal partner for CMS enrollee data, but this grant is structured for external researchers and would not be run as a Department program.",
+   "restrictions": [],
+   "major_risk": "NCDHHS is not an eligible applicant, so the Department cannot lead and would only have indirect value through a university partner.",
+   "recommended_for_review": false,
+   "one_line_rationale": "NCDHHS is not an eligible applicant; funds researcher access to CMS data rather than Department programs, though the topic aligns with health equity data."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O2\",\n  \"strategic_reason\": \"The grant funds CMS data analysis to identify and evaluate health disparities among Medicare and Medicaid/CHIP enrollees, directly supporting the Department's goal of using data to track disparities and outcomes.\",\n  \"strategic_evidence_quote\": \"identify, document, assess, and evaluate health disparities among Medicare and Medicaid and CHIP enrollees\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"public_and_state_institutions_of_higher_education, nonprofits_non_higher_education_with_501c3, private_institutions_of_higher_education\",\n  \"owning_division\": \"MEDICAID\",\n  \"operational_fit\": 4,\n  \"operational_reason\": \"NC Medicaid would be the natural internal partner for CMS enrollee data, but this grant is structured for external researchers and would not be run as a Department program.\",\n  \"restrictions\": [],\n  \"major_risk\": \"NCDHHS is not an eligible applicant, so the Department cannot lead and would only have indirect value through a university partner.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"NCDHHS is not an eligible applicant; funds researcher access to CMS data rather than Department programs, though the topic aligns with health equity data.\"\n}"
+  ]
+ }
+}

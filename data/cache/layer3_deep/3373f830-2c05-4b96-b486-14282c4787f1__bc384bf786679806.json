@@ -1,0 +1,32 @@
+{
+ "grant_id": "3373f830-2c05-4b96-b486-14282c4787f1",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "bc384bf786679806aadce386ffbfbb5b75acd35bf92a6f18fd4bc1ab7e4d9b23",
+ "retrieved_at": "2026-10-02T19:53:34+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O3",
+   "strategic_reason": "The grant funds interventions that address barriers to cancer screening and preventive services in populations experiencing health disparities, directly aligning with efforts to mitigate barriers to health services.",
+   "strategic_evidence_quote": "Interventions to expand cancer screening and preventive services to ADVANCE health in populations that experience health disparities",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 7,
+   "operational_reason": "DPH already oversees chronic disease prevention, epidemiology, and local health partnerships, making it the most natural owner for cancer screening and health disparity interventions.",
+   "restrictions": [
+    "Clinical Trial Required",
+    "Interventions should address barriers and facilitators at two or more of the following levels: patient, clinician, healthcare setting, and neighborhood/community",
+    "Interventions should include screening, preventive services, or other healthcare processes, including timely follow-up of abnormal findings, and referral to accessible care"
+   ],
+   "major_risk": "This is an NIH R01 research mechanism requiring a clinical trial, which demands substantial research and trial infrastructure that NCDHHS may not currently have and favors academic applicants.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Aligns with G1.O3 by funding interventions to reduce cancer screening barriers in disparity populations; DPH could lead or partner, but the clinical-trial R01 requires research capacity."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O3\",\n  \"strategic_reason\": \"The grant funds interventions that address barriers to cancer screening and preventive services in populations experiencing health disparities, directly aligning with efforts to mitigate barriers to health services.\",\n  \"strategic_evidence_quote\": \"Interventions to expand cancer screening and preventive services to ADVANCE health in populations that experience health disparities\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 7,\n  \"operational_reason\": \"DPH already oversees chronic disease prevention, epidemiology, and local health partnerships, making it the most natural owner for cancer screening and health disparity interventions.\",\n  \"restrictions\": [\n    \"Clinical Trial Required\",\n    \"Interventions should address barriers and facilitators at two or more of the following levels: patient, clinician, healthcare setting, and neighborhood/community\",\n    \"Interventions should include screening, preventive services, or other healthcare processes, including timely follow-up of abnormal findings, and referral to accessible care\"\n  ],\n  \"major_risk\": \"This is an NIH R01 research mechanism requiring a clinical trial, which demands substantial research and trial infrastructure that NCDHHS may not currently have and favors academic applicants.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Aligns with G1.O3 by funding interventions to reduce cancer screening barriers in disparity populations; DPH could lead or partner, but the clinical-trial R01 requires research capacity.\"\n}"
+  ]
+ }
+}

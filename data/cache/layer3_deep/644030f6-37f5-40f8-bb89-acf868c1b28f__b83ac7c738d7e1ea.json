@@ -1,0 +1,28 @@
+{
+ "grant_id": "644030f6-37f5-40f8-bb89-acf868c1b28f",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "b83ac7c738d7e1ea81569bf01a8d720b8a315e21b6d56dd863cf5731d1a790a5",
+ "retrieved_at": "2026-10-02T19:25:12+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 4,
+   "matched_goal": "G4",
+   "matched_objective": "G4.O1",
+   "strategic_reason": "Locative tracking and wandering-prevention for people with dementia and developmental disabilities supports safety of older adults and people with disabilities.",
+   "strategic_evidence_quote": "This program provides funding to law enforcement, other public safety agencies, and health care agencies to implement locative technologies that track missing individuals.",
+   "applicant_role": "partner",
+   "eligibility_evidence_quote": "this includes state, local, or tribal government-operated health departments",
+   "owning_division": "DMHDDSUS",
+   "operational_fit": 3,
+   "operational_reason": "DMHDDSUS serves developmental disabilities and behavioral health providers but does not lead law enforcement locative-technology or search-rescue operations.",
+   "restrictions": [],
+   "major_risk": "BJA program is centered on law enforcement and public safety agencies, so NCDHHS would be secondary and operational value is limited.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Supports safety for older adults and people with disabilities but led by law enforcement; health agency fits best as partner, not lead."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 4,\n  \"matched_goal\": \"G4\",\n  \"matched_objective\": \"G4.O1\",\n  \"strategic_reason\": \"Locative tracking and wandering-prevention for people with dementia and developmental disabilities supports safety of older adults and people with disabilities.\",\n  \"strategic_evidence_quote\": \"This program provides funding to law enforcement, other public safety agencies, and health care agencies to implement locative technologies that track missing individuals.\",\n  \"applicant_role\": \"partner\",\n  \"eligibility_evidence_quote\": \"this includes state, local, or tribal government-operated health departments\",\n  \"owning_division\": \"DMHDDSUS\",\n  \"operational_fit\": 3,\n  \"operational_reason\": \"DMHDDSUS serves developmental disabilities and behavioral health providers but does not lead law enforcement locative-technology or search-rescue operations.\",\n  \"restrictions\": [],\n  \"major_risk\": \"BJA program is centered on law enforcement and public safety agencies, so NCDHHS would be secondary and operational value is limited.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Supports safety for older adults and people with disabilities but led by law enforcement; health agency fits best as partner, not lead.\"\n}"
+  ]
+ }
+}

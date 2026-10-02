@@ -1,0 +1,32 @@
+{
+ "grant_id": "0af7d5aa-210e-4d0e-93c0-e8f2bf6304d4",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "9a457c049a2fd8786ff02dc320f6163717f84e032e2e43cf0d17b0b1bd8794a8",
+ "retrieved_at": "2026-10-02T19:47:22+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 0,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds manufactured food regulatory program infrastructure and inspections, which does not directly advance any listed NCDHHS strategic goal or objective.",
+   "strategic_evidence_quote": "advance efforts for a nationally Integrated Food Safety System (IFSS) by assisting state manufactured food regulatory programs to achieve and maintain conformance with the most current version of the Manufactured Food Regulatory Program Standards (MFRPS).",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "Competition is limited to state, tribal and territorial manufactured food regulatory programs because the foundational work conducted under the current FDA food safety inspection contracts is necessary for the completion of significant improvements in an IFSS.",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "The grant requires a manufactured food regulatory program with FDA food safety inspection contract authority, which is not an existing role described for any NCDHHS division.",
+   "restrictions": [
+    "The applicant must hold a long-term food nonpublic information sharing agreement with the FDA pursuant to 20 CFR §20.88 (“20.88 agreement”) or agree to enter into a 20.88 agreement with the FDA by the end of grant year one (June 30, 2025).",
+    "Applicants will be categorized under one of two funding tracks: MFRPS Development or MFRPS Maintenance (see eligibility criteria below).",
+    "State programs will be expected to share project deliverables and resources developed with other programs."
+   ],
+   "major_risk": "NCDHHS is likely not the state manufactured food regulatory program, so the application would be ineligible or would require an FDA food safety inspection contract outside the department's authority.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Food safety regulatory program infrastructure is not an NCDHHS strategic objective and likely sits with another state agency; not a fit for DHHS."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 0,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds manufactured food regulatory program infrastructure and inspections, which does not directly advance any listed NCDHHS strategic goal or objective.\",\n  \"strategic_evidence_quote\": \"advance efforts for a nationally Integrated Food Safety System (IFSS) by assisting state manufactured food regulatory programs to achieve and maintain conformance with the most current version of the Manufactured Food Regulatory Program Standards (MFRPS).\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"Competition is limited to state, tribal and territorial manufactured food regulatory programs because the foundational work conducted under the current FDA food safety inspection contracts is necessary for the completion of significant improvements in an IFSS.\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"The grant requires a manufactured food regulatory program with FDA food safety inspection contract authority, which is not an existing role described for any NCDHHS division.\",\n  \"restrictions\": [\n    \"The applicant must hold a long-term food nonpublic information sharing agreement with the FDA pursuant to 20 CFR §20.88 (“20.88 agreement”) or agree to enter into a 20.88 agreement with the FDA by the end of grant year one (June 30, 2025).\",\n    \"Applicants will be categorized under one of two funding tracks: MFRPS Development or MFRPS Maintenance (see eligibility criteria below).\",\n    \"State programs will be expected to share project deliverables and resources developed with other programs.\"\n  ],\n  \"major_risk\": \"NCDHHS is likely not the state manufactured food regulatory program, so the application would be ineligible or would require an FDA food safety inspection contract outside the department's authority.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Food safety regulatory program infrastructure is not an NCDHHS strategic objective and likely sits with another state agency; not a fit for DHHS.\"\n}"
+  ]
+ }
+}

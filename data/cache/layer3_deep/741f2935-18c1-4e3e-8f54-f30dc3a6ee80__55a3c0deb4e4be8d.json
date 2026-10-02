@@ -1,0 +1,31 @@
+{
+ "grant_id": "741f2935-18c1-4e3e-8f54-f30dc3a6ee80",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "55a3c0deb4e4be8d83d9438ce0890eaa5a7e31e7fdb651d5cbe5d08a7ee9b124",
+ "retrieved_at": "2026-10-02T19:26:59+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O4",
+   "strategic_reason": "The program funds rural maternity and obstetrics care networks, directly advancing improved women's health and birth outcomes.",
+   "strategic_evidence_quote": "to improve access to and delivery of maternity and obstetrics care in rural areas",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 8,
+   "operational_reason": "DPH already leads maternal and child health work and can coordinate rural obstetrics partners.",
+   "restrictions": [
+    "Limited to rural areas",
+    "Requires collaborative improvement and innovation networks"
+   ],
+   "major_risk": "Rural hospital closures and obstetrics workforce shortages may limit ability to build and sustain care networks.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Supports rural maternity care access, fitting women's health goals with DPH as lead."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O4\",\n  \"strategic_reason\": \"The program funds rural maternity and obstetrics care networks, directly advancing improved women's health and birth outcomes.\",\n  \"strategic_evidence_quote\": \"to improve access to and delivery of maternity and obstetrics care in rural areas\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 8,\n  \"operational_reason\": \"DPH already leads maternal and child health work and can coordinate rural obstetrics partners.\",\n  \"restrictions\": [\n    \"Limited to rural areas\",\n    \"Requires collaborative improvement and innovation networks\"\n  ],\n  \"major_risk\": \"Rural hospital closures and obstetrics workforce shortages may limit ability to build and sustain care networks.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Supports rural maternity care access, fitting women's health goals with DPH as lead.\"\n}"
+  ]
+ }
+}

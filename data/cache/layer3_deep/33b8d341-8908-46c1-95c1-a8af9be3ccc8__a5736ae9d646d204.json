@@ -1,0 +1,28 @@
+{
+ "grant_id": "33b8d341-8908-46c1-95c1-a8af9be3ccc8",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "a5736ae9d646d2042f79daec80268b12c91c8d0a76cd36d700d7bac7c8a39074",
+ "retrieved_at": "2026-10-02T19:51:47+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O3",
+   "strategic_reason": "The grant funds technical assistance that helps rural providers engage in value-based payment and delivery models, supporting the sustainability of rural and underserved primary care.",
+   "strategic_evidence_quote": "support the ability of rural providers to participate and succeed in current and emerging payment and delivery system models designed to provide value-based care",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "ORH",
+   "operational_fit": 8,
+   "operational_reason": "ORH already supports rural hospitals, clinics, and workforce, so a rural value-based care technical assistance role is a close extension of its existing work.",
+   "restrictions": [],
+   "major_risk": "Only one national cooperative agreement is expected, so NCDHHS would face winner-take-all competition from established national rural health TA organizations.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Rural health value-based TA aligns with ORH and G1.O3; one-award national competition is the main risk, but ORH should review it."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O3\",\n  \"strategic_reason\": \"The grant funds technical assistance that helps rural providers engage in value-based payment and delivery models, supporting the sustainability of rural and underserved primary care.\",\n  \"strategic_evidence_quote\": \"support the ability of rural providers to participate and succeed in current and emerging payment and delivery system models designed to provide value-based care\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"ORH\",\n  \"operational_fit\": 8,\n  \"operational_reason\": \"ORH already supports rural hospitals, clinics, and workforce, so a rural value-based care technical assistance role is a close extension of its existing work.\",\n  \"restrictions\": [],\n  \"major_risk\": \"Only one national cooperative agreement is expected, so NCDHHS would face winner-take-all competition from established national rural health TA organizations.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Rural health value-based TA aligns with ORH and G1.O3; one-award national competition is the main risk, but ORH should review it.\"\n}"
+  ]
+ }
+}

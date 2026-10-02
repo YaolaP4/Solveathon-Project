@@ -1,0 +1,31 @@
+{
+ "grant_id": "b56109e1-0c63-42ea-96cb-13f4ef3a5064",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "a0b4519712d661440cd4132bda30a016771661a804c96cdf0546e998e7b917c2",
+ "retrieved_at": "2026-10-02T20:01:59+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 4,
+   "matched_goal": "G5",
+   "matched_objective": "G5.O1",
+   "strategic_reason": "The grant funds national data archiving, curation, and dissemination infrastructure, which is relevant to G5.O1's focus on data infrastructure but is not tied to NCDHHS program data or decisions.",
+   "strategic_evidence_quote": "It provides archiving, curation, and dissemination services",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "OSEC",
+   "operational_fit": 2,
+   "operational_reason": "OSEC owns department-wide data and IT functions, but running a national NICHD demographic-data repository would require specialized curation and federal research compliance capacity beyond its current role.",
+   "restrictions": [
+    "Annual performance requirements: process 20-40 new and updated datasets, disseminate 135 datasets and their documentation, review and oversee 30 data use agreements, facilitate 700,000 or more downloads, and provide technical assistance to 1,500-2,000 users.",
+    "Must provide resources to researchers on best practices for archiving data, including sharing qualitative and other sensitive data."
+   ],
+   "major_risk": "This grant would require NCDHHS to operate a national scientific data repository with specialized curation and federal research compliance capacity that is outside its core health and human services operations, so the effort may outweigh the strategic return.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Eligible infrastructure grant but weak fit: it funds a national demographic-data repository, not direct NCDHHS services; low operational alignment with OSEC data/IT."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 4,\n  \"matched_goal\": \"G5\",\n  \"matched_objective\": \"G5.O1\",\n  \"strategic_reason\": \"The grant funds national data archiving, curation, and dissemination infrastructure, which is relevant to G5.O1's focus on data infrastructure but is not tied to NCDHHS program data or decisions.\",\n  \"strategic_evidence_quote\": \"It provides archiving, curation, and dissemination services\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"OSEC\",\n  \"operational_fit\": 2,\n  \"operational_reason\": \"OSEC owns department-wide data and IT functions, but running a national NICHD demographic-data repository would require specialized curation and federal research compliance capacity beyond its current role.\",\n  \"restrictions\": [\n    \"Annual performance requirements: process 20-40 new and updated datasets, disseminate 135 datasets and their documentation, review and oversee 30 data use agreements, facilitate 700,000 or more downloads, and provide technical assistance to 1,500-2,000 users.\",\n    \"Must provide resources to researchers on best practices for archiving data, including sharing qualitative and other sensitive data.\"\n  ],\n  \"major_risk\": \"This grant would require NCDHHS to operate a national scientific data repository with specialized curation and federal research compliance capacity that is outside its core health and human services operations, so the effort may outweigh the strategic return.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Eligible infrastructure grant but weak fit: it funds a national demographic-data repository, not direct NCDHHS services; low operational alignment with OSEC data/IT.\"\n}"
+  ]
+ }
+}

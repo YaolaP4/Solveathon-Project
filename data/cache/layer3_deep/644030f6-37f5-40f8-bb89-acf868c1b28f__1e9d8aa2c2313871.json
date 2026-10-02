@@ -1,0 +1,28 @@
+{
+ "grant_id": "644030f6-37f5-40f8-bb89-acf868c1b28f",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "1e9d8aa2c23138716c427de1cf1849d0783899d7c628ac1d70106a7c2798a022",
+ "retrieved_at": "2026-10-02T19:47:27+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 5,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "The grant funds programs that prevent wandering and increase safety for people with dementia and developmental disabilities, populations that face greater health and situational challenges.",
+   "strategic_evidence_quote": "prevent wandering, increase safety for vulnerable individuals, and facilitate rescues.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state, local, or tribal government-operated health departments, hospitals, and medical centers",
+   "owning_division": "DAGING",
+   "operational_fit": 5,
+   "operational_reason": "The Division of Aging serves older adults and family caregivers and could lead dementia wandering prevention, but the public safety and developmental disability components would require partners outside its usual role.",
+   "restrictions": [],
+   "major_risk": "The program is primarily a public safety and law enforcement initiative, so NCDHHS would need substantial partnerships and may not be the most competitive lead applicant.",
+   "recommended_for_review": true,
+   "one_line_rationale": "This grant aligns with NCDHHS safety goals for vulnerable North Carolinians but is public-safety oriented and would require cross-division and law enforcement partners."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 5,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"The grant funds programs that prevent wandering and increase safety for people with dementia and developmental disabilities, populations that face greater health and situational challenges.\",\n  \"strategic_evidence_quote\": \"prevent wandering, increase safety for vulnerable individuals, and facilitate rescues.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state, local, or tribal government-operated health departments, hospitals, and medical centers\",\n  \"owning_division\": \"DAGING\",\n  \"operational_fit\": 5,\n  \"operational_reason\": \"The Division of Aging serves older adults and family caregivers and could lead dementia wandering prevention, but the public safety and developmental disability components would require partners outside its usual role.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The program is primarily a public safety and law enforcement initiative, so NCDHHS would need substantial partnerships and may not be the most competitive lead applicant.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"This grant aligns with NCDHHS safety goals for vulnerable North Carolinians but is public-safety oriented and would require cross-division and law enforcement partners.\"\n}"
+  ]
+ }
+}

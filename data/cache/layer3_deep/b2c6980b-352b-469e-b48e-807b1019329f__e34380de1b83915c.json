@@ -1,0 +1,31 @@
+{
+ "grant_id": "b2c6980b-352b-469e-b48e-807b1019329f",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "e34380de1b83915c8ffb4c3e9c958166bd3f40c3d5e3a18d00f839194c1289e7",
+ "retrieved_at": "2026-10-02T20:02:28+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 0,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds miner safety and health training in the Western United States, which does not advance any NCDHHS strategic goal or objective for North Carolinians.",
+   "strategic_evidence_quote": "The purpose of this Notice of Funding Opportunity (NOFO) is to enhance the quality, relevance, and availability of health and safety training for miners in the Western United States.",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "No NCDHHS division has a mining safety training mandate or Western-region presence, so the program would be outside existing agency operations and geographic scope.",
+   "restrictions": [
+    "Geographic focus is the Western United States; North Carolina is not among the listed Western Region States.",
+    "Expected collaboration with existing MSHA, OSHA, state, industry, and academic programs."
+   ],
+   "major_risk": "The grant is targeted to Western-state miners, and NCDHHS has no mining safety program or regional presence, making it a poor strategic fit despite state government eligibility.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Funds miner safety training in Western states, not North Carolina; no NCDHHS division has mining safety authority, so this is outside our mission."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 0,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds miner safety and health training in the Western United States, which does not advance any NCDHHS strategic goal or objective for North Carolinians.\",\n  \"strategic_evidence_quote\": \"The purpose of this Notice of Funding Opportunity (NOFO) is to enhance the quality, relevance, and availability of health and safety training for miners in the Western United States.\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"No NCDHHS division has a mining safety training mandate or Western-region presence, so the program would be outside existing agency operations and geographic scope.\",\n  \"restrictions\": [\n    \"Geographic focus is the Western United States; North Carolina is not among the listed Western Region States.\",\n    \"Expected collaboration with existing MSHA, OSHA, state, industry, and academic programs.\"\n  ],\n  \"major_risk\": \"The grant is targeted to Western-state miners, and NCDHHS has no mining safety program or regional presence, making it a poor strategic fit despite state government eligibility.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Funds miner safety training in Western states, not North Carolina; no NCDHHS division has mining safety authority, so this is outside our mission.\"\n}"
+  ]
+ }
+}

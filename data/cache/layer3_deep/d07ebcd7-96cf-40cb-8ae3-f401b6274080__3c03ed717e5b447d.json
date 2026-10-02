@@ -1,0 +1,30 @@
+{
+ "grant_id": "d07ebcd7-96cf-40cb-8ae3-f401b6274080",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "3c03ed717e5b447dfd6edb29a649261850693a9ce3146a2739954633ab337765",
+ "retrieved_at": "2026-10-02T19:59:45+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 2,
+   "matched_goal": "G5",
+   "matched_objective": "G5.O1",
+   "strategic_reason": "The grant funds development of multimodal AI-based clinical decision support tools, which is only tangentially related to G5.O1's emphasis on data integration and data-driven decision-making.",
+   "strategic_evidence_quote": "support development of innovative, reliable, cost-effective, and sustainable multimodal AI-based clinical decision support (CDS) tools.",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "none",
+   "operational_fit": 1,
+   "operational_reason": "No NCDHHS division has authority, clinical imaging data access, or software-as-a-medical-device AI development capacity to run this program.",
+   "restrictions": [
+    "Program is structured as an academic-industrial partnership, so non-state academic and industry collaborators are expected."
+   ],
+   "major_risk": "NCDHHS lacks the clinical imaging data, AI/software-as-a-medical-device expertise, and academic-industry partner network needed to lead this work; state eligibility alone does not make it a fit.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Weak fit with G5.O1; state governments are eligible but no NCDHHS division has clinical AI or imaging-data capacity, so not worth pursuing."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 2,\n  \"matched_goal\": \"G5\",\n  \"matched_objective\": \"G5.O1\",\n  \"strategic_reason\": \"The grant funds development of multimodal AI-based clinical decision support tools, which is only tangentially related to G5.O1's emphasis on data integration and data-driven decision-making.\",\n  \"strategic_evidence_quote\": \"support development of innovative, reliable, cost-effective, and sustainable multimodal AI-based clinical decision support (CDS) tools.\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 1,\n  \"operational_reason\": \"No NCDHHS division has authority, clinical imaging data access, or software-as-a-medical-device AI development capacity to run this program.\",\n  \"restrictions\": [\n    \"Program is structured as an academic-industrial partnership, so non-state academic and industry collaborators are expected.\"\n  ],\n  \"major_risk\": \"NCDHHS lacks the clinical imaging data, AI/software-as-a-medical-device expertise, and academic-industry partner network needed to lead this work; state eligibility alone does not make it a fit.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Weak fit with G5.O1; state governments are eligible but no NCDHHS division has clinical AI or imaging-data capacity, so not worth pursuing.\"\n}"
+  ]
+ }
+}

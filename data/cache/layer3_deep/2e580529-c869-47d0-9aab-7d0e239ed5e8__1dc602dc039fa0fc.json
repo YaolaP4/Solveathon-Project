@@ -1,0 +1,28 @@
+{
+ "grant_id": "2e580529-c869-47d0-9aab-7d0e239ed5e8",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "1dc602dc039fa0fc4f274bcd299b0cfa823ed4f1170f5b0fb74fcce34253ead7",
+ "retrieved_at": "2026-10-02T19:23:03+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 7,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O2",
+   "strategic_reason": "The program's hepatitis registries and data monitoring directly support using data to track health outcomes and disparities.",
+   "strategic_evidence_quote": "developing and utilizing disease registries, conducting data matching, generating data summaries",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "The 51 state health departments or their bona fide agents, including the District of Columbia",
+   "owning_division": "DPH",
+   "operational_fit": 9,
+   "operational_reason": "DPH already leads disease prevention and surveillance, epidemiology, and local health department coordination.",
+   "restrictions": [],
+   "major_risk": "Multi-component surveillance plus planning requirements may strain existing epidemiology and informatics staff capacity.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Expands hepatitis surveillance and testing led by DPH, advancing Health Access data tracking as state health department applicant."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 7,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O2\",\n  \"strategic_reason\": \"The program's hepatitis registries and data monitoring directly support using data to track health outcomes and disparities.\",\n  \"strategic_evidence_quote\": \"developing and utilizing disease registries, conducting data matching, generating data summaries\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"The 51 state health departments or their bona fide agents, including the District of Columbia\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DPH already leads disease prevention and surveillance, epidemiology, and local health department coordination.\",\n  \"restrictions\": [],\n  \"major_risk\": \"Multi-component surveillance plus planning requirements may strain existing epidemiology and informatics staff capacity.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Expands hepatitis surveillance and testing led by DPH, advancing Health Access data tracking as state health department applicant.\"\n}"
+  ]
+ }
+}

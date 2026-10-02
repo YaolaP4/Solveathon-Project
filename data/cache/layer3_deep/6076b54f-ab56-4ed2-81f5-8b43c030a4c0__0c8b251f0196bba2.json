@@ -1,0 +1,30 @@
+{
+ "grant_id": "6076b54f-ab56-4ed2-81f5-8b43c030a4c0",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "0c8b251f0196bba21f35c1c07d55ba866c1302c9363bb8fbfb01c1e6a3166475",
+ "retrieved_at": "2026-10-02T19:49:27+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 10,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O3",
+   "strategic_reason": "The grant directly funds preventive and primary health care services for medically underserved communities, matching NCDHHS's objective to mitigate barriers to rural and underserved primary care.",
+   "strategic_evidence_quote": "improves the health of medically underserved communities and populations by providing grants to support the delivery of comprehensive, high-quality preventive and primary health care services",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "ORH",
+   "operational_fit": 4,
+   "operational_reason": "ORH supports rural and underserved primary care and safety-net clinics, but NCDHHS does not operate a health center, so running this direct service grant would require a new primary care delivery role.",
+   "restrictions": [
+    "Competition is limited to service areas announced in the Service Area Announcement Table (SAAT)."
+   ],
+   "major_risk": "NCDHHS is not a health center operator, so it would likely lack the existing patient base, provider network, and Health Center Program experience needed to compete for an announced service area.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Strong primary-care alignment, but HRSA SAC funds health center operators in announced service areas; NCDHHS is not an operator, so likely not a state application."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 10,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O3\",\n  \"strategic_reason\": \"The grant directly funds preventive and primary health care services for medically underserved communities, matching NCDHHS's objective to mitigate barriers to rural and underserved primary care.\",\n  \"strategic_evidence_quote\": \"improves the health of medically underserved communities and populations by providing grants to support the delivery of comprehensive, high-quality preventive and primary health care services\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"ORH\",\n  \"operational_fit\": 4,\n  \"operational_reason\": \"ORH supports rural and underserved primary care and safety-net clinics, but NCDHHS does not operate a health center, so running this direct service grant would require a new primary care delivery role.\",\n  \"restrictions\": [\n    \"Competition is limited to service areas announced in the Service Area Announcement Table (SAAT).\"\n  ],\n  \"major_risk\": \"NCDHHS is not a health center operator, so it would likely lack the existing patient base, provider network, and Health Center Program experience needed to compete for an announced service area.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Strong primary-care alignment, but HRSA SAC funds health center operators in announced service areas; NCDHHS is not an operator, so likely not a state application.\"\n}"
+  ]
+ }
+}

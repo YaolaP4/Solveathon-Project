@@ -1,0 +1,31 @@
+{
+ "grant_id": "59462b36-6d05-4832-a628-427f72260f3d",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "8ecbf4368ef133865fa0d736b25f1ae02351c120b36961ca428464a2ef5400dd",
+ "retrieved_at": "2026-10-02T19:28:35+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 0,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "This grant funds construction or renovation of veterans extended care facilities, which does not advance any listed DHHS health access, child, behavioral, workforce or operations objective.",
+   "strategic_evidence_quote": "Grants are available to State and Tribal Governments for construction or renovations of State/Tribal owned and operated Veterans Extended Care Facilities.",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "ONLY STATE AND TRIBAL GOVERNMENTS MAY APPLY.",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "No DHHS division owns or operates State veterans extended care facilities as required for this construction program.",
+   "restrictions": [
+    "Federal share may not exceed 65% of total project costs, requiring at least 35% state match",
+    "Build America, Buy America domestic sourcing requirements apply"
+   ],
+   "major_risk": "NCDHHS does not own or operate veterans homes, so it cannot use this construction grant without another state agency owning the project plus large state match.",
+   "recommended_for_review": false,
+   "one_line_rationale": "No DHHS fit; funds veterans home construction outside DHHS authority requiring large state match."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 0,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"This grant funds construction or renovation of veterans extended care facilities, which does not advance any listed DHHS health access, child, behavioral, workforce or operations objective.\",\n  \"strategic_evidence_quote\": \"Grants are available to State and Tribal Governments for construction or renovations of State/Tribal owned and operated Veterans Extended Care Facilities.\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"ONLY STATE AND TRIBAL GOVERNMENTS MAY APPLY.\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"No DHHS division owns or operates State veterans extended care facilities as required for this construction program.\",\n  \"restrictions\": [\n    \"Federal share may not exceed 65% of total project costs, requiring at least 35% state match\",\n    \"Build America, Buy America domestic sourcing requirements apply\"\n  ],\n  \"major_risk\": \"NCDHHS does not own or operate veterans homes, so it cannot use this construction grant without another state agency owning the project plus large state match.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"No DHHS fit; funds veterans home construction outside DHHS authority requiring large state match.\"\n}"
+  ]
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "grant_id": "1455416e-d0f8-4b17-8823-711db1ebc6f2",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "5febe05f74504cdccf9a6b2507b2d32b334d272ce7ce3af3bc606cc7f305c7f3",
+ "retrieved_at": "2026-10-02T19:26:54+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 7,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "The initiative funds community-focused approaches to reduce brain-health disparities, advancing the department's aim to increase health access and reduce health disparities.",
+   "strategic_evidence_quote": "that reduce disparities impacting brain health as people age",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "Eligible applicants include any private nonprofit or public entity located in a State.",
+   "owning_division": "DPH",
+   "operational_fit": 7,
+   "operational_reason": "DPH already leads chronic-disease prevention and community-based work addressing disparities and social determinants with local partners.",
+   "restrictions": [],
+   "major_risk": "Time-limited demonstration expects sustainability beyond OMH support with continuation funding contingent on availability and progress.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Fits health-equity goal by funding community dementia-disparity work DPH could lead, but short demonstration requires sustainability plan."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 7,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"The initiative funds community-focused approaches to reduce brain-health disparities, advancing the department's aim to increase health access and reduce health disparities.\",\n  \"strategic_evidence_quote\": \"that reduce disparities impacting brain health as people age\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"Eligible applicants include any private nonprofit or public entity located in a State.\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 7,\n  \"operational_reason\": \"DPH already leads chronic-disease prevention and community-based work addressing disparities and social determinants with local partners.\",\n  \"restrictions\": [],\n  \"major_risk\": \"Time-limited demonstration expects sustainability beyond OMH support with continuation funding contingent on availability and progress.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Fits health-equity goal by funding community dementia-disparity work DPH could lead, but short demonstration requires sustainability plan.\"\n}"
+  ]
+ }
+}

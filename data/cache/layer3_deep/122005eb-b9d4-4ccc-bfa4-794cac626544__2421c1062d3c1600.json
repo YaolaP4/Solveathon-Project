@@ -1,0 +1,30 @@
+{
+ "grant_id": "122005eb-b9d4-4ccc-bfa4-794cac626544",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "2421c1062d3c1600eab3d22e15901a834983188eb149eeb4175baa62de0bfa9f",
+ "retrieved_at": "2026-10-02T19:57:05+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 5,
+   "matched_goal": "G3",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds pilot trials of post-acute mental health therapeutic and service delivery interventions, which supports NCDHHS's behavioral health goal of coordinated systems of care for mental health.",
+   "strategic_evidence_quote": "pilot effectiveness projects to evaluate the preliminary effectiveness of therapeutic and service delivery interventions for the post-acute management of mental health conditions",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DMHDDSUS",
+   "operational_fit": 3,
+   "operational_reason": "DMHDDSUS oversees mental health services but does not routinely conduct NIH-funded clinical effectiveness trials, so it would need substantial academic research partners.",
+   "restrictions": [
+    "Clinical Trial Required"
+   ],
+   "major_risk": "This is an NIH clinical trial research grant, which is outside NCDHHS's usual service-delivery role and would require clinical research infrastructure and regulatory oversight that the department does not typically have.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Mental health research aligns with G3 but an NIH clinical trial is outside DMHDDSUS's core service role; likely only valuable as an academic partner."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 5,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds pilot trials of post-acute mental health therapeutic and service delivery interventions, which supports NCDHHS's behavioral health goal of coordinated systems of care for mental health.\",\n  \"strategic_evidence_quote\": \"pilot effectiveness projects to evaluate the preliminary effectiveness of therapeutic and service delivery interventions for the post-acute management of mental health conditions\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DMHDDSUS\",\n  \"operational_fit\": 3,\n  \"operational_reason\": \"DMHDDSUS oversees mental health services but does not routinely conduct NIH-funded clinical effectiveness trials, so it would need substantial academic research partners.\",\n  \"restrictions\": [\"Clinical Trial Required\"],\n  \"major_risk\": \"This is an NIH clinical trial research grant, which is outside NCDHHS's usual service-delivery role and would require clinical research infrastructure and regulatory oversight that the department does not typically have.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Mental health research aligns with G3 but an NIH clinical trial is outside DMHDDSUS's core service role; likely only valuable as an academic partner.\"\n}"
+  ]
+ }
+}

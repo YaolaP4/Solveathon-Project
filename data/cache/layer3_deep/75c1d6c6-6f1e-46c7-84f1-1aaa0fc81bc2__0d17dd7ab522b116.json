@@ -1,0 +1,28 @@
+{
+ "grant_id": "75c1d6c6-6f1e-46c7-84f1-1aaa0fc81bc2",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "0d17dd7ab522b116b043cb16386f445b84a86f6cd134bc262108c8de1057eb59",
+ "retrieved_at": "2026-10-02T19:57:59+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 5,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O2",
+   "strategic_reason": "The grant funds cancer control and population sciences research in epidemiology and data science, which could strengthen tracking of cancer disparities and outcomes.",
+   "strategic_evidence_quote": "research in cancer control and population sciences",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 5,
+   "operational_reason": "DPH conducts cancer and chronic disease epidemiology and uses population health data, but leading an NIH investigator-initiated research grant would likely require academic research partners.",
+   "restrictions": [],
+   "major_risk": "This is an investigator-initiated research award, not a service grant, so NCDHHS may lack competitive NIH research capacity and the work may not directly improve programs.",
+   "recommended_for_review": true,
+   "one_line_rationale": "State agencies are eligible; DPH cancer epidemiology and data work could align with G1.O2 and merit a DPH research-partner review."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 5,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O2\",\n  \"strategic_reason\": \"The grant funds cancer control and population sciences research in epidemiology and data science, which could strengthen tracking of cancer disparities and outcomes.\",\n  \"strategic_evidence_quote\": \"research in cancer control and population sciences\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 5,\n  \"operational_reason\": \"DPH conducts cancer and chronic disease epidemiology and uses population health data, but leading an NIH investigator-initiated research grant would likely require academic research partners.\",\n  \"restrictions\": [],\n  \"major_risk\": \"This is an investigator-initiated research award, not a service grant, so NCDHHS may lack competitive NIH research capacity and the work may not directly improve programs.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"State agencies are eligible; DPH cancer epidemiology and data work could align with G1.O2 and merit a DPH research-partner review.\"\n}"
+  ]
+ }
+}

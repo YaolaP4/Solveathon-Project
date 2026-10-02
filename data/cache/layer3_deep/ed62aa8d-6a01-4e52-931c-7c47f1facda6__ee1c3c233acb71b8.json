@@ -1,0 +1,28 @@
+{
+ "grant_id": "ed62aa8d-6a01-4e52-931c-7c47f1facda6",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "ee1c3c233acb71b85d97f41870c83b2b6f28c0689f1ef2cd980d9cebf8e84ea7",
+ "retrieved_at": "2026-10-02T19:46:51+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 10,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O4",
+   "strategic_reason": "This grant directly funds implementation of maternal safety practices to reduce maternal mortality and morbidity, advancing NCDHHS's objective to improve women's health and birth outcomes.",
+   "strategic_evidence_quote": "The program supports implementation of evidence-informed maternal safety practices to improve the quality and safety of maternity care, improve maternal health outcomes, and reduce preventable maternal mortality and severe maternal morbidity.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "Applicants can apply if you are capable of carrying out data-driven maternal safety and quality improvement initiatives in the areas of obstetrics and gynecology or maternal health.",
+   "owning_division": "DPH",
+   "operational_fit": 10,
+   "operational_reason": "DPH already leads maternal and child health and quality improvement initiatives, so implementing AIM maternal safety bundles is a direct extension of its existing work.",
+   "restrictions": [],
+   "major_risk": "North Carolina may already have many AIM bundle elements in place, so the grant could add limited new capacity.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Directly funds maternal safety bundle implementation to reduce maternal mortality and severe morbidity; fits DPH's maternal health role and NCDHHS's birth outcomes goal."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 10,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O4\",\n  \"strategic_reason\": \"This grant directly funds implementation of maternal safety practices to reduce maternal mortality and morbidity, advancing NCDHHS's objective to improve women's health and birth outcomes.\",\n  \"strategic_evidence_quote\": \"The program supports implementation of evidence-informed maternal safety practices to improve the quality and safety of maternity care, improve maternal health outcomes, and reduce preventable maternal mortality and severe maternal morbidity.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"Applicants can apply if you are capable of carrying out data-driven maternal safety and quality improvement initiatives in the areas of obstetrics and gynecology or maternal health.\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 10,\n  \"operational_reason\": \"DPH already leads maternal and child health and quality improvement initiatives, so implementing AIM maternal safety bundles is a direct extension of its existing work.\",\n  \"restrictions\": [],\n  \"major_risk\": \"North Carolina may already have many AIM bundle elements in place, so the grant could add limited new capacity.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Directly funds maternal safety bundle implementation to reduce maternal mortality and severe morbidity; fits DPH's maternal health role and NCDHHS's birth outcomes goal.\"\n}"
+  ]
+ }
+}

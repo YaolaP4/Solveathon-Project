@@ -1,0 +1,28 @@
+{
+ "grant_id": "d9551b09-3a45-4dc1-a343-3f09521de9aa",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "60a2c364d72e6bf0a8d1490e0c6ba023df04e41acdc77c668e0f1cf20f51b7ff",
+ "retrieved_at": "2026-10-02T19:46:23+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O4",
+   "strategic_reason": "The grant funds fetal, infant, and child death review coordination and data use to inform prevention, which directly advances NCDHHS's objective to improve birth outcomes and reduce infant mortality.",
+   "strategic_evidence_quote": "fetal infant and child death review (FICDR) teams",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 9,
+   "operational_reason": "DPH houses maternal and child health, infant mortality reduction, and fatality review functions that align closely with this program.",
+   "restrictions": [],
+   "major_risk": "The cooperative agreement may focus on coordination and technical assistance rather than direct prevention services, limiting immediate local impact.",
+   "recommended_for_review": true,
+   "one_line_rationale": "State governments are eligible; the work directly supports DPH's maternal and child health role in reducing infant mortality through fatality review and prevention."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O4\",\n  \"strategic_reason\": \"The grant funds fetal, infant, and child death review coordination and data use to inform prevention, which directly advances NCDHHS's objective to improve birth outcomes and reduce infant mortality.\",\n  \"strategic_evidence_quote\": \"fetal infant and child death review (FICDR) teams\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DPH houses maternal and child health, infant mortality reduction, and fatality review functions that align closely with this program.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The cooperative agreement may focus on coordination and technical assistance rather than direct prevention services, limiting immediate local impact.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"State governments are eligible; the work directly supports DPH's maternal and child health role in reducing infant mortality through fatality review and prevention.\"\n}"
+  ]
+ }
+}

@@ -1,0 +1,30 @@
+{
+ "grant_id": "967f621e-4adc-4208-98d4-ae3b7671ad10",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "072966bf08506cd33f7eb5ba532a6ff5d5f012cfd4a5ea1da88ef3bccde9cf77",
+ "retrieved_at": "2026-10-02T20:00:04+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 2,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds general scientific conference activities, not a named NCDHHS objective or direct service strategy.",
+   "strategic_evidence_quote": "The purpose of the FDA (R13) Scientific Conference Grant Program is to facilitate the provision of federal financial assistance in support of high-quality conferences and scientific meetings designed to research and investigate a topic clearly aligned with the FDA mission.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 4,
+   "operational_reason": "DPH hosts public health conferences and could manage a scientific meeting, but this FDA mechanism is not part of its core programmatic authority.",
+   "restrictions": [
+    "FDA will not issue a conference grant award unless it can be issued before the conference start date."
+   ],
+   "major_risk": "The conference-only scope has an indirect, time-limited link to NCDHHS health services and may not justify the application effort.",
+   "recommended_for_review": false,
+   "one_line_rationale": "General FDA conference support does not directly fund an NCDHHS strategic objective; state agencies are eligible but there is no clear programmatic fit."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 2,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds general scientific conference activities, not a named NCDHHS objective or direct service strategy.\",\n  \"strategic_evidence_quote\": \"The purpose of the FDA (R13) Scientific Conference Grant Program is to facilitate the provision of federal financial assistance in support of high-quality conferences and scientific meetings designed to research and investigate a topic clearly aligned with the FDA mission.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 4,\n  \"operational_reason\": \"DPH hosts public health conferences and could manage a scientific meeting, but this FDA mechanism is not part of its core programmatic authority.\",\n  \"restrictions\": [\"FDA will not issue a conference grant award unless it can be issued before the conference start date.\"],\n  \"major_risk\": \"The conference-only scope has an indirect, time-limited link to NCDHHS health services and may not justify the application effort.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"General FDA conference support does not directly fund an NCDHHS strategic objective; state agencies are eligible but there is no clear programmatic fit.\"\n}"
+  ]
+ }
+}

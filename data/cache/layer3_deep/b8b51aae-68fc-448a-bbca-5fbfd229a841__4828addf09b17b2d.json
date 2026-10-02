@@ -1,0 +1,31 @@
+{
+ "grant_id": "b8b51aae-68fc-448a-bbca-5fbfd229a841",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "4828addf09b17b2da21ab19f6166807d26578bee75779741050ac79c91d61b42",
+ "retrieved_at": "2026-10-02T19:47:56+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 2,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The funded activity strengthens state manufactured food regulatory programs, which is a public health protection function but not named in any NCDHHS strategic objective.",
+   "strategic_evidence_quote": "supporting Manufactured Food Regulatory Program Standards (MFRPS), dietary supplement safety and oversight programs, improved state compliance and enforcement infrastructure, and state Food Protection Task Force (FPTF) programs.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "State, local, territorial, and tribal agencies",
+   "owning_division": "none",
+   "operational_fit": 2,
+   "operational_reason": "No NCDHHS division has explicit authority over manufactured food regulatory programs; this function is typically outside DHHS and likely sits with the North Carolina Department of Agriculture and Consumer Services.",
+   "restrictions": [
+    "must have or be willing to enter into a 20.88 information disclosure agreement with the FDA",
+    "required to have at least a commissioning certificate (or be willing to procure one)"
+   ],
+   "major_risk": "NCDHHS likely lacks the regulatory authority and programmatic ownership for manufactured food inspections, so the agency may be an unsuitable lead applicant despite state-government eligibility.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Food safety regulatory program likely belongs to the Department of Agriculture, not NCDHHS; no clear strategic objective or division owner, so not worth pursuing."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 2,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The funded activity strengthens state manufactured food regulatory programs, which is a public health protection function but not named in any NCDHHS strategic objective.\",\n  \"strategic_evidence_quote\": \"supporting Manufactured Food Regulatory Program Standards (MFRPS), dietary supplement safety and oversight programs, improved state compliance and enforcement infrastructure, and state Food Protection Task Force (FPTF) programs.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"State, local, territorial, and tribal agencies\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 2,\n  \"operational_reason\": \"No NCDHHS division has explicit authority over manufactured food regulatory programs; this function is typically outside DHHS and likely sits with the North Carolina Department of Agriculture and Consumer Services.\",\n  \"restrictions\": [\n    \"must have or be willing to enter into a 20.88 information disclosure agreement with the FDA\",\n    \"required to have at least a commissioning certificate (or be willing to procure one)\"\n  ],\n  \"major_risk\": \"NCDHHS likely lacks the regulatory authority and programmatic ownership for manufactured food inspections, so the agency may be an unsuitable lead applicant despite state-government eligibility.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Food safety regulatory program likely belongs to the Department of Agriculture, not NCDHHS; no clear strategic objective or division owner, so not worth pursuing.\"\n}"
+  ]
+ }
+}

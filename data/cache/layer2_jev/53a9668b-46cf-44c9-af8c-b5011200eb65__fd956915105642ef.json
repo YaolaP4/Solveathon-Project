@@ -1,0 +1,66 @@
+{
+ "grant_id": "53a9668b-46cf-44c9-af8c-b5011200eb65",
+ "model": "typesafe-ai/jev",
+ "prompt_version": "a4b41185524e",
+ "request_hash": "fd956915105642ef93c95301fbd1814aed9976120225661c100769814f847e50",
+ "retrieved_at": "2026-10-02T19:20:57+00:00",
+ "response": {
+  "domain_relevance": {
+   "type": "choice",
+   "choice": "weak",
+   "probabilities": {
+    "weak": 0.46,
+    "moderate": 0.19,
+    "none": 0.18,
+    "strong": 0.17
+   },
+   "confidence": 0.28
+  },
+  "matched_goal": {
+   "type": "choice",
+   "choice": "G1",
+   "probabilities": {
+    "G3": 0,
+    "G2": 0.05,
+    "G1": 0.5,
+    "G4": 0,
+    "none": 0.45,
+    "G5": 0
+   },
+   "confidence": 0.39
+  },
+  "applicant_role": {
+   "type": "choice",
+   "choice": "atypical",
+   "probabilities": {
+    "partner": 0.39999999999999997,
+    "unclear": 0,
+    "atypical": 0.41,
+    "ineligible": 0.01,
+    "lead": 0.18
+   },
+   "confidence": 0.26
+  },
+  "owning_division": {
+   "type": "choice",
+   "choice": "none",
+   "probabilities": {
+    "OSEC": 0.01,
+    "DCDEE": 0.01,
+    "ORH": 0.01,
+    "none": 0.91,
+    "DEIPD": 0,
+    "DAGING": 0,
+    "DHSR": 0,
+    "DCFW": 0,
+    "MEDICAID": 0,
+    "DSOHF": 0,
+    "DPH": 0,
+    "DMHDDSUS": 0,
+    "DSS": 0.060000000000000005,
+    "DSBDHH": 0
+   },
+   "confidence": 0.9
+  }
+ }
+}

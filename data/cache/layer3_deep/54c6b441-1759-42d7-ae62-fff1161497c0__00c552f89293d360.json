@@ -1,0 +1,32 @@
+{
+ "grant_id": "54c6b441-1759-42d7-ae62-fff1161497c0",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "00c552f89293d360ee229db0ae113eb619ad5ee6a85289762d3386822b19c5a9",
+ "retrieved_at": "2026-10-02T19:49:08+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O4",
+   "strategic_reason": "The grant funds training and technical assistance to ensure the Title X and teen pregnancy prevention workforce can deliver high-quality family planning and reproductive health services, directly supporting NCDHHS's maternal and child health objective.",
+   "strategic_evidence_quote": "The goal of the funded training center is to ensure that personnel working in Title X have the knowledge, skills, and self-efficacy necessary to effectively run a Title X grant program and deliver high-quality family planning services.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "To receive funding from the Title X program, you must be a public or private non-profit entity.",
+   "owning_division": "DPH",
+   "operational_fit": 6,
+   "operational_reason": "DPH already administers family planning, maternal and child health, and provider training, but running a national training center for all OPA Title X and TPP grantees would be a major expansion beyond state-level responsibilities.",
+   "restrictions": [
+    "Requires a single application covering both the Title X and TPP components, submitted under PA-FPT-25-001.",
+    "Cooperative agreement with two awards; multi-year projects require non-competing continuation applications for each budget period after the first.",
+    "Joint applications without a legally recognized relationship must contact OASH_Grants@hhs.gov and demonstrate conflict resolution capacity over the entire expected period of performance."
+   ],
+   "major_risk": "The award is a single national training center for all OPA-funded Title X and TPP grantees, so NCDHHS would face strong national competition and must demonstrate capacity beyond North Carolina service delivery.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Strong topical fit with DPH family planning, but national training-center scope and single-award competition make it a low-yield pursuit for a state health agency."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O4\",\n  \"strategic_reason\": \"The grant funds training and technical assistance to ensure the Title X and teen pregnancy prevention workforce can deliver high-quality family planning and reproductive health services, directly supporting NCDHHS's maternal and child health objective.\",\n  \"strategic_evidence_quote\": \"The goal of the funded training center is to ensure that personnel working in Title X have the knowledge, skills, and self-efficacy necessary to effectively run a Title X grant program and deliver high-quality family planning services.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"To receive funding from the Title X program, you must be a public or private non-profit entity.\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 6,\n  \"operational_reason\": \"DPH already administers family planning, maternal and child health, and provider training, but running a national training center for all OPA Title X and TPP grantees would be a major expansion beyond state-level responsibilities.\",\n  \"restrictions\": [\n    \"Requires a single application covering both the Title X and TPP components, submitted under PA-FPT-25-001.\",\n    \"Cooperative agreement with two awards; multi-year projects require non-competing continuation applications for each budget period after the first.\",\n    \"Joint applications without a legally recognized relationship must contact OASH_Grants@hhs.gov and demonstrate conflict resolution capacity over the entire expected period of performance.\"\n  ],\n  \"major_risk\": \"The award is a single national training center for all OPA-funded Title X and TPP grantees, so NCDHHS would face strong national competition and must demonstrate capacity beyond North Carolina service delivery.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Strong topical fit with DPH family planning, but national training-center scope and single-award competition make it a low-yield pursuit for a state health agency.\"\n}"
+  ]
+ }
+}

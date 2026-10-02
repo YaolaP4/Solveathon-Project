@@ -1,0 +1,30 @@
+{
+ "grant_id": "030801d4-3847-46b6-8491-a18f906a486e",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "04d61c7e30f54975fa70013a6405c49b12e906e1b8e2c78f0017725dac2afaf3",
+ "retrieved_at": "2026-10-02T19:48:45+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 5,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "State and community-based injury prevention and control research can reduce injury-related disparities and improve outcomes for populations facing greater health challenges.",
+   "strategic_evidence_quote": "Injury Prevention and Control Research and State and Community Based Programs",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "States, Universities, County, Small Business, Non-Profits Organization,",
+   "owning_division": "DPH",
+   "operational_fit": 8,
+   "operational_reason": "DPH houses epidemiology, injury prevention, and community health programs and regularly manages CDC cooperative agreements, so it is the natural owner if an applicable competitive opportunity arises.",
+   "restrictions": [
+    "Type 6 applications only; may indicate a change-of-grantee process rather than an open competition."
+   ],
+   "major_risk": "The posting gives no programmatic detail and appears limited to Type 6 applications, so it may not be an open competitive opportunity for NCDHHS.",
+   "recommended_for_review": false,
+   "one_line_rationale": "CDC injury prevention funding could fit DPH, but the posting is for Type 6 applications and lacks substantive detail, making it unlikely an open competitive opportunity."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 5,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"State and community-based injury prevention and control research can reduce injury-related disparities and improve outcomes for populations facing greater health challenges.\",\n  \"strategic_evidence_quote\": \"Injury Prevention and Control Research and State and Community Based Programs\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"States, Universities, County, Small Business, Non-Profits Organization,\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 8,\n  \"operational_reason\": \"DPH houses epidemiology, injury prevention, and community health programs and regularly manages CDC cooperative agreements, so it is the natural owner if an applicable competitive opportunity arises.\",\n  \"restrictions\": [\"Type 6 applications only; may indicate a change-of-grantee process rather than an open competition.\"],\n  \"major_risk\": \"The posting gives no programmatic detail and appears limited to Type 6 applications, so it may not be an open competitive opportunity for NCDHHS.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"CDC injury prevention funding could fit DPH, but the posting is for Type 6 applications and lacks substantive detail, making it unlikely an open competitive opportunity.\"\n}"
+  ]
+ }
+}

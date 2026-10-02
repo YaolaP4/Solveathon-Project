@@ -85,6 +85,15 @@ def run(top: int = 10, watch: int = 5, mock: bool = False) -> None:
     for r in watch_list.to_dict("records"):
         md += [f"- **{r['grant']}** ({r['score']:.0f}/100) — {r['why']} Owner: {r['owner']}. "
                f"{r['deadline']}. [Listing]({r['link']})"]
+    research_path = out_dir / "research_partnerships.csv"
+    if research_path.exists():
+        research = build(pd.read_csv(research_path), agency, 5, forecast=False)
+        md += ["", "## Research partnerships: forward to a university partner",
+               "_NIH-style research and training awards (R01, R34, K99 …). DHHS can rarely lead these, "
+               "but a partner such as UNC may want DHHS data or collaboration. Listed separately so they "
+               "do not crowd out program funding._", ""]
+        for r in research.to_dict("records"):
+            md += [f"- **{r['grant']}** ({r['score']:.0f}/100) — {r['why']} Owner: {r['owner']}. [Listing]({r['link']})"]
     (out_dir / "top_results.md").write_text("\n".join(md) + "\n", encoding="utf-8")
     print(f"Wrote {out_dir / 'top_results.md'} and top_results.csv")
 

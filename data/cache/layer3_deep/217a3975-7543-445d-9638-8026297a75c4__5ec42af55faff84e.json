@@ -1,0 +1,28 @@
+{
+ "grant_id": "217a3975-7543-445d-9638-8026297a75c4",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "5ec42af55faff84ebfbdfae8428c18a3eb0cfd348641d23653a69f676c7f69b1",
+ "retrieved_at": "2026-10-02T19:48:07+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O4",
+   "strategic_reason": "The grant invests directly in the capacity of clinical and public health partners to deliver STI prevention, diagnosis, treatment, and counseling.",
+   "strategic_evidence_quote": "education, training and technical assistance—emphasizing prevention strategies—for clinicians and disease intervention specialists to improve sexually transmitted infection (STI) patient care",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "Unrestricted eligibility",
+   "owning_division": "DPH",
+   "operational_fit": 9,
+   "operational_reason": "DPH already leads STD prevention, surveillance, and provider guidance and could operate a clinician and disease intervention specialist training center.",
+   "restrictions": [],
+   "major_risk": "The NOFO supports a national/regional training network rather than direct North Carolina STI service delivery, potentially requiring multi-state reach and infrastructure.",
+   "recommended_for_review": true,
+   "one_line_rationale": "DPH already addresses STD prevention and provider guidance; this cooperative agreement would fund STI training capacity, aligning with health access and partner capacity goals."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O4\",\n  \"strategic_reason\": \"The grant invests directly in the capacity of clinical and public health partners to deliver STI prevention, diagnosis, treatment, and counseling.\",\n  \"strategic_evidence_quote\": \"education, training and technical assistance—emphasizing prevention strategies—for clinicians and disease intervention specialists to improve sexually transmitted infection (STI) patient care\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"Unrestricted eligibility\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DPH already leads STD prevention, surveillance, and provider guidance and could operate a clinician and disease intervention specialist training center.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The NOFO supports a national/regional training network rather than direct North Carolina STI service delivery, potentially requiring multi-state reach and infrastructure.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"DPH already addresses STD prevention and provider guidance; this cooperative agreement would fund STI training capacity, aligning with health access and partner capacity goals.\"\n}"
+  ]
+ }
+}

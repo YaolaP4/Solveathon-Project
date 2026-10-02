@@ -1,0 +1,28 @@
+{
+ "grant_id": "18c0a9f1-fe39-4c7a-8ffd-1d8c656d666f",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "2dd2e457bd13b1f106deb7942d48a8654b3da3b8a3a03017c7c5a5171753555e",
+ "retrieved_at": "2026-10-02T19:28:53+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O3",
+   "strategic_reason": "The program funds telehealth networks to improve access and deliver nutrition services for chronic disease prevention, directly addressing telehealth barriers to health services.",
+   "strategic_evidence_quote": "This program will use telehealth nutrition services to help prevent and manage chronic diseases.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 8,
+   "operational_reason": "DPH already leads chronic disease prevention and nutrition-related work and partners with local health departments to deliver community-based services.",
+   "restrictions": [],
+   "major_risk": "Summary lacks detail on network partner requirements and scope, which could add significant coordination cost.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Supports telehealth nutrition for chronic disease prevention, directly advancing health access, and fits Public Health's existing chronic disease role."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O3\",\n  \"strategic_reason\": \"The program funds telehealth networks to improve access and deliver nutrition services for chronic disease prevention, directly addressing telehealth barriers to health services.\",\n  \"strategic_evidence_quote\": \"This program will use telehealth nutrition services to help prevent and manage chronic diseases.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 8,\n  \"operational_reason\": \"DPH already leads chronic disease prevention and nutrition-related work and partners with local health departments to deliver community-based services.\",\n  \"restrictions\": [],\n  \"major_risk\": \"Summary lacks detail on network partner requirements and scope, which could add significant coordination cost.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Supports telehealth nutrition for chronic disease prevention, directly advancing health access, and fits Public Health's existing chronic disease role.\"\n}"
+  ]
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "grant_id": "3a152e00-fe8e-4e29-b30e-efc659bb83dd",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "a07254c27b72b592b06cc418e60218164faaa33ac1375cd054a58ff9609ee6ec",
+ "retrieved_at": "2026-10-02T19:54:09+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 7,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O4",
+   "strategic_reason": "The grant supports intervention research on treatment and recovery, which aligns with NCDHHS's objective to expand evidence-based responses to substance use.",
+   "strategic_evidence_quote": "Studies that develop, adapt, or test interventions for health promotion, disease prevention, treatment, or recovery",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DMHDDSUS",
+   "operational_fit": 5,
+   "operational_reason": "DMHDDSUS oversees substance use and opioid services and could manage a research grant with academic and tribal partners, though it is not primarily a research division.",
+   "restrictions": [],
+   "major_risk": "As an NIH research grant, it requires strong research infrastructure, competing academic/tribal partners, and may produce knowledge rather than direct service funding.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Aligns with G3.O4 by funding intervention research on addiction treatment and recovery; NCDHHS could partner with tribes and researchers, though it is research rather than direct services."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 7,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O4\",\n  \"strategic_reason\": \"The grant supports intervention research on treatment and recovery, which aligns with NCDHHS's objective to expand evidence-based responses to substance use.\",\n  \"strategic_evidence_quote\": \"Studies that develop, adapt, or test interventions for health promotion, disease prevention, treatment, or recovery\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DMHDDSUS\",\n  \"operational_fit\": 5,\n  \"operational_reason\": \"DMHDDSUS oversees substance use and opioid services and could manage a research grant with academic and tribal partners, though it is not primarily a research division.\",\n  \"restrictions\": [],\n  \"major_risk\": \"As an NIH research grant, it requires strong research infrastructure, competing academic/tribal partners, and may produce knowledge rather than direct service funding.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Aligns with G3.O4 by funding intervention research on addiction treatment and recovery; NCDHHS could partner with tribes and researchers, though it is research rather than direct services.\"\n}"
+  ]
+ }
+}
