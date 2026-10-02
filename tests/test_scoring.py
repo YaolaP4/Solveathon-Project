@@ -103,3 +103,22 @@ def test_rank_track_uses_stable_tie_breakers():
     ranked = rank_track(df)
     assert ranked.iloc[0]["grant_id"] == "a"
     assert list(ranked["rank"]) == [1, 2]
+
+
+def test_rolling_deadline_penalties_are_separate_and_smaller():
+    unknown = score_grant(base_row(deadline_score=None), AGENCY)
+    rolling = score_grant(base_row(deadline_score=None, rolling_deadline=True), AGENCY)
+    fcfs = score_grant(base_row(deadline_score=None, rolling_deadline=True, rolling_funds_limited=True), AGENCY)
+    assert (unknown["final_score"], rolling["final_score"], fcfs["final_score"]) == (97.0, 98.0, 100.0)
+    assert (unknown["score_status"], rolling["score_status"], fcfs["score_status"]) == (
+        "open_missing_deadline", "open_rolling", "open_rolling_funds_limited")
+
+
+def test_rolling_grant_ranks_below_similar_grant_with_real_deadline_but_above_worse_one():
+    weaker = dict(strategic_alignment=7, operational_fit=7, financial_value_score=7)
+    rolling = score_grant(base_row(strategic_alignment=8, operational_fit=8, financial_value_score=8,
+                                   deadline_score=None, rolling_deadline=True), AGENCY)["final_score"]
+    similar_with_deadline = score_grant(base_row(strategic_alignment=8, operational_fit=8,
+                                                 financial_value_score=8, deadline_score=10), AGENCY)["final_score"]
+    worse_with_deadline = score_grant(base_row(**weaker, deadline_score=10), AGENCY)["final_score"]
+    assert similar_with_deadline > rolling > worse_with_deadline

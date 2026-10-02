@@ -42,7 +42,12 @@ def build(ranked: pd.DataFrame, agency: dict, n: int, forecast: bool) -> pd.Data
         elif pd.notna(r.close_date_real):
             when = f"{str(r.close_date_real)[:10]} ({int(r.days_until_close)} days)"
         else:
-            when = "rolling" if _truthy(getattr(r, "rolling_deadline", False)) else "not stated"
+            if _truthy(getattr(r, "rolling_funds_limited", False)):
+                when = "rolling, first come first served - apply early, funds can run out"
+            elif _truthy(getattr(r, "rolling_deadline", False)):
+                when = "rolling - accepted anytime"
+            else:
+                when = "not stated"
         evidence = "verified quote" if _truthy(r.eligibility_quote_verified) else "UNVERIFIED - check eligibility"
         rows.append({
             "rank": r.rank, "grant": r.opportunity_title, "score": r.final_score, "deadline": when,

@@ -8,8 +8,8 @@
 >
 > | Layer | File | What it does |
 > |---|---|---|
-> | 0 | `src/clean_data.py` | Strips HTML, normalizes dates, booleans and applicant types; sets **355 placeholder or zero amounts** (e.g. a $999,999,999 ceiling, a $2^31 total) to missing; writes `data/processed/data_quality.json` |
-> | 1 | `src/deterministic.py` | Uses `as_of_date`, puts forecasts on their own track, detects rolling deadlines, computes `deadline_score` and `financial_value_score` (settings in `priorities.json → layer1`, §7). **Hard-filters only 342 grants: 330 closed and 12 archived.** Everything else becomes a feature, not a filter. |
+> | 0 | `src/clean_data.py` | _Superseded on 10-02 by Mayank's version, see §6._ |
+> | 1 | `src/deterministic.py` | _Superseded on 10-02 by Mayank's version (with Pavan's additions), see §7._ |
 > | 4 | `src/scoring.py` (Advik) | Reviewed: it fits Layers 1 and 3 as they stand. One change: it now **warns when grants with a failed Layer 3 analysis are left out of the ranking** instead of dropping them silently. |
 > | 5 | `src/keyword_baseline.py`, `src/validation.py` | TF-IDF baseline; blind stratified labeling sheet; spot-check sheet; recall and precision with bootstrap CIs, compared against the baseline at the same review budget → `data/results/validation_report.md` |
 > | — | `src/report.py`, `src/pipeline.py` | `top_results.md` (submission list with a one-line rationale per grant); `python src/pipeline.py` runs everything |
@@ -180,7 +180,6 @@ solveathon-grants/
 │   │   └── grants.csv            ✅  (starter-kit export, 1,662 grants)
 │   ├── processed/
 │   │   ├── grants_cleaned.csv    ✅  Layer 0
-│   │   ├── data_quality.json     ✅  Layer 0 counts (placeholders, HTML, missing fields)
 │   │   └── grants_features.csv   ✅  Layer 1 → input to Layers 2 and 4
 │   ├── cache/                    ✅  every model response, committed (see §32)
 │   ├── validation/
@@ -216,17 +215,20 @@ solveathon-grants/
 │   ├── text_utils.py             ✅  HTML stripping, verbatim-quote check
 │   └── config.py                 ✅
 │
-├── tests/                        ✅  43 tests
-│   ├── test_layers015.py
+├── tests/                        ✅  61 tests
+│   ├── test_layer01.py           (Mayank)
 │   ├── test_layers23.py
-│   └── test_scoring.py
+│   ├── test_scoring.py           (Advik)
+│   ├── test_layer5.py
+│   └── test_no_secrets.py        no API key can be committed
 │
 ├── prompts/
 │   ├── jev_triage.json           ✅
 │   └── deep_analysis.txt         ✅
 │
 └── docs/
-    └── failure_modes.md          ✅  failure log (fill with real failures after the run)
+    ├── layer1_report.md          ✅  Layer 1 audit counts
+    └── failure_modes.md          ✅  failure log
 ```
 
 ---
@@ -333,16 +335,7 @@ df["grant_text"] = (
 data/processed/grants_cleaned.csv
 ```
 
-> **Implemented (2026-09-30): `python src/clean_data.py`.** Findings from the real data, written to `data/processed/data_quality.json`:
->
-> | Issue | Count | Handling |
-> |---|---:|---|
-> | Summaries containing HTML | 1,040 | stripped (`text_utils.strip_html`) |
-> | Placeholder or zero amounts (e.g. ceiling $999,999,999; total $2,147,483,647 = 2^31; 9,999 awards) | 355 | set to missing, never treated as real money |
-> | Missing eligibility description | 377 | flagged; Layers 2–3 fall back to the structured applicant types |
-> | Posted grants with no close date | 98 | flagged; Layer 1 splits them into rolling / archived / truly missing |
-> | Rows sharing a title with another row | 33 | kept and flagged (`duplicate_title`); these are different opportunity numbers |
-> | Duplicate ids | 0 | — |
+> **Implemented: `python src/clean_data.py`** (Mayank's version, adopted 2026-10-02). Parses dates and numbers, normalizes booleans (a blank `is_cost_sharing` stays *unknown*, not False), drops duplicate ids (0 in this data), and adds `grant_id`, `summary_text` (HTML stripped; 1,040 summaries contain HTML) and `grant_text`. **The original text columns are kept byte-for-byte as exported**, so the prompts sent to Jev and Muse Spark are built from the original text and the cached answers stay valid even if the cleaning code changes. Zero and placeholder amounts are judged in Layer 1, not here.
 
 ---
 
@@ -468,12 +461,13 @@ record is a duplicate
 
 Most other characteristics should become features rather than immediate deletion rules.
 
-> **Implemented (2026-09-30): `python src/deterministic.py`** → `data/processed/grants_features.csv`. Settings live in `priorities.json → layer1`.
+> **Implemented: `python src/deterministic.py`** (Mayank's version, adopted 2026-10-02, plus three additions from Pavan's) → `data/processed/grants_features.csv` and the audit report [`docs/layer1_report.md`](docs/layer1_report.md). Settings live in `priorities.json → layer1`. Before writing, it checks its own output against the contract Layers 2 and 4 depend on, and stops if anything is wrong.
 >
-> - **Hard filters (342 removed, all kept in the file with a `hard_filter_reason`):** posted grant closed before `as_of_date` (330); posted grant archived before `as_of_date` (12). No other filters. Forecasts, grants without "state" in the applicant list, cost-sharing grants and stale forecasts all go on to Layer 2.
-> - **`deadline_score`, 0–10:** 0 if the grant closes within 7 days of `as_of_date` (a state agency needs internal sign-off), 10 at 60 days or more, linear in between. Rolling deadlines ("proposals accepted anytime", 66 grants) score a fixed 8. A truly unknown deadline stays **missing**, not 0, so Layer 4's explicit missing-deadline rule applies. Forecasts have no deadline score and go to the watchlist.
-> - **`financial_value_score`, 0–10:** log scale on the best single-award estimate (the ceiling; else total funding ÷ expected awards; else the floor). $50K → 0, $500K → 5, $5M+ → 10. An unknown amount (569 grants) scores a fixed **4**: below neutral, but not 0, because many large programs omit amounts. Required cost sharing subtracts 1.5.
-> - **Flags:** `deadline_flag` (expired / under 7, 14 or 30 days / comfortable / rolling / missing / forecast), `stale_forecast` (234 forecasts whose forecasted close date has already passed; kept, and marked on the watchlist as "check if posted"), structured eligibility flags (signals only), `eligibility_text_mentions_state`, `is_nih`, `cost_share_mentioned_in_text`.
+> - **Hard filters (342; rows stay in the file with a `hard_filter_reason`):** open grant closed before `as_of_date` (330); posted grant past its archive date (12, the "Funding Opportunity is Archived" records). Nothing else is filtered.
+> - **`deadline_score`, 0–10:** piecewise-linear anchors (0 days → 0, 7 → 2, 14 → 4, 30 → 7, 60+ → 10). Blank for forecasts and for the 109 open grants with no real close date, so Layer 4's missing-deadline rule applies. Close dates in year 2090 or later are treated as placeholders (11). 66 of the 109 are flagged `rolling_deadline` ("proposals accepted anytime").
+> - **`financial_value_score`, 0–10:** log scale from $100K → 0 to $10M → 10, on the award ceiling, else total funding ÷ expected awards, else total funding (capped at 7, because a program total is not one applicant's award). An unknown amount (580 grants) scores 5. Zero amounts (114 rows) and sentinel amounts ($999,999,999, 2^31, 9,999 awards; 3 rows) are treated as placeholders, not money.
+> - **Forecast track:** `forecast_close_passed` (234 stale forecasts), `forecast_check_now` (88 forecasts whose post date has passed, so they may already be open: "check Grants.gov now").
+> - **Signals, never filters:** structured applicant flags, `broad_eligibility` (694 grants list 12 or more applicant types), text checks for tribal-, university- or individuals-only eligibility, cost-sharing percentage parsed from text, HHS assistance listings (93.x), and possible reposts.
 >
 > Result: **1,320 grants go to Layer 2 (761 open, 559 forecast).**
 
@@ -833,6 +827,16 @@ Scores are reported on a **0–100 scale**.
 A missing deadline is not treated as a zero. For an **open** grant with no deadline in the dataset, Layer 4 drops the deadline component, re-normalizes the remaining 85% of available weight, then subtracts a **3-point uncertainty penalty** from the 100-point score. This means a perfect grant with a known feasible deadline scores 100, while an otherwise perfect open grant with an unknown deadline scores 97.
 
 Forecast grants are different: they are expected to lack a normal close date. Layer 4 drops the deadline component, re-normalizes the other criteria, applies **no missing-deadline penalty**, and sends them to `watchlist.csv`.
+
+**Rolling deadlines (added 2026-10-02).** "Proposals accepted anytime" is a *known, flexible* deadline, not an unknown one, so it has its own penalty settings in `priorities.json → layer4_scoring`:
+
+| Kind of open grant with no close date | Count | Penalty | Why |
+|---|---:|---:|---|
+| Deadline genuinely unknown | 31 | −3 | uncertainty |
+| Rolling, no time pressure (mostly NSF "accepted anytime") | 57 | −2 | flexible, so a similar grant with a real deadline should be handled first |
+| Rolling but **first come, first served** ("until all available funds have been expended", "processed as received"; all EDA) | 9 | 0 | no real flexibility, since the money can run out. Flagged in the report as "apply early" |
+
+Effect (tested in `tests/test_scoring.py`): a rolling grant ranks **below** an otherwise-similar grant with a workable deadline (81.5 vs 86) but **above** a slightly weaker grant that has a comfortable deadline (79). Rolling grants are never filtered out; they go through Jev and the deep analysis like every other grant.
 
 ### Evidence rule
 

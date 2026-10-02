@@ -75,6 +75,9 @@ _HIGHER_ED_ONLY = re.compile(
 _TRIBAL_ONLY = re.compile(r"(only|limited to|restricted to|solely)[^.]{0,80}(tribal|tribe|native american)", re.I)
 _ROLLING = re.compile(r"anytime|continuing basis|ongoing basis|year-round|rolling|no submission deadline"
                       r"|accepted on a continu", re.I)
+# Rolling grants whose money can run out are effectively first-come, first-served.
+_FUNDS_LIMITED = re.compile(r"first[- ]come|until (all )?(available )?funds|funds (are|have been) (expended|exhausted)"
+                            r"|processed as (they are )?received|while funds last", re.I)
 # Values Grants.gov uses as "no real number" in this export: $999,999,999 and 2^31 (a software
 # maximum) as amounts, 9,999 as a number of awards. Read as money they would win "largest award".
 PLACEHOLDER_AMOUNTS = {999_999_999.0, 2_147_483_647.0, 2_147_483_648.0}
@@ -163,6 +166,9 @@ def add_deadline_features(df: pd.DataFrame, cfg: dict) -> None:
     # "Proposals accepted anytime": no close date, but not an unknown deadline either.
     df["rolling_deadline"] = df["missing_deadline"] & df["close_date_description"].fillna("").map(
         lambda t: bool(_ROLLING.search(str(t))))
+    # ...but "until funds are expended" / "processed as received" means no real flexibility.
+    rolling_text = df["close_date_description"].fillna("") + " " + df["summary_description"].fillna("")
+    df["rolling_funds_limited"] = df["rolling_deadline"] & rolling_text.map(lambda t: bool(_FUNDS_LIMITED.search(t)))
 
 
 def add_funding_features(df: pd.DataFrame, cfg: dict) -> None:
@@ -339,7 +345,8 @@ def report_markdown(df: pd.DataFrame, cfg: dict) -> str:
         "## Hard filters (rows stay in the file, flagged)", _counts(df["hard_filter_reason"].replace("", "kept")), "",
         "## Open grants: deadlines",
         f"- expired (closed before as-of date): {n(op['expired'])}",
-        f"- rolling (\"accepted anytime\"): {n(op['rolling_deadline'])}",
+        f"- rolling (\"accepted anytime\"): {n(op['rolling_deadline'])}, of which first-come / until funds run out: "
+        f"{n(op['rolling_funds_limited'])}",
         f"- no close date in the data: {n(op['missing_deadline'])} "
         f"(of which {n(op['close_date_placeholder'])} carry a placeholder year-{cfg['close_date_placeholder_year_min']}+ date)",
         *[f"- {f}: {n(op[f])}" for f in flags], "",

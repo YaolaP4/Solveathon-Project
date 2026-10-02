@@ -34,8 +34,8 @@ What tradeoff the fix introduced:
 ## F3. Placeholder award amounts would have caused large-dollar bias
 
 - **Observed error:** One grant lists an award ceiling of **$999,999,999**, and another lists total funding of **$2,147,483,647** (2^31, a software maximum). Read as money, they would get the maximum financial score.
-- **How detected:** Layer 0 range checks. 355 placeholder or zero amounts in total (`data/processed/data_quality.json`).
-- **Pipeline change:** Placeholders and zeros are set to missing. Missing amounts get a fixed below-neutral score (4/10).
+- **How detected:** Range checks on the award fields. Layer 1 now treats 3 sentinel rows and 114 zero amounts as placeholders (`docs/layer1_report.md`).
+- **Pipeline change:** Placeholders and zeros are set to missing. Missing amounts get a neutral fixed score (5/10).
 - **Tradeoff:** A real grant that omits its amount is slightly under-ranked on award value.
 
 ## F4. "Forecasted" does not mean "upcoming"
