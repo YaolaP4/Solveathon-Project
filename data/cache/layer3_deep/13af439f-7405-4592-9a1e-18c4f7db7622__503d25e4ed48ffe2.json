@@ -1,0 +1,28 @@
+{
+ "grant_id": "13af439f-7405-4592-9a1e-18c4f7db7622",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "503d25e4ed48ffe2686e20974164a81c85810195c3263eeecc0d8760323fa5ee",
+ "retrieved_at": "2026-10-02T19:45:58+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G5",
+   "matched_objective": "G5.O1",
+   "strategic_reason": "The grant builds state occupational health surveillance capacity and data infrastructure using multiple public health data sources, which supports NCDHHS data-driven decision-making.",
+   "strategic_evidence_quote": "NIOSH maintains its priority to develop OSH surveillance capacity within state and jurisdictional public health systems, utilizing public and other data sources such as electronic medical and laboratory reporting, hospital discharge databases, death records, cancer registries, and public health surveys.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "Bona fide agents applying on behalf of state, territorial, local, and tribal government organizations.",
+   "owning_division": "DPH",
+   "operational_fit": 9,
+   "operational_reason": "DPH already conducts disease surveillance, epidemiology, and environmental health activities, so adding occupational health surveillance is an extension of current public health surveillance work.",
+   "restrictions": [],
+   "major_risk": "Occupational health surveillance is not explicitly listed in NCDHHS strategic goals, so internal alignment and sustainability beyond the grant may be weak.",
+   "recommended_for_review": true,
+   "one_line_rationale": "CDC funds state occupational health surveillance; DPH already runs public health surveillance, so this is a strong capacity-building fit, though not tied to a named NCDHHS objective."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G5\",\n  \"matched_objective\": \"G5.O1\",\n  \"strategic_reason\": \"The grant builds state occupational health surveillance capacity and data infrastructure using multiple public health data sources, which supports NCDHHS data-driven decision-making.\",\n  \"strategic_evidence_quote\": \"NIOSH maintains its priority to develop OSH surveillance capacity within state and jurisdictional public health systems, utilizing public and other data sources such as electronic medical and laboratory reporting, hospital discharge databases, death records, cancer registries, and public health surveys.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"Bona fide agents applying on behalf of state, territorial, local, and tribal government organizations.\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DPH already conducts disease surveillance, epidemiology, and environmental health activities, so adding occupational health surveillance is an extension of current public health surveillance work.\",\n  \"restrictions\": [],\n  \"major_risk\": \"Occupational health surveillance is not explicitly listed in NCDHHS strategic goals, so internal alignment and sustainability beyond the grant may be weak.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"CDC funds state occupational health surveillance; DPH already runs public health surveillance, so this is a strong capacity-building fit, though not tied to a named NCDHHS objective.\"\n}"
+  ]
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "grant_id": "0d59ca36-277e-4d09-bb8b-d5eee79641f6",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "3fbee143c8e51783dc0b2100baa06ff14afe73f3c0c3eacc53831830bfbf8ed1",
+ "retrieved_at": "2026-10-02T19:58:26+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 6,
+   "matched_goal": "G5",
+   "matched_objective": "G5.O1",
+   "strategic_reason": "The grant funds secondary analysis and integration of existing cancer datasets, supporting data integration and evidence generation that align with fostering data-driven decision-making.",
+   "strategic_evidence_quote": "The goal of this initiative is to address key scientific questions relevant to cancer by supporting the analysis of existing clinical, environmental, surveillance, health services, vital statistics, behavioral, lifestyle, genomic, and molecular profiles data.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 7,
+   "operational_reason": "DPH runs cancer surveillance, epidemiology, and chronic disease analysis and could manage a secondary data-analysis project with existing data resources and partners.",
+   "restrictions": [],
+   "major_risk": "As an NIH research grant, it requires strong advanced analytic and publication capacity, which may stretch a health department's service-oriented staff and compete with academic institutions.",
+   "recommended_for_review": true,
+   "one_line_rationale": "NIH cancer data-analysis grant matches DPH cancer epidemiology and data-integration capacity; state is eligible and could apply as lead."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 6,\n  \"matched_goal\": \"G5\",\n  \"matched_objective\": \"G5.O1\",\n  \"strategic_reason\": \"The grant funds secondary analysis and integration of existing cancer datasets, supporting data integration and evidence generation that align with fostering data-driven decision-making.\",\n  \"strategic_evidence_quote\": \"The goal of this initiative is to address key scientific questions relevant to cancer by supporting the analysis of existing clinical, environmental, surveillance, health services, vital statistics, behavioral, lifestyle, genomic, and molecular profiles data.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 7,\n  \"operational_reason\": \"DPH runs cancer surveillance, epidemiology, and chronic disease analysis and could manage a secondary data-analysis project with existing data resources and partners.\",\n  \"restrictions\": [],\n  \"major_risk\": \"As an NIH research grant, it requires strong advanced analytic and publication capacity, which may stretch a health department's service-oriented staff and compete with academic institutions.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"NIH cancer data-analysis grant matches DPH cancer epidemiology and data-integration capacity; state is eligible and could apply as lead.\"\n}"
+  ]
+ }
+}

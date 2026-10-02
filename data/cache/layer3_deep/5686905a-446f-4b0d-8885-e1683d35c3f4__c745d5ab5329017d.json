@@ -1,0 +1,30 @@
+{
+ "grant_id": "5686905a-446f-4b0d-8885-e1683d35c3f4",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "c745d5ab5329017d72219748db0d0a2d90d9c18c874bcb27589cc090274b7037",
+ "retrieved_at": "2026-10-02T19:51:36+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 7,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "It funds clinical decision support that enhances guideline-concordant cancer screening and follow-up, advancing health access and reducing cancer outcome disparities.",
+   "strategic_evidence_quote": "enhance guideline-concordant screening and ensure timely follow-up and management after abnormal results",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 6,
+   "operational_reason": "DPH leads chronic disease and cancer screening initiatives and can partner with large health systems, though EHR-based clinical decision support is outside its direct operational scope.",
+   "restrictions": [
+    "Requires system-wide implementation within a large health system, so NCDHHS would need a health system partner for EHR integration."
+   ],
+   "major_risk": "Core activities occur inside a large health system's EHR and clinical workflows, which NCDHHS does not directly control, creating partnership and data-sharing risks.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Fits DPH's cancer screening and chronic disease work, but core EHR integration requires a large health system partner; worth routing to DPH for possible health-system collaboration."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 7,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"It funds clinical decision support that enhances guideline-concordant cancer screening and follow-up, advancing health access and reducing cancer outcome disparities.\",\n  \"strategic_evidence_quote\": \"enhance guideline-concordant screening and ensure timely follow-up and management after abnormal results\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 6,\n  \"operational_reason\": \"DPH leads chronic disease and cancer screening initiatives and can partner with large health systems, though EHR-based clinical decision support is outside its direct operational scope.\",\n  \"restrictions\": [\n    \"Requires system-wide implementation within a large health system, so NCDHHS would need a health system partner for EHR integration.\"\n  ],\n  \"major_risk\": \"Core activities occur inside a large health system's EHR and clinical workflows, which NCDHHS does not directly control, creating partnership and data-sharing risks.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Fits DPH's cancer screening and chronic disease work, but core EHR integration requires a large health system partner; worth routing to DPH for possible health-system collaboration.\"\n}"
+  ]
+ }
+}

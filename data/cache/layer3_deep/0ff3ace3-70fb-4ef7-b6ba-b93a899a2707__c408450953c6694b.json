@@ -1,0 +1,30 @@
+{
+ "grant_id": "0ff3ace3-70fb-4ef7-b6ba-b93a899a2707",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "c408450953c6694b268c4e06103544fc6ecb0f50c7a6a41b62374b70c029e9da",
+ "retrieved_at": "2026-10-02T19:45:51+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "This cooperative agreement funds state and local health departments to track, prevent, and control STIs among populations disproportionately impacted by STI transmission, directly supporting NCDHHS's goal of reducing health disparities.",
+   "strategic_evidence_quote": "Reduce the impact of STIs in areas or populations disproportionately impacted by STIs.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "All fifty (50) states, the District of Columbia, the US Virgin Islands and Puerto Rico are eligible to apply.",
+   "owning_division": "DPH",
+   "operational_fit": 10,
+   "operational_reason": "DPH already leads communicable disease surveillance, epidemiology, and prevention and works directly with local health departments, so STI prevention and control is squarely within its existing authority and partnerships.",
+   "restrictions": [
+    "Requires collaboration with partners to address interconnected comorbidities and sexual health."
+   ],
+   "major_risk": "Because CDC intends to fund all states non-competitively by formula based on population and STI morbidity, the award amount is largely predetermined and may be modest for North Carolina.",
+   "recommended_for_review": true,
+   "one_line_rationale": "CDC formula funds state health departments to track, prevent, and control syphilis, gonorrhea, and chlamydia; DPH already leads disease surveillance and prevention, so it fits well."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"This cooperative agreement funds state and local health departments to track, prevent, and control STIs among populations disproportionately impacted by STI transmission, directly supporting NCDHHS's goal of reducing health disparities.\",\n  \"strategic_evidence_quote\": \"Reduce the impact of STIs in areas or populations disproportionately impacted by STIs.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"All fifty (50) states, the District of Columbia, the US Virgin Islands and Puerto Rico are eligible to apply.\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 10,\n  \"operational_reason\": \"DPH already leads communicable disease surveillance, epidemiology, and prevention and works directly with local health departments, so STI prevention and control is squarely within its existing authority and partnerships.\",\n  \"restrictions\": [\n    \"Requires collaboration with partners to address interconnected comorbidities and sexual health.\"\n  ],\n  \"major_risk\": \"Because CDC intends to fund all states non-competitively by formula based on population and STI morbidity, the award amount is largely predetermined and may be modest for North Carolina.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"CDC formula funds state health departments to track, prevent, and control syphilis, gonorrhea, and chlamydia; DPH already leads disease surveillance and prevention, so it fits well.\"\n}"
+  ]
+ }
+}

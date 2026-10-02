@@ -1,0 +1,28 @@
+{
+ "grant_id": "cacb4ffa-0f3a-4794-8df6-0af933d88f0c",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "c13b5ad8a90d0c28fb7190500dc625c6926f25a31f15b72bd79836e1881c4e53",
+ "retrieved_at": "2026-10-02T19:52:53+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 6,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O3",
+   "strategic_reason": "The grant funds rigorous evaluation of approaches to prevent firearm-related suicides and self-harm, which can inform suicide prevention strategies in the behavioral health crisis system.",
+   "strategic_evidence_quote": "Firearm-related suicides and self-harm",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 7,
+   "operational_reason": "DPH oversees injury and violence prevention and epidemiology, so it could manage a CDC-funded firearm injury prevention research project.",
+   "restrictions": [],
+   "major_risk": "The grant supports evaluation research rather than direct services, and NCDHHS may lack a dedicated firearm injury research team, limiting near-term program value.",
+   "recommended_for_review": true,
+   "one_line_rationale": "CDC research funding for firearm injury prevention fits DPH's injury and violence prevention role; moderate alignment with suicide prevention and evaluation capacity."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 6,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O3\",\n  \"strategic_reason\": \"The grant funds rigorous evaluation of approaches to prevent firearm-related suicides and self-harm, which can inform suicide prevention strategies in the behavioral health crisis system.\",\n  \"strategic_evidence_quote\": \"Firearm-related suicides and self-harm\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 7,\n  \"operational_reason\": \"DPH oversees injury and violence prevention and epidemiology, so it could manage a CDC-funded firearm injury prevention research project.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The grant supports evaluation research rather than direct services, and NCDHHS may lack a dedicated firearm injury research team, limiting near-term program value.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"CDC research funding for firearm injury prevention fits DPH's injury and violence prevention role; moderate alignment with suicide prevention and evaluation capacity.\"\n}"
+  ]
+ }
+}

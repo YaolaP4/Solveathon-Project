@@ -1,0 +1,33 @@
+{
+ "grant_id": "e656176c-fec2-4132-8761-875dfa73dbc8",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "67b4fa413dae4b49c0980e879c45052223a722b62bc7dfb793460fe28c7a7617",
+ "retrieved_at": "2026-10-02T20:00:28+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 4,
+   "matched_goal": "G5",
+   "matched_objective": "G5.O1",
+   "strategic_reason": "The grant funds regional training and outreach to enable effective use of health information and data, which supports data literacy and data-driven decision-making among public health and community partners.",
+   "strategic_evidence_quote": "The NNLM’s core mission is to enable the effective use of—and contribution to—health information and data made available by the NLM and NIH.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "none",
+   "operational_fit": 1,
+   "operational_reason": "No NCDHHS division currently operates a medical library, regional health information training network, or multi-state biomedical information partnership, so this cooperative agreement would require building new capacity outside existing authority.",
+   "restrictions": [
+    "Requires institutional connections with a health science library",
+    "Must collaborate with the Network Coordinating Center and Network Training Center",
+    "Must collect and report common metrics and site-specific goals",
+    "Must serve a multi-state geographic region as a Regional Medical Library"
+   ],
+   "major_risk": "NCDHHS lacks the expected core competency of building and managing a regional biomedical information and library partnership, so this award likely fits an academic health sciences library better than a state health department.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Funds regional medical library networks for health information and data training; no NCDHHS division owns library operations, so it is not a practical fit."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 4,\n  \"matched_goal\": \"G5\",\n  \"matched_objective\": \"G5.O1\",\n  \"strategic_reason\": \"The grant funds regional training and outreach to enable effective use of health information and data, which supports data literacy and data-driven decision-making among public health and community partners.\",\n  \"strategic_evidence_quote\": \"The NNLM’s core mission is to enable the effective use of—and contribution to—health information and data made available by the NLM and NIH.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 1,\n  \"operational_reason\": \"No NCDHHS division currently operates a medical library, regional health information training network, or multi-state biomedical information partnership, so this cooperative agreement would require building new capacity outside existing authority.\",\n  \"restrictions\": [\n    \"Requires institutional connections with a health science library\",\n    \"Must collaborate with the Network Coordinating Center and Network Training Center\",\n    \"Must collect and report common metrics and site-specific goals\",\n    \"Must serve a multi-state geographic region as a Regional Medical Library\"\n  ],\n  \"major_risk\": \"NCDHHS lacks the expected core competency of building and managing a regional biomedical information and library partnership, so this award likely fits an academic health sciences library better than a state health department.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Funds regional medical library networks for health information and data training; no NCDHHS division owns library operations, so it is not a practical fit.\"\n}"
+  ]
+ }
+}

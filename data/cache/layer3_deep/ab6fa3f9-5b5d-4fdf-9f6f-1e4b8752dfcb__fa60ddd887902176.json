@@ -1,0 +1,32 @@
+{
+ "grant_id": "ab6fa3f9-5b5d-4fdf-9f6f-1e4b8752dfcb",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "fa60ddd8879021761604a3bde85599214315db061df073f06a3b9310630bc011",
+ "retrieved_at": "2026-10-02T19:49:10+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "The hubs focus on health impacts of extreme weather for populations at heightened risk, directly advancing work to reduce health disparities for people facing greater health and situational challenges.",
+   "strategic_evidence_quote": "health impacts of extreme weather and cumulative exposures",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 7,
+   "operational_reason": "DPH oversees environmental health, epidemiology, and public health preparedness and already works with local health departments, which are named partners for these hubs.",
+   "restrictions": [
+    "Requires a multidisciplinary team with non-academic partners such as state and local public health departments, community-based organizations, Tribal entities, health care systems, and emergency preparedness agencies.",
+    "Award recipients must collaborate with the HEW Research Coordination and Data Center(s) and participate in data harmonization, shared metrics development, and cross-site dissemination.",
+    "U54 cooperative agreement anticipates substantial federal programmatic staff involvement."
+   ],
+   "major_risk": "This is a research-intensive U54 cooperative agreement, so NCDHHS would likely serve as a non-academic partner rather than the lead, limiting direct control and service-delivery funding.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Research hubs on extreme weather health impacts fit DPH environmental health and equity goals, but NCDHHS would likely be a non-academic partner in a research-heavy cooperative agreement."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"The hubs focus on health impacts of extreme weather for populations at heightened risk, directly advancing work to reduce health disparities for people facing greater health and situational challenges.\",\n  \"strategic_evidence_quote\": \"health impacts of extreme weather and cumulative exposures\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 7,\n  \"operational_reason\": \"DPH oversees environmental health, epidemiology, and public health preparedness and already works with local health departments, which are named partners for these hubs.\",\n  \"restrictions\": [\n    \"Requires a multidisciplinary team with non-academic partners such as state and local public health departments, community-based organizations, Tribal entities, health care systems, and emergency preparedness agencies.\",\n    \"Award recipients must collaborate with the HEW Research Coordination and Data Center(s) and participate in data harmonization, shared metrics development, and cross-site dissemination.\",\n    \"U54 cooperative agreement anticipates substantial federal programmatic staff involvement.\"\n  ],\n  \"major_risk\": \"This is a research-intensive U54 cooperative agreement, so NCDHHS would likely serve as a non-academic partner rather than the lead, limiting direct control and service-delivery funding.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Research hubs on extreme weather health impacts fit DPH environmental health and equity goals, but NCDHHS would likely be a non-academic partner in a research-heavy cooperative agreement.\"\n}"
+  ]
+ }
+}

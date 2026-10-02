@@ -1,0 +1,28 @@
+{
+ "grant_id": "3a1c4127-9699-412d-8904-742bbf20a33a",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "cff9044b69ddc14b3c9ac72e61dda283304ae945946a93b7a38d15c514ee9b26",
+ "retrieved_at": "2026-10-02T19:28:15+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O4",
+   "strategic_reason": "The program prevents harmful exposures before, during, and after pregnancy to improve maternal and infant health and birth outcomes.",
+   "strategic_evidence_quote": "It supports a national expert-staffed call center that provides timely, evidence-based information and personalized counseling on medications, nutrition, foods, household products, and environmental exposures.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "Any domestic public or private entity, including an Indian tribe or tribal organization (as those terms are defined at 25 U.S.C. § 450b) is eligible to apply.",
+   "owning_division": "DPH",
+   "operational_fit": 5,
+   "operational_reason": "DPH owns maternal and child health but operating a national expert-staffed call center with AI is outside its usual statewide role.",
+   "restrictions": [],
+   "major_risk": "The award appears to fund one national center, requiring a state agency to build and sustain national-scale expert capacity.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Supports maternal and birth outcomes via national exposure hotline, fitting child-family well-being, but national scale may strain state resources."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O4\",\n  \"strategic_reason\": \"The program prevents harmful exposures before, during, and after pregnancy to improve maternal and infant health and birth outcomes.\",\n  \"strategic_evidence_quote\": \"It supports a national expert-staffed call center that provides timely, evidence-based information and personalized counseling on medications, nutrition, foods, household products, and environmental exposures.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"Any domestic public or private entity, including an Indian tribe or tribal organization (as those terms are defined at 25 U.S.C. § 450b) is eligible to apply.\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 5,\n  \"operational_reason\": \"DPH owns maternal and child health but operating a national expert-staffed call center with AI is outside its usual statewide role.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The award appears to fund one national center, requiring a state agency to build and sustain national-scale expert capacity.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Supports maternal and birth outcomes via national exposure hotline, fitting child-family well-being, but national scale may strain state resources.\"\n}"
+  ]
+ }
+}

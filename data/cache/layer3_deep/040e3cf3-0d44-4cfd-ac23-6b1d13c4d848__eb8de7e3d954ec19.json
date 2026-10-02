@@ -1,0 +1,30 @@
+{
+ "grant_id": "040e3cf3-0d44-4cfd-ac23-6b1d13c4d848",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "eb8de7e3d954ec1994779aa8b3927e5e82330f4eb015bbafb57eecd3dc4130c2",
+ "retrieved_at": "2026-10-02T19:52:21+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O4",
+   "strategic_reason": "The grant funds training and technical assistance to help Title X clinics expand infertility testing, treatment, and referrals, which advances women's reproductive health and reproductive life planning.",
+   "strategic_evidence_quote": "expand and enhance root cause infertility testing, treatments, and referrals available within Title X-funded clinics",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "Any public or private nonprofit entity is eligible to apply.",
+   "owning_division": "DPH",
+   "operational_fit": 7,
+   "operational_reason": "DPH's existing family planning and Title X role provides relevant clinical and programmatic expertise, but creating and operating a national training center would be broader than its current direct-service work.",
+   "restrictions": [
+    "All activities funded under this NOFO must be in compliance with the Title X statute, as well as the program regulations and legislative mandates, as applicable."
+   ],
+   "major_risk": "NCDHHS would need to stand up and operate a national training and technical assistance center, a competitive national role that may exceed current Title X direct-service capacity and may produce limited direct North Carolina service funding.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Aligns with women's reproductive health and Title X family planning; DPH could lead, but national training center role is competitive and broader than direct service."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O4\",\n  \"strategic_reason\": \"The grant funds training and technical assistance to help Title X clinics expand infertility testing, treatment, and referrals, which advances women's reproductive health and reproductive life planning.\",\n  \"strategic_evidence_quote\": \"expand and enhance root cause infertility testing, treatments, and referrals available within Title X-funded clinics\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"Any public or private nonprofit entity is eligible to apply.\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 7,\n  \"operational_reason\": \"DPH's existing family planning and Title X role provides relevant clinical and programmatic expertise, but creating and operating a national training center would be broader than its current direct-service work.\",\n  \"restrictions\": [\n    \"All activities funded under this NOFO must be in compliance with the Title X statute, as well as the program regulations and legislative mandates, as applicable.\"\n  ],\n  \"major_risk\": \"NCDHHS would need to stand up and operate a national training and technical assistance center, a competitive national role that may exceed current Title X direct-service capacity and may produce limited direct North Carolina service funding.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Aligns with women's reproductive health and Title X family planning; DPH could lead, but national training center role is competitive and broader than direct service.\"\n}"
+  ]
+ }
+}

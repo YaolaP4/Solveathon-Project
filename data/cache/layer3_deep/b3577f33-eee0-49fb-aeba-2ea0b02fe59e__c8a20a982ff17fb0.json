@@ -1,0 +1,30 @@
+{
+ "grant_id": "b3577f33-eee0-49fb-aeba-2ea0b02fe59e",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "c8a20a982ff17fb002a422708c3dd1a0bbd5d4174dc963061717ab4c5c7f5173",
+ "retrieved_at": "2026-10-02T19:28:27+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 6,
+   "matched_goal": "G5",
+   "matched_objective": "G5.O1",
+   "strategic_reason": "Active pediatric virus surveillance and effectiveness estimates directly build data infrastructure to guide public health decisions.",
+   "strategic_evidence_quote": "The purpose of this Notice of Funding Opportunity (NOFO) is to support a network of U.S. institutions that will conduct standardized, prospective, active surveillance of pediatric acute respiratory illness (ARI) and acute gastroenteritis (AGE).",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 7,
+   "operational_reason": "DPH already leads disease surveillance, epidemiology, immunization and lab work but would need pediatric hospital partners for enrollment.",
+   "restrictions": [
+    "Must apply for Component A core inpatient and emergency department surveillance and follow CDC standardized protocol with approved molecular assays"
+   ],
+   "major_risk": "Requires sustained active enrollment and molecular testing in pediatric inpatient and emergency settings that DPH cannot do without hospital partners.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Fits data-driven public health goal; lets Public Health expand pediatric virus tracking with hospitals, but needs clinical partners."
+  },
+  "attempts": [
+   "{\"strategic_alignment\": 6, \"matched_goal\": \"G5\", \"matched_objective\": \"G5.O1\", \"strategic_reason\": \"Active pediatric virus surveillance and effectiveness estimates directly build data infrastructure to guide public health decisions.\", \"strategic_evidence_quote\": \"The purpose of this Notice of Funding Opportunity (NOFO) is to support a network of U.S. institutions that will conduct standardized, prospective, active surveillance of pediatric acute respiratory illness (ARI) and acute gastroenteritis (AGE).\", \"applicant_role\": \"lead\", \"eligibility_evidence_quote\": \"state_governments\", \"owning_division\": \"DPH\", \"operational_fit\": 7, \"operational_reason\": \"DPH already leads disease surveillance, epidemiology, immunization and lab work but would need pediatric hospital partners for enrollment.\", \"restrictions\": [\"Must apply for Component A core inpatient and emergency department surveillance and follow CDC standardized protocol with approved molecular assays\"], \"major_risk\": \"Requires sustained active enrollment and molecular testing in pediatric inpatient and emergency settings that DPH cannot do without hospital partners.\", \"recommended_for_review\": true, \"one_line_rationale\": \"Fits data-driven public health goal; lets Public Health expand pediatric virus tracking with hospitals, but needs clinical partners.\"}"
+  ]
+ }
+}

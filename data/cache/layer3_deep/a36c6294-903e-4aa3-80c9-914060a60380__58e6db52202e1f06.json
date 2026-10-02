@@ -1,0 +1,32 @@
+{
+ "grant_id": "a36c6294-903e-4aa3-80c9-914060a60380",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "58e6db52202e1f06c8d7fbfb841e594212d5d94d2760c433468f0a968ab63b86",
+ "retrieved_at": "2026-10-02T19:48:42+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 7,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O4",
+   "strategic_reason": "Funds community coalitions that prevent youth substance use, which supports NCDHHS substance use prevention and resilience work under G3.O4.",
+   "strategic_evidence_quote": "The purpose of the DFC Support Program is to establish and strengthen collaboration to support the efforts of community coalitions working to prevent youth substance use.",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state and local governments",
+   "owning_division": "DMHDDSUS",
+   "operational_fit": 8,
+   "operational_reason": "DMHDDSUS already oversees substance use prevention, treatment, and recovery funding and could manage a community coalition-based youth substance use prevention grant through its existing provider network.",
+   "restrictions": [
+    "Eligible applicants are community-based coalitions addressing youth substance use that have not yet previously received a DFC grant",
+    "A DFC legal applicant (an organization applying on behalf of a coalition, the coalition, or the applicant coalition) must reside within the United States and/or the U.S. territories",
+    "Applicants must be a nonprofit (as defined by the IRS as a 501(c) organization); or an entity that the Administrator determines to be appropriate; or part of, or is associated with an established legally recognized domestic, public or private nonprofit organization"
+   ],
+   "major_risk": "NCDHHS is not itself a community coalition and the applicant types do not list state governments, so pursuit would depend on serving as a fiscal agent for a first-time coalition.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Strong youth substance-use prevention fit for DMHDDSUS, but requires community coalitions and state agencies are not standard applicants; pursue only as a partner/fiscal agent."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 7,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O4\",\n  \"strategic_reason\": \"Funds community coalitions that prevent youth substance use, which supports NCDHHS substance use prevention and resilience work under G3.O4.\",\n  \"strategic_evidence_quote\": \"The purpose of the DFC Support Program is to establish and strengthen collaboration to support the efforts of community coalitions working to prevent youth substance use.\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state and local governments\",\n  \"owning_division\": \"DMHDDSUS\",\n  \"operational_fit\": 8,\n  \"operational_reason\": \"DMHDDSUS already oversees substance use prevention, treatment, and recovery funding and could manage a community coalition-based youth substance use prevention grant through its existing provider network.\",\n  \"restrictions\": [\n    \"Eligible applicants are community-based coalitions addressing youth substance use that have not yet previously received a DFC grant\",\n    \"A DFC legal applicant (an organization applying on behalf of a coalition, the coalition, or the applicant coalition) must reside within the United States and/or the U.S. territories\",\n    \"Applicants must be a nonprofit (as defined by the IRS as a 501(c) organization); or an entity that the Administrator determines to be appropriate; or part of, or is associated with an established legally recognized domestic, public or private nonprofit organization\"\n  ],\n  \"major_risk\": \"NCDHHS is not itself a community coalition and the applicant types do not list state governments, so pursuit would depend on serving as a fiscal agent for a first-time coalition.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Strong youth substance-use prevention fit for DMHDDSUS, but requires community coalitions and state agencies are not standard applicants; pursue only as a partner/fiscal agent.\"\n}"
+  ]
+ }
+}

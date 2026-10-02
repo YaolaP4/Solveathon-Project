@@ -1,0 +1,28 @@
+{
+ "grant_id": "aa2857de-cd78-432b-9266-9b2919a6eb6c",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "8f7072e0059c34c4870941245ac0ea9aef53b7edcff9f2bbe481995dcc85f9e3",
+ "retrieved_at": "2026-10-02T19:29:13+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 3,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O3",
+   "strategic_reason": "Providing health and social services to veterans experiencing homelessness helps mitigate barriers to care for a population facing greater health challenges.",
+   "strategic_evidence_quote": "assist veterans experiencing homelessness by providing a wide range of employment, social, and health services",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "State, Territory, and Possession, county, city, local, special district, and Native American tribal governments and agencies, non-profit and for-profit entities, state and local workforce boards, institutions of higher education, public and tribal housing authorities are eligible to apply.",
+   "owning_division": "none",
+   "operational_fit": 2,
+   "operational_reason": "No NCDHHS division has authority for veteran employment reintegration or Stand Down events.",
+   "restrictions": [],
+   "major_risk": "Awards are capped at $7,000 to $10,000 for a one-time event in a veteran-employment domain outside NCDHHS core work.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Small one-time veteran homelessness event grant only loosely fits health access goal and sits outside any NCDHHS division's core work."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 3,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O3\",\n  \"strategic_reason\": \"Providing health and social services to veterans experiencing homelessness helps mitigate barriers to care for a population facing greater health challenges.\",\n  \"strategic_evidence_quote\": \"assist veterans experiencing homelessness by providing a wide range of employment, social, and health services\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"State, Territory, and Possession, county, city, local, special district, and Native American tribal governments and agencies, non-profit and for-profit entities, state and local workforce boards, institutions of higher education, public and tribal housing authorities are eligible to apply.\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 2,\n  \"operational_reason\": \"No NCDHHS division has authority for veteran employment reintegration or Stand Down events.\",\n  \"restrictions\": [],\n  \"major_risk\": \"Awards are capped at $7,000 to $10,000 for a one-time event in a veteran-employment domain outside NCDHHS core work.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Small one-time veteran homelessness event grant only loosely fits health access goal and sits outside any NCDHHS division's core work.\"\n}"
+  ]
+ }
+}

@@ -1,0 +1,33 @@
+{
+ "grant_id": "ac8b189e-988c-4dc5-a0cb-1dd7633bd640",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "61e3905004c655e4a1c1cefbbfec065d591de73811edbab2b40b7999c2a22f7f",
+ "retrieved_at": "2026-10-02T19:52:09+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 1,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds state animal food safety program standards and foodborne illness prevention, which is public health protection but is not named in NCDHHS's strategic objectives.",
+   "strategic_evidence_quote": "This project will strengthen and improve FDA efforts to build an integrated food safety system by building high quality state animal food regulatory programs that can promote regulatory compliance and prevent foodborne illnesses.",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "The eligibility for this opportunity is limited to State animal food safety programs meeting the following criteria:",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "Animal food and feed regulatory authority in North Carolina sits with the Department of Agriculture and Consumer Services, not with any NCDHHS division.",
+   "restrictions": [
+    "Applicants must maintain an FDA inspectional contract in good standing by completing all agreed upon inspectional work, audits, and associated compliance and regulatory activities.",
+    "Applicant organizations must have a valid 20.88 agreement with FDA prior to the time of application.",
+    "The contract must include performing comprehensive animal food inspections under 21 CFR Part 507 that is representative of the state's firm inventory and supports the FDA and state regulatory program in meeting a risk-based inspection frequency.",
+    "The contract should result in a minimum of 10% of the firm inventory regulated by the FDA being inspected for all applicable regulations."
+   ],
+   "major_risk": "NCDHHS likely cannot compete because the opportunity is limited to state animal food safety programs with existing FDA inspectional contracts and 20.88 agreements, which North Carolina operates through the Department of Agriculture and Consumer Services, not DHHS.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Funds state animal food and feed regulatory programs, which North Carolina houses in the Department of Agriculture, not NCDHHS; no division has authority, so not a fit."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 1,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds state animal food safety program standards and foodborne illness prevention, which is public health protection but is not named in NCDHHS's strategic objectives.\",\n  \"strategic_evidence_quote\": \"This project will strengthen and improve FDA efforts to build an integrated food safety system by building high quality state animal food regulatory programs that can promote regulatory compliance and prevent foodborne illnesses.\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"The eligibility for this opportunity is limited to State animal food safety programs meeting the following criteria:\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"Animal food and feed regulatory authority in North Carolina sits with the Department of Agriculture and Consumer Services, not with any NCDHHS division.\",\n  \"restrictions\": [\n    \"Applicants must maintain an FDA inspectional contract in good standing by completing all agreed upon inspectional work, audits, and associated compliance and regulatory activities.\",\n    \"Applicant organizations must have a valid 20.88 agreement with FDA prior to the time of application.\",\n    \"The contract must include performing comprehensive animal food inspections under 21 CFR Part 507 that is representative of the state's firm inventory and supports the FDA and state regulatory program in meeting a risk-based inspection frequency.\",\n    \"The contract should result in a minimum of 10% of the firm inventory regulated by the FDA being inspected for all applicable regulations.\"\n  ],\n  \"major_risk\": \"NCDHHS likely cannot compete because the opportunity is limited to state animal food safety programs with existing FDA inspectional contracts and 20.88 agreements, which North Carolina operates through the Department of Agriculture and Consumer Services, not DHHS.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Funds state animal food and feed regulatory programs, which North Carolina houses in the Department of Agriculture, not NCDHHS; no division has authority, so not a fit.\"\n}"
+  ]
+ }
+}

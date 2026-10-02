@@ -1,0 +1,28 @@
+{
+ "grant_id": "3fe27753-0c94-4aa0-b7fb-09712631f269",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "9a64978d3d549d5ae74aa0b98d53d015341c3af7a5419ba4afa572a860cdff18",
+ "retrieved_at": "2026-10-02T19:24:21+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O2",
+   "strategic_reason": "The grant funds enhanced child welfare practices to improve safety and healthy development for young children in child welfare, directly advancing child welfare reform.",
+   "strategic_evidence_quote": "support and expand use of enhanced child welfare practices in communities across the country that bring together courts, social services, and families to improve the safety, healthy development, and nurturing relationships of families with young children involved with child welfare.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "Any domestic public or private entity, including an Indian tribe or tribal organization (as those terms are defined at 25 U.S.C. 5304) (formerly cited as 25 U.S.C. 450b)) is eligible to apply.",
+   "owning_division": "DSS",
+   "operational_fit": 9,
+   "operational_reason": "DSS already owns child welfare, foster care, and county social services work and routinely partners with courts.",
+   "restrictions": [],
+   "major_risk": "Success depends on sustained court and local-team partnerships and statewide training and outcome tracking beyond DSS alone.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Supports child-welfare reform goal by funding court-partnered safety work DSS already leads."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O2\",\n  \"strategic_reason\": \"The grant funds enhanced child welfare practices to improve safety and healthy development for young children in child welfare, directly advancing child welfare reform.\",\n  \"strategic_evidence_quote\": \"support and expand use of enhanced child welfare practices in communities across the country that bring together courts, social services, and families to improve the safety, healthy development, and nurturing relationships of families with young children involved with child welfare.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"Any domestic public or private entity, including an Indian tribe or tribal organization (as those terms are defined at 25 U.S.C. 5304) (formerly cited as 25 U.S.C. 450b)) is eligible to apply.\",\n  \"owning_division\": \"DSS\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DSS already owns child welfare, foster care, and county social services work and routinely partners with courts.\",\n  \"restrictions\": [],\n  \"major_risk\": \"Success depends on sustained court and local-team partnerships and statewide training and outcome tracking beyond DSS alone.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Supports child-welfare reform goal by funding court-partnered safety work DSS already leads.\"\n}"
+  ]
+ }
+}

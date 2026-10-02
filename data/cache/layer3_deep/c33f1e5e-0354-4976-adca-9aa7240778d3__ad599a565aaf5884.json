@@ -1,0 +1,28 @@
+{
+ "grant_id": "c33f1e5e-0354-4976-adca-9aa7240778d3",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "ad599a565aaf58846f175b7c7630ced5790b5ec808f6aec66b23c8ecc92cb915",
+ "retrieved_at": "2026-10-02T19:52:11+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O4",
+   "strategic_reason": "This grant directly advances G3.O4 by funding action-oriented research to accelerate the translation of effective, evidence-based addiction prevention, treatment, and recovery interventions into routine practice.",
+   "strategic_evidence_quote": "The goal of this notice of funding opportunity (NOFO) is to address the opioid crisis and/or overdose events by supporting action-oriented research, accelerating the translation of addiction epidemiology, prevention, treatment services, and recovery research to practice.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DMHDDSUS",
+   "operational_fit": 8,
+   "operational_reason": "DMHDDSUS already coordinates North Carolina's opioid and substance use response and could administer a translational research grant with university or community research partners.",
+   "restrictions": [],
+   "major_risk": "This is a competitive NIH research mechanism, so NCDHHS would need strong research/evaluation capacity or an academic partner to be viable.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Directly aligns with G3.O4 opioid/substance use efforts; DMHDDSUS could lead with research partners to translate evidence-based prevention, treatment, and recovery into practice."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O4\",\n  \"strategic_reason\": \"This grant directly advances G3.O4 by funding action-oriented research to accelerate the translation of effective, evidence-based addiction prevention, treatment, and recovery interventions into routine practice.\",\n  \"strategic_evidence_quote\": \"The goal of this notice of funding opportunity (NOFO) is to address the opioid crisis and/or overdose events by supporting action-oriented research, accelerating the translation of addiction epidemiology, prevention, treatment services, and recovery research to practice.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DMHDDSUS\",\n  \"operational_fit\": 8,\n  \"operational_reason\": \"DMHDDSUS already coordinates North Carolina's opioid and substance use response and could administer a translational research grant with university or community research partners.\",\n  \"restrictions\": [],\n  \"major_risk\": \"This is a competitive NIH research mechanism, so NCDHHS would need strong research/evaluation capacity or an academic partner to be viable.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Directly aligns with G3.O4 opioid/substance use efforts; DMHDDSUS could lead with research partners to translate evidence-based prevention, treatment, and recovery into practice.\"\n}"
+  ]
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "grant_id": "15d7be11-e11c-4667-a918-1c4d490aaf5d",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "c4b92876cda07d6df3194dc2949f2ebd74d3f57b065395656b383d055e07eef4",
+ "retrieved_at": "2026-10-02T19:50:02+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 2,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The supplied text identifies only a broad injury prevention and control assistance listing and does not describe an activity tied to a named NCDHHS objective.",
+   "strategic_evidence_quote": "",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "States, Universities, County, Small Business, Non-Profits Organization,",
+   "owning_division": "DPH",
+   "operational_fit": 5,
+   "operational_reason": "Injury prevention and control is generally a public health function, so DPH could plausibly house it, but the posting provides no program specifics to confirm fit.",
+   "restrictions": [],
+   "major_risk": "The announcement contains no program description or funding details, only an administrative instruction, so its relevance and value cannot be assessed.",
+   "recommended_for_review": false,
+   "one_line_rationale": "No program detail or clear NCDHHS objective; broad injury-prevention listing suggests possible DPH fit but not enough to route."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 2,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The supplied text identifies only a broad injury prevention and control assistance listing and does not describe an activity tied to a named NCDHHS objective.\",\n  \"strategic_evidence_quote\": \"\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"States, Universities, County, Small Business, Non-Profits Organization,\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 5,\n  \"operational_reason\": \"Injury prevention and control is generally a public health function, so DPH could plausibly house it, but the posting provides no program specifics to confirm fit.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The announcement contains no program description or funding details, only an administrative instruction, so its relevance and value cannot be assessed.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"No program detail or clear NCDHHS objective; broad injury-prevention listing suggests possible DPH fit but not enough to route.\"\n}"
+  ]
+ }
+}

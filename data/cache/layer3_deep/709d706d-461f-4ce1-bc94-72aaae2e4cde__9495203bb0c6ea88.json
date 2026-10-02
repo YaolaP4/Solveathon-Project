@@ -1,0 +1,28 @@
+{
+ "grant_id": "709d706d-461f-4ce1-bc94-72aaae2e4cde",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "9495203bb0c6ea887c2682d4f296e8ebf3d3fd9f370464568af45b73c482dedb",
+ "retrieved_at": "2026-10-02T20:02:34+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 6,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O3",
+   "strategic_reason": "The grant funds mentored research on preventing suicide and interpersonal violence among children and adolescents, which is directly relevant to NCDHHS suicide prevention and crisis services efforts.",
+   "strategic_evidence_quote": "Research to Prevent Interpersonal Violence and Suicide Among Children and Adolescents",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DMHDDSUS",
+   "operational_fit": 3,
+   "operational_reason": "DMHDDSUS oversees suicide prevention and crisis services but does not typically administer mentored research career development awards.",
+   "restrictions": [],
+   "major_risk": "It is a mentored research scientist career development award for an individual investigator, not program or service funding, so NCDHHS would gain little direct operational capacity.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Aligns with suicide prevention research for children but is a mentored K01 career-development grant better suited to academic research institutions than NCDHHS."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 6,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O3\",\n  \"strategic_reason\": \"The grant funds mentored research on preventing suicide and interpersonal violence among children and adolescents, which is directly relevant to NCDHHS suicide prevention and crisis services efforts.\",\n  \"strategic_evidence_quote\": \"Research to Prevent Interpersonal Violence and Suicide Among Children and Adolescents\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DMHDDSUS\",\n  \"operational_fit\": 3,\n  \"operational_reason\": \"DMHDDSUS oversees suicide prevention and crisis services but does not typically administer mentored research career development awards.\",\n  \"restrictions\": [],\n  \"major_risk\": \"It is a mentored research scientist career development award for an individual investigator, not program or service funding, so NCDHHS would gain little direct operational capacity.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Aligns with suicide prevention research for children but is a mentored K01 career-development grant better suited to academic research institutions than NCDHHS.\"\n}"
+  ]
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "grant_id": "6fc36162-1e77-4f38-8ceb-82a18531940c",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "71d338b869ef0dd6bdb419096a15f27aa865266fa22514c949cfaf368b2bd9db",
+ "retrieved_at": "2026-10-02T19:27:31+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 7,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "The grant funds community-based demonstration projects to reduce chronic kidney disease disparities and address social determinants of health.",
+   "strategic_evidence_quote": "to reduce disparities in chronic kidney disease (CKD) and related risk factors",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "Eligible applicants include any private nonprofit or public entity located in a State.",
+   "owning_division": "DPH",
+   "operational_fit": 7,
+   "operational_reason": "DPH already leads chronic disease prevention, health disparities work, and community partnerships through local health departments.",
+   "restrictions": [],
+   "major_risk": "Demonstration projects are time-limited and expect sustainability after OMH support ends without guaranteed continuation funding.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Reduces CKD health disparities, advancing health access equity; DPH chronic disease prevention role fits as lead applicant."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 7,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"The grant funds community-based demonstration projects to reduce chronic kidney disease disparities and address social determinants of health.\",\n  \"strategic_evidence_quote\": \"to reduce disparities in chronic kidney disease (CKD) and related risk factors\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"Eligible applicants include any private nonprofit or public entity located in a State.\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 7,\n  \"operational_reason\": \"DPH already leads chronic disease prevention, health disparities work, and community partnerships through local health departments.\",\n  \"restrictions\": [],\n  \"major_risk\": \"Demonstration projects are time-limited and expect sustainability after OMH support ends without guaranteed continuation funding.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Reduces CKD health disparities, advancing health access equity; DPH chronic disease prevention role fits as lead applicant.\"\n}"
+  ]
+ }
+}

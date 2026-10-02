@@ -1,0 +1,33 @@
+{
+ "grant_id": "224cb740-46ae-4eab-bdb5-d858638ee591",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "56c129466d715df12413bc39645e28b3b0d9fd3444e6b9aabb48475beb746d45",
+ "retrieved_at": "2026-10-02T20:00:50+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 1,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds fair housing education and outreach, which does not directly advance any named NCDHHS health or human services objective.",
+   "strategic_evidence_quote": "educate the public, housing providers and other stakeholders about their rights and obligations under provisions of fair housing laws",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "Other agencies of State or local governments",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "No NCDHHS division has authority or expertise over fair housing education, enforcement, or housing discrimination programs.",
+   "restrictions": [
+    "Under a cooperative agreement, HUD will exercise the right to approve, and have substantial involvement in, all proposed deliverables, as well as the Work Plan or Statement of Work (SOW).",
+    "For grants and cooperative agreements, HUD will conduct monitoring reviews, request quarterly reports, and approve all proposed deliverables as documented in the applicant's Work Plan or SOW.",
+    "your organization must have at least 5 years of experience as an advertising, media or public relations organization with strong understanding of adult learning theory, instructional design, and design thinking",
+    "national funds are awarded under cooperative agreements managed by Headquarters since the awards have a nationwide impact and therefore require more complex and frequent oversight as well as Departmental approval of deliverables."
+   ],
+   "major_risk": "NCDHHS lacks fair housing authority and expertise, so the grant would require building new capacity for a program outside its mission while under substantial HUD oversight.",
+   "recommended_for_review": false,
+   "one_line_rationale": "HUD fair housing education/outreach is outside NCDHHS's health and human services authority and no division has fair housing expertise, despite state-agency eligibility; not a good fit."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 1,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds fair housing education and outreach, which does not directly advance any named NCDHHS health or human services objective.\",\n  \"strategic_evidence_quote\": \"educate the public, housing providers and other stakeholders about their rights and obligations under provisions of fair housing laws\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"Other agencies of State or local governments\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"No NCDHHS division has authority or expertise over fair housing education, enforcement, or housing discrimination programs.\",\n  \"restrictions\": [\n    \"Under a cooperative agreement, HUD will exercise the right to approve, and have substantial involvement in, all proposed deliverables, as well as the Work Plan or Statement of Work (SOW).\",\n    \"For grants and cooperative agreements, HUD will conduct monitoring reviews, request quarterly reports, and approve all proposed deliverables as documented in the applicant's Work Plan or SOW.\",\n    \"your organization must have at least 5 years of experience as an advertising, media or public relations organization with strong understanding of adult learning theory, instructional design, and design thinking\",\n    \"national funds are awarded under cooperative agreements managed by Headquarters since the awards have a nationwide impact and therefore require more complex and frequent oversight as well as Departmental approval of deliverables.\"\n  ],\n  \"major_risk\": \"NCDHHS lacks fair housing authority and expertise, so the grant would require building new capacity for a program outside its mission while under substantial HUD oversight.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"HUD fair housing education/outreach is outside NCDHHS's health and human services authority and no division has fair housing expertise, despite state-agency eligibility; not a good fit.\"\n}"
+  ]
+ }
+}

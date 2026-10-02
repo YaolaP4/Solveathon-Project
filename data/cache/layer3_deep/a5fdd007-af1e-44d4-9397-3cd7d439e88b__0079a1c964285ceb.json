@@ -1,0 +1,28 @@
+{
+ "grant_id": "a5fdd007-af1e-44d4-9397-3cd7d439e88b",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "0079a1c964285cebaf1605fc3716b90bb58a524655e90b29248ecfac6cd419cf",
+ "retrieved_at": "2026-10-02T20:02:59+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 4,
+   "matched_goal": "G4",
+   "matched_objective": "G4.O4",
+   "strategic_reason": "The grant funds technology-enhanced health and safety training for HAZMAT and emergency-response workers, which partially advances support for the public health preparedness workforce.",
+   "strategic_evidence_quote": "development of Technology-Enhanced Training Products for the health and safety training of hazardous materials (HAZMAT) workers; waste treatment personnel; skilled support personnel associated with an emergency/disaster; emergency responders in biological hazard response, infectious disease response, and medical waste cleanup; emergency responders in disasters; and worker resiliency training.",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "encourages Small Business Innovation Research (SBIR) grant applications from small business concerns (SBCs)",
+   "owning_division": "DPH",
+   "operational_fit": 4,
+   "operational_reason": "DPH's public health preparedness, environmental health, and local health department role is adjacent to emergency-response training, but the state would not lead an SBIR award.",
+   "restrictions": [],
+   "major_risk": "NCDHHS is not an eligible SBIR applicant, so the grant's value depends on finding a North Carolina small business partner rather than direct state funding.",
+   "recommended_for_review": false,
+   "one_line_rationale": "NCDHHS is not eligible for this SBIR small-business grant; it could only be relevant as a partner, not an application owner."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 4,\n  \"matched_goal\": \"G4\",\n  \"matched_objective\": \"G4.O4\",\n  \"strategic_reason\": \"The grant funds technology-enhanced health and safety training for HAZMAT and emergency-response workers, which partially advances support for the public health preparedness workforce.\",\n  \"strategic_evidence_quote\": \"development of Technology-Enhanced Training Products for the health and safety training of hazardous materials (HAZMAT) workers; waste treatment personnel; skilled support personnel associated with an emergency/disaster; emergency responders in biological hazard response, infectious disease response, and medical waste cleanup; emergency responders in disasters; and worker resiliency training.\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"encourages Small Business Innovation Research (SBIR) grant applications from small business concerns (SBCs)\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 4,\n  \"operational_reason\": \"DPH's public health preparedness, environmental health, and local health department role is adjacent to emergency-response training, but the state would not lead an SBIR award.\",\n  \"restrictions\": [],\n  \"major_risk\": \"NCDHHS is not an eligible SBIR applicant, so the grant's value depends on finding a North Carolina small business partner rather than direct state funding.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"NCDHHS is not eligible for this SBIR small-business grant; it could only be relevant as a partner, not an application owner.\"\n}"
+  ]
+ }
+}

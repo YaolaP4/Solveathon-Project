@@ -1,0 +1,33 @@
+{
+ "grant_id": "06024144-a58a-42d8-8813-75357d9bb7fe",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "68647654bc7d33c334ef0dc60ba716b367585fb335d82b3d28b759b7e9dfb36d",
+ "retrieved_at": "2026-10-02T19:49:16+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O4",
+   "strategic_reason": "The project directly funds integration of HIV care with women's health services, including prenatal and postpartum care, advancing NCDHHS's objective to improve women's health and birth outcomes.",
+   "strategic_evidence_quote": "Integrate HIV care with broader women's health services",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 8,
+   "operational_reason": "DPH already operates HIV prevention and surveillance and maternal and child health programs and has the local health department and community partnerships needed to convene the collaborative.",
+   "restrictions": [
+    "Requires formal Clinic and Community Collaboratives with clinics, federally qualified health centers, community-based organizations, and local and state health departments",
+    "Requires participation in a learning collaborative",
+    "Services must be culturally and linguistically responsive",
+    "Geographic focus on Southern jurisdictions with high HIV disease burden"
+   ],
+   "major_risk": "The cooperative agreement requires substantial multi-sector coordination and participation in a learning collaborative, which may be administratively heavy for the available award.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Fits DPH's HIV prevention and maternal health roles and directly funds integrated HIV and women's health services, advancing G2.O4; review as lead applicant."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O4\",\n  \"strategic_reason\": \"The project directly funds integration of HIV care with women's health services, including prenatal and postpartum care, advancing NCDHHS's objective to improve women's health and birth outcomes.\",\n  \"strategic_evidence_quote\": \"Integrate HIV care with broader women's health services\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 8,\n  \"operational_reason\": \"DPH already operates HIV prevention and surveillance and maternal and child health programs and has the local health department and community partnerships needed to convene the collaborative.\",\n  \"restrictions\": [\n    \"Requires formal Clinic and Community Collaboratives with clinics, federally qualified health centers, community-based organizations, and local and state health departments\",\n    \"Requires participation in a learning collaborative\",\n    \"Services must be culturally and linguistically responsive\",\n    \"Geographic focus on Southern jurisdictions with high HIV disease burden\"\n  ],\n  \"major_risk\": \"The cooperative agreement requires substantial multi-sector coordination and participation in a learning collaborative, which may be administratively heavy for the available award.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Fits DPH's HIV prevention and maternal health roles and directly funds integrated HIV and women's health services, advancing G2.O4; review as lead applicant.\"\n}"
+  ]
+ }
+}

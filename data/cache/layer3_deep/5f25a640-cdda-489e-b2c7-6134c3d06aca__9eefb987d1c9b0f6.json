@@ -1,0 +1,28 @@
+{
+ "grant_id": "5f25a640-cdda-489e-b2c7-6134c3d06aca",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "9eefb987d1c9b0f6ffc7900d45d120c7f0d03b01598e2e779e5025775b7ef893",
+ "retrieved_at": "2026-10-02T19:50:25+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 0,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The supplied summary and title do not describe the funded activity, so no NCDHHS objective can be credibly matched.",
+   "strategic_evidence_quote": "",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "States",
+   "owning_division": "DPH",
+   "operational_fit": 6,
+   "operational_reason": "The assistance listing points to injury prevention and control, which falls within DPH's public health prevention and epidemiology role, though the announcement provides no project scope to confirm.",
+   "restrictions": [],
+   "major_risk": "The announcement contains almost no programmatic detail, so scope, deliverables, and alignment cannot be validated before committing staff time.",
+   "recommended_for_review": false,
+   "one_line_rationale": "States are eligible and CDC injury prevention generally fits DPH, but this posting lacks enough project description to justify review."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 0,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The supplied summary and title do not describe the funded activity, so no NCDHHS objective can be credibly matched.\",\n  \"strategic_evidence_quote\": \"\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"States\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 6,\n  \"operational_reason\": \"The assistance listing points to injury prevention and control, which falls within DPH's public health prevention and epidemiology role, though the announcement provides no project scope to confirm.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The announcement contains almost no programmatic detail, so scope, deliverables, and alignment cannot be validated before committing staff time.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"States are eligible and CDC injury prevention generally fits DPH, but this posting lacks enough project description to justify review.\"\n}"
+  ]
+ }
+}

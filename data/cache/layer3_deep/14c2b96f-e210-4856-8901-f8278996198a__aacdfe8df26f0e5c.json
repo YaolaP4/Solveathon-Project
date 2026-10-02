@@ -1,0 +1,28 @@
+{
+ "grant_id": "14c2b96f-e210-4856-8901-f8278996198a",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "aacdfe8df26f0e5ca1710c1401ddf6e80eaf7f3547edff870cc244596f211383",
+ "retrieved_at": "2026-10-02T19:50:06+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 4,
+   "matched_goal": "G5",
+   "matched_objective": "G5.O1",
+   "strategic_reason": "The grant funds a structured surveillance system that produces antimicrobial resistance data for public health decisions, supporting data-driven decision-making.",
+   "strategic_evidence_quote": "enhancing, strengthening and sustaining antibiotic resistance monitoring in retail food specimens within the NARMS program",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 8,
+   "operational_reason": "DPH already operates statewide disease surveillance, epidemiology, and laboratory services, so it could run retail food antibiotic resistance monitoring as an extension of its existing laboratory and epidemiology work.",
+   "restrictions": [],
+   "major_risk": "It is a narrow, federally prescribed sampling and reporting program that may draw DPH laboratory and epidemiology capacity without directly advancing a named NCDHHS strategic objective.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Fits DPH's existing disease surveillance and laboratory role in tracking antibiotic-resistant foodborne pathogens, though it does not map cleanly to a named strategic objective."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 4,\n  \"matched_goal\": \"G5\",\n  \"matched_objective\": \"G5.O1\",\n  \"strategic_reason\": \"The grant funds a structured surveillance system that produces antimicrobial resistance data for public health decisions, supporting data-driven decision-making.\",\n  \"strategic_evidence_quote\": \"enhancing, strengthening and sustaining antibiotic resistance monitoring in retail food specimens within the NARMS program\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 8,\n  \"operational_reason\": \"DPH already operates statewide disease surveillance, epidemiology, and laboratory services, so it could run retail food antibiotic resistance monitoring as an extension of its existing laboratory and epidemiology work.\",\n  \"restrictions\": [],\n  \"major_risk\": \"It is a narrow, federally prescribed sampling and reporting program that may draw DPH laboratory and epidemiology capacity without directly advancing a named NCDHHS strategic objective.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Fits DPH's existing disease surveillance and laboratory role in tracking antibiotic-resistant foodborne pathogens, though it does not map cleanly to a named strategic objective.\"\n}"
+  ]
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "grant_id": "13af439f-7405-4592-9a1e-18c4f7db7622",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "138a8a9c83f84a69d1d5da8f9607d8213d371a324e62533a443e887f381de0f3",
+ "retrieved_at": "2026-10-02T19:23:43+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 6,
+   "matched_goal": "G5",
+   "matched_objective": "G5.O1",
+   "strategic_reason": "The program builds state public-health surveillance capacity using integrated health datasets, directly supporting data-driven decision-making.",
+   "strategic_evidence_quote": "develop or expand state-level OSH surveillance capacity and infrastructure",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 8,
+   "operational_reason": "DPH already leads disease surveillance, epidemiology and environmental health and routinely uses hospital, laboratory and vital-records data.",
+   "restrictions": [],
+   "major_risk": "Requires sustained specialized occupational-health expertise and surveillance infrastructure that may strain DPH capacity beyond core priorities.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Builds occupational surveillance data capacity DPH could lead, supporting operational excellence, but adds niche ongoing workload."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 6,\n  \"matched_goal\": \"G5\",\n  \"matched_objective\": \"G5.O1\",\n  \"strategic_reason\": \"The program builds state public-health surveillance capacity using integrated health datasets, directly supporting data-driven decision-making.\",\n  \"strategic_evidence_quote\": \"develop or expand state-level OSH surveillance capacity and infrastructure\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 8,\n  \"operational_reason\": \"DPH already leads disease surveillance, epidemiology and environmental health and routinely uses hospital, laboratory and vital-records data.\",\n  \"restrictions\": [],\n  \"major_risk\": \"Requires sustained specialized occupational-health expertise and surveillance infrastructure that may strain DPH capacity beyond core priorities.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Builds occupational surveillance data capacity DPH could lead, supporting operational excellence, but adds niche ongoing workload.\"\n}"
+  ]
+ }
+}

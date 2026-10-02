@@ -1,0 +1,28 @@
+{
+ "grant_id": "8b2aa3e2-733a-44d8-876e-56df42678c9a",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "0dd314c80db9fdf24cec65e47f0e7a47da761df0b85f0416c9fe28ca6eb3fab6",
+ "retrieved_at": "2026-10-02T19:49:33+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O3",
+   "strategic_reason": "The grant funds technical assistance to expand nutrition services in HRSA health centers, which strengthens underserved primary care access and reduces health disparities.",
+   "strategic_evidence_quote": "region-specific technical assistance (TA) on expanding high-quality nutrition services to the Health Resources and Services Administration's (HRSA) Health Center Program (H80) award recipients and look-alikes (health centers)",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "ORH",
+   "operational_fit": 8,
+   "operational_reason": "ORH already supports safety-net clinics and rural and underserved primary care, so hosting a nutrition technical assistance hub for HRSA health centers fits its existing provider-support role.",
+   "restrictions": [],
+   "major_risk": "The grant funds technical assistance rather than direct services, and its regional hub structure may require serving health centers beyond North Carolina, which could stretch ORH's current capacity.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Aligns with G1 health access by funding technical assistance to safety-net health centers on nutrition services, fitting ORH's clinic-support role."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O3\",\n  \"strategic_reason\": \"The grant funds technical assistance to expand nutrition services in HRSA health centers, which strengthens underserved primary care access and reduces health disparities.\",\n  \"strategic_evidence_quote\": \"region-specific technical assistance (TA) on expanding high-quality nutrition services to the Health Resources and Services Administration's (HRSA) Health Center Program (H80) award recipients and look-alikes (health centers)\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"ORH\",\n  \"operational_fit\": 8,\n  \"operational_reason\": \"ORH already supports safety-net clinics and rural and underserved primary care, so hosting a nutrition technical assistance hub for HRSA health centers fits its existing provider-support role.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The grant funds technical assistance rather than direct services, and its regional hub structure may require serving health centers beyond North Carolina, which could stretch ORH's current capacity.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Aligns with G1 health access by funding technical assistance to safety-net health centers on nutrition services, fitting ORH's clinic-support role.\"\n}"
+  ]
+ }
+}

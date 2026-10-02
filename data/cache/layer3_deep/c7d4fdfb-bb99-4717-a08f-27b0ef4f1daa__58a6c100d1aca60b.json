@@ -1,0 +1,30 @@
+{
+ "grant_id": "c7d4fdfb-bb99-4717-a08f-27b0ef4f1daa",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "58a6c100d1aca60b592b9423e809466afb2071ef76e02f8bde282ad2c875d9de",
+ "retrieved_at": "2026-10-02T20:00:03+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O3",
+   "strategic_reason": "The grant funds academic medical centers to integrate telehealth technology into chronic care models, directly advancing telehealth as a way to reduce barriers to health services.",
+   "strategic_evidence_quote": "integrate innovative telehealth technologies into the full spectrum of services included in chronic care models",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "Academic Medical Centers.",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "No NCDHHS division is an academic medical center, so the agency cannot realistically serve as the applicant for this cooperative agreement.",
+   "restrictions": [
+    "Eligible applicants are limited to academic medical centers."
+   ],
+   "major_risk": "NCDHHS is not an academic medical center and is therefore ineligible to apply as the lead applicant.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Eligibility is limited to academic medical centers, so NCDHHS cannot apply despite the program's clear alignment with telehealth access goals."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O3\",\n  \"strategic_reason\": \"The grant funds academic medical centers to integrate telehealth technology into chronic care models, directly advancing telehealth as a way to reduce barriers to health services.\",\n  \"strategic_evidence_quote\": \"integrate innovative telehealth technologies into the full spectrum of services included in chronic care models\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"Academic Medical Centers.\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"No NCDHHS division is an academic medical center, so the agency cannot realistically serve as the applicant for this cooperative agreement.\",\n  \"restrictions\": [\n    \"Eligible applicants are limited to academic medical centers.\"\n  ],\n  \"major_risk\": \"NCDHHS is not an academic medical center and is therefore ineligible to apply as the lead applicant.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Eligibility is limited to academic medical centers, so NCDHHS cannot apply despite the program's clear alignment with telehealth access goals.\"\n}"
+  ]
+ }
+}

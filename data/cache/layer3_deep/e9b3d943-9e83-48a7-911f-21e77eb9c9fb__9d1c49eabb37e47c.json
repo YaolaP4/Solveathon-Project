@@ -1,0 +1,28 @@
+{
+ "grant_id": "e9b3d943-9e83-48a7-911f-21e77eb9c9fb",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "9d1c49eabb37e47ca2a68e7ed1c720827956a2ea60304b7c5fe371f8d5c802db",
+ "retrieved_at": "2026-10-02T19:58:23+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 7,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "The grant funds culturally appropriate intervention research to reduce health disparities in Native American populations, directly supporting NCDHHS's health-disparities reduction goal.",
+   "strategic_evidence_quote": "support research on interventions to improve health in Native American (NA) populations.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 5,
+   "operational_reason": "DPH has disease prevention, chronic disease, and epidemiology functions that fit the topic, but leading an NIH R34 would require added research infrastructure and tribal engagement.",
+   "restrictions": [],
+   "major_risk": "NCDHHS may lack the academic research infrastructure and established tribal partnerships needed to compete for an NIH intervention research grant.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Aligns with NCDHHS's health-disparities goal through Native American health intervention research; DPH could pursue only with research and tribal partnerships."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 7,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"The grant funds culturally appropriate intervention research to reduce health disparities in Native American populations, directly supporting NCDHHS's health-disparities reduction goal.\",\n  \"strategic_evidence_quote\": \"support research on interventions to improve health in Native American (NA) populations.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 5,\n  \"operational_reason\": \"DPH has disease prevention, chronic disease, and epidemiology functions that fit the topic, but leading an NIH R34 would require added research infrastructure and tribal engagement.\",\n  \"restrictions\": [],\n  \"major_risk\": \"NCDHHS may lack the academic research infrastructure and established tribal partnerships needed to compete for an NIH intervention research grant.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Aligns with NCDHHS's health-disparities goal through Native American health intervention research; DPH could pursue only with research and tribal partnerships.\"\n}"
+  ]
+ }
+}

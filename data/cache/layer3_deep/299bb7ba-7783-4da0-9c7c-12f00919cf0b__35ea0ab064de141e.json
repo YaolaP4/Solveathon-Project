@@ -1,0 +1,32 @@
+{
+ "grant_id": "299bb7ba-7783-4da0-9c7c-12f00919cf0b",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "35ea0ab064de141e31d01fa03e3cc1c102b5203d5f882647181d875167dcfdea",
+ "retrieved_at": "2026-10-02T19:48:35+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "The grant funds implementation science to bring HIV prevention, diagnosis, treatment, and outbreak response to communities disproportionately impacted by HIV, directly supporting work to reduce health disparities and increase health access.",
+   "strategic_evidence_quote": "Projects will leverage research-community collaborations to bring evidence-based advances in HIV prevention, diagnosis, treatment, and cluster outbreak response to communities disproportionately impacted by HIV.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 8,
+   "operational_reason": "DPH already runs HIV/STD prevention, surveillance, and care programs and regularly partners with community and academic organizations, so this research grant is an extension of existing public health authority and work.",
+   "restrictions": [
+    "Requires research-community collaborations",
+    "Requires deployment and evaluation at multiple geographic locations or settings",
+    "Requires partnerships with local, state, and federal public health partners"
+   ],
+   "major_risk": "As an NIH implementation science grant, it funds research and evaluation rather than direct services, and NCDHHS may need a strong academic research partner to compete successfully.",
+   "recommended_for_review": true,
+   "one_line_rationale": "DPH could extend its HIV prevention and surveillance work with implementation research, though it may need academic partners."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"The grant funds implementation science to bring HIV prevention, diagnosis, treatment, and outbreak response to communities disproportionately impacted by HIV, directly supporting work to reduce health disparities and increase health access.\",\n  \"strategic_evidence_quote\": \"Projects will leverage research-community collaborations to bring evidence-based advances in HIV prevention, diagnosis, treatment, and cluster outbreak response to communities disproportionately impacted by HIV.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 8,\n  \"operational_reason\": \"DPH already runs HIV/STD prevention, surveillance, and care programs and regularly partners with community and academic organizations, so this research grant is an extension of existing public health authority and work.\",\n  \"restrictions\": [\n    \"Requires research-community collaborations\",\n    \"Requires deployment and evaluation at multiple geographic locations or settings\",\n    \"Requires partnerships with local, state, and federal public health partners\"\n  ],\n  \"major_risk\": \"As an NIH implementation science grant, it funds research and evaluation rather than direct services, and NCDHHS may need a strong academic research partner to compete successfully.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"DPH could extend its HIV prevention and surveillance work with implementation research, though it may need academic partners.\"\n}"
+  ]
+ }
+}

@@ -1,0 +1,32 @@
+{
+ "grant_id": "43049089-8c2c-4794-a747-3c2b2ca6ca79",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "9eb635c4f1848f95ded835fb9e2f30045b707ad743f539926571659a41919474",
+ "retrieved_at": "2026-10-02T19:55:03+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 3,
+   "matched_goal": "G1",
+   "matched_objective": "none",
+   "strategic_reason": "The grant's service coordination could help low-income HUD-assisted residents connect to health and social supports, but it does not directly fund a named NCDHHS health objective.",
+   "strategic_evidence_quote": "service coordination and limited direct services for residents of HUD-assisted housing",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "Public housing authority (PHA) or Indian housing authority",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "No NCDHHS division is an eligible applicant or operates HUD-assisted housing service coordination, so the program is outside the Department's authority.",
+   "restrictions": [
+    "Cost-reimbursable grant requires documented reimbursable expenditures",
+    "Funding is one-time assistance for urgent needs caused by unanticipated emergencies",
+    "Targets only residents of HUD-assisted housing"
+   ],
+   "major_risk": "NCDHHS is not an eligible applicant, so the Department cannot directly pursue or control the funds even if the goals overlap.",
+   "recommended_for_review": false,
+   "one_line_rationale": "HUD ROSS Rapid Response funding goes to housing authorities, nonprofits, tribes, and multifamily owners; NCDHHS as a state agency is not an eligible applicant."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 3,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant's service coordination could help low-income HUD-assisted residents connect to health and social supports, but it does not directly fund a named NCDHHS health objective.\",\n  \"strategic_evidence_quote\": \"service coordination and limited direct services for residents of HUD-assisted housing\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"Public housing authority (PHA) or Indian housing authority\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"No NCDHHS division is an eligible applicant or operates HUD-assisted housing service coordination, so the program is outside the Department's authority.\",\n  \"restrictions\": [\n    \"Cost-reimbursable grant requires documented reimbursable expenditures\",\n    \"Funding is one-time assistance for urgent needs caused by unanticipated emergencies\",\n    \"Targets only residents of HUD-assisted housing\"\n  ],\n  \"major_risk\": \"NCDHHS is not an eligible applicant, so the Department cannot directly pursue or control the funds even if the goals overlap.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"HUD ROSS Rapid Response funding goes to housing authorities, nonprofits, tribes, and multifamily owners; NCDHHS as a state agency is not an eligible applicant.\"\n}"
+  ]
+ }
+}

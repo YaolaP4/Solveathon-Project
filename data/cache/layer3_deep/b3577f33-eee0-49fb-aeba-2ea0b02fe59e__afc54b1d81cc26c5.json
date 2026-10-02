@@ -1,0 +1,31 @@
+{
+ "grant_id": "b3577f33-eee0-49fb-aeba-2ea0b02fe59e",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "afc54b1d81cc26c58a9bd993d7b58a0026dc0c355f56eeeba196d1f3d7c3c8c3",
+ "retrieved_at": "2026-10-02T19:48:38+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G5",
+   "matched_objective": "G5.O1",
+   "strategic_reason": "The grant funds standardized pediatric disease surveillance and generates data to inform diagnosis, treatment, prevention product recommendations, and public health strategies, directly supporting data-driven decision-making.",
+   "strategic_evidence_quote": "The purpose of this Notice of Funding Opportunity (NOFO) is to support a network of U.S. institutions that will conduct standardized, prospective, active surveillance of pediatric acute respiratory illness (ARI) and acute gastroenteritis (AGE).",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 10,
+   "operational_reason": "DPH already houses communicable disease surveillance, epidemiology, immunization, and maternal and child health programs, so this pediatric surveillance cooperative agreement is a natural extension of its existing public health authority.",
+   "restrictions": [
+    "Must apply for Component A (Core Component)",
+    "Must follow the standardized protocol established by CDC"
+   ],
+   "major_risk": "The surveillance platform may require substantial data-sharing, specimen collection, and hospital/emergency department partnerships that NCDHHS would need to establish or expand beyond its current systems.",
+   "recommended_for_review": true,
+   "one_line_rationale": "CDC-funded pediatric infectious disease surveillance fits DPH's disease surveillance and immunization role and supports data-driven prevention decisions under G5.O1."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G5\",\n  \"matched_objective\": \"G5.O1\",\n  \"strategic_reason\": \"The grant funds standardized pediatric disease surveillance and generates data to inform diagnosis, treatment, prevention product recommendations, and public health strategies, directly supporting data-driven decision-making.\",\n  \"strategic_evidence_quote\": \"The purpose of this Notice of Funding Opportunity (NOFO) is to support a network of U.S. institutions that will conduct standardized, prospective, active surveillance of pediatric acute respiratory illness (ARI) and acute gastroenteritis (AGE).\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 10,\n  \"operational_reason\": \"DPH already houses communicable disease surveillance, epidemiology, immunization, and maternal and child health programs, so this pediatric surveillance cooperative agreement is a natural extension of its existing public health authority.\",\n  \"restrictions\": [\n    \"Must apply for Component A (Core Component)\",\n    \"Must follow the standardized protocol established by CDC\"\n  ],\n  \"major_risk\": \"The surveillance platform may require substantial data-sharing, specimen collection, and hospital/emergency department partnerships that NCDHHS would need to establish or expand beyond its current systems.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"CDC-funded pediatric infectious disease surveillance fits DPH's disease surveillance and immunization role and supports data-driven prevention decisions under G5.O1.\"\n}"
+  ]
+ }
+}

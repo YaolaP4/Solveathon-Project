@@ -1,0 +1,30 @@
+{
+ "grant_id": "1835f8f5-45df-47b4-87b6-eebed0b0f0b7",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "64d6f134cfd9a6f1271625628708f5f50183eee4eba24a0ad866412bcd011a41",
+ "retrieved_at": "2026-10-02T19:57:26+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 6,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O2",
+   "strategic_reason": "The project funds EHR-linked dashboards and quality metrics to evaluate whole-person outcomes, aligning with G1.O2's focus on using data, metrics, and dashboards to track health disparities and outcomes.",
+   "strategic_evidence_quote": "Applicants and their partners will build and deploy user-centered dashboards, validate their effectiveness in real-world settings, and address implementation barriers (people, processes, technology).",
+   "applicant_role": "unclear",
+   "eligibility_evidence_quote": "",
+   "owning_division": "DPH",
+   "operational_fit": 5,
+   "operational_reason": "DPH already manages chronic disease prevention and health data systems, but it is not structured to lead a national research consortium of EHR vendors and academic clinicians.",
+   "restrictions": [
+    "Requires a national consortium of researchers, clinicians, and electronic health record (EHR) vendors."
+   ],
+   "major_risk": "This is only a pre-application notice and the U24 cooperative agreement appears aimed at academic and EHR vendor consortia, so NCDHHS may not be able to lead or be eligible.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Fits data and dashboards for chronic disease outcomes, but this is not yet an open opportunity and state agency eligibility is unclear."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 6,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O2\",\n  \"strategic_reason\": \"The project funds EHR-linked dashboards and quality metrics to evaluate whole-person outcomes, aligning with G1.O2's focus on using data, metrics, and dashboards to track health disparities and outcomes.\",\n  \"strategic_evidence_quote\": \"Applicants and their partners will build and deploy user-centered dashboards, validate their effectiveness in real-world settings, and address implementation barriers (people, processes, technology).\",\n  \"applicant_role\": \"unclear\",\n  \"eligibility_evidence_quote\": \"\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 5,\n  \"operational_reason\": \"DPH already manages chronic disease prevention and health data systems, but it is not structured to lead a national research consortium of EHR vendors and academic clinicians.\",\n  \"restrictions\": [\n    \"Requires a national consortium of researchers, clinicians, and electronic health record (EHR) vendors.\"\n  ],\n  \"major_risk\": \"This is only a pre-application notice and the U24 cooperative agreement appears aimed at academic and EHR vendor consortia, so NCDHHS may not be able to lead or be eligible.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Fits data and dashboards for chronic disease outcomes, but this is not yet an open opportunity and state agency eligibility is unclear.\"\n}"
+  ]
+ }
+}

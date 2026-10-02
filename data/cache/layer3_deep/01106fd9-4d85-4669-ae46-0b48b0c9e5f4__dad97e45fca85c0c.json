@@ -1,0 +1,28 @@
+{
+ "grant_id": "01106fd9-4d85-4669-ae46-0b48b0c9e5f4",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "dad97e45fca85c0c40e3870e886c8f1373bba38dda5e86c5de9bee2305e6e7bc",
+ "retrieved_at": "2026-10-02T19:54:20+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 7,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O3",
+   "strategic_reason": "The grant funds cold storage infrastructure for organizations that provide emergency nutrition assistance to low-income people, which advances food security for children and families.",
+   "strategic_evidence_quote": "These equipment investments will be made through subawards to food banks, faith-based organizations, and other public or private nonprofit organizations that provide nutrition assistance, such as prepared meals or food for use at home, to people with low-income or challenging financial circumstances.",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "nonprofits_non_higher_education_with_501c3",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "The eligible applicant type is limited to 501(c)(3) nonprofit organizations, so no NCDHHS division can serve as the lead applicant or recipient under this grant.",
+   "restrictions": [],
+   "major_risk": "NCDHHS is not an eligible applicant, so the agency would only benefit indirectly if a North Carolina nonprofit applied and chose to partner with the Department.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Aligned with G2.O3 food security, but NCDHHS cannot apply because eligible applicants are limited to 501(c)(3) nonprofits."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 7,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O3\",\n  \"strategic_reason\": \"The grant funds cold storage infrastructure for organizations that provide emergency nutrition assistance to low-income people, which advances food security for children and families.\",\n  \"strategic_evidence_quote\": \"These equipment investments will be made through subawards to food banks, faith-based organizations, and other public or private nonprofit organizations that provide nutrition assistance, such as prepared meals or food for use at home, to people with low-income or challenging financial circumstances.\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"nonprofits_non_higher_education_with_501c3\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"The eligible applicant type is limited to 501(c)(3) nonprofit organizations, so no NCDHHS division can serve as the lead applicant or recipient under this grant.\",\n  \"restrictions\": [],\n  \"major_risk\": \"NCDHHS is not an eligible applicant, so the agency would only benefit indirectly if a North Carolina nonprofit applied and chose to partner with the Department.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Aligned with G2.O3 food security, but NCDHHS cannot apply because eligible applicants are limited to 501(c)(3) nonprofits.\"\n}"
+  ]
+ }
+}

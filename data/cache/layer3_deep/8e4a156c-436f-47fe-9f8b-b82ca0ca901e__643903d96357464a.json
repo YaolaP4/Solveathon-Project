@@ -1,0 +1,30 @@
+{
+ "grant_id": "8e4a156c-436f-47fe-9f8b-b82ca0ca901e",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "643903d96357464aab50c0e18a20c3366b644fb9b81a2d1ecbd4e657faf1e181",
+ "retrieved_at": "2026-10-02T20:01:42+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 0,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds veterinary diagnostic laboratory capacity, animal food issues, and antimicrobial resistance, which does not advance any NCDHHS human-services strategic objective.",
+   "strategic_evidence_quote": "fund veterinary diagnostic laboratories in the Vet-LIRN network for grants associated with projects and equipment",
+   "applicant_role": "unclear",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "none",
+   "operational_fit": 1,
+   "operational_reason": "No NCDHHS division operates a veterinary diagnostic laboratory or has an animal-food testing mission, so the program sits outside the Department's existing roles.",
+   "restrictions": [
+    "Limited to veterinary diagnostic laboratories in the Vet-LIRN network."
+   ],
+   "major_risk": "Even though state governments are listed as eligible, NCDHHS likely lacks a veterinary diagnostic laboratory in the Vet-LIRN network, so an application would be misaligned and unlikely to be competitive.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Funds veterinary diagnostic lab equipment and animal-food/antimicrobial-resistance work; no NCDHHS division operates a veterinary diagnostic lab, so it does not fit agency objectives."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 0,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds veterinary diagnostic laboratory capacity, animal food issues, and antimicrobial resistance, which does not advance any NCDHHS human-services strategic objective.\",\n  \"strategic_evidence_quote\": \"fund veterinary diagnostic laboratories in the Vet-LIRN network for grants associated with projects and equipment\",\n  \"applicant_role\": \"unclear\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 1,\n  \"operational_reason\": \"No NCDHHS division operates a veterinary diagnostic laboratory or has an animal-food testing mission, so the program sits outside the Department's existing roles.\",\n  \"restrictions\": [\"Limited to veterinary diagnostic laboratories in the Vet-LIRN network.\"],\n  \"major_risk\": \"Even though state governments are listed as eligible, NCDHHS likely lacks a veterinary diagnostic laboratory in the Vet-LIRN network, so an application would be misaligned and unlikely to be competitive.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Funds veterinary diagnostic lab equipment and animal-food/antimicrobial-resistance work; no NCDHHS division operates a veterinary diagnostic lab, so it does not fit agency objectives.\"\n}"
+  ]
+ }
+}

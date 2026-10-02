@@ -1,0 +1,28 @@
+{
+ "grant_id": "5f3dd026-e320-4834-a0fc-86d17021a346",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "20399f3460082401d71b54ae516cfbf249fc804bc4db4f0a80db96b0f7ea8ebd",
+ "retrieved_at": "2026-10-02T19:25:56+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O4",
+   "strategic_reason": "The AIM quality-improvement initiative to make birth safer and improve maternal health directly advances improving women's health and birth outcomes.",
+   "strategic_evidence_quote": "AIM is a quality improvement initiative to support best practices that make birth safer, improve maternal health outcomes, and save lives.",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "Eligible applicants include any domestic public or private entity.",
+   "owning_division": "DPH",
+   "operational_fit": 3,
+   "operational_reason": "DPH has maternal-health expertise but does not operate as a national technical assistance provider to all states and facilities.",
+   "restrictions": [],
+   "major_risk": "This funds a single national center to support all states, territories, tribal communities and facilities, far beyond a state agency's normal scope.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Matches maternal health goal but funds a national center for all states, not North Carolina services, so poor fit."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O4\",\n  \"strategic_reason\": \"The AIM quality-improvement initiative to make birth safer and improve maternal health directly advances improving women's health and birth outcomes.\",\n  \"strategic_evidence_quote\": \"AIM is a quality improvement initiative to support best practices that make birth safer, improve maternal health outcomes, and save lives.\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"Eligible applicants include any domestic public or private entity.\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 3,\n  \"operational_reason\": \"DPH has maternal-health expertise but does not operate as a national technical assistance provider to all states and facilities.\",\n  \"restrictions\": [],\n  \"major_risk\": \"This funds a single national center to support all states, territories, tribal communities and facilities, far beyond a state agency's normal scope.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Matches maternal health goal but funds a national center for all states, not North Carolina services, so poor fit.\"\n}"
+  ]
+ }
+}

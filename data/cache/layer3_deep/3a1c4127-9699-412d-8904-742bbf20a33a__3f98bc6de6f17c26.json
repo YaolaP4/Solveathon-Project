@@ -1,0 +1,28 @@
+{
+ "grant_id": "3a1c4127-9699-412d-8904-742bbf20a33a",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "3f98bc6de6f17c26900a937000fcbf4e24c4b3ea76d00efd23f6da7e6254a13e",
+ "retrieved_at": "2026-10-02T19:48:16+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O4",
+   "strategic_reason": "The program directly advances G2.O4 by funding evidence-based counseling and information to prevent harmful exposures and improve maternal and infant outcomes before, during, and after pregnancy.",
+   "strategic_evidence_quote": "The purpose of this program is to improve maternal and infant outcomes by preventing contact with harmful materials before, during, and after pregnancy.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "Any domestic public or private entity, including an Indian tribe or tribal organization (as those terms are defined at 25 U.S.C. § 450b) is eligible to apply.",
+   "owning_division": "DPH",
+   "operational_fit": 7,
+   "operational_reason": "DPH has existing maternal and child health, WIC, and environmental health programs that align with the content, but operating a national expert-staffed call center with AI features would extend beyond its usual state-focused role.",
+   "restrictions": [],
+   "major_risk": "The cooperative agreement likely expects a national expert-staffed call center and emerging AI technology, which could require capabilities and infrastructure NCDHHS does not currently operate at national scale.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Strong fit with G2.O4 maternal and infant health; DPH could apply but must weigh capacity to run a national expert-staffed call center with AI."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O4\",\n  \"strategic_reason\": \"The program directly advances G2.O4 by funding evidence-based counseling and information to prevent harmful exposures and improve maternal and infant outcomes before, during, and after pregnancy.\",\n  \"strategic_evidence_quote\": \"The purpose of this program is to improve maternal and infant outcomes by preventing contact with harmful materials before, during, and after pregnancy.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"Any domestic public or private entity, including an Indian tribe or tribal organization (as those terms are defined at 25 U.S.C. § 450b) is eligible to apply.\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 7,\n  \"operational_reason\": \"DPH has existing maternal and child health, WIC, and environmental health programs that align with the content, but operating a national expert-staffed call center with AI features would extend beyond its usual state-focused role.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The cooperative agreement likely expects a national expert-staffed call center and emerging AI technology, which could require capabilities and infrastructure NCDHHS does not currently operate at national scale.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Strong fit with G2.O4 maternal and infant health; DPH could apply but must weigh capacity to run a national expert-staffed call center with AI.\"\n}"
+  ]
+ }
+}

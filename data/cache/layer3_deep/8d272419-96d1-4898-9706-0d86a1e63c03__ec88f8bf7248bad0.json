@@ -1,0 +1,32 @@
+{
+ "grant_id": "8d272419-96d1-4898-9706-0d86a1e63c03",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "ec88f8bf7248bad083ce5fb49258166c5fc6939906a4622251c26e86ed7d326f",
+ "retrieved_at": "2026-10-02T19:46:30+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G5",
+   "matched_objective": "G5.O1",
+   "strategic_reason": "The grant funds statewide early care and education technology and analytic data infrastructure, which is a direct investment in the data infrastructure and data-driven decision-making called for in G5.O1.",
+   "strategic_evidence_quote": "statewide early care and education (ECE) technology and analytic data infrastructure",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "Specific states and territories are eligible",
+   "owning_division": "DCDEE",
+   "operational_fit": 9,
+   "operational_reason": "DCDEE already manages North Carolina's early childhood programs and data, so this technology and analytics grant is a natural extension of its existing authority and partners.",
+   "restrictions": [
+    "One-year project period",
+    "Must produce a measurable result by the end of the project period",
+    "Eligibility limited to specific states and territories identified in the NOFO"
+   ],
+   "major_risk": "The one-year, targeted nature may fund only a short-term build and not cover ongoing maintenance or broader statewide scale-up.",
+   "recommended_for_review": true,
+   "one_line_rationale": "One-year federal grant would fund early childhood data and technology infrastructure, directly supporting G5.O1 and fitting DCDEE's early learning data role."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G5\",\n  \"matched_objective\": \"G5.O1\",\n  \"strategic_reason\": \"The grant funds statewide early care and education technology and analytic data infrastructure, which is a direct investment in the data infrastructure and data-driven decision-making called for in G5.O1.\",\n  \"strategic_evidence_quote\": \"statewide early care and education (ECE) technology and analytic data infrastructure\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"Specific states and territories are eligible\",\n  \"owning_division\": \"DCDEE\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DCDEE already manages North Carolina's early childhood programs and data, so this technology and analytics grant is a natural extension of its existing authority and partners.\",\n  \"restrictions\": [\n    \"One-year project period\",\n    \"Must produce a measurable result by the end of the project period\",\n    \"Eligibility limited to specific states and territories identified in the NOFO\"\n  ],\n  \"major_risk\": \"The one-year, targeted nature may fund only a short-term build and not cover ongoing maintenance or broader statewide scale-up.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"One-year federal grant would fund early childhood data and technology infrastructure, directly supporting G5.O1 and fitting DCDEE's early learning data role.\"\n}"
+  ]
+ }
+}

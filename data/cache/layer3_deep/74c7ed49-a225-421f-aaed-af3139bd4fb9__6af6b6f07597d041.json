@@ -1,0 +1,28 @@
+{
+ "grant_id": "74c7ed49-a225-421f-aaed-af3139bd4fb9",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "6af6b6f07597d04148d61dcc3e7362554229c3c5030140f4c60c310f24a47de6",
+ "retrieved_at": "2026-10-02T19:51:50+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 2,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "Eviction prevention affects housing stability, a social determinant of health, but it does not directly advance any named NCDHHS strategic objective.",
+   "strategic_evidence_quote": "provide no cost legal assistance (including assistance related to pretrial activities, trial activities, post-trial activities and alternative dispute resolution) to low-income tenants at risk of or subject to eviction",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "local, state, or tribal agency or court",
+   "owning_division": "none",
+   "operational_fit": 2,
+   "operational_reason": "No NCDHHS division has authority or existing expertise in civil legal aid or eviction defense, though health and human services staff could refer clients.",
+   "restrictions": [],
+   "major_risk": "NCDHHS would be competing outside its core health and human services mission against specialized legal aid organizations, with no internal legal aid infrastructure.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Funds eviction legal assistance, not NCDHHS health or human services programs; no division has housing legal aid authority, so poor fit despite state eligibility."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 2,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"Eviction prevention affects housing stability, a social determinant of health, but it does not directly advance any named NCDHHS strategic objective.\",\n  \"strategic_evidence_quote\": \"provide no cost legal assistance (including assistance related to pretrial activities, trial activities, post-trial activities and alternative dispute resolution) to low-income tenants at risk of or subject to eviction\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"local, state, or tribal agency or court\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 2,\n  \"operational_reason\": \"No NCDHHS division has authority or existing expertise in civil legal aid or eviction defense, though health and human services staff could refer clients.\",\n  \"restrictions\": [],\n  \"major_risk\": \"NCDHHS would be competing outside its core health and human services mission against specialized legal aid organizations, with no internal legal aid infrastructure.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Funds eviction legal assistance, not NCDHHS health or human services programs; no division has housing legal aid authority, so poor fit despite state eligibility.\"\n}"
+  ]
+ }
+}

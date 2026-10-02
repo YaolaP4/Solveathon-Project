@@ -1,0 +1,28 @@
+{
+ "grant_id": "010955ea-582f-4426-8345-f5d587cd6452",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "b95996e94c97f0e76ce83563825a4873589ef170c0c385f0721b5a8a70528073",
+ "retrieved_at": "2026-10-02T19:24:23+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 2,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "Food safety emergency response supports general public health protection but does not directly advance any named health access, child well-being, behavioral health, workforce, or operational excellence objective.",
+   "strategic_evidence_quote": "develop and maintain Rapid Response Teams (RRTs)",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "State Governments",
+   "owning_division": "DPH",
+   "operational_fit": 9,
+   "operational_reason": "DPH already leads epidemiology, laboratory, and environmental-health surveillance central to integrated food emergency response.",
+   "restrictions": [],
+   "major_risk": "Requires sustained coordination across epidemiology, lab, environmental health and animal-food regulators with limited connection to named strategic priorities.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Fits DPH foodborne surveillance expertise but advances no named strategic goal, limiting priority versus health-access investments."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 2,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"Food safety emergency response supports general public health protection but does not directly advance any named health access, child well-being, behavioral health, workforce, or operational excellence objective.\",\n  \"strategic_evidence_quote\": \"develop and maintain Rapid Response Teams (RRTs)\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"State Governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DPH already leads epidemiology, laboratory, and environmental-health surveillance central to integrated food emergency response.\",\n  \"restrictions\": [],\n  \"major_risk\": \"Requires sustained coordination across epidemiology, lab, environmental health and animal-food regulators with limited connection to named strategic priorities.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Fits DPH foodborne surveillance expertise but advances no named strategic goal, limiting priority versus health-access investments.\"\n}"
+  ]
+ }
+}

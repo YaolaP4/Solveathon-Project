@@ -1,0 +1,28 @@
+{
+ "grant_id": "fc3aee16-137d-4fb2-87db-2664499e7c5b",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "c7d00dc2e1b2dc1c69b7e99d66967f2068f5eef719b207ea692f7e542d425cf0",
+ "retrieved_at": "2026-10-02T19:52:38+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O3",
+   "strategic_reason": "THCGME supports primary care residency training in community-based settings, preparing residents for rural and medically underserved communities, which directly advances efforts to strengthen rural and underserved primary care.",
+   "strategic_evidence_quote": "prepare residents to provide high-quality care, particularly in rural and medically underserved communities",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "An eligible entity is a community-based ambulatory patient care center that operates an accredited primary care residency program, individually or through a graduate medical education (GME) consortium.",
+   "owning_division": "ORH",
+   "operational_fit": 4,
+   "operational_reason": "ORH supports rural primary care and safety-net clinics, but it is not an eligible community-based ambulatory care center and does not operate accredited residency programs.",
+   "restrictions": [],
+   "major_risk": "NCDHHS is not among the eligible community-based ambulatory care centers, so a state agency cannot apply for or directly receive this funding.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Strongly aligns with rural primary care access (G1.O3), but NCDHHS is not an eligible community-based ambulatory care center and cannot apply."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O3\",\n  \"strategic_reason\": \"THCGME supports primary care residency training in community-based settings, preparing residents for rural and medically underserved communities, which directly advances efforts to strengthen rural and underserved primary care.\",\n  \"strategic_evidence_quote\": \"prepare residents to provide high-quality care, particularly in rural and medically underserved communities\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"An eligible entity is a community-based ambulatory patient care center that operates an accredited primary care residency program, individually or through a graduate medical education (GME) consortium.\",\n  \"owning_division\": \"ORH\",\n  \"operational_fit\": 4,\n  \"operational_reason\": \"ORH supports rural primary care and safety-net clinics, but it is not an eligible community-based ambulatory care center and does not operate accredited residency programs.\",\n  \"restrictions\": [],\n  \"major_risk\": \"NCDHHS is not among the eligible community-based ambulatory care centers, so a state agency cannot apply for or directly receive this funding.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Strongly aligns with rural primary care access (G1.O3), but NCDHHS is not an eligible community-based ambulatory care center and cannot apply.\"\n}"
+  ]
+ }
+}

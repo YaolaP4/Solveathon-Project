@@ -1,0 +1,28 @@
+{
+ "grant_id": "ca96308f-058b-47fa-9a1a-b1ee06f9c937",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "6dab6b1e8500388954bd6766ff7b595ba09f5104ea20ff1032a48ae7abf05249",
+ "retrieved_at": "2026-10-02T19:58:16+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 7,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "The grant funds implementation science research to end the HIV epidemic domestically, which supports reducing health disparities and increasing access for populations facing greater health challenges.",
+   "strategic_evidence_quote": "innovative implementation science research for ending the HIV epidemic domestically",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 4,
+   "operational_reason": "DPH houses HIV/STD prevention and surveillance work, but CFAR is an academic research infrastructure award and is not a typical state health department program.",
+   "restrictions": [],
+   "major_risk": "CFAR awards are typically made to academic institutions with existing HIV research portfolios, so NCDHHS may be an atypical lead and would more likely participate only as a partner.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Supports HIV research infrastructure to end the epidemic; aligns with health-access goals, but CFAR is an academic award, making NCDHHS an atypical lead and likely only a partner."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 7,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"The grant funds implementation science research to end the HIV epidemic domestically, which supports reducing health disparities and increasing access for populations facing greater health challenges.\",\n  \"strategic_evidence_quote\": \"innovative implementation science research for ending the HIV epidemic domestically\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 4,\n  \"operational_reason\": \"DPH houses HIV/STD prevention and surveillance work, but CFAR is an academic research infrastructure award and is not a typical state health department program.\",\n  \"restrictions\": [],\n  \"major_risk\": \"CFAR awards are typically made to academic institutions with existing HIV research portfolios, so NCDHHS may be an atypical lead and would more likely participate only as a partner.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Supports HIV research infrastructure to end the epidemic; aligns with health-access goals, but CFAR is an academic award, making NCDHHS an atypical lead and likely only a partner.\"\n}"
+  ]
+ }
+}

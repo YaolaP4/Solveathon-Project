@@ -1,0 +1,28 @@
+{
+ "grant_id": "ff53e2e3-28af-4065-8519-b45c5d4b347a",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "dd71baacbf94f6c7d2cf6851a7b34a49d7aa226bc96f409fc4deb4bc61a78fb6",
+ "retrieved_at": "2026-10-02T20:01:05+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "The grant funds research to advance minority health and health disparities, directly supporting the Department's goal of reducing health disparities.",
+   "strategic_evidence_quote": "The purpose of this initiative is to advance the science of minority health and health disparities by supporting research on family health and well-being and resilience.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 7,
+   "operational_reason": "DPH already conducts population health and health-disparities research and surveillance, so it could manage this family-health disparities research, though it may need academic research partners.",
+   "restrictions": [],
+   "major_risk": "This is an NIH R01 research project grant, so it funds research rather than direct services and would require NCDHHS to compete with established academic research institutions.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Directly supports G1.O1 health disparity research; DPH could apply, but it is an NIH research grant rather than service funding."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"The grant funds research to advance minority health and health disparities, directly supporting the Department's goal of reducing health disparities.\",\n  \"strategic_evidence_quote\": \"The purpose of this initiative is to advance the science of minority health and health disparities by supporting research on family health and well-being and resilience.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 7,\n  \"operational_reason\": \"DPH already conducts population health and health-disparities research and surveillance, so it could manage this family-health disparities research, though it may need academic research partners.\",\n  \"restrictions\": [],\n  \"major_risk\": \"This is an NIH R01 research project grant, so it funds research rather than direct services and would require NCDHHS to compete with established academic research institutions.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Directly supports G1.O1 health disparity research; DPH could apply, but it is an NIH research grant rather than service funding.\"\n}"
+  ]
+ }
+}

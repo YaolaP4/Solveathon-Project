@@ -1,0 +1,31 @@
+{
+ "grant_id": "008f5d36-a786-4494-9e6d-7adfb58f2823",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "9cd4199834d2f9f10dcb75a1693658d0aac277fce920cbe8ca353951e3910d47",
+ "retrieved_at": "2026-10-02T19:55:31+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 3,
+   "matched_goal": "G4",
+   "matched_objective": "G4.O4",
+   "strategic_reason": "The grant funds scientific meetings and conferences that can disseminate occupational safety and health knowledge, which partly supports the state and local public health workforce under G4.O4.",
+   "strategic_evidence_quote": "The purpose of the NIOSH Support for Conferences and Scientific Meetings (R13) program is to support high-quality scientific meetings, conferences, and workshops that are relevant to the NIOSH mission and that promote occupational safety and health.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 4,
+   "operational_reason": "DPH has public health epidemiology and convening capacity, but occupational safety and health conferences are not an explicit core DPH program area.",
+   "restrictions": [
+    "Applications for training-only events will not be considered under this announcement.",
+    "Clinical Trial Not Allowed"
+   ],
+   "major_risk": "The grant funds only conference and scientific meeting support rather than direct services or program implementation, limiting its value for NCDHHS priorities.",
+   "recommended_for_review": false,
+   "one_line_rationale": "NIOSH conference support is state-eligible but has weak fit with NCDHHS strategic goals and DPH occupational safety programming, so it is not worth pursuing."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 3,\n  \"matched_goal\": \"G4\",\n  \"matched_objective\": \"G4.O4\",\n  \"strategic_reason\": \"The grant funds scientific meetings and conferences that can disseminate occupational safety and health knowledge, which partly supports the state and local public health workforce under G4.O4.\",\n  \"strategic_evidence_quote\": \"The purpose of the NIOSH Support for Conferences and Scientific Meetings (R13) program is to support high-quality scientific meetings, conferences, and workshops that are relevant to the NIOSH mission and that promote occupational safety and health.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 4,\n  \"operational_reason\": \"DPH has public health epidemiology and convening capacity, but occupational safety and health conferences are not an explicit core DPH program area.\",\n  \"restrictions\": [\n    \"Applications for training-only events will not be considered under this announcement.\",\n    \"Clinical Trial Not Allowed\"\n  ],\n  \"major_risk\": \"The grant funds only conference and scientific meeting support rather than direct services or program implementation, limiting its value for NCDHHS priorities.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"NIOSH conference support is state-eligible but has weak fit with NCDHHS strategic goals and DPH occupational safety programming, so it is not worth pursuing.\"\n}"
+  ]
+ }
+}

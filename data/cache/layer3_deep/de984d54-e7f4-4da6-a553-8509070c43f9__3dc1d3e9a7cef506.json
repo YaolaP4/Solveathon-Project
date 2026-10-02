@@ -1,0 +1,28 @@
+{
+ "grant_id": "de984d54-e7f4-4da6-a553-8509070c43f9",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "3dc1d3e9a7cef50689922048e224dc1ceed5877b7e4ca8445484474929e14b36",
+ "retrieved_at": "2026-10-02T20:00:16+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 5,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "The grant funds exploratory cancer control research that could generate evidence to reduce cancer-related health disparities, consistent with building structures to increase health access and reduce disparities.",
+   "strategic_evidence_quote": "focus on different aspects of cancer control by modifying behavior, screening, and understanding etiologic factors contributing to the development of cancer, and developing ways to control cancer",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 5,
+   "operational_reason": "DPH runs chronic disease and cancer prevention programs and could partner on population-based cancer research, but an NIH R21 exploratory research grant is outside its core service delivery and usual grant portfolio.",
+   "restrictions": [],
+   "major_risk": "It is a competitive NIH exploratory research grant, not a programmatic or service delivery award, so NCDHHS would need substantial research capacity or an academic partner to be successful.",
+   "recommended_for_review": false,
+   "one_line_rationale": "NIH cancer-control R21 aligns only modestly with DPH chronic disease work and is an atypical research grant rather than direct program funding."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 5,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"The grant funds exploratory cancer control research that could generate evidence to reduce cancer-related health disparities, consistent with building structures to increase health access and reduce disparities.\",\n  \"strategic_evidence_quote\": \"focus on different aspects of cancer control by modifying behavior, screening, and understanding etiologic factors contributing to the development of cancer, and developing ways to control cancer\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 5,\n  \"operational_reason\": \"DPH runs chronic disease and cancer prevention programs and could partner on population-based cancer research, but an NIH R21 exploratory research grant is outside its core service delivery and usual grant portfolio.\",\n  \"restrictions\": [],\n  \"major_risk\": \"It is a competitive NIH exploratory research grant, not a programmatic or service delivery award, so NCDHHS would need substantial research capacity or an academic partner to be successful.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"NIH cancer-control R21 aligns only modestly with DPH chronic disease work and is an atypical research grant rather than direct program funding.\"\n}"
+  ]
+ }
+}

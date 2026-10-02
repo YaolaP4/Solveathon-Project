@@ -1,0 +1,28 @@
+{
+ "grant_id": "57c3cd68-e9e5-42c4-ac5b-b31a3ee245e3",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "bc897a39443e7c531e5184fdd7a124e2f2bf3ab8f926f7144a9e5cce414b2cda",
+ "retrieved_at": "2026-10-02T19:57:42+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 5,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "The grant funds development of behavioral interventions for people with Alzheimer's disease and related dementias and their caregivers, supporting better outcomes for a population facing significant health and situational challenges.",
+   "strategic_evidence_quote": "Dementia Care and Caregiver Support Intervention Research - Stage I Only",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DAGING",
+   "operational_fit": 4,
+   "operational_reason": "DAGING administers aging and family caregiver programs, but this R34 would require research and clinical trial infrastructure outside the division's usual service delivery role.",
+   "restrictions": [],
+   "major_risk": "It is a pre-solicitation notice from NIH seeking research grants, so NCDHHS would need an academic research partner and would not be competitive as a service-focused state agency lead.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Dementia caregiver research aligns with aging and caregiver support, but NCDHHS is not an NIH R34 research lead; monitor only."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 5,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"The grant funds development of behavioral interventions for people with Alzheimer's disease and related dementias and their caregivers, supporting better outcomes for a population facing significant health and situational challenges.\",\n  \"strategic_evidence_quote\": \"Dementia Care and Caregiver Support Intervention Research - Stage I Only\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DAGING\",\n  \"operational_fit\": 4,\n  \"operational_reason\": \"DAGING administers aging and family caregiver programs, but this R34 would require research and clinical trial infrastructure outside the division's usual service delivery role.\",\n  \"restrictions\": [],\n  \"major_risk\": \"It is a pre-solicitation notice from NIH seeking research grants, so NCDHHS would need an academic research partner and would not be competitive as a service-focused state agency lead.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Dementia caregiver research aligns with aging and caregiver support, but NCDHHS is not an NIH R34 research lead; monitor only.\"\n}"
+  ]
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "grant_id": "1fd3d671-8469-40ac-bbd6-adac625cf082",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "9e4f230cb95a687ceafd7480287ebc39b4ada3271f220389cdf0b530339d02bc",
+ "retrieved_at": "2026-10-02T19:56:02+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 7,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "The grant funds research on how to spread and sustain evidence-based health interventions, which would help NCDHHS build a culture and structure for increasing health access and reducing disparities.",
+   "strategic_evidence_quote": "The purpose of this Notice of Funding Opportunity (NOFO) is to support studies that will identify, develop, and/or test strategies for overcoming barriers to the adoption, adaptation, integration, sustainability, scale-up, and spread of evidence-based interventions, practices, programs, tools, treatments, guidelines, and policies",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 6,
+   "operational_reason": "DPH has epidemiology and public-health program capacity and could lead or partner on implementation research, but an NIH R01 is an atypical research role for a state division.",
+   "restrictions": [],
+   "major_risk": "This is a highly competitive NIH research award, and NCDHHS may lack the academic research infrastructure and principal-investigator capacity needed to compete without a university partner.",
+   "recommended_for_review": true,
+   "one_line_rationale": "This NIH research grant aligns with health access goal G1 and NCDHHS is eligible, but it is an atypical research opportunity likely requiring academic partners."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 7,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"The grant funds research on how to spread and sustain evidence-based health interventions, which would help NCDHHS build a culture and structure for increasing health access and reducing disparities.\",\n  \"strategic_evidence_quote\": \"The purpose of this Notice of Funding Opportunity (NOFO) is to support studies that will identify, develop, and/or test strategies for overcoming barriers to the adoption, adaptation, integration, sustainability, scale-up, and spread of evidence-based interventions, practices, programs, tools, treatments, guidelines, and policies\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 6,\n  \"operational_reason\": \"DPH has epidemiology and public-health program capacity and could lead or partner on implementation research, but an NIH R01 is an atypical research role for a state division.\",\n  \"restrictions\": [],\n  \"major_risk\": \"This is a highly competitive NIH research award, and NCDHHS may lack the academic research infrastructure and principal-investigator capacity needed to compete without a university partner.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"This NIH research grant aligns with health access goal G1 and NCDHHS is eligible, but it is an atypical research opportunity likely requiring academic partners.\"\n}"
+  ]
+ }
+}

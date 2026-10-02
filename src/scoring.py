@@ -337,6 +337,13 @@ def load_inputs(out_dir: Path) -> pd.DataFrame:
     return features.merge(deep, on="grant_id", how="inner", suffixes=("", "_layer3"))
 
 
+def split_research(scored: pd.DataFrame) -> pd.Series:
+    """True for research/training mechanisms (from Layer 1); missing column -> none."""
+    if "research_mechanism" not in scored.columns:
+        return pd.Series(False, index=scored.index)
+    return scored["research_mechanism"].map(lambda v: _bool(v) is True)
+
+
 def run(mock: bool = False) -> tuple[pd.DataFrame, pd.DataFrame]:
     """Create the open ranking and forecast watchlist CSVs."""
     agency = config.load_agency()
@@ -346,16 +353,19 @@ def run(mock: bool = False) -> tuple[pd.DataFrame, pd.DataFrame]:
     joined = load_inputs(out_dir)
     scored = score_dataframe(joined, agency)
 
-    open_ranked = rank_track(scored[scored["track"] == "open"])
-    watchlist = rank_track(scored[scored["track"] == "forecast"])
+    # Research/training mechanisms (Layer 1 `research_mechanism`: NIH, or an activity code such
+    # as R01/K99/U01 in the title) are scored the same way but listed separately: a state DHHS
+    # cannot realistically lead them, though it may want to pass them to a university partner.
+    research = split_research(scored)
+    open_ranked = rank_track(scored[(scored["track"] == "open") & ~research])
+    watchlist = rank_track(scored[(scored["track"] == "forecast") & ~research])
+    research_ranked = rank_track(scored[research])
 
-    open_path = out_dir / "ranked_grants.csv"
-    watch_path = out_dir / "watchlist.csv"
-    open_ranked.to_csv(open_path, index=False)
-    watchlist.to_csv(watch_path, index=False)
-
-    print(f"Wrote {open_path} ({len(open_ranked)} grants)")
-    print(f"Wrote {watch_path} ({len(watchlist)} forecast grants)")
+    paths = {"ranked_grants.csv": open_ranked, "watchlist.csv": watchlist,
+             "research_partnerships.csv": research_ranked}
+    for name, frame in paths.items():
+        frame.to_csv(out_dir / name, index=False)
+        print(f"Wrote {out_dir / name} ({len(frame)} grants)")
     return open_ranked, watchlist
 
 

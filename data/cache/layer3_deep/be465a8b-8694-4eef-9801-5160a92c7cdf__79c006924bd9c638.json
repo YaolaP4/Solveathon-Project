@@ -1,0 +1,28 @@
+{
+ "grant_id": "be465a8b-8694-4eef-9801-5160a92c7cdf",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "79c006924bd9c638b76f48d8b14071bcde955a55b93ae0788f20ae81a2ce5a10",
+ "retrieved_at": "2026-10-02T19:45:50+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "Supplemental Ryan White Part B funding directly advances health access and reduces disparities for people with HIV, a population facing greater health challenges.",
+   "strategic_evidence_quote": "The purpose of this program is to supplement formula-based funding provided through the HIV Care Grant Program – RWHAP Part B States/Territories Formula and AIDS Drug Assistance Program (ADAP) Formula and ADAP Supplemental Awards Notice of Funding Opportunity.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 9,
+   "operational_reason": "DPH already manages communicable disease and HIV/STD programs and would administer Ryan White Part B services as an extension of that public health role.",
+   "restrictions": [],
+   "major_risk": "Because this is supplemental to existing RWHAP Part B formula funding, the award may be an incremental add-on with limited new flexibility rather than new program support.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Supplements existing RWHAP Part B HIV care funding for low-income patients; DPH already runs HIV care programs, so this aligns with health-access goals."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"Supplemental Ryan White Part B funding directly advances health access and reduces disparities for people with HIV, a population facing greater health challenges.\",\n  \"strategic_evidence_quote\": \"The purpose of this program is to supplement formula-based funding provided through the HIV Care Grant Program – RWHAP Part B States/Territories Formula and AIDS Drug Assistance Program (ADAP) Formula and ADAP Supplemental Awards Notice of Funding Opportunity.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DPH already manages communicable disease and HIV/STD programs and would administer Ryan White Part B services as an extension of that public health role.\",\n  \"restrictions\": [],\n  \"major_risk\": \"Because this is supplemental to existing RWHAP Part B formula funding, the award may be an incremental add-on with limited new flexibility rather than new program support.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Supplements existing RWHAP Part B HIV care funding for low-income patients; DPH already runs HIV care programs, so this aligns with health-access goals.\"\n}"
+  ]
+ }
+}

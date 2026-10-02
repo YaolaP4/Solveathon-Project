@@ -1,0 +1,31 @@
+{
+ "grant_id": "172926e9-5f18-4993-893d-ac73be5bbb9d",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "134b65e8b30c665c10ff07e7d118324c37f3bcea555bbd9a4af416115e20587d",
+ "retrieved_at": "2026-10-02T19:24:40+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O4",
+   "strategic_reason": "The NOFO funds surveillance of prenatal exposures and infant conditions like FASDs, NAS and congenital CMV to drive prevention and improved birth outcomes.",
+   "strategic_evidence_quote": "Funded entities participating in clinical surveillance will monitor prenatal exposures such as alcohol use and polysubstance use during pregnancy as well as conditions with significant public health impact such as FASDs, NAS, congenital CMV, and other outcomes.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "Eligible applicants for Component A must have the public health authority, legislative mandate or otherwise show legal access to the requisite data to conduct clinic-based surveillance.",
+   "owning_division": "DPH",
+   "operational_fit": 9,
+   "operational_reason": "DPH already operates maternal and child health surveillance, epidemiology and data partnerships needed for clinic-based surveillance.",
+   "restrictions": [
+    "May apply for only one component (A, B, or C)",
+    "Component A requires Legal Authority documentation proving access to multi-source clinical surveillance datasets"
+   ],
+   "major_risk": "Component A requires proven legal access to multi-source clinical surveillance datasets, which may be difficult to document or expand quickly.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Fits birth-outcomes goal by funding maternal-infant surveillance DPH already does; state can lead if it can prove data authority."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O4\",\n  \"strategic_reason\": \"The NOFO funds surveillance of prenatal exposures and infant conditions like FASDs, NAS and congenital CMV to drive prevention and improved birth outcomes.\",\n  \"strategic_evidence_quote\": \"Funded entities participating in clinical surveillance will monitor prenatal exposures such as alcohol use and polysubstance use during pregnancy as well as conditions with significant public health impact such as FASDs, NAS, congenital CMV, and other outcomes.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"Eligible applicants for Component A must have the public health authority, legislative mandate or otherwise show legal access to the requisite data to conduct clinic-based surveillance.\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DPH already operates maternal and child health surveillance, epidemiology and data partnerships needed for clinic-based surveillance.\",\n  \"restrictions\": [\n    \"May apply for only one component (A, B, or C)\",\n    \"Component A requires Legal Authority documentation proving access to multi-source clinical surveillance datasets\"\n  ],\n  \"major_risk\": \"Component A requires proven legal access to multi-source clinical surveillance datasets, which may be difficult to document or expand quickly.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Fits birth-outcomes goal by funding maternal-infant surveillance DPH already does; state can lead if it can prove data authority.\"\n}"
+  ]
+ }
+}

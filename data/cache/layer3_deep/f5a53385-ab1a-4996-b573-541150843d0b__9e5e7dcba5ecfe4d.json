@@ -1,0 +1,31 @@
+{
+ "grant_id": "f5a53385-ab1a-4996-b573-541150843d0b",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "9e5e7dcba5ecfe4d33b57dc497fcad51424fdb7251cdd6a76c2a03bdc091fc60",
+ "retrieved_at": "2026-10-02T19:53:59+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 2,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds hospital-based trauma readiness through military-civilian partnerships, which is not a named NCDHHS strategic objective.",
+   "strategic_evidence_quote": "Military and Civilian Partnership for Trauma Readiness Grant Program/Mission Zero",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "Hospitals",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "No NCDHHS division operates or directly funds high-acuity trauma centers, and the agency is not an eligible applicant type.",
+   "restrictions": [
+    "Limited to no more than 30 eligible high-acuity trauma centers",
+    "Requires military-civilian partnership with military trauma teams or military trauma care providers"
+   ],
+   "major_risk": "NCDHHS is not an eligible applicant, so there is likely no state application path to pursue.",
+   "recommended_for_review": false,
+   "one_line_rationale": "NCDHHS is not eligible; grant funds hospital trauma centers through military-civilian partnerships, so no state application path."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 2,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds hospital-based trauma readiness through military-civilian partnerships, which is not a named NCDHHS strategic objective.\",\n  \"strategic_evidence_quote\": \"Military and Civilian Partnership for Trauma Readiness Grant Program/Mission Zero\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"Hospitals\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"No NCDHHS division operates or directly funds high-acuity trauma centers, and the agency is not an eligible applicant type.\",\n  \"restrictions\": [\n    \"Limited to no more than 30 eligible high-acuity trauma centers\",\n    \"Requires military-civilian partnership with military trauma teams or military trauma care providers\"\n  ],\n  \"major_risk\": \"NCDHHS is not an eligible applicant, so there is likely no state application path to pursue.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"NCDHHS is not eligible; grant funds hospital trauma centers through military-civilian partnerships, so no state application path.\"\n}"
+  ]
+ }
+}

@@ -1,0 +1,30 @@
+{
+ "grant_id": "770eae58-b245-4431-a4b8-7b1aca9e917f",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "16cc17eb45674ecfbee072485d14f743ff0d1aa4d855f11b09e142eda6d12ea2",
+ "retrieved_at": "2026-10-02T19:48:37+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 10,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O4",
+   "strategic_reason": "Title X funds voluntary family planning, reproductive goals counseling, and preconception health services, directly advancing G2.O4's focus on reproductive life planning and improved women's health and birth outcomes.",
+   "strategic_evidence_quote": "These projects include a broad range of effective and acceptable services, including pregnancy testing and counseling, basic infertility services, sexually transmitted infection (STI) services (such as HIV prevention education, counseling, testing, and referral), health literacy, reproductive goals counseling to increase optimal health outcomes, and other preconception health services.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "Any public or private nonprofit entity is eligible to apply.",
+   "owning_division": "DPH",
+   "operational_fit": 9,
+   "operational_reason": "DPH already oversees family planning, maternal and child health, and local health department services, so Title X is a natural extension of its existing public health authority.",
+   "restrictions": [
+    "All activities funded under this announcement must be in compliance with the requirements of the Title X statute, legislative mandates, and regulations."
+   ],
+   "major_risk": "The actual amount available will not be determined until enactment of the FY 2027 federal budget.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Strong fit: Title X directly funds family planning and preconception services under DPH, advancing G2.O4 reproductive and maternal health work."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 10,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O4\",\n  \"strategic_reason\": \"Title X funds voluntary family planning, reproductive goals counseling, and preconception health services, directly advancing G2.O4's focus on reproductive life planning and improved women's health and birth outcomes.\",\n  \"strategic_evidence_quote\": \"These projects include a broad range of effective and acceptable services, including pregnancy testing and counseling, basic infertility services, sexually transmitted infection (STI) services (such as HIV prevention education, counseling, testing, and referral), health literacy, reproductive goals counseling to increase optimal health outcomes, and other preconception health services.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"Any public or private nonprofit entity is eligible to apply.\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DPH already oversees family planning, maternal and child health, and local health department services, so Title X is a natural extension of its existing public health authority.\",\n  \"restrictions\": [\n    \"All activities funded under this announcement must be in compliance with the requirements of the Title X statute, legislative mandates, and regulations.\"\n  ],\n  \"major_risk\": \"The actual amount available will not be determined until enactment of the FY 2027 federal budget.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Strong fit: Title X directly funds family planning and preconception services under DPH, advancing G2.O4 reproductive and maternal health work.\"\n}"
+  ]
+ }
+}

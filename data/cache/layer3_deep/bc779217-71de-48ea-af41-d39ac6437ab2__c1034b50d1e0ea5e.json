@@ -1,0 +1,34 @@
+{
+ "grant_id": "bc779217-71de-48ea-af41-d39ac6437ab2",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "c1034b50d1e0ea5eaf649d8084dad30430bf7739e6de8768875b89a57f58dbb0",
+ "retrieved_at": "2026-10-02T19:51:37+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 2,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds state egg regulatory program conformance and shell-egg illness reduction, which is food-safety regulation rather than a named NCDHHS health-access, child/family, behavioral health, workforce, or operational objective.",
+   "strategic_evidence_quote": "reduce egg-related illness, attributed to shell egg hazards in facilities that produce, process, pack, hold or transport shell eggs and materials/supplies.",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "Only the following state egg regulatory programs will be eligible to apply:",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "No NCDHHS division regulates shell egg production, processing, packing, holding, or transport; that authority sits with the state agriculture or food regulatory agency rather than NCDHHS.",
+   "restrictions": [
+    "Only state egg regulatory programs are eligible; requires current FDA egg inspection contract or willingness to enter into a contract in 2025.",
+    "Requires a current long-term 20.88 information sharing agreement.",
+    "Expectation of full conformance with the Egg Regulatory Program Standards and maintenance of the cooperative agreement.",
+    "Full conformance of the ERPS expected within five total funding years.",
+    "One year of funding with additional non-competitive support contingent on performance and continued availability of federal funds."
+   ],
+   "major_risk": "NCDHHS cannot apply directly because the funding is limited to state egg regulatory programs with FDA egg inspection contracts, so pursuit would depend on another state agency leading an application outside NCDHHS authority.",
+   "recommended_for_review": false,
+   "one_line_rationale": "This FDA cooperative agreement targets state egg regulatory programs, not NCDHHS divisions, so it has no realistic owner here and should not be pursued."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 2,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds state egg regulatory program conformance and shell-egg illness reduction, which is food-safety regulation rather than a named NCDHHS health-access, child/family, behavioral health, workforce, or operational objective.\",\n  \"strategic_evidence_quote\": \"reduce egg-related illness, attributed to shell egg hazards in facilities that produce, process, pack, hold or transport shell eggs and materials/supplies.\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"Only the following state egg regulatory programs will be eligible to apply:\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"No NCDHHS division regulates shell egg production, processing, packing, holding, or transport; that authority sits with the state agriculture or food regulatory agency rather than NCDHHS.\",\n  \"restrictions\": [\n    \"Only state egg regulatory programs are eligible; requires current FDA egg inspection contract or willingness to enter into a contract in 2025.\",\n    \"Requires a current long-term 20.88 information sharing agreement.\",\n    \"Expectation of full conformance with the Egg Regulatory Program Standards and maintenance of the cooperative agreement.\",\n    \"Full conformance of the ERPS expected within five total funding years.\",\n    \"One year of funding with additional non-competitive support contingent on performance and continued availability of federal funds.\"\n  ],\n  \"major_risk\": \"NCDHHS cannot apply directly because the funding is limited to state egg regulatory programs with FDA egg inspection contracts, so pursuit would depend on another state agency leading an application outside NCDHHS authority.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"This FDA cooperative agreement targets state egg regulatory programs, not NCDHHS divisions, so it has no realistic owner here and should not be pursued.\"\n}"
+  ]
+ }
+}

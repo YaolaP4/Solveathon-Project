@@ -1,0 +1,32 @@
+{
+ "grant_id": "369deb5e-871b-449b-b7bf-f9fb8440c325",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "2831b969d26cb188d7f54e35f028d8133d4d6906776b0f744b28296c6554b61a",
+ "retrieved_at": "2026-10-02T19:56:11+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 1,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds household water wells and decentralized wastewater systems for low- to moderate-income individuals, which relates to environmental public health but does not directly advance a named NCDHHS objective.",
+   "strategic_evidence_quote": "help individuals with low to moderate incomes finance certain costs of household water wells and individually owned decentralized wastewater systems",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "Grants are made to eligible nonprofit organizations",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "NCDHHS is a state agency, not an eligible nonprofit, and no division would own an application for this nonprofit revolving fund program.",
+   "restrictions": [
+    "Grantee must be an eligible nonprofit organization and must establish and maintain a revolving fund.",
+    "Funds may only be used for individually owned water well and/or wastewater systems, up to the point of entry or point of exit.",
+    "Beneficiaries must be low- to moderate-income individuals."
+   ],
+   "major_risk": "The state agency is not eligible to receive the grant because it is limited to nonprofit organizations, so the opportunity may have no direct value.",
+   "recommended_for_review": false,
+   "one_line_rationale": "NCDHHS cannot apply because the program is limited to nonprofit revolving fund lenders; the activity does not map to a named strategic objective."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 1,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds household water wells and decentralized wastewater systems for low- to moderate-income individuals, which relates to environmental public health but does not directly advance a named NCDHHS objective.\",\n  \"strategic_evidence_quote\": \"help individuals with low to moderate incomes finance certain costs of household water wells and individually owned decentralized wastewater systems\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"Grants are made to eligible nonprofit organizations\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"NCDHHS is a state agency, not an eligible nonprofit, and no division would own an application for this nonprofit revolving fund program.\",\n  \"restrictions\": [\n    \"Grantee must be an eligible nonprofit organization and must establish and maintain a revolving fund.\",\n    \"Funds may only be used for individually owned water well and/or wastewater systems, up to the point of entry or point of exit.\",\n    \"Beneficiaries must be low- to moderate-income individuals.\"\n  ],\n  \"major_risk\": \"The state agency is not eligible to receive the grant because it is limited to nonprofit organizations, so the opportunity may have no direct value.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"NCDHHS cannot apply because the program is limited to nonprofit revolving fund lenders; the activity does not map to a named strategic objective.\"\n}"
+  ]
+ }
+}

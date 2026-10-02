@@ -1,0 +1,28 @@
+{
+ "grant_id": "e511b41d-655a-4869-bfd3-09fbf0c33987",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "a5aafb0d60307c5592081497ee856429085dff6eee7f1b35cd4712eec86e8e27",
+ "retrieved_at": "2026-10-02T19:48:25+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 7,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "The grant funds evidence-based sexual health materials and provider education focused on groups most affected by STIs, directly supporting efforts to reduce health disparities and improve access to preventive sexual health information.",
+   "strategic_evidence_quote": "This funding strengthens STI prevention efforts by supporting coalition management and the development, promotion, and dissemination of high-quality, evidence-based sexual health-related materials, resources, and tools to their partners, health care providers, and the public.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 9,
+   "operational_reason": "DPH already oversees disease prevention, surveillance, and public health communication, so STI prevention education and materials align closely with its existing public health mission.",
+   "restrictions": [],
+   "major_risk": "The grant may focus on supporting a national coalition and disseminating materials rather than directly funding North Carolina-specific STI services or local implementation.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Fits DPH's disease prevention mission, funding sexual health materials and provider education to reduce STIs, including among groups most affected; aligns with health access and disparity goals."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 7,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"The grant funds evidence-based sexual health materials and provider education focused on groups most affected by STIs, directly supporting efforts to reduce health disparities and improve access to preventive sexual health information.\",\n  \"strategic_evidence_quote\": \"This funding strengthens STI prevention efforts by supporting coalition management and the development, promotion, and dissemination of high-quality, evidence-based sexual health-related materials, resources, and tools to their partners, health care providers, and the public.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DPH already oversees disease prevention, surveillance, and public health communication, so STI prevention education and materials align closely with its existing public health mission.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The grant may focus on supporting a national coalition and disseminating materials rather than directly funding North Carolina-specific STI services or local implementation.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Fits DPH's disease prevention mission, funding sexual health materials and provider education to reduce STIs, including among groups most affected; aligns with health access and disparity goals.\"\n}"
+  ]
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "grant_id": "d92a6645-61df-4765-8caa-4db9aa678c6e",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "ebed37be026f182372aebee5ac5948ba1054b8e587273b50e302045d4291de30",
+ "retrieved_at": "2026-10-02T20:01:51+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 2,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds AD/ADRD summer research training for early-career participants, but it does not directly fund any named NCDHHS objective; its only thematic link is to the aging population served by DAGING.",
+   "strategic_evidence_quote": "intensive summer research experiences in the AD/ADRD field",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DAGING",
+   "operational_fit": 2,
+   "operational_reason": "DAGING is the closest thematic division for AD/ADRD because it serves older adults, but it has no existing NIH research education program and would need academic research partners to run this.",
+   "restrictions": [],
+   "major_risk": "This is an NIH R25 research education mechanism designed for academic institutions, and NCDHHS lacks the biomedical research training infrastructure, so pursuing it would require substantial external partnership and management effort.",
+   "recommended_for_review": false,
+   "one_line_rationale": "NIH research-training grant for AD/ADRD summer programs; no NCDHHS strategic objective or division mission matches, and we lack academic infrastructure to lead it."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 2,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds AD/ADRD summer research training for early-career participants, but it does not directly fund any named NCDHHS objective; its only thematic link is to the aging population served by DAGING.\",\n  \"strategic_evidence_quote\": \"intensive summer research experiences in the AD/ADRD field\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DAGING\",\n  \"operational_fit\": 2,\n  \"operational_reason\": \"DAGING is the closest thematic division for AD/ADRD because it serves older adults, but it has no existing NIH research education program and would need academic research partners to run this.\",\n  \"restrictions\": [],\n  \"major_risk\": \"This is an NIH R25 research education mechanism designed for academic institutions, and NCDHHS lacks the biomedical research training infrastructure, so pursuing it would require substantial external partnership and management effort.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"NIH research-training grant for AD/ADRD summer programs; no NCDHHS strategic objective or division mission matches, and we lack academic infrastructure to lead it.\"\n}"
+  ]
+ }
+}

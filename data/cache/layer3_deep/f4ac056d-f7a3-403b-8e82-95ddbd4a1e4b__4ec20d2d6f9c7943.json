@@ -1,0 +1,28 @@
+{
+ "grant_id": "f4ac056d-f7a3-403b-8e82-95ddbd4a1e4b",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "4ec20d2d6f9c7943761a87ba540ae50c35cf7d0e7cb033d42ceac9b91210487b",
+ "retrieved_at": "2026-10-02T20:00:55+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 2,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "No named NCDHHS objective directly covers occupational safety and health research, so the funded activity does not align with any objective.",
+   "strategic_evidence_quote": "The R21 grant program is designed to advance our understanding of occupational diseases and injuries by focusing on the following three objectives:",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 4,
+   "operational_reason": "DPH handles disease prevention, epidemiology, and environmental health, so it is the closest fit, but it does not have an occupational safety and health research mandate.",
+   "restrictions": [],
+   "major_risk": "NCDHHS lacks an occupational safety and health research program, so the R21 research grant would require capabilities and infrastructure the department does not currently have.",
+   "recommended_for_review": false,
+   "one_line_rationale": "No NCDHHS strategic objective covers occupational safety/health research; DPH lacks an occupational health research program, so this NIOSH R21 is not a fit."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 2,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"No named NCDHHS objective directly covers occupational safety and health research, so the funded activity does not align with any objective.\",\n  \"strategic_evidence_quote\": \"The R21 grant program is designed to advance our understanding of occupational diseases and injuries by focusing on the following three objectives:\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 4,\n  \"operational_reason\": \"DPH handles disease prevention, epidemiology, and environmental health, so it is the closest fit, but it does not have an occupational safety and health research mandate.\",\n  \"restrictions\": [],\n  \"major_risk\": \"NCDHHS lacks an occupational safety and health research program, so the R21 research grant would require capabilities and infrastructure the department does not currently have.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"No NCDHHS strategic objective covers occupational safety/health research; DPH lacks an occupational health research program, so this NIOSH R21 is not a fit.\"\n}"
+  ]
+ }
+}

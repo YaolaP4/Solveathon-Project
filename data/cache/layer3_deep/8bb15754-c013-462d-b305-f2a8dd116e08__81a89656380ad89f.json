@@ -1,0 +1,31 @@
+{
+ "grant_id": "8bb15754-c013-462d-b305-f2a8dd116e08",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "81a89656380ad89f8da871c463f71ea0a1c2f9bb46085205d1e34ee3f6caf2d2",
+ "retrieved_at": "2026-10-02T19:29:56+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O3",
+   "strategic_reason": "It funds integrated rural provider networks to expand access and preserve services, directly advancing rural and underserved primary care access.",
+   "strategic_evidence_quote": "The Rural Health Network Development program supports integrated health care networks that address health care needs of targeted rural communities.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "Eligible applicants include domestic public or private, non-profit or for-profit entities including:",
+   "owning_division": "ORH",
+   "operational_fit": 9,
+   "operational_reason": "ORH already supports rural hospitals, safety-net clinics and underserved primary care networks that this program funds.",
+   "restrictions": [
+    "Must have demonstrated experience serving, or capacity to serve, populations in rural areas",
+    "Requires integrated network collaboration with rural hospitals and clinics"
+   ],
+   "major_risk": "Network model requires sustained collaboration among independent rural providers with limited capacity.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Funds rural hospital-clinic networks to expand access, directly advancing health access goal; Office of Rural Health could lead."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O3\",\n  \"strategic_reason\": \"It funds integrated rural provider networks to expand access and preserve services, directly advancing rural and underserved primary care access.\",\n  \"strategic_evidence_quote\": \"The Rural Health Network Development program supports integrated health care networks that address health care needs of targeted rural communities.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"Eligible applicants include domestic public or private, non-profit or for-profit entities including:\",\n  \"owning_division\": \"ORH\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"ORH already supports rural hospitals, safety-net clinics and underserved primary care networks that this program funds.\",\n  \"restrictions\": [\n    \"Must have demonstrated experience serving, or capacity to serve, populations in rural areas\",\n    \"Requires integrated network collaboration with rural hospitals and clinics\"\n  ],\n  \"major_risk\": \"Network model requires sustained collaboration among independent rural providers with limited capacity.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Funds rural hospital-clinic networks to expand access, directly advancing health access goal; Office of Rural Health could lead.\"\n}"
+  ]
+ }
+}

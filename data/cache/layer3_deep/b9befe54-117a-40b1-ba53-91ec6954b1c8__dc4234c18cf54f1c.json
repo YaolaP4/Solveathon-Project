@@ -1,0 +1,30 @@
+{
+ "grant_id": "b9befe54-117a-40b1-ba53-91ec6954b1c8",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "dc4234c18cf54f1ca1fb98256c2e5426f63e56d77ee42ab1405007acde3c83be",
+ "retrieved_at": "2026-10-02T19:47:51+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 7,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O1",
+   "strategic_reason": "This grant would help families of children and youth with special health care needs navigate complex health and service systems, supporting G2.O1's inclusion of specialty care for children with complex needs.",
+   "strategic_evidence_quote": "provide information, education, technical assistance, and peer support to families of children and youth with special health care needs (CYSHCN) and the professionals who serve them so that CYSHCN and their families can better navigate complex systems to receive needed services",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "Eligible applicants include any domestic public or private entity.",
+   "owning_division": "DPH",
+   "operational_fit": 8,
+   "operational_reason": "DPH already administers maternal and child health and Title V children and youth with special health care needs work, so an F2F HIC would extend its existing family support and care-navigation role.",
+   "restrictions": [
+    "Geographic eligibility limited to the 50 states, the District of Columbia, the five U.S. Territories, and entities that will serve American Indian and/or Alaska Native tribes."
+   ],
+   "major_risk": "The program is a family-to-family peer support model, so a state health department may be an atypical lead and would need to demonstrate authentic family partnership and leadership to compete.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Funds family peer navigation for children with special health care needs; aligns with child and family well-being and DPH's Title V CYSHCN role."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 7,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O1\",\n  \"strategic_reason\": \"This grant would help families of children and youth with special health care needs navigate complex health and service systems, supporting G2.O1's inclusion of specialty care for children with complex needs.\",\n  \"strategic_evidence_quote\": \"provide information, education, technical assistance, and peer support to families of children and youth with special health care needs (CYSHCN) and the professionals who serve them so that CYSHCN and their families can better navigate complex systems to receive needed services\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"Eligible applicants include any domestic public or private entity.\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 8,\n  \"operational_reason\": \"DPH already administers maternal and child health and Title V children and youth with special health care needs work, so an F2F HIC would extend its existing family support and care-navigation role.\",\n  \"restrictions\": [\n    \"Geographic eligibility limited to the 50 states, the District of Columbia, the five U.S. Territories, and entities that will serve American Indian and/or Alaska Native tribes.\"\n  ],\n  \"major_risk\": \"The program is a family-to-family peer support model, so a state health department may be an atypical lead and would need to demonstrate authentic family partnership and leadership to compete.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Funds family peer navigation for children with special health care needs; aligns with child and family well-being and DPH's Title V CYSHCN role.\"\n}"
+  ]
+ }
+}

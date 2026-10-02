@@ -1,0 +1,28 @@
+{
+ "grant_id": "09e581fe-7695-4b3b-ab60-b5456bd788fd",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "bb84f1b25e981b82c6938fdf9bcf22c49caf5c30d81bc194fedfc10dea8472d2",
+ "retrieved_at": "2026-10-02T19:56:11+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 7,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O4",
+   "strategic_reason": "The grant funds secondary analysis of drug use and prevention/treatment services data, which can build the evidence base for addressing substance use and the opioid crisis.",
+   "strategic_evidence_quote": "invite applications proposing the innovative analysis of existing social science, behavioral, administrative, and neuroimaging data to study the etiology and epidemiology of drug using behaviors (defined as alcohol, tobacco, prescription and other drug) and related disorders, prevention of drug use and HIV, and health service utilization",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DMHDDSUS",
+   "operational_fit": 5,
+   "operational_reason": "DMHDDSUS has substance use authority and access to state administrative data, but NIH secondary-research awards are outside its usual service-delivery role and would likely require a research partner.",
+   "restrictions": [],
+   "major_risk": "This is an NIH research grant funding secondary data analysis rather than services or infrastructure, and the division may lack the research capacity needed to compete successfully.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Aligns with substance use crisis goals and uses existing data, but is an NIH research grant requiring analytic capacity rather than service dollars; DMHDDSUS should review with research partners."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 7,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O4\",\n  \"strategic_reason\": \"The grant funds secondary analysis of drug use and prevention/treatment services data, which can build the evidence base for addressing substance use and the opioid crisis.\",\n  \"strategic_evidence_quote\": \"invite applications proposing the innovative analysis of existing social science, behavioral, administrative, and neuroimaging data to study the etiology and epidemiology of drug using behaviors (defined as alcohol, tobacco, prescription and other drug) and related disorders, prevention of drug use and HIV, and health service utilization\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DMHDDSUS\",\n  \"operational_fit\": 5,\n  \"operational_reason\": \"DMHDDSUS has substance use authority and access to state administrative data, but NIH secondary-research awards are outside its usual service-delivery role and would likely require a research partner.\",\n  \"restrictions\": [],\n  \"major_risk\": \"This is an NIH research grant funding secondary data analysis rather than services or infrastructure, and the division may lack the research capacity needed to compete successfully.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Aligns with substance use crisis goals and uses existing data, but is an NIH research grant requiring analytic capacity rather than service dollars; DMHDDSUS should review with research partners.\"\n}"
+  ]
+ }
+}

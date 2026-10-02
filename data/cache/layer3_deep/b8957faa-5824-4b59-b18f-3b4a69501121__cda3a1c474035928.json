@@ -1,0 +1,28 @@
+{
+ "grant_id": "b8957faa-5824-4b59-b18f-3b4a69501121",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "cda3a1c474035928a33aca47f32f4782f3b4b45d1500405399020df9daeee48b",
+ "retrieved_at": "2026-10-02T19:52:12+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O1",
+   "strategic_reason": "The grant directly funds research to improve access to evidence-based youth mental health services, which advances NCDHHS's objective of meeting the behavioral and mental health needs of children and families.",
+   "strategic_evidence_quote": "We seek applications that will study methods to increase access to evidence-based interventions and services for youth mental health, including those living in rural areas, inner cities, and other under-resourced areas, and youth experiencing housing and food insecurities and out-right homelessness.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DCFW",
+   "operational_fit": 7,
+   "operational_reason": "DCFW already oversees child behavioral health and school health programs and could manage this research grant with academic or community research partners.",
+   "restrictions": [],
+   "major_risk": "As an NIH R01 research mechanism, it does not fund direct service expansion and would require NCDHHS to have or build research administration capacity and an academic research partner.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Strong strategic fit with child behavioral health; eligible state applicant, but would require research partner. Recommend review for DCFW."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O1\",\n  \"strategic_reason\": \"The grant directly funds research to improve access to evidence-based youth mental health services, which advances NCDHHS's objective of meeting the behavioral and mental health needs of children and families.\",\n  \"strategic_evidence_quote\": \"We seek applications that will study methods to increase access to evidence-based interventions and services for youth mental health, including those living in rural areas, inner cities, and other under-resourced areas, and youth experiencing housing and food insecurities and out-right homelessness.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DCFW\",\n  \"operational_fit\": 7,\n  \"operational_reason\": \"DCFW already oversees child behavioral health and school health programs and could manage this research grant with academic or community research partners.\",\n  \"restrictions\": [],\n  \"major_risk\": \"As an NIH R01 research mechanism, it does not fund direct service expansion and would require NCDHHS to have or build research administration capacity and an academic research partner.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Strong strategic fit with child behavioral health; eligible state applicant, but would require research partner. Recommend review for DCFW.\"\n}"
+  ]
+ }
+}

@@ -1,0 +1,30 @@
+{
+ "grant_id": "6552e00b-8e51-4278-ab04-b6e3765a88a0",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "d6c59d02b124f7c01dd4c4051697fd3e2eecb085121fc1e0c506f4096c23894c",
+ "retrieved_at": "2026-10-02T19:56:46+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 7,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "The program's focus on health drivers of cancer outcome differences and cancer outreach aligns with NCDHHS's objective to reduce health disparities and build structures for health access.",
+   "strategic_evidence_quote": "including a focus on advancing research on health drivers that contribute to differences in cancer outcomes across all populations, as well as cancer outreach and engagement.",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 5,
+   "operational_reason": "DPH could support cancer prevention and outreach components, but the U54 research partnership model is built for academic institutions and NCI-designated Cancer Centers rather than a state public health agency.",
+   "restrictions": [
+    "Requires a partnership between Resource Limited Institutions (RLIs) and NCI-designated Cancer Centers (CCs)."
+   ],
+   "major_risk": "NCDHHS is not an RLI or NCI-designated Cancer Center, so the agency would likely be limited to a partner role and may not be competitive as the lead applicant.",
+   "recommended_for_review": false,
+   "one_line_rationale": "NIH research partnership for cancer institutions; NCDHHS/DPH is not an RLI or NCI Cancer Center, so it would only fit as a minor partner."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 7,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"The program's focus on health drivers of cancer outcome differences and cancer outreach aligns with NCDHHS's objective to reduce health disparities and build structures for health access.\",\n  \"strategic_evidence_quote\": \"including a focus on advancing research on health drivers that contribute to differences in cancer outcomes across all populations, as well as cancer outreach and engagement.\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 5,\n  \"operational_reason\": \"DPH could support cancer prevention and outreach components, but the U54 research partnership model is built for academic institutions and NCI-designated Cancer Centers rather than a state public health agency.\",\n  \"restrictions\": [\n    \"Requires a partnership between Resource Limited Institutions (RLIs) and NCI-designated Cancer Centers (CCs).\"\n  ],\n  \"major_risk\": \"NCDHHS is not an RLI or NCI-designated Cancer Center, so the agency would likely be limited to a partner role and may not be competitive as the lead applicant.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"NIH research partnership for cancer institutions; NCDHHS/DPH is not an RLI or NCI Cancer Center, so it would only fit as a minor partner.\"\n}"
+  ]
+ }
+}

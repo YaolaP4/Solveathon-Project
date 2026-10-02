@@ -1,0 +1,30 @@
+{
+ "grant_id": "f931e3f2-28c6-4bcb-83ff-894bc6b2266c",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "45969892dd417e3cb32abf8121482dd36d8448d8826414fd50f7e186c48ad5bc",
+ "retrieved_at": "2026-10-02T19:47:00+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O4",
+   "strategic_reason": "The grant directly funds coalition-based capacity building for community organizations serving populations disproportionately affected by hepatitis B and C, matching G1.O4's focus on investing in partner and community-based organization capacity.",
+   "strategic_evidence_quote": "building capacity of coalition members to conduct hepatitis B and/or hepatitis C virus infection testing and linkage to treatment in settings serving disproportionately affected populations.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 9,
+   "operational_reason": "DPH already houses communicable disease prevention, surveillance, and local health department partnerships, making viral hepatitis education and provider training an extension of its existing public health role.",
+   "restrictions": [
+    "Part A requires leading, maintaining, and growing an existing coalition of public and private organizations serving populations disproportionately affected by hepatitis B and/or hepatitis C."
+   ],
+   "major_risk": "Part A requires leading and growing an existing hepatitis coalition, which could disadvantage NCDHHS if it lacks an established coalition of that kind.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Builds DPH capacity to educate and test populations disproportionately affected by hepatitis B/C, advancing G1.O4 partner-capacity goals."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O4\",\n  \"strategic_reason\": \"The grant directly funds coalition-based capacity building for community organizations serving populations disproportionately affected by hepatitis B and C, matching G1.O4's focus on investing in partner and community-based organization capacity.\",\n  \"strategic_evidence_quote\": \"building capacity of coalition members to conduct hepatitis B and/or hepatitis C virus infection testing and linkage to treatment in settings serving disproportionately affected populations.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DPH already houses communicable disease prevention, surveillance, and local health department partnerships, making viral hepatitis education and provider training an extension of its existing public health role.\",\n  \"restrictions\": [\n    \"Part A requires leading, maintaining, and growing an existing coalition of public and private organizations serving populations disproportionately affected by hepatitis B and/or hepatitis C.\"\n  ],\n  \"major_risk\": \"Part A requires leading and growing an existing hepatitis coalition, which could disadvantage NCDHHS if it lacks an established coalition of that kind.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Builds DPH capacity to educate and test populations disproportionately affected by hepatitis B/C, advancing G1.O4 partner-capacity goals.\"\n}"
+  ]
+ }
+}

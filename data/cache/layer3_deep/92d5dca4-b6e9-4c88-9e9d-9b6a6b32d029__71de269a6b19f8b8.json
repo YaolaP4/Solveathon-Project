@@ -1,0 +1,28 @@
+{
+ "grant_id": "92d5dca4-b6e9-4c88-9e9d-9b6a6b32d029",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "71de269a6b19f8b80f335b445fd48188172d7e03c060d6e2d3cdec07505bf545",
+ "retrieved_at": "2026-10-02T19:54:21+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 7,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O1",
+   "strategic_reason": "The grant funds mental health services research that would generate evidence to improve service delivery and support integrated behavioral health care models under G3.O1.",
+   "strategic_evidence_quote": "encourage innovative research that will inform and support the delivery of high-quality, continuously improving mental health services",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DMHDDSUS",
+   "operational_fit": 6,
+   "operational_reason": "DMHDDSUS holds the mental health services mission and data, but would likely need an academic research partner to manage an NIH R01.",
+   "restrictions": [],
+   "major_risk": "As an NIH R01, it is highly competitive research and NCDHHS may lack the investigator and grants-management capacity to lead without a university partner.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Strong behavioral-health alignment: NIH R01 mental health services research can build evidence for DMHDDSUS service models, though it requires research partnership."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 7,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O1\",\n  \"strategic_reason\": \"The grant funds mental health services research that would generate evidence to improve service delivery and support integrated behavioral health care models under G3.O1.\",\n  \"strategic_evidence_quote\": \"encourage innovative research that will inform and support the delivery of high-quality, continuously improving mental health services\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DMHDDSUS\",\n  \"operational_fit\": 6,\n  \"operational_reason\": \"DMHDDSUS holds the mental health services mission and data, but would likely need an academic research partner to manage an NIH R01.\",\n  \"restrictions\": [],\n  \"major_risk\": \"As an NIH R01, it is highly competitive research and NCDHHS may lack the investigator and grants-management capacity to lead without a university partner.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Strong behavioral-health alignment: NIH R01 mental health services research can build evidence for DMHDDSUS service models, though it requires research partnership.\"\n}"
+  ]
+ }
+}

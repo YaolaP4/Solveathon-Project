@@ -1,0 +1,28 @@
+{
+ "grant_id": "1613e128-508f-47e1-9bf2-e2c02e7d79b1",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "b5ea247a259f07cb41ae3bd9bbaa6301fd9a8b7c6e7ed8feb1a2e7558e6c107f",
+ "retrieved_at": "2026-10-02T19:46:00+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "ADAP emergency relief reduces HIV medication access barriers and waiting lists, advancing health access and reducing health disparities for a population that faces greater health challenges.",
+   "strategic_evidence_quote": "The purpose of this program is to provide funding to states/territories to prevent, reduce, or eliminate ADAP waiting lists or to address other ADAP shortfalls.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 9,
+   "operational_reason": "DPH is responsible for disease prevention and surveillance, so a medication access program for HIV fits its existing communicable disease prevention role.",
+   "restrictions": [],
+   "major_risk": "The announcement provides no funding amount, eligibility details, or application requirements, and emergency relief may be limited if North Carolina has no current ADAP waiting list or shortfall.",
+   "recommended_for_review": true,
+   "one_line_rationale": "DPH's disease prevention role fits; this grant reduces HIV medication waiting lists, directly supporting health access and equity for people with HIV."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"ADAP emergency relief reduces HIV medication access barriers and waiting lists, advancing health access and reducing health disparities for a population that faces greater health challenges.\",\n  \"strategic_evidence_quote\": \"The purpose of this program is to provide funding to states/territories to prevent, reduce, or eliminate ADAP waiting lists or to address other ADAP shortfalls.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DPH is responsible for disease prevention and surveillance, so a medication access program for HIV fits its existing communicable disease prevention role.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The announcement provides no funding amount, eligibility details, or application requirements, and emergency relief may be limited if North Carolina has no current ADAP waiting list or shortfall.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"DPH's disease prevention role fits; this grant reduces HIV medication waiting lists, directly supporting health access and equity for people with HIV.\"\n}"
+  ]
+ }
+}

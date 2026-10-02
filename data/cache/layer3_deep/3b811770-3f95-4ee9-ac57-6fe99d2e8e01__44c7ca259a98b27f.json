@@ -1,0 +1,28 @@
+{
+ "grant_id": "3b811770-3f95-4ee9-ac57-6fe99d2e8e01",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "44c7ca259a98b27fc8f72b6644fa5d659debe31fd1269deed3777b4adaebd692",
+ "retrieved_at": "2026-10-02T19:48:35+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 6,
+   "matched_goal": "G4",
+   "matched_objective": "G4.O4",
+   "strategic_reason": "The grant funds national coordination of food regulatory and laboratory training, which aligns with NCDHHS's objective of supporting the public health workforce at state and local levels.",
+   "strategic_evidence_quote": "The RLTS will leverage the expertise and resources of all IFSS partners to improve access to high quality human and animal food regulatory and laboratory training and other learning resources.",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "Section 1009 of the Federal Food, Drug, and Cosmetic Act, 21 USC § 399, limits eligibility to State, local, territorial, and tribal agencies and non-profit training entities that collaborate with 1 or more institutions of higher education.",
+   "owning_division": "DPH",
+   "operational_fit": 6,
+   "operational_reason": "DPH oversees food safety and public health laboratory functions and could support training coordination, but serving as a national coordination center with sub-awards is broader than its usual state-level role.",
+   "restrictions": [],
+   "major_risk": "The NOFO is written for a non-profit training entity as the national coordination center, so NCDHHS may be eligible but is not the intended or most competitive applicant.",
+   "recommended_for_review": false,
+   "one_line_rationale": "This national food-safety training coordination center is intended for a non-profit and does not directly fund NCDHHS food safety operations, so likely not worth pursuing."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 6,\n  \"matched_goal\": \"G4\",\n  \"matched_objective\": \"G4.O4\",\n  \"strategic_reason\": \"The grant funds national coordination of food regulatory and laboratory training, which aligns with NCDHHS's objective of supporting the public health workforce at state and local levels.\",\n  \"strategic_evidence_quote\": \"The RLTS will leverage the expertise and resources of all IFSS partners to improve access to high quality human and animal food regulatory and laboratory training and other learning resources.\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"Section 1009 of the Federal Food, Drug, and Cosmetic Act, 21 USC § 399, limits eligibility to State, local, territorial, and tribal agencies and non-profit training entities that collaborate with 1 or more institutions of higher education.\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 6,\n  \"operational_reason\": \"DPH oversees food safety and public health laboratory functions and could support training coordination, but serving as a national coordination center with sub-awards is broader than its usual state-level role.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The NOFO is written for a non-profit training entity as the national coordination center, so NCDHHS may be eligible but is not the intended or most competitive applicant.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"This national food-safety training coordination center is intended for a non-profit and does not directly fund NCDHHS food safety operations, so likely not worth pursuing.\"\n}"
+  ]
+ }
+}

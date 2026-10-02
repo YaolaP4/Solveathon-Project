@@ -1,0 +1,28 @@
+{
+ "grant_id": "910a75ad-0418-4091-a436-703280874498",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "510aa025dd630550e979e41f212067732f5733368780d582c67200188a22dece",
+ "retrieved_at": "2026-10-02T19:47:07+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O2",
+   "strategic_reason": "The grant funds enhanced child welfare practices for infants, toddlers, and families involved with the child welfare system, which directly advances child welfare reform and well-being.",
+   "strategic_evidence_quote": "helps states and communities to strengthen and expand use of enhanced child welfare practices in communities across the country that bring together courts, social services, and families to improve the safety, healthy development, and nurturing relationships of families with young children involved with the child welfare system",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "Any domestic public or private entity",
+   "owning_division": "DSS",
+   "operational_fit": 5,
+   "operational_reason": "DSS oversees child welfare and could contribute relevant expertise, but operating a national resource center would be a new national technical assistance role beyond its usual state and county child welfare operations.",
+   "restrictions": [],
+   "major_risk": "The award funds a national technical assistance center rather than direct North Carolina child welfare services, so benefits to North Carolina would be indirect and NCDHHS may not be competitive for a national center role.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Strong child welfare alignment for DSS, but this cooperative agreement creates a national resource center, so it would not directly fund North Carolina services."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O2\",\n  \"strategic_reason\": \"The grant funds enhanced child welfare practices for infants, toddlers, and families involved with the child welfare system, which directly advances child welfare reform and well-being.\",\n  \"strategic_evidence_quote\": \"helps states and communities to strengthen and expand use of enhanced child welfare practices in communities across the country that bring together courts, social services, and families to improve the safety, healthy development, and nurturing relationships of families with young children involved with the child welfare system\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"Any domestic public or private entity\",\n  \"owning_division\": \"DSS\",\n  \"operational_fit\": 5,\n  \"operational_reason\": \"DSS oversees child welfare and could contribute relevant expertise, but operating a national resource center would be a new national technical assistance role beyond its usual state and county child welfare operations.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The award funds a national technical assistance center rather than direct North Carolina child welfare services, so benefits to North Carolina would be indirect and NCDHHS may not be competitive for a national center role.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Strong child welfare alignment for DSS, but this cooperative agreement creates a national resource center, so it would not directly fund North Carolina services.\"\n}"
+  ]
+ }
+}

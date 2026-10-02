@@ -1,0 +1,28 @@
+{
+ "grant_id": "1380cf9c-4561-45a6-a85d-7866dd308ef0",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "f6e625b4b5a6f683c274112a0c43da43c79468ad4379cf2478d9b22bf1ebee4e",
+ "retrieved_at": "2026-10-02T19:55:11+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 7,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O3",
+   "strategic_reason": "The grant funds research on strategies to overcome barriers to the adoption and sustained use of evidence-based health interventions, which supports NCDHHS's objective of mitigating barriers to health services for populations with greater health challenges.",
+   "strategic_evidence_quote": "support studies that will identify, develop, and/or test strategies for overcoming barriers to the adoption, adaptation, integration, scale-up, and sustainability of evidence-based interventions, practices, programs, tools, treatments, guidelines, and policies.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 6,
+   "operational_reason": "DPH already supports disease prevention, epidemiology, and evidence-based public health programs and collaborates with local health departments and academic partners, but it would need to add dedicated implementation-research capacity.",
+   "restrictions": [],
+   "major_risk": "This is an investigator-initiated NIH research grant, not program funding; NCDHHS would need strong research capacity and would face heavy competition from academic institutions.",
+   "recommended_for_review": true,
+   "one_line_rationale": "NIH implementation-research grant could study ways to reduce health access barriers, fitting Goal 1; DPH could pursue with academic partners, though it is not direct service funding."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 7,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O3\",\n  \"strategic_reason\": \"The grant funds research on strategies to overcome barriers to the adoption and sustained use of evidence-based health interventions, which supports NCDHHS's objective of mitigating barriers to health services for populations with greater health challenges.\",\n  \"strategic_evidence_quote\": \"support studies that will identify, develop, and/or test strategies for overcoming barriers to the adoption, adaptation, integration, scale-up, and sustainability of evidence-based interventions, practices, programs, tools, treatments, guidelines, and policies.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 6,\n  \"operational_reason\": \"DPH already supports disease prevention, epidemiology, and evidence-based public health programs and collaborates with local health departments and academic partners, but it would need to add dedicated implementation-research capacity.\",\n  \"restrictions\": [],\n  \"major_risk\": \"This is an investigator-initiated NIH research grant, not program funding; NCDHHS would need strong research capacity and would face heavy competition from academic institutions.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"NIH implementation-research grant could study ways to reduce health access barriers, fitting Goal 1; DPH could pursue with academic partners, though it is not direct service funding.\"\n}"
+  ]
+ }
+}

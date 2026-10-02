@@ -1,0 +1,34 @@
+{
+ "grant_id": "3c36bc50-73ae-42ad-a727-fae640dad5c9",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "fb3a8f917cc4bb069210d8a364701a11af4dde1cfeb82ef13139249bccdf605d",
+ "retrieved_at": "2026-10-02T19:45:52+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 10,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O3",
+   "strategic_reason": "The grant directly funds implementation and evaluation of comprehensive suicide prevention, which is named in G3.O3's focus on suicide prevention and crisis services.",
+   "strategic_evidence_quote": "implementation and evaluation of a comprehensive public health approach to suicide prevention in the United States",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DMHDDSUS",
+   "operational_fit": 9,
+   "operational_reason": "DMHDDSUS already oversees mental health, substance use, crisis services, and 988, so it can lead a suicide prevention cooperative agreement, though it would need DPH surveillance data partnerships.",
+   "restrictions": [
+    "Must include 1 Letter of Commitment from state or territorial health department leadership endorsing the proposed activities and confirming ability to carry them out.",
+    "Must include multiple Letters of Support: suicide-related morbidity and mortality data manager, syndromic surveillance data manager, 3 tiered partner organizations, and 2 multi-sector partners.",
+    "Must submit preliminary DUA and organizational chart showing required staffing levels: 0.25 FTE program manager, 0.75 FTE epidemiologist, 0.5 FTE behavioral specialist, 0.5 FTE communications specialist, and 0.5 FTE evaluation specialist.",
+    "Applications with budget less than $650,000 or more than $1,200,000 are nonresponsive.",
+    "Applications must use required letters and organizational chart filenames; applications that do not meet these criteria are nonresponsive."
+   ],
+   "major_risk": "The application is administratively burdensome and unforgiving: missing any required commitment or support letter, staffing chart, or filename makes it nonresponsive, and it commits the state to a measurable 5% reduction in suicide mortality.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Directly funds suicide prevention under G3.O3, fits DMHDDSUS crisis/988 work, but requires heavy data-sharing and partnership documentation and commits to measurable mortality reduction."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 10,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O3\",\n  \"strategic_reason\": \"The grant directly funds implementation and evaluation of comprehensive suicide prevention, which is named in G3.O3's focus on suicide prevention and crisis services.\",\n  \"strategic_evidence_quote\": \"implementation and evaluation of a comprehensive public health approach to suicide prevention in the United States\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DMHDDSUS\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DMHDDSUS already oversees mental health, substance use, crisis services, and 988, so it can lead a suicide prevention cooperative agreement, though it would need DPH surveillance data partnerships.\",\n  \"restrictions\": [\n    \"Must include 1 Letter of Commitment from state or territorial health department leadership endorsing the proposed activities and confirming ability to carry them out.\",\n    \"Must include multiple Letters of Support: suicide-related morbidity and mortality data manager, syndromic surveillance data manager, 3 tiered partner organizations, and 2 multi-sector partners.\",\n    \"Must submit preliminary DUA and organizational chart showing required staffing levels: 0.25 FTE program manager, 0.75 FTE epidemiologist, 0.5 FTE behavioral specialist, 0.5 FTE communications specialist, and 0.5 FTE evaluation specialist.\",\n    \"Applications with budget less than $650,000 or more than $1,200,000 are nonresponsive.\",\n    \"Applications must use required letters and organizational chart filenames; applications that do not meet these criteria are nonresponsive.\"\n  ],\n  \"major_risk\": \"The application is administratively burdensome and unforgiving: missing any required commitment or support letter, staffing chart, or filename makes it nonresponsive, and it commits the state to a measurable 5% reduction in suicide mortality.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Directly funds suicide prevention under G3.O3, fits DMHDDSUS crisis/988 work, but requires heavy data-sharing and partnership documentation and commits to measurable mortality reduction.\"\n}"
+  ]
+ }
+}

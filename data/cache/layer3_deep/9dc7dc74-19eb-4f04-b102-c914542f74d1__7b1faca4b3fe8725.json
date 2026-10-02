@@ -1,0 +1,28 @@
+{
+ "grant_id": "9dc7dc74-19eb-4f04-b102-c914542f74d1",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "7b1faca4b3fe8725b927258f219aa0e24cce700cdab374788d49717fb05f44bd",
+ "retrieved_at": "2026-10-02T19:53:20+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 2,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O4",
+   "strategic_reason": "The grant funds capacity development for community partners serving a vulnerable population, which loosely aligns with NCDHHS's objective to invest in partner capacity, though it is not health-specific.",
+   "strategic_evidence_quote": "fund specialized technical assistance projects to develop and expand the capacity of existing and new partners",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "nonprofits_non_higher_education_with_501c3, nonprofits_non_higher_education_without_501c3",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "Refugee reception and placement is a federal-nonprofit resettlement function outside the listed NCDHHS divisions and their health and human services authorities.",
+   "restrictions": [],
+   "major_risk": "NCDHHS is not an eligible applicant type, so it could only participate as a partner in a nonprofit-led consortium, with no clear state role or funding path.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Nonprofit-only refugee resettlement capacity grant outside NCDHHS's divisions; the state agency is ineligible to apply."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 2,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O4\",\n  \"strategic_reason\": \"The grant funds capacity development for community partners serving a vulnerable population, which loosely aligns with NCDHHS's objective to invest in partner capacity, though it is not health-specific.\",\n  \"strategic_evidence_quote\": \"fund specialized technical assistance projects to develop and expand the capacity of existing and new partners\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"nonprofits_non_higher_education_with_501c3, nonprofits_non_higher_education_without_501c3\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"Refugee reception and placement is a federal-nonprofit resettlement function outside the listed NCDHHS divisions and their health and human services authorities.\",\n  \"restrictions\": [],\n  \"major_risk\": \"NCDHHS is not an eligible applicant type, so it could only participate as a partner in a nonprofit-led consortium, with no clear state role or funding path.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Nonprofit-only refugee resettlement capacity grant outside NCDHHS's divisions; the state agency is ineligible to apply.\"\n}"
+  ]
+ }
+}

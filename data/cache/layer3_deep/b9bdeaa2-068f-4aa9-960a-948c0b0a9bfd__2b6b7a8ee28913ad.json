@@ -1,0 +1,28 @@
+{
+ "grant_id": "b9bdeaa2-068f-4aa9-960a-948c0b0a9bfd",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "2b6b7a8ee28913ada44c53ea2d673fd2160b25e3023966b20f8799f58da49bcc",
+ "retrieved_at": "2026-10-02T19:27:18+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 6,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O4",
+   "strategic_reason": "Improving home visiting quality and family outcomes supports maternal, infant, and early childhood services that advance women's health and birth outcomes.",
+   "strategic_evidence_quote": "will improve the quality of home visiting services and outcomes for families",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DCFW",
+   "operational_fit": 6,
+   "operational_reason": "DCFW already operates home visiting and early intervention programs, but running a national research and improvement center would stretch its usual program role.",
+   "restrictions": [],
+   "major_risk": "This appears to fund a single national research and improvement center requiring national-scale research capacity rather than direct state home visiting services.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Supports child and family well-being through better home visiting, fitting DCFW's role, but as a national research center it may exceed state capacity."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 6,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O4\",\n  \"strategic_reason\": \"Improving home visiting quality and family outcomes supports maternal, infant, and early childhood services that advance women's health and birth outcomes.\",\n  \"strategic_evidence_quote\": \"will improve the quality of home visiting services and outcomes for families\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DCFW\",\n  \"operational_fit\": 6,\n  \"operational_reason\": \"DCFW already operates home visiting and early intervention programs, but running a national research and improvement center would stretch its usual program role.\",\n  \"restrictions\": [],\n  \"major_risk\": \"This appears to fund a single national research and improvement center requiring national-scale research capacity rather than direct state home visiting services.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Supports child and family well-being through better home visiting, fitting DCFW's role, but as a national research center it may exceed state capacity.\"\n}"
+  ]
+ }
+}

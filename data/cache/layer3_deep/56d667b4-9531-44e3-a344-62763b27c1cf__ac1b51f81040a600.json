@@ -1,0 +1,28 @@
+{
+ "grant_id": "56d667b4-9531-44e3-a344-62763b27c1cf",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "ac1b51f81040a600be7c3ed0e24d063ba1dc337692d0e1ce91c4d2eede42d292",
+ "retrieved_at": "2026-10-02T19:54:08+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 4,
+   "matched_goal": "G5",
+   "matched_objective": "G5.O1",
+   "strategic_reason": "The grant funds creation of a longitudinal research cohort and IT/data management core, which aligns with G5.O1's emphasis on building data infrastructure for evidence-based decisions.",
+   "strategic_evidence_quote": "Information Technology (IT) and Data Management.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 3,
+   "operational_reason": "DPH has epidemiology, environmental health, and data-management capacity, but it does not operate WTC-specific cohorts or have access to the 9/11-exposed youth population.",
+   "restrictions": [],
+   "major_risk": "The grant requires building and maintaining a specialized national WTC 9/11 youth cohort, an area where NCDHHS has no existing WTC Health Program relationships or direct access to the affected population.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Highly specialized WTC 9/11 youth cohort research has weak tie to NCDHHS goals and would be hard for a state health department to lead; not worth pursuing."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 4,\n  \"matched_goal\": \"G5\",\n  \"matched_objective\": \"G5.O1\",\n  \"strategic_reason\": \"The grant funds creation of a longitudinal research cohort and IT/data management core, which aligns with G5.O1's emphasis on building data infrastructure for evidence-based decisions.\",\n  \"strategic_evidence_quote\": \"Information Technology (IT) and Data Management.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 3,\n  \"operational_reason\": \"DPH has epidemiology, environmental health, and data-management capacity, but it does not operate WTC-specific cohorts or have access to the 9/11-exposed youth population.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The grant requires building and maintaining a specialized national WTC 9/11 youth cohort, an area where NCDHHS has no existing WTC Health Program relationships or direct access to the affected population.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Highly specialized WTC 9/11 youth cohort research has weak tie to NCDHHS goals and would be hard for a state health department to lead; not worth pursuing.\"\n}"
+  ]
+ }
+}

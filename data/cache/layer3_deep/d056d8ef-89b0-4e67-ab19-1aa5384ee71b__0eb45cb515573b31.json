@@ -1,0 +1,28 @@
+{
+ "grant_id": "d056d8ef-89b0-4e67-ab19-1aa5384ee71b",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "0eb45cb515573b31168df09793f4597df8146f3479ba1eb7a37492bf379bcf32",
+ "retrieved_at": "2026-10-02T20:00:54+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 1,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds international anti-trafficking programming, which is not among NCDHHS's strategic goals or objectives and does not directly advance a named health, child welfare, behavioral health, workforce, or operational strategy.",
+   "strategic_evidence_quote": "PEMS programming establishes a strategic funding framework to develop, test, evaluate, and scale evidence-based anti-trafficking interventions that directly advance U.S. national security, economic competitiveness, and efforts to combat transnational crime.",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "U.S. government agencies",
+   "owning_division": "none",
+   "operational_fit": 1,
+   "operational_reason": "NCDHHS divisions do not run international anti-trafficking programming, and this grant is outside the Department's domestic health and human services authority and operations.",
+   "restrictions": [],
+   "major_risk": "The grant is aimed at international programming and U.S. federal agency applicants rather than state health and human services operations, so NCDHHS likely lacks eligibility and implementation authority.",
+   "recommended_for_review": false,
+   "one_line_rationale": "International anti-trafficking grant falls outside NCDHHS domestic health and human services objectives and likely excludes state agencies; no clear owning division."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 1,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds international anti-trafficking programming, which is not among NCDHHS's strategic goals or objectives and does not directly advance a named health, child welfare, behavioral health, workforce, or operational strategy.\",\n  \"strategic_evidence_quote\": \"PEMS programming establishes a strategic funding framework to develop, test, evaluate, and scale evidence-based anti-trafficking interventions that directly advance U.S. national security, economic competitiveness, and efforts to combat transnational crime.\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"U.S. government agencies\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 1,\n  \"operational_reason\": \"NCDHHS divisions do not run international anti-trafficking programming, and this grant is outside the Department's domestic health and human services authority and operations.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The grant is aimed at international programming and U.S. federal agency applicants rather than state health and human services operations, so NCDHHS likely lacks eligibility and implementation authority.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"International anti-trafficking grant falls outside NCDHHS domestic health and human services objectives and likely excludes state agencies; no clear owning division.\"\n}"
+  ]
+ }
+}

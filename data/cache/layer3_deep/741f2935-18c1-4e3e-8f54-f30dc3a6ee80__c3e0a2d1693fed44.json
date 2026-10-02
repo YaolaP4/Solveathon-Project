@@ -1,0 +1,28 @@
+{
+ "grant_id": "741f2935-18c1-4e3e-8f54-f30dc3a6ee80",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "c3e0a2d1693fed44fbdee79b71b461e25ca37531eed246bebf82ba84942d259a",
+ "retrieved_at": "2026-10-02T19:47:46+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O4",
+   "strategic_reason": "The grant funds collaborative networks to improve rural maternity and obstetrics care, directly supporting NCDHHS's objective to improve women's health and birth outcomes.",
+   "strategic_evidence_quote": "support collaborative improvement and innovation networks to improve access to and delivery of maternity and obstetrics care in rural areas",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 9,
+   "operational_reason": "DPH already houses maternal and child health programs and works with local health departments, so this program is a direct extension of its existing work.",
+   "restrictions": [],
+   "major_risk": "Building collaborative rural maternity networks will require sustained engagement from rural hospitals and providers facing workforce shortages and obstetric unit closures.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Directly funds rural maternity and obstetrics access, aligning with NCDHHS maternal and child health goals; DPH could lead with ORH and local partners."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O4\",\n  \"strategic_reason\": \"The grant funds collaborative networks to improve rural maternity and obstetrics care, directly supporting NCDHHS's objective to improve women's health and birth outcomes.\",\n  \"strategic_evidence_quote\": \"support collaborative improvement and innovation networks to improve access to and delivery of maternity and obstetrics care in rural areas\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DPH already houses maternal and child health programs and works with local health departments, so this program is a direct extension of its existing work.\",\n  \"restrictions\": [],\n  \"major_risk\": \"Building collaborative rural maternity networks will require sustained engagement from rural hospitals and providers facing workforce shortages and obstetric unit closures.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Directly funds rural maternity and obstetrics access, aligning with NCDHHS maternal and child health goals; DPH could lead with ORH and local partners.\"\n}"
+  ]
+ }
+}

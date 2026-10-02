@@ -1,0 +1,31 @@
+{
+ "grant_id": "493ea282-9ea7-48d4-9567-8495dceb20d4",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "efb63bc412502bcbcf0c85d078e3d32d91f107c051f640122f8c463b0d2e4cd1",
+ "retrieved_at": "2026-10-02T19:57:23+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 0,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "No named NCDHHS objective directly covers NIH clinical trial research on infectious disease therapeutics, vaccines, biologics, diagnostics, or devices; the activity is trial infrastructure rather than the health access, child/family, behavioral health, workforce, or operational objectives listed.",
+   "strategic_evidence_quote": "supporting a cooperative network to rapidly implement clinical trials that meet NIH and NIAID priorities",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 3,
+   "operational_reason": "DPH handles infectious disease surveillance, epidemiology, immunization, and public health preparedness, but it does not routinely operate NIH clinical trial units or a clinical trial coordination center.",
+   "restrictions": [
+    "Cooperative agreement funding instrument",
+    "Requires Clinical Trial Evaluation Units and a Network Coordination Center as part of the network"
+   ],
+   "major_risk": "NCDHHS is an eligible but atypical applicant for an NIH clinical trials network, and the program likely requires academic medical center trial capacity and federal research compliance that NCDHHS does not routinely have.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Infectious disease clinical trial network is research infrastructure with no named strategic objective match; DPH lacks trial-coordination capacity, so this posting is not a strong NCDHHS fit."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 0,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"No named NCDHHS objective directly covers NIH clinical trial research on infectious disease therapeutics, vaccines, biologics, diagnostics, or devices; the activity is trial infrastructure rather than the health access, child/family, behavioral health, workforce, or operational objectives listed.\",\n  \"strategic_evidence_quote\": \"supporting a cooperative network to rapidly implement clinical trials that meet NIH and NIAID priorities\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 3,\n  \"operational_reason\": \"DPH handles infectious disease surveillance, epidemiology, immunization, and public health preparedness, but it does not routinely operate NIH clinical trial units or a clinical trial coordination center.\",\n  \"restrictions\": [\n    \"Cooperative agreement funding instrument\",\n    \"Requires Clinical Trial Evaluation Units and a Network Coordination Center as part of the network\"\n  ],\n  \"major_risk\": \"NCDHHS is an eligible but atypical applicant for an NIH clinical trials network, and the program likely requires academic medical center trial capacity and federal research compliance that NCDHHS does not routinely have.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Infectious disease clinical trial network is research infrastructure with no named strategic objective match; DPH lacks trial-coordination capacity, so this posting is not a strong NCDHHS fit.\"\n}"
+  ]
+ }
+}

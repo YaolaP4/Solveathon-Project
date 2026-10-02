@@ -1,0 +1,31 @@
+{
+ "grant_id": "54c6b441-1759-42d7-ae62-fff1161497c0",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "39150596d71d97dd41306bf423f04a339f97c73b52a14f310ab5ff7ff9c9153f",
+ "retrieved_at": "2026-10-02T19:29:21+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 6,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O4",
+   "strategic_reason": "Training Title X staff to deliver high-quality family planning services supports reproductive life planning and improved women's health and birth outcomes.",
+   "strategic_evidence_quote": "deliver high-quality family planning services",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "To receive funding from the Title X program, you must be a public or private non-profit entity.",
+   "owning_division": "DPH",
+   "operational_fit": 3,
+   "operational_reason": "DPH has maternal and family planning expertise, but operating a national training center for all federal grantees is outside its statewide service role.",
+   "restrictions": [
+    "Single application with 2 distinct parts covering both Title X and TPP programs",
+    "Continuation funding requires a non-competing continuation (NCC) application for each budget period after the first"
+   ],
+   "major_risk": "Only one national applicant will be funded, so NCDHHS would compete against national organizations with established national training networks.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Supports women's health via family planning training, but single national award is outside DPH's statewide role."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 6,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O4\",\n  \"strategic_reason\": \"Training Title X staff to deliver high-quality family planning services supports reproductive life planning and improved women's health and birth outcomes.\",\n  \"strategic_evidence_quote\": \"deliver high-quality family planning services\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"To receive funding from the Title X program, you must be a public or private non-profit entity.\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 3,\n  \"operational_reason\": \"DPH has maternal and family planning expertise, but operating a national training center for all federal grantees is outside its statewide service role.\",\n  \"restrictions\": [\n    \"Single application with 2 distinct parts covering both Title X and TPP programs\",\n    \"Continuation funding requires a non-competing continuation (NCC) application for each budget period after the first\"\n  ],\n  \"major_risk\": \"Only one national applicant will be funded, so NCDHHS would compete against national organizations with established national training networks.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Supports women's health via family planning training, but single national award is outside DPH's statewide role.\"\n}"
+  ]
+ }
+}

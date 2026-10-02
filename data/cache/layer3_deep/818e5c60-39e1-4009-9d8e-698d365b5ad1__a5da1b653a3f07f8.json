@@ -1,0 +1,28 @@
+{
+ "grant_id": "818e5c60-39e1-4009-9d8e-698d365b5ad1",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "a5da1b653a3f07f8839796d09bdf8e6af8ebb2bb54d25b67c3aa7ff2be9b4e4c",
+ "retrieved_at": "2026-10-02T20:01:42+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "The grant funds intervention research to improve Native American health, which directly supports reducing health disparities for populations that face greater health challenges.",
+   "strategic_evidence_quote": "Intervention Research to Improve Native American Health (R01 Clinical Trial Optional)",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 6,
+   "operational_reason": "DPH already addresses minority health disparities and has epidemiology and public health research capacity, though leading an NIH R01 would be an expansion of its typical work.",
+   "restrictions": [],
+   "major_risk": "The highly competitive NIH R01 mechanism may require deeper research infrastructure and established Native American community partnerships than NCDHHS currently has as a lead applicant.",
+   "recommended_for_review": true,
+   "one_line_rationale": "NIH research grant aligned with health-disparities work; DPH could pursue with tribal and academic partners, though R01 competitiveness is high."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"The grant funds intervention research to improve Native American health, which directly supports reducing health disparities for populations that face greater health challenges.\",\n  \"strategic_evidence_quote\": \"Intervention Research to Improve Native American Health (R01 Clinical Trial Optional)\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 6,\n  \"operational_reason\": \"DPH already addresses minority health disparities and has epidemiology and public health research capacity, though leading an NIH R01 would be an expansion of its typical work.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The highly competitive NIH R01 mechanism may require deeper research infrastructure and established Native American community partnerships than NCDHHS currently has as a lead applicant.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"NIH research grant aligned with health-disparities work; DPH could pursue with tribal and academic partners, though R01 competitiveness is high.\"\n}"
+  ]
+ }
+}

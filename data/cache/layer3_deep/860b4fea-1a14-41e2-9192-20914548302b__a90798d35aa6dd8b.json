@@ -1,0 +1,28 @@
+{
+ "grant_id": "860b4fea-1a14-41e2-9192-20914548302b",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "a90798d35aa6dd8bac71bdf8ec45378c76e5641ced8a46d41de760d2baac1603",
+ "retrieved_at": "2026-10-02T19:59:14+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "The grant funds research to advance healthcare and reduce health disparities for older adults, directly supporting NCDHHS's goal of increasing health access and reducing disparities.",
+   "strategic_evidence_quote": "The purpose of this initiative is to advance the science and implementation of innovative multi-level health care research for older adults from populations that experience health disparities.",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DAGING",
+   "operational_fit": 4,
+   "operational_reason": "The Division of Aging serves older adults and could provide subject-matter expertise and populations, but this NIH R01 requires research infrastructure it does not currently have.",
+   "restrictions": [],
+   "major_risk": "NCDHHS is unlikely to be competitive as an NIH R01 lead because it lacks an academic research track record; pursuing would require a strong university partner and significant staff time.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Aligns with health equity and older adults, but it is an NIH research R01 requiring academic research capacity NCDHHS lacks; better as a partner than a lead."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"The grant funds research to advance healthcare and reduce health disparities for older adults, directly supporting NCDHHS's goal of increasing health access and reducing disparities.\",\n  \"strategic_evidence_quote\": \"The purpose of this initiative is to advance the science and implementation of innovative multi-level health care research for older adults from populations that experience health disparities.\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DAGING\",\n  \"operational_fit\": 4,\n  \"operational_reason\": \"The Division of Aging serves older adults and could provide subject-matter expertise and populations, but this NIH R01 requires research infrastructure it does not currently have.\",\n  \"restrictions\": [],\n  \"major_risk\": \"NCDHHS is unlikely to be competitive as an NIH R01 lead because it lacks an academic research track record; pursuing would require a strong university partner and significant staff time.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Aligns with health equity and older adults, but it is an NIH research R01 requiring academic research capacity NCDHHS lacks; better as a partner than a lead.\"\n}"
+  ]
+ }
+}

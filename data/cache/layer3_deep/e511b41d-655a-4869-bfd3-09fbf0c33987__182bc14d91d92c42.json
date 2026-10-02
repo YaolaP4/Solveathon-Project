@@ -1,0 +1,28 @@
+{
+ "grant_id": "e511b41d-655a-4869-bfd3-09fbf0c33987",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "182bc14d91d92c423a2a3db207de914f58fe41fdb9eb30255ac441feda5455f5",
+ "retrieved_at": "2026-10-02T19:28:21+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 6,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "Funds STI prevention and sexual-health education focused on priority groups most affected, advancing health-access and disparity-reduction work.",
+   "strategic_evidence_quote": "This funding strengthens STI prevention efforts by supporting coalition management and the development, promotion, and dissemination of high-quality, evidence-based sexual health-related materials, resources, and tools to their partners, health care providers, and the public.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 6,
+   "operational_reason": "DPH already leads disease prevention and surveillance including STI work with local health departments and providers.",
+   "restrictions": [],
+   "major_risk": "Designed around a national coalition, so a state agency may be uncompetitive against national sexual-health organizations.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Supports STI prevention and health equity via DPH, but national-coalition design may limit state competitiveness."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 6,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"Funds STI prevention and sexual-health education focused on priority groups most affected, advancing health-access and disparity-reduction work.\",\n  \"strategic_evidence_quote\": \"This funding strengthens STI prevention efforts by supporting coalition management and the development, promotion, and dissemination of high-quality, evidence-based sexual health-related materials, resources, and tools to their partners, health care providers, and the public.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 6,\n  \"operational_reason\": \"DPH already leads disease prevention and surveillance including STI work with local health departments and providers.\",\n  \"restrictions\": [],\n  \"major_risk\": \"Designed around a national coalition, so a state agency may be uncompetitive against national sexual-health organizations.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Supports STI prevention and health equity via DPH, but national-coalition design may limit state competitiveness.\"\n}"
+  ]
+ }
+}

@@ -1,0 +1,30 @@
+{
+ "grant_id": "39082d33-81a4-4136-8e86-aa33bbfc438b",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "ee58c299085e88f4665e9c1edddbcf8e3e89908d9bc2328f979a84a8344a31bf",
+ "retrieved_at": "2026-10-02T20:01:03+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 7,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O1",
+   "strategic_reason": "The project funds clinical trials of digital mental health interventions, which can extend and optimize behavioral health care delivery and integration.",
+   "strategic_evidence_quote": "test strategies to increase the reach, efficiency, effectiveness, and quality of digital mental health interventions",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DMHDDSUS",
+   "operational_fit": 5,
+   "operational_reason": "DMHDDSUS oversees mental health services and could support digital mental health intervention trials, but it is not primarily an NIH clinical research organization.",
+   "restrictions": [
+    "Clinical Trial Required"
+   ],
+   "major_risk": "The R01 research and clinical trial requirements may exceed NCDHHS's internal research capacity, making success dependent on an academic research partner.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Aligns with DMHDDSUS mental health priorities and digital health, but would likely require a research partner to conduct the required clinical trial."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 7,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O1\",\n  \"strategic_reason\": \"The project funds clinical trials of digital mental health interventions, which can extend and optimize behavioral health care delivery and integration.\",\n  \"strategic_evidence_quote\": \"test strategies to increase the reach, efficiency, effectiveness, and quality of digital mental health interventions\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DMHDDSUS\",\n  \"operational_fit\": 5,\n  \"operational_reason\": \"DMHDDSUS oversees mental health services and could support digital mental health intervention trials, but it is not primarily an NIH clinical research organization.\",\n  \"restrictions\": [\"Clinical Trial Required\"],\n  \"major_risk\": \"The R01 research and clinical trial requirements may exceed NCDHHS's internal research capacity, making success dependent on an academic research partner.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Aligns with DMHDDSUS mental health priorities and digital health, but would likely require a research partner to conduct the required clinical trial.\"\n}"
+  ]
+ }
+}

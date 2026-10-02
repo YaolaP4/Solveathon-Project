@@ -1,0 +1,28 @@
+{
+ "grant_id": "1079c77e-80b2-4b29-8731-d11c9c9680d2",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "9a4d41e35f6ff240d4464cd58e87b47b64c58145419ad2c64841cef0fd7a4160",
+ "retrieved_at": "2026-10-02T20:02:30+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 3,
+   "matched_goal": "G4",
+   "matched_objective": "G4.O4",
+   "strategic_reason": "The grant funds biocontainment workforce training, which is only tangentially related to NCDHHS's public health workforce objective and is directed at university laboratories rather than state or local health agencies.",
+   "strategic_evidence_quote": "facility maintenance, operations and biocontainment-specific training for personnel to maintain a capable BSL-3 level workforce in the United States",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "public_and_state_institutions_of_higher_education",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "No NCDHHS division operates the named Regional Biocontainment Laboratories or is eligible under the listed applicant types.",
+   "restrictions": [],
+   "major_risk": "NCDHHS is not eligible to apply because the competition is limited to specific universities, so the agency could only participate indirectly, if at all.",
+   "recommended_for_review": false,
+   "one_line_rationale": "NCDHHS is not eligible and the grant supports university biocontainment labs, not a direct NCDHHS strategic objective."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 3,\n  \"matched_goal\": \"G4\",\n  \"matched_objective\": \"G4.O4\",\n  \"strategic_reason\": \"The grant funds biocontainment workforce training, which is only tangentially related to NCDHHS's public health workforce objective and is directed at university laboratories rather than state or local health agencies.\",\n  \"strategic_evidence_quote\": \"facility maintenance, operations and biocontainment-specific training for personnel to maintain a capable BSL-3 level workforce in the United States\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"public_and_state_institutions_of_higher_education\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"No NCDHHS division operates the named Regional Biocontainment Laboratories or is eligible under the listed applicant types.\",\n  \"restrictions\": [],\n  \"major_risk\": \"NCDHHS is not eligible to apply because the competition is limited to specific universities, so the agency could only participate indirectly, if at all.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"NCDHHS is not eligible and the grant supports university biocontainment labs, not a direct NCDHHS strategic objective.\"\n}"
+  ]
+ }
+}

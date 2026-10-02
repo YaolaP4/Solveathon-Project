@@ -1,0 +1,28 @@
+{
+ "grant_id": "18c0a9f1-fe39-4c7a-8ffd-1d8c656d666f",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "3bc10641369ddc52d78d5f250950f8f4ae04d0734d08e3b9d8def5062c828155",
+ "retrieved_at": "2026-10-02T19:48:37+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O3",
+   "strategic_reason": "This grant funds telehealth-delivered nutrition services to prevent and manage chronic diseases, directly supporting G1.O3's effort to mitigate barriers to health services through telehealth.",
+   "strategic_evidence_quote": "This program will use telehealth nutrition services to help prevent and manage chronic diseases.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 8,
+   "operational_reason": "DPH already oversees chronic disease prevention and nutrition programs and works with local health departments, so it could extend those efforts through telehealth-delivered nutrition services.",
+   "restrictions": [],
+   "major_risk": "The notice lacks eligibility and network requirements, so the application may carry hidden consortium, cost-sharing, or reporting obligations.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Funds telehealth nutrition services to prevent chronic disease, aligning with G1.O3; DPH could lead if network requirements are manageable."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O3\",\n  \"strategic_reason\": \"This grant funds telehealth-delivered nutrition services to prevent and manage chronic diseases, directly supporting G1.O3's effort to mitigate barriers to health services through telehealth.\",\n  \"strategic_evidence_quote\": \"This program will use telehealth nutrition services to help prevent and manage chronic diseases.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 8,\n  \"operational_reason\": \"DPH already oversees chronic disease prevention and nutrition programs and works with local health departments, so it could extend those efforts through telehealth-delivered nutrition services.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The notice lacks eligibility and network requirements, so the application may carry hidden consortium, cost-sharing, or reporting obligations.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Funds telehealth nutrition services to prevent chronic disease, aligning with G1.O3; DPH could lead if network requirements are manageable.\"\n}"
+  ]
+ }
+}

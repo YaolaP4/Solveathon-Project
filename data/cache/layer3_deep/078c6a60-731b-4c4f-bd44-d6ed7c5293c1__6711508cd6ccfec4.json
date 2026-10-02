@@ -1,0 +1,28 @@
+{
+ "grant_id": "078c6a60-731b-4c4f-bd44-d6ed7c5293c1",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "6711508cd6ccfec4e14cad480b3e2fe940960fcfade6030ff4ebfcf66f294191",
+ "retrieved_at": "2026-10-02T19:57:53+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 7,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O4",
+   "strategic_reason": "The grant funds analysis of existing data on drug-using behaviors, prevention, and service utilization, which can build evidence for substance use treatment and prevention strategies.",
+   "strategic_evidence_quote": "study the etiology and epidemiology of drug using behaviors (defined as alcohol, tobacco, prescription and other drug) and related disorders, prevention of drug use and HIV, and health service utilization",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DMHDDSUS",
+   "operational_fit": 4,
+   "operational_reason": "DMHDDSUS oversees substance use services but does not primarily conduct NIH-funded neuroimaging or social science data analysis, so it would need research partners to execute the project.",
+   "restrictions": [],
+   "major_risk": "NIH R01s are highly competitive investigator-initiated research awards and NCDHHS lacks a strong research infrastructure, so the application may not be competitive.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Substance use data research aligns with G3.O4 but NIH R01 competitiveness and NCDHHS's limited research role make this a poor fit."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 7,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O4\",\n  \"strategic_reason\": \"The grant funds analysis of existing data on drug-using behaviors, prevention, and service utilization, which can build evidence for substance use treatment and prevention strategies.\",\n  \"strategic_evidence_quote\": \"study the etiology and epidemiology of drug using behaviors (defined as alcohol, tobacco, prescription and other drug) and related disorders, prevention of drug use and HIV, and health service utilization\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DMHDDSUS\",\n  \"operational_fit\": 4,\n  \"operational_reason\": \"DMHDDSUS oversees substance use services but does not primarily conduct NIH-funded neuroimaging or social science data analysis, so it would need research partners to execute the project.\",\n  \"restrictions\": [],\n  \"major_risk\": \"NIH R01s are highly competitive investigator-initiated research awards and NCDHHS lacks a strong research infrastructure, so the application may not be competitive.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Substance use data research aligns with G3.O4 but NIH R01 competitiveness and NCDHHS's limited research role make this a poor fit.\"\n}"
+  ]
+ }
+}

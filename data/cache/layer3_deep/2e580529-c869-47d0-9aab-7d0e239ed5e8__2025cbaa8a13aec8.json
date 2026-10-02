@@ -1,0 +1,30 @@
+{
+ "grant_id": "2e580529-c869-47d0-9aab-7d0e239ed5e8",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "2025cbaa8a13aec8067b71fdce9f0d1167351fdd7efe958f99e83e763b29b8c4",
+ "retrieved_at": "2026-10-02T19:45:49+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "The grant funds integrated viral hepatitis surveillance, testing, treatment, and prevention, which directly advances health access and reduces disparities for high-impact populations.",
+   "strategic_evidence_quote": "Expected outcomes include improved surveillance and reporting of viral hepatitis, improved strategic planning and partner collaboration in viral hepatitis elimination, and expanded access to viral hepatitis prevention, diagnosis, and treatment in high-impact settings.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "The 51 state health departments or their bona fide agents, including the District of Columbia.",
+   "owning_division": "DPH",
+   "operational_fit": 9,
+   "operational_reason": "DPH already leads communicable disease surveillance, epidemiology, and prevention programs, so viral hepatitis surveillance, testing, and prevention are an extension of its existing public health authority.",
+   "restrictions": [
+    "Applicants must implement two required components: Component 1 (Outbreak Response and Surveillance) and Component 2 (Planning, Partnerships, and Promotion)."
+   ],
+   "major_risk": "The cooperative agreement requires both outbreak response and surveillance plus planning and partnership components, which could strain DPH communicable disease capacity even before optional testing and perinatal components are considered.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Directly supports Goal 1 health access; DPH already runs communicable disease surveillance and prevention, making it the natural lead for viral hepatitis work."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"The grant funds integrated viral hepatitis surveillance, testing, treatment, and prevention, which directly advances health access and reduces disparities for high-impact populations.\",\n  \"strategic_evidence_quote\": \"Expected outcomes include improved surveillance and reporting of viral hepatitis, improved strategic planning and partner collaboration in viral hepatitis elimination, and expanded access to viral hepatitis prevention, diagnosis, and treatment in high-impact settings.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"The 51 state health departments or their bona fide agents, including the District of Columbia.\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DPH already leads communicable disease surveillance, epidemiology, and prevention programs, so viral hepatitis surveillance, testing, and prevention are an extension of its existing public health authority.\",\n  \"restrictions\": [\n    \"Applicants must implement two required components: Component 1 (Outbreak Response and Surveillance) and Component 2 (Planning, Partnerships, and Promotion).\"\n  ],\n  \"major_risk\": \"The cooperative agreement requires both outbreak response and surveillance plus planning and partnership components, which could strain DPH communicable disease capacity even before optional testing and perinatal components are considered.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Directly supports Goal 1 health access; DPH already runs communicable disease surveillance and prevention, making it the natural lead for viral hepatitis work.\"\n}"
+  ]
+ }
+}

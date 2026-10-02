@@ -1,0 +1,30 @@
+{
+ "grant_id": "afc00d6c-1c46-41b9-bf6a-49e00362e143",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "4d99a9720e58eb12dbbcd6b69e2a1ac836be9165aedeeb43104290450199c17c",
+ "retrieved_at": "2026-10-02T19:59:34+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 3,
+   "matched_goal": "G5",
+   "matched_objective": "G5.O1",
+   "strategic_reason": "The grant funds training and curricula for using health information and data resources, which is tangentially related to G5.O1's focus on staff data skills but is aimed at librarians and information specialists rather than NCDHHS operations.",
+   "strategic_evidence_quote": "The NTC will focus on supporting training across the NNLM, including developing curricula, materials, and executing synchronous and asynchronous training sessions.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "none",
+   "operational_fit": 2,
+   "operational_reason": "NCDHHS does not operate a national medical library training center and lacks the required biomedical information, instructional design, and technology management role.",
+   "restrictions": [
+    "Cooperative agreement with NIH involvement"
+   ],
+   "major_risk": "This is a national training center for medical library and information specialists, requiring specialized library and informatics capacity that NCDHHS does not have.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Though state agencies can apply, this national library training center does not match NCDHHS health and human services functions and would divert effort from core mission."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 3,\n  \"matched_goal\": \"G5\",\n  \"matched_objective\": \"G5.O1\",\n  \"strategic_reason\": \"The grant funds training and curricula for using health information and data resources, which is tangentially related to G5.O1's focus on staff data skills but is aimed at librarians and information specialists rather than NCDHHS operations.\",\n  \"strategic_evidence_quote\": \"The NTC will focus on supporting training across the NNLM, including developing curricula, materials, and executing synchronous and asynchronous training sessions.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 2,\n  \"operational_reason\": \"NCDHHS does not operate a national medical library training center and lacks the required biomedical information, instructional design, and technology management role.\",\n  \"restrictions\": [\n    \"Cooperative agreement with NIH involvement\"\n  ],\n  \"major_risk\": \"This is a national training center for medical library and information specialists, requiring specialized library and informatics capacity that NCDHHS does not have.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Though state agencies can apply, this national library training center does not match NCDHHS health and human services functions and would divert effort from core mission.\"\n}"
+  ]
+ }
+}

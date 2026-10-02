@@ -1,0 +1,28 @@
+{
+ "grant_id": "9ea57cf9-811c-4b26-9d18-fc27169861e7",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "d02a222cc1a7d6de793f4ec2a7afb73c0de838eb71e31506d63ec115783da671",
+ "retrieved_at": "2026-10-02T19:53:17+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 7,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O3",
+   "strategic_reason": "The grant funds development and pilot-testing of interventions to improve HIV prevention and treatment services for people who use drugs, a population that faces significant barriers to health services.",
+   "strategic_evidence_quote": "novel or adapted interventions that target HIV prevention, treatment or services research for people who use drugs",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 7,
+   "operational_reason": "DPH has the disease prevention, HIV, and epidemiology role to lead or support intervention research aimed at improving HIV prevention and treatment, likely in partnership with academic or community researchers.",
+   "restrictions": [],
+   "major_risk": "As an NIH R34 clinical trial required, this grant supports intervention development and pilot research, not direct program funding, and would require research infrastructure and human subjects protections that may be outside DPH's routine program operations.",
+   "recommended_for_review": true,
+   "one_line_rationale": "This aligns with NCDHHS HIV prevention and health access goals for people who use substances, but it is a research grant requiring DPH research capacity and likely academic partners."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 7,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O3\",\n  \"strategic_reason\": \"The grant funds development and pilot-testing of interventions to improve HIV prevention and treatment services for people who use drugs, a population that faces significant barriers to health services.\",\n  \"strategic_evidence_quote\": \"novel or adapted interventions that target HIV prevention, treatment or services research for people who use drugs\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 7,\n  \"operational_reason\": \"DPH has the disease prevention, HIV, and epidemiology role to lead or support intervention research aimed at improving HIV prevention and treatment, likely in partnership with academic or community researchers.\",\n  \"restrictions\": [],\n  \"major_risk\": \"As an NIH R34 clinical trial required, this grant supports intervention development and pilot research, not direct program funding, and would require research infrastructure and human subjects protections that may be outside DPH's routine program operations.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"This aligns with NCDHHS HIV prevention and health access goals for people who use substances, but it is a research grant requiring DPH research capacity and likely academic partners.\"\n}"
+  ]
+ }
+}

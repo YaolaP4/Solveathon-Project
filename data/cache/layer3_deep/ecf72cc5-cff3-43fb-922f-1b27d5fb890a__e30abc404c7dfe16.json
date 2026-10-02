@@ -1,0 +1,28 @@
+{
+ "grant_id": "ecf72cc5-cff3-43fb-922f-1b27d5fb890a",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "e30abc404c7dfe1665b335bf3697d0db798f74cc65ece519441b55754404f743",
+ "retrieved_at": "2026-10-02T19:57:36+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 4,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "The grant funds laboratory infrastructure and testing for HIV prevention and treatment clinical trials, which supports building structures to reduce HIV-related health disparities.",
+   "strategic_evidence_quote": "test prevention and treatment strategies and conduct implementation research designed to end the HIV epidemic",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 3,
+   "operational_reason": "DPH houses HIV/STD prevention and the state public health laboratory, but it does not operate an NIH-funded HIV clinical trials network laboratory center and would need substantial new research capacity.",
+   "restrictions": [],
+   "major_risk": "The grant requires running a clinical-trial laboratory center under an NIH cooperative agreement, which likely exceeds NCDHHS's routine public health laboratory role and would compete with academic medical centers.",
+   "recommended_for_review": false,
+   "one_line_rationale": "NIH HIV clinical-trial laboratory infrastructure is research-heavy and not a clear fit for NCDHHS service objectives, though DPH could be a partner."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 4,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"The grant funds laboratory infrastructure and testing for HIV prevention and treatment clinical trials, which supports building structures to reduce HIV-related health disparities.\",\n  \"strategic_evidence_quote\": \"test prevention and treatment strategies and conduct implementation research designed to end the HIV epidemic\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 3,\n  \"operational_reason\": \"DPH houses HIV/STD prevention and the state public health laboratory, but it does not operate an NIH-funded HIV clinical trials network laboratory center and would need substantial new research capacity.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The grant requires running a clinical-trial laboratory center under an NIH cooperative agreement, which likely exceeds NCDHHS's routine public health laboratory role and would compete with academic medical centers.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"NIH HIV clinical-trial laboratory infrastructure is research-heavy and not a clear fit for NCDHHS service objectives, though DPH could be a partner.\"\n}"
+  ]
+ }
+}

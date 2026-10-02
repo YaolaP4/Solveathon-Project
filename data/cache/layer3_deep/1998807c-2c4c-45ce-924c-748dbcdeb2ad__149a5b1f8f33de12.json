@@ -1,0 +1,28 @@
+{
+ "grant_id": "1998807c-2c4c-45ce-924c-748dbcdeb2ad",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "149a5b1f8f33de129bb7339228c8ef556a7ed6244b4c13f750b1310937a6aad8",
+ "retrieved_at": "2026-10-02T20:00:54+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 1,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "No NCDHHS strategic objective directly addresses international human trafficking prosecution, protection, or prevention; at most it intersects indirectly with victim services.",
+   "strategic_evidence_quote": "The TIP Office invites applications for projects that aim to combat human trafficking following the legislative framework laid out in the Trafficking Victims Protection Act, and subsequent reauthorizations, to prosecute traffickers, protect victims, and prevent trafficking.",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "U.S. government agencies",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "No NCDHHS division has authority or infrastructure to implement U.S. Department of State international anti-trafficking programs; the Department's divisions operate domestic health and human services programs.",
+   "restrictions": [],
+   "major_risk": "As a state agency, NCDHHS is not among the eligible applicant types for this U.S. Department of State international assistance program, so the opportunity is likely not available to the Department.",
+   "recommended_for_review": false,
+   "one_line_rationale": "State agency is ineligible and the international anti-trafficking focus falls outside NCDHHS domestic health and human services mission; no division would own it."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 1,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"No NCDHHS strategic objective directly addresses international human trafficking prosecution, protection, or prevention; at most it intersects indirectly with victim services.\",\n  \"strategic_evidence_quote\": \"The TIP Office invites applications for projects that aim to combat human trafficking following the legislative framework laid out in the Trafficking Victims Protection Act, and subsequent reauthorizations, to prosecute traffickers, protect victims, and prevent trafficking.\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"U.S. government agencies\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"No NCDHHS division has authority or infrastructure to implement U.S. Department of State international anti-trafficking programs; the Department's divisions operate domestic health and human services programs.\",\n  \"restrictions\": [],\n  \"major_risk\": \"As a state agency, NCDHHS is not among the eligible applicant types for this U.S. Department of State international assistance program, so the opportunity is likely not available to the Department.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"State agency is ineligible and the international anti-trafficking focus falls outside NCDHHS domestic health and human services mission; no division would own it.\"\n}"
+  ]
+ }
+}

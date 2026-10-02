@@ -1,0 +1,30 @@
+{
+ "grant_id": "39dec6be-55d0-4622-9703-fd1b7909fb1c",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "c426385b24bbb37ad62ec6ad791949bb00e45638ec2d609c4d4fea8f152b2284",
+ "retrieved_at": "2026-10-02T19:48:37+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O3",
+   "strategic_reason": "The grant funds creation of a National Coordinating Center for Language Access Services, directly addressing G1.O3 by mitigating language barriers to health services for people with limited English proficiency.",
+   "strategic_evidence_quote": "We intend for the funded project to create a National Coordinating Center to connect health and human service professionals with qualified health language interpreters and translators to improve access to language services for individuals limited English proficiency.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "Eligible applicants include any private nonprofit or public entity located in a State.",
+   "owning_division": "OSEC",
+   "operational_fit": 7,
+   "operational_reason": "OSEC runs centralized, cross-division initiatives and administrative/IT functions, so it could host a language access coordinating center, though the national network scope is broader than its usual state-focused role.",
+   "restrictions": [
+    "Time-limited demonstration project; applicants are expected to consider sustainability beyond OMH support."
+   ],
+   "major_risk": "The project is national in scope, so NCDHHS would carry broad out-of-state coordination duties and sustainability risk without primarily benefiting North Carolinians.",
+   "recommended_for_review": true,
+   "one_line_rationale": "This grant directly funds language access services under G1.O3. NCDHHS is eligible as a public entity and could host the coordinating center through OSEC, though national scope adds operational demands."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O3\",\n  \"strategic_reason\": \"The grant funds creation of a National Coordinating Center for Language Access Services, directly addressing G1.O3 by mitigating language barriers to health services for people with limited English proficiency.\",\n  \"strategic_evidence_quote\": \"We intend for the funded project to create a National Coordinating Center to connect health and human service professionals with qualified health language interpreters and translators to improve access to language services for individuals limited English proficiency.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"Eligible applicants include any private nonprofit or public entity located in a State.\",\n  \"owning_division\": \"OSEC\",\n  \"operational_fit\": 7,\n  \"operational_reason\": \"OSEC runs centralized, cross-division initiatives and administrative/IT functions, so it could host a language access coordinating center, though the national network scope is broader than its usual state-focused role.\",\n  \"restrictions\": [\"Time-limited demonstration project; applicants are expected to consider sustainability beyond OMH support.\"],\n  \"major_risk\": \"The project is national in scope, so NCDHHS would carry broad out-of-state coordination duties and sustainability risk without primarily benefiting North Carolinians.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"This grant directly funds language access services under G1.O3. NCDHHS is eligible as a public entity and could host the coordinating center through OSEC, though national scope adds operational demands.\"\n}"
+  ]
+ }
+}

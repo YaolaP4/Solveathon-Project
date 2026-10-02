@@ -1,0 +1,31 @@
+{
+ "grant_id": "b8708107-b111-4a75-a6b2-7189a2e15538",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "475f638267b811612f79f01b2fd884dcab9a25311e8d8523889d089e0001dda0",
+ "retrieved_at": "2026-10-02T19:54:51+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 6,
+   "matched_goal": "G3",
+   "matched_objective": "none",
+   "strategic_reason": "This grant funds pilot effectiveness studies of mental health interventions and service delivery approaches, generating evidence that could strengthen community-based behavioral health services under NCDHHS's behavioral health and resilience goal.",
+   "strategic_evidence_quote": "this announcement encourages pilot effectiveness studies focused on 1) optimizing the effectiveness of preventive and therapeutic interventions with previously demonstrated efficacy, for use with broader target populations or for use in community practice settings, and 2) developing and preliminary testing innovative services interventions.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DMHDDSUS",
+   "operational_fit": 5,
+   "operational_reason": "DMHDDSUS has the behavioral health service system and data access but would likely need university or research organization partners to run an R01 clinical trial.",
+   "restrictions": [
+    "Clinical Trial Required (R01) adds clinical trial oversight, registration, and safety reporting burdens",
+    "NIMH experimental therapeutics approach requires measuring whether the intervention engages the target(s)/mechanism(s) presumed to underlie effects"
+   ],
+   "major_risk": "The grant is an NIH research award requiring clinical trial infrastructure and research partnerships that NCDHHS divisions may not currently have, making a competitive application resource-intensive.",
+   "recommended_for_review": true,
+   "one_line_rationale": "NIH mental health effectiveness research aligns with behavioral health goals but requires clinical trial infrastructure and research partners; DMHDDSUS should assess with university partner."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 6,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"This grant funds pilot effectiveness studies of mental health interventions and service delivery approaches, generating evidence that could strengthen community-based behavioral health services under NCDHHS's behavioral health and resilience goal.\",\n  \"strategic_evidence_quote\": \"this announcement encourages pilot effectiveness studies focused on 1) optimizing the effectiveness of preventive and therapeutic interventions with previously demonstrated efficacy, for use with broader target populations or for use in community practice settings, and 2) developing and preliminary testing innovative services interventions.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DMHDDSUS\",\n  \"operational_fit\": 5,\n  \"operational_reason\": \"DMHDDSUS has the behavioral health service system and data access but would likely need university or research organization partners to run an R01 clinical trial.\",\n  \"restrictions\": [\n    \"Clinical Trial Required (R01) adds clinical trial oversight, registration, and safety reporting burdens\",\n    \"NIMH experimental therapeutics approach requires measuring whether the intervention engages the target(s)/mechanism(s) presumed to underlie effects\"\n  ],\n  \"major_risk\": \"The grant is an NIH research award requiring clinical trial infrastructure and research partnerships that NCDHHS divisions may not currently have, making a competitive application resource-intensive.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"NIH mental health effectiveness research aligns with behavioral health goals but requires clinical trial infrastructure and research partners; DMHDDSUS should assess with university partner.\"\n}"
+  ]
+ }
+}

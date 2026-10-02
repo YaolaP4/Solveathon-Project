@@ -1,0 +1,28 @@
+{
+ "grant_id": "f0f92216-2abf-4b7d-9ba9-9b1f554c5958",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "806c1dc458cfb9f3731f9947611eb5745b05c3fe7ac2d3b1f617e5de4cf61082",
+ "retrieved_at": "2026-10-02T19:59:47+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 2,
+   "matched_goal": "G5",
+   "matched_objective": "G5.O1",
+   "strategic_reason": "The clinical-trial data tools, digital health technologies, and disease progression modeling have only an indirect link to G5.O1's data-driven decision-making and do not fund a named NCDHHS service strategy.",
+   "strategic_evidence_quote": "The goal of the TIN is to execute trials better, faster, and more cost-efficiently, as well as serve as a national laboratory to study, understand, and innovate the process of conducting multi-center clinical trials.",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "No NCDHHS division operates a clinical and translational science trial network or multi-center trial infrastructure, so this work falls outside the Department's existing role and authority.",
+   "restrictions": [],
+   "major_risk": "NCDHHS likely lacks the academic medical center partnerships, clinical trial infrastructure, and research capacity needed for a credible lead application, so pursuit could consume substantial effort with low success probability.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Supports clinical trial innovation, not NCDHHS health-service objectives; no division operates a trial network, so it is a poor fit despite state eligibility."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 2,\n  \"matched_goal\": \"G5\",\n  \"matched_objective\": \"G5.O1\",\n  \"strategic_reason\": \"The clinical-trial data tools, digital health technologies, and disease progression modeling have only an indirect link to G5.O1's data-driven decision-making and do not fund a named NCDHHS service strategy.\",\n  \"strategic_evidence_quote\": \"The goal of the TIN is to execute trials better, faster, and more cost-efficiently, as well as serve as a national laboratory to study, understand, and innovate the process of conducting multi-center clinical trials.\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"No NCDHHS division operates a clinical and translational science trial network or multi-center trial infrastructure, so this work falls outside the Department's existing role and authority.\",\n  \"restrictions\": [],\n  \"major_risk\": \"NCDHHS likely lacks the academic medical center partnerships, clinical trial infrastructure, and research capacity needed for a credible lead application, so pursuit could consume substantial effort with low success probability.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Supports clinical trial innovation, not NCDHHS health-service objectives; no division operates a trial network, so it is a poor fit despite state eligibility.\"\n}"
+  ]
+ }
+}

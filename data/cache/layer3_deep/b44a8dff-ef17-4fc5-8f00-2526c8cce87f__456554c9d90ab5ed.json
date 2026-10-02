@@ -1,0 +1,28 @@
+{
+ "grant_id": "b44a8dff-ef17-4fc5-8f00-2526c8cce87f",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "456554c9d90ab5edf114968ea3649b99837efaf2282f72f3aea33cebc22aca1d",
+ "retrieved_at": "2026-10-02T19:57:22+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 0,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds collection of antimicrobial use data in animals, which is not among NCDHHS's strategic goals or objectives for human health and human services.",
+   "strategic_evidence_quote": "collect antimicrobial use data from diverse animal sectors, including domestic livestock, poultry, companion animals (dogs, cats, and horses), and minor species (e.g., fish, sheep, goats, etc.)",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "NCDHHS divisions administer human-services, public health, and Medicaid programs, and none has authority or routine operations in animal agriculture antimicrobial use data collection.",
+   "restrictions": [],
+   "major_risk": "The grant is outside NCDHHS's core mission and authority, so pursuing it would divert limited federal-grants capacity to an agriculture and veterinary stewardship activity with no clear human-services return.",
+   "recommended_for_review": false,
+   "one_line_rationale": "This FDA grant funds animal antimicrobial-use data collection, not a named NCDHHS strategic goal or human-services division, and is outside NCDHHS authority."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 0,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds collection of antimicrobial use data in animals, which is not among NCDHHS's strategic goals or objectives for human health and human services.\",\n  \"strategic_evidence_quote\": \"collect antimicrobial use data from diverse animal sectors, including domestic livestock, poultry, companion animals (dogs, cats, and horses), and minor species (e.g., fish, sheep, goats, etc.)\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"NCDHHS divisions administer human-services, public health, and Medicaid programs, and none has authority or routine operations in animal agriculture antimicrobial use data collection.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The grant is outside NCDHHS's core mission and authority, so pursuing it would divert limited federal-grants capacity to an agriculture and veterinary stewardship activity with no clear human-services return.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"This FDA grant funds animal antimicrobial-use data collection, not a named NCDHHS strategic goal or human-services division, and is outside NCDHHS authority.\"\n}"
+  ]
+ }
+}

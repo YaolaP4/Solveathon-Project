@@ -1,0 +1,33 @@
+{
+ "grant_id": "bdd8e776-8fcc-4740-a784-2f8a95921e0a",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "091e9412af169fa419bff48fe797aecb5e7b4fccf124f7dc99c85d84c16d29a7",
+ "retrieved_at": "2026-10-02T19:59:37+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 0,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "No NCDHHS strategic objective directly covers commercial fishing occupational safety training.",
+   "strategic_evidence_quote": "The goal of the training grant program is to enhance the quality and availability of safety training for United States commercial fishermen.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "No NCDHHS division has maritime occupational safety training authority or existing commercial fishing safety partnerships.",
+   "restrictions": [
+    "Requires qualified marine safety instructors or instructors accepted by the National Maritime Center",
+    "Requires coordination with existing training programs and partnerships with industry fishermen and agencies",
+    "Training must conform to 46 U.S.C. § 4502(i) safety standards",
+    "Requires evaluation of training effectiveness and impact on reducing injuries among fishermen"
+   ],
+   "major_risk": "The program requires specialized maritime safety expertise and industry partnerships that NCDHHS does not have, making this a high-effort pursuit outside the agency's core health and human services role.",
+   "recommended_for_review": false,
+   "one_line_rationale": "No NCDHHS goal or division covers commercial fishing occupational safety; this maritime safety training grant fits labor or Sea Grant partners, not health and human services."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 0,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"No NCDHHS strategic objective directly covers commercial fishing occupational safety training.\",\n  \"strategic_evidence_quote\": \"The goal of the training grant program is to enhance the quality and availability of safety training for United States commercial fishermen.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"No NCDHHS division has maritime occupational safety training authority or existing commercial fishing safety partnerships.\",\n  \"restrictions\": [\n    \"Requires qualified marine safety instructors or instructors accepted by the National Maritime Center\",\n    \"Requires coordination with existing training programs and partnerships with industry fishermen and agencies\",\n    \"Training must conform to 46 U.S.C. § 4502(i) safety standards\",\n    \"Requires evaluation of training effectiveness and impact on reducing injuries among fishermen\"\n  ],\n  \"major_risk\": \"The program requires specialized maritime safety expertise and industry partnerships that NCDHHS does not have, making this a high-effort pursuit outside the agency's core health and human services role.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"No NCDHHS goal or division covers commercial fishing occupational safety; this maritime safety training grant fits labor or Sea Grant partners, not health and human services.\"\n}"
+  ]
+ }
+}

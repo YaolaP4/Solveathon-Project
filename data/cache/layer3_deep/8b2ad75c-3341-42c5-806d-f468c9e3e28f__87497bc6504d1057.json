@@ -1,0 +1,28 @@
+{
+ "grant_id": "8b2ad75c-3341-42c5-806d-f468c9e3e28f",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "87497bc6504d1057b59790c8611b44abd221ff749ed4386d496e1d53e67263cb",
+ "retrieved_at": "2026-10-02T19:52:21+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O3",
+   "strategic_reason": "This grant funds primary care residency training in community-based settings, directly expanding the rural and underserved primary care workforce that G1.O3 aims to support.",
+   "strategic_evidence_quote": "particularly in rural and medically vulnerable communities",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "Applicants must be community based, ambulatory patient care center that operates an accredited primary care residency program",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "No NCDHHS division is an existing HRSA THCGME payment recipient or a community-based ambulatory patient care center, so this is outside the agency's direct authority.",
+   "restrictions": [],
+   "major_risk": "The agency is not an eligible applicant, so NCDHHS could only support an external teaching health center partner rather than apply directly.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Ineligible: HRSA limits applicants to existing community-based ambulatory patient care centers with accredited primary care residencies, not state agencies; despite rural primary care alignment, NCDHHS cannot apply."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O3\",\n  \"strategic_reason\": \"This grant funds primary care residency training in community-based settings, directly expanding the rural and underserved primary care workforce that G1.O3 aims to support.\",\n  \"strategic_evidence_quote\": \"particularly in rural and medically vulnerable communities\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"Applicants must be community based, ambulatory patient care center that operates an accredited primary care residency program\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"No NCDHHS division is an existing HRSA THCGME payment recipient or a community-based ambulatory patient care center, so this is outside the agency's direct authority.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The agency is not an eligible applicant, so NCDHHS could only support an external teaching health center partner rather than apply directly.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Ineligible: HRSA limits applicants to existing community-based ambulatory patient care centers with accredited primary care residencies, not state agencies; despite rural primary care alignment, NCDHHS cannot apply.\"\n}"
+  ]
+ }
+}

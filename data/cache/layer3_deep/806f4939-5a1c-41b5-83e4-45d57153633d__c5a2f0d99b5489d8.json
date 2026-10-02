@@ -1,0 +1,31 @@
+{
+ "grant_id": "806f4939-5a1c-41b5-83e4-45d57153633d",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "c5a2f0d99b5489d841ed95f5666d9966d2648f74ce34c487f98edfaa00393b5f",
+ "retrieved_at": "2026-10-02T19:55:24+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 2,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds occupational safety and health conferences, which are not tied to a named NCDHHS strategic objective.",
+   "strategic_evidence_quote": "support high-quality scientific meetings, conferences, and workshops that are relevant to the NIOSH mission and that promote occupational safety and health",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "none",
+   "operational_fit": 1,
+   "operational_reason": "No NCDHHS division has an explicit occupational safety and health research or conference mandate, so the program falls outside the Department's existing roles.",
+   "restrictions": [
+    "Substantial federal scientific or programmatic involvement under cooperative agreement",
+    "Training-only events will not be considered"
+   ],
+   "major_risk": "The grant only supports conferences and scientific meetings, not direct health services, and NCDHHS lacks a clear occupational safety and health owner, so it could require new relationships with low strategic return.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Supports occupational safety and health conferences, which do not align with a named NCDHHS objective or clear division; state agencies are eligible but fit is weak."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 2,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds occupational safety and health conferences, which are not tied to a named NCDHHS strategic objective.\",\n  \"strategic_evidence_quote\": \"support high-quality scientific meetings, conferences, and workshops that are relevant to the NIOSH mission and that promote occupational safety and health\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 1,\n  \"operational_reason\": \"No NCDHHS division has an explicit occupational safety and health research or conference mandate, so the program falls outside the Department's existing roles.\",\n  \"restrictions\": [\n    \"Substantial federal scientific or programmatic involvement under cooperative agreement\",\n    \"Training-only events will not be considered\"\n  ],\n  \"major_risk\": \"The grant only supports conferences and scientific meetings, not direct health services, and NCDHHS lacks a clear occupational safety and health owner, so it could require new relationships with low strategic return.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Supports occupational safety and health conferences, which do not align with a named NCDHHS objective or clear division; state agencies are eligible but fit is weak.\"\n}"
+  ]
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "grant_id": "d9f9695f-bc11-49cb-a6ab-bebe8767c637",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "e9553c80a36d0aae6950c214ca631ef93d90fd42bed2d05bbb8fd2dbcd0a6baf",
+ "retrieved_at": "2026-10-02T19:52:19+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O4",
+   "strategic_reason": "This grant funds pilot research on treatments and services for drug, alcohol, and tobacco use disorders, which supports the evidence-based treatment strategies under G3.O4.",
+   "strategic_evidence_quote": "pilot and preliminary research in preparation for larger-scale services research effectiveness trials",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DMHDDSUS",
+   "operational_fit": 7,
+   "operational_reason": "DMHDDSUS oversees substance-use and opioid services and could lead or partner on a pilot services research study, though it may need research collaborators.",
+   "restrictions": [],
+   "major_risk": "As an NIH R34 research grant, it funds feasibility and pilot studies rather than direct treatment expansion, and success depends on having research infrastructure and investigator capacity.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Pilot research on substance-use disorder treatment services aligns with G3.O4 and DMHDDSUS priorities; state agencies are eligible, though it funds research rather than direct services."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O4\",\n  \"strategic_reason\": \"This grant funds pilot research on treatments and services for drug, alcohol, and tobacco use disorders, which supports the evidence-based treatment strategies under G3.O4.\",\n  \"strategic_evidence_quote\": \"pilot and preliminary research in preparation for larger-scale services research effectiveness trials\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DMHDDSUS\",\n  \"operational_fit\": 7,\n  \"operational_reason\": \"DMHDDSUS oversees substance-use and opioid services and could lead or partner on a pilot services research study, though it may need research collaborators.\",\n  \"restrictions\": [],\n  \"major_risk\": \"As an NIH R34 research grant, it funds feasibility and pilot studies rather than direct treatment expansion, and success depends on having research infrastructure and investigator capacity.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Pilot research on substance-use disorder treatment services aligns with G3.O4 and DMHDDSUS priorities; state agencies are eligible, though it funds research rather than direct services.\"\n}"
+  ]
+ }
+}

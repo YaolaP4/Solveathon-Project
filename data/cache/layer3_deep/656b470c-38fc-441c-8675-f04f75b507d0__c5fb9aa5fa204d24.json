@@ -1,0 +1,28 @@
+{
+ "grant_id": "656b470c-38fc-441c-8675-f04f75b507d0",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "c5fb9aa5fa204d2490b0a4fa29d32231f428989ce69b45f937a546841d9fc48e",
+ "retrieved_at": "2026-10-02T19:59:01+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 3,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "The grant funds HIV prevention and treatment research to end the HIV epidemic, which relates broadly to reducing health disparities for populations facing access barriers but is not a named NCDHHS health access activity.",
+   "strategic_evidence_quote": "CTNs will conduct randomized controlled clinical studies at CTUs testing innovative strategies and conduct implementation research targeted to end the HIV epidemic.",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 2,
+   "operational_reason": "DPH conducts disease prevention and surveillance, but a CTU requires specialized clinical trial infrastructure and research sites that are typically operated by academic medical centers.",
+   "restrictions": [],
+   "major_risk": "NCDHHS likely lacks the specialized clinical research infrastructure to serve as a Clinical Trials Unit, making this award unrealistic to lead and difficult to administer.",
+   "recommended_for_review": false,
+   "one_line_rationale": "HIV clinical trials infrastructure grant fits broadly under health access but requires academic clinical trial capacity DPH does not have; not recommended."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 3,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"The grant funds HIV prevention and treatment research to end the HIV epidemic, which relates broadly to reducing health disparities for populations facing access barriers but is not a named NCDHHS health access activity.\",\n  \"strategic_evidence_quote\": \"CTNs will conduct randomized controlled clinical studies at CTUs testing innovative strategies and conduct implementation research targeted to end the HIV epidemic.\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 2,\n  \"operational_reason\": \"DPH conducts disease prevention and surveillance, but a CTU requires specialized clinical trial infrastructure and research sites that are typically operated by academic medical centers.\",\n  \"restrictions\": [],\n  \"major_risk\": \"NCDHHS likely lacks the specialized clinical research infrastructure to serve as a Clinical Trials Unit, making this award unrealistic to lead and difficult to administer.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"HIV clinical trials infrastructure grant fits broadly under health access but requires academic clinical trial capacity DPH does not have; not recommended.\"\n}"
+  ]
+ }
+}

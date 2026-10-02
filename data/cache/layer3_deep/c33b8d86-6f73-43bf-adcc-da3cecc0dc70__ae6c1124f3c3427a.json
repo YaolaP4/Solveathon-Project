@@ -1,0 +1,28 @@
+{
+ "grant_id": "c33b8d86-6f73-43bf-adcc-da3cecc0dc70",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "ae6c1124f3c3427a6ed90a0e9d08b824f0fcbdf8b0d250b47cc4d8e4eae18463",
+ "retrieved_at": "2026-10-02T19:54:54+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O3",
+   "strategic_reason": "The grant funds research to build provider training and quality-monitoring tools for suicide preventive care, which directly advances NCDHHS's objective to increase access to suicide prevention and crisis services.",
+   "strategic_evidence_quote": "developing, optimizing, and testing the effectiveness of provider-level interventions and tools to promote competence and sustained implementation fidelity in delivering evidence-based suicide prevention interventions",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DMHDDSUS",
+   "operational_fit": 7,
+   "operational_reason": "DMHDDSUS already leads suicide prevention and crisis services, so it has the programmatic authority and partner network to support an R01 studying suicide preventive care, though it would need academic research collaborators.",
+   "restrictions": [],
+   "major_risk": "It is currently a forecast only with applications not yet solicited, and an R01 demands substantial clinical research and implementation science capacity that NCDHHS would likely need to secure through academic partners.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Research to improve provider training and quality monitoring for suicide prevention aligns with NCDHHS suicide prevention goals, but applications are not yet solicited."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O3\",\n  \"strategic_reason\": \"The grant funds research to build provider training and quality-monitoring tools for suicide preventive care, which directly advances NCDHHS's objective to increase access to suicide prevention and crisis services.\",\n  \"strategic_evidence_quote\": \"developing, optimizing, and testing the effectiveness of provider-level interventions and tools to promote competence and sustained implementation fidelity in delivering evidence-based suicide prevention interventions\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DMHDDSUS\",\n  \"operational_fit\": 7,\n  \"operational_reason\": \"DMHDDSUS already leads suicide prevention and crisis services, so it has the programmatic authority and partner network to support an R01 studying suicide preventive care, though it would need academic research collaborators.\",\n  \"restrictions\": [],\n  \"major_risk\": \"It is currently a forecast only with applications not yet solicited, and an R01 demands substantial clinical research and implementation science capacity that NCDHHS would likely need to secure through academic partners.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Research to improve provider training and quality monitoring for suicide prevention aligns with NCDHHS suicide prevention goals, but applications are not yet solicited.\"\n}"
+  ]
+ }
+}

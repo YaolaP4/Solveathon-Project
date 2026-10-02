@@ -1,0 +1,30 @@
+{
+ "grant_id": "dd11fec8-7502-4ea4-b1c4-d2cfd69cd517",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "6e3a0c7d26d14b782e5ba40bc173cdd19c515289d7604e49026be035ae646752",
+ "retrieved_at": "2026-10-02T19:53:59+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 6,
+   "matched_goal": "G2",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds research to improve early identification and referral of late-talking children, helping families access supports, which aligns with G2's focus on child and family well-being, though no specific objective names early language intervention.",
+   "strategic_evidence_quote": "The overarching purpose of this funding opportunity is to inform, develop, and evaluate evidence-based practices and implementation strategies to (1) effectively and efficiently identify early signs of late talking and (2) successfully guide parents, caregivers, and professionals in supporting the needs of late talking children at the first point of concern.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DCDEE",
+   "operational_fit": 6,
+   "operational_reason": "DCDEE's early childhood development and early education role makes it the closest division to host this work, though it would likely need a research partner to lead an NIH clinical research grant.",
+   "restrictions": [
+    "Community partnerships and community engaged research approaches will be a key requirement for this opportunity."
+   ],
+   "major_risk": "This is an NIH research grant rather than a service delivery grant, so NCDHHS would need substantial research capacity or an academic partner to compete successfully.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Fits NCDHHS child and family well-being and DCDEE’s early childhood development role by improving early identification and referral for late-talking children, though it is an NIH research opportunity."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 6,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds research to improve early identification and referral of late-talking children, helping families access supports, which aligns with G2's focus on child and family well-being, though no specific objective names early language intervention.\",\n  \"strategic_evidence_quote\": \"The overarching purpose of this funding opportunity is to inform, develop, and evaluate evidence-based practices and implementation strategies to (1) effectively and efficiently identify early signs of late talking and (2) successfully guide parents, caregivers, and professionals in supporting the needs of late talking children at the first point of concern.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DCDEE\",\n  \"operational_fit\": 6,\n  \"operational_reason\": \"DCDEE's early childhood development and early education role makes it the closest division to host this work, though it would likely need a research partner to lead an NIH clinical research grant.\",\n  \"restrictions\": [\n    \"Community partnerships and community engaged research approaches will be a key requirement for this opportunity.\"\n  ],\n  \"major_risk\": \"This is an NIH research grant rather than a service delivery grant, so NCDHHS would need substantial research capacity or an academic partner to compete successfully.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Fits NCDHHS child and family well-being and DCDEE’s early childhood development role by improving early identification and referral for late-talking children, though it is an NIH research opportunity.\"\n}"
+  ]
+ }
+}

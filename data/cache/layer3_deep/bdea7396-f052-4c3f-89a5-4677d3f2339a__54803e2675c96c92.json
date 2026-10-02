@@ -1,0 +1,28 @@
+{
+ "grant_id": "bdea7396-f052-4c3f-89a5-4677d3f2339a",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "54803e2675c96c92c9b4c1d3379a436888905a864e9bb9ccbb5482a565d85445",
+ "retrieved_at": "2026-10-02T19:53:19+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O1",
+   "strategic_reason": "The NOFO funds health systems research to integrate opioid use disorder treatment with chronic pain care, directly supporting NCDHHS's objective of integrating behavioral and physical health care.",
+   "strategic_evidence_quote": "The current NOFO will develop strategies to address barriers to the sustainable and effective delivery of integrated OUD/pain care at the health systems level.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DMHDDSUS",
+   "operational_fit": 6,
+   "operational_reason": "DMHDDSUS oversees substance use/OUD services and integrated care policy, so it is the logical owner, but an RM1 research project would likely require academic or health system research partners to execute well.",
+   "restrictions": [],
+   "major_risk": "This posting is a notice of intent to publish, not an active solicitation; applications are not being solicited at this time, so there is no near-term proposal to develop unless and until the NOFO is issued.",
+   "recommended_for_review": false,
+   "one_line_rationale": "NIH notice only; applications not yet solicited. If published, aligns with DMHDDSUS opioid and integrated care work but needs research partners."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O1\",\n  \"strategic_reason\": \"The NOFO funds health systems research to integrate opioid use disorder treatment with chronic pain care, directly supporting NCDHHS's objective of integrating behavioral and physical health care.\",\n  \"strategic_evidence_quote\": \"The current NOFO will develop strategies to address barriers to the sustainable and effective delivery of integrated OUD/pain care at the health systems level.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DMHDDSUS\",\n  \"operational_fit\": 6,\n  \"operational_reason\": \"DMHDDSUS oversees substance use/OUD services and integrated care policy, so it is the logical owner, but an RM1 research project would likely require academic or health system research partners to execute well.\",\n  \"restrictions\": [],\n  \"major_risk\": \"This posting is a notice of intent to publish, not an active solicitation; applications are not being solicited at this time, so there is no near-term proposal to develop unless and until the NOFO is issued.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"NIH notice only; applications not yet solicited. If published, aligns with DMHDDSUS opioid and integrated care work but needs research partners.\"\n}"
+  ]
+ }
+}

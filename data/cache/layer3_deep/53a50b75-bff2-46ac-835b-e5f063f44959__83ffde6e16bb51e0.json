@@ -1,0 +1,28 @@
+{
+ "grant_id": "53a50b75-bff2-46ac-835b-e5f063f44959",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "83ffde6e16bb51e08d2f8726194fc3575ad4eaeecc55ae49b33dc8fa1f46497b",
+ "retrieved_at": "2026-10-02T19:59:20+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 2,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds ALS risk-factor research, which does not directly advance any named NCDHHS strategic objective and only generally overlaps with DPH epidemiology.",
+   "strategic_evidence_quote": "CDC/ATSDR is inviting research proposals to study risk factors for Amyotrophic Lateral Sclerosis (ALS).",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 5,
+   "operational_reason": "DPH has epidemiology and environmental health capacity that could support ALS risk-factor research, but it is not an established ALS research program and would likely need academic partners.",
+   "restrictions": [],
+   "major_risk": "This ALS-specific research is outside NCDHHS's named strategic priorities, so the grant could consume DPH epidemiological and laboratory capacity for a topic with little direct state return.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Eligible CDC research, but ALS risk factors do not match a named NCDHHS objective; DPH has relevant capacity but this would be a low-priority, resource-intensive pursuit."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 2,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds ALS risk-factor research, which does not directly advance any named NCDHHS strategic objective and only generally overlaps with DPH epidemiology.\",\n  \"strategic_evidence_quote\": \"CDC/ATSDR is inviting research proposals to study risk factors for Amyotrophic Lateral Sclerosis (ALS).\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 5,\n  \"operational_reason\": \"DPH has epidemiology and environmental health capacity that could support ALS risk-factor research, but it is not an established ALS research program and would likely need academic partners.\",\n  \"restrictions\": [],\n  \"major_risk\": \"This ALS-specific research is outside NCDHHS's named strategic priorities, so the grant could consume DPH epidemiological and laboratory capacity for a topic with little direct state return.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Eligible CDC research, but ALS risk factors do not match a named NCDHHS objective; DPH has relevant capacity but this would be a low-priority, resource-intensive pursuit.\"\n}"
+  ]
+ }
+}

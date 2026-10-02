@@ -1,0 +1,31 @@
+{
+ "grant_id": "b9c2ac9d-d8f0-45eb-9c6e-3b7446d01802",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "a98755011845a3d84b55dfd9cbd13b1ee004d27e01eb0667a376bebe8a23d6a4",
+ "retrieved_at": "2026-10-02T19:49:57+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 7,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O4",
+   "strategic_reason": "The grant funds evidence-based women's preventive service guidelines and their adoption in clinical practice, which supports NCDHHS's objective to improve women's health and birth outcomes through prevention.",
+   "strategic_evidence_quote": "The purpose of Women's Initiative for Screening and Health (WISH) is to improve women’s health across the lifespan by increasing access to and availability of preventive health services.",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 5,
+   "operational_reason": "DPH has existing women's health, maternal and child health, and clinical prevention programs, but it is not the typical convener of a national coalition that updates federal preventive services guidelines.",
+   "restrictions": [
+    "Requires a multidisciplinary coalition of healthcare providers, academic institutions, and patient-centered organizations",
+    "Cooperative agreement with substantial federal involvement"
+   ],
+   "major_risk": "This grant is designed for a national guideline-setting coalition, so a state health department would be an atypical lead and direct North Carolina impact may be limited.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Aligns with women's health and preventive services, but it funds a national guideline-setting coalition, making NCDHHS an atypical lead and limiting direct NC service impact."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 7,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O4\",\n  \"strategic_reason\": \"The grant funds evidence-based women's preventive service guidelines and their adoption in clinical practice, which supports NCDHHS's objective to improve women's health and birth outcomes through prevention.\",\n  \"strategic_evidence_quote\": \"The purpose of Women's Initiative for Screening and Health (WISH) is to improve women’s health across the lifespan by increasing access to and availability of preventive health services.\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 5,\n  \"operational_reason\": \"DPH has existing women's health, maternal and child health, and clinical prevention programs, but it is not the typical convener of a national coalition that updates federal preventive services guidelines.\",\n  \"restrictions\": [\n    \"Requires a multidisciplinary coalition of healthcare providers, academic institutions, and patient-centered organizations\",\n    \"Cooperative agreement with substantial federal involvement\"\n  ],\n  \"major_risk\": \"This grant is designed for a national guideline-setting coalition, so a state health department would be an atypical lead and direct North Carolina impact may be limited.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Aligns with women's health and preventive services, but it funds a national guideline-setting coalition, making NCDHHS an atypical lead and limiting direct NC service impact.\"\n}"
+  ]
+ }
+}

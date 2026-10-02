@@ -1,0 +1,31 @@
+{
+ "grant_id": "c4e39e95-ac54-466c-8d9a-774c50c6247c",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "dc5ed7679d60df12153d1db751f57f674b2d8cf0b51b4bf73dbe9b518459279e",
+ "retrieved_at": "2026-10-02T19:50:29+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 7,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O2",
+   "strategic_reason": "The grant funds community-based, data-driven research to address oral health disparities, aligning with the Department's objective to use data to track and reduce health disparities.",
+   "strategic_evidence_quote": "promoting data use and transformational community engagement to optimize oral health for all people across the lifespan.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 7,
+   "operational_reason": "DPH already addresses oral health, chronic disease, and health disparities and can manage community-based public health research, though a UG3/UH3 cooperative agreement may require additional research infrastructure.",
+   "restrictions": [
+    "Requires cross-sector community partnerships",
+    "Requires participation in the ADAPT consortium and SCHARE platform"
+   ],
+   "major_risk": "It is a phased NIH research cooperative agreement rather than direct service funding; success depends on strong community research partnerships and consortium participation, which may be resource-intensive.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Funds community-based oral health equity research and data transformation, aligning with DPH's health access goals; worth review if research partnerships are available."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 7,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O2\",\n  \"strategic_reason\": \"The grant funds community-based, data-driven research to address oral health disparities, aligning with the Department's objective to use data to track and reduce health disparities.\",\n  \"strategic_evidence_quote\": \"promoting data use and transformational community engagement to optimize oral health for all people across the lifespan.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 7,\n  \"operational_reason\": \"DPH already addresses oral health, chronic disease, and health disparities and can manage community-based public health research, though a UG3/UH3 cooperative agreement may require additional research infrastructure.\",\n  \"restrictions\": [\n    \"Requires cross-sector community partnerships\",\n    \"Requires participation in the ADAPT consortium and SCHARE platform\"\n  ],\n  \"major_risk\": \"It is a phased NIH research cooperative agreement rather than direct service funding; success depends on strong community research partnerships and consortium participation, which may be resource-intensive.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Funds community-based oral health equity research and data transformation, aligning with DPH's health access goals; worth review if research partnerships are available.\"\n}"
+  ]
+ }
+}

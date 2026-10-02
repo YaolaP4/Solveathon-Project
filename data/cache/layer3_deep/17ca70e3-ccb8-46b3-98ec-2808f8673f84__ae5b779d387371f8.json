@@ -1,0 +1,28 @@
+{
+ "grant_id": "17ca70e3-ccb8-46b3-98ec-2808f8673f84",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "ae5b779d387371f852cd4d939446ebe90642389b3e9e8b8e42289543664d7795",
+ "retrieved_at": "2026-10-02T19:47:22+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O3",
+   "strategic_reason": "The grant funds community-based projects that promote access to preventive clinical and public health services for children, which directly supports work to mitigate barriers to health services under G1.O3.",
+   "strategic_evidence_quote": "support community-based projects that promote access to preventive clinical and public health services for children",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 9,
+   "operational_reason": "DPH already oversees maternal and child health, preventive services, and local health department partnerships, so this grant is an extension of existing public health work.",
+   "restrictions": [],
+   "major_risk": "HRSA's community-based emphasis may make NCDHHS a less natural lead than a local health department or community organization, and the summary lacks details on required partnerships.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Aligns with G1.O3 by promoting children's access to preventive clinical and public health services; DPH could lead with local partners."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O3\",\n  \"strategic_reason\": \"The grant funds community-based projects that promote access to preventive clinical and public health services for children, which directly supports work to mitigate barriers to health services under G1.O3.\",\n  \"strategic_evidence_quote\": \"support community-based projects that promote access to preventive clinical and public health services for children\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DPH already oversees maternal and child health, preventive services, and local health department partnerships, so this grant is an extension of existing public health work.\",\n  \"restrictions\": [],\n  \"major_risk\": \"HRSA's community-based emphasis may make NCDHHS a less natural lead than a local health department or community organization, and the summary lacks details on required partnerships.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Aligns with G1.O3 by promoting children's access to preventive clinical and public health services; DPH could lead with local partners.\"\n}"
+  ]
+ }
+}

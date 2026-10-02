@@ -1,0 +1,31 @@
+{
+ "grant_id": "c60789ce-21db-4ba1-9cb1-ef7f670c1957",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "e66df31b879bd3c102de8f5567b2417480e9fa037281184f51ab49945295ae71",
+ "retrieved_at": "2026-10-02T19:50:04+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O1",
+   "strategic_reason": "The grant funds effectiveness trials of system interventions to improve organization, delivery, coordination, and outcomes of mental health services, aligning with integration of behavioral and physical health care.",
+   "strategic_evidence_quote": "test the effectiveness of system interventions and strategies for improving the organization, delivery, coordination, and clinical and functional outcomes of mental health services.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DMHDDSUS",
+   "operational_fit": 7,
+   "operational_reason": "DMHDDSUS oversees mental health and substance use services and system-level care coordination, so it could direct or partner on a mental health system intervention trial, though it would likely need research partners for the clinical trial requirements.",
+   "restrictions": [
+    "Clinical Trial Required",
+    "Two-phase R61/R33 structure: feasibility/infrastructure development must precede the full trial"
+   ],
+   "major_risk": "It is a competitive NIH research award requiring clinical trial infrastructure, and the R61 phase may not transition to R33, so the state could invest effort without guaranteed service funding.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Funds mental health system intervention trials; state can apply and DMHDDSUS could lead, but research-heavy clinical trial may need a university partner."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O1\",\n  \"strategic_reason\": \"The grant funds effectiveness trials of system interventions to improve organization, delivery, coordination, and outcomes of mental health services, aligning with integration of behavioral and physical health care.\",\n  \"strategic_evidence_quote\": \"test the effectiveness of system interventions and strategies for improving the organization, delivery, coordination, and clinical and functional outcomes of mental health services.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DMHDDSUS\",\n  \"operational_fit\": 7,\n  \"operational_reason\": \"DMHDDSUS oversees mental health and substance use services and system-level care coordination, so it could direct or partner on a mental health system intervention trial, though it would likely need research partners for the clinical trial requirements.\",\n  \"restrictions\": [\n    \"Clinical Trial Required\",\n    \"Two-phase R61/R33 structure: feasibility/infrastructure development must precede the full trial\"\n  ],\n  \"major_risk\": \"It is a competitive NIH research award requiring clinical trial infrastructure, and the R61 phase may not transition to R33, so the state could invest effort without guaranteed service funding.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Funds mental health system intervention trials; state can apply and DMHDDSUS could lead, but research-heavy clinical trial may need a university partner.\"\n}"
+  ]
+ }
+}

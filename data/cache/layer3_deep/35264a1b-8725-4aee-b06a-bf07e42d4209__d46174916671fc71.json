@@ -1,0 +1,28 @@
+{
+ "grant_id": "35264a1b-8725-4aee-b06a-bf07e42d4209",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "d46174916671fc71c1e410b1940d2c93c84f26ef89875fb201a7c38ae3c61424",
+ "retrieved_at": "2026-10-02T19:51:06+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 3,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The listing is limited to CDC injury prevention and control research and state/community programs, which is a public health function but is not named in NCDHHS strategic objectives.",
+   "strategic_evidence_quote": "",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "States",
+   "owning_division": "DPH",
+   "operational_fit": 6,
+   "operational_reason": "DPH could plausibly run state and community injury prevention and control programs through its public health epidemiology and prevention role, but the announcement lacks details.",
+   "restrictions": [],
+   "major_risk": "The summary text contains no program description, objectives, or funding details beyond a generic application instruction, making value and fit impossible to assess.",
+   "recommended_for_review": false,
+   "one_line_rationale": "No program details are provided beyond a CDC injury prevention assistance listing; DPH could potentially fit, but there is too little information to justify review."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 3,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The listing is limited to CDC injury prevention and control research and state/community programs, which is a public health function but is not named in NCDHHS strategic objectives.\",\n  \"strategic_evidence_quote\": \"\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"States\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 6,\n  \"operational_reason\": \"DPH could plausibly run state and community injury prevention and control programs through its public health epidemiology and prevention role, but the announcement lacks details.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The summary text contains no program description, objectives, or funding details beyond a generic application instruction, making value and fit impossible to assess.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"No program details are provided beyond a CDC injury prevention assistance listing; DPH could potentially fit, but there is too little information to justify review.\"\n}"
+  ]
+ }
+}

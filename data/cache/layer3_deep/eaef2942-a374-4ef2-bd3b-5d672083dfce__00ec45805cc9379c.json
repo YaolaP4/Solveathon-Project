@@ -1,0 +1,31 @@
+{
+ "grant_id": "eaef2942-a374-4ef2-bd3b-5d672083dfce",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "00ec45805cc9379ce97d6ee6e47042f7912cb1a07afe8b0b36ca7c1b2deeb5ba",
+ "retrieved_at": "2026-10-02T19:49:13+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O4",
+   "strategic_reason": "The grant funds community coalitions working to prevent and reduce youth substance use, which directly supports NCDHHS's objective to turn the tide on the substance use crisis.",
+   "strategic_evidence_quote": "The purpose of the DFC Support Program is to establish and strengthen collaborations to support the efforts of community coalitions working to prevent and reduce substance use among youth.",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "These entities can include state and local governments",
+   "owning_division": "DMHDDSUS",
+   "operational_fit": 6,
+   "operational_reason": "DMHDDSUS oversees substance use and opioid services and could support community prevention coalitions, but DFC requires a community-based coalition legal applicant rather than a typical state-operated program.",
+   "restrictions": [
+    "Funding is limited to applicants that have concluded the first DFC funding cycle or experienced a lapse in funding.",
+    "The DFC legal applicant must reside within the United States and/or U.S. territories."
+   ],
+   "major_risk": "This is a competing continuation for existing community coalitions, so NCDHHS would need to identify an eligible coalition and serve as its legal applicant rather than operate a state-run program.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Fits substance use prevention under G3.O4 but is a continuation for existing community coalitions, making NCDHHS an atypical applicant rather than the primary audience."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O4\",\n  \"strategic_reason\": \"The grant funds community coalitions working to prevent and reduce youth substance use, which directly supports NCDHHS's objective to turn the tide on the substance use crisis.\",\n  \"strategic_evidence_quote\": \"The purpose of the DFC Support Program is to establish and strengthen collaborations to support the efforts of community coalitions working to prevent and reduce substance use among youth.\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"These entities can include state and local governments\",\n  \"owning_division\": \"DMHDDSUS\",\n  \"operational_fit\": 6,\n  \"operational_reason\": \"DMHDDSUS oversees substance use and opioid services and could support community prevention coalitions, but DFC requires a community-based coalition legal applicant rather than a typical state-operated program.\",\n  \"restrictions\": [\n    \"Funding is limited to applicants that have concluded the first DFC funding cycle or experienced a lapse in funding.\",\n    \"The DFC legal applicant must reside within the United States and/or U.S. territories.\"\n  ],\n  \"major_risk\": \"This is a competing continuation for existing community coalitions, so NCDHHS would need to identify an eligible coalition and serve as its legal applicant rather than operate a state-run program.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Fits substance use prevention under G3.O4 but is a continuation for existing community coalitions, making NCDHHS an atypical applicant rather than the primary audience.\"\n}"
+  ]
+ }
+}

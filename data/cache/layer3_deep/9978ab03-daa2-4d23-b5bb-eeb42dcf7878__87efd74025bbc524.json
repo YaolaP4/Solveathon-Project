@@ -1,0 +1,30 @@
+{
+ "grant_id": "9978ab03-daa2-4d23-b5bb-eeb42dcf7878",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "87efd74025bbc524766e6745f4335010bb9a60a003da181f97df5844968550a7",
+ "retrieved_at": "2026-10-02T19:59:10+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 5,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "The grant would fund research on characterizing or mitigating disparities in palliative care access, quality, and use, which directly supports NCDHHS's goal of reducing health disparities and increasing health access.",
+   "strategic_evidence_quote": "including projects focused on characterizing or mitigating disparities in palliative care access, quality, and use",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 4,
+   "operational_reason": "DPH has relevant chronic disease and health disparities work, but leading NIH palliative care clinical or health services research would require academic or clinical research infrastructure beyond its usual role.",
+   "restrictions": [
+    "Awardees will become members of the research community facilitated by the NIH-funded"
+   ],
+   "major_risk": "Applications are not being solicited at this time, so there is no current or near-term funding opportunity to pursue.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Research notice only, not soliciting applications; palliative care disparities align with health access but NCDHHS likely lacks lead research infrastructure."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 5,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"The grant would fund research on characterizing or mitigating disparities in palliative care access, quality, and use, which directly supports NCDHHS's goal of reducing health disparities and increasing health access.\",\n  \"strategic_evidence_quote\": \"including projects focused on characterizing or mitigating disparities in palliative care access, quality, and use\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 4,\n  \"operational_reason\": \"DPH has relevant chronic disease and health disparities work, but leading NIH palliative care clinical or health services research would require academic or clinical research infrastructure beyond its usual role.\",\n  \"restrictions\": [\"Awardees will become members of the research community facilitated by the NIH-funded\"],\n  \"major_risk\": \"Applications are not being solicited at this time, so there is no current or near-term funding opportunity to pursue.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Research notice only, not soliciting applications; palliative care disparities align with health access but NCDHHS likely lacks lead research infrastructure.\"\n}"
+  ]
+ }
+}

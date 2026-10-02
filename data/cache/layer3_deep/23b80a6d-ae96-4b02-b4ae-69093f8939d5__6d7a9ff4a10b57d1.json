@@ -1,0 +1,33 @@
+{
+ "grant_id": "23b80a6d-ae96-4b02-b4ae-69093f8939d5",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "6d7a9ff4a10b57d181b809b44351294db6dafb22e3d41269eb74fecd1ac9cb1b",
+ "retrieved_at": "2026-10-02T19:46:25+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G5",
+   "matched_objective": "G5.O1",
+   "strategic_reason": "The grant funds state-based public health data infrastructure, surveillance, and partnerships to inform injury prevention, directly supporting data-driven decision-making.",
+   "strategic_evidence_quote": "engaging in robust state-based data and surveillance and strengthening strategic collaborations and partnerships",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 9,
+   "operational_reason": "DPH is the department's public health surveillance and epidemiology division and can host state injury data and prevention partnerships as an extension of its existing prevention work.",
+   "restrictions": [
+    "Letter of commitment from the state health department officer on official letterhead supporting proposed activities",
+    "Letters of support from an organization representing the chosen population(s) and from entities that own mortality and hospitalization data",
+    "Organizational chart required",
+    "Documentation of access to the most recent primary data, to include 2023 or 2024 mortality and hospitalization data"
+   ],
+   "major_risk": "It is currently only a forecast, so the final NOFO could change scope, data-access requirements, or eligibility before applications are accepted.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Strong fit for DPH; CDC funds state injury data and surveillance partnerships that advance NCDHHS data-driven decision-making under G5.O1."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G5\",\n  \"matched_objective\": \"G5.O1\",\n  \"strategic_reason\": \"The grant funds state-based public health data infrastructure, surveillance, and partnerships to inform injury prevention, directly supporting data-driven decision-making.\",\n  \"strategic_evidence_quote\": \"engaging in robust state-based data and surveillance and strengthening strategic collaborations and partnerships\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DPH is the department's public health surveillance and epidemiology division and can host state injury data and prevention partnerships as an extension of its existing prevention work.\",\n  \"restrictions\": [\n    \"Letter of commitment from the state health department officer on official letterhead supporting proposed activities\",\n    \"Letters of support from an organization representing the chosen population(s) and from entities that own mortality and hospitalization data\",\n    \"Organizational chart required\",\n    \"Documentation of access to the most recent primary data, to include 2023 or 2024 mortality and hospitalization data\"\n  ],\n  \"major_risk\": \"It is currently only a forecast, so the final NOFO could change scope, data-access requirements, or eligibility before applications are accepted.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Strong fit for DPH; CDC funds state injury data and surveillance partnerships that advance NCDHHS data-driven decision-making under G5.O1.\"\n}"
+  ]
+ }
+}

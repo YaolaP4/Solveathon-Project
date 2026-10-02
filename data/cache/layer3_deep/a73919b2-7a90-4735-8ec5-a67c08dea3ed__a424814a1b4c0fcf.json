@@ -1,0 +1,28 @@
+{
+ "grant_id": "a73919b2-7a90-4735-8ec5-a67c08dea3ed",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "a424814a1b4c0fcfbe42bc6aff69f4820463c38f10b8322b814d14665ddfbf59",
+ "retrieved_at": "2026-10-02T19:48:13+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "The grant funds integrated HIV prevention and care planning and resource allocation, which builds the structure needed to improve health access and reduce disparities for people living with HIV.",
+   "strategic_evidence_quote": "provide tools, training and technical assistance (TA) to RWHAP Parts A and B recipients and their planning bodies to support integrated HIV prevention and care planning, maximizing resources and stregthening the system of HIV care and treatment.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 8,
+   "operational_reason": "DPH already administers Ryan White Part B and HIV care services, so this cooperative agreement is an extension of its existing communicable disease and HIV planning role.",
+   "restrictions": [],
+   "major_risk": "It is a training and technical assistance cooperative agreement rather than direct service funding, so the scope may require serving RWHAP recipients beyond North Carolina and competing with established national TA providers.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Aligns with G1 health access by funding integrated HIV care planning; DPH already administers Ryan White Part B and could use this to strengthen statewide HIV services."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"The grant funds integrated HIV prevention and care planning and resource allocation, which builds the structure needed to improve health access and reduce disparities for people living with HIV.\",\n  \"strategic_evidence_quote\": \"provide tools, training and technical assistance (TA) to RWHAP Parts A and B recipients and their planning bodies to support integrated HIV prevention and care planning, maximizing resources and stregthening the system of HIV care and treatment.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 8,\n  \"operational_reason\": \"DPH already administers Ryan White Part B and HIV care services, so this cooperative agreement is an extension of its existing communicable disease and HIV planning role.\",\n  \"restrictions\": [],\n  \"major_risk\": \"It is a training and technical assistance cooperative agreement rather than direct service funding, so the scope may require serving RWHAP recipients beyond North Carolina and competing with established national TA providers.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Aligns with G1 health access by funding integrated HIV care planning; DPH already administers Ryan White Part B and could use this to strengthen statewide HIV services.\"\n}"
+  ]
+ }
+}

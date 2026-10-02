@@ -1,0 +1,31 @@
+{
+ "grant_id": "108e277c-2935-4167-a2fb-e299b406e949",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "59474759db5820ad477bed540ba70990ba4224b8a328cef3e44e78c7c175b057",
+ "retrieved_at": "2026-10-02T19:58:25+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 6,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O3",
+   "strategic_reason": "The grant funds research on integrating oral health care into medical care and on screening and referral in dental settings, which can reduce barriers to primary care and improve health access.",
+   "strategic_evidence_quote": "Supported studies will focus on integrating oral health care into medical care (whole-person health), such as screening for medical conditions and health behaviors in dental care settings and appropriate referrals to medical providers for follow-up care.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 5,
+   "operational_reason": "DPH has epidemiology, surveillance, and local health department relationships, but it does not operate a dental practice-based research network or routinely lead NIH clinical trials and would need an academic dental partner.",
+   "restrictions": [
+    "Requires use of the Dental Primary Care PBRN infrastructure and resources for study planning and implementation",
+    "Studies must be conducted in participating dental clinical practices with consenting patients"
+   ],
+   "major_risk": "It is a forecast only for research infrastructure and studies, and NCDHHS lacks a dental primary care practice-based research network, so the agency would likely depend on an academic partner with limited control.",
+   "recommended_for_review": false,
+   "one_line_rationale": "NIH dental research forecast; G1 health access alignment is real but NCDHHS lacks a dental PBRN and it is not currently solicited, so not a near-term fit."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 6,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O3\",\n  \"strategic_reason\": \"The grant funds research on integrating oral health care into medical care and on screening and referral in dental settings, which can reduce barriers to primary care and improve health access.\",\n  \"strategic_evidence_quote\": \"Supported studies will focus on integrating oral health care into medical care (whole-person health), such as screening for medical conditions and health behaviors in dental care settings and appropriate referrals to medical providers for follow-up care.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 5,\n  \"operational_reason\": \"DPH has epidemiology, surveillance, and local health department relationships, but it does not operate a dental practice-based research network or routinely lead NIH clinical trials and would need an academic dental partner.\",\n  \"restrictions\": [\n    \"Requires use of the Dental Primary Care PBRN infrastructure and resources for study planning and implementation\",\n    \"Studies must be conducted in participating dental clinical practices with consenting patients\"\n  ],\n  \"major_risk\": \"It is a forecast only for research infrastructure and studies, and NCDHHS lacks a dental primary care practice-based research network, so the agency would likely depend on an academic partner with limited control.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"NIH dental research forecast; G1 health access alignment is real but NCDHHS lacks a dental PBRN and it is not currently solicited, so not a near-term fit.\"\n}"
+  ]
+ }
+}

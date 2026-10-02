@@ -1,0 +1,28 @@
+{
+ "grant_id": "eaef2942-a374-4ef2-bd3b-5d672083dfce",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "ad9e37838fc5349d6b63109173253a7bb6ee4a7eb944adaac38f8190db95c3c7",
+ "retrieved_at": "2026-10-02T19:29:24+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 7,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O4",
+   "strategic_reason": "Funds community coalitions to prevent and reduce youth substance use, supporting work to turn the tide on substance use.",
+   "strategic_evidence_quote": "The purpose of the DFC Support Program is to establish and strengthen collaborations to support the efforts of community coalitions working to prevent and reduce substance use among youth.",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "Eligible applicants are community-based coalitions addressing youth substance use that have previously received a DFC grant (Year 1–5), have experienced a lapse in funding, or have concluded the first five-year funding cycle and are applying for a second five-year funding cycle.",
+   "owning_division": "DMHDDSUS",
+   "operational_fit": 3,
+   "operational_reason": "DMHDDSUS leads substance-use work but does not operate as a local community coalition eligible for Year 6 renewal.",
+   "restrictions": [],
+   "major_risk": "This is a Year 6 competing continuation only for prior DFC grantees, so NCDHHS cannot apply as a new state lead.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Fits substance-use prevention goal but limited to existing local coalitions renewing Year 6, not open to state agency as new lead."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 7,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O4\",\n  \"strategic_reason\": \"Funds community coalitions to prevent and reduce youth substance use, supporting work to turn the tide on substance use.\",\n  \"strategic_evidence_quote\": \"The purpose of the DFC Support Program is to establish and strengthen collaborations to support the efforts of community coalitions working to prevent and reduce substance use among youth.\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"Eligible applicants are community-based coalitions addressing youth substance use that have previously received a DFC grant (Year 1–5), have experienced a lapse in funding, or have concluded the first five-year funding cycle and are applying for a second five-year funding cycle.\",\n  \"owning_division\": \"DMHDDSUS\",\n  \"operational_fit\": 3,\n  \"operational_reason\": \"DMHDDSUS leads substance-use work but does not operate as a local community coalition eligible for Year 6 renewal.\",\n  \"restrictions\": [],\n  \"major_risk\": \"This is a Year 6 competing continuation only for prior DFC grantees, so NCDHHS cannot apply as a new state lead.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Fits substance-use prevention goal but limited to existing local coalitions renewing Year 6, not open to state agency as new lead.\"\n}"
+  ]
+ }
+}

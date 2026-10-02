@@ -1,0 +1,28 @@
+{
+ "grant_id": "44a089ce-dd0a-4cde-b6f4-c77d08d56a08",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "1e848702ed12d9a13c07b3954acb0b5d82483239e0454c7c6f227bafc41a9e6b",
+ "retrieved_at": "2026-10-02T19:49:31+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O5",
+   "strategic_reason": "This grant funds evaluation of rural behavioral health strategies and development of evaluation tools, which directly strengthens behavioral health data and evaluation capacity under G3.O5.",
+   "strategic_evidence_quote": "evaluate the impact of rural behavioral health strategies and methods employed under the RCORP initiative, and to develop evaluation tools and resources for use in rural communities",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "You can apply if you are a domestic public or private, non-profit or for-profit entity.",
+   "owning_division": "DMHDDSUS",
+   "operational_fit": 7,
+   "operational_reason": "DMHDDSUS oversees substance use and behavioral health services and can lead evaluation of rural opioid/substance use strategies, though it may need rural health and community partners.",
+   "restrictions": [],
+   "major_risk": "It funds evaluation rather than direct opioid response services, so it would not bring treatment dollars to North Carolina and may be competitive with national evaluation/research organizations.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Fits G3 behavioral health data goals; DMHDDSUS could lead an evaluation of rural opioid/substance use strategies, though funds evaluation rather than direct services."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O5\",\n  \"strategic_reason\": \"This grant funds evaluation of rural behavioral health strategies and development of evaluation tools, which directly strengthens behavioral health data and evaluation capacity under G3.O5.\",\n  \"strategic_evidence_quote\": \"evaluate the impact of rural behavioral health strategies and methods employed under the RCORP initiative, and to develop evaluation tools and resources for use in rural communities\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"You can apply if you are a domestic public or private, non-profit or for-profit entity.\",\n  \"owning_division\": \"DMHDDSUS\",\n  \"operational_fit\": 7,\n  \"operational_reason\": \"DMHDDSUS oversees substance use and behavioral health services and can lead evaluation of rural opioid/substance use strategies, though it may need rural health and community partners.\",\n  \"restrictions\": [],\n  \"major_risk\": \"It funds evaluation rather than direct opioid response services, so it would not bring treatment dollars to North Carolina and may be competitive with national evaluation/research organizations.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Fits G3 behavioral health data goals; DMHDDSUS could lead an evaluation of rural opioid/substance use strategies, though funds evaluation rather than direct services.\"\n}"
+  ]
+ }
+}

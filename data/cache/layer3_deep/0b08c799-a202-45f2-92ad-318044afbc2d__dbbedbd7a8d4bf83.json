@@ -1,0 +1,28 @@
+{
+ "grant_id": "0b08c799-a202-45f2-92ad-318044afbc2d",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "dbbedbd7a8d4bf836036325873faa5ae4a58d9ef841c4e6edb2d4c5fc0419eaf",
+ "retrieved_at": "2026-10-02T19:50:22+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 6,
+   "matched_goal": "G5",
+   "matched_objective": "G5.O1",
+   "strategic_reason": "The grant funds public health surveillance data collection and reporting that supports data-driven decision-making and strengthens public health data infrastructure.",
+   "strategic_evidence_quote": "The purpose of this FOA is to protect and promote public health by enhancing, strengthening, and sustaining antibiotic resistance surveillance in retail food specimens within the NARMS program.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "State Governments",
+   "owning_division": "DPH",
+   "operational_fit": 8,
+   "operational_reason": "DPH houses disease surveillance, epidemiology, and the state public health laboratory, making retail food antibiotic resistance monitoring an extension of its existing work.",
+   "restrictions": [],
+   "major_risk": "Specialized FDA/NARMS retail food surveillance may require existing laboratory capacity and federal collaboration, so if NC is not already a NARMS retail food site the start-up effort could be high relative to the grant's narrow scope.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Funds antibiotic resistance surveillance in retail food; fits DPH lab and epidemiology role but is narrow and not a named NCDHHS objective."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 6,\n  \"matched_goal\": \"G5\",\n  \"matched_objective\": \"G5.O1\",\n  \"strategic_reason\": \"The grant funds public health surveillance data collection and reporting that supports data-driven decision-making and strengthens public health data infrastructure.\",\n  \"strategic_evidence_quote\": \"The purpose of this FOA is to protect and promote public health by enhancing, strengthening, and sustaining antibiotic resistance surveillance in retail food specimens within the NARMS program.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"State Governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 8,\n  \"operational_reason\": \"DPH houses disease surveillance, epidemiology, and the state public health laboratory, making retail food antibiotic resistance monitoring an extension of its existing work.\",\n  \"restrictions\": [],\n  \"major_risk\": \"Specialized FDA/NARMS retail food surveillance may require existing laboratory capacity and federal collaboration, so if NC is not already a NARMS retail food site the start-up effort could be high relative to the grant's narrow scope.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Funds antibiotic resistance surveillance in retail food; fits DPH lab and epidemiology role but is narrow and not a named NCDHHS objective.\"\n}"
+  ]
+ }
+}

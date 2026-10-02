@@ -1,0 +1,31 @@
+{
+ "grant_id": "4dd9dfaf-b0da-4193-b312-74e1dc62db30",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "a7a283460576d066ce939e7fa3d102eef82d8a0d003916991c6a3b33e8a26aca",
+ "retrieved_at": "2026-10-02T19:56:36+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 2,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds housing counseling and financial management, which are social determinants of health but do not map directly to any named NCDHHS objective.",
+   "strategic_evidence_quote": "Housing counseling agencies are an important safeguard in the prevention of housing scams and discrimination and serve as an important gateway to local, state, federal and private housing assistance and resources.",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "Applicant must be approved to participate in the HUD Housing Counseling Program prior to the NOFO issue date.",
+   "owning_division": "none",
+   "operational_fit": 1,
+   "operational_reason": "No NCDHHS division operates a HUD-approved housing counseling program or has state housing finance authority, so this would be outside its existing role and partner network.",
+   "restrictions": [
+    "Applicants and Subgrantees are prohibited from receiving FY 2025 Housing Counseling Program grant funding from multiple sources.",
+    "Subgrantees must maintain the same network affiliation for all awards under this NOFO."
+   ],
+   "major_risk": "NCDHHS is not a HUD-approved housing counseling agency or an SHFA, so the Department likely cannot apply without taking on an unfamiliar federal housing program.",
+   "recommended_for_review": false,
+   "one_line_rationale": "HUD housing counseling funds housing agencies, not NCDHHS divisions; there is no clear health/human services owner and the Department is likely ineligible."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 2,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds housing counseling and financial management, which are social determinants of health but do not map directly to any named NCDHHS objective.\",\n  \"strategic_evidence_quote\": \"Housing counseling agencies are an important safeguard in the prevention of housing scams and discrimination and serve as an important gateway to local, state, federal and private housing assistance and resources.\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"Applicant must be approved to participate in the HUD Housing Counseling Program prior to the NOFO issue date.\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 1,\n  \"operational_reason\": \"No NCDHHS division operates a HUD-approved housing counseling program or has state housing finance authority, so this would be outside its existing role and partner network.\",\n  \"restrictions\": [\n    \"Applicants and Subgrantees are prohibited from receiving FY 2025 Housing Counseling Program grant funding from multiple sources.\",\n    \"Subgrantees must maintain the same network affiliation for all awards under this NOFO.\"\n  ],\n  \"major_risk\": \"NCDHHS is not a HUD-approved housing counseling agency or an SHFA, so the Department likely cannot apply without taking on an unfamiliar federal housing program.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"HUD housing counseling funds housing agencies, not NCDHHS divisions; there is no clear health/human services owner and the Department is likely ineligible.\"\n}"
+  ]
+ }
+}

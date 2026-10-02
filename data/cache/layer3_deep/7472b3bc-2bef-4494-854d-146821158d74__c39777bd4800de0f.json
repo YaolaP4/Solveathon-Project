@@ -1,0 +1,28 @@
+{
+ "grant_id": "7472b3bc-2bef-4494-854d-146821158d74",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "c39777bd4800de0fbe03d655eae6896cd1181efab657572d4f132761b4213af5",
+ "retrieved_at": "2026-10-02T20:00:29+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 7,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "The grant funds health professions education programs for underrepresented minority students, which builds a workforce better able to reduce health disparities.",
+   "strategic_evidence_quote": "programs of excellence in health professions education for under-represented minority individuals",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "Eligible entities are accredited allopathic schools of medicine, osteopathic medicine, dentistry, pharmacy, and graduate programs in behavioral or mental health.",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "NCDHHS divisions do not operate accredited health professions schools or graduate programs, so the Department cannot serve as the applicant or implement the required educational program.",
+   "restrictions": [],
+   "major_risk": "NCDHHS appears ineligible because only accredited health professions schools and graduate programs in specific fields may apply.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Only accredited health professions schools and graduate health programs are eligible; NCDHHS is not such an institution, so it cannot apply."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 7,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"The grant funds health professions education programs for underrepresented minority students, which builds a workforce better able to reduce health disparities.\",\n  \"strategic_evidence_quote\": \"programs of excellence in health professions education for under-represented minority individuals\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"Eligible entities are accredited allopathic schools of medicine, osteopathic medicine, dentistry, pharmacy, and graduate programs in behavioral or mental health.\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"NCDHHS divisions do not operate accredited health professions schools or graduate programs, so the Department cannot serve as the applicant or implement the required educational program.\",\n  \"restrictions\": [],\n  \"major_risk\": \"NCDHHS appears ineligible because only accredited health professions schools and graduate programs in specific fields may apply.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Only accredited health professions schools and graduate health programs are eligible; NCDHHS is not such an institution, so it cannot apply.\"\n}"
+  ]
+ }
+}

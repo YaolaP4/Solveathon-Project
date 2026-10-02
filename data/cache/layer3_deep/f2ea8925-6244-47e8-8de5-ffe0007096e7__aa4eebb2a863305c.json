@@ -1,0 +1,28 @@
+{
+ "grant_id": "f2ea8925-6244-47e8-8de5-ffe0007096e7",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "aa4eebb2a863305c9cb8f7a5197d2a82c03bad81ab0c0222ad88b1b847851eae",
+ "retrieved_at": "2026-10-02T19:46:09+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 7,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O1",
+   "strategic_reason": "The NOFO funds youth violence prevention and healthy development by integrating youth mental health and family support strategies, directly supporting behavioral and mental health needs of children and families.",
+   "strategic_evidence_quote": "Advancing whole-child and whole-community violence prevention approaches that integrate  youth mental health  and  family support  strategies",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state, territorial, tribal, and local health departments",
+   "owning_division": "DPH",
+   "operational_fit": 8,
+   "operational_reason": "DPH already leads state and local public health prevention, epidemiology, and surveillance, so implementing and evaluating a youth violence prevention cooperative agreement is an extension of its public health prevention role, with mental health components requiring cross-division coordination.",
+   "restrictions": [],
+   "major_risk": "The broad multi-form violence prevention scope plus required surveillance, data linkage, evaluation, and multisector partnerships could create a heavy coordination and data burden for DPH without dedicated staffing.",
+   "recommended_for_review": true,
+   "one_line_rationale": "CDC funds state health departments to prevent youth violence and integrate youth mental health, fitting DPH prevention expertise and G2.O1 child/family mental health goals."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 7,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O1\",\n  \"strategic_reason\": \"The NOFO funds youth violence prevention and healthy development by integrating youth mental health and family support strategies, directly supporting behavioral and mental health needs of children and families.\",\n  \"strategic_evidence_quote\": \"Advancing whole-child and whole-community violence prevention approaches that integrate  youth mental health  and  family support  strategies\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state, territorial, tribal, and local health departments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 8,\n  \"operational_reason\": \"DPH already leads state and local public health prevention, epidemiology, and surveillance, so implementing and evaluating a youth violence prevention cooperative agreement is an extension of its public health prevention role, with mental health components requiring cross-division coordination.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The broad multi-form violence prevention scope plus required surveillance, data linkage, evaluation, and multisector partnerships could create a heavy coordination and data burden for DPH without dedicated staffing.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"CDC funds state health departments to prevent youth violence and integrate youth mental health, fitting DPH prevention expertise and G2.O1 child/family mental health goals.\"\n}"
+  ]
+ }
+}

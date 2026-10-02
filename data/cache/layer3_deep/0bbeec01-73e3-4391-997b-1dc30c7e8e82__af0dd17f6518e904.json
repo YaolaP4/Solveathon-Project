@@ -1,0 +1,33 @@
+{
+ "grant_id": "0bbeec01-73e3-4391-997b-1dc30c7e8e82",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "af0dd17f6518e90469899501d5d02c47c3fc32d9f0809114b43e19a5113199e4",
+ "retrieved_at": "2026-10-02T20:01:06+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 0,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The funded activity supports state animal food regulatory programs and animal feed safety standards, which do not map to any NCDHHS strategic goal or objective.",
+   "strategic_evidence_quote": "advance efforts for a nationally integrated animal food safety system",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "Competition is limited to these national organizations/associations",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "No NCDHHS division has authority over animal feed regulation; that regulatory function sits outside the department.",
+   "restrictions": [
+    "Competition is limited to national organizations/associations",
+    "Awardees must have or be willing to enter into a 20.88 information disclosure agreement with the FDA",
+    "Awardees must have at least a commissioning certificate or be willing to procure one",
+    "The animal food safety contract must be maintained in satisfactory condition"
+   ],
+   "major_risk": "NCDHHS is not eligible because the competition is limited to national organizations/associations, and no division has authority over animal feed regulation.",
+   "recommended_for_review": false,
+   "one_line_rationale": "This FDA cooperative agreement is limited to national animal food regulatory organizations, so NCDHHS cannot apply and no division owns animal feed regulation."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 0,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The funded activity supports state animal food regulatory programs and animal feed safety standards, which do not map to any NCDHHS strategic goal or objective.\",\n  \"strategic_evidence_quote\": \"advance efforts for a nationally integrated animal food safety system\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"Competition is limited to these national organizations/associations\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"No NCDHHS division has authority over animal feed regulation; that regulatory function sits outside the department.\",\n  \"restrictions\": [\n    \"Competition is limited to national organizations/associations\",\n    \"Awardees must have or be willing to enter into a 20.88 information disclosure agreement with the FDA\",\n    \"Awardees must have at least a commissioning certificate or be willing to procure one\",\n    \"The animal food safety contract must be maintained in satisfactory condition\"\n  ],\n  \"major_risk\": \"NCDHHS is not eligible because the competition is limited to national organizations/associations, and no division has authority over animal feed regulation.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"This FDA cooperative agreement is limited to national animal food regulatory organizations, so NCDHHS cannot apply and no division owns animal feed regulation.\"\n}"
+  ]
+ }
+}

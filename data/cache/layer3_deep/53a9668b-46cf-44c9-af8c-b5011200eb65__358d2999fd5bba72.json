@@ -1,0 +1,31 @@
+{
+ "grant_id": "53a9668b-46cf-44c9-af8c-b5011200eb65",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "358d2999fd5bba72cd868de990d95829ff58a93263ff240a14e4bc283e4268fa",
+ "retrieved_at": "2026-10-02T19:55:34+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 2,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds manufactured housing preservation and redevelopment for low- and moderate-income residents, which may indirectly touch health-related social determinants but does not directly fund a named NCDHHS strategy.",
+   "strategic_evidence_quote": "preserve long-term housing affordability for residents of manufactured housing or an MHC, to redevelop MHCs, and to primarily benefit low- and moderate-income (LMI) residents",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "none",
+   "operational_fit": 1,
+   "operational_reason": "NCDHHS has no division with authority or experience in manufactured housing community redevelopment or CDBG-funded community development, so this would be outside its existing operations.",
+   "restrictions": [
+    "Funds must primarily benefit low- and moderate-income (LMI) residents",
+    "Funds must be used to preserve long-term housing affordability for residents of manufactured housing or an MHC, or to redevelop MHCs"
+   ],
+   "major_risk": "NCDHHS would be an atypical lead for a HUD CDBG housing redevelopment program, with no housing or community development division and no CDBG implementation track record.",
+   "recommended_for_review": false,
+   "one_line_rationale": "This funds manufactured housing preservation and redevelopment under HUD CDBG, a housing function outside NCDHHS's health and human services objectives and divisions."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 2,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds manufactured housing preservation and redevelopment for low- and moderate-income residents, which may indirectly touch health-related social determinants but does not directly fund a named NCDHHS strategy.\",\n  \"strategic_evidence_quote\": \"preserve long-term housing affordability for residents of manufactured housing or an MHC, to redevelop MHCs, and to primarily benefit low- and moderate-income (LMI) residents\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 1,\n  \"operational_reason\": \"NCDHHS has no division with authority or experience in manufactured housing community redevelopment or CDBG-funded community development, so this would be outside its existing operations.\",\n  \"restrictions\": [\n    \"Funds must primarily benefit low- and moderate-income (LMI) residents\",\n    \"Funds must be used to preserve long-term housing affordability for residents of manufactured housing or an MHC, or to redevelop MHCs\"\n  ],\n  \"major_risk\": \"NCDHHS would be an atypical lead for a HUD CDBG housing redevelopment program, with no housing or community development division and no CDBG implementation track record.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"This funds manufactured housing preservation and redevelopment under HUD CDBG, a housing function outside NCDHHS's health and human services objectives and divisions.\"\n}"
+  ]
+ }
+}

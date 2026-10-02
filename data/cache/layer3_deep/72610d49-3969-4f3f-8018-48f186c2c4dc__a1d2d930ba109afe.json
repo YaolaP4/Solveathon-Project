@@ -1,0 +1,28 @@
+{
+ "grant_id": "72610d49-3969-4f3f-8018-48f186c2c4dc",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "a1d2d930ba109afebc4d4605bbd59c705fc68e767ceb33ac0aa4e606254ff152",
+ "retrieved_at": "2026-10-02T20:00:00+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 7,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O2",
+   "strategic_reason": "This grant funds secondary analysis and integration of existing datasets to elucidate cancer risk and related outcomes, which directly supports G1.O2's emphasis on using data and metrics to track health disparities and outcomes.",
+   "strategic_evidence_quote": "Secondary Analysis and Integration of Existing Data to Elucidate Cancer Risk and Related Outcomes (R01 Clinical Trial Not Allowed)",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 7,
+   "operational_reason": "DPH houses cancer surveillance/epidemiology, chronic disease prevention, and vital statistics units that already use population health data, making secondary analysis a realistic extension of existing work.",
+   "restrictions": [],
+   "major_risk": "It is a highly competitive NIH R01 research grant requiring advanced biostatistical and epidemiological capacity, which may be beyond current in-house resources without academic partners.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Fits G1.O2 and DPH cancer surveillance/epidemiology; NIH research grant offers analytics rather than direct services and may need academic partners."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 7,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O2\",\n  \"strategic_reason\": \"This grant funds secondary analysis and integration of existing datasets to elucidate cancer risk and related outcomes, which directly supports G1.O2's emphasis on using data and metrics to track health disparities and outcomes.\",\n  \"strategic_evidence_quote\": \"Secondary Analysis and Integration of Existing Data to Elucidate Cancer Risk and Related Outcomes (R01 Clinical Trial Not Allowed)\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 7,\n  \"operational_reason\": \"DPH houses cancer surveillance/epidemiology, chronic disease prevention, and vital statistics units that already use population health data, making secondary analysis a realistic extension of existing work.\",\n  \"restrictions\": [],\n  \"major_risk\": \"It is a highly competitive NIH R01 research grant requiring advanced biostatistical and epidemiological capacity, which may be beyond current in-house resources without academic partners.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Fits G1.O2 and DPH cancer surveillance/epidemiology; NIH research grant offers analytics rather than direct services and may need academic partners.\"\n}"
+  ]
+ }
+}

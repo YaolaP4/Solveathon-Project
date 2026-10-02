@@ -1,0 +1,28 @@
+{
+ "grant_id": "9381a795-83da-40fa-9d6a-ee4c0f7b63be",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "aefce20a6bf736afc4aac85f46c4cf702910c65062d0d42f58fa17ebf2eda774",
+ "retrieved_at": "2026-10-02T19:48:11+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 10,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O4",
+   "strategic_reason": "The grant directly invests in community-based organization capacity to improve HIV health outcomes and reduce transmission among people not yet in regular care, which advances G1.O4's focus on investing in community-based partner capacity.",
+   "strategic_evidence_quote": "strengthen the capacity of community-based organizations to improve health outcomes and reduce HIV transmission, especially for people not yet in regular HIV care",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 8,
+   "operational_reason": "DPH already manages communicable disease/HIV programs and works with local health departments and community clinics, so this capacity-building grant is an extension of its existing role, though it would require subrecipient management for community-based clinical services.",
+   "restrictions": [],
+   "major_risk": "The program's stated purpose is to strengthen community-based organizations, so a state agency application may be atypical or less competitive and would likely require passing funds through to CBOs rather than delivering services directly.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Strong fit with G1.O4: funds capacity building for HIV-focused community organizations; DPH can apply as state government and manage through its HIV program."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 10,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O4\",\n  \"strategic_reason\": \"The grant directly invests in community-based organization capacity to improve HIV health outcomes and reduce transmission among people not yet in regular care, which advances G1.O4's focus on investing in community-based partner capacity.\",\n  \"strategic_evidence_quote\": \"strengthen the capacity of community-based organizations to improve health outcomes and reduce HIV transmission, especially for people not yet in regular HIV care\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 8,\n  \"operational_reason\": \"DPH already manages communicable disease/HIV programs and works with local health departments and community clinics, so this capacity-building grant is an extension of its existing role, though it would require subrecipient management for community-based clinical services.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The program's stated purpose is to strengthen community-based organizations, so a state agency application may be atypical or less competitive and would likely require passing funds through to CBOs rather than delivering services directly.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Strong fit with G1.O4: funds capacity building for HIV-focused community organizations; DPH can apply as state government and manage through its HIV program.\"\n}"
+  ]
+ }
+}

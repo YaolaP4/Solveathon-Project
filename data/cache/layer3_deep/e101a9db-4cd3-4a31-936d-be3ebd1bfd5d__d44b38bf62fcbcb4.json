@@ -1,0 +1,28 @@
+{
+ "grant_id": "e101a9db-4cd3-4a31-936d-be3ebd1bfd5d",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "d44b38bf62fcbcb464865eadd16723ed8b7d2982003c6cc6010e039d1a1c8b40",
+ "retrieved_at": "2026-10-02T20:02:36+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 5,
+   "matched_goal": "G4",
+   "matched_objective": "G4.O4",
+   "strategic_reason": "NIH conference grants can support scientific meetings that strengthen the knowledge and skills of North Carolina's public health workforce.",
+   "strategic_evidence_quote": "The purpose of the NIH Research Conference Grant (R13) is to support high quality conferences that are relevant to the public health and to the scientific mission of the participating Institutes and Centers.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 6,
+   "operational_reason": "DPH supports the state and local public health workforce and has the scientific leadership and convening capacity to host public health meetings.",
+   "restrictions": [],
+   "major_risk": "The parent announcement is broad and funds only conference or scientific meeting costs, not ongoing public health programs, so it has limited value unless NCDHHS already has a conference planned.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Broad NIH conference grant could support public health workforce development, but funds meetings rather than services; low value unless DPH already planned a conference."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 5,\n  \"matched_goal\": \"G4\",\n  \"matched_objective\": \"G4.O4\",\n  \"strategic_reason\": \"NIH conference grants can support scientific meetings that strengthen the knowledge and skills of North Carolina's public health workforce.\",\n  \"strategic_evidence_quote\": \"The purpose of the NIH Research Conference Grant (R13) is to support high quality conferences that are relevant to the public health and to the scientific mission of the participating Institutes and Centers.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 6,\n  \"operational_reason\": \"DPH supports the state and local public health workforce and has the scientific leadership and convening capacity to host public health meetings.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The parent announcement is broad and funds only conference or scientific meeting costs, not ongoing public health programs, so it has limited value unless NCDHHS already has a conference planned.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Broad NIH conference grant could support public health workforce development, but funds meetings rather than services; low value unless DPH already planned a conference.\"\n}"
+  ]
+ }
+}

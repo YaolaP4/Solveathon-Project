@@ -1,0 +1,32 @@
+{
+ "grant_id": "fd5dfec0-8772-494f-a990-506b5e996d27",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "69f6394b4815ffb5f4c7f9aeaf633c64db95f953ac7b265c6ab4b1774c14cc55",
+ "retrieved_at": "2026-10-02T20:02:35+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 2,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant broadly funds competitive revisions to existing NIH awards for unspecified public health crises and does not directly name an NCDHHS strategic objective.",
+   "strategic_evidence_quote": "address specific public health crises that were unforeseen when the original application was submitted",
+   "applicant_role": "unclear",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "none",
+   "operational_fit": 1,
+   "operational_reason": "No NCDHHS division is a clear operational owner because this is a supplement to an existing NIH award, so any fit depends on the parent award subject and division.",
+   "restrictions": [
+    "Only existing NIH grant or cooperative agreement recipients can apply.",
+    "Applications must be submitted in response to an Urgent Guide Notice published by an NIH IC.",
+    "Applications are routed directly to the NIH awarding component on the most recent parent award."
+   ],
+   "major_risk": "NCDHHS may not hold an existing NIH award, so the agency cannot apply unless a division already has a qualifying parent grant and an active urgent guide notice.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Does not fit: this is a restricted supplement for existing NIH research awards, not a standard state agency program; no clear NCDHHS division or objective."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 2,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant broadly funds competitive revisions to existing NIH awards for unspecified public health crises and does not directly name an NCDHHS strategic objective.\",\n  \"strategic_evidence_quote\": \"address specific public health crises that were unforeseen when the original application was submitted\",\n  \"applicant_role\": \"unclear\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 1,\n  \"operational_reason\": \"No NCDHHS division is a clear operational owner because this is a supplement to an existing NIH award, so any fit depends on the parent award subject and division.\",\n  \"restrictions\": [\n    \"Only existing NIH grant or cooperative agreement recipients can apply.\",\n    \"Applications must be submitted in response to an Urgent Guide Notice published by an NIH IC.\",\n    \"Applications are routed directly to the NIH awarding component on the most recent parent award.\"\n  ],\n  \"major_risk\": \"NCDHHS may not hold an existing NIH award, so the agency cannot apply unless a division already has a qualifying parent grant and an active urgent guide notice.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Does not fit: this is a restricted supplement for existing NIH research awards, not a standard state agency program; no clear NCDHHS division or objective.\"\n}"
+  ]
+ }
+}

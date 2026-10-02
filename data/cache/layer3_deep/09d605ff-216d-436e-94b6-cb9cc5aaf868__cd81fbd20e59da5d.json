@@ -1,0 +1,28 @@
+{
+ "grant_id": "09d605ff-216d-436e-94b6-cb9cc5aaf868",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "cd81fbd20e59da5d4a7ebcbee85eb53c43a564068a17bdb55cc9bbd57217eb20",
+ "retrieved_at": "2026-10-02T19:56:36+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 3,
+   "matched_goal": "G5",
+   "matched_objective": "G5.O1",
+   "strategic_reason": "The grant funds consensus-based data standards and terminologies, which is adjacent to G5.O1's focus on data infrastructure and integration for data-driven decision-making.",
+   "strategic_evidence_quote": "The primary objective is to support open, consensus-based, data standards for use in studies of tobacco products.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 3,
+   "operational_reason": "DPH houses tobacco prevention and chronic disease surveillance, so it could engage with tobacco research data standards, though the work is more specialized than its usual programs.",
+   "restrictions": [],
+   "major_risk": "The project focuses on national and global data standards for tobacco product research and FDA scientific review, which is outside NCDHHS's direct service role and may offer limited state-level value.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Specialized FDA data-standards project for tobacco research with little direct tie to NCDHHS essential services; DPH could apply but value is low."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 3,\n  \"matched_goal\": \"G5\",\n  \"matched_objective\": \"G5.O1\",\n  \"strategic_reason\": \"The grant funds consensus-based data standards and terminologies, which is adjacent to G5.O1's focus on data infrastructure and integration for data-driven decision-making.\",\n  \"strategic_evidence_quote\": \"The primary objective is to support open, consensus-based, data standards for use in studies of tobacco products.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 3,\n  \"operational_reason\": \"DPH houses tobacco prevention and chronic disease surveillance, so it could engage with tobacco research data standards, though the work is more specialized than its usual programs.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The project focuses on national and global data standards for tobacco product research and FDA scientific review, which is outside NCDHHS's direct service role and may offer limited state-level value.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Specialized FDA data-standards project for tobacco research with little direct tie to NCDHHS essential services; DPH could apply but value is low.\"\n}"
+  ]
+ }
+}

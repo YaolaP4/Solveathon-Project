@@ -1,0 +1,31 @@
+{
+ "grant_id": "fef48e8c-9db6-4bf2-9f84-6efb9924ef99",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "f0d4c82ebe15d7594913e3023f3cddff0dc4f2ad036ffbc60f60256efd1ab92c",
+ "retrieved_at": "2026-10-02T19:55:58+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 1,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds health and safety training for hazardous materials workers, an occupational health activity that does not directly advance any named NCDHHS strategic objective.",
+   "strategic_evidence_quote": "This funding opportunity will utilize the U45 activity code to provide support for the development of health and safety training of workers exposed to hazardous materials.",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "other_native_american_tribal_organizations, public_and_state_institutions_of_higher_education, nonprofits_non_higher_education_with_501c3, private_institutions_of_higher_education, federally_recognized_native_american_tribal_governments",
+   "owning_division": "DPH",
+   "operational_fit": 3,
+   "operational_reason": "DPH has environmental health and public health preparedness functions, but the program trains non-public-health hazardous materials workers and NCDHHS is not an eligible lead applicant.",
+   "restrictions": [
+    "Eligible applicant types are limited to listed non-state entities; NCDHHS is not included and would need an eligible partner.",
+    "The core Hazardous Waste Worker Training Program (HWWTP) is required in order to add the other two optional programs."
+   ],
+   "major_risk": "NCDHHS is not among the eligible applicant types and the funded worker training sits outside the Department's named strategic objectives, so implementation would require an external partner with limited strategic return.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Trains hazardous materials workers; NCDHHS is not an eligible applicant and the activity does not map to a named DHHS strategic objective, so this is not a fit."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 1,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds health and safety training for hazardous materials workers, an occupational health activity that does not directly advance any named NCDHHS strategic objective.\",\n  \"strategic_evidence_quote\": \"This funding opportunity will utilize the U45 activity code to provide support for the development of health and safety training of workers exposed to hazardous materials.\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"other_native_american_tribal_organizations, public_and_state_institutions_of_higher_education, nonprofits_non_higher_education_with_501c3, private_institutions_of_higher_education, federally_recognized_native_american_tribal_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 3,\n  \"operational_reason\": \"DPH has environmental health and public health preparedness functions, but the program trains non-public-health hazardous materials workers and NCDHHS is not an eligible lead applicant.\",\n  \"restrictions\": [\n    \"Eligible applicant types are limited to listed non-state entities; NCDHHS is not included and would need an eligible partner.\",\n    \"The core Hazardous Waste Worker Training Program (HWWTP) is required in order to add the other two optional programs.\"\n  ],\n  \"major_risk\": \"NCDHHS is not among the eligible applicant types and the funded worker training sits outside the Department's named strategic objectives, so implementation would require an external partner with limited strategic return.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Trains hazardous materials workers; NCDHHS is not an eligible applicant and the activity does not map to a named DHHS strategic objective, so this is not a fit.\"\n}"
+  ]
+ }
+}

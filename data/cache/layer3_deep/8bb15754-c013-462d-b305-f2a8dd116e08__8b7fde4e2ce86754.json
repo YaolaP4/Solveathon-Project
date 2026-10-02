@@ -1,0 +1,30 @@
+{
+ "grant_id": "8bb15754-c013-462d-b305-f2a8dd116e08",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "8b7fde4e2ce86754ea5550dce228ac85cd9ebfcc895b2beabfda77a6e5ce94d1",
+ "retrieved_at": "2026-10-02T19:49:11+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O3",
+   "strategic_reason": "This grant funds integrated rural health networks that expand access to care and strengthen rural health systems, directly supporting NCDHHS's work to mitigate barriers to rural and underserved primary care.",
+   "strategic_evidence_quote": "Both tracts aim to expand access to care, improve coordination and quality, strengthen health outcomes, increase efficiency, and support a stronger rural health care system.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "ORH",
+   "operational_fit": 10,
+   "operational_reason": "ORH already works with rural and underserved primary care providers, safety-net clinics, and rural hospitals, so this program is a direct extension of its existing role and partnerships.",
+   "restrictions": [
+    "The applicant organization may be located in a rural or urban area, but must have demonstrated experience serving, or capacity to serve, populations in rural areas."
+   ],
+   "major_risk": "Although state governments are listed as eligible, HRSA may favor provider-led networks with direct rural hospital or clinic participants, so ORH would need credible network partners and rural reach to win.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Fits G1.O3 rural health access and ORH's existing rural and underserved primary care role; State governments are eligible, so the coordinator should route it to ORH."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O3\",\n  \"strategic_reason\": \"This grant funds integrated rural health networks that expand access to care and strengthen rural health systems, directly supporting NCDHHS's work to mitigate barriers to rural and underserved primary care.\",\n  \"strategic_evidence_quote\": \"Both tracts aim to expand access to care, improve coordination and quality, strengthen health outcomes, increase efficiency, and support a stronger rural health care system.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"ORH\",\n  \"operational_fit\": 10,\n  \"operational_reason\": \"ORH already works with rural and underserved primary care providers, safety-net clinics, and rural hospitals, so this program is a direct extension of its existing role and partnerships.\",\n  \"restrictions\": [\n    \"The applicant organization may be located in a rural or urban area, but must have demonstrated experience serving, or capacity to serve, populations in rural areas.\"\n  ],\n  \"major_risk\": \"Although state governments are listed as eligible, HRSA may favor provider-led networks with direct rural hospital or clinic participants, so ORH would need credible network partners and rural reach to win.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Fits G1.O3 rural health access and ORH's existing rural and underserved primary care role; State governments are eligible, so the coordinator should route it to ORH.\"\n}"
+  ]
+ }
+}

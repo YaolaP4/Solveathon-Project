@@ -1,0 +1,33 @@
+{
+ "grant_id": "04e6fd79-8789-47c8-be6f-646c0e686087",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "5be02acc228834dda39a8aedcb3962bbc3e261b3da5b28cb762f01fe3b416be6",
+ "retrieved_at": "2026-10-02T19:48:58+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O4",
+   "strategic_reason": "This grant directly funds research to implement and evaluate evidence-based linkage to care for people with opioid use disorder, matching NCDHHS's goal to turn the tide on the opioid and substance use crisis.",
+   "strategic_evidence_quote": "develop, implement, and rigorously evaluate strategies to address and overcome barriers to implementing evidence-based linkage to care services in health care settings.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DMHDDSUS",
+   "operational_fit": 9,
+   "operational_reason": "DMHDDSUS already oversees substance use and opioid services and could manage a research partnership focused on improving OUD linkage to care.",
+   "restrictions": [
+    "Requires at least one partnership with a public health entity or bona fide agent.",
+    "Requires collaboration with a local champion in a health care setting.",
+    "Requires at least two defined outcome measures.",
+    "Cooperative agreement with CDC, involving federal programmatic involvement."
+   ],
+   "major_risk": "This CDC U01 is investigator-initiated research, so it likely rewards strong research and evaluation capacity and may not fund direct service expansion without an academic or research partner.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Directly matches NCDHHS opioid crisis goal; could route to DMHDDSUS with research partners, though requires rigorous evaluation and public-health partnerships."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O4\",\n  \"strategic_reason\": \"This grant directly funds research to implement and evaluate evidence-based linkage to care for people with opioid use disorder, matching NCDHHS's goal to turn the tide on the opioid and substance use crisis.\",\n  \"strategic_evidence_quote\": \"develop, implement, and rigorously evaluate strategies to address and overcome barriers to implementing evidence-based linkage to care services in health care settings.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DMHDDSUS\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DMHDDSUS already oversees substance use and opioid services and could manage a research partnership focused on improving OUD linkage to care.\",\n  \"restrictions\": [\n    \"Requires at least one partnership with a public health entity or bona fide agent.\",\n    \"Requires collaboration with a local champion in a health care setting.\",\n    \"Requires at least two defined outcome measures.\",\n    \"Cooperative agreement with CDC, involving federal programmatic involvement.\"\n  ],\n  \"major_risk\": \"This CDC U01 is investigator-initiated research, so it likely rewards strong research and evaluation capacity and may not fund direct service expansion without an academic or research partner.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Directly matches NCDHHS opioid crisis goal; could route to DMHDDSUS with research partners, though requires rigorous evaluation and public-health partnerships.\"\n}"
+  ]
+ }
+}

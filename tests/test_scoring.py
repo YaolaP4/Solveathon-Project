@@ -122,3 +122,10 @@ def test_rolling_grant_ranks_below_similar_grant_with_real_deadline_but_above_wo
                                                  financial_value_score=8, deadline_score=10), AGENCY)["final_score"]
     worse_with_deadline = score_grant(base_row(**weaker, deadline_score=10), AGENCY)["final_score"]
     assert similar_with_deadline > rolling > worse_with_deadline
+
+
+def test_research_mechanisms_are_split_out_of_the_apply_now_list():
+    from scoring import split_research
+    df = pd.DataFrame({"research_mechanism": [True, "False", "True", None]})
+    assert split_research(df).tolist() == [True, False, True, False]
+    assert not split_research(pd.DataFrame({"x": [1]})).any()

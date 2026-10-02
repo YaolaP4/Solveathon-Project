@@ -1,0 +1,28 @@
+{
+ "grant_id": "4911b8da-abec-4651-b3f1-3be87df6879b",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "b1247c17c1d0646d14768d32e5f5720301e31c612a6cfe757c14d93d6bdec481",
+ "retrieved_at": "2026-10-02T19:23:56+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O2",
+   "strategic_reason": "The grant funds surveillance of populations disproportionately affected by HIV to track risk factors and gaps in prevention access.",
+   "strategic_evidence_quote": "The purpose of this NOFO is to support ongoing bio-behavioral surveillance among populations disproportionately affected by HIV.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "State governments.",
+   "owning_division": "DPH",
+   "operational_fit": 9,
+   "operational_reason": "HIV surveillance, testing, and linkage to prevention or care is core work for Public Health epidemiology and local health department partners.",
+   "restrictions": [],
+   "major_risk": "Requires existing public-health surveillance authority, capacity and sustained fieldwork to recruit participants, test, and link to services.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Funds HIV surveillance in disproportionately affected groups, strengthening disparity tracking under G1, led by Public Health's existing epidemiology work."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O2\",\n  \"strategic_reason\": \"The grant funds surveillance of populations disproportionately affected by HIV to track risk factors and gaps in prevention access.\",\n  \"strategic_evidence_quote\": \"The purpose of this NOFO is to support ongoing bio-behavioral surveillance among populations disproportionately affected by HIV.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"State governments.\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"HIV surveillance, testing, and linkage to prevention or care is core work for Public Health epidemiology and local health department partners.\",\n  \"restrictions\": [],\n  \"major_risk\": \"Requires existing public-health surveillance authority, capacity and sustained fieldwork to recruit participants, test, and link to services.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Funds HIV surveillance in disproportionately affected groups, strengthening disparity tracking under G1, led by Public Health's existing epidemiology work.\"\n}"
+  ]
+ }
+}

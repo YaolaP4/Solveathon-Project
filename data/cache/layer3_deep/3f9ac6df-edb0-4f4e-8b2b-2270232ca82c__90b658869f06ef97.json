@@ -1,0 +1,28 @@
+{
+ "grant_id": "3f9ac6df-edb0-4f4e-8b2b-2270232ca82c",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "90b658869f06ef97440b4523ee07d50770d64cb7eee6ec80e25467ab3bb62d55",
+ "retrieved_at": "2026-10-02T19:51:30+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O3",
+   "strategic_reason": "Funding direct-to-consumer HIV and STI self-tests reduces barriers to testing for communities with a high burden of HIV, advancing health access and disparity-reduction objectives under G1.O3.",
+   "strategic_evidence_quote": "provide at least 1.5 million HIV and other STI self-tests to communities with a high burden of HIV",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "nonprofits_non_higher_education_with_501c3, nonprofits_non_higher_education_without_501c3, private_institutions_of_higher_education, for_profit_organizations_other_than_small_businesses, public_and_state_institutions_of_higher_education",
+   "owning_division": "DPH",
+   "operational_fit": 9,
+   "operational_reason": "DPH already manages HIV/STI prevention and surveillance and would be the natural owner, but the applicant-type limits appear to exclude state health departments.",
+   "restrictions": [],
+   "major_risk": "State health departments are absent from the listed applicant types, making NCDHHS ineligible as a lead applicant despite the strong programmatic fit.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Strong fit with DPH's HIV/STI prevention work, but CDC's applicant types exclude state health departments, so NCDHHS cannot apply as lead."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O3\",\n  \"strategic_reason\": \"Funding direct-to-consumer HIV and STI self-tests reduces barriers to testing for communities with a high burden of HIV, advancing health access and disparity-reduction objectives under G1.O3.\",\n  \"strategic_evidence_quote\": \"provide at least 1.5 million HIV and other STI self-tests to communities with a high burden of HIV\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"nonprofits_non_higher_education_with_501c3, nonprofits_non_higher_education_without_501c3, private_institutions_of_higher_education, for_profit_organizations_other_than_small_businesses, public_and_state_institutions_of_higher_education\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DPH already manages HIV/STI prevention and surveillance and would be the natural owner, but the applicant-type limits appear to exclude state health departments.\",\n  \"restrictions\": [],\n  \"major_risk\": \"State health departments are absent from the listed applicant types, making NCDHHS ineligible as a lead applicant despite the strong programmatic fit.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Strong fit with DPH's HIV/STI prevention work, but CDC's applicant types exclude state health departments, so NCDHHS cannot apply as lead.\"\n}"
+  ]
+ }
+}

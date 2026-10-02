@@ -1,0 +1,28 @@
+{
+ "grant_id": "f68cf378-43e2-49b9-a252-a7009c6b81cf",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "c18417b3783fc61369353cb20e518ee3d7afc10ed0992c605ced697b4510e1a6",
+ "retrieved_at": "2026-10-02T19:23:28+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O4",
+   "strategic_reason": "Funds voluntary evidence-based home visiting for pregnant women and young children to improve maternal health and birth outcomes.",
+   "strategic_evidence_quote": "evidence-based home visiting services",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "All 50 states and 6 jurisdictions",
+   "owning_division": "DCFW",
+   "operational_fit": 9,
+   "operational_reason": "DCFW already includes home visiting and early intervention, making MIECHV an extension of its existing work.",
+   "restrictions": [],
+   "major_risk": "Long-term home-visiting services require sustained workforce and ongoing state commitment beyond the grant period.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Supports maternal and child home visiting that advances child and family well-being, led by the state through DCFW's existing home-visiting work."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O4\",\n  \"strategic_reason\": \"Funds voluntary evidence-based home visiting for pregnant women and young children to improve maternal health and birth outcomes.\",\n  \"strategic_evidence_quote\": \"evidence-based home visiting services\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"All 50 states and 6 jurisdictions\",\n  \"owning_division\": \"DCFW\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DCFW already includes home visiting and early intervention, making MIECHV an extension of its existing work.\",\n  \"restrictions\": [],\n  \"major_risk\": \"Long-term home-visiting services require sustained workforce and ongoing state commitment beyond the grant period.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Supports maternal and child home visiting that advances child and family well-being, led by the state through DCFW's existing home-visiting work.\"\n}"
+  ]
+ }
+}

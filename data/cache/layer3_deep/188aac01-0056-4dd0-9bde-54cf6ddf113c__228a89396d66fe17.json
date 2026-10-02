@@ -1,0 +1,30 @@
+{
+ "grant_id": "188aac01-0056-4dd0-9bde-54cf6ddf113c",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "228a89396d66fe1779136eca96462ecbd58c9f9d9f8a006dc44242321142f117",
+ "retrieved_at": "2026-10-02T19:52:56+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 5,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "The grant funds screening and education for radiation-exposed people, a higher-risk population, supporting health access and disparity reduction under Goal 1.",
+   "strategic_evidence_quote": "This program supports organizations to screen and educate people exposed to radiation related to the mining of uranium and U.S. testing of nuclear weapons.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 5,
+   "operational_reason": "DPH's environmental health and epidemiology role could house a radiation-exposure screening and education program, though it is a specialized and likely new activity.",
+   "restrictions": [
+    "Must target populations located in the states cited in the Radiation Exposure Compensation Act."
+   ],
+   "major_risk": "North Carolina may not be a RECA state, so NCDHHS may lack a local eligible target population and would need to justify or establish out-of-state service delivery.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Targets populations in Radiation Exposure Compensation Act states; North Carolina may not be covered, limiting fit despite DPH's public health relevance."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 5,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"The grant funds screening and education for radiation-exposed people, a higher-risk population, supporting health access and disparity reduction under Goal 1.\",\n  \"strategic_evidence_quote\": \"This program supports organizations to screen and educate people exposed to radiation related to the mining of uranium and U.S. testing of nuclear weapons.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 5,\n  \"operational_reason\": \"DPH's environmental health and epidemiology role could house a radiation-exposure screening and education program, though it is a specialized and likely new activity.\",\n  \"restrictions\": [\n    \"Must target populations located in the states cited in the Radiation Exposure Compensation Act.\"\n  ],\n  \"major_risk\": \"North Carolina may not be a RECA state, so NCDHHS may lack a local eligible target population and would need to justify or establish out-of-state service delivery.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Targets populations in Radiation Exposure Compensation Act states; North Carolina may not be covered, limiting fit despite DPH's public health relevance.\"\n}"
+  ]
+ }
+}

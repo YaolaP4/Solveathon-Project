@@ -1,0 +1,30 @@
+{
+ "grant_id": "10f4a697-e6a1-454a-bb73-74bc933f364a",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "7632313200453ca4e6130f796b73b999258e7ae5eae187871c4cd109cbd6b6ea",
+ "retrieved_at": "2026-10-02T19:51:46+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 5,
+   "matched_goal": "G5",
+   "matched_objective": "G5.O1",
+   "strategic_reason": "The grant funds sentinel surveillance and actionable data for outbreak detection, supporting data-driven public health decision-making.",
+   "strategic_evidence_quote": "Timely surveillance and sentinel detection are essential for collecting actionable data.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 9,
+   "operational_reason": "DPH already operates disease surveillance, epidemiology, public health preparedness, and laboratory services that could support a travel-associated infectious disease sentinel network.",
+   "restrictions": [
+    "If your application for both Component A and B is ranked top, Component B will be awarded."
+   ],
+   "major_risk": "The international travel focus may exceed DPH's routine state-level disease surveillance authority and require coordination with federal quarantine stations, airports, or academic partners.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Strong fit for DPH disease surveillance and preparedness; CDC travel-focused sentinel network advances data-driven decision-making, though it is not squarely in NCDHHS strategic goals."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 5,\n  \"matched_goal\": \"G5\",\n  \"matched_objective\": \"G5.O1\",\n  \"strategic_reason\": \"The grant funds sentinel surveillance and actionable data for outbreak detection, supporting data-driven public health decision-making.\",\n  \"strategic_evidence_quote\": \"Timely surveillance and sentinel detection are essential for collecting actionable data.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DPH already operates disease surveillance, epidemiology, public health preparedness, and laboratory services that could support a travel-associated infectious disease sentinel network.\",\n  \"restrictions\": [\n    \"If your application for both Component A and B is ranked top, Component B will be awarded.\"\n  ],\n  \"major_risk\": \"The international travel focus may exceed DPH's routine state-level disease surveillance authority and require coordination with federal quarantine stations, airports, or academic partners.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Strong fit for DPH disease surveillance and preparedness; CDC travel-focused sentinel network advances data-driven decision-making, though it is not squarely in NCDHHS strategic goals.\"\n}"
+  ]
+ }
+}

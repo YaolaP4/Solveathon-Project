@@ -1,0 +1,32 @@
+{
+ "grant_id": "0924a13a-4892-488c-a3cd-c0f9a67a163b",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "c4f65479ed443fc178eefbffb52b65c6f63c66efd27a4008ed4fb4de7b0288d4",
+ "retrieved_at": "2026-10-02T19:58:25+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 3,
+   "matched_goal": "G5",
+   "matched_objective": "G5.O1",
+   "strategic_reason": "The FY 2027 Methods Training focus on analyzing large administrative datasets supports NCDHHS's objective to foster data-driven decision-making and staff data skills, though in a special education research context.",
+   "strategic_evidence_quote": "For FY 2027, NCSER is only accepting applications for Methods Training focused on analyzing large administrative datasets to address research questions related to learners with or at risk for disabilities.",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "Eligible applicants include, but are not limited to, non-profit and for-profit organizations and public and private agencies and institutions, such as colleges and universities.",
+   "owning_division": "none",
+   "operational_fit": 2,
+   "operational_reason": "No NCDHHS division has a mission or existing role in training special education researchers, so the program would be outside its usual authority and expertise.",
+   "restrictions": [
+    "For FY 2027, NCSER is only accepting applications for Methods Training focused on analyzing large administrative datasets to address research questions related to learners with or at risk for disabilities.",
+    "Applicants must be located in the territorial United States.",
+    "An applying institution may hold more than one Methods Training award and submit multiple applications to the Methods Training Program if they are substantively different from one another and have no overlaps in key personnel."
+   ],
+   "major_risk": "The grant is from the Department of Education and targets special education research training, which is outside NCDHHS's health and human services mission and likely a weak fit for its divisions.",
+   "recommended_for_review": false,
+   "one_line_rationale": "It funds special education research methods training rather than NCDHHS health or human services programs, so it is a poor match despite some data-skills relevance."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 3,\n  \"matched_goal\": \"G5\",\n  \"matched_objective\": \"G5.O1\",\n  \"strategic_reason\": \"The FY 2027 Methods Training focus on analyzing large administrative datasets supports NCDHHS's objective to foster data-driven decision-making and staff data skills, though in a special education research context.\",\n  \"strategic_evidence_quote\": \"For FY 2027, NCSER is only accepting applications for Methods Training focused on analyzing large administrative datasets to address research questions related to learners with or at risk for disabilities.\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"Eligible applicants include, but are not limited to, non-profit and for-profit organizations and public and private agencies and institutions, such as colleges and universities.\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 2,\n  \"operational_reason\": \"No NCDHHS division has a mission or existing role in training special education researchers, so the program would be outside its usual authority and expertise.\",\n  \"restrictions\": [\n    \"For FY 2027, NCSER is only accepting applications for Methods Training focused on analyzing large administrative datasets to address research questions related to learners with or at risk for disabilities.\",\n    \"Applicants must be located in the territorial United States.\",\n    \"An applying institution may hold more than one Methods Training award and submit multiple applications to the Methods Training Program if they are substantively different from one another and have no overlaps in key personnel.\"\n  ],\n  \"major_risk\": \"The grant is from the Department of Education and targets special education research training, which is outside NCDHHS's health and human services mission and likely a weak fit for its divisions.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"It funds special education research methods training rather than NCDHHS health or human services programs, so it is a poor match despite some data-skills relevance.\"\n}"
+  ]
+ }
+}

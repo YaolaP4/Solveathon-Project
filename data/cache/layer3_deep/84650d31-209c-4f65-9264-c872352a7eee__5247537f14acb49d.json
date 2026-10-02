@@ -1,0 +1,32 @@
+{
+ "grant_id": "84650d31-209c-4f65-9264-c872352a7eee",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "5247537f14acb49d816f7c9af0042a5cfd34357e6c8fdbf4799f6a9014a8d2ab",
+ "retrieved_at": "2026-10-02T20:01:49+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 2,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds tobacco regulatory science to inform FDA product regulation, which is public-health relevant but does not directly advance a named NCDHHS strategic objective.",
+   "strategic_evidence_quote": "High-priority research encouraged by this NOFO is expected to provide additional scientific data to the research base to inform the regulation of tobacco products to protect public health.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 3,
+   "operational_reason": "DPH has tobacco prevention and chronic disease expertise, but this NOFO requires specialized tobacco regulatory science and product research capacity that the division does not typically lead.",
+   "restrictions": [
+    "Research must be within the regulatory authority of FDA CTP",
+    "Research must address one or more of the topics: Addiction, Behavior, Communications, Health Effects, Product Composition and Design, and/or Toxicity",
+    "Research must address all components within the selected topic subtopic(s)"
+   ],
+   "major_risk": "NCDHHS likely lacks the specialized tobacco regulatory science research infrastructure to compete as a lead applicant and would depend heavily on academic partners.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Tobacco regulatory science research is outside NCDHHS's named objectives and service-delivery role; DPH would need academic partners, so it is not a strong fit."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 2,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds tobacco regulatory science to inform FDA product regulation, which is public-health relevant but does not directly advance a named NCDHHS strategic objective.\",\n  \"strategic_evidence_quote\": \"High-priority research encouraged by this NOFO is expected to provide additional scientific data to the research base to inform the regulation of tobacco products to protect public health.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 3,\n  \"operational_reason\": \"DPH has tobacco prevention and chronic disease expertise, but this NOFO requires specialized tobacco regulatory science and product research capacity that the division does not typically lead.\",\n  \"restrictions\": [\n    \"Research must be within the regulatory authority of FDA CTP\",\n    \"Research must address one or more of the topics: Addiction, Behavior, Communications, Health Effects, Product Composition and Design, and/or Toxicity\",\n    \"Research must address all components within the selected topic subtopic(s)\"\n  ],\n  \"major_risk\": \"NCDHHS likely lacks the specialized tobacco regulatory science research infrastructure to compete as a lead applicant and would depend heavily on academic partners.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Tobacco regulatory science research is outside NCDHHS's named objectives and service-delivery role; DPH would need academic partners, so it is not a strong fit.\"\n}"
+  ]
+ }
+}

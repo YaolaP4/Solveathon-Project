@@ -1,0 +1,30 @@
+{
+ "grant_id": "07b5ef08-35da-4934-94a6-389b5dd4e221",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "8f630937023c8014a0c52502d1c45ce43d0639d1bd79cfd328182e141af89b3a",
+ "retrieved_at": "2026-10-02T19:51:39+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 6,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O2",
+   "strategic_reason": "The hub funds data planning, analytics, and evaluation to track oral health disparities and promote data use, aligning with the Department's objective to use data and metrics to track health disparities and outcomes.",
+   "strategic_evidence_quote": "promoting data use and transformational community engagement to optimize oral health for all people",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 7,
+   "operational_reason": "DPH houses oral health, epidemiology, and data functions and could coordinate a community engagement and data hub with academic partners.",
+   "restrictions": [
+    "Foreign components, as defined in the NIH Grants Policy Statement, are not allowed."
+   ],
+   "major_risk": "As a national NIH research coordination cooperative agreement, it may outmatch a state health department's research capacity and offer little direct funding for NCDHHS service delivery.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Eligible state-government opportunity for DPH's oral health and data work, but it is a national research coordinating hub requiring academic partners; route for feasibility review."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 6,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O2\",\n  \"strategic_reason\": \"The hub funds data planning, analytics, and evaluation to track oral health disparities and promote data use, aligning with the Department's objective to use data and metrics to track health disparities and outcomes.\",\n  \"strategic_evidence_quote\": \"promoting data use and transformational community engagement to optimize oral health for all people\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 7,\n  \"operational_reason\": \"DPH houses oral health, epidemiology, and data functions and could coordinate a community engagement and data hub with academic partners.\",\n  \"restrictions\": [\n    \"Foreign components, as defined in the NIH Grants Policy Statement, are not allowed.\"\n  ],\n  \"major_risk\": \"As a national NIH research coordination cooperative agreement, it may outmatch a state health department's research capacity and offer little direct funding for NCDHHS service delivery.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Eligible state-government opportunity for DPH's oral health and data work, but it is a national research coordinating hub requiring academic partners; route for feasibility review.\"\n}"
+  ]
+ }
+}

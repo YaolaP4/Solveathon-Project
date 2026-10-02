@@ -1,0 +1,28 @@
+{
+ "grant_id": "44a089ce-dd0a-4cde-b6f4-c77d08d56a08",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "70fc8e73847c56df3b2340a7148710f3b67a3cb6c8650e0010e859a5590bc187",
+ "retrieved_at": "2026-10-02T19:29:52+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 6,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O4",
+   "strategic_reason": "This evaluation of rural opioid-response strategies would generate evidence to guide North Carolina's opioid and substance-use treatment efforts.",
+   "strategic_evidence_quote": "to evaluate the impact of rural behavioral health strategies and methods employed under the RCORP initiative",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "You can apply if you are a domestic public or private, non-profit or for-profit entity.",
+   "owning_division": "DMHDDSUS",
+   "operational_fit": 6,
+   "operational_reason": "DMHDDSUS already leads opioid and behavioral health strategy, but a national evaluation cooperative agreement is not its core service-delivery work.",
+   "restrictions": [],
+   "major_risk": "This likely funds a single national evaluation contractor to study programs and build tools rather than funding rural treatment services in North Carolina.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Supports opioid goal by evaluating rural behavioral efforts, fitting DMHDDSUS work, but funds study not services."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 6,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O4\",\n  \"strategic_reason\": \"This evaluation of rural opioid-response strategies would generate evidence to guide North Carolina's opioid and substance-use treatment efforts.\",\n  \"strategic_evidence_quote\": \"to evaluate the impact of rural behavioral health strategies and methods employed under the RCORP initiative\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"You can apply if you are a domestic public or private, non-profit or for-profit entity.\",\n  \"owning_division\": \"DMHDDSUS\",\n  \"operational_fit\": 6,\n  \"operational_reason\": \"DMHDDSUS already leads opioid and behavioral health strategy, but a national evaluation cooperative agreement is not its core service-delivery work.\",\n  \"restrictions\": [],\n  \"major_risk\": \"This likely funds a single national evaluation contractor to study programs and build tools rather than funding rural treatment services in North Carolina.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Supports opioid goal by evaluating rural behavioral efforts, fitting DMHDDSUS work, but funds study not services.\"\n}"
+  ]
+ }
+}

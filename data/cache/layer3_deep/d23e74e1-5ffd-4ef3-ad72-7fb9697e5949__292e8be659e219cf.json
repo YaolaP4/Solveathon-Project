@@ -1,0 +1,28 @@
+{
+ "grant_id": "d23e74e1-5ffd-4ef3-ad72-7fb9697e5949",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "292e8be659e219cf73b9ec1ddcc028f7f6d3e85ff5b2569e452d33372313ac7b",
+ "retrieved_at": "2026-10-02T19:59:33+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "The funded intervention research directly advances G1.O1, which commits NCDHHS to reducing health disparities across the Department, by targeting disparities in liver diseases and liver cancer.",
+   "strategic_evidence_quote": "This initiative will support multi-level and/or multi-domain intervention research to reduce disparities in liver diseases and liver cancer among populations who experience health disparities in the United States (U.S.).",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 8,
+   "operational_reason": "DPH runs chronic disease, cancer, epidemiology, and health disparity surveillance programs, so leading or partnering on this research is an extension of existing work.",
+   "restrictions": [],
+   "major_risk": "R01 research grants typically require substantial research infrastructure and do not fund direct service delivery, so NCDHHS would likely need an academic partner to be competitive.",
+   "recommended_for_review": true,
+   "one_line_rationale": "NIH R01 research on reducing liver disease and cancer disparities aligns with DPH chronic disease and health equity work; review as lead or partner."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"The funded intervention research directly advances G1.O1, which commits NCDHHS to reducing health disparities across the Department, by targeting disparities in liver diseases and liver cancer.\",\n  \"strategic_evidence_quote\": \"This initiative will support multi-level and/or multi-domain intervention research to reduce disparities in liver diseases and liver cancer among populations who experience health disparities in the United States (U.S.).\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 8,\n  \"operational_reason\": \"DPH runs chronic disease, cancer, epidemiology, and health disparity surveillance programs, so leading or partnering on this research is an extension of existing work.\",\n  \"restrictions\": [],\n  \"major_risk\": \"R01 research grants typically require substantial research infrastructure and do not fund direct service delivery, so NCDHHS would likely need an academic partner to be competitive.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"NIH R01 research on reducing liver disease and cancer disparities aligns with DPH chronic disease and health equity work; review as lead or partner.\"\n}"
+  ]
+ }
+}

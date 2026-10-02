@@ -1,0 +1,31 @@
+{
+ "grant_id": "aa2857de-cd78-432b-9266-9b2919a6eb6c",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "48d53446bcf59141e48332b6ea60348c38043a6501205a3e173da13c71ec77f0",
+ "retrieved_at": "2026-10-02T19:49:01+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 6,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "The funded Stand Down events provide health and social services to veterans experiencing homelessness, supporting G1.O1 by increasing health access for a population facing greater health and situational challenges.",
+   "strategic_evidence_quote": "The U.S. Department of Labor’s (DOL) Veterans’ Employment and Training Service (VETS) supports local Stand Down events that assist veterans experiencing homelessness by providing a wide range of employment, social, and health services.",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "State, Territory, and Possession, county, city, local, special district, and Native American tribal governments and agencies, non-profit and for-profit entities, state and local workforce boards, institutions of higher education, public and tribal housing authorities are eligible to apply.",
+   "owning_division": "none",
+   "operational_fit": 3,
+   "operational_reason": "NCDHHS divisions do not manage veterans' employment or homeless events, though some public health or behavioral health units could support health services at the events.",
+   "restrictions": [
+    "Award amounts are capped at $7,000 for one-day and $10,000 for multi-day events; $50,000 is available only under a federal disaster declaration.",
+    "All costs incurred by the award recipient prior to the period of performance start date identified in the Notice of Award issued by the Department are incurred at the recipient's own expense."
+   ],
+   "major_risk": "The usual award ceiling is only $7,000-$10,000 and the grants are noncompetitive, so the state's application and reporting burden could outweigh the small, one-time event value.",
+   "recommended_for_review": false,
+   "one_line_rationale": "State agencies are eligible, but this small, veteran-specific DOL event falls outside NCDHHS core health and human services divisions; likely not worth the administrative effort."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 6,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"The funded Stand Down events provide health and social services to veterans experiencing homelessness, supporting G1.O1 by increasing health access for a population facing greater health and situational challenges.\",\n  \"strategic_evidence_quote\": \"The U.S. Department of Labor’s (DOL) Veterans’ Employment and Training Service (VETS) supports local Stand Down events that assist veterans experiencing homelessness by providing a wide range of employment, social, and health services.\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"State, Territory, and Possession, county, city, local, special district, and Native American tribal governments and agencies, non-profit and for-profit entities, state and local workforce boards, institutions of higher education, public and tribal housing authorities are eligible to apply.\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 3,\n  \"operational_reason\": \"NCDHHS divisions do not manage veterans' employment or homeless events, though some public health or behavioral health units could support health services at the events.\",\n  \"restrictions\": [\n    \"Award amounts are capped at $7,000 for one-day and $10,000 for multi-day events; $50,000 is available only under a federal disaster declaration.\",\n    \"All costs incurred by the award recipient prior to the period of performance start date identified in the Notice of Award issued by the Department are incurred at the recipient's own expense.\"\n  ],\n  \"major_risk\": \"The usual award ceiling is only $7,000-$10,000 and the grants are noncompetitive, so the state's application and reporting burden could outweigh the small, one-time event value.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"State agencies are eligible, but this small, veteran-specific DOL event falls outside NCDHHS core health and human services divisions; likely not worth the administrative effort.\"\n}"
+  ]
+ }
+}

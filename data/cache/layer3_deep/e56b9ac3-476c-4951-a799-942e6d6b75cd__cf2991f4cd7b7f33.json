@@ -1,0 +1,28 @@
+{
+ "grant_id": "e56b9ac3-476c-4951-a799-942e6d6b75cd",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "cf2991f4cd7b7f33bc9cf7c33a4b36a9fe92ba915a3d96680f03b6c28d21cc8f",
+ "retrieved_at": "2026-10-02T19:55:06+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 6,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O4",
+   "strategic_reason": "The grant funds population-level alcohol policy and intervention research to reduce alcohol-related cancer risk, which advances NCDHHS's substance use prevention goals by reducing alcohol-related harm at the population level.",
+   "strategic_evidence_quote": "population-level interventions to reduce alcohol-related cancer risk",
+   "applicant_role": "partner",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 6,
+   "operational_reason": "DPH could support or partner on population-level cancer and alcohol policy research through its chronic disease and epidemiology functions, though an NIH R01 is more research-intensive than its usual programs.",
+   "restrictions": [],
+   "major_risk": "The grant is an investigator-initiated NIH R01 research mechanism, so NCDHHS would likely be a partner rather than the lead and may not receive programmatic funding for direct services.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Population-level alcohol and cancer risk research aligns with substance use prevention and DPH chronic disease expertise, but NCDHHS likely fits best as a research partner, not lead."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 6,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O4\",\n  \"strategic_reason\": \"The grant funds population-level alcohol policy and intervention research to reduce alcohol-related cancer risk, which advances NCDHHS's substance use prevention goals by reducing alcohol-related harm at the population level.\",\n  \"strategic_evidence_quote\": \"population-level interventions to reduce alcohol-related cancer risk\",\n  \"applicant_role\": \"partner\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 6,\n  \"operational_reason\": \"DPH could support or partner on population-level cancer and alcohol policy research through its chronic disease and epidemiology functions, though an NIH R01 is more research-intensive than its usual programs.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The grant is an investigator-initiated NIH R01 research mechanism, so NCDHHS would likely be a partner rather than the lead and may not receive programmatic funding for direct services.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Population-level alcohol and cancer risk research aligns with substance use prevention and DPH chronic disease expertise, but NCDHHS likely fits best as a research partner, not lead.\"\n}"
+  ]
+ }
+}

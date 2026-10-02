@@ -1,0 +1,32 @@
+{
+ "grant_id": "a89aee06-1920-406b-89e3-0ec7d640af04",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "70b6cf3d8faab80cdf2ec3ba040480faf5fda00df2fa7463d1dcd914e5533e6d",
+ "retrieved_at": "2026-10-02T20:02:21+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 0,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds international programs to combat human trafficking, which is outside NCDHHS's domestic health and human services objectives.",
+   "strategic_evidence_quote": "The TIP Office is finalizing language for the annual awards competition process that includes a number of regional and thematic priorities for funding globally.",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "Organizations eligible to apply for this funding opportunity include U.S.-based and foreign non-profits, public international organizations, institutions of higher learning, and for-profit organizations.",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "No NCDHHS division administers international anti-trafficking programs, and the state agency is not among the listed eligible applicant types.",
+   "restrictions": [
+    "This is a notice of intent only; no applications are being accepted at this time.",
+    "Eligible applicants are limited to U.S.-based and foreign non-profits, public international organizations, institutions of higher learning, and for-profit organizations, which excludes state agencies.",
+    "Awards support international/global programs rather than North Carolina-based services."
+   ],
+   "major_risk": "NCDHHS appears ineligible as a state agency and no application is being accepted, so the posting has no current path to value for the Department.",
+   "recommended_for_review": false,
+   "one_line_rationale": "International anti-trafficking grant excludes state agencies and is unrelated to NCDHHS's domestic health and human services mission; no application is currently accepted."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 0,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds international programs to combat human trafficking, which is outside NCDHHS's domestic health and human services objectives.\",\n  \"strategic_evidence_quote\": \"The TIP Office is finalizing language for the annual awards competition process that includes a number of regional and thematic priorities for funding globally.\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"Organizations eligible to apply for this funding opportunity include U.S.-based and foreign non-profits, public international organizations, institutions of higher learning, and for-profit organizations.\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"No NCDHHS division administers international anti-trafficking programs, and the state agency is not among the listed eligible applicant types.\",\n  \"restrictions\": [\n    \"This is a notice of intent only; no applications are being accepted at this time.\",\n    \"Eligible applicants are limited to U.S.-based and foreign non-profits, public international organizations, institutions of higher learning, and for-profit organizations, which excludes state agencies.\",\n    \"Awards support international/global programs rather than North Carolina-based services.\"\n  ],\n  \"major_risk\": \"NCDHHS appears ineligible as a state agency and no application is being accepted, so the posting has no current path to value for the Department.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"International anti-trafficking grant excludes state agencies and is unrelated to NCDHHS's domestic health and human services mission; no application is currently accepted.\"\n}"
+  ]
+ }
+}

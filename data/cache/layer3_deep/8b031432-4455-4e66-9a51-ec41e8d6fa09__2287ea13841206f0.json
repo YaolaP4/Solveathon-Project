@@ -1,0 +1,28 @@
+{
+ "grant_id": "8b031432-4455-4e66-9a51-ec41e8d6fa09",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "2287ea13841206f0b0751965cad86634b01b47a9f15a030bebd6c1f60e6e04ab",
+ "retrieved_at": "2026-10-02T19:54:09+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 5,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "The grant's explicit focus on addressing health disparities and delivering translational science benefits to all aligns with NCDHHS's goal of building structures to reduce health disparities, though it is a research consortium rather than direct service delivery.",
+   "strategic_evidence_quote": "address health disparities and deliver the benefits of translational science to all",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "none",
+   "operational_fit": 3,
+   "operational_reason": "NCDHHS divisions do not operate an NIH-funded clinical and translational science hub; this is primarily academic medical center research infrastructure.",
+   "restrictions": [],
+   "major_risk": "A competitive CTSA hub requires clinical research infrastructure and institutional partnerships that NCDHHS does not own, so an application led by the department would likely be noncompetitive.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Mentions health disparities but is an NIH academic clinical/translational research hub; NCDHHS lacks the research infrastructure to lead it competitively."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 5,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"The grant's explicit focus on addressing health disparities and delivering translational science benefits to all aligns with NCDHHS's goal of building structures to reduce health disparities, though it is a research consortium rather than direct service delivery.\",\n  \"strategic_evidence_quote\": \"address health disparities and deliver the benefits of translational science to all\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 3,\n  \"operational_reason\": \"NCDHHS divisions do not operate an NIH-funded clinical and translational science hub; this is primarily academic medical center research infrastructure.\",\n  \"restrictions\": [],\n  \"major_risk\": \"A competitive CTSA hub requires clinical research infrastructure and institutional partnerships that NCDHHS does not own, so an application led by the department would likely be noncompetitive.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Mentions health disparities but is an NIH academic clinical/translational research hub; NCDHHS lacks the research infrastructure to lead it competitively.\"\n}"
+  ]
+ }
+}

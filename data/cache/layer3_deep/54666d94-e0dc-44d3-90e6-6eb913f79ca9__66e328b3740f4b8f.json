@@ -1,0 +1,28 @@
+{
+ "grant_id": "54666d94-e0dc-44d3-90e6-6eb913f79ca9",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "66e328b3740f4b8f0405baceaf9a67a9d57af409c5356f2f4fef89f3f755f58a",
+ "retrieved_at": "2026-10-02T19:49:38+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O3",
+   "strategic_reason": "The NOFO funds research on coordinated community-clinical linkage strategies to improve diabetes prevention and management in safety-net primary care settings, directly supporting efforts to mitigate barriers in underserved primary care.",
+   "strategic_evidence_quote": "Using multiple strategies together may improve diabetes prevention and management in primary care.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 8,
+   "operational_reason": "DPH already leads chronic disease prevention and control, diabetes-related programming, and relationships with local health departments and safety-net clinics, so this cooperative agreement would extend that work though with a research focus.",
+   "restrictions": [],
+   "major_risk": "This is implementation research rather than direct program funding, so DPH may need academic or evaluation partners to carry out the required research activities.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Fits DPH chronic disease prevention and control; CDC implementation research on diabetes community-clinical linkages in safety-net clinics aligns with health access goals, though it requires research capacity."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O3\",\n  \"strategic_reason\": \"The NOFO funds research on coordinated community-clinical linkage strategies to improve diabetes prevention and management in safety-net primary care settings, directly supporting efforts to mitigate barriers in underserved primary care.\",\n  \"strategic_evidence_quote\": \"Using multiple strategies together may improve diabetes prevention and management in primary care.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 8,\n  \"operational_reason\": \"DPH already leads chronic disease prevention and control, diabetes-related programming, and relationships with local health departments and safety-net clinics, so this cooperative agreement would extend that work though with a research focus.\",\n  \"restrictions\": [],\n  \"major_risk\": \"This is implementation research rather than direct program funding, so DPH may need academic or evaluation partners to carry out the required research activities.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Fits DPH chronic disease prevention and control; CDC implementation research on diabetes community-clinical linkages in safety-net clinics aligns with health access goals, though it requires research capacity.\"\n}"
+  ]
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "grant_id": "217a3975-7543-445d-9638-8026297a75c4",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "652c7df2a9a9475ea94750e51b6065c3e7d3e90c7fd71b935f877fa1be1428d8",
+ "retrieved_at": "2026-10-02T19:27:53+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 6,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O3",
+   "strategic_reason": "Training clinicians and health systems to diagnose, treat and counsel for STIs mitigates barriers to competent primary care for underserved populations.",
+   "strategic_evidence_quote": "improve sexually transmitted infection (STI) patient care",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "Unrestricted eligibility",
+   "owning_division": "DPH",
+   "operational_fit": 9,
+   "operational_reason": "DPH already leads disease prevention and surveillance including STI patient care, clinician training, and local health department support.",
+   "restrictions": [],
+   "major_risk": "National training-center competition historically favors academic centers requiring national dissemination capacity beyond a state agency.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Trains clinicians to improve STI care, supporting health access via DPH's existing STD prevention work as lead applicant."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 6,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O3\",\n  \"strategic_reason\": \"Training clinicians and health systems to diagnose, treat and counsel for STIs mitigates barriers to competent primary care for underserved populations.\",\n  \"strategic_evidence_quote\": \"improve sexually transmitted infection (STI) patient care\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"Unrestricted eligibility\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DPH already leads disease prevention and surveillance including STI patient care, clinician training, and local health department support.\",\n  \"restrictions\": [],\n  \"major_risk\": \"National training-center competition historically favors academic centers requiring national dissemination capacity beyond a state agency.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Trains clinicians to improve STI care, supporting health access via DPH's existing STD prevention work as lead applicant.\"\n}"
+  ]
+ }
+}

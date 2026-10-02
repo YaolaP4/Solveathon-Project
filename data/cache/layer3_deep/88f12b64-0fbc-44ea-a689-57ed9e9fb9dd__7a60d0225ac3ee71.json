@@ -1,0 +1,30 @@
+{
+ "grant_id": "88f12b64-0fbc-44ea-a689-57ed9e9fb9dd",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "7a60d0225ac3ee719009a396c5c33f0923c3d583ea54e3948e6d494b7264f29a",
+ "retrieved_at": "2026-10-02T19:49:25+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O3",
+   "strategic_reason": "The grant funds technical assistance to increase access to primary care and support the health center workforce, which aligns with G1.O3's focus on rural and underserved primary care.",
+   "strategic_evidence_quote": "Increasing access to high-quality preventive and primary health care services.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "Applications can be from the 50 states, the District of Columbia, the Commonwealth of Puerto Rico, the Northern Mariana Islands, American Samoa, Guam, the U.S. Virgin Islands, the Federated States of Micronesia, the Republic of the Marshall Islands, or the Republic of Palau.",
+   "owning_division": "ORH",
+   "operational_fit": 7,
+   "operational_reason": "ORH already supports rural and underserved primary care, safety-net clinics, and health workforce shortage areas, so running a primary care association technical-assistance grant is an extension of that role.",
+   "restrictions": [
+    "Requires delivering technical assistance collaboratively with other HRSA-funded TA programs."
+   ],
+   "major_risk": "The PCA role is likely already held by an established primary care association, so NCDHHS would need to build new TA infrastructure and compete with an existing partner.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Strong fit with ORH's rural primary care and safety-net role; North Carolina state government is eligible to apply."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O3\",\n  \"strategic_reason\": \"The grant funds technical assistance to increase access to primary care and support the health center workforce, which aligns with G1.O3's focus on rural and underserved primary care.\",\n  \"strategic_evidence_quote\": \"Increasing access to high-quality preventive and primary health care services.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"Applications can be from the 50 states, the District of Columbia, the Commonwealth of Puerto Rico, the Northern Mariana Islands, American Samoa, Guam, the U.S. Virgin Islands, the Federated States of Micronesia, the Republic of the Marshall Islands, or the Republic of Palau.\",\n  \"owning_division\": \"ORH\",\n  \"operational_fit\": 7,\n  \"operational_reason\": \"ORH already supports rural and underserved primary care, safety-net clinics, and health workforce shortage areas, so running a primary care association technical-assistance grant is an extension of that role.\",\n  \"restrictions\": [\n    \"Requires delivering technical assistance collaboratively with other HRSA-funded TA programs.\"\n  ],\n  \"major_risk\": \"The PCA role is likely already held by an established primary care association, so NCDHHS would need to build new TA infrastructure and compete with an existing partner.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Strong fit with ORH's rural primary care and safety-net role; North Carolina state government is eligible to apply.\"\n}"
+  ]
+ }
+}

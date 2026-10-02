@@ -1,0 +1,30 @@
+{
+ "grant_id": "26116df5-40e6-4c83-8e5a-d90664b418ba",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "9fa067562ac7571614accc5b91c944822185767c9fcae96d72dc70468d52f17e",
+ "retrieved_at": "2026-10-02T20:00:29+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 6,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O1",
+   "strategic_reason": "The pilot behavioral sleep interventions for adolescents and young adults with or at risk for mental health disorders could advance integrated behavioral and physical health care by testing sleep-focused treatment in real-world settings.",
+   "strategic_evidence_quote": "NIMH seeks applications for pilot research to adapt, optimize, and test behavioral interventions that address common sleep problems in adolescents and young adults with or at risk for a mental health disorder.",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DMHDDSUS",
+   "operational_fit": 4,
+   "operational_reason": "DMHDDSUS oversees mental health services and could provide implementation context or partner with academic researchers, but it does not typically design or conduct NIH clinical trials on sleep interventions.",
+   "restrictions": [
+    "Clinical Trial Required"
+   ],
+   "major_risk": "It is a research-intensive clinical trial grant that NCDHHS divisions are not set up to lead, so its value depends on securing academic research partners and it would not directly fund state services.",
+   "recommended_for_review": false,
+   "one_line_rationale": "NIMH pilot behavioral sleep trial for youth mental health aligns with DMHDDSUS but is academic research; NCDHHS lacks clinical-trial capacity and direct service payoff."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 6,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O1\",\n  \"strategic_reason\": \"The pilot behavioral sleep interventions for adolescents and young adults with or at risk for mental health disorders could advance integrated behavioral and physical health care by testing sleep-focused treatment in real-world settings.\",\n  \"strategic_evidence_quote\": \"NIMH seeks applications for pilot research to adapt, optimize, and test behavioral interventions that address common sleep problems in adolescents and young adults with or at risk for a mental health disorder.\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DMHDDSUS\",\n  \"operational_fit\": 4,\n  \"operational_reason\": \"DMHDDSUS oversees mental health services and could provide implementation context or partner with academic researchers, but it does not typically design or conduct NIH clinical trials on sleep interventions.\",\n  \"restrictions\": [\"Clinical Trial Required\"],\n  \"major_risk\": \"It is a research-intensive clinical trial grant that NCDHHS divisions are not set up to lead, so its value depends on securing academic research partners and it would not directly fund state services.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"NIMH pilot behavioral sleep trial for youth mental health aligns with DMHDDSUS but is academic research; NCDHHS lacks clinical-trial capacity and direct service payoff.\"\n}"
+  ]
+ }
+}

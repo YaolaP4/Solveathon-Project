@@ -1,0 +1,30 @@
+{
+ "grant_id": "a36c6294-903e-4aa3-80c9-914060a60380",
+ "model": "meta/muse-spark-1.3-contributor",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "1f5b9d3025e5e8df27d1200b6b9c1e17355b9d57ccc6ffd7df293d776f8c128c",
+ "retrieved_at": "2026-10-02T19:27:58+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 7,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O4",
+   "strategic_reason": "The program funds community coalitions to prevent youth substance use, advancing the objective to turn the tide on substance use.",
+   "strategic_evidence_quote": "The purpose of the DFC Support Program is to establish and strengthen collaboration to support the efforts of community coalitions working to prevent youth substance use.",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "Eligible applicants are community-based coalitions addressing youth substance use that have not yet previously received a DFC grant.",
+   "owning_division": "DMHDDSUS",
+   "operational_fit": 3,
+   "operational_reason": "DMHDDSUS works on substance use but does not operate as a local community-based coalition eligible to lead.",
+   "restrictions": [
+    "Limited to community-based coalitions that have not yet previously received a DFC grant"
+   ],
+   "major_risk": "NCDHHS as a state agency is not an eligible community coalition applicant and cannot lead an application.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Fits substance-use prevention goal but only local coalitions can apply, not NCDHHS."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 7,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O4\",\n  \"strategic_reason\": \"The program funds community coalitions to prevent youth substance use, advancing the objective to turn the tide on substance use.\",\n  \"strategic_evidence_quote\": \"The purpose of the DFC Support Program is to establish and strengthen collaboration to support the efforts of community coalitions working to prevent youth substance use.\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"Eligible applicants are community-based coalitions addressing youth substance use that have not yet previously received a DFC grant.\",\n  \"owning_division\": \"DMHDDSUS\",\n  \"operational_fit\": 3,\n  \"operational_reason\": \"DMHDDSUS works on substance use but does not operate as a local community-based coalition eligible to lead.\",\n  \"restrictions\": [\n    \"Limited to community-based coalitions that have not yet previously received a DFC grant\"\n  ],\n  \"major_risk\": \"NCDHHS as a state agency is not an eligible community coalition applicant and cannot lead an application.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Fits substance-use prevention goal but only local coalitions can apply, not NCDHHS.\"\n}"
+  ]
+ }
+}

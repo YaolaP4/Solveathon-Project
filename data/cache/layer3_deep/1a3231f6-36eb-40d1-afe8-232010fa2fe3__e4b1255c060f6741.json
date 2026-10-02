@@ -1,0 +1,28 @@
+{
+ "grant_id": "1a3231f6-36eb-40d1-afe8-232010fa2fe3",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "e4b1255c060f6741da177547d17404e8a94a19106f9cef560fccf6e13c37f789",
+ "retrieved_at": "2026-10-02T19:51:42+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 5,
+   "matched_goal": "G5",
+   "matched_objective": "G5.O1",
+   "strategic_reason": "The funded project would collect traveler health information through EMR, web, and mobile applications and conduct research on emerging threats, supporting data-driven decision-making and disease surveillance infrastructure.",
+   "strategic_evidence_quote": "Collect health information before, during, and after travel through innovative electronic medical record (EMR), web, and mobile phone applications.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 7,
+   "operational_reason": "DPH already runs infectious disease surveillance, epidemiology, and public health preparedness, so it could plausibly coordinate a traveler health research and communication network.",
+   "restrictions": [],
+   "major_risk": "The announcement provides no eligibility, funding, or cost-sharing details, and NCDHHS does not currently operate a dedicated travel medicine program, so participating could require building new clinical and informatics capacity.",
+   "recommended_for_review": true,
+   "one_line_rationale": "The CDC travel health surveillance network is a moderate fit for DPH infectious disease work but only indirectly supports NCDHHS data infrastructure and health access goals."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 5,\n  \"matched_goal\": \"G5\",\n  \"matched_objective\": \"G5.O1\",\n  \"strategic_reason\": \"The funded project would collect traveler health information through EMR, web, and mobile applications and conduct research on emerging threats, supporting data-driven decision-making and disease surveillance infrastructure.\",\n  \"strategic_evidence_quote\": \"Collect health information before, during, and after travel through innovative electronic medical record (EMR), web, and mobile phone applications.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 7,\n  \"operational_reason\": \"DPH already runs infectious disease surveillance, epidemiology, and public health preparedness, so it could plausibly coordinate a traveler health research and communication network.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The announcement provides no eligibility, funding, or cost-sharing details, and NCDHHS does not currently operate a dedicated travel medicine program, so participating could require building new clinical and informatics capacity.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"The CDC travel health surveillance network is a moderate fit for DPH infectious disease work but only indirectly supports NCDHHS data infrastructure and health access goals.\"\n}"
+  ]
+ }
+}

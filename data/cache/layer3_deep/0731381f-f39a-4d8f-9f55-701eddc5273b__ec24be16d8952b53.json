@@ -1,0 +1,28 @@
+{
+ "grant_id": "0731381f-f39a-4d8f-9f55-701eddc5273b",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "ec24be16d8952b53abdacf1e81a7eee8b7a23603cccb35cd102b2ebdaf4ac11b",
+ "retrieved_at": "2026-10-02T19:51:35+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 3,
+   "matched_goal": "G4",
+   "matched_objective": "G4.O4",
+   "strategic_reason": "The grant funds training to build occupational safety and health workforce capacity, which loosely aligns with G4.O4's focus on supporting the public health workforce.",
+   "strategic_evidence_quote": "NIOSH also funds a limited number of non-academic TPGs to provide specialized training for target audiences and build or strengthen the Nation's OSH workforce capacity.",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "none",
+   "operational_fit": 2,
+   "operational_reason": "No NCDHHS division has occupational safety and health training authority; that function sits with the North Carolina Department of Labor, not NCDHHS.",
+   "restrictions": [],
+   "major_risk": "The program is primarily designed for academic institutions and targets an occupational safety and health workforce area outside NCDHHS's divisions, so a state health department application would likely be uncompetitive and difficult to place.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Occupational safety and health training belongs to the North Carolina Department of Labor, not NCDHHS; despite a loose workforce goal link, no division would own it."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 3,\n  \"matched_goal\": \"G4\",\n  \"matched_objective\": \"G4.O4\",\n  \"strategic_reason\": \"The grant funds training to build occupational safety and health workforce capacity, which loosely aligns with G4.O4's focus on supporting the public health workforce.\",\n  \"strategic_evidence_quote\": \"NIOSH also funds a limited number of non-academic TPGs to provide specialized training for target audiences and build or strengthen the Nation's OSH workforce capacity.\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 2,\n  \"operational_reason\": \"No NCDHHS division has occupational safety and health training authority; that function sits with the North Carolina Department of Labor, not NCDHHS.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The program is primarily designed for academic institutions and targets an occupational safety and health workforce area outside NCDHHS's divisions, so a state health department application would likely be uncompetitive and difficult to place.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Occupational safety and health training belongs to the North Carolina Department of Labor, not NCDHHS; despite a loose workforce goal link, no division would own it.\"\n}"
+  ]
+ }
+}

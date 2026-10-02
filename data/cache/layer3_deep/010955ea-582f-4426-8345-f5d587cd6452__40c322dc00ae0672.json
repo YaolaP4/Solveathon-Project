@@ -1,0 +1,28 @@
+{
+ "grant_id": "010955ea-582f-4426-8345-f5d587cd6452",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "40c322dc00ae0672bc455fb00a883fe0c1332091abfb6ff483a1b2647f89014c",
+ "retrieved_at": "2026-10-02T19:46:23+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 6,
+   "matched_goal": "G5",
+   "matched_objective": "G5.O3",
+   "strategic_reason": "The grant uses federal/state/local coordination and shared best-practice development to improve integrated food safety response, aligning with the operational goal of working across departments through shared processes and collaboration.",
+   "strategic_evidence_quote": "unifying and coordinating federal/state/local human and animal food (HAF) emergency response efforts",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "State Governments",
+   "owning_division": "DPH",
+   "operational_fit": 9,
+   "operational_reason": "DPH already houses the epidemiology, laboratory, environmental health, and local health department functions that this food-safety rapid response program would integrate.",
+   "restrictions": [],
+   "major_risk": "Food safety emergency response is not explicitly named in NCDHHS strategic objectives, so it may compete poorly for limited state priority attention.",
+   "recommended_for_review": true,
+   "one_line_rationale": "State-eligible FDA grant for food safety rapid response teams; fits DPH epidemiology, lab, and environmental health coordination but has only indirect strategic objective alignment."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 6,\n  \"matched_goal\": \"G5\",\n  \"matched_objective\": \"G5.O3\",\n  \"strategic_reason\": \"The grant uses federal/state/local coordination and shared best-practice development to improve integrated food safety response, aligning with the operational goal of working across departments through shared processes and collaboration.\",\n  \"strategic_evidence_quote\": \"unifying and coordinating federal/state/local human and animal food (HAF) emergency response efforts\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"State Governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DPH already houses the epidemiology, laboratory, environmental health, and local health department functions that this food-safety rapid response program would integrate.\",\n  \"restrictions\": [],\n  \"major_risk\": \"Food safety emergency response is not explicitly named in NCDHHS strategic objectives, so it may compete poorly for limited state priority attention.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"State-eligible FDA grant for food safety rapid response teams; fits DPH epidemiology, lab, and environmental health coordination but has only indirect strategic objective alignment.\"\n}"
+  ]
+ }
+}

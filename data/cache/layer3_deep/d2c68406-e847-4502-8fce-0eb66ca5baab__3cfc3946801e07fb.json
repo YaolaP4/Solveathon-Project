@@ -1,0 +1,28 @@
+{
+ "grant_id": "d2c68406-e847-4502-8fce-0eb66ca5baab",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "3cfc3946801e07fb07851756d400036711a5b16b9e7b448d7e26ccf4939c3b60",
+ "retrieved_at": "2026-10-02T19:53:21+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 5,
+   "matched_goal": "G3",
+   "matched_objective": "none",
+   "strategic_reason": "This pilot mental health services research grant fits under Goal 3 because it can build evidence for the coordinated mental health services system NCDHHS supports, though it does not name a specific objective.",
+   "strategic_evidence_quote": "The purpose of this Notice of Funding Announcement (NOFO) is to encourage pilot research that is not an immediate precursor to testing a service intervention but is consistent with NIMH priorities for services research.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DMHDDSUS",
+   "operational_fit": 5,
+   "operational_reason": "DMHDDSUS already manages mental health services and crisis/behavioral health programs, but this NIH pilot research mechanism would likely require an academic or research partner.",
+   "restrictions": [],
+   "major_risk": "The R34 is a pilot research mechanism, not a service implementation award, and NCDHHS would likely need a research partner to compete.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Aligns with Goal 3 by funding mental health services research; DMHDDSUS could lead with a research partner, though it is not direct service funding."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 5,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"This pilot mental health services research grant fits under Goal 3 because it can build evidence for the coordinated mental health services system NCDHHS supports, though it does not name a specific objective.\",\n  \"strategic_evidence_quote\": \"The purpose of this Notice of Funding Announcement (NOFO) is to encourage pilot research that is not an immediate precursor to testing a service intervention but is consistent with NIMH priorities for services research.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DMHDDSUS\",\n  \"operational_fit\": 5,\n  \"operational_reason\": \"DMHDDSUS already manages mental health services and crisis/behavioral health programs, but this NIH pilot research mechanism would likely require an academic or research partner.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The R34 is a pilot research mechanism, not a service implementation award, and NCDHHS would likely need a research partner to compete.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Aligns with Goal 3 by funding mental health services research; DMHDDSUS could lead with a research partner, though it is not direct service funding.\"\n}"
+  ]
+ }
+}

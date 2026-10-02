@@ -1,0 +1,31 @@
+{
+ "grant_id": "6fc36162-1e77-4f38-8ceb-82a18531940c",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "a8c5998defa8ca1bfbf4a2fef6ba975d1b29d698390fb797f7a0b0cece518d79",
+ "retrieved_at": "2026-10-02T19:47:51+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "The grant directly funds demonstration projects to reduce health disparities in chronic kidney disease, which aligns with NCDHHS's objective to build structure for reducing health disparities across the Department.",
+   "strategic_evidence_quote": "demonstration projects that support adaptations of evidence-based/informed approaches to reduce disparities in chronic kidney disease (CKD) and related risk factors",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "Eligible applicants include any private nonprofit or public entity located in a State.",
+   "owning_division": "DPH",
+   "operational_fit": 8,
+   "operational_reason": "DPH already leads chronic disease prevention, minority health, and community-based interventions, so it could plausibly manage a kidney health disparities demonstration.",
+   "restrictions": [
+    "applicants must have an active SAM.gov registration when submitting an application",
+    "For multi-year projects, recipients must submit a non-competing continuation (NCC) application for each budget period after the first."
+   ],
+   "major_risk": "The project is a time-limited demonstration with an expectation to plan for sustainability beyond OMH support, which could require building new kidney-specific partnerships rather than funding existing services.",
+   "recommended_for_review": true,
+   "one_line_rationale": "This grant funds community projects to reduce kidney disease disparities, matching NCDHHS's goal to reduce health disparities; Public Health could lead it."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"The grant directly funds demonstration projects to reduce health disparities in chronic kidney disease, which aligns with NCDHHS's objective to build structure for reducing health disparities across the Department.\",\n  \"strategic_evidence_quote\": \"demonstration projects that support adaptations of evidence-based/informed approaches to reduce disparities in chronic kidney disease (CKD) and related risk factors\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"Eligible applicants include any private nonprofit or public entity located in a State.\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 8,\n  \"operational_reason\": \"DPH already leads chronic disease prevention, minority health, and community-based interventions, so it could plausibly manage a kidney health disparities demonstration.\",\n  \"restrictions\": [\n    \"applicants must have an active SAM.gov registration when submitting an application\",\n    \"For multi-year projects, recipients must submit a non-competing continuation (NCC) application for each budget period after the first.\"\n  ],\n  \"major_risk\": \"The project is a time-limited demonstration with an expectation to plan for sustainability beyond OMH support, which could require building new kidney-specific partnerships rather than funding existing services.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"This grant funds community projects to reduce kidney disease disparities, matching NCDHHS's goal to reduce health disparities; Public Health could lead it.\"\n}"
+  ]
+ }
+}

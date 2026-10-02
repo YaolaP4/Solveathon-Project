@@ -1,0 +1,33 @@
+{
+ "grant_id": "8421e010-b00e-4718-84e9-1db9a34b606a",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "a7701a76852eab9993eba33478687d9b3c4a76da2b3cc0fe646ceef531cac4cc",
+ "retrieved_at": "2026-10-02T20:02:39+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 6,
+   "matched_goal": "G3",
+   "matched_objective": "G3.O4",
+   "strategic_reason": "The course builds researchers' ability to translate drug abuse discoveries into biomedical products, indirectly advancing substance use crisis efforts.",
+   "strategic_evidence_quote": "accelerate the development of biomedical products that address the complex challenges of drug use, drug misuse, and drug addiction",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DMHDDSUS",
+   "operational_fit": 3,
+   "operational_reason": "DMHDDSUS oversees substance use and opioid response programs but does not run academic entrepreneurship or biomedical product development training for researchers.",
+   "restrictions": [
+    "Limited Competition",
+    "Clinical Trial Not Allowed",
+    "Foreign components, as defined in the NIH Grants Policy Statement, are not allowed",
+    "cooperative_agreement"
+   ],
+   "major_risk": "The limited competition and academic research-training focus make NCDHHS an unlikely lead, and the award would not fund direct substance use services.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Aligns loosely with substance use crisis goals but funds academic entrepreneurship training for researchers; limited competition and low operational fit make it a poor NCDHHS lead."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 6,\n  \"matched_goal\": \"G3\",\n  \"matched_objective\": \"G3.O4\",\n  \"strategic_reason\": \"The course builds researchers' ability to translate drug abuse discoveries into biomedical products, indirectly advancing substance use crisis efforts.\",\n  \"strategic_evidence_quote\": \"accelerate the development of biomedical products that address the complex challenges of drug use, drug misuse, and drug addiction\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DMHDDSUS\",\n  \"operational_fit\": 3,\n  \"operational_reason\": \"DMHDDSUS oversees substance use and opioid response programs but does not run academic entrepreneurship or biomedical product development training for researchers.\",\n  \"restrictions\": [\n    \"Limited Competition\",\n    \"Clinical Trial Not Allowed\",\n    \"Foreign components, as defined in the NIH Grants Policy Statement, are not allowed\",\n    \"cooperative_agreement\"\n  ],\n  \"major_risk\": \"The limited competition and academic research-training focus make NCDHHS an unlikely lead, and the award would not fund direct substance use services.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Aligns loosely with substance use crisis goals but funds academic entrepreneurship training for researchers; limited competition and low operational fit make it a poor NCDHHS lead.\"\n}"
+  ]
+ }
+}

@@ -1,0 +1,32 @@
+{
+ "grant_id": "172926e9-5f18-4993-893d-ac73be5bbb9d",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "d7a78c06353818fc11336cd4264c2f324db693be36a06da595435d89dd24d2db",
+ "retrieved_at": "2026-10-02T19:46:25+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 9,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O4",
+   "strategic_reason": "Funds maternal-child clinical surveillance and partnerships targeting prenatal alcohol exposure, FASDs, NAS, and CMV to improve birth outcomes.",
+   "strategic_evidence_quote": "This NOFO will integrate maternal child health surveillance with national partnership activities to address key public health challenges including alcohol use during pregnancy, fetal alcohol spectrum disorders (FASDs), neonatal abstinence syndrome (NAS), and cytomegalovirus (CMV).",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 9,
+   "operational_reason": "DPH already operates maternal-child health surveillance, epidemiology, and birth defects tracking and could implement Component A clinic-based surveillance with existing public health authority.",
+   "restrictions": [
+    "Applicants may apply for only one component; multiple applications will be deemed non-responsive.",
+    "Applicants must identify the component and applicable strategies on the SF-424 form or be deemed non-responsive.",
+    "Component A applicants must upload legal authority or data access documentation as a PDF to grants.gov under Other Attachment Forms."
+   ],
+   "major_risk": "CDC requires Component A applicants to prove legal access to multi-source clinic data, and any missing component or legal authority documentation makes the application non-responsive.",
+   "recommended_for_review": true,
+   "one_line_rationale": "CDC funds maternal-child surveillance for FASDs, NAS, and CMV; NCDHHS DPH already runs maternal-child health surveillance and could apply as Component A lead."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 9,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O4\",\n  \"strategic_reason\": \"Funds maternal-child clinical surveillance and partnerships targeting prenatal alcohol exposure, FASDs, NAS, and CMV to improve birth outcomes.\",\n  \"strategic_evidence_quote\": \"This NOFO will integrate maternal child health surveillance with national partnership activities to address key public health challenges including alcohol use during pregnancy, fetal alcohol spectrum disorders (FASDs), neonatal abstinence syndrome (NAS), and cytomegalovirus (CMV).\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DPH already operates maternal-child health surveillance, epidemiology, and birth defects tracking and could implement Component A clinic-based surveillance with existing public health authority.\",\n  \"restrictions\": [\n    \"Applicants may apply for only one component; multiple applications will be deemed non-responsive.\",\n    \"Applicants must identify the component and applicable strategies on the SF-424 form or be deemed non-responsive.\",\n    \"Component A applicants must upload legal authority or data access documentation as a PDF to grants.gov under Other Attachment Forms.\"\n  ],\n  \"major_risk\": \"CDC requires Component A applicants to prove legal access to multi-source clinic data, and any missing component or legal authority documentation makes the application non-responsive.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"CDC funds maternal-child surveillance for FASDs, NAS, and CMV; NCDHHS DPH already runs maternal-child health surveillance and could apply as Component A lead.\"\n}"
+  ]
+ }
+}

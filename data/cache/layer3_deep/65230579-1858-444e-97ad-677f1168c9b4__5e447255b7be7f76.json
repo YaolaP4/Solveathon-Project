@@ -1,0 +1,30 @@
+{
+ "grant_id": "65230579-1858-444e-97ad-677f1168c9b4",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "5e447255b7be7f76cf09db20438b02a4ce34a1cf817af49ded5dbc8d6182d462",
+ "retrieved_at": "2026-10-02T19:55:26+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 3,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O4",
+   "strategic_reason": "The grant builds research oversight capacity for Tribal entities, which is tangentially aligned with investing in partner capacity to improve health access for underserved populations, but it is not a named NCDHHS strategy.",
+   "strategic_evidence_quote": "to support federally recognized American Indian/Alaska Native (AI/AN) Tribes, Tribal colleges and universities, Tribal health programs, or Tribal organizations(collectively, eligible Tribal entities) to establish Institutional Review Boards (IRBs) or enhance the capacity of existing Tribal IRBs",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "federally recognized American Indian/Alaska Native (AI/AN) Tribes, Tribal colleges and universities, Tribal health programs, or Tribal organizations(collectively, eligible Tribal entities)",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "NCDHHS has no division that establishes or enhances tribal IRBs, and the state agency is not among the eligible applicant types.",
+   "restrictions": [
+    "Eligibility is limited to federally recognized AI/AN Tribes, Tribal colleges and universities, Tribal health programs, or Tribal organizations."
+   ],
+   "major_risk": "NCDHHS is not an eligible applicant, so the grant cannot be pursued regardless of programmatic fit.",
+   "recommended_for_review": false,
+   "one_line_rationale": "NCDHHS is not an eligible applicant; TIRBEE is limited to Tribal entities, so the agency cannot apply."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 3,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O4\",\n  \"strategic_reason\": \"The grant builds research oversight capacity for Tribal entities, which is tangentially aligned with investing in partner capacity to improve health access for underserved populations, but it is not a named NCDHHS strategy.\",\n  \"strategic_evidence_quote\": \"to support federally recognized American Indian/Alaska Native (AI/AN) Tribes, Tribal colleges and universities, Tribal health programs, or Tribal organizations(collectively, eligible Tribal entities) to establish Institutional Review Boards (IRBs) or enhance the capacity of existing Tribal IRBs\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"federally recognized American Indian/Alaska Native (AI/AN) Tribes, Tribal colleges and universities, Tribal health programs, or Tribal organizations(collectively, eligible Tribal entities)\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"NCDHHS has no division that establishes or enhances tribal IRBs, and the state agency is not among the eligible applicant types.\",\n  \"restrictions\": [\"Eligibility is limited to federally recognized AI/AN Tribes, Tribal colleges and universities, Tribal health programs, or Tribal organizations.\"],\n  \"major_risk\": \"NCDHHS is not an eligible applicant, so the grant cannot be pursued regardless of programmatic fit.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"NCDHHS is not an eligible applicant; TIRBEE is limited to Tribal entities, so the agency cannot apply.\"\n}"
+  ]
+ }
+}

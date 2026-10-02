@@ -1,0 +1,28 @@
+{
+ "grant_id": "73f39ef2-101c-4f6a-bf77-30ebea1d8474",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "232e870fd6f4f219f24b1d6d66b2b9870e9091244f483850282a41e76b05c3c7",
+ "retrieved_at": "2026-10-02T20:02:12+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 1,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds research education courses for the research workforce rather than directly advancing a named NCDHHS service-delivery objective.",
+   "strategic_evidence_quote": "Courses for Skills Development",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "No NCDHHS division has a research education mission or the academic infrastructure needed to run NIH R25 short courses.",
+   "restrictions": [],
+   "major_risk": "The R25 mechanism is designed for academic research-education institutions, so NCDHHS would be an atypical applicant with low likelihood of success and no natural implementation home.",
+   "recommended_for_review": false,
+   "one_line_rationale": "NIH research education grant for short courses in behavioral and social science; trains researchers rather than delivering services, so no division has a natural owner and review is not warranted."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 1,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds research education courses for the research workforce rather than directly advancing a named NCDHHS service-delivery objective.\",\n  \"strategic_evidence_quote\": \"Courses for Skills Development\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"No NCDHHS division has a research education mission or the academic infrastructure needed to run NIH R25 short courses.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The R25 mechanism is designed for academic research-education institutions, so NCDHHS would be an atypical applicant with low likelihood of success and no natural implementation home.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"NIH research education grant for short courses in behavioral and social science; trains researchers rather than delivering services, so no division has a natural owner and review is not warranted.\"\n}"
+  ]
+ }
+}

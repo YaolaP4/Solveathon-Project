@@ -1,0 +1,30 @@
+{
+ "grant_id": "0c2a30d6-d732-4708-9a3f-c069cb554c1f",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "a3fab3057499d14fe88d572a5e2631b31112ac5b916b6c2b860511e22c4b8ce8",
+ "retrieved_at": "2026-10-02T20:00:24+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 3,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds tobacco regulatory science research, which relates to public health but does not directly fund a named NCDHHS strategic objective.",
+   "strategic_evidence_quote": "The TCORS program objective is to establish collaborative multidisciplinary research centers that will expand the scientific base informing regulation of tobacco products to protect public health and support implementation of the FSPTCA.",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 4,
+   "operational_reason": "DPH houses chronic disease and tobacco-related public health functions, but this is a large multidisciplinary research center mechanism rather than a state service program.",
+   "restrictions": [
+    "Centers are expected to include at least three discrete hypothesis driven Research Projects with a scientific Integrative Theme."
+   ],
+   "major_risk": "NCDHHS would be an atypical lead for a large NIH/FDA research center, and any resulting findings may not translate directly into state tobacco-control program operations.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Research award for academic tobacco regulatory science centers is only loosely tied to NCDHHS objectives and is an atypical lead for DPH."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 3,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds tobacco regulatory science research, which relates to public health but does not directly fund a named NCDHHS strategic objective.\",\n  \"strategic_evidence_quote\": \"The TCORS program objective is to establish collaborative multidisciplinary research centers that will expand the scientific base informing regulation of tobacco products to protect public health and support implementation of the FSPTCA.\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 4,\n  \"operational_reason\": \"DPH houses chronic disease and tobacco-related public health functions, but this is a large multidisciplinary research center mechanism rather than a state service program.\",\n  \"restrictions\": [\n    \"Centers are expected to include at least three discrete hypothesis driven Research Projects with a scientific Integrative Theme.\"\n  ],\n  \"major_risk\": \"NCDHHS would be an atypical lead for a large NIH/FDA research center, and any resulting findings may not translate directly into state tobacco-control program operations.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Research award for academic tobacco regulatory science centers is only loosely tied to NCDHHS objectives and is an atypical lead for DPH.\"\n}"
+  ]
+ }
+}

@@ -1,0 +1,31 @@
+{
+ "grant_id": "3fe27753-0c94-4aa0-b7fb-09712631f269",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "98fbb2eee51d870d1fe4719b19edd52dfea960604e220823a600a45092521928",
+ "retrieved_at": "2026-10-02T19:46:27+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 10,
+   "matched_goal": "G2",
+   "matched_objective": "G2.O2",
+   "strategic_reason": "This grant directly funds enhanced child welfare practices for families with young children involved in child welfare, advancing G2.O2's focus on reforming child welfare to improve safety, permanency, and well-being.",
+   "strategic_evidence_quote": "The Infant-Toddler Court Program (ITCP) State Awards allow states and communities to support and expand use of enhanced child welfare practices in communities across the country that bring together courts, social services, and families to improve the safety, healthy development, and nurturing relationships of families with young children involved with child welfare.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "Any domestic public or private entity, including an Indian tribe or tribal organization (as those terms are defined at 25 U.S.C. 5304) (formerly cited as 25 U.S.C. 450b)) is eligible to apply.",
+   "owning_division": "DSS",
+   "operational_fit": 9,
+   "operational_reason": "DSS administers child welfare and county social services, so this grant extends its existing child welfare improvement work with courts and local agencies.",
+   "restrictions": [
+    "Awardees must train local ITC teams and track program outcomes",
+    "Implementation is in targeted communities"
+   ],
+   "major_risk": "Success depends on active participation of local court systems, which are outside NCDHHS's direct authority; without court buy-in, implementation could stall.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Directly funds child welfare practice improvements for infants and toddlers in court-involved families, aligning with DSS's child welfare reform goal."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 10,\n  \"matched_goal\": \"G2\",\n  \"matched_objective\": \"G2.O2\",\n  \"strategic_reason\": \"This grant directly funds enhanced child welfare practices for families with young children involved in child welfare, advancing G2.O2's focus on reforming child welfare to improve safety, permanency, and well-being.\",\n  \"strategic_evidence_quote\": \"The Infant-Toddler Court Program (ITCP) State Awards allow states and communities to support and expand use of enhanced child welfare practices in communities across the country that bring together courts, social services, and families to improve the safety, healthy development, and nurturing relationships of families with young children involved with child welfare.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"Any domestic public or private entity, including an Indian tribe or tribal organization (as those terms are defined at 25 U.S.C. 5304) (formerly cited as 25 U.S.C. 450b)) is eligible to apply.\",\n  \"owning_division\": \"DSS\",\n  \"operational_fit\": 9,\n  \"operational_reason\": \"DSS administers child welfare and county social services, so this grant extends its existing child welfare improvement work with courts and local agencies.\",\n  \"restrictions\": [\n    \"Awardees must train local ITC teams and track program outcomes\",\n    \"Implementation is in targeted communities\"\n  ],\n  \"major_risk\": \"Success depends on active participation of local court systems, which are outside NCDHHS's direct authority; without court buy-in, implementation could stall.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Directly funds child welfare practice improvements for infants and toddlers in court-involved families, aligning with DSS's child welfare reform goal.\"\n}"
+  ]
+ }
+}
