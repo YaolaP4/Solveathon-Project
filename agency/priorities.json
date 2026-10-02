@@ -240,7 +240,7 @@
     "_comment": "null = deep-analyze every grant Layer 2 routes to deep review. Set an integer to cap cost; overflow is logged, never silently dropped."
   },
   "layer4_scoring": {
-    "_comment": "Deterministic final ranking. Weights sum to 1.0. Forecasts omit deadline and re-normalize without penalty. Open grants with a missing deadline re-normalize, then receive a small uncertainty penalty on the 100-point final scale.",
+    "_comment": "Deterministic final ranking. Weights sum to 1.0. Forecasts omit deadline and re-normalize without penalty. Open grants with a missing deadline re-normalize, then receive a small uncertainty penalty on the 100-point final scale. Rolling ('accepted anytime') grants get a smaller penalty than a truly unknown deadline; rolling grants whose funds can run out (first come, first served) get none.",
     "weights": {
       "strategic_alignment": 0.3,
       "operational_fit": 0.25,
@@ -256,6 +256,8 @@
       "ineligible": 0
     },
     "missing_open_deadline_penalty_points": 3,
+    "rolling_deadline_penalty_points": 2,
+    "rolling_funds_limited_penalty_points": 0,
     "unverified_strategic_evidence_penalty_points": 5
   }
 }

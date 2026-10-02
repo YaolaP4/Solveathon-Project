@@ -47,7 +47,26 @@ DEFAULT_ROLE_SCORES = {
 }
 
 DEFAULT_MISSING_DEADLINE_PENALTY = 3.0
+# A rolling ("accepted anytime") grant has a known, flexible deadline rather than an
+# unknown one: a smaller penalty, so a similar grant with a real deadline comes first.
+# If the money can run out (first come, first served) there is no flexibility, so no penalty.
+DEFAULT_ROLLING_DEADLINE_PENALTY = 2.0
+DEFAULT_ROLLING_FUNDS_LIMITED_PENALTY = 0.0
 DEFAULT_UNVERIFIED_STRATEGIC_PENALTY = 5.0
+
+
+def missing_deadline_penalties(agency: dict) -> dict[str, float]:
+    """Penalty points for an open grant with no deadline score, by kind of missing deadline."""
+    cfg = agency.get("layer4_scoring", {})
+    out = {
+        "unknown": float(cfg.get("missing_open_deadline_penalty_points", DEFAULT_MISSING_DEADLINE_PENALTY)),
+        "rolling": float(cfg.get("rolling_deadline_penalty_points", DEFAULT_ROLLING_DEADLINE_PENALTY)),
+        "rolling_funds_limited": float(cfg.get("rolling_funds_limited_penalty_points",
+                                               DEFAULT_ROLLING_FUNDS_LIMITED_PENALTY)),
+    }
+    if any(v < 0 for v in out.values()):
+        raise ValueError("Layer 4 penalties cannot be negative")
+    return out
 
 
 def scoring_config(agency: dict) -> tuple[dict[str, float], dict[str, float], float, float]:
@@ -203,8 +222,15 @@ def score_grant(
     final_100 = base_10 * 10.0
 
     applied_deadline_penalty = 0.0
+    deadline_kind = None
     if not is_forecast and missing_deadline:
-        applied_deadline_penalty = missing_deadline_penalty
+        if _bool(row.get("rolling_funds_limited")) is True:
+            deadline_kind = "rolling_funds_limited"
+        elif _bool(row.get("rolling_deadline")) is True:
+            deadline_kind = "rolling"
+        else:
+            deadline_kind = "unknown"
+        applied_deadline_penalty = missing_deadline_penalties(agency)[deadline_kind]
         final_100 -= applied_deadline_penalty
 
     # Existing Layer 3 design requires unsupported strategic evidence to hurt
@@ -218,6 +244,10 @@ def score_grant(
 
     if is_forecast:
         status = "forecast_watchlist"
+    elif deadline_kind == "rolling_funds_limited":
+        status = "open_rolling_funds_limited"
+    elif deadline_kind == "rolling":
+        status = "open_rolling"
     elif missing_deadline:
         status = "open_missing_deadline"
     else:
