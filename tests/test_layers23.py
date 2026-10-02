@@ -150,3 +150,10 @@ def test_cache_roundtrip_and_prompt_change_misses(tmp_path):
     c.put("g1", k1, "m", "v1", {"answer": 42})
     assert c.get("g1", k1) == {"answer": 42}
     assert c.get("g1", request_hash("m", "v2", {"q": 1})) is None
+
+
+def test_every_jev_question_declares_a_type_the_api_accepts():
+    # The gateway rejects questions without type in {boolean, choice, score} (HTTP 400);
+    # routing relies on per-option probabilities, so every question must be `choice`.
+    _, questions, _ = load_prompt(AGENCY)
+    assert {q["type"] for q in questions.values()} == {"choice"}

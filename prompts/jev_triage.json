@@ -1,10 +1,9 @@
 {
   "_comment": "Layer 2 question set for Jev. Every question is a `choice` question, so Jev returns a probability for every option; those probabilities are our confidence signal. Options marked FROM_CONFIG are filled from agency/priorities.json. Editing this file changes the prompt hash, so cached answers are not reused.",
-
   "context": "You are triaging federal grant opportunities for {agency_name}. Mission: {mission} The person using these results is {user} A grant matters only if this agency itself could realistically apply for it or be a named partner on it.",
-
   "questions": {
     "domain_relevance": {
+      "type": "choice",
       "instructions": "How closely is this grant's subject matter tied to the agency's mission and strategic goals? Judge the actual funded activity, not shared buzzwords. Basic laboratory or clinical research aimed at universities is at most 'weak' unless it funds state public-health, Medicaid, or human-services programs.",
       "criteria": {
         "none": "Unrelated to health or human services in North Carolina (for example defense research, foreign-embassy programs, space science, arts).",
@@ -13,13 +12,13 @@
         "strong": "Funds programs, services, infrastructure or workforce that directly advance one of the agency's strategic goals."
       }
     },
-
     "matched_goal": {
+      "type": "choice",
       "instructions": "Which single strategic goal would this grant advance most? Pick 'none' if it advances none of them.",
       "criteria": "FROM_CONFIG:strategic_priorities"
     },
-
     "applicant_role": {
+      "type": "choice",
       "instructions": "Read the eligibility text and applicant types. What role could a state health and human services agency realistically play? 'State governments' appearing in a long list of eligible applicant types does NOT make the state the intended applicant: research grants often list every applicant type.",
       "criteria": {
         "lead": "A state agency or state health department is an intended lead applicant (for example the text names states, state health departments, state Medicaid agencies, or state-administered formula programs).",
@@ -29,8 +28,8 @@
         "unclear": "The eligibility information is missing or too vague to decide."
       }
     },
-
     "owning_division": {
+      "type": "choice",
       "instructions": "If the agency pursued this grant, which division or office would most likely own the application? Pick 'none' if no division fits.",
       "criteria": "FROM_CONFIG:divisions"
     }
