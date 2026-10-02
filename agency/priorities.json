@@ -189,6 +189,46 @@
       "scope": "department-wide data, IT, HR, finance, and cross-division initiatives"
     }
   ],
+  "layer1": {
+    "_comment": "Objective thresholds for Layer 1 (src/deterministic.py). Nothing here is semantic. deadline_score_points are [days_until_close, score 0-10] anchors, linearly interpolated; past the last anchor the score stays at its value. financial_value_score is log-scaled between the two USD anchors; total_only_cap limits grants where only total program funding (not a per-award figure) is known.",
+    "data_pulled_date": "2026-08-18",
+    "close_date_placeholder_year_min": 2090,
+    "deadline_days": [
+      7,
+      14,
+      30
+    ],
+    "deadline_score_points": [
+      [
+        0,
+        0
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        14,
+        4
+      ],
+      [
+        30,
+        7
+      ],
+      [
+        60,
+        10
+      ]
+    ],
+    "large_award_usd": 1000000,
+    "few_awards_max": 3,
+    "min_description_chars": 100,
+    "broad_applicant_types_min": 12,
+    "financial_log_min_usd": 100000,
+    "financial_log_max_usd": 10000000,
+    "financial_total_only_cap": 7.0,
+    "financial_unknown_score": 5.0
+  },
   "layer2_routing": {
     "_comment": "Probability cutoffs on Jev's per-option probabilities. A grant is deprioritized only when Jev is confident it is irrelevant or not ours; everything else goes to Layer 3. Defaults are deliberately conservative (recall over precision) and must be re-tuned on the labeled validation sample.",
     "deprioritize_if_p_none_at_least": 0.85,

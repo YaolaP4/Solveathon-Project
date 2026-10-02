@@ -1,0 +1,18 @@
+{
+  "raw_rows": 1662,
+  "duplicate_ids_removed": 0,
+  "rows_sharing_a_title": 33,
+  "placeholder_or_zero_amounts_set_missing": {
+    "award_floor": 203,
+    "award_ceiling": 80,
+    "estimated_total_program_funding": 53,
+    "expected_number_of_awards": 22
+  },
+  "summaries_with_html": 1040,
+  "missing_summary": 2,
+  "missing_eligibility_description": 377,
+  "missing_close_date": 98,
+  "missing_award_amount": 576,
+  "malformed": 0,
+  "clean_rows": 1662
+}

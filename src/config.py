@@ -37,5 +37,15 @@ def load_agency() -> dict:
         return json.load(f)
 
 
+PROMPT_FIELDS = ("agency_name", "mission", "user", "strategic_priorities", "divisions")
+
+
+def prompt_fields(agency: dict) -> dict:
+    """The parts of the agency config that are sent to a model. Only these go into
+    the prompt-version hash, so tuning thresholds or Layer 4 weights does not
+    invalidate the cache of model answers."""
+    return {k: agency[k] for k in PROMPT_FIELDS}
+
+
 def objective_ids(agency: dict) -> set[str]:
     return {o["id"] for p in agency["strategic_priorities"] for o in p["objectives"]}

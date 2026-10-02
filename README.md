@@ -2,11 +2,35 @@
 
 > ## 📌 Update log — read this first
 >
+> ### 2026-09-30: Layers 0, 1 and 5 built; Layer 4 reviewed; one-command pipeline (Pavan)
+>
+> **Every layer now exists.** 43 tests pass (`python -m pytest tests -q`).
+>
+> | Layer | File | What it does |
+> |---|---|---|
+> | 0 | `src/clean_data.py` | Strips HTML, normalizes dates, booleans and applicant types; sets **355 placeholder or zero amounts** (e.g. a $999,999,999 ceiling, a $2^31 total) to missing; writes `data/processed/data_quality.json` |
+> | 1 | `src/deterministic.py` | Uses `as_of_date`, puts forecasts on their own track, detects rolling deadlines, computes `deadline_score` and `financial_value_score` (settings in `priorities.json → layer1`, §7). **Hard-filters only 342 grants: 330 closed and 12 archived.** Everything else becomes a feature, not a filter. |
+> | 4 | `src/scoring.py` (Advik) | Reviewed: it fits Layers 1 and 3 as they stand. One change: it now **warns when grants with a failed Layer 3 analysis are left out of the ranking** instead of dropping them silently. |
+> | 5 | `src/keyword_baseline.py`, `src/validation.py` | TF-IDF baseline; blind stratified labeling sheet; spot-check sheet; recall and precision with bootstrap CIs, compared against the baseline at the same review budget → `data/results/validation_report.md` |
+> | — | `src/report.py`, `src/pipeline.py` | `top_results.md` (submission list with a one-line rationale per grant); `python src/pipeline.py` runs everything |
+>
+> `src/interim_layer01.py` has been deleted (see the entry below). Layer 2 now reads the real Layer 1 output.
+>
+> **Also fixed:** the model-cache hash now covers only the parts of `priorities.json` that are sent to a model. Tuning thresholds or Layer 4 weights no longer invalidates the cached answers.
+>
+> **To finish the submission:**
+> 1. **Label now, no API key needed.** Open `data/validation/labels.csv` (90 grants). Two people each fill `labeler_A_relevant` / `labeler_B_relevant` with **Y/N**, independently. Y means "the coordinator should spend time on this: DHHS could lead or partner AND it advances a DHHS goal". Ignore deadline and award size. Where you disagree, agree on a `final_relevant`.
+> 2. Put `AI_GATEWAY_API_KEY` in `.env` and run `python src/pipeline.py` (expected cost under $1). Commit `data/cache/` and `data/results/`.
+> 3. `python src/validation.py spotcheck`: check the top 10 against our 5 criteria by hand.
+> 4. `python src/validation.py evaluate`: produces the recall numbers and false negatives for the video. Record real failures in [`docs/failure_modes.md`](docs/failure_modes.md).
+>
+> **One open Layer 4 design question for the team:** `atypical` (technically eligible, but the program is designed for e.g. university researchers) gets full eligibility credit, because operational fit is supposed to capture that concern. Check in the spot-check that NIH-style research grants don't reach the top 10. If they do, lower `eligibility_confidence_by_verified_role.atypical` in `priorities.json`.
+>
 > ### 2026-09-29: Agency chosen, Layers 2–3 built, 8 plan changes (Pavan)
 >
 > **Agency: NC DHHS.** It has the largest realistic grant pool, and its strategic plan explicitly asks to maximize federal resources. User, criteria and rationale: [`agency/agency_profile.md`](agency/agency_profile.md). Goals, objectives and divisions: [`agency/priorities.json`](agency/priorities.json).
 >
-> **Layers 2 and 3 are implemented** (`src/semantic_triage.py`, `src/deep_analysis.py`, 23 tests in `tests/`). Until Layers 0–1 exist they read a temporary stand-in (`src/interim_layer01.py`).
+> **Layers 2 and 3 are implemented** (`src/semantic_triage.py`, `src/deep_analysis.py`, 23 tests in `tests/`). Until Layers 0–1 exist they read a temporary stand-in (`src/interim_layer01.py`, since removed in the 09-30 update).
 >
 > **What Layer 0/1 needs to produce:** `data/processed/grants_features.csv` with at least these columns: `grant_id` (= `opportunity_id`), `opportunity_title`, `agency_name`, `summary_description`, `applicant_types`, `applicant_eligibility_description`, `opportunity_assistance_listings`, `funding_instruments`, `is_forecast`, `hard_filtered` (bool). Once that file exists, Layer 2 uses it automatically and `interim_layer01.py` can be deleted.
 >
@@ -155,50 +179,54 @@ solveathon-grants/
 │   ├── raw/
 │   │   └── grants.csv            ✅  (starter-kit export, 1,662 grants)
 │   ├── processed/
-│   │   ├── grants_cleaned.csv        (Layer 0)
-│   │   └── grants_features.csv       (Layer 1 → input to Layer 2)
+│   │   ├── grants_cleaned.csv    ✅  Layer 0
+│   │   ├── data_quality.json     ✅  Layer 0 counts (placeholders, HTML, missing fields)
+│   │   └── grants_features.csv   ✅  Layer 1 → input to Layers 2 and 4
 │   ├── cache/                    ✅  every model response, committed (see §32)
+│   ├── validation/
+│   │   ├── labels.csv            ✅  blind labeling sheet (90 grants), filled in by the team
+│   │   ├── sample_design.csv     ✅  strata and weights (hidden from labelers)
+│   │   └── spotcheck.csv             top-10 / low-rank / deprioritized check sheet
 │   └── results/
+│       ├── keyword_baseline.csv  ✅  Layer 5 comparison
 │       ├── jev_outputs.csv       ✅  Layer 2
 │       ├── deep_analysis.csv     ✅  Layer 3
 │       ├── ai_error_log.csv      ✅  Layer 3 checks: unverified quotes, L2/L3 disagreements
-│       ├── ranked_grants.csv
-│       ├── watchlist.csv             (forecasted grants)
-│       └── validation_sample.csv
+│       ├── ranked_grants.csv     ✅  Layer 4 open grants
+│       ├── watchlist.csv         ✅  Layer 4 forecasted grants
+│       ├── top_results.md / .csv ✅  submission list, one-line rationale per grant
+│       └── validation_report.md  ✅  Layer 5 metrics
 │
 ├── agency/
 │   ├── agency_profile.md         ✅  user, criteria, why DHHS
-│   └── priorities.json           ✅  goals, objectives, divisions, as_of_date, thresholds
+│   └── priorities.json           ✅  goals, objectives, divisions, as_of_date, all layer settings
 │
 ├── src/
-│   ├── clean_data.py
-│   ├── deterministic.py
-│   ├── interim_layer01.py        ✅  TEMPORARY stand-in for Layers 0–1
+│   ├── pipeline.py               ✅  runs everything: python src/pipeline.py [--mock]
+│   ├── clean_data.py             ✅  Layer 0
+│   ├── deterministic.py          ✅  Layer 1
 │   ├── semantic_triage.py        ✅  Layer 2
 │   ├── deep_analysis.py          ✅  Layer 3
+│   ├── scoring.py                ✅  Layer 4 deterministic ranking
+│   ├── keyword_baseline.py       ✅  Layer 5 baseline
+│   ├── validation.py             ✅  Layer 5: sample / spotcheck / evaluate
+│   ├── report.py                 ✅  top_results.md
 │   ├── clients.py                ✅  Jev + Muse Spark API clients (+ mock clients)
 │   ├── llm_cache.py              ✅
 │   ├── text_utils.py             ✅  HTML stripping, verbatim-quote check
-│   ├── config.py                 ✅
-│   ├── scoring.py                  ✅  Layer 4 deterministic ranking
-│   ├── keyword_baseline.py
-│   ├── validation.py
-│   └── pipeline.py
+│   └── config.py                 ✅
 │
-├── tests/
-│   └── test_layers23.py          ✅
+├── tests/                        ✅  43 tests
+│   ├── test_layers015.py
+│   ├── test_layers23.py
+│   └── test_scoring.py
 │
 ├── prompts/
 │   ├── jev_triage.json           ✅
 │   └── deep_analysis.txt         ✅
 │
-├── notebooks/
-│   └── analysis.ipynb
-│
 └── docs/
-    ├── methodology.md
-    ├── failure_modes.md
-    └── presentation_notes.md
+    └── failure_modes.md          ✅  failure log (fill with real failures after the run)
 ```
 
 ---
@@ -304,6 +332,17 @@ df["grant_text"] = (
 ```text
 data/processed/grants_cleaned.csv
 ```
+
+> **Implemented (2026-09-30): `python src/clean_data.py`.** Findings from the real data, written to `data/processed/data_quality.json`:
+>
+> | Issue | Count | Handling |
+> |---|---:|---|
+> | Summaries containing HTML | 1,040 | stripped (`text_utils.strip_html`) |
+> | Placeholder or zero amounts (e.g. ceiling $999,999,999; total $2,147,483,647 = 2^31; 9,999 awards) | 355 | set to missing, never treated as real money |
+> | Missing eligibility description | 377 | flagged; Layers 2–3 fall back to the structured applicant types |
+> | Posted grants with no close date | 98 | flagged; Layer 1 splits them into rolling / archived / truly missing |
+> | Rows sharing a title with another row | 33 | kept and flagged (`duplicate_title`); these are different opportunity numbers |
+> | Duplicate ids | 0 | — |
 
 ---
 
@@ -428,6 +467,15 @@ record is a duplicate
 ```
 
 Most other characteristics should become features rather than immediate deletion rules.
+
+> **Implemented (2026-09-30): `python src/deterministic.py`** → `data/processed/grants_features.csv`. Settings live in `priorities.json → layer1`.
+>
+> - **Hard filters (342 removed, all kept in the file with a `hard_filter_reason`):** posted grant closed before `as_of_date` (330); posted grant archived before `as_of_date` (12). No other filters. Forecasts, grants without "state" in the applicant list, cost-sharing grants and stale forecasts all go on to Layer 2.
+> - **`deadline_score`, 0–10:** 0 if the grant closes within 7 days of `as_of_date` (a state agency needs internal sign-off), 10 at 60 days or more, linear in between. Rolling deadlines ("proposals accepted anytime", 66 grants) score a fixed 8. A truly unknown deadline stays **missing**, not 0, so Layer 4's explicit missing-deadline rule applies. Forecasts have no deadline score and go to the watchlist.
+> - **`financial_value_score`, 0–10:** log scale on the best single-award estimate (the ceiling; else total funding ÷ expected awards; else the floor). $50K → 0, $500K → 5, $5M+ → 10. An unknown amount (569 grants) scores a fixed **4**: below neutral, but not 0, because many large programs omit amounts. Required cost sharing subtracts 1.5.
+> - **Flags:** `deadline_flag` (expired / under 7, 14 or 30 days / comfortable / rolling / missing / forecast), `stale_forecast` (234 forecasts whose forecasted close date has already passed; kept, and marked on the watchlist as "check if posted"), structured eligibility flags (signals only), `eligibility_text_mentions_state`, `is_nih`, `cost_share_mentioned_in_text`.
+>
+> Result: **1,320 grants go to Layer 2 (761 open, 559 forecast).**
 
 ---
 
@@ -855,6 +903,18 @@ Validation is a core part of the project.
 We should not assume the system works merely because the outputs look reasonable.
 
 The pipeline should be manually tested.
+
+> **Implemented (2026-09-30): `src/validation.py`**, three commands:
+>
+> ```bash
+> python src/validation.py sample      # blind stratified labeling sheet (already generated: data/validation/labels.csv)
+> python src/validation.py spotcheck   # after the real run: top 10, top 5 watchlist, 5 low-ranked, 5 deprioritized
+> python src/validation.py evaluate    # → data/results/validation_report.md
+> ```
+>
+> - **Sample design:** 90 grants drawn from the 1,320 that reach Layer 2. Three strata by **keyword-baseline rank**: top 100, ranks 101–400, and 401+, with 30 from each and a fixed seed. Strata come from the baseline, not from Jev, so the sample doesn't depend on the model being evaluated and can be labeled **before** any API run. The sheet is shuffled and shows no stratum or model output. `sample` refuses to overwrite a sheet that already has labels.
+> - **The label:** "Should the coordinator spend time on this?" Y means DHHS could lead or partner AND the grant advances a DHHS goal. Deadline and award size are excluded; they're handled deterministically.
+> - **`evaluate` reports:** inter-labeler agreement (Cohen's κ); Layer 2 recall and precision **weighted by stratum size**, with 95% stratified-bootstrap intervals; the keyword baseline given **the same review budget** (its top-K, where K = the number Jev sends to deep review); every Layer 2 false negative; Layer 3 `recommended_for_review` vs the labels; and a summary of the AI error log.
 
 ---
 
@@ -1718,13 +1778,14 @@ Before implementation is finalized:
 - [x] Define the target agency employee/user. → **DHHS federal-grants coordinator** (draft, `agency/agency_profile.md`)
 - [x] Extract strategic priorities. → 5 goals, 20 objectives, 13 divisions in `priorities.json`
 - [ ] Finalize 3–5 grant evaluation criteria. (draft in `agency/agency_profile.md`; team to confirm)
-- [ ] Determine hard filters.
-- [ ] Determine scoring weights.
+- [x] Determine hard filters. → closed or archived before `as_of_date` only (§7)
+- [x] Determine scoring weights. → Layer 4, `priorities.json → layer4_scoring` (§17)
 - [x] Define Jev output schema. → §11
 - [ ] Determine Jev confidence thresholds. (conservative defaults set; tune on labeled sample)
-- [ ] Decide whether TF-IDF improves performance. (now a baseline comparison, §26)
+- [ ] Decide whether TF-IDF improves performance. (baseline built; `validation.py evaluate` answers this once labels exist)
 - [x] Choose the deep-analysis model. → Muse Spark 1.3 contributor
-- [ ] Create a validation sample. (stratified + blind, §21)
+- [x] Create a validation sample. → `data/validation/labels.csv`, 90 grants, stratified + blind (§20)
+- [ ] **Label the validation sample** (two labelers, Y/N)
 - [ ] Run Layers 2–3 for real once `AI_GATEWAY_API_KEY` is in `.env`, and commit `data/cache/`.
 - [ ] Determine the final number of grants shown.
 - [ ] Build the presentation narrative.

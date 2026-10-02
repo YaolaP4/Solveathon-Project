@@ -168,7 +168,7 @@ def run(mock: bool = False, limit: int | None = None, workers: int = 4) -> pd.Da
     agency = config.load_agency()
     system, user_tmpl, raw_prompt = load_template()
     blocks = agency_blocks(agency)
-    version = prompt_version(raw_prompt, json.dumps(agency, sort_keys=True))
+    version = prompt_version(raw_prompt, json.dumps(config.prompt_fields(agency), sort_keys=True))
     client = MockChatClient() if mock else ChatClient()
     cache = ResponseCache(config.MOCK_CACHE if mock else config.CACHE, "layer3_deep")
     out_dir = config.MOCK_RESULTS if mock else config.RESULTS

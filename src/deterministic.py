@@ -73,6 +73,12 @@ _INDIV_ONLY = re.compile(r"(only|solely|exclusively)[^.]{0,40}individuals?|indiv
 _HIGHER_ED_ONLY = re.compile(
     r"(only|limited to|restricted to|solely)[^.]{0,80}(institutions? of higher education|universit|colleges?)", re.I)
 _TRIBAL_ONLY = re.compile(r"(only|limited to|restricted to|solely)[^.]{0,80}(tribal|tribe|native american)", re.I)
+_ROLLING = re.compile(r"anytime|continuing basis|ongoing basis|year-round|rolling|no submission deadline"
+                      r"|accepted on a continu", re.I)
+# Values Grants.gov uses as "no real number" in this export: $999,999,999 and 2^31 (a software
+# maximum) as amounts, 9,999 as a number of awards. Read as money they would win "largest award".
+PLACEHOLDER_AMOUNTS = {999_999_999.0, 2_147_483_647.0, 2_147_483_648.0}
+PLACEHOLDER_AWARD_COUNTS = {9_999.0}
 
 
 # ── Loading ─────────────────────────────────────────────────────────────────
@@ -154,12 +160,22 @@ def add_deadline_features(df: pd.DataFrame, cfg: dict) -> None:
     # on Grants.gov, so the watchlist should say "check now".
     df["forecast_check_now"] = df["forecast_post_passed"] & ~df["forecast_close_passed"]
     df["archive_date_passed"] = df["archive_date"] < as_of
+    # "Proposals accepted anytime": no close date, but not an unknown deadline either.
+    df["rolling_deadline"] = df["missing_deadline"] & df["close_date_description"].fillna("").map(
+        lambda t: bool(_ROLLING.search(str(t))))
 
 
 def add_funding_features(df: pd.DataFrame, cfg: dict) -> None:
     three = ["award_ceiling", "estimated_total_program_funding", "expected_number_of_awards"]
-    # A 0 in these fields is a placeholder, not a real amount.
+    # A 0 in these fields is a placeholder, not a real amount; so are the sentinel values.
     df["funding_zero_placeholder"] = (df[three] == 0).any(axis=1)
+    sentinel = (df[["award_floor", "award_ceiling", "estimated_total_program_funding"]].isin(PLACEHOLDER_AMOUNTS).any(axis=1)
+                | df["expected_number_of_awards"].isin(PLACEHOLDER_AWARD_COUNTS))
+    df["funding_sentinel_placeholder"] = sentinel
+    for c in ["award_floor", "award_ceiling", "estimated_total_program_funding"]:
+        df[c] = df[c].where(~df[c].isin(PLACEHOLDER_AMOUNTS))
+    df["expected_number_of_awards"] = df["expected_number_of_awards"].where(
+        ~df["expected_number_of_awards"].isin(PLACEHOLDER_AWARD_COUNTS))
     for c in three:
         df[c] = df[c].where(df[c] > 0)
 
@@ -253,8 +269,12 @@ def add_listing_and_quality_features(df: pd.DataFrame, cfg: dict) -> None:
 def add_hard_filters(df: pd.DataFrame, cfg: dict) -> None:
     status = df["opportunity_status"].str.lower()
     bad_status = status.isin(cfg["hard_filter_statuses"])
-    reason = np.select([df["expired"], bad_status],
-                       ["closed_before_as_of_date", ("status_" + status).to_numpy()], "")
+    # A posted grant past its archive date no longer accepts applications, even when the
+    # export has no close date (12 such grants say "Funding Opportunity is Archived").
+    archived = ~df["is_forecast"] & df["archive_date_passed"] & ~df["expired"]
+    reason = np.select([df["expired"], archived, bad_status],
+                       ["closed_before_as_of_date", "archived_before_as_of_date",
+                        ("status_" + status).to_numpy()], "")
     df["hard_filter_reason"] = reason
     df["hard_filtered"] = df["hard_filter_reason"] != ""
 
@@ -319,6 +339,7 @@ def report_markdown(df: pd.DataFrame, cfg: dict) -> str:
         "## Hard filters (rows stay in the file, flagged)", _counts(df["hard_filter_reason"].replace("", "kept")), "",
         "## Open grants: deadlines",
         f"- expired (closed before as-of date): {n(op['expired'])}",
+        f"- rolling (\"accepted anytime\"): {n(op['rolling_deadline'])}",
         f"- no close date in the data: {n(op['missing_deadline'])} "
         f"(of which {n(op['close_date_placeholder'])} carry a placeholder year-{cfg['close_date_placeholder_year_min']}+ date)",
         *[f"- {f}: {n(op[f])}" for f in flags], "",
@@ -330,6 +351,7 @@ def report_markdown(df: pd.DataFrame, cfg: dict) -> str:
         "## Funding",
         _counts(df["financial_basis"]),
         f"- rows where a 0 amount was treated as a placeholder: {n(df['funding_zero_placeholder'])}",
+        f"- rows with a sentinel amount ($999,999,999, 2^31, 9,999 awards) set to missing: {n(df['funding_sentinel_placeholder'])}",
         f"- financial_value_score imputed to {cfg['financial_unknown_score']} (no amount at all): {n(df['financial_value_imputed'])}",
         f"- award_floor above ceiling: {n(df['award_floor_gt_ceiling'])}", "",
         "## Cost sharing (structured field, text can upgrade Unknown)", _counts(df["requires_cost_share"]),

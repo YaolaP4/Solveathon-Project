@@ -55,7 +55,7 @@ def load_prompt(agency: dict) -> tuple[str, dict, str]:
         elif q["criteria"] == "FROM_CONFIG:divisions":
             q["criteria"] = {d["id"]: f"{d['name']} ({d['scope']})" for d in agency["divisions"]}
             q["criteria"]["none"] = "No division of this agency would own it."
-    version = prompt_version(raw_text, json.dumps(agency, sort_keys=True))
+    version = prompt_version(raw_text, json.dumps(config.prompt_fields(agency), sort_keys=True))
     return context, questions, version
 
 
@@ -123,14 +123,13 @@ def summarize(answers: dict) -> dict:
 # ── Runner ──────────────────────────────────────────────────────────────────
 
 def load_grants() -> pd.DataFrame:
-    if config.LAYER1_OUTPUT.exists():
-        df = pd.read_csv(config.LAYER1_OUTPUT)
-        source = config.LAYER1_OUTPUT
-    else:
-        # Temporary until clean_data.py / deterministic.py land (see interim_layer01.py).
-        from interim_layer01 import build
-        df = build()
-        source = "interim_layer01 (stand-in for Layers 0-1)"
+    if not config.LAYER1_OUTPUT.exists():
+        import clean_data
+        import deterministic
+        clean_data.main()
+        deterministic.main()
+    df = pd.read_csv(config.LAYER1_OUTPUT)
+    source = config.LAYER1_OUTPUT
     missing = [c for c in REQUIRED_COLUMNS if c not in df.columns]
     if missing:
         sys.exit(f"Layer 1 output is missing columns Layer 2 needs: {missing}")
