@@ -1,0 +1,28 @@
+{
+ "grant_id": "5269870b-a071-47ba-a076-d3fbc1955077",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "1dc9dd957a599119a488f7cf19bd38ab9a01f9ae518d1eff697021cc367787f0",
+ "retrieved_at": "2026-10-05T21:02:23+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 0,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds traffic safety enforcement programs to reduce motor vehicle crashes, which does not map to any NCDHHS strategic goal or objective.",
+   "strategic_evidence_quote": "develop innovative traffic safety enforcement programs that demonstrate effectiveness by reducing the number of motor vehicle crashes due to one or more of the subject risky driving behaviors",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "Applicants eligible for an award include a State or local agency",
+   "owning_division": "none",
+   "operational_fit": 1,
+   "operational_reason": "NCDHHS does not have a division that conducts or oversees traffic safety enforcement, which is a law enforcement function outside the Department's operating authority.",
+   "restrictions": [],
+   "major_risk": "The grant would require NCDHHS to administer law-enforcement traffic safety programs that are outside its health and human services authority and divisional expertise.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Traffic safety enforcement falls under law enforcement/DOT, not NCDHHS health and human services; no division has authority or capacity to run it."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 0,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds traffic safety enforcement programs to reduce motor vehicle crashes, which does not map to any NCDHHS strategic goal or objective.\",\n  \"strategic_evidence_quote\": \"develop innovative traffic safety enforcement programs that demonstrate effectiveness by reducing the number of motor vehicle crashes due to one or more of the subject risky driving behaviors\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"Applicants eligible for an award include a State or local agency\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 1,\n  \"operational_reason\": \"NCDHHS does not have a division that conducts or oversees traffic safety enforcement, which is a law enforcement function outside the Department's operating authority.\",\n  \"restrictions\": [],\n  \"major_risk\": \"The grant would require NCDHHS to administer law-enforcement traffic safety programs that are outside its health and human services authority and divisional expertise.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Traffic safety enforcement falls under law enforcement/DOT, not NCDHHS health and human services; no division has authority or capacity to run it.\"\n}"
+  ]
+ }
+}

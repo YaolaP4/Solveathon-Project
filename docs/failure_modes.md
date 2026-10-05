@@ -62,10 +62,10 @@ What tradeoff the fix introduced:
 
 ## F7. The in-depth model said DHHS would "lead" NIH research grants
 
-- **Observed error:** DeepSeek V4 Pro (Layer 3) labeled **71 research or training grants** (NIH R01/R34/R61, CDC/FDA U01 …) as ones DHHS would *lead*, because "state governments" appears on their eligibility lists. With full eligibility credit, **7 of the first top-10 "apply now" grants were NIH research awards**, which a state grants coordinator can't realistically pursue as lead applicant.
+- **Observed error:** DeepSeek V4 Pro (Layer 3) labeled **73 research or training grants** (NIH R01/R34/R61, CDC/FDA U01 …) as ones DHHS would *lead*, because "state governments" appears on their eligibility lists. With full eligibility credit, **7 of the first top-10 "apply now" grants were NIH research awards**, which a state grants coordinator can't realistically pursue as lead applicant.
 - **Why:** The Layer 3 prompt lists the role options but, unlike the Jev prompt, never defines them. "Lead" was read as "legally allowed to apply".
 - **How detected:** (1) Reading the top 10, where the model's own "main risk" text said "requires an academic partner". (2) The Layer 2 vs Layer 3 disagreement log: Jev labeled **0** of those grants as DHHS-led (65 partner, 61 atypical, 4 ineligible).
-- **Pipeline change:** An objective Layer 1 rule, `research_mechanism` (NIH opportunity, or a research/training activity code such as R01, K99, U01 or P50 in the title; deliberately not CDC's U60 state cooperative agreements). Layer 4 moves these 130 grants to a separate **research-partnerships** list for university partners.
+- **Pipeline change:** An objective Layer 1 rule, `research_mechanism` (NIH opportunity, or a research/training activity code such as R01, K99, U01 or P50 in the title; deliberately not CDC's U60 state cooperative agreements). Layer 4 moves these 134 grants to a separate **research-partnerships** list for university partners.
 - **Tradeoff:** A rare research award DHHS *could* lead now sits on the research list instead of the apply-now list. The prompt itself still lacks role definitions; fixing it means re-running Layer 3 (about $3).
 
 ## F8. Administrative paperwork listed as funding opportunities
@@ -74,6 +74,26 @@ What tradeoff the fix introduced:
 - **How detected:** Reading the top 10 (entries titled "RFA-TS-18-000", "RFA-OE-18-000"). The AI's own risk note said "the announcement provides almost no programmatic detail". These records also caused most of the unverified quotes, since there's nothing real to quote.
 - **Pipeline change:** Layer 1 hard-filters them (`administrative_award_transfer_notice`). The test pins the count at 17.
 - **Tradeoff:** None for a grants coordinator; nobody can win new money through these notices.
+
+## F9. Two independent checks disagreed: Jev vs. the historical-award check (Jev was right)
+
+- **Observed:** The USAspending check (`data/results/award_history_report.md`) flagged **24** grants Jev set aside as having "state-agency award history", which made them possible false negatives. The most striking one is **"HIV Care Grant Program - Part B … Pacific Islands Jurisdictions" (HRSA-27-064)**: Jev rated it *strong* relevance but *ineligible* (p = 0.94), while NC DHHS received **$187.6M** under its assistance listing (93.917) in FY2022–25.
+- **Why they disagree:** An assistance listing is shared by every funding notice under it. HRSA-27-064 is the Pacific-territories version of Ryan White Part B; its eligibility text reads "Domestic territories, and freely associated states". NC's own version, HRSA-27-063, is #1 on our watchlist. **Jev read the notice correctly; the listing-level history could not tell the two notices apart.**
+- **The other 23, from titles and eligibility:** the NIH/CDC/FDA small-business (SBIR) parent notice, which spans 41 listings; two tribal-only programs; three research programs (NIOSH mining robotics, a mesothelioma tissue bank, World Trade Center research careers); and 17 programs outside DHHS's field that states do win (Gulf RESTORE Act, conservation, outdoor recreation, invasive species, urban forestry, specialty crops, battlefield land, defense research, construction technology, specialized education). **None looked like a genuine DHHS miss.**
+- **How detected:** Building the historical-award check and comparing it against Layer 2's routing, then reading the eligibility text of each flagged grant.
+- **Pipeline change:** None to the ranking. The report carries the caveat that history is per listing, not per notice, and marks grants spanning more than 3 listings.
+- **Tradeoff / lesson:** The award history is a useful *objective* signal: grants Jev set aside had state-agency history **2%** of the time, against **25%** for grants it sent on. But it can't replace reading the specific notice.
+
+## F10. Most of the "apply now" list isn't money DHHS has won before
+
+- **Observed:** Of our **top 10 open** grants, only **1** (Title X, $14.7M to NC DHHS in FY2022–25) has a history of awards to NC DHHS. #2 (Public Health Crisis Response) has no awards at all in FY2022–25: it's a new roster mechanism that pays only during emergencies. Of the **top 5 watchlist** grants, **4** do: Ryan White Part B $187.6M, Preschool Development B-5 $36.3M, HIV Behavioral Surveillance $30.2M, MIECHV $21.1M.
+- **Why:** Most of the state programs DHHS traditionally wins either closed between the August 18 data pull and September 30, or are forecasts. The open list is what's left.
+- **How detected:** The historical-award check (USAspending.gov), an objective source that's independent of both AI models.
+- **Pipeline change:** None yet. With more time, award history could become a scoring input (for example, a bonus for programs states actually win). It's deliberately kept as validation here, so the check stays independent of the ranking it checks.
+
+## Label uncertainty (validation)
+
+- The first 31 labels come from **one team member, not a grants expert** (`data/validation/labels.csv`, labeler A). Jev's only "miss" among them, *"Expanding global health security through local partnerships in Ethiopia"* (labeled relevant), is arguably a labeling call rather than a model error: it's an overseas CDC program. We kept the label as given. Recall numbers from 8 relevant grants have wide intervals and should be read as a first check.
 
 ---
 

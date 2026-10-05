@@ -1,0 +1,31 @@
+{
+ "grant_id": "8d79c6d1-86ef-4cb3-b467-b00baccfeea0",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "a1e5f379602705a2cacef799863a25cf9879ee46f0c36177415322ea0c3d5420",
+ "retrieved_at": "2026-10-05T21:01:56+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 1,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds animal feed safety regulatory cooperation and standards, which does not advance any named NCDHHS health or human services strategic objective.",
+   "strategic_evidence_quote": "promoting the Animal Feed Regulatory Program Standards (AFRPS)",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "National organizations and associations representing state animal food regulatory programs as a primary purpose",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "NCDHHS divisions do not regulate animal feed or operate an animal food safety regulatory program, so no division could realistically run this cooperative agreement.",
+   "restrictions": [
+    "Must collaborate with one or more institutes of higher education as defined in 21 USC 399(b)",
+    "Limited competition available only to national organizations and associations representing state animal food regulatory programs or certain government agencies"
+   ],
+   "major_risk": "NCDHHS appears ineligible and the programmatic focus on animal feed safety is outside any NCDHHS division's authority, so pursuing it would likely be non-competitive and off-mission.",
+   "recommended_for_review": false,
+   "one_line_rationale": "NCDHHS is not the eligible applicant type and animal feed safety is outside its health and human services mission; route to agriculture rather than NCDHHS."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 1,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds animal feed safety regulatory cooperation and standards, which does not advance any named NCDHHS health or human services strategic objective.\",\n  \"strategic_evidence_quote\": \"promoting the Animal Feed Regulatory Program Standards (AFRPS)\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"National organizations and associations representing state animal food regulatory programs as a primary purpose\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"NCDHHS divisions do not regulate animal feed or operate an animal food safety regulatory program, so no division could realistically run this cooperative agreement.\",\n  \"restrictions\": [\n    \"Must collaborate with one or more institutes of higher education as defined in 21 USC 399(b)\",\n    \"Limited competition available only to national organizations and associations representing state animal food regulatory programs or certain government agencies\"\n  ],\n  \"major_risk\": \"NCDHHS appears ineligible and the programmatic focus on animal feed safety is outside any NCDHHS division's authority, so pursuing it would likely be non-competitive and off-mission.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"NCDHHS is not the eligible applicant type and animal feed safety is outside its health and human services mission; route to agriculture rather than NCDHHS.\"\n}"
+  ]
+ }
+}

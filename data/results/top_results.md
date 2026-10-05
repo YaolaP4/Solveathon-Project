@@ -59,19 +59,19 @@ _As of 2026-09-30. Scores are 0-100 from a fixed, published formula (strategic a
 - **Main risk:** The core data and policy authority sits with the State educational agency, so NCDHHS would likely be limited to early intervention and would need significant research capacity to compete.
 - [Grant listing](https://simpler.grants.gov/opportunity/72bd1f82-d3f8-4226-872e-fc254dd21a6a)
 
-### 9. BJA FY 2026 The Kevin and Avonte Program: Reducing Injury and Death of Missing Individuals with Dementia and Developmental Disabilities — 46/100
-- **Why:** This grant aligns with NCDHHS safety goals for vulnerable North Carolinians but is public-safety oriented and would require cross-division and law enforcement partners.
-- **Owner:** Division of Aging · **Goal:** Health Access · **DHHS role:** lead (verified quote)
-- **Deadline:** 2026-10-06 (6 days) · **Award:** $150K · **Cost share:** False
-- **Main risk:** The program is primarily a public safety and law enforcement initiative, so NCDHHS would need substantial partnerships and may not be the most competitive lead applicant.
-- [Grant listing](https://simpler.grants.gov/opportunity/644030f6-37f5-40f8-bb89-acf868c1b28f)
+### 9. Innovative Traffic Safety Enforcement (ITSE) Grant Program — 48/100
+- **Why:** Traffic safety enforcement falls under law enforcement/DOT, not NCDHHS health and human services; no division has authority or capacity to run it.
+- **Owner:** none · **Goal:** none · **DHHS role:** lead (verified quote)
+- **Deadline:** 2027-09-01 (336 days) · **Award:** $20.0M · **Cost share:** False
+- **Main risk:** The grant would require NCDHHS to administer law-enforcement traffic safety programs that are outside its health and human services authority and divisional expertise.
+- [Grant listing](https://simpler.grants.gov/opportunity/5269870b-a071-47ba-a076-d3fbc1955077)
 
-### 10. Announcement of Stand Down Grants — 40/100
-- **Why:** State agencies are eligible, but this small, veteran-specific DOL event falls outside NCDHHS core health and human services divisions; likely not worth the administrative effort.
-- **Owner:** none · **Goal:** Health Access · **DHHS role:** atypical (verified quote)
-- **Deadline:** 2026-09-30 (0 days) · **Award:** $10K · **Cost share:** False
-- **Main risk:** The usual award ceiling is only $7,000-$10,000 and the grants are noncompetitive, so the state's application and reporting burden could outweigh the small, one-time event value.
-- [Grant listing](https://simpler.grants.gov/opportunity/aa2857de-cd78-432b-9266-9b2919a6eb6c)
+### 10. Authority to Accept Unsolicited Proposals for Research Partnerships Notice of Intent (NOI) — 47/100
+- **Why:** HUD housing-policy research does not fund NCDHHS health/human services priorities and requires a 50% match; low fit for any division.
+- **Owner:** none · **Goal:** Operational Excellence · **DHHS role:** atypical (verified quote)
+- **Deadline:** 2027-06-09 (252 days) · **Award:** $250K · **Cost share:** True
+- **Main risk:** The required 50 percent cost match makes a housing-focused research opportunity expensive for a health and human services agency with no clear division owner.
+- [Grant listing](https://simpler.grants.gov/opportunity/144a89d3-d417-4a72-9bca-d361652bd993)
 
 ## Watchlist: 5 forecasted opportunities to prepare for
 

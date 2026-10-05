@@ -55,3 +55,20 @@ def test_weighted_recall_uses_stratum_sizes():
 def test_kappa():
     a = pd.Series([1.0, 0.0, 1.0, 0.0])
     assert cohen_kappa(a, a) == 1.0
+
+
+def test_labels_saved_by_excel_in_windows_encoding_still_load(tmp_path, monkeypatch):
+    import validation
+    sheet = tmp_path / "labels.csv"
+    sheet.write_bytes("sample_id,title,labeler_A_relevant\nV001,Infant–Toddler Court,Y\n".encode("cp1252"))
+    monkeypatch.setattr(validation, "LABELS", sheet)
+    df = validation.read_labels()
+    assert df.loc[0, "labeler_A_relevant"] == "Y" and "Toddler" in df.loc[0, "title"]
+
+
+def test_annotated_and_single_labeler_labels_resolve():
+    labels = pd.DataFrame({"sample_id": ["1", "2", "3"], "labeler_A_relevant": ["(Y)", "(N, not DHHS's mission)", ""],
+                           "labeler_B_relevant": ["", "", ""], "final_relevant": ["", "", ""]})
+    out, unresolved = resolve_labels(labels)
+    assert out["relevant"].tolist()[:2] == [1.0, 0.0] and np.isnan(out["relevant"].tolist()[2])
+    assert out["single_labeler"].tolist() == [True, True, False] and unresolved == []

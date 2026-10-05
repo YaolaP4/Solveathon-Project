@@ -1,0 +1,31 @@
+{
+ "grant_id": "9b99689b-52c2-4134-8d19-313963a8b2b4",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "926a5f93d36aa7da6e8bd2dbfe57f6bb4fca9319a29a68abadddec1cf3234f3c",
+ "retrieved_at": "2026-10-05T21:02:06+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 7,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O1",
+   "strategic_reason": "The grant funds clinical trials focused on cancer early detection, screening, prevention, and healthcare delivery that can improve outcomes and reduce cancer-related disparities for populations facing greater health challenges.",
+   "strategic_evidence_quote": "clinical trials that have the potential to reduce the burden of cancer through improvements in early detection, screening, prevention and interception, healthcare delivery, quality of life, and/or survivorship related to cancer",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 7,
+   "operational_reason": "DPH already addresses chronic disease prevention and cancer control and could partner with academic medical centers, though it is not primarily a clinical trial research organization.",
+   "restrictions": [
+    "studies that meet the National Institutes of Health (NIH) definition of a clinical trial (see NOT-OD-15-015 for details) and provide specific clinical trial information",
+    "This NOFO does not and will not support clinical trials for studies of cancer diagnosis and/or oncologic therapy in patients"
+   ],
+   "major_risk": "This is a high-complexity investigator-initiated R01 clinical trial; NCDHHS would need substantial research infrastructure and academic partnerships to compete and comply.",
+   "recommended_for_review": true,
+   "one_line_rationale": "Cancer prevention and control trials align with DPH chronic disease prevention and health access goals, but the clinical trial R01 requires research capacity; route to DPH for feasibility review."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 7,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O1\",\n  \"strategic_reason\": \"The grant funds clinical trials focused on cancer early detection, screening, prevention, and healthcare delivery that can improve outcomes and reduce cancer-related disparities for populations facing greater health challenges.\",\n  \"strategic_evidence_quote\": \"clinical trials that have the potential to reduce the burden of cancer through improvements in early detection, screening, prevention and interception, healthcare delivery, quality of life, and/or survivorship related to cancer\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 7,\n  \"operational_reason\": \"DPH already addresses chronic disease prevention and cancer control and could partner with academic medical centers, though it is not primarily a clinical trial research organization.\",\n  \"restrictions\": [\n    \"studies that meet the National Institutes of Health (NIH) definition of a clinical trial (see NOT-OD-15-015 for details) and provide specific clinical trial information\",\n    \"This NOFO does not and will not support clinical trials for studies of cancer diagnosis and/or oncologic therapy in patients\"\n  ],\n  \"major_risk\": \"This is a high-complexity investigator-initiated R01 clinical trial; NCDHHS would need substantial research infrastructure and academic partnerships to compete and comply.\",\n  \"recommended_for_review\": true,\n  \"one_line_rationale\": \"Cancer prevention and control trials align with DPH chronic disease prevention and health access goals, but the clinical trial R01 requires research capacity; route to DPH for feasibility review.\"\n}"
+  ]
+ }
+}

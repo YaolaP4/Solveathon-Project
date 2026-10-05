@@ -1,0 +1,28 @@
+{
+ "grant_id": "22cd6481-2f7c-4e91-9706-9e5c6f47978d",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "b3549427ca549656e7b9d79a40eab0cf48c771bfdba269e3307b6276c4cc200f",
+ "retrieved_at": "2026-10-05T21:02:59+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 0,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The funded activity focuses on research integrity and research misconduct, which is not part of any NCDHHS strategic objective.",
+   "strategic_evidence_quote": "foster empirical research on societal, organizational, behavioral, group, and individual factors that affect, both positively and negatively, integrity in research with a focus on the identification of the root causes of research misconduct and driving factors for research integrity",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "State governments",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "No NCDHHS division currently conducts research on research integrity or oversees PHS research compliance, so this would be an off-mission add-on rather than an extension of existing work.",
+   "restrictions": [],
+   "major_risk": "NCDHHS is not a research-integrity organization and likely lacks the academic research infrastructure needed to carry out the project, so the grant would divert effort from core health and human services work.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Funds research-integrity studies, not health services; NCDHHS lacks a research-integrity mission or division, so it would not advance our strategic goals."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 0,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The funded activity focuses on research integrity and research misconduct, which is not part of any NCDHHS strategic objective.\",\n  \"strategic_evidence_quote\": \"foster empirical research on societal, organizational, behavioral, group, and individual factors that affect, both positively and negatively, integrity in research with a focus on the identification of the root causes of research misconduct and driving factors for research integrity\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"State governments\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"No NCDHHS division currently conducts research on research integrity or oversees PHS research compliance, so this would be an off-mission add-on rather than an extension of existing work.\",\n  \"restrictions\": [],\n  \"major_risk\": \"NCDHHS is not a research-integrity organization and likely lacks the academic research infrastructure needed to carry out the project, so the grant would divert effort from core health and human services work.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Funds research-integrity studies, not health services; NCDHHS lacks a research-integrity mission or division, so it would not advance our strategic goals.\"\n}"
+  ]
+ }
+}
