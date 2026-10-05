@@ -1,6 +1,6 @@
 # Recording script: 5 minutes or less, addressed to NC DHHS leadership
 
-A recording of **5 minutes or less** is preferred (a PowerPoint is accepted instead). Read the text below as written: **683 words, about 4.9 minutes** at a calm 140 words per minute (about 4.4 at a normal pace). It is identical to each slide's speaker notes. Extra numbers for questions: `slide_guide.md` and `docs/team_briefing.md`.
+A recording of **5 minutes or less** is preferred (a PowerPoint is accepted instead). Read the text below as written: **1577 words, about 11.3 minutes** at a calm 140 words per minute (about 10.2 at a normal pace). It is identical to each slide's speaker notes. Extra numbers for questions: `slide_guide.md` and `docs/team_briefing.md`.
 
 ## How to record (no paid tools needed)
 
@@ -15,61 +15,61 @@ A recording of **5 minutes or less** is preferred (a PowerPoint is accepted inst
 
 **Slide 1, Title (0:00)**
 
-Grants.gov posts hundreds of federal grants a week, and the states that spot the right ones first win the money. Our tool takes 1,662 listings and narrows them to the 15 NC DHHS should act on.
+Every week, hundreds of new federal grants are posted on Grants.gov. Somewhere in that pile is money North Carolina could win, but nobody has time to read it all, and the states that find the right postings first are the ones that get funded. We built a tool for NC DHHS that takes all 1,662 listings in our dataset and narrows them down to the 15 that are actually worth acting on, with a reason for each one.
 
-**Slide 2, Our user (0:15)**
+**Slide 2, Our user (0:33)**
 
-Our user is the DHHS federal-grants coordinator, who decides which grants deserve a division's time. Before looking at any data, we defined a good grant: DHHS can apply; it supports one of the five strategic-plan goals; one of DHHS's thirteen divisions already does this work; there's time to apply; and the money is worth it.
+We designed this for one person: the DHHS federal-grants coordinator. Every week, they decide which new grants deserve a division's time, and send each one to the right team. Before touching the data, we used the DHHS strategic plan to define what a good grant means for them. One: DHHS has to be able to apply, as the lead or as a partner. Two: it should support one of the plan's five goals, like health access or behavioral health. Three: one of DHHS's thirteen divisions should already do this kind of work, so they could actually run it. Four: there has to be enough time to apply, because a state agency needs weeks for internal sign-off. And five: the money has to be worth the effort. Everything else in our system measures these five things.
 
-**Slide 3, The problem (0:39)**
+**Slide 3, The problem (1:31)**
 
-Nobody can read 1,662 listings, and keyword search gets fooled: 609 of 689 NIH research grants say states can apply, but they're built for universities. And a third of the listings haven't even opened yet.
+Here's why this is hard. First, 1,662 listings is far more than one person can read. Second, the obvious shortcut, searching for health keywords, gets fooled, because many grants sound relevant but aren't meant for a state agency. For example, 609 of the 689 NIH research grants list state governments as eligible, only because they list almost every type of applicant. They're really built for university researchers. Third, 559 listings, about a third, are forecasts: programs that have been announced but haven't opened yet. Most tools skip those, but they're the earliest warning you can get.
 
-**Slide 4, The whole funnel (0:54)**
+**Slide 4, The whole funnel (2:12)**
 
-Here's the system, with the bars to scale. Python rules cut 1,662 listings to 1,303. A fast AI called Jev cuts that to 283, about one in five. A stronger AI, DeepSeek, reads those closely. And a fixed formula picks the final 15.
+So we built a pipeline where each step has one job. The bars are drawn to scale. Step one, plain Python rules, removes listings that are objectively dead and leaves 1,303. Step two, a fast AI called Jev, screens all of those and keeps 283, about one in five. Step three, a stronger AI called DeepSeek, reads those 283 closely and writes evidence for each. Step four, a fixed formula, scores and ranks them, and gives us the final 15. The principle: plain code for facts, AI only where something needs to be read, and a transparent formula for the final decision.
 
-**Slide 5, Step 1: Python rules (1:12)**
+**Slide 5, Step 1: Python rules (2:56)**
 
-Step one is plain code, no AI. It removes only what's clearly dead: 330 closed, 12 archived, and 17 paperwork notices. It also scores two facts from zero to ten: time left to apply, and award size.
+Step one uses no AI at all, because things like whether a deadline has passed are facts, and we don't want an AI guessing at facts. The code removes only listings that are clearly dead: 330 that had already closed, 12 that were archived, and 17 that aren't real grants, just paperwork for transferring existing awards. Anything uncertain stays in. It also scores two facts from zero to ten. Deadline: a grant closing within a week scores near zero, because DHHS couldn't get sign-off in time, and one with two months or more scores ten. Award size uses a log scale, so a ten-million-dollar grant can't drown out a better-fitting one-million-dollar grant. It also cleans up junk data, like awards listed as 999,999,999 dollars.
 
-**Slide 6, Step 2: Jev screen (1:28)**
+**Slide 6, Step 2: Jev screen (3:49)**
 
-Step two is Jev, a small, fast AI from TypeSafe. Instead of writing paragraphs, it answers multiple-choice questions and says how confident it is. For each grant: is this DHHS's work, which goal, can DHHS apply, and which division owns it. It screened all 1,303 in about a minute for a few cents, and only set a grant aside when at least 85 percent sure. 283 moved on.
+Step two is Jev, an AI model from a company called TypeSafe. Jev is different from something like ChatGPT: it doesn't write paragraphs. You give it information and multiple-choice questions, and it picks an answer and tells you how confident it is in every option. That makes it fast and cheap: it screened all 1,303 grants in about a minute, for a few cents. We ask it four questions per grant: is this DHHS's kind of work, which strategic goal does it serve, can DHHS apply as lead or partner, and which division would own it. Since missing a good grant is worse than keeping a bad one, Jev only sets a grant aside when it's at least 85 to 95 percent sure. That removed 1,020 grants, almost all off-topic, and 283 moved on.
 
-**Slide 7, Step 3: DeepSeek review (1:57)**
+**Slide 7, Step 3: DeepSeek review (4:46)**
 
-Step three is DeepSeek, a large language model like ChatGPT. It's slower, about 30 seconds a grant, but reads each one in full. For all 283, it scores strategic fit and whether DHHS could run it, names the owning division, and writes the main risk and a reason. Every claim needs an exact quote, which our code checks: 282 of 283 matched.
+Step three is DeepSeek V4 Pro, a large language model similar to ChatGPT. Unlike Jev, it reasons in full sentences, so it's slower and costs more, about 30 seconds per grant, which is why it only reads the 283 that Jev kept. For each one, it reads the full description and eligibility rules. It scores how well the grant fits DHHS's goals and whether DHHS could realistically run it, names the division that would own it, and writes the biggest risk and a one-line reason for leadership. AI models can make things up, so we made DeepSeek back every claim with an exact quote from the grant, and our code checks each quote against the real text. 282 of 283 checked out, and any claim it can't prove gets downgraded automatically.
 
-**Slide 8, Step 4: Formula ranks (2:24)**
+**Slide 8, Step 4: Formula ranks (5:42)**
 
-Step four decides, and it's a formula, not AI: strategic fit 30 percent, can DHHS run it 25, and award size, deadline and eligibility 15 each. Title X scores a nine on one and tens on the rest: 97.5. That gives three lists: 33 open now, 116 opening soon, and 134 research grants for a university partner.
+Step four is where the decision actually happens, and it's a formula, not AI, so anyone can check how a score was made. Strategic fit counts 30 percent and whether DHHS can run the program counts 25, because those matter most to the coordinator. Award size, deadline and eligibility count 15 percent each. A few rules sit on top: a grant DHHS is proven ineligible for gets a zero, and a claim the AI couldn't back up with a quote loses points. Title X, for example, gets a nine on whether DHHS can run it and tens on everything else, which works out to 97.5 out of 100. Finally, the formula splits everything into three lists: 33 grants open right now, 116 opening soon, and 134 research grants that suit a university partner better than DHHS.
 
-**Slide 9, Result 1: apply now (2:48)**
+**Slide 9, Result 1: apply now (6:41)**
 
-The best open grant is Title X Family Planning, scoring 98. Public Health would own it, DHHS can lead, it's due January 11th with up to 22 million dollars, and NC DHHS has already won 14.7 million from this program.
+So what did we find? The best grant open right now is Title X Family Planning, scoring 98. It funds family planning services, a specific goal in the DHHS plan. The Division of Public Health would own it, and DHHS can apply as the lead, which we confirmed from the grant's own eligibility text. It's due January 11th and offers up to 22 million dollars. And federal spending records show NC DHHS has already won 14.7 million dollars from this same program, so it's a proven fit.
 
-**Slide 10, Result 2: prepare now (3:05)**
+**Slide 10, Result 2: prepare now (7:18)**
 
-The biggest money is opening soon. Four of the top five upcoming grants are programs NC DHHS has already won, about 275 million dollars in four years. Ryan White HIV care and Preschool Development may already be open, so check today.
+But the bigger opportunity is in grants that haven't opened yet. Four of our top five upcoming grants are programs NC DHHS has won before, together about 275 million dollars over the last four years. The biggest is Ryan White HIV care, at 187.6 million. Two of these, Ryan White and Preschool Development, had expected opening dates that have already passed, which means they may be open on Grants.gov right now. That's exactly the early warning that helps a state get there first.
 
-**Slide 11, Why not keyword search (3:23)**
+**Slide 11, Why not keyword search (7:54)**
 
-Why not keyword search? We tried it. It ranks Ryan White 670th and Title X 134th, and its top pick is a grant only tribes can apply for. Jev set that one aside with 99 percent confidence.
+You might ask why we didn't just search for keywords. We built that as a comparison, matching each grant's wording against the strategic plan. It ranks Ryan White, a 187-million-dollar DHHS program, at number 670, and Title X at 134, because their descriptions don't happen to use the plan's exact words. Worse, its number one result is a behavioral health program that only tribes can apply for. The words match perfectly, but DHHS can't apply. Jev caught that and set it aside with 99 percent confidence. That's why reading eligibility matters more than matching words.
 
-**Slide 12, How confident to be (3:39)**
+**Slide 12, How confident to be (8:34)**
 
-How much should you trust this? Our strongest check uses no AI: federal spending records. Grants Jev set aside came from programs that pay state agencies just 2 percent of the time; grants it kept, 25 percent. And 282 of 283 quotes were real, two AI models agreed on DHHS's role 87 percent of the time, and a small human check agreed.
+So how much should you trust this? We used four checks. The strongest uses no AI at all: we looked up federal spending records to see who has actually received money from each program over the last four years. Among grants Jev set aside, only 2 percent came from programs that regularly pay state agencies. Among grants it kept, 25 percent did. So the screen is keeping the right kind of grants. Second, 282 of 283 AI quotes were found word for word. Third, two different AI models agreed on DHHS's role 87 percent of the time. And fourth, a small hand-labeled check of 31 grants points the same way, though it's too small to prove anything on its own. Our honest advice: trust the watchlist the most.
 
-**Slide 13, Where the AI was wrong (4:05)**
+**Slide 13, Where the AI was wrong (9:29)**
 
-The AI did make mistakes, and we caught them. DeepSeek said DHHS would lead 73 university research grants, 7 of our first top 10. Jev disagreed, which flagged it, so a rule now moves research grants to their own list. DeepSeek once offered the single word 'states' as proof, and our check rejected it. And Meta's AI blocked us over HIV topics, so we switched.
+The AI did make mistakes, and here's how we caught them. First, DeepSeek said DHHS would lead 73 university research grants, just because state governments were listed as eligible. At one point, those filled 7 of our top 10. We caught it because Jev disagreed on every single one, and our system logs those disagreements. So we added a simple rule: grants with research codes, like R01, go to their own list. Second, DeepSeek once claimed DHHS could lead a grant and offered the single word 'states' as proof. Our quote check rejected that automatically. Third, Meta's AI model blocked our account entirely, because DHHS grants talk about HIV, STIs and overdoses. Our system can swap models with one setting, so we switched to DeepSeek. The lesson for DHHS: don't depend on a single AI vendor.
 
-**Slide 14, Three things to do this week (4:33)**
+**Slide 14, Three things to do this week (10:27)**
 
-This week: check Grants.gov for Ryan White and Preschool Development, send Title X to Public Health before January 11th, and pass the 134 research grants to a university partner. Our limits: August data, the 2023 to 2025 plan, and a small human check. Thank you.
+So here's what we recommend doing this week. First, check Grants.gov for Ryan White and Preschool Development, since they may already be open. Second, send Title X to the Division of Public Health before its January 11th deadline. Third, pass the 134 research grants to a university partner like UNC, who may want DHHS as a partner or data source. We also want to be upfront about our limits: the data is a snapshot from August, strategic fit is based on the 2023 to 2025 plan, and our human check was small. With more time, we'd run this automatically every week on live data and email the coordinator new matches. Thank you.
 
-*(spoken part ends about 4:52)*
+*(spoken part ends about 11:15)*
 
 ---
 
