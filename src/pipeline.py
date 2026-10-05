@@ -24,6 +24,7 @@ import keyword_baseline
 import report
 import scoring
 import semantic_triage
+import submission_table
 import validation
 
 
@@ -52,6 +53,8 @@ def main(mock: bool) -> None:
     if not mock:
         print("\n=== Layer 5: historical-award check (USAspending.gov, cached) ===")
         award_history.run()
+        print("\n=== Submission table ===")
+        submission_table.run()
 
     if not mock and validation.LABELS.exists():
         print("\n=== Layer 5: validation ===")
