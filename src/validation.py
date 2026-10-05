@@ -50,6 +50,17 @@ LABEL_COLUMNS = ["labeler_A_relevant", "labeler_A_role", "labeler_B_relevant", "
 YES, NO = {"y", "yes", "1", "true"}, {"n", "no", "0", "false"}
 
 
+def read_labels() -> pd.DataFrame:
+    """Read the labeling sheet. Excel often re-saves CSVs in the Windows code page instead of
+    UTF-8 (and may add a BOM), so try both rather than crash on a curly quote or en dash."""
+    for enc in ("utf-8-sig", "cp1252"):
+        try:
+            return pd.read_csv(LABELS, dtype=str, encoding=enc).fillna("")
+        except UnicodeDecodeError:
+            continue
+    return pd.read_csv(LABELS, dtype=str, encoding="latin-1").fillna("")
+
+
 # ── 1. Sampling ─────────────────────────────────────────────────────────────
 
 def draw_sample(features: pd.DataFrame, baseline: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
@@ -87,7 +98,7 @@ def write_sheet(sample: pd.DataFrame) -> pd.DataFrame:
 
 def cmd_sample(force: bool) -> None:
     if LABELS.exists() and not force:
-        existing = pd.read_csv(LABELS, dtype=str).fillna("")
+        existing = read_labels()
         if (existing[[c for c in LABEL_COLUMNS if c in existing]] != "").any().any():
             sys.exit(f"{LABELS} already has labels in it. Refusing to overwrite human work "
                      f"(use --force only if you really mean to).")
@@ -130,14 +141,19 @@ def cmd_spotcheck() -> None:
 # ── 3. Evaluation ───────────────────────────────────────────────────────────
 
 def _yn(v) -> float:
-    v = str(v).strip().lower()
+    # Accepts "Y", "yes", "(Y)", "(N, comment)" - labelers annotate in the cell.
+    v = str(v).strip().strip("()").split(",")[0].strip().lower()
     return 1.0 if v in YES else 0.0 if v in NO else np.nan
 
 
 def resolve_labels(labels: pd.DataFrame) -> tuple[pd.DataFrame, list[str]]:
     a, b, final = (labels[c].map(_yn) for c in ("labeler_A_relevant", "labeler_B_relevant", "final_relevant"))
-    resolved = final.where(final.notna(), a.where(a == b))
-    labels = labels.assign(label_A=a, label_B=b, relevant=resolved)
+    # Two labels: they must agree (or be adjudicated in final_relevant). One label: use it, and the
+    # report says it is single-labeler (agreement cannot be measured).
+    single = a.where(b.isna(), b.where(a.isna()))
+    resolved = final.where(final.notna(), a.where(a == b).where(a.notna() & b.notna(), single))
+    labels = labels.assign(label_A=a, label_B=b, relevant=resolved,
+                           single_labeler=(a.notna() ^ b.notna()) & final.isna())
     unresolved = labels.loc[a.notna() & b.notna() & (a != b) & final.isna(), "sample_id"].tolist()
     return labels, unresolved
 
@@ -182,7 +198,7 @@ def fmt(x) -> str:
 
 
 def cmd_evaluate() -> None:
-    labels, unresolved = resolve_labels(pd.read_csv(LABELS, dtype=str).fillna(""))
+    labels, unresolved = resolve_labels(read_labels())
     if unresolved:
         print(f"WARNING: labelers disagree on {len(unresolved)} grants with no final_relevant: "
               f"{', '.join(unresolved)}. They are excluded until adjudicated.")
@@ -192,9 +208,15 @@ def cmd_evaluate() -> None:
     if df.empty:
         sys.exit("No resolved labels yet - fill in labels.csv first.")
 
+    n_single = int(df["single_labeler"].sum())
     lines = ["# Validation report", "",
              f"Labeled and resolved: **{len(df)}** grants "
              f"({len(unresolved)} awaiting adjudication). Label = 'the coordinator should spend time on this'.", ""]
+    if n_single:
+        lines += [f"> **{n_single} of {len(df)} labels come from a single labeler** (a team member, not a grants "
+                  "expert), so labeler agreement cannot be measured and the labels themselves are uncertain. "
+                  "With this few labels, the intervals below are wide; read them as a first check, not a "
+                  "measurement.", ""]
     kappa = cohen_kappa(labels["label_A"], labels["label_B"])
     both = labels["label_A"].notna() & labels["label_B"].notna()
     agree = (labels.loc[both, "label_A"] == labels.loc[both, "label_B"]).mean() if both.any() else np.nan

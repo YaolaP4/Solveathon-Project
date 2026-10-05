@@ -1,103 +1,99 @@
-# Presentation notes: 5-minute recorded video to NCDHHS leadership
+# Presentation notes: 5-minute recorded video to NC DHHS leadership
 
-Every number below comes from the committed results (`data/results/`, `docs/layer1_report.md`, `data/results/ai_error_log.csv`) as of the 2026-10-02 run. If you rerun the pipeline, recheck the numbers before recording. **Don't round up, and don't claim anything in the "not measured yet" box.** The rubric rewards honest evaluation over claimed perfection.
+Every number here comes from committed outputs, as of the 2026-10-05 run. Sources: `data/results/top_results.md`, `award_history_report.md`, `validation_report.md`, `ai_error_log.csv`, and `docs/layer1_report.md`. **If you rerun anything, recheck the numbers before recording. Don't round up, and don't claim more than is written here.** The rubric rewards an honest evaluation over claimed perfection.
 
 Audience: a **non-technical budget director**. Lead with what to do, then why to trust it. Keep the technology to one slide.
 
 ---
 
-## The headline numbers
+## 1. Who the user is and what "good" means (0:00–0:40)
 
-| What | Number | Source |
-|---|---|---|
-| Federal grant listings in the starter dataset | **1,662** | `data/raw/grants.csv` |
-| Removed by objective rules (closed before Sept 30, archived, or administrative transfer notices) | **359** | `docs/layer1_report.md` |
-| Screened by AI (Jev), in about a minute | **1,303** | `jev_outputs.csv` |
-| Sent to in-depth AI review | **283** | `jev_outputs.csv` |
-| Analyzed in depth with quoted evidence (DeepSeek V4 Pro) | **270** | `deep_analysis.csv` |
-| Final lists: open program grants / forecast watchlist / research partnerships | **28 / 112 / 130** | `ranked_grants.csv`, `watchlist.csv`, `research_partnerships.csv` |
-| Evidence quotes that checked out word-for-word against the grant text | **269 of 270** (strategic), **267 of 270** (eligibility) | `deep_analysis.csv` |
-| Total AI cost for the whole run | **$3.23** (about a quarter of a cent per grant) | Vercel AI Gateway usage |
-| Time to reproduce the entire ranking from saved answers | **6 seconds, $0, no API key** | `python src/pipeline.py` |
-| Automated tests | **65** | `python -m pytest tests -q` |
+- **User:** the NC DHHS federal-grants coordinator. Every week they decide which new federal postings deserve a division's time, and route each one to the division that would own it.
+- **A good match for DHHS**, from the DHHS 2023–2025 Strategic Plan (`agency/agency_profile.md`):
+  1. DHHS can **lead or be a named partner**: eligibility is a gate.
+  2. It advances a **named strategic-plan goal** (health access, child & family well-being, behavioral health, workforce, operational excellence).
+  3. A **DHHS division already does this work** and could run it.
+  4. There's **realistic time to apply**.
+  5. The **award is worth the effort**: cost share flagged, award size on a log scale so a giant award can't drown out a better fit.
 
-## Results to show (slide 2)
+## 2. The problem (in one sentence)
+
+Grants.gov posts hundreds of opportunities a week, and the starter data alone has **1,662**. Nobody can read them all, and money goes to the states that find the right postings first.
+
+## 3. What we found: say this first (0:40–1:40)
 
 **Apply now (open):**
-1. **Title X Family Planning Services**: 98/100. Division of Public Health, child and family well-being goal. Up to $22M per award, 103 days to apply. Main risk: the FY27 amount depends on the federal budget.
+- **Title X Family Planning Services**: 98/100. Division of Public Health. Up to $22M per award, 103 days to apply. **NC DHHS has won $14.7M under this program in FY2022–25** (USAspending.gov).
 
-**Prepare now (forecast watchlist), where most of the high-value money is:**
-1. **Ryan White HIV/AIDS Part B + AIDS Drug Assistance Program**: 96/100. Public Health. *The forecast post date has passed, so it may already be open: check Grants.gov today.*
-2. **Maternal, Infant & Early Childhood Home Visiting (MIECHV)**: 96/100. Child and Family Well-Being.
-3. **Preventing Infectious Disease Consequences of Drug Use**: 94/100. Public Health, opioid goal.
-4. **Preschool Development Grant B-5**: 94/100. Child Development & Early Education. *May already be open.*
+**Prepare now (forecast watchlist), where most of the proven money is:**
 
-Say plainly: *"As of September 30, most of the strongest DHHS opportunities are forecasts, not open listings. Many state programs closed between the August data pull and today, so the watchlist is where the advance warning matters."* That's the challenge story ("money goes to states that found the posting first") backed by our data.
+| Forecast grant | Score | Owner | NC DHHS awards FY2022–25 |
+|---|---|---|---|
+| Ryan White HIV/AIDS Part B + AIDS Drug Assistance Program | 96 | Public Health | **$187.6M** |
+| Maternal, Infant & Early Childhood Home Visiting (MIECHV) | 96 | Child & Family Well-Being | **$21.1M** |
+| Preventing Infectious-Disease Consequences of Drug Use | 94 | Public Health | — |
+| Preschool Development Grant Birth–5 | 94 | Child Development & Early Ed | **$36.3M** |
+| National HIV Behavioral Surveillance | 93 | Public Health | **$30.2M** |
 
-## The one comparison that sells the method (slide 3)
+Action line for leadership: *"Ryan White Part B and Preschool Development B-5 had forecast post dates that have already passed. They may be open on Grants.gov right now. Check today."*
 
-A keyword search (matching grant text against the strategic plan) is what most people would build. We built it as a baseline:
+Say plainly: *"As of September 30, most programs DHHS traditionally wins are forecasts rather than open listings. Many closed between the August 18 data pull and now. That's why the watchlist matters: it's the advance warning."*
 
-- Keyword search ranks **Ryan White HIV Part B, a core DHHS formula grant for HIV care, #670 of 1,303**. **Our system ranks it #1 on the watchlist.**
-- Keyword search ranks **Title X at #134**. **Ours ranks it #1 overall.**
-- Keyword search's **#1 result is an Indian Health Service program DHHS cannot apply for**: it's limited to tribes and tribal organizations. Jev set it aside with 99% confidence.
-- Of the keyword method's top 20, Jev set aside 6. **All 6 were correct**: 4 programs limited to tribes, tribal or urban Indian organizations, and 2 NIH research programs (one limited to existing award holders).
+## 4. How the matching works, in plain language (1:40–2:30)
 
-The point for leadership: *matching words isn't the same as matching opportunities. Eligibility decides whether a grant is real for DHHS.*
+1. **Rules first, no AI.** Remove what's objectively dead: 330 already closed, 12 archived, and 17 administrative paperwork notices. Score deadline and award size with fixed formulas. **1,303 grants remain.**
+2. **Fast AI screen (Jev).** Four multiple-choice questions per grant: is this DHHS's kind of work, which goal, can DHHS lead or partner, which division? Jev gives a **probability** for every answer. A grant is set aside **only when Jev is very confident** it's irrelevant or ineligible; anything uncertain goes to the next step. Result: **283** go on, **1,020** set aside (kept, not deleted).
+3. **Careful AI review (DeepSeek V4 Pro).** For each of the 283 it writes the reasons, and **it must quote the grant text word-for-word**. Python checks every quote; a claim we can't find is downgraded. **270** analyzed.
+4. **A published formula ranks.** Strategic fit 30%, ability to run it 25%, award size 15%, deadline 15%, eligibility 15%. **The AI never ranks anything**; every score can be traced. Research grants (NIH-style R01s and similar) go to a separate "forward to a university partner" list.
 
-## How it works, in plain language (slide 4; keep to about 45 seconds)
+Cost and reproducibility: **$3.23 of AI spend in total.** All answers are saved, so `python src/pipeline.py` **reproduces the whole thing in about 11 seconds, with no API key and no cost.** 71 automated tests.
 
-1. **Rules first, no AI.** Remove what is objectively dead: closed, archived, or administrative paperwork notices. Score deadlines and award size with fixed formulas.
-2. **Fast AI screen (Jev).** Four multiple-choice questions per grant: is this DHHS's kind of work? which goal? can DHHS lead or partner? which division owns it? Jev gives a **probability** for each answer, and a grant is only set aside when Jev is very confident. Anything uncertain goes on to the next step.
-3. **Careful AI review (DeepSeek).** For the ~280 survivors it writes the reasons and **must quote the grant text word-for-word**. Python checks every quote; a claim we can't find in the text is downgraded.
-4. **A published formula ranks** (strategic fit 30%, ability to run it 25%, award size 15%, deadline 15%, eligibility 15%). **The AI never ranks anything.** Every score can be traced and explained.
+## 5. How confident to be, and why (2:30–3:30)
 
-## How confident to be, and where the AI was wrong (slide 5; required by the rubric)
+Four independent checks, each with its real number:
 
-**Evidence it works:**
-- 269 of 270 strategic quotes, and 267 of 270 eligibility quotes, are found word-for-word in the grant text.
-- Two different AI models (Muse Spark, before it was blocked, and DeepSeek) agreed on DHHS's role for **87%** of the 60 grants both analyzed, and on the owning division for **95%**.
-- Every grant Jev set aside from the keyword method's top 20 was correctly set aside.
+1. **History: does DHHS actually win these programs?** (USAspending.gov, no AI.) We checked who received awards under each grant's federal program listing in FY2022–25.
+   - **Watchlist top 5: 4 of 5 are programs NC DHHS has won** ($187.6M, $36.3M, $30.2M, $21.1M).
+   - **Open top 10: only 1 of 10** (Title X). Say this honestly: the open list is thinner, and #2 (Public Health Crisis Response) is a new emergency roster with no award history.
+   - Grants Jev set aside had a state-agency award history **2%** of the time; grants it sent on, **25%**. That's independent evidence the screen is sorting in the right direction.
+2. **Evidence:** **269 of 270** strategic quotes and **267 of 270** eligibility quotes are found word-for-word in the grant text.
+3. **Two AI models agree:** Muse Spark (before Meta blocked it) and DeepSeek agreed on DHHS's role for **87%** and on the owning division for **95%** of the **60** grants both analyzed.
+4. **Human labels vs. keyword search:** a teammate blind-labeled **31** sampled grants (8 relevant). Jev kept **93%** of the relevant ones (95% interval **67–100%**). A keyword search given the same review budget kept **71%** (33–100%).
+   - **Be honest about it:** 31 labels from one non-expert, and the intervals overlap, so this is *promising, not proof*. Jev's only "miss" was a CDC global-health program in **Ethiopia**, which a coordinator could reasonably skip.
 
-**Where the AI was wrong, and how we caught it (pick one for the video):**
-1. **The research-grant mistake.** The in-depth model labeled **71 NIH research grants** (R01s, clinical trials) as ones DHHS would *lead*, because "state governments" appear on their eligibility list. Our first top 10 had **7 research grants** in it. We caught it because Jev, which was given clear definitions of each role, labeled **none** of those as DHHS-led, and the disagreement log flagged it. Fix: an objective rule (the NIH activity code in the title, like "R01") moves these to a separate *research partnerships* list for university partners.
-2. **The fake-evidence guardrail.** For "Partnership for Disaster Health Response System" the model claimed DHHS would lead and cited the single word *"states"* as proof. Our verifier rejects quotes that short, so the role was downgraded to "unclear" automatically.
-3. **The AI vendor that blocked us.** Meta's model blocked our account for "policy violations" partway through, because DHHS grants discuss HIV, STIs, sexual violence and overdoses. We tested three replacements on the most sensitive grants and switched in one setting. **Lesson for DHHS: don't build on a single AI vendor.**
+**The keyword comparison that sells the method:**
+- Keyword search ranks **Ryan White Part B #670 of 1,303** and **Title X #134**. Ours ranks them **#1 on the watchlist** and **#1 overall**.
+- Keyword search's **#1 result** ("Behavioral Health Integration Initiative") is an **Indian Health Service program only tribes can apply for**. Jev set it aside with 99% confidence. Of the keyword top 20, Jev set aside 6, and **all 6 were correctly set aside** (4 for tribes or urban Indian organizations, 2 NIH research programs).
 
-**Not measured yet (don't claim these until the labels are done):**
-- Recall: the share of truly relevant grants the system keeps. This needs the 90-grant blind labeling sheet (`data/validation/labels.csv`). After labeling, run `python src/validation.py evaluate`; it reports recall with a confidence interval and lists every grant Jev wrongly set aside.
+## 6. Where the AI was wrong, and how we caught it (3:30–4:15)
 
-## One known limitation (required)
+Pick one or two for the video (all in `docs/failure_modes.md`):
 
-Pick one and say it plainly:
-- **The strategic plan is from 2023–2025.** "Strategic fit" means fit with that plan, which may lag 2026 priorities.
-- **The data is a snapshot from August 18.** New postings since then aren't included; in production this would pull from Grants.gov weekly.
-- **AI judgment of "can DHHS realistically run this"** is the least reliable score. That's why it has evidence checks and is only 25% of the formula.
+1. **The research-grant mistake (F7).** DeepSeek labeled **71 research grants** (NIH R01s, clinical trials) as ones DHHS would *lead*, because "state governments" appear on their eligibility lists. **7 of our first top 10** were NIH research awards. **Caught by:** Jev labeled *none* of them DHHS-led, and the disagreement log flagged it. **Fix:** an objective rule (the research code in the title, like "R01") moves them to a separate research-partnerships list.
+2. **Fake-evidence guardrail.** For "Partnership for Disaster Health Response System" the model claimed DHHS would lead and cited the single word *"states"* as proof. The verifier rejected it, and the role became "unclear" automatically.
+3. **An AI vendor blocked us (F6).** Meta's Muse Spark blocked our account for "policy violations" after 62 grants, because DHHS grants discuss HIV, STIs, sexual violence and overdoses. We tested three replacements on the most sensitive grants and switched in one setting. **Lesson for DHHS: don't depend on a single AI vendor.**
+4. **Two checks disagreed, and reading settled it (F9).** The award-history check flagged a Ryan White Part B notice that Jev had set aside, under a program where NC DHHS won $187.6M. Reading the notice showed it's the **Pacific Islands territories-only** version, so Jev was right. History is per program, not per notice, which is why we keep both checks.
 
-## What we'd build with more time
+## 7. Limitations (pick one to say out loud)
 
-- A **weekly automatic run** against the live Grants.gov feed, emailing the coordinator the new top 5 and any watchlist item that just opened.
-- **Feedback from the coordinator** ("applied", "not for us") to tune the weights.
-- Give the in-depth model the same role definitions Jev has, and re-run (about $3).
-- Use **two AI vendors in parallel**, so one vendor blocking us can't stop the pipeline.
+- **The human labels are thin:** 31 grants, one team member, not grant experts. Recall intervals are wide.
+- **The strategic plan is 2023–2025.** "Strategic fit" means fit with that plan, which may lag 2026 priorities.
+- **The data is a snapshot from 2026-08-18.** Anything posted since isn't included.
+- **Coverage gap:** 13 low-priority grants weren't deep-analyzed, because the API key's spending cap was reached.
+
+## 8. What we'd build with more time (4:15–5:00)
+
+- A **weekly automatic run** on the live Grants.gov feed, emailing the coordinator the new top 5 and any watchlist item that just opened.
+- Use **award history as a scoring input** (a bonus for programs states actually win), not only as a check.
+- **Expert labels** from a real DHHS grants officer, with two labelers per grant, so recall becomes a measurement rather than a first check.
+- **Two AI vendors in parallel**, so a vendor block can't stop the pipeline. Also give the deep-review model the same role definitions Jev has.
 
 ---
 
-## Suggested 5-minute script
-
-| Time | Slide | Say |
-|---|---|---|
-| 0:00–0:40 | Problem & user | "Every week Grants.gov posts hundreds of opportunities. Our user is the DHHS federal-grants coordinator, who has to decide which ones are worth a division's time and route them. A good match for DHHS means: DHHS can lead or partner, it advances a strategic-plan goal, a division already does this work, there is time to apply, and the award is worth the effort." |
-| 0:40–1:40 | Results | Title X; the watchlist (Ryan White Part B, MIECHV, PDG B-5); "check Ryan White and PDG B-5 on Grants.gov now, they may already be open." |
-| 1:40–2:30 | Why not keyword search | The #670 vs #1 comparison, and keyword search's #1 being a program only tribes can apply for. |
-| 2:30–3:15 | How it works | The 4 steps; "AI gives evidence, a published formula ranks." |
-| 3:15–4:15 | Confidence & failure | 269/270 verified quotes; 87% cross-model agreement; the research-grant mistake and how we caught it; recall if labeled by then. |
-| 4:15–5:00 | Limitation & next | 2023–25 plan; weekly live run; it reproduces in 6 seconds for $0, about a quarter of a cent per grant. |
-
 ## Rubric checklist
 
-- **Understanding:** user = DHHS federal-grants coordinator; 5 criteria taken from the DHHS plan (`agency/agency_profile.md`). The criteria drive the formula and the AI questions directly.
-- **Framing:** decision support, not decision replacement; "open now" vs "prepare" vs "research partner" are three different actions.
-- **Solving:** reproducible (one command, cached, 6 s), 65 tests, objective rules wherever possible, and AI only where reading is required.
-- **Evaluating:** keyword baseline comparison, verified evidence, cross-model agreement, an AI error log, 8 documented failures (`docs/failure_modes.md`), and recall from blind labels once they're done.
-- **Driving impact:** the top-results list (`data/results/top_results.md`) gives a one-line reason, owner, deadline and main risk per grant, plus "check Grants.gov now" flags.
+- **Understanding:** a specific user (the DHHS federal-grants coordinator) and 5 criteria from the DHHS plan, which directly drive the AI questions and the formula.
+- **Framing:** decision support with three actions: apply now, prepare (watchlist), forward to a research partner.
+- **Solving:** reproducible (one command, about 11 s, $0 rerun), objective rules wherever possible, AI only where reading is required, 71 tests.
+- **Evaluating:** award history (independent and objective), verified quotes, cross-model agreement, blind labels with intervals, a keyword baseline, an AI error log, and 10 documented failures.
+- **Driving impact:** each grant comes with a one-line reason, owner, deadline, main risk and "check Grants.gov now" flags (`data/results/top_results.md`).

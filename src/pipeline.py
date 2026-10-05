@@ -4,8 +4,8 @@
     python src/pipeline.py --mock   # dry run with fake model answers (data/results/mock/)
 
 Order: Layer 0 clean -> Layer 1 features -> keyword baseline -> Layer 2 Jev triage
--> Layer 3 deep analysis -> Layer 4 scoring -> top-results report -> validation
-report (if labels exist).
+-> Layer 3 deep analysis -> Layer 4 scoring -> top-results report -> historical-award
+check (USAspending) -> validation report (if labels exist).
 
 With every model response committed under data/cache/, a real run makes no API
 calls and needs no key: the same raw data + config + prompts + cache always give
@@ -15,6 +15,7 @@ the same ranking.
 import argparse
 import sys
 
+import award_history
 import clean_data
 import config
 import deep_analysis
@@ -47,6 +48,10 @@ def main(mock: bool) -> None:
     scoring.run(mock=mock)
     print("\n=== Report ===")
     report.run(mock=mock)
+
+    if not mock:
+        print("\n=== Layer 5: historical-award check (USAspending.gov, cached) ===")
+        award_history.run()
 
     if not mock and validation.LABELS.exists():
         print("\n=== Layer 5: validation ===")

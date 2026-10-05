@@ -75,6 +75,26 @@ What tradeoff the fix introduced:
 - **Pipeline change:** Layer 1 hard-filters them (`administrative_award_transfer_notice`). The test pins the count at 17.
 - **Tradeoff:** None for a grants coordinator; nobody can win new money through these notices.
 
+## F9. Two independent checks disagreed: Jev vs. the historical-award check (Jev was right)
+
+- **Observed:** The USAspending check (`data/results/award_history_report.md`) flagged **24** grants Jev set aside as having "state-agency award history", which made them possible false negatives. The most striking one is **"HIV Care Grant Program - Part B … Pacific Islands Jurisdictions" (HRSA-27-064)**: Jev rated it *strong* relevance but *ineligible* (p = 0.94), while NC DHHS received **$187.6M** under its assistance listing (93.917) in FY2022–25.
+- **Why they disagree:** An assistance listing is shared by every funding notice under it. HRSA-27-064 is the Pacific-territories version of Ryan White Part B; its eligibility text reads "Domestic territories, and freely associated states". NC's own version, HRSA-27-063, is #1 on our watchlist. **Jev read the notice correctly; the listing-level history could not tell the two notices apart.**
+- **The other 23, from titles and eligibility:** the NIH/CDC/FDA small-business (SBIR) parent notice, which spans 41 listings; two tribal-only programs; three research programs (NIOSH mining robotics, a mesothelioma tissue bank, World Trade Center research careers); and 17 programs outside DHHS's field that states do win (Gulf RESTORE Act, conservation, outdoor recreation, invasive species, urban forestry, specialty crops, battlefield land, defense research, construction technology, specialized education). **None looked like a genuine DHHS miss.**
+- **How detected:** Building the historical-award check and comparing it against Layer 2's routing, then reading the eligibility text of each flagged grant.
+- **Pipeline change:** None to the ranking. The report carries the caveat that history is per listing, not per notice, and marks grants spanning more than 3 listings.
+- **Tradeoff / lesson:** The award history is a useful *objective* signal: grants Jev set aside had state-agency history **2%** of the time, against **25%** for grants it sent on. But it can't replace reading the specific notice.
+
+## F10. Most of the "apply now" list isn't money DHHS has won before
+
+- **Observed:** Of our **top 10 open** grants, only **1** (Title X, $14.7M to NC DHHS in FY2022–25) has a history of awards to NC DHHS. #2 (Public Health Crisis Response) has no awards at all in FY2022–25: it's a new roster mechanism that pays only during emergencies. Of the **top 5 watchlist** grants, **4** do: Ryan White Part B $187.6M, Preschool Development B-5 $36.3M, HIV Behavioral Surveillance $30.2M, MIECHV $21.1M.
+- **Why:** Most of the state programs DHHS traditionally wins either closed between the August 18 data pull and September 30, or are forecasts. The open list is what's left.
+- **How detected:** The historical-award check (USAspending.gov), an objective source that's independent of both AI models.
+- **Pipeline change:** None yet. With more time, award history could become a scoring input (for example, a bonus for programs states actually win). It's deliberately kept as validation here, so the check stays independent of the ranking it checks.
+
+## Label uncertainty (validation)
+
+- The first 31 labels come from **one team member, not a grants expert** (`data/validation/labels.csv`, labeler A). Jev's only "miss" among them, *"Expanding global health security through local partnerships in Ethiopia"* (labeled relevant), is arguably a labeling call rather than a model error: it's an overseas CDC program. We kept the label as given. Recall numbers from 8 relevant grants have wide intervals and should be read as a first check.
+
 ---
 
 ## More model failures (add from the labeled sample once it is done)

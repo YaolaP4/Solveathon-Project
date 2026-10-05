@@ -259,5 +259,22 @@
     "rolling_deadline_penalty_points": 2,
     "rolling_funds_limited_penalty_points": 0,
     "unverified_strategic_evidence_penalty_points": 5
+  },
+  "layer5_award_history": {
+    "_comment": "Objective, non-AI check using USAspending.gov: who actually received grant awards (block, formula, project grants, cooperative agreements) under each grant's assistance listings in recent fiscal years. Answers 'is this a program state agencies like DHHS actually win', not strategic fit. Recipient classes come from name rules in src/award_history.py because USAspending's own recipient-type tags are incomplete (e.g. ALN 93.917: NC DHHS received $187.6M by name, but only $91.2M is tagged as state government). NC DHHS counts as a past recipient only above nc_dhhs_min_usd in total, so a tiny award under a broad shared listing does not count as evidence.",
+    "start_date": "2021-10-01",
+    "end_date": "2025-09-30",
+    "fiscal_years_label": "FY2022-FY2025",
+    "award_type_codes": [
+      "02",
+      "03",
+      "04",
+      "05"
+    ],
+    "national_recipient_pages": 2,
+    "state_agency_share_threshold": 0.25,
+    "majority_share": 0.5,
+    "min_classified_coverage": 0.5,
+    "nc_dhhs_min_usd": 100000
   }
 }

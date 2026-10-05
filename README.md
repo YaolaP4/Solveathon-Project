@@ -2,6 +2,16 @@
 
 > ## 📌 Update log — read this first
 >
+> ### 2026-10-05: Historical-award check, first labels, final notes (Pavan)
+>
+> - **New Layer 5 check: `src/award_history.py`** (USAspending.gov, no AI). For each grant's assistance listings, it reports who actually received awards in FY2022–25: NC DHHS, other state agencies, universities, tribes, or nonprofits. Recipients are classified by name rules, because USAspending's own type tags miss a lot. All 816 API responses are cached in `data/cache/usaspending/`. Report: [`data/results/award_history_report.md`](data/results/award_history_report.md).
+>   - Top 5 watchlist: **4 of 5** are programs NC DHHS has won (Ryan White Part B $187.6M, PDG B-5 $36.3M, HIV Behavioral Surveillance $30.2M, MIECHV $21.1M). Top 10 open: **1 of 10** (Title X, $14.7M).
+>   - Grants Jev set aside had state-agency award history **2%** of the time, against **25%** for grants it sent on. The 24 flagged set-asides were inspected one by one (F9): none is a genuine DHHS miss.
+> - **First labels:** 31 grants labeled by Mayank (one labeler, Y/N in column A). Jev recall **93%** (95% CI 67–100%) vs. keyword baseline **71%** (33–100%) at the same review budget. That's promising, not proof. `validation.py` now reads annotated labels like "(N, comment)" and single-labeler sheets, and survives Excel re-encoding.
+> - **Clarification:** on 10-05 the local folder *looked* reverted (Muse model, missing DeepSeek docs). Nothing was reverted: the 10-02 `git pull` had been blocked while `labels.csv` was open in Excel. Pulling restored it.
+> - **Still open:** 13 low-priority grants need a higher API-key spending cap to finish Layer 3 (about $0.20). A second labeler would let us measure agreement.
+> - **Presentation:** [`docs/presentation_notes.md`](docs/presentation_notes.md), rewritten with the final, traced numbers. `python src/pipeline.py` reruns everything, including both validation reports, in about 11 s with no API key.
+>
 > ### 2026-10-02: First real run; results, presentation notes, and fixes the results exposed (Pavan)
 >
 > **Results:** [`data/results/top_results.md`](data/results/top_results.md). **Presentation script and numbers:** [`docs/presentation_notes.md`](docs/presentation_notes.md). **Failures:** [`docs/failure_modes.md`](docs/failure_modes.md) (F1–F8).
@@ -219,6 +229,7 @@ solveathon-grants/
 │   ├── scoring.py                ✅  Layer 4 deterministic ranking
 │   ├── keyword_baseline.py       ✅  Layer 5 baseline
 │   ├── validation.py             ✅  Layer 5: sample / spotcheck / evaluate
+│   ├── award_history.py          ✅  Layer 5: USAspending historical-award check (cached)
 │   ├── report.py                 ✅  top_results.md
 │   ├── clients.py                ✅  Jev + Layer 3 chat-model API clients (+ mock clients)
 │   ├── llm_cache.py              ✅
