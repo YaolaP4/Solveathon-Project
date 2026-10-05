@@ -1,6 +1,6 @@
 # Recording script: 5 minutes or less, addressed to NC DHHS leadership
 
-A recording of **5 minutes or less** is preferred (a PowerPoint is accepted instead). Read the text below as written: **1103 words, about 7.9 minutes** at a calm 140 words per minute (about 7.1 at a normal pace). It is identical to each slide's speaker notes. Extra numbers for questions: `slide_guide.md` and `docs/team_briefing.md`.
+A recording of **5 minutes or less** is preferred (a PowerPoint is accepted instead). Read the text below as written: **979 words, about 7.0 minutes** at a calm 140 words per minute (about 6.3 at a normal pace). It is identical to each slide's speaker notes. Extra numbers for questions: `slide_guide.md` and `docs/team_briefing.md`.
 
 ## How to record (no paid tools needed)
 
@@ -47,25 +47,25 @@ So what did we find? The best grant open right now is Title X Family Planning, s
 
 **Slide 9, Result 2: prepare now (4:58)**
 
-The bigger opportunity is in grants that haven't opened yet. Four of our top five upcoming grants are programs NC DHHS has won before, about 275 million dollars over four years, led by Ryan White HIV care at 187.6 million. Ryan White and Preschool Development had expected opening dates that have already passed, so they may be open on Grants.gov right now.
+The bigger money is in grants that haven't opened yet. Four of our top five are programs NC DHHS has already won, about 275 million dollars over four years, led by Ryan White HIV care. And two of them may already be open on Grants.gov.
 
-**Slide 10, Why not keyword search (5:25)**
+**Slide 10, Why not keyword search (5:18)**
 
-So why not just search for keywords? We built that as a comparison. It ranks Ryan White 670th and Title X 134th, because their descriptions don't happen to use the plan's exact words. And its number one pick is a behavioral health program that only tribes can apply for. The words match perfectly, but DHHS can't apply. Jev set it aside with 99 percent confidence. Reading eligibility beats matching words.
+Why not just search for keywords? We tried that as a comparison. It ranks Ryan White 670th, and its top pick is a program only tribes can apply for: the words match, but DHHS can't apply. Jev set that one aside. Reading eligibility beats matching words.
 
-**Slide 11, How confident to be (5:55)**
+**Slide 11, How confident to be (5:37)**
 
-How much should you trust this? Our strongest check uses no AI: federal spending records on who actually received money from each program. Among grants Jev set aside, only 2 percent came from programs that regularly pay state agencies. Among grants it kept, 25 percent did, so the screen keeps the right kind of grants. On top of that, 282 of 283 quotes were real, two different AI models agreed on DHHS's role 87 percent of the time, and a small hand-labeled check of 31 grants points the same way. Our advice: trust the watchlist most.
+How much should you trust this? Our strongest check uses no AI: federal spending records. Grants Jev set aside came from programs that pay state agencies only 2 percent of the time, versus 25 percent for the ones it kept. And 282 of 283 quotes were real, and two AI models agreed 87 percent of the time. Our main limitation: our hand-labeled check was small, just 31 grants.
 
-**Slide 12, Where the AI was wrong (6:36)**
+**Slide 12, Where the AI was wrong (6:06)**
 
-The AI did make mistakes, and here's how we caught them. DeepSeek said DHHS would lead 73 university research grants, just because states were listed as eligible, and at one point they filled 7 of our top 10. Jev disagreed on every one, so we caught it and added a rule that moves research grants to their own list. DeepSeek also once offered the single word 'states' as proof, and our quote check rejected it. And Meta's AI blocked our account over HIV and overdose topics, so we switched models with a single setting.
+The AI did make mistakes, and we caught them. DeepSeek said DHHS would lead 73 university research grants, filling 7 of our top 10. Jev disagreed, which flagged it, so a rule now moves research grants to their own list. DeepSeek once used the single word 'states' as proof, and our quote check rejected it. And Meta's AI blocked us over HIV topics, so we switched models.
 
-**Slide 13, Three things to do this week (7:16)**
+**Slide 13, Three things to do this week (6:35)**
 
-So this week, we recommend three things. Check Grants.gov for Ryan White and Preschool Development, since they may already be open. Send Title X to Public Health before January 11th. And pass the 134 research grants to a university partner like UNC. Our limits: the data is from August, strategic fit is based on the 2023 to 2025 plan, and our human check was small. With more time, we'd run this every week on live data and email the coordinator new matches. Thank you.
+So here are three things we think NC DHHS should do. Check Grants.gov for Ryan White and Preschool Development, which may already be open. Send Title X to Public Health before January 11th. And pass the 134 research grants to a university partner. With more time, we'd run this every week on live data. Thank you.
 
-*(spoken part ends about 7:52)*
+*(spoken part ends about 6:59)*
 
 ---
 

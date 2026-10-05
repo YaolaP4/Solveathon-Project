@@ -45,7 +45,7 @@ It also cleans fake numbers like "$999,999,999".
 ### 8. Result 1: apply now
 **Means:** the best grant open today is **Title X Family Planning** (98/100). Public Health would own it, DHHS can lead (verified from the grant text), it's due 11 January 2027 with up to $22M, and federal records show NC DHHS already won $14.7M under it.
 
-### 9. Result 2: prepare now (watchlist table)
+### 9. The biggest money is opening soon (watchlist table)
 **Means:** the biggest opportunities are **forecasts**, grants announced but not yet open. 4 of the top 5 are programs NC DHHS has already won (about $275M combined in FY2022–25). Two (Ryan White HIV Part B and Preschool Development B-5) had forecast open dates that have passed, so they may be live now.
 
 ### 10. Why not just keyword search? (comparison table)
@@ -66,10 +66,10 @@ It also cleans fake numbers like "$999,999,999".
 2. DeepSeek once used the single word "states" as proof. Our quote check rejected it.
 3. Meta's AI blocked us because DHHS grants mention HIV and overdoses, so we switched to DeepSeek.
 
-### 13. Three things to do this week (the last slide)
-**Means:** what leadership should actually do after watching.
-1. **Check Grants.gov today** for Ryan White Part B and Preschool Development B-5, which may already be open.
-2. **Send Title X to the Division of Public Health**: it's due 11 January.
-3. **Pass the research grants to a university partner** (like UNC): DHHS can't lead those, but a university might want DHHS as a partner or data source.
+### 13. Three things we think NC DHHS should do (the last slide)
+**Means:** our recommendation, as three actions:
+1. **Check Grants.gov now** for Ryan White Part B and Preschool Development B-5, which may already be open.
+2. **Apply for Title X** through the Division of Public Health (due 11 January 2027, up to $22M).
+3. **Share the research list** (134 grants) with a university partner, since DHHS can't lead those itself.
 
-The two small boxes are the **limits** of this version (August data, the 2023–2025 plan, a small human check) and **what we'd build next** (a weekly automatic run on live data, using award history in the score, labels from real grants experts).
+One line at the bottom covers what we'd build with more time (a weekly run on live data that emails the coordinator new matches). The competition requires one known limitation and a "with more time" item: the limitation (our small hand-labeled check) is said on slide 11, and the "more time" item is here.
