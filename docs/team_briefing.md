@@ -39,7 +39,7 @@ Plain code handles anything that's a **fact**:
 *Why no AI here?* Facts like "is the deadline past?" shouldn't depend on an AI that might get them wrong.
 
 ### Step 2: Jev, the fast screen. 1,303 → 283
-Jev is a cheap, fast AI that answers **multiple-choice questions** and says how confident it is. For every grant it answers four:
+Jev is a small, fast *decision* model from TypeSafe AI. Unlike ChatGPT-style models it doesn't write text: it answers **multiple-choice questions** and returns a probability for every option. That makes it cheap (all 1,303 grants in about a minute, for a few cents), and the probability tells us how sure it is. For every grant it answers four:
 1. Is this DHHS's kind of work? (none / weak / moderate / strong)
 2. Which strategic-plan goal does it serve?
 3. Can DHHS apply? (lead / partner / unusual / ineligible)
@@ -50,7 +50,7 @@ It only throws a grant out when it's **85–95% sure**; anything uncertain moves
 *Why a screen?* Reading everything carefully costs money and time, so we narrow first, erring on the side of keeping things.
 
 ### Step 3: DeepSeek, the careful reader. 283 analyzed
-DeepSeek is a stronger AI. For each of the 283 it reads the full grant and writes:
+DeepSeek V4 Pro is a full large language model from the AI lab DeepSeek; it reasons in sentences, like ChatGPT. It's slower (about 30 seconds per grant) and costs more, which is why it only reads the 283 grants Jev keeps. (We started with Meta's Muse Spark, but Meta blocked our account over HIV and overdose text, so we switched.) For each of the 283 it reads the full grant and writes:
 - **fit** with DHHS's goals (0–10)
 - whether **DHHS can realistically run it** (0–10)
 - **DHHS's role** (lead or partner)
