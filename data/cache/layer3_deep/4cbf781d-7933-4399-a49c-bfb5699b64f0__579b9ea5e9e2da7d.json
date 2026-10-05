@@ -1,0 +1,28 @@
+{
+ "grant_id": "4cbf781d-7933-4399-a49c-bfb5699b64f0",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "579b9ea5e9e2da7de5ec9c01a122bcbe0efcfcd401e2bce77ed19040acc662f2",
+ "retrieved_at": "2026-10-05T21:02:05+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 1,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds commercial fishing occupational safety research, which is broadly consistent with NCDHHS's safety mission but does not advance a named NCDHHS strategic objective.",
+   "strategic_evidence_quote": "The funding will be used to support research on improving the occupational safety of workers in the commercial fishing industry.",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 2,
+   "operational_reason": "DPH has public health and epidemiology capacity, but this cooperative agreement requires commercial fishing and maritime safety research expertise that DPH does not routinely possess.",
+   "restrictions": [],
+   "major_risk": "NCDHHS lacks the specialized commercial fishing and maritime safety research expertise needed to compete for and successfully execute this cooperative agreement.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Occupational safety research for commercial fishing workers does not match NCDHHS strategic objectives or any division's core expertise, so it is unlikely to be worth pursuing."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 1,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds commercial fishing occupational safety research, which is broadly consistent with NCDHHS's safety mission but does not advance a named NCDHHS strategic objective.\",\n  \"strategic_evidence_quote\": \"The funding will be used to support research on improving the occupational safety of workers in the commercial fishing industry.\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 2,\n  \"operational_reason\": \"DPH has public health and epidemiology capacity, but this cooperative agreement requires commercial fishing and maritime safety research expertise that DPH does not routinely possess.\",\n  \"restrictions\": [],\n  \"major_risk\": \"NCDHHS lacks the specialized commercial fishing and maritime safety research expertise needed to compete for and successfully execute this cooperative agreement.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Occupational safety research for commercial fishing workers does not match NCDHHS strategic objectives or any division's core expertise, so it is unlikely to be worth pursuing.\"\n}"
+  ]
+ }
+}

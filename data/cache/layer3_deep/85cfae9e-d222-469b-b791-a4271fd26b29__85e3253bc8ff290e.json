@@ -1,0 +1,28 @@
+{
+ "grant_id": "85cfae9e-d222-469b-b791-a4271fd26b29",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "85e3253bc8ff290ece3dc8ed308c648a5f4899c852062e6a361ab9ed97bfb58d",
+ "retrieved_at": "2026-10-05T21:02:30+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 0,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The funded activity supports unemployment insurance program integrity, which is outside NCDHHS's health and human services strategic goals and objectives.",
+   "strategic_evidence_quote": "Unemployment Insurance Integrity Center of Excellence Operations",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "Sole Source Award to Center for Employment Security Education and Research",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "NCDHHS does not administer unemployment insurance or UI integrity programs, so this would be outside the agency's authority and partner network.",
+   "restrictions": [],
+   "major_risk": "It is a sole-source award to CESER, so NCDHHS cannot apply and there is no competitive opportunity.",
+   "recommended_for_review": false,
+   "one_line_rationale": "This sole-source cooperative agreement funds a national unemployment insurance integrity center, outside NCDHHS's health and human services mission and not open to state agency applicants."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 0,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The funded activity supports unemployment insurance program integrity, which is outside NCDHHS's health and human services strategic goals and objectives.\",\n  \"strategic_evidence_quote\": \"Unemployment Insurance Integrity Center of Excellence Operations\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"Sole Source Award to Center for Employment Security Education and Research\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"NCDHHS does not administer unemployment insurance or UI integrity programs, so this would be outside the agency's authority and partner network.\",\n  \"restrictions\": [],\n  \"major_risk\": \"It is a sole-source award to CESER, so NCDHHS cannot apply and there is no competitive opportunity.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"This sole-source cooperative agreement funds a national unemployment insurance integrity center, outside NCDHHS's health and human services mission and not open to state agency applicants.\"\n}"
+  ]
+ }
+}

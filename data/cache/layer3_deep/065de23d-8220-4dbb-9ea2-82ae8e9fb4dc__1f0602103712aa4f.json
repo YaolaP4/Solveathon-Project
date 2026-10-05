@@ -1,0 +1,28 @@
+{
+ "grant_id": "065de23d-8220-4dbb-9ea2-82ae8e9fb4dc",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "1f0602103712aa4f47bd16af525cc7a07152512bd7e24a8d3672cb4068784fef",
+ "retrieved_at": "2026-10-05T21:02:55+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 4,
+   "matched_goal": "G5",
+   "matched_objective": "G5.O1",
+   "strategic_reason": "The grant funds open science data infrastructure and FAIR research data management, which is adjacent to NCDHHS data-driven decision-making but is research-focused rather than health program operations.",
+   "strategic_evidence_quote": "Lowering barriers to accessing, curating, integrating, linking, managing, sharing, and storing data across many disciplinary domains, irrespective of data size.",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "Proposals may only be submitted by the following:",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "No NCDHHS division could lead this program because the agency is a state government entity and is not among the listed eligible proposer types.",
+   "restrictions": [],
+   "major_risk": "State agencies are not listed among eligible proposers, so NCDHHS could only participate through an eligible lead, and the open-science research scope may not translate into operational health data improvements.",
+   "recommended_for_review": false,
+   "one_line_rationale": "NSF open-science data grant aligns only with G5.O1 but is ineligible for a state agency lead; not worth pursuing."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 4,\n  \"matched_goal\": \"G5\",\n  \"matched_objective\": \"G5.O1\",\n  \"strategic_reason\": \"The grant funds open science data infrastructure and FAIR research data management, which is adjacent to NCDHHS data-driven decision-making but is research-focused rather than health program operations.\",\n  \"strategic_evidence_quote\": \"Lowering barriers to accessing, curating, integrating, linking, managing, sharing, and storing data across many disciplinary domains, irrespective of data size.\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"Proposals may only be submitted by the following:\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"No NCDHHS division could lead this program because the agency is a state government entity and is not among the listed eligible proposer types.\",\n  \"restrictions\": [],\n  \"major_risk\": \"State agencies are not listed among eligible proposers, so NCDHHS could only participate through an eligible lead, and the open-science research scope may not translate into operational health data improvements.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"NSF open-science data grant aligns only with G5.O1 but is ineligible for a state agency lead; not worth pursuing.\"\n}"
+  ]
+ }
+}

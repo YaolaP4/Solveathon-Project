@@ -14,8 +14,8 @@ As of 2026-09-30 (data pulled 2026-08-18). Score: 0–100 from a published formu
 | 6 | [Laboratory Flexible Funding Model (LFFM)](https://simpler.grants.gov/opportunity/eba5be60-4531-4ddf-aa56-6b1d419155ce) | 68 | This FDA cooperative agreement funds state food testing laboratory capacity which fits DPH's public health laboratory and environmental health role though it is not tied to named NCDHHS strategic objective. | none on record |
 | 7 | [US Travelers Health Research, Surveillance, Communication, and Outreach Network](https://simpler.grants.gov/opportunity/1a3231f6-36eb-40d1-afe8-232010fa2fe3) | 66 | The CDC travel health surveillance network is a moderate fit for DPH infectious disease work but only indirectly supports NCDHHS data infrastructure and health access goals. | none on record |
 | 8 | [Institute of Education Sciences (IES): National Center for Special Education Research (NCSER): Using Longitudinal Data to Support State Education Policymaking in Special Education, Assistance Listing Number (ALN) 84.324S](https://simpler.grants.gov/opportunity/72bd1f82-d3f8-4226-872e-fc254dd21a6a) | 57 | Special education SLDS work is primarily DPI/SEA; NCDHHS fits only through early intervention and lacks the research/data-system role, so it is not a priority. | none on record |
-| 9 | [BJA FY 2026 The Kevin and Avonte Program: Reducing Injury and Death of Missing Individuals with Dementia and Developmental Disabilities](https://simpler.grants.gov/opportunity/644030f6-37f5-40f8-bb89-acf868c1b28f) | 46 | This grant aligns with NCDHHS safety goals for vulnerable North Carolinians but is public-safety oriented and would require cross-division and law enforcement partners. | none on record |
-| 10 | [Announcement of Stand Down Grants](https://simpler.grants.gov/opportunity/aa2857de-cd78-432b-9266-9b2919a6eb6c) | 40 | State agencies are eligible, but this small, veteran-specific DOL event falls outside NCDHHS core health and human services divisions; likely not worth the administrative effort. | none on record |
+| 9 | [Innovative Traffic Safety Enforcement (ITSE) Grant Program](https://simpler.grants.gov/opportunity/5269870b-a071-47ba-a076-d3fbc1955077) | 48 | Traffic safety enforcement falls under law enforcement/DOT, not NCDHHS health and human services; no division has authority or capacity to run it. | none on record |
+| 10 | [Authority to Accept Unsolicited Proposals for Research Partnerships Notice of Intent (NOI)](https://simpler.grants.gov/opportunity/144a89d3-d417-4a72-9bca-d361652bd993) | 47 | HUD housing-policy research does not fund NCDHHS health/human services priorities and requires a 50% match; low fit for any division. | none on record |
 
 ## Prepare now (forecast)
 
@@ -69,15 +69,15 @@ As of 2026-09-30 (data pulled 2026-08-18). Score: 0–100 from a published formu
 - Main risk: The core data and policy authority sits with the State educational agency, so NCDHHS would likely be limited to early intervention and would need significant research capacity to compete.
 - Past recipients under this program: mostly universities
 
-**Apply now #9: BJA FY 2026 The Kevin and Avonte Program: Reducing Injury and Death of Missing Individuals with Dementia and Developmental Disabilities**
-- Criteria: 1 Eligibility: DHHS can lead (quote verified) | 2 Goal: Health Access (5/10) | 3 Owner: Division of Aging (fit 5/10) | 4 Timing: 2026-10-06 (6 days) | 5 Award: $150K, cost share False
-- Main risk: The program is primarily a public safety and law enforcement initiative, so NCDHHS would need substantial partnerships and may not be the most competitive lead applicant.
-- Past recipients under this program: mixed recipients (some state agencies)
+**Apply now #9: Innovative Traffic Safety Enforcement (ITSE) Grant Program**
+- Criteria: 1 Eligibility: DHHS can lead (quote verified) | 2 Goal: none matched (0/10) | 3 Owner: none (fit 1/10) | 4 Timing: 2027-09-01 (336 days) | 5 Award: $20.0M, cost share False
+- Main risk: The grant would require NCDHHS to administer law-enforcement traffic safety programs that are outside its health and human services authority and divisional expertise.
+- Past recipients under this program: other state agencies win this
 
-**Apply now #10: Announcement of Stand Down Grants**
-- Criteria: 1 Eligibility: eligible but atypical (quote verified) | 2 Goal: Health Access (6/10) | 3 Owner: none (fit 3/10) | 4 Timing: 2026-09-30 (0 days) | 5 Award: $10K, cost share False
-- Main risk: The usual award ceiling is only $7,000-$10,000 and the grants are noncompetitive, so the state's application and reporting burden could outweigh the small, one-time event value.
-- Past recipients under this program: mostly nonprofits, hospitals or companies
+**Apply now #10: Authority to Accept Unsolicited Proposals for Research Partnerships Notice of Intent (NOI)**
+- Criteria: 1 Eligibility: eligible but atypical (quote verified) | 2 Goal: Operational Excellence (3/10) | 3 Owner: none (fit 2/10) | 4 Timing: 2027-06-09 (252 days) | 5 Award: $250K, cost share True
+- Main risk: The required 50 percent cost match makes a housing-focused research opportunity expensive for a health and human services agency with no clear division owner.
+- Past recipients under this program: mostly universities
 
 **Prepare now (forecast) #1: HIV Care Grant Program - Part B States/Territories Formula and AIDS Drug Assistance Program Formula and AIDS Drug Assistance Program Supplemental Awards**
 - Criteria: 1 Eligibility: DHHS can lead (quote verified) | 2 Goal: Health Access (9/10) | 3 Owner: Division of Public Health (fit 10/10) | 4 Timing: forecast close 2026-10-30 - may already be open, check Grants.gov now | 5 Award: $24.8M, cost share False

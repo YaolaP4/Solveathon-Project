@@ -1,0 +1,31 @@
+{
+ "grant_id": "be7ad44e-fbed-483b-85a7-7a1ab154910e",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "a901916be504807e486f000eec1df12dc4393a9b7bfdfe913b6b8705574b27de",
+ "retrieved_at": "2026-10-05T21:03:12+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 0,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds hazardous materials worker safety training, which is outside NCDHHS's named strategic objectives.",
+   "strategic_evidence_quote": "to prevent work related harm by training workers in how best to protect themselves and their communities from exposure to hazardous materials.",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "public_and_state_institutions_of_higher_education, federally_recognized_native_american_tribal_governments, private_institutions_of_higher_education, other_native_american_tribal_organizations",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "No NCDHHS division has authority over DOE nuclear weapons complex worker training, and the state health department is not among the listed applicant types.",
+   "restrictions": [
+    "Eligibility is limited to higher education and tribal applicants, excluding state agencies.",
+    "Program scope is limited to training workers engaged in hazardous materials work at DOE nuclear weapons complex facilities."
+   ],
+   "major_risk": "NCDHHS appears ineligible to apply, and the DOE nuclear weapons complex focus is outside North Carolina's jurisdiction and divisions' expertise.",
+   "recommended_for_review": false,
+   "one_line_rationale": "State health agency appears ineligible because applicant types list higher education and tribal entities only, and the grant targets DOE nuclear weapons complex workers outside NCDHHS priorities."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 0,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds hazardous materials worker safety training, which is outside NCDHHS's named strategic objectives.\",\n  \"strategic_evidence_quote\": \"to prevent work related harm by training workers in how best to protect themselves and their communities from exposure to hazardous materials.\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"public_and_state_institutions_of_higher_education, federally_recognized_native_american_tribal_governments, private_institutions_of_higher_education, other_native_american_tribal_organizations\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"No NCDHHS division has authority over DOE nuclear weapons complex worker training, and the state health department is not among the listed applicant types.\",\n  \"restrictions\": [\n    \"Eligibility is limited to higher education and tribal applicants, excluding state agencies.\",\n    \"Program scope is limited to training workers engaged in hazardous materials work at DOE nuclear weapons complex facilities.\"\n  ],\n  \"major_risk\": \"NCDHHS appears ineligible to apply, and the DOE nuclear weapons complex focus is outside North Carolina's jurisdiction and divisions' expertise.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"State health agency appears ineligible because applicant types list higher education and tribal entities only, and the grant targets DOE nuclear weapons complex workers outside NCDHHS priorities.\"\n}"
+  ]
+ }
+}

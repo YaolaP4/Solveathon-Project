@@ -1,0 +1,28 @@
+{
+ "grant_id": "8be6fe10-f53b-4855-b3a3-06d2baeb2fa9",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "a496052b7213ca3eabcacf4363d3f66040ead6304210118fc85c14ed9eb26b37",
+ "retrieved_at": "2026-10-05T21:02:01+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 1,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds graduate medical education at freestanding children's hospitals, which is not among NCDHHS's named strategic objectives.",
+   "strategic_evidence_quote": "The Children’s Hospitals Graduate Medical Education (CHGME) Payment Program funds freestanding, children's hospitals.",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "freestanding children\"s hospitals that meet the original eligibility requirements for CHGME payments",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "No NCDHHS division would administer this program because HRSA makes CHGME payments directly to eligible freestanding children's hospitals, not through state agencies.",
+   "restrictions": [],
+   "major_risk": "NCDHHS is not an eligible applicant, so the grant does not provide a funding opportunity for the Department.",
+   "recommended_for_review": false,
+   "one_line_rationale": "NCDHHS is ineligible; CHGME funds freestanding children's hospitals directly, so it does not align with a division-owned objective."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 1,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds graduate medical education at freestanding children's hospitals, which is not among NCDHHS's named strategic objectives.\",\n  \"strategic_evidence_quote\": \"The Children’s Hospitals Graduate Medical Education (CHGME) Payment Program funds freestanding, children's hospitals.\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"freestanding children\\\"s hospitals that meet the original eligibility requirements for CHGME payments\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"No NCDHHS division would administer this program because HRSA makes CHGME payments directly to eligible freestanding children's hospitals, not through state agencies.\",\n  \"restrictions\": [],\n  \"major_risk\": \"NCDHHS is not an eligible applicant, so the grant does not provide a funding opportunity for the Department.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"NCDHHS is ineligible; CHGME funds freestanding children's hospitals directly, so it does not align with a division-owned objective.\"\n}"
+  ]
+ }
+}

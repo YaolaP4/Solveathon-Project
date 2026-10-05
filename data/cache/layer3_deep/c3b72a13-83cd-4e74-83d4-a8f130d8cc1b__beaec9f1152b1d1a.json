@@ -1,0 +1,33 @@
+{
+ "grant_id": "c3b72a13-83cd-4e74-83d4-a8f130d8cc1b",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "beaec9f1152b1d1a126cce4579c7956859dabddfe8227df3acfe788f4b476f64",
+ "retrieved_at": "2026-10-05T21:03:22+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 2,
+   "matched_goal": "G5",
+   "matched_objective": "G5.O1",
+   "strategic_reason": "The grant funds AI and cybersecurity education and workforce development, which only indirectly supports NCDHHS's operational goal of building data and technology skills rather than directly funding a health services objective.",
+   "strategic_evidence_quote": "address AI and cybersecurity education and workforce development",
+   "applicant_role": "ineligible",
+   "eligibility_evidence_quote": "Proposals may only be submitted by the following:",
+   "owning_division": "none",
+   "operational_fit": 0,
+   "operational_reason": "NCDHHS is not an eligible lead applicant and no division has authority or existing programs to run federal higher-education scholarships in AI and cybersecurity.",
+   "restrictions": [
+    "Proposals may be submitted only by Institutions of Higher Education or, for the Innovation Track, certain non-profit non-academic organizations.",
+    "Scholarship Track recipients must be U.S. citizens or lawful permanent residents and must work after graduation in a government AI/cybersecurity mission for at least the length of the scholarship.",
+    "Community colleges are eligible only as sub-awardees of a partnering four-year SFS institution for the Scholarship Track.",
+    "PI, co-PI, or Senior/Key personnel must hold a tenured/tenure-track or primary full-time paid appointment at an eligible US-based organization."
+   ],
+   "major_risk": "NCDHHS is not an eligible lead applicant and could only participate as a partner, so it would not control funding and the program's university-focused AI/cybersecurity workforce mission is outside its health and human services role.",
+   "recommended_for_review": false,
+   "one_line_rationale": "NCDHHS cannot apply as lead; the grant funds university AI/cybersecurity education and workforce programs, which do not directly advance NCDHHS health objectives."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 2,\n  \"matched_goal\": \"G5\",\n  \"matched_objective\": \"G5.O1\",\n  \"strategic_reason\": \"The grant funds AI and cybersecurity education and workforce development, which only indirectly supports NCDHHS's operational goal of building data and technology skills rather than directly funding a health services objective.\",\n  \"strategic_evidence_quote\": \"address AI and cybersecurity education and workforce development\",\n  \"applicant_role\": \"ineligible\",\n  \"eligibility_evidence_quote\": \"Proposals may only be submitted by the following:\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 0,\n  \"operational_reason\": \"NCDHHS is not an eligible lead applicant and no division has authority or existing programs to run federal higher-education scholarships in AI and cybersecurity.\",\n  \"restrictions\": [\n    \"Proposals may be submitted only by Institutions of Higher Education or, for the Innovation Track, certain non-profit non-academic organizations.\",\n    \"Scholarship Track recipients must be U.S. citizens or lawful permanent residents and must work after graduation in a government AI/cybersecurity mission for at least the length of the scholarship.\",\n    \"Community colleges are eligible only as sub-awardees of a partnering four-year SFS institution for the Scholarship Track.\",\n    \"PI, co-PI, or Senior/Key personnel must hold a tenured/tenure-track or primary full-time paid appointment at an eligible US-based organization.\"\n  ],\n  \"major_risk\": \"NCDHHS is not an eligible lead applicant and could only participate as a partner, so it would not control funding and the program's university-focused AI/cybersecurity workforce mission is outside its health and human services role.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"NCDHHS cannot apply as lead; the grant funds university AI/cybersecurity education and workforce programs, which do not directly advance NCDHHS health objectives.\"\n}"
+  ]
+ }
+}

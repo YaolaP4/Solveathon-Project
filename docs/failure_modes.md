@@ -62,10 +62,10 @@ What tradeoff the fix introduced:
 
 ## F7. The in-depth model said DHHS would "lead" NIH research grants
 
-- **Observed error:** DeepSeek V4 Pro (Layer 3) labeled **71 research or training grants** (NIH R01/R34/R61, CDC/FDA U01 …) as ones DHHS would *lead*, because "state governments" appears on their eligibility lists. With full eligibility credit, **7 of the first top-10 "apply now" grants were NIH research awards**, which a state grants coordinator can't realistically pursue as lead applicant.
+- **Observed error:** DeepSeek V4 Pro (Layer 3) labeled **73 research or training grants** (NIH R01/R34/R61, CDC/FDA U01 …) as ones DHHS would *lead*, because "state governments" appears on their eligibility lists. With full eligibility credit, **7 of the first top-10 "apply now" grants were NIH research awards**, which a state grants coordinator can't realistically pursue as lead applicant.
 - **Why:** The Layer 3 prompt lists the role options but, unlike the Jev prompt, never defines them. "Lead" was read as "legally allowed to apply".
 - **How detected:** (1) Reading the top 10, where the model's own "main risk" text said "requires an academic partner". (2) The Layer 2 vs Layer 3 disagreement log: Jev labeled **0** of those grants as DHHS-led (65 partner, 61 atypical, 4 ineligible).
-- **Pipeline change:** An objective Layer 1 rule, `research_mechanism` (NIH opportunity, or a research/training activity code such as R01, K99, U01 or P50 in the title; deliberately not CDC's U60 state cooperative agreements). Layer 4 moves these 130 grants to a separate **research-partnerships** list for university partners.
+- **Pipeline change:** An objective Layer 1 rule, `research_mechanism` (NIH opportunity, or a research/training activity code such as R01, K99, U01 or P50 in the title; deliberately not CDC's U60 state cooperative agreements). Layer 4 moves these 134 grants to a separate **research-partnerships** list for university partners.
 - **Tradeoff:** A rare research award DHHS *could* lead now sits on the research list instead of the apply-now list. The prompt itself still lacks role definitions; fixing it means re-running Layer 3 (about $3).
 
 ## F8. Administrative paperwork listed as funding opportunities

@@ -18,10 +18,10 @@ Grants checked: **1303** (every grant Jev triaged). Distinct assistance listings
 | 6 | Laboratory Flexible Funding Model (LFFM) | mixed recipients (some state agencies) | — | 21% | 32% | 96% |
 | 7 | US Travelers Health Research, Surveillance, Communication, and Outreac | mostly universities | $35K | 23% | 50% | 100% |
 | 8 | Institute of Education Sciences (IES): National Center for Special Edu | mostly universities | — | 0% | 90% | 100% |
-| 9 | BJA FY 2026 The Kevin and Avonte Program: Reducing Injury and Death of | mixed recipients (some state agencies) | — | 6% | 3% | 100% |
-| 10 | Announcement of Stand Down Grants | mostly nonprofits, hospitals or companies | — | 1% | 0% | 100% |
+| 9 | Innovative Traffic Safety Enforcement (ITSE) Grant Program | other state agencies win this | — | 35% | 3% | 100% |
+| 10 | Authority to Accept Unsolicited Proposals for Research Partnerships No | mostly universities | — | 0% | 80% | 100% |
 
-**1 of 10** have awards to NC DHHS (at least $100K in FY2022-FY2025); **1 of 10** have NC DHHS or substantial state-agency awards; 1 have no awards in FY2022-FY2025; 0 unknown/unclear.
+**1 of 10** have awards to NC DHHS (at least $100K in FY2022-FY2025); **2 of 10** have NC DHHS or substantial state-agency awards; 1 have no awards in FY2022-FY2025; 0 unknown/unclear.
 
 ### Top 5 watchlist grants
 

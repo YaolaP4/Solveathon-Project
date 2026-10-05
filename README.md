@@ -9,7 +9,9 @@
 >   - Grants Jev set aside had state-agency award history **2%** of the time, against **25%** for grants it sent on. The 24 flagged set-asides were inspected one by one (F9): none is a genuine DHHS miss.
 > - **First labels:** 31 grants labeled by Mayank (one labeler, Y/N in column A). Jev recall **93%** (95% CI 67–100%) vs. keyword baseline **71%** (33–100%) at the same review budget. That's promising, not proof. `validation.py` now reads annotated labels like "(N, comment)" and single-labeler sheets, and survives Excel re-encoding.
 > - **Clarification:** on 10-05 the local folder *looked* reverted (Muse model, missing DeepSeek docs). Nothing was reverted: the 10-02 `git pull` had been blocked while `labels.csv` was open in Excel. Pulling restored it.
-> - **Still open:** 13 low-priority grants need a higher API-key spending cap to finish Layer 3 (about $0.20). A second labeler would let us measure agreement.
+> - **Layer 3 complete:** after the API key's spending cap was lifted, the last 13 grants ran. All **283** are analyzed (quotes verified 282/283 strategic, 280/283 eligibility). Lists: **33 open / 116 forecast / 134 research**. Total AI cost **$3.36**. The top 8 open grants and the top 5 watchlist are unchanged.
+> - **Submission package:** [`submission/`](submission/) has the results table, AI-use statement, recording script and checklist.
+> - **Still open:** a second labeler would let us measure agreement.
 > - **Presentation:** [`docs/presentation_notes.md`](docs/presentation_notes.md), rewritten with the final, traced numbers. `python src/pipeline.py` reruns everything, including both validation reports, in about 11 s with no API key.
 >
 > ### 2026-10-02: First real run; results, presentation notes, and fixes the results exposed (Pavan)

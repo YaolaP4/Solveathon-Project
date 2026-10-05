@@ -43,10 +43,10 @@ Say plainly: *"As of September 30, most programs DHHS traditionally wins are for
 
 1. **Rules first, no AI.** Remove what's objectively dead: 330 already closed, 12 archived, and 17 administrative paperwork notices. Score deadline and award size with fixed formulas. **1,303 grants remain.**
 2. **Fast AI screen (Jev).** Four multiple-choice questions per grant: is this DHHS's kind of work, which goal, can DHHS lead or partner, which division? Jev gives a **probability** for every answer. A grant is set aside **only when Jev is very confident** it's irrelevant or ineligible; anything uncertain goes to the next step. Result: **283** go on, **1,020** set aside (kept, not deleted).
-3. **Careful AI review (DeepSeek V4 Pro).** For each of the 283 it writes the reasons, and **it must quote the grant text word-for-word**. Python checks every quote; a claim we can't find is downgraded. **270** analyzed.
+3. **Careful AI review (DeepSeek V4 Pro).** For each of the 283 it writes the reasons, and **it must quote the grant text word-for-word**. Python checks every quote; a claim we can't find is downgraded. all **283** analyzed.
 4. **A published formula ranks.** Strategic fit 30%, ability to run it 25%, award size 15%, deadline 15%, eligibility 15%. **The AI never ranks anything**; every score can be traced. Research grants (NIH-style R01s and similar) go to a separate "forward to a university partner" list.
 
-Cost and reproducibility: **$3.23 of AI spend in total.** All answers are saved, so `python src/pipeline.py` **reproduces the whole thing in about 11 seconds, with no API key and no cost.** 71 automated tests.
+Cost and reproducibility: **$3.36 of AI spend in total.** All answers are saved, so `python src/pipeline.py` **reproduces the whole thing in about 11 seconds, with no API key and no cost.** 71 automated tests.
 
 ## 5. How confident to be, and why (2:30–3:30)
 
@@ -56,7 +56,7 @@ Four independent checks, each with its real number:
    - **Watchlist top 5: 4 of 5 are programs NC DHHS has won** ($187.6M, $36.3M, $30.2M, $21.1M).
    - **Open top 10: only 1 of 10** (Title X). Say this honestly: the open list is thinner, and #2 (Public Health Crisis Response) is a new emergency roster with no award history.
    - Grants Jev set aside had a state-agency award history **2%** of the time; grants it sent on, **25%**. That's independent evidence the screen is sorting in the right direction.
-2. **Evidence:** **269 of 270** strategic quotes and **267 of 270** eligibility quotes are found word-for-word in the grant text.
+2. **Evidence:** **282 of 283** strategic quotes and **280 of 283** eligibility quotes are found word-for-word in the grant text.
 3. **Two AI models agree:** Muse Spark (before Meta blocked it) and DeepSeek agreed on DHHS's role for **87%** and on the owning division for **95%** of the **60** grants both analyzed.
 4. **Human labels vs. keyword search:** a teammate blind-labeled **31** sampled grants (8 relevant). Jev kept **93%** of the relevant ones (95% interval **67–100%**). A keyword search given the same review budget kept **71%** (33–100%).
    - **Be honest about it:** 31 labels from one non-expert, and the intervals overlap, so this is *promising, not proof*. Jev's only "miss" was a CDC global-health program in **Ethiopia**, which a coordinator could reasonably skip.
@@ -69,7 +69,7 @@ Four independent checks, each with its real number:
 
 Pick one or two for the video (all in `docs/failure_modes.md`):
 
-1. **The research-grant mistake (F7).** DeepSeek labeled **71 research grants** (NIH R01s, clinical trials) as ones DHHS would *lead*, because "state governments" appear on their eligibility lists. **7 of our first top 10** were NIH research awards. **Caught by:** Jev labeled *none* of them DHHS-led, and the disagreement log flagged it. **Fix:** an objective rule (the research code in the title, like "R01") moves them to a separate research-partnerships list.
+1. **The research-grant mistake (F7).** DeepSeek labeled **73 research grants** (NIH R01s, clinical trials) as ones DHHS would *lead*, because "state governments" appear on their eligibility lists. **7 of our first top 10** were NIH research awards. **Caught by:** Jev labeled *none* of them DHHS-led, and the disagreement log flagged it. **Fix:** an objective rule (the research code in the title, like "R01") moves them to a separate research-partnerships list.
 2. **Fake-evidence guardrail.** For "Partnership for Disaster Health Response System" the model claimed DHHS would lead and cited the single word *"states"* as proof. The verifier rejected it, and the role became "unclear" automatically.
 3. **An AI vendor blocked us (F6).** Meta's Muse Spark blocked our account for "policy violations" after 62 grants, because DHHS grants discuss HIV, STIs, sexual violence and overdoses. We tested three replacements on the most sensitive grants and switched in one setting. **Lesson for DHHS: don't depend on a single AI vendor.**
 4. **Two checks disagreed, and reading settled it (F9).** The award-history check flagged a Ryan White Part B notice that Jev had set aside, under a program where NC DHHS won $187.6M. Reading the notice showed it's the **Pacific Islands territories-only** version, so Jev was right. History is per program, not per notice, which is why we keep both checks.
@@ -79,7 +79,6 @@ Pick one or two for the video (all in `docs/failure_modes.md`):
 - **The human labels are thin:** 31 grants, one team member, not grant experts. Recall intervals are wide.
 - **The strategic plan is 2023–2025.** "Strategic fit" means fit with that plan, which may lag 2026 priorities.
 - **The data is a snapshot from 2026-08-18.** Anything posted since isn't included.
-- **Coverage gap:** 13 low-priority grants weren't deep-analyzed, because the API key's spending cap was reached.
 
 ## 8. What we'd build with more time (4:15–5:00)
 

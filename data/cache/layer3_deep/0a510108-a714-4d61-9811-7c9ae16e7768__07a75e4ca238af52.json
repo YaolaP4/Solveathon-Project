@@ -1,0 +1,28 @@
+{
+ "grant_id": "0a510108-a714-4d61-9811-7c9ae16e7768",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "07a75e4ca238af52395f628b9e5a6e3ed9f52036614292d4f3740264b18aff50",
+ "retrieved_at": "2026-10-05T21:02:16+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 2,
+   "matched_goal": "none",
+   "matched_objective": "none",
+   "strategic_reason": "The grant funds NOAA climate science and services, so it does not directly implement any NCDHHS health access, child/family, behavioral health, workforce, or operational objective.",
+   "strategic_evidence_quote": "the agency conducts and supports climate research, observations, modeling, information management, assessments, interdisciplinary decision support research, outreach, education, and stakeholder partnership development",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state, local and Indian tribal governments",
+   "owning_division": "DPH",
+   "operational_fit": 2,
+   "operational_reason": "DPH's environmental health role is the closest fit, but running NOAA atmospheric and climate research is outside its public health authority and capacity.",
+   "restrictions": [],
+   "major_risk": "NCDHHS would be a mission-mismatched and likely noncompetitive applicant for NOAA climate research despite being technically eligible as a state government.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Funds NOAA climate research, not NCDHHS health or human services programs; state eligibility alone does not justify pursuit by a health department."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 2,\n  \"matched_goal\": \"none\",\n  \"matched_objective\": \"none\",\n  \"strategic_reason\": \"The grant funds NOAA climate science and services, so it does not directly implement any NCDHHS health access, child/family, behavioral health, workforce, or operational objective.\",\n  \"strategic_evidence_quote\": \"the agency conducts and supports climate research, observations, modeling, information management, assessments, interdisciplinary decision support research, outreach, education, and stakeholder partnership development\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state, local and Indian tribal governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 2,\n  \"operational_reason\": \"DPH's environmental health role is the closest fit, but running NOAA atmospheric and climate research is outside its public health authority and capacity.\",\n  \"restrictions\": [],\n  \"major_risk\": \"NCDHHS would be a mission-mismatched and likely noncompetitive applicant for NOAA climate research despite being technically eligible as a state government.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Funds NOAA climate research, not NCDHHS health or human services programs; state eligibility alone does not justify pursuit by a health department.\"\n}"
+  ]
+ }
+}

@@ -1,0 +1,33 @@
+{
+ "grant_id": "144a89d3-d417-4a72-9bca-d361652bd993",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "11144b53cf041f5814779b3f556d52157d996d9179759dc25cb3fb25dc65524f",
+ "retrieved_at": "2026-10-05T21:03:00+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 3,
+   "matched_goal": "G5",
+   "matched_objective": "G5.O1",
+   "strategic_reason": "The grant funds independent research to build reliable evidence for housing policy decisions, which aligns loosely with NCDHHS's data-driven decision-making objective but does not directly fund health or human services programs.",
+   "strategic_evidence_quote": "support independent, high-quality research that helps build reliable evidence and provides practical insights to inform housing policy and program decisions at the local, state, and Federal levels.",
+   "applicant_role": "atypical",
+   "eligibility_evidence_quote": "Eligible applicants under this Notice include: philanthropic entities, other Federal agencies, State or local governments and their agencies, Indian Tribes, tribally-designated housing entities, colleges or universities.",
+   "owning_division": "none",
+   "operational_fit": 2,
+   "operational_reason": "No NCDHHS division has housing policy research as a core responsibility, and the Department's health and human services divisions would not be natural leads for a HUD research partnership.",
+   "restrictions": [
+    "Matching funds equal to at least 50 percent of the total project cost are required by statute.",
+    "Awards are expected to be cooperative agreements with active HUD involvement throughout the project.",
+    "Proposals must be original, developed independently, and submitted as complete research plans using strong and appropriate research methods.",
+    "No profit is allowed as a budget line item."
+   ],
+   "major_risk": "The required 50 percent cost match makes a housing-focused research opportunity expensive for a health and human services agency with no clear division owner.",
+   "recommended_for_review": false,
+   "one_line_rationale": "HUD housing-policy research does not fund NCDHHS health/human services priorities and requires a 50% match; low fit for any division."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 3,\n  \"matched_goal\": \"G5\",\n  \"matched_objective\": \"G5.O1\",\n  \"strategic_reason\": \"The grant funds independent research to build reliable evidence for housing policy decisions, which aligns loosely with NCDHHS's data-driven decision-making objective but does not directly fund health or human services programs.\",\n  \"strategic_evidence_quote\": \"support independent, high-quality research that helps build reliable evidence and provides practical insights to inform housing policy and program decisions at the local, state, and Federal levels.\",\n  \"applicant_role\": \"atypical\",\n  \"eligibility_evidence_quote\": \"Eligible applicants under this Notice include: philanthropic entities, other Federal agencies, State or local governments and their agencies, Indian Tribes, tribally-designated housing entities, colleges or universities.\",\n  \"owning_division\": \"none\",\n  \"operational_fit\": 2,\n  \"operational_reason\": \"No NCDHHS division has housing policy research as a core responsibility, and the Department's health and human services divisions would not be natural leads for a HUD research partnership.\",\n  \"restrictions\": [\n    \"Matching funds equal to at least 50 percent of the total project cost are required by statute.\",\n    \"Awards are expected to be cooperative agreements with active HUD involvement throughout the project.\",\n    \"Proposals must be original, developed independently, and submitted as complete research plans using strong and appropriate research methods.\",\n    \"No profit is allowed as a budget line item.\"\n  ],\n  \"major_risk\": \"The required 50 percent cost match makes a housing-focused research opportunity expensive for a health and human services agency with no clear division owner.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"HUD housing-policy research does not fund NCDHHS health/human services priorities and requires a 50% match; low fit for any division.\"\n}"
+  ]
+ }
+}

@@ -1,0 +1,30 @@
+{
+ "grant_id": "52596a75-bd24-4f15-a996-b8fae56e392c",
+ "model": "deepseek/deepseek-v4-pro",
+ "prompt_version": "92b0344f579a",
+ "request_hash": "f7869ec38998c52ca22eade2218b7044557276f62e667e6ed28991e69354bf4c",
+ "retrieved_at": "2026-10-05T21:02:12+00:00",
+ "response": {
+  "parsed": {
+   "strategic_alignment": 8,
+   "matched_goal": "G1",
+   "matched_objective": "G1.O3",
+   "strategic_reason": "The grant funds digital health tools for underserved populations, directly advancing telehealth and broadband strategies to reduce health access barriers.",
+   "strategic_evidence_quote": "innovative digital health interventions or tools (including mobile health) specifically suited for underserved settings in the U.S. and globally.",
+   "applicant_role": "lead",
+   "eligibility_evidence_quote": "state_governments",
+   "owning_division": "DPH",
+   "operational_fit": 5,
+   "operational_reason": "DPH could oversee digital public health interventions, but leading an NIH international reciprocal-innovation research project is outside its core service delivery and research capacity.",
+   "restrictions": [
+    "Requires reciprocal innovation methodologies and collaboration with a low- and middle-income country researcher."
+   ],
+   "major_risk": "It is an NIH international research grant requiring strong research capacity and an LMIC partnership; NCDHHS would likely depend on an academic or foreign partner, reducing direct control and practical value.",
+   "recommended_for_review": false,
+   "one_line_rationale": "Digital health and telehealth align with G1.O3, but this NIH international research grant exceeds DPH's service delivery role and likely requires an academic lead."
+  },
+  "attempts": [
+   "{\n  \"strategic_alignment\": 8,\n  \"matched_goal\": \"G1\",\n  \"matched_objective\": \"G1.O3\",\n  \"strategic_reason\": \"The grant funds digital health tools for underserved populations, directly advancing telehealth and broadband strategies to reduce health access barriers.\",\n  \"strategic_evidence_quote\": \"innovative digital health interventions or tools (including mobile health) specifically suited for underserved settings in the U.S. and globally.\",\n  \"applicant_role\": \"lead\",\n  \"eligibility_evidence_quote\": \"state_governments\",\n  \"owning_division\": \"DPH\",\n  \"operational_fit\": 5,\n  \"operational_reason\": \"DPH could oversee digital public health interventions, but leading an NIH international reciprocal-innovation research project is outside its core service delivery and research capacity.\",\n  \"restrictions\": [\"Requires reciprocal innovation methodologies and collaboration with a low- and middle-income country researcher.\"],\n  \"major_risk\": \"It is an NIH international research grant requiring strong research capacity and an LMIC partnership; NCDHHS would likely depend on an academic or foreign partner, reducing direct control and practical value.\",\n  \"recommended_for_review\": false,\n  \"one_line_rationale\": \"Digital health and telehealth align with G1.O3, but this NIH international research grant exceeds DPH's service delivery role and likely requires an academic lead.\"\n}"
+  ]
+ }
+}

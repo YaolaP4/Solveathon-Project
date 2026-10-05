@@ -32,18 +32,17 @@ Jev sends **283** grants to deep review. The baseline is given the same budget (
 
 ## Layer 3 recommendation vs human label
 
-- 11 labeled grants were deep-analyzed; `recommended_for_review` matches the human label on 73% (unweighted).
-- Recommended but labeled not relevant: 1; labeled relevant but not recommended: 2.
+- 13 labeled grants were deep-analyzed; `recommended_for_review` matches the human label on 69% (unweighted).
+- Recommended but labeled not relevant: 1; labeled relevant but not recommended: 3.
 
 ## Where the AI was wrong (automatic checks, `ai_error_log.csv`)
 
 | check                        | severity   |   count |
 |:-----------------------------|:-----------|--------:|
-| api_error                    | high       |      13 |
-| layer2_vs_layer3_division    | low        |      56 |
-| layer2_vs_layer3_relevance   | high       |      48 |
+| layer2_vs_layer3_division    | low        |      59 |
+| layer2_vs_layer3_relevance   | high       |      50 |
 | layer2_vs_layer3_relevance   | medium     |      11 |
-| layer2_vs_layer3_role        | medium     |      89 |
+| layer2_vs_layer3_role        | medium     |      91 |
 | unverified_eligibility_quote | high       |       1 |
 | unverified_eligibility_quote | medium     |       1 |
 | unverified_strategic_quote   | high       |       1 |
