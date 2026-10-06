@@ -19,12 +19,14 @@ table { border-collapse: collapse; width: 100%; font-size: 9pt; margin: 6px 0; }
 th { background: #16243A; color: #F4F1EA; text-align: left; padding: 4px 6px; }
 td { border-bottom: 1px solid #DDD8CC; padding: 4px 6px; vertical-align: top; }
 code { background: #F2EFE8; padding: 0 3px; font-size: 9pt; }
-li { margin: 2px 0; } tr { page-break-inside: avoid; }"""
+li { margin: 2px 0; } tr { page-break-inside: avoid; }
+h1, h2, h3 { break-after: avoid; page-break-after: avoid; } a { color: #2A6F97; }"""
 
 
 def inline(t: str) -> str:
     t = html.escape(t)
     t = re.sub(r"`([^`]+)`", r"<code>\1</code>", t)
+    t = re.sub(r"\[([^\]]+)\]\(([^)\s]+)\)", r"<a href='\2'>\1</a>", t)
     t = re.sub(r"\*\*([^*]+)\*\*", r"<b>\1</b>", t)
     t = re.sub(r"(?<!\*)\*([^*]+)\*(?!\*)", r"<i>\1</i>", t)
     return t

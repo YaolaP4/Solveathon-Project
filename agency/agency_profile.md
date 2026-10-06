@@ -12,7 +12,7 @@ Source: [NCDHHS Strategic Plan 2023–2025](https://www.osbm.nc.gov/strategic-pl
 
 **The NCDHHS federal-grants coordinator.** Each week they review new Grants.gov postings, decide which ones are worth pursuing, and route each one to the division that would own the application (for example Public Health; MH/DD/SUS; Child and Family Well-Being; Medicaid). They are not technical. They need a short list with a reason, an owner and a risk for each grant.
 
-## Draft "good match" criteria (team to finalize before scoring)
+## Our "good match" criteria (set before scoring)
 
 1. **Right applicant role.** DHHS can lead, or is an expected partner. This is a gate: confirmed ineligible means excluded. "Technically eligible but designed for university researchers" ranks low.
 2. **Strategic alignment.** The funded activity advances a named goal and objective of the 2023–2025 plan (G1–G5).

@@ -80,6 +80,7 @@ Rationales are written by AI (DeepSeek V4 Pro) and backed by verified quotes fro
 
 def to_pdf(src: Path) -> Path | None:
     pdf = src.with_suffix(".pdf")
+    pdf.unlink(missing_ok=True)  # never report a stale PDF as freshly built
     for b in BROWSERS:
         exe = b if Path(b).exists() else shutil.which(b)
         if not exe:
