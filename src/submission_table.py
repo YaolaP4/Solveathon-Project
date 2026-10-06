@@ -49,7 +49,8 @@ def rows(ranked: pd.DataFrame, hist: pd.DataFrame, agency: dict, n: int, track: 
         criteria = (f"1 Eligibility: {ROLE_TEXT.get(role, role)} ({evidence}) | "
                     f"2 Goal: {goals.get(r.matched_goal, 'none matched')} ({r.strategic_alignment:.0f}/10) | "
                     f"3 Owner: {divs.get(r.owning_division, r.owning_division)} (fit {r.operational_fit:.0f}/10) | "
-                    f"4 Timing: {deadline} | 5 Award: {_money(r.award_value_usd)}, cost share {r.requires_cost_share}")
+                    f"4 Timing: {deadline} | 5 Award: {_money(r.award_value_usd)}, cost share: "
+                    f"{ {'True': 'yes', 'False': 'no'}.get(str(r.requires_cost_share), 'unknown') }")
         nc = h.loc[r.grant_id, "nc_dhhs"] if r.grant_id in h.index else 0.0
         out.append({
             "list": "Apply now" if track == "open" else "Prepare now (forecast)",
