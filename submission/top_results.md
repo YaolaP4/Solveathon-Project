@@ -30,76 +30,76 @@ As of 2026-09-30 (data pulled 2026-08-18). Score: 0–100 from a published formu
 ## Criteria check and main risk, per grant
 
 **Apply now #1: Title X Family Planning Services Grants**
-- Criteria: 1 Eligibility: DHHS can lead (quote verified) | 2 Goal: Child and Family Well-Being (10/10) | 3 Owner: Division of Public Health (fit 9/10) | 4 Timing: 2027-01-11 (103 days) | 5 Award: $22.0M, cost share False
+- Criteria: 1 Eligibility: DHHS can lead (quote verified) | 2 Goal: Child and Family Well-Being (10/10) | 3 Owner: Division of Public Health (fit 9/10) | 4 Timing: 2027-01-11 (103 days) | 5 Award: $22.0M, cost share: no
 - Main risk: The actual amount available will not be determined until enactment of the FY 2027 federal budget.
 - Past recipients under this program: NC DHHS has received awards
 
 **Apply now #2: Public Health Crisis Response Cooperative Agreement**
-- Criteria: 1 Eligibility: DHHS can lead (quote verified) | 2 Goal: Strong and Inclusive Workforce (6/10) | 3 Owner: Division of Public Health (fit 9/10) | 4 Timing: 2027-02-11 (134 days) | 5 Award: $5.0M, cost share False
+- Criteria: 1 Eligibility: DHHS can lead (quote verified) | 2 Goal: Strong and Inclusive Workforce (6/10) | 3 Owner: Division of Public Health (fit 9/10) | 4 Timing: 2027-02-11 (134 days) | 5 Award: $5.0M, cost share: no
 - Main risk: This NOFO only creates an approved but unfunded roster; actual funding is contingent on CDC determining a public health emergency exists and on future appropriations, so it may never result in award money.
 - Past recipients under this program: no awards found FY2022-FY2025
 
 **Apply now #3: Home Study and Post-Release Services for Unaccompanied Alien Children​​**
-- Criteria: 1 Eligibility: DHHS can lead (quote verified) | 2 Goal: Child and Family Well-Being (7/10) | 3 Owner: Division of Social Services (fit 6/10) | 4 Timing: 2027-10-01 (366 days) | 5 Award: $100.0M, cost share False
+- Criteria: 1 Eligibility: DHHS can lead (quote verified) | 2 Goal: Child and Family Well-Being (7/10) | 3 Owner: Division of Social Services (fit 6/10) | 4 Timing: 2027-10-01 (366 days) | 5 Award: $100.0M, cost share: no
 - Main risk: NCDHHS does not have routine jurisdiction over unaccompanied alien children, and this ORR program is typically operated by nonprofits with immigration case management experience, making it an unfamiliar compliance-heavy program rather than a core state child welfare function.
 - Past recipients under this program: mostly nonprofits, hospitals or companies
 
 **Apply now #4: Emerging Infections Network - Research for Preventing, Detecting, and Managing Travel-associated Infectious Diseases**
-- Criteria: 1 Eligibility: DHHS can lead (quote verified) | 2 Goal: Operational Excellence (5/10) | 3 Owner: Division of Public Health (fit 9/10) | 4 Timing: 2026-11-05 (36 days) | 5 Award: $6.0M, cost share False
+- Criteria: 1 Eligibility: DHHS can lead (quote verified) | 2 Goal: Operational Excellence (5/10) | 3 Owner: Division of Public Health (fit 9/10) | 4 Timing: 2026-11-05 (36 days) | 5 Award: $6.0M, cost share: no
 - Main risk: The international travel focus may exceed DPH's routine state-level disease surveillance authority and require coordination with federal quarantine stations, airports, or academic partners.
 - Past recipients under this program: mostly universities
 
 **Apply now #5: NARMS Cooperative Agreement Program to Strengthen Antibiotic Resistance Surveillance in Retail Food Specimens**
-- Criteria: 1 Eligibility: DHHS can lead (quote verified) | 2 Goal: Operational Excellence (6/10) | 3 Owner: Division of Public Health (fit 8/10) | 4 Timing: 2027-04-01 (183 days) | 5 Award: $200K, cost share False
+- Criteria: 1 Eligibility: DHHS can lead (quote verified) | 2 Goal: Operational Excellence (6/10) | 3 Owner: Division of Public Health (fit 8/10) | 4 Timing: 2027-04-01 (183 days) | 5 Award: $200K, cost share: no
 - Main risk: Specialized FDA/NARMS retail food surveillance may require existing laboratory capacity and federal collaboration, so if NC is not already a NARMS retail food site the start-up effort could be high relative to the grant's narrow scope.
 - Past recipients under this program: mixed recipients (some state agencies)
 
 **Apply now #6: Laboratory Flexible Funding Model (LFFM)**
-- Criteria: 1 Eligibility: DHHS can lead (quote verified) | 2 Goal: none matched (3/10) | 3 Owner: Division of Public Health (fit 8/10) | 4 Timing: 2028-01-11 (468 days) | 5 Award: $1.5M, cost share False
+- Criteria: 1 Eligibility: DHHS can lead (quote verified) | 2 Goal: none matched (3/10) | 3 Owner: Division of Public Health (fit 8/10) | 4 Timing: 2028-01-11 (468 days) | 5 Award: $1.5M, cost share: no
 - Main risk: The opportunity may be limited to existing FDA-aligned food testing laboratories because it requires ISO 17025 accreditation and a valid 20.88 agreement with FDA prior to application.
 - Past recipients under this program: mixed recipients (some state agencies)
 
 **Apply now #7: US Travelers Health Research, Surveillance, Communication, and Outreach Network**
-- Criteria: 1 Eligibility: DHHS can lead (quote verified) | 2 Goal: Operational Excellence (5/10) | 3 Owner: Division of Public Health (fit 7/10) | 4 Timing: 2026-11-05 (36 days) | 5 Award: $1.0M, cost share False
+- Criteria: 1 Eligibility: DHHS can lead (quote verified) | 2 Goal: Operational Excellence (5/10) | 3 Owner: Division of Public Health (fit 7/10) | 4 Timing: 2026-11-05 (36 days) | 5 Award: $1.0M, cost share: no
 - Main risk: The announcement provides no eligibility, funding, or cost-sharing details, and NCDHHS does not currently operate a dedicated travel medicine program, so participating could require building new clinical and informatics capacity.
 - Past recipients under this program: mostly universities
 
 **Apply now #8: Institute of Education Sciences (IES): National Center for Special Education Research (NCSER): Using Longitudinal Data to Support State Education Policymaking in Special Education, Assistance Listing Number (ALN) 84.324S**
-- Criteria: 1 Eligibility: DHHS can lead (quote verified) | 2 Goal: Operational Excellence (7/10) | 3 Owner: Division of Child and Family Well-Being (fit 5/10) | 4 Timing: 2026-10-01 (1 days) | 5 Award: $1.2M, cost share False
+- Criteria: 1 Eligibility: DHHS can lead (quote verified) | 2 Goal: Operational Excellence (7/10) | 3 Owner: Division of Child and Family Well-Being (fit 5/10) | 4 Timing: 2026-10-01 (1 days) | 5 Award: $1.2M, cost share: no
 - Main risk: The core data and policy authority sits with the State educational agency, so NCDHHS would likely be limited to early intervention and would need significant research capacity to compete.
 - Past recipients under this program: mostly universities
 
 **Apply now #9: Innovative Traffic Safety Enforcement (ITSE) Grant Program**
-- Criteria: 1 Eligibility: DHHS can lead (quote verified) | 2 Goal: none matched (0/10) | 3 Owner: none (fit 1/10) | 4 Timing: 2027-09-01 (336 days) | 5 Award: $20.0M, cost share False
+- Criteria: 1 Eligibility: DHHS can lead (quote verified) | 2 Goal: none matched (0/10) | 3 Owner: none (fit 1/10) | 4 Timing: 2027-09-01 (336 days) | 5 Award: $20.0M, cost share: no
 - Main risk: The grant would require NCDHHS to administer law-enforcement traffic safety programs that are outside its health and human services authority and divisional expertise.
 - Past recipients under this program: other state agencies win this
 
 **Apply now #10: Authority to Accept Unsolicited Proposals for Research Partnerships Notice of Intent (NOI)**
-- Criteria: 1 Eligibility: eligible but atypical (quote verified) | 2 Goal: Operational Excellence (3/10) | 3 Owner: none (fit 2/10) | 4 Timing: 2027-06-09 (252 days) | 5 Award: $250K, cost share True
+- Criteria: 1 Eligibility: eligible but atypical (quote verified) | 2 Goal: Operational Excellence (3/10) | 3 Owner: none (fit 2/10) | 4 Timing: 2027-06-09 (252 days) | 5 Award: $250K, cost share: yes
 - Main risk: The required 50 percent cost match makes a housing-focused research opportunity expensive for a health and human services agency with no clear division owner.
 - Past recipients under this program: mostly universities
 
 **Prepare now (forecast) #1: HIV Care Grant Program - Part B States/Territories Formula and AIDS Drug Assistance Program Formula and AIDS Drug Assistance Program Supplemental Awards**
-- Criteria: 1 Eligibility: DHHS can lead (quote verified) | 2 Goal: Health Access (9/10) | 3 Owner: Division of Public Health (fit 10/10) | 4 Timing: forecast close 2026-10-30 - may already be open, check Grants.gov now | 5 Award: $24.8M, cost share False
+- Criteria: 1 Eligibility: DHHS can lead (quote verified) | 2 Goal: Health Access (9/10) | 3 Owner: Division of Public Health (fit 10/10) | 4 Timing: forecast close 2026-10-30 - may already be open, check Grants.gov now | 5 Award: $24.8M, cost share: no
 - Main risk: As a formula award, this may be an expected annual allocation rather than new discretionary funding, so the main burden is compliance and the amount is largely predetermined.
 - Past recipients under this program: NC DHHS has received awards
 
 **Prepare now (forecast) #2: Maternal, Infant, and Early Childhood Home Visiting Program (MIECHV)**
-- Criteria: 1 Eligibility: DHHS can lead (quote verified) | 2 Goal: Child and Family Well-Being (9/10) | 3 Owner: Division of Child and Family Well-Being (fit 10/10) | 4 Timing: forecast close 2027-03-18 | 5 Award: $11.6M, cost share True
+- Criteria: 1 Eligibility: DHHS can lead (quote verified) | 2 Goal: Child and Family Well-Being (9/10) | 3 Owner: Division of Child and Family Well-Being (fit 10/10) | 4 Timing: forecast close 2027-03-18 | 5 Award: $11.6M, cost share: yes
 - Main risk: The eligibility structure allows currently funded nonprofit organizations to apply if the state does not, so NCDHHS could lose state leadership or face incumbent competition.
 - Past recipients under this program: NC DHHS has received awards
 
 **Prepare now (forecast) #3: Strengthening Services to Prevent the Infectious Disease Consequences of Drug Use**
-- Criteria: 1 Eligibility: DHHS can lead (quote verified) | 2 Goal: Behavioral Health and Resilience (9/10) | 3 Owner: Division of Public Health (fit 9/10) | 4 Timing: forecast close 2027-05-24 | 5 Award: $41.2M, cost share False
+- Criteria: 1 Eligibility: DHHS can lead (quote verified) | 2 Goal: Behavioral Health and Resilience (9/10) | 3 Owner: Division of Public Health (fit 9/10) | 4 Timing: forecast close 2027-05-24 | 5 Award: $41.2M, cost share: no
 - Main risk: The biennial biobehavioral survey of people who use drugs requires specialized field data collection, privacy safeguards, and community partnerships that may exceed routine public health surveillance capacity.
 - Past recipients under this program: mostly nonprofits, hospitals or companies
 
 **Prepare now (forecast) #4: Preschool Development Grant Birth Through Five (PDG B-5) SMART Grant**
-- Criteria: 1 Eligibility: DHHS can lead (quote verified) | 2 Goal: Operational Excellence (9/10) | 3 Owner: Division of Child Development and Early Education (fit 9/10) | 4 Timing: forecast close 2026-11-17 - may already be open, check Grants.gov now | 5 Award: $15.0M, cost share True
+- Criteria: 1 Eligibility: DHHS can lead (quote verified) | 2 Goal: Operational Excellence (9/10) | 3 Owner: Division of Child Development and Early Education (fit 9/10) | 4 Timing: forecast close 2026-11-17 - may already be open, check Grants.gov now | 5 Award: $15.0M, cost share: yes
 - Main risk: The one-year, targeted nature may fund only a short-term build and not cover ongoing maintenance or broader statewide scale-up.
 - Past recipients under this program: NC DHHS has received awards
 
 **Prepare now (forecast) #5: National HIV Behavioral Surveillance**
-- Criteria: 1 Eligibility: DHHS can lead (quote verified) | 2 Goal: Health Access (9/10) | 3 Owner: Division of Public Health (fit 10/10) | 4 Timing: forecast close 2026-09-01 - date passed, check if posted | 5 Award: $3.7M, cost share False
+- Criteria: 1 Eligibility: DHHS can lead (quote verified) | 2 Goal: Health Access (9/10) | 3 Owner: Division of Public Health (fit 10/10) | 4 Timing: forecast close 2026-09-01 - date passed, check if posted | 5 Award: $3.7M, cost share: no
 - Main risk: The program requires sustained field recruitment of hard-to-reach populations and delivery of HIV testing and linkage services, which may be operationally heavier than a typical data-only surveillance grant.
 - Past recipients under this program: NC DHHS has received awards
