@@ -23,7 +23,18 @@ ENVS=(STORAGE_CONN=secretref:storage-conn AOAI_ENDPOINT="$AOAI_ENDPOINT" AOAI_KE
 
 echo "== Step 6: build image $IMAGE in ACR (no local Docker needed)"
 if [ "${SKIP_BUILD:-0}" != "1" ]; then
-  (cd .. && az acr build --registry "$ACR" --image "ffm:$TAG" . -o none)
+  # Queue the cloud build without streaming its log (the log stream crashes Windows consoles),
+  # then wait for the run to finish and stop if it failed.
+  RUN_ID=$(cd .. && az acr build --registry "$ACR" --image "ffm:$TAG" --no-logs . --query runId -o tsv)
+  echo "ACR build run $RUN_ID queued"
+  while :; do
+    STATUS=$(az acr task show-run -r "$ACR" --run-id "$RUN_ID" --query status -o tsv)
+    case "$STATUS" in
+      Succeeded) echo "build succeeded"; break ;;
+      Failed|Canceled|Error|Timeout) echo "build $STATUS: az acr task logs -r $ACR --run-id $RUN_ID"; exit 1 ;;
+      *) sleep 15 ;;
+    esac
+  done
 fi
 az acr repository show-tags -n "$ACR" --repository ffm -o tsv
 
