@@ -6,15 +6,15 @@ the app and the evaluation work independently.
 
 | Path | Written by | Read by | Contents |
 |---|---|---|---|
-| `profiles/{agency}.json` | job (from the reviewed `agency/priorities.json`) | app | Mission, 5 goals and 20 objectives with plan page citations, 12 program areas, 40 keywords, eligible applicant type, divisions |
+| `profiles/{agency}.json` | job (from the reviewed `agency/profiles/{agency}.json`) | app | Mission, 5 goals and 20 objectives with plan page citations, 12 program areas, 40 keywords, eligible applicant type, divisions |
 | `raw/{yyyy-mm-dd}/grants.json` | job: ingest | job: replay | Untouched Grants.gov search results for the day + which ids each keyword search returned |
 | `details/{id}.json`, `details/index.json` | job: ingest | job | Untouched `fetchOpportunity` responses (cached; refetched when the listing changes or after 7 days) |
 | `opportunities/latest.json` | job: normalize | anyone | Clean records in the minimum schema (below) |
 | `scored/{agency}/latest.json` (+ `{date}.json`) | job: score + summarize | app | Ranked records with score, breakdown, matched goal/objective, confidence, track, AI review, award history; AI check log |
 | `alerts/{agency}/latest.json` | job | app | Ids new since the previous run; strong matches closing in 10 days or fewer |
 | `decisions/{agency}.json` | app | app, evaluation | Pursue / Maybe / Pass per opportunity: who, when, note, score at the time (full history kept) |
-| `eval/sample.json` | app (once) | app | The fixed labeling sample and why each item is in it |
-| `eval/labels.json` | app | app | Relevant / not relevant / unsure per item per labeler |
+| `eval/{agency}/sample.json` | app (once per agency) | app | The fixed labeling sample, why each item is in it, and a snapshot of what labelers see |
+| `eval/{agency}/labels.json` | app | app | Relevant / not relevant / unsure per item per labeler |
 | `eval/keyword_baseline/{date}.json` | job | app | Which ids Grants.gov's own keyword search returns for each profile keyword |
 | `runs/{timestamp}.json`, `runs/latest.json` | job | app | Run log: counts per stage, errors, duration, status |
 | `cache/embeddings/*`, `cache/rationales/*`, `cache/aln_history.json` | job | job | Caches so daily re-runs only pay for new or changed records |

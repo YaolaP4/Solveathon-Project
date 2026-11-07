@@ -1,15 +1,15 @@
 # GenAI Field Notes: Federal Funds Matchmaker (finals)
 
-Team 14 · UNC Solve-a-thon 2026 · NC DHHS
+Team 14 · UNC Solve-a-thon 2026 · NC DHHS and NC DEQ
 
 ## 1. Tools we used
 
 | Tool | Where | What for |
 |---|---|---|
-| Azure OpenAI **text-embedding-3-small** (512 dimensions) | In the product, daily job | Meaning-based similarity between each opportunity and the 20 plan objectives |
-| Azure OpenAI **gpt-4.1-mini** (JSON mode, temperature 0) | In the product, daily job, top 45 only | Summary, why it matches, eligibility notes, deadline, risk, applicant role, two verbatim quotes |
+| Azure OpenAI **text-embedding-3-small** (512 dimensions) | In the product, daily job | Meaning-based similarity between each opportunity and every objective of each agency's plan |
+| Azure OpenAI **gpt-4.1-mini** (JSON mode, temperature 0) | In the product, daily job, top 45 per agency only | Summary, why it matches, eligibility notes, deadline, risk, applicant role, two verbatim quotes |
 | Jev and DeepSeek V4 Pro (qualifier) | Offline, reused | Their 1,303 screenings and 283 deep reviews from the qualifier became our reference set for tuning the daily scorer |
-| Claude Code (AI coding assistant) | Development | Wrote and refactored code to our designs, ran the Azure CLI steps, drafted documents we then edited |
+| Claude Code (AI coding assistant) | Development | Wrote and refactored code to our designs, ran the Azure CLI steps, drafted documents we then edited; a second instance reviewed the app for bugs, accessibility and security |
 | Organizers' diagram skills (`architecture-security-diagram`, `stakeholder-map`) run with an AI agent | Documentation | Drafted the C4 architecture, STRIDE threat model and stakeholder map, which we checked against the code |
 
 Everything sent to Azure OpenAI is public: Grants.gov listing text and the public strategic plan. No staff
@@ -51,19 +51,21 @@ to everything.
 agriculture …) and score the **margin**: closer to the DHHS plan than to the nearest unrelated field?
 (b) we average that with plain TF-IDF word similarity (which is also the fallback if Azure OpenAI is down).
 Measured on the 1,037 live opportunities the qualifier's pipeline had already reviewed, against whether it
-judged them on topic for DHHS (`python src/tune_semantic.py`, full table in `docs/tuning_report.md`):
+judged them on topic for DHHS, using the NC DHHS profile from the current 2026–2030 plan
+(`python src/tune_semantic.py`, full table in `docs/tuning_report.md`):
 
 | Plan-alignment signal | AUC | Share of top 50 on topic |
 |---|---|---|
-| Raw embedding similarity | 0.84 | 54% |
-| TF-IDF only | 0.81 | 50% |
-| Embedding margin vs off-topic fields | 0.91 | 74% |
-| **Hybrid (what we ship)** | **0.91** | **76%** |
+| Raw embedding similarity | 0.82 | 62% |
+| TF-IDF only | 0.82 | 54% |
+| Embedding margin vs off-topic fields | 0.90 | 78% |
+| **Hybrid (what we ship)** | **0.90** | **76%** |
 
-The margin is the real fix; TF-IDF adds a little and keeps the matcher working without AI. The full five-signal
-score reaches AUC 0.91 against "on topic and DHHS can apply". Its top 50 is slightly less on topic (66–68%)
-because it also weighs deadlines and award history, which the reference does not judge. These are AI reference
-labels from the qualifier, used for tuning; the real test is precision@10 on fresh human labels.
+The margin is the real fix; TF-IDF keeps the matcher working without AI. The full five-signal score reaches
+**AUC 0.92** against "on topic and DHHS can apply", with 76% of its top 50 relevant. We first tuned on the
+2023–2025 plan; after switching the profile to the 2026–2030 plan the numbers held (hybrid 0.91 → 0.90, full
+score 0.91 → 0.92). These are AI reference labels from the qualifier, used for tuning; the real test is
+precision@10 on fresh human labels. NC DEQ uses the same settings untuned: there is no DEQ reference set yet.
 
 *A mistake in our own analysis:* our first comparison reported lower numbers (0.78 → 0.84, 40% → 68%) because it
 counted opportunities listed twice in the qualifier data twice and compared capped scores with many ties.
@@ -91,11 +93,24 @@ unique text once and asserting the cache stays in step.
 (50,000 tokens a minute); the first full embedding pass would have taken about 30 minutes. We raised it to
 1,000 for embeddings and 500 for chat (billing is per token, so it costs the same).
 
+**5. A false positive we have not fixed yet (NC DEQ).** An EPA opportunity open only to Indian tribes and
+intertribal consortia ranks #11 for DEQ: its text is squarely environmental, and our eligibility rule only
+catches "tribes only" when the eligibility field says so in set words. Staff see the eligibility list on the
+record, so it would be passed in seconds; the fix is to read the funding-instrument eligibility codes more
+strictly and to let the AI review's "ineligible" verdict demote it (it already can, with a verified quote).
+
+**6. An independent AI review of our own app found 19 problems.** We asked a separate AI reviewer to try to
+break the web app. It found real issues we had missed, including the detail page being 6,800 px wide on a
+phone, spreadsheet formulas being injectable through the CSV export, deadlines going stale when a refresh
+fails, and anonymous decisions. We checked each finding against the code and fixed 18; the 19th (no sign-in)
+is the first step of a pilot. Regression tests now cover each fix (96 tests in all).
+
 ## 4. Guardrails that stay on
 
 - The score is a published formula computed in Python. The model cannot change it; it can only move a record
   to "not eligible" with a **verified** eligibility quote, or lower confidence one step when it says the match
   is weak. Both are shown on the record.
-- AI runs only on the top 45 records a day (about 30,000 new tokens on a normal day, well under $0.10).
+- AI runs only on the top 45 records per agency a day (about 30,000 new tokens per agency on a normal day,
+  well under $0.10).
 - If Azure OpenAI is down, the job falls back to TF-IDF and skips summaries; the app says so.
 - Staff make every decision.

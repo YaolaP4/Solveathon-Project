@@ -1,10 +1,15 @@
-# Federal Funds Matchmaker for NC DHHS
+# Federal Funds Matchmaker
 
-A daily tool for the NC DHHS federal-grants coordinator. Every morning it pulls every posted and forecasted
-federal funding opportunity from Grants.gov, ranks each one against the goals of the
-[NCDHHS Strategic Plan 2023–2025](https://www.osbm.nc.gov/strategic-plan-ncdhhs/open), explains why it
-matches (with quotes checked against the official listing), and lets staff record **Pursue / Maybe / Pass**
-in seconds. The system ranks and explains; people decide.
+A daily, central tool that helps North Carolina state agencies catch federal funding. Every morning it pulls every
+posted and forecasted federal opportunity from Grants.gov **once**, ranks it separately against **each agency's own
+strategic plan**, explains why it matches (with quotes checked against the official listing), and lets each
+agency's grants coordinator record **Pursue / Maybe / Pass** in seconds. A statewide view shows every agency's
+matches side by side. The system ranks and explains; people decide.
+
+Agencies today, each from its current plan on the [OSBM website](https://www.osbm.nc.gov/operational-excellence/strategic-planning/agency-strategic-plans):
+**NC DHHS** ([Strategic Plan 2026–2030](https://www.osbm.nc.gov/dhhs-2026-2030-strategic-plan/download?attachment))
+and **NC DEQ** ([Strategic Plan 2025–2029](https://www.osbm.nc.gov/strategic-plan-deq/download?attachment)).
+Adding an agency is one profile file in the same template.
 
 UNC Solve-a-thon 2026, Team 14. Live prototype:
 **https://app-ffm-web.salmonmushroom-cf3974d2.eastus2.azurecontainerapps.io**
@@ -29,9 +34,9 @@ USAspending.gov ──▶   ingest → normalize → score → AI rationales →
 
 1. **Ingest** (`src/grantsgov.py`): every posted and forecasted listing (~1,460) and its full detail; raw responses kept by date.
 2. **Normalize** (`src/normalize.py`): one schema; the qualifier's tested rules for dates, placeholder amounts, cost share, eligibility and research grants; closed and duplicate records dropped; incomplete ones flagged.
-3. **Score** (`src/matcher.py`): 0–100 = 45% plan alignment + 25% keyword fit + 15% eligibility (state agency) + 10% time to apply + 5% funder history (USAspending.gov). High ≥ 55, Medium ≥ 45. Research grants and records that exclude state agencies go to separate lists.
+3. **Score** (`src/matcher.py`), once per agency profile: 0–100 = 45% plan alignment + 25% keyword fit + 15% eligibility (state agency) + 10% time to apply + 5% funder history (USAspending.gov). High ≥ 55, Medium ≥ 45. Research grants and records that exclude state agencies go to separate lists.
 4. **Explain** (`src/rationale.py`, `prompts/rationale.txt`): the AI writes a summary, why it matches, eligibility, deadline and the biggest risk; code checks every quote word for word. The AI never sets the score.
-5. **Serve** (`src/webapp.py`): ranked shortlist with filters, detail page, decisions, CSV export, funding by goal, evaluation (blind labeling, precision@10 vs a keyword baseline), run status.
+5. **Serve** (`src/webapp.py`): an agency switcher; per agency a ranked shortlist with filters, detail page, decisions, CSV export, funding by goal, evaluation (blind labeling, precision@10 vs a keyword baseline); a statewide view across agencies; run status.
 
 ## Run it on a laptop
 
@@ -41,7 +46,7 @@ Python 3.12+.
 pip install -r requirements.txt
 python src/job.py          # pulls live data into data/store/ (about 1 minute; AI steps skipped without Azure OpenAI)
 python src/webapp.py       # http://localhost:8000
-python -m pytest tests -q  # 86 tests
+python -m pytest tests -q  # 96 tests
 ```
 
 Without Azure OpenAI the job uses TF-IDF matching and shows the score breakdown instead of AI summaries.
@@ -83,12 +88,17 @@ az containerapp job execution list -n job-ffm-refresh -g rg-ffm-team14 -o table
 
 ## Add another agency
 
-1. Copy `agency/priorities.json` and fill it in from that agency's strategic plan: mission, goals and
-   objectives (with page numbers), divisions, and the `profile` block (program areas, 20–40 keywords,
-   eligible applicant types, `agency_id`).
+1. Copy `agency/profiles/ncdeq.json` to `agency/profiles/<id>.json` and fill it in from that agency's strategic plan
+   on the OSBM website: mission, goals and objectives (each with its plan page), divisions, and the `profile`
+   block (`agency_id`, plan title and link, program areas, 20–40 keywords, eligible applicant types, the funders that
+   usually support it, the name pattern USAspending uses for it, and ten "unrelated fields" for the matcher).
 2. Have someone who did not write it check it against the plan.
-3. Point the job at it (one deployment per agency today; several profiles per run is the next step). Nothing
-   else changes: the data contract, scoring and app are agency-neutral.
+3. Run the tests and redeploy. The next daily run scores every opportunity for the new agency too; it appears in the
+   agency switcher and the statewide view. Nothing else changes.
+
+When an agency publishes a new plan, update its profile the same way. NC DHHS published its 2026–2030 plan in
+September 2026; we rebuilt its profile from it during the event (the qualifier round used the 2023–2025 plan, which
+`agency/priorities.json` keeps for reproducing the qualifier results).
 
 ## Known limitations
 
@@ -97,7 +107,8 @@ az containerapp job execution list -n job-ffm-refresh -g rg-ffm-team14 -o table
 - Short or vague listings can score low (false negatives); Low matches are hidden by default but one click away.
 - No sign-in in the prototype: anyone with the URL can record a decision. A pilot would add Entra ID sign-in
   (Container Apps built-in authentication), Key Vault with managed identity, and Application Insights.
-- One agency per deployment.
+- The matcher was tuned on NC DHHS reference data; NC DEQ uses the same settings untuned.
+- Statutory authority is not modelled yet: the profile records divisions and their scope, not the statutes behind them.
 
 ## Repository map
 
@@ -105,10 +116,10 @@ az containerapp job execution list -n job-ffm-refresh -g rg-ffm-team14 -o table
 src/            job.py (daily pipeline) · webapp.py + templates/ + static/ (staff app) · grantsgov.py · normalize.py
                 matcher.py · rationale.py · evaluate.py · storage.py · aoai.py · qualifier layers (clean_data.py,
                 deterministic.py, award_history.py, …)
-agency/         priorities.json: the reviewed agency profile
+agency/         profiles/*.json: one reviewed profile per agency (NC DHHS, NC DEQ); priorities.json: the qualifier's profile
 prompts/        rationale.txt (finals) · qualifier prompts
 deploy/         Azure CLI scripts and the container entrypoint
 docs/           design, field notes, data contract, checklist, diagrams, qualifier design
-tests/          86 tests (python -m pytest tests -q)
+tests/          96 tests (python -m pytest tests -q)
 submission/     qualifier submission files
 ```
