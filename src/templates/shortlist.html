@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+{% block title %}Shortlist{% endblock %}
+{% block content %}
+<h1>Funding opportunities for NC DHHS</h1>
+<p class="lede">Every posted and forecasted federal opportunity on Grants.gov, ranked against the goals of the
+<a href="{{ url_for('profile') }}">NC DHHS Strategic Plan 2023–2025</a>. Open one to see why it matches, then record a decision.</p>
+
+{% if f.track == 'agency' and (closing or new_items or first_run) %}
+<section class="alerts" aria-labelledby="alerts-h">
+  <h2 id="alerts-h" class="visually-hidden">Alerts</h2>
+  <div class="alert-grid">
+    <details class="alert-box urgent" {% if closing %}open{% endif %}>
+      <summary><strong>{{ closing|length }}</strong> strong match{{ '' if closing|length == 1 else 'es' }} closing in 10 days or fewer</summary>
+      <ul>{% for r in closing[:8] %}<li><a href="{{ url_for('detail', oid=r.id) }}">{{ r.title }}</a> (closes {{ r.close_date }}, {{ r.days_to_close }} days)</li>{% endfor %}</ul>
+    </details>
+    <details class="alert-box">
+      <summary>{% if first_run %}First refresh: everything is new{% else %}<strong>{{ new_items|length }}</strong> new since the previous refresh{% endif %}</summary>
+      {% if not first_run %}<ul>{% for r in new_items[:10] %}<li><a href="{{ url_for('detail', oid=r.id) }}">{{ r.title }}</a> ({{ r.confidence }})</li>{% endfor %}</ul>{% endif %}
+    </details>
+  </div>
+</section>
+{% endif %}
+
+<form class="filters" method="get" action="{{ url_for('shortlist') }}" aria-label="Filter the list">
+  <div class="field wide">
+    <label for="q">Search title, number, agency or text</label>
+    <input id="q" name="q" type="search" value="{{ f.q }}" placeholder="e.g. opioid, WIC, HRSA-27">
+  </div>
+  <div class="field">
+    <label for="track">List</label>
+    <select id="track" name="track">
+      {% for k, v in TRACKS.items() %}<option value="{{ k }}" {% if f.track == k %}selected{% endif %}>{{ v }}</option>{% endfor %}
+      <option value="all" {% if f.track == 'all' %}selected{% endif %}>All lists</option>
+    </select>
+  </div>
+  <div class="field">
+    <label for="confidence">Confidence</label>
+    <select id="confidence" name="confidence">
+      <option value="hm" {% if f.confidence == 'hm' %}selected{% endif %}>High and Medium</option>
+      <option value="High" {% if f.confidence == 'High' %}selected{% endif %}>High only</option>
+      <option value="Medium" {% if f.confidence == 'Medium' %}selected{% endif %}>Medium only</option>
+      <option value="Low" {% if f.confidence == 'Low' %}selected{% endif %}>Low only</option>
+      <option value="all" {% if f.confidence == 'all' %}selected{% endif %}>All</option>
+    </select>
+  </div>
+  <div class="field">
+    <label for="status">Status</label>
+    <select id="status" name="status">
+      <option value="">Posted and forecasted</option>
+      <option value="posted" {% if f.status == 'posted' %}selected{% endif %}>Posted (open now)</option>
+      <option value="forecasted" {% if f.status == 'forecasted' %}selected{% endif %}>Forecasted (not open yet)</option>
+    </select>
+  </div>
+  <div class="field">
+    <label for="within">Closing within</label>
+    <select id="within" name="within">
+      <option value="">Any time</option>
+      {% for n in (10, 14, 30, 60, 90) %}<option value="{{ n }}" {% if f.within == n|string %}selected{% endif %}>{{ n }} days</option>{% endfor %}
+    </select>
+  </div>
+  <div class="field">
+    <label for="goal">Strategic goal</label>
+    <select id="goal" name="goal">
+      <option value="">All goals</option>
+      {% for gid, g in goals.items() %}<option value="{{ gid }}" {% if f.goal == gid %}selected{% endif %}>{{ gid }} {{ g.name }}</option>{% endfor %}
+    </select>
+  </div>
+  <div class="field">
+    <label for="division">Owning division (AI suggestion)</label>
+    <select id="division" name="division">
+      <option value="">Any division</option>
+      {% for did, dv in divisions.items() %}<option value="{{ did }}" {% if f.division == did %}selected{% endif %}>{{ dv.name }}</option>{% endfor %}
+    </select>
+  </div>
+  <div class="field">
+    <label for="decision">Decision</label>
+    <select id="decision" name="decision">
+      <option value="">Any</option>
+      <option value="none" {% if f.decision == 'none' %}selected{% endif %}>Not decided yet</option>
+      {% for c in ('Pursue','Maybe','Pass') %}<option value="{{ c }}" {% if f.decision == c %}selected{% endif %}>{{ c }}</option>{% endfor %}
+    </select>
+  </div>
+  <div class="field">
+    <label for="sort">Sort by</label>
+    <select id="sort" name="sort">
+      <option value="">Best match</option>
+      <option value="deadline" {% if f.sort == 'deadline' %}selected{% endif %}>Closing soonest</option>
+      <option value="newest" {% if f.sort == 'newest' %}selected{% endif %}>Newest posted</option>
+    </select>
+  </div>
+  <div class="field actions">
+    <button type="submit" class="btn">Apply filters</button>
+    <a class="btn btn-secondary" href="{{ url_for('shortlist') }}">Reset</a>
+  </div>
+</form>
+
+<div class="results-bar">
+  <p role="status"><strong>{{ total }}</strong> opportunit{{ 'y' if total == 1 else 'ies' }} shown{% if f.confidence == 'hm' %} (Low-confidence matches hidden){% endif %}.</p>
+  <a class="btn btn-secondary" href="{{ url_for('export') }}?{{ query_with(f) }}">Download this list (CSV)</a>
+</div>
+
+{% if rows %}
+<table class="results">
+  <caption class="visually-hidden">Ranked opportunities, page {{ page }} of {{ pages }}</caption>
+  <thead>
+    <tr>
+      <th scope="col">Rank</th>
+      <th scope="col">Opportunity</th>
+      <th scope="col">Score</th>
+      <th scope="col">Matched goal</th>
+      <th scope="col">Closes</th>
+      <th scope="col">Decision</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for r in rows %}
+    {% set d = (decided.get(r.id) or [{}])[-1] %}
+    <tr>
+      <td data-label="Rank" class="num">{{ r.rank }}</td>
+      <td data-label="Opportunity" class="opp">
+        <a href="{{ url_for('detail', oid=r.id) }}?back={{ query_with(f)|urlencode }}" class="opp-title">{{ r.title }}</a>
+        <span class="meta">{{ r.number }} · {{ r.agency }}</span>
+        <span class="meta">
+          <span class="tag tag-{{ r.status }}">{{ 'Posted' if r.status == 'posted' else 'Forecast' }}</span>
+          {% if r.award_ceiling %}Up to {{ money(r.award_ceiling) }}{% endif %}
+          {% if r.new_since_last_run %}<span class="tag tag-new">New</span>{% endif %}
+          {% if r.low_quality %}<span class="tag tag-warn">Incomplete listing</span>{% endif %}
+          {% if r.review_adjustment %}<span class="tag tag-warn">AI review flag</span>{% endif %}
+        </span>
+      </td>
+      <td data-label="Score" class="score">
+        <span class="score-num">{{ '%.0f'|format(r.score) }}</span>
+        <span class="badge badge-{{ r.confidence|lower }}">{{ r.confidence }}</span>
+      </td>
+      <td data-label="Matched goal">{{ r.matched_goal.id }} {{ r.matched_goal.name }}<span class="meta">Objective {{ r.matched_objective.id }}</span></td>
+      <td data-label="Closes">
+        {% if r.days_to_close is not none %}
+          <span class="{% if r.days_to_close <= 14 %}urgent{% endif %}">{{ r.close_date }}<span class="meta">{{ r.days_to_close }} days{% if r.days_to_close <= 14 %}, closing soon{% endif %}</span></span>
+        {% elif r.status == 'forecasted' %}
+          Forecast<span class="meta">est. close {{ r.forecast_close_date or 'not stated' }}</span>
+        {% else %}{{ r.close_date }}{% endif %}
+      </td>
+      <td data-label="Decision" class="decision">
+        {% if d.decision %}<span class="dec dec-{{ d.decision|lower }}">{{ d.decision }}</span><span class="meta">by {{ d.by }}</span>{% endif %}
+        <form method="post" action="{{ url_for('decide', oid=r.id) }}" class="quick">
+          <input type="hidden" name="csrf" value="{{ csrf_token() }}">
+          <input type="hidden" name="next" value="{{ request.full_path }}">
+          <fieldset><legend class="visually-hidden">Decision for {{ r.title }}</legend>
+          {% for c in ('Pursue','Maybe','Pass') %}<button type="submit" name="decision" value="{{ c }}" class="btn-small{% if d.decision == c %} is-set{% endif %}" aria-label="{{ c }}: {{ r.title }}">{{ c }}</button>{% endfor %}
+          </fieldset>
+        </form>
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% if pages > 1 %}
+<nav aria-label="Pages" class="pager">
+  {% if page > 1 %}<a href="?{{ query_with(f, page=page-1) }}">Previous page</a>{% endif %}
+  <span>Page {{ page }} of {{ pages }}</span>
+  {% if page < pages %}<a href="?{{ query_with(f, page=page+1) }}">Next page</a>{% endif %}
+</nav>
+{% endif %}
+{% else %}
+<p class="empty">No opportunities match these filters. <a href="{{ url_for('shortlist') }}">Reset the filters</a>.</p>
+{% endif %}
+{% endblock %}

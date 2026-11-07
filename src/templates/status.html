@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}Data refresh{% endblock %}
+{% block content %}
+<h1>Data refresh</h1>
+<p class="lede">A scheduled job runs every morning at 6:00 AM Eastern: it pulls every posted and forecasted opportunity from Grants.gov,
+cleans and de-duplicates them, scores them against the plan, writes AI rationales for the top matches, and records a run log.
+Storage: {{ storage }}.</p>
+
+{% if doc %}
+<section class="card">
+  <h2>Latest results</h2>
+  <dl class="facts">
+    <dt>Generated</dt><dd>{{ fmt_dt(doc.generated_at) }}</dd>
+    <dt>Lists</dt><dd>{{ doc.counts.get('agency', 0) }} agency-eligible · {{ doc.counts.get('research', 0) }} research (university partner) · {{ doc.counts.get('not_eligible', 0) }} not eligible</dd>
+    <dt>Matching method</dt><dd>{{ 'Azure OpenAI embeddings' if doc.method.method == 'embeddings' else 'TF-IDF keyword similarity (fallback: Azure OpenAI not reachable)' }}</dd>
+    <dt>AI rationales</dt><dd>{% if doc.ai_stats.reviewed %}{{ doc.ai_stats.reviewed }} written by {{ doc.ai_stats.model }}{% else %}not run ({{ doc.ai_stats.reason or 'no AI configured' }}){% endif %}</dd>
+  </dl>
+</section>
+{% endif %}
+
+<h2>Run history</h2>
+<table class="runs">
+  <caption class="visually-hidden">Most recent refresh runs</caption>
+  <thead><tr><th scope="col">Finished</th><th scope="col">Status</th><th scope="col">Pulled</th><th scope="col">Still open</th><th scope="col">New</th><th scope="col">AI reviewed</th><th scope="col">Errors</th><th scope="col">Duration</th></tr></thead>
+  <tbody>
+  {% for r in runs if r %}
+    <tr>
+      <td>{{ fmt_dt(r.finished_at) }}{% if r.replay %} <span class="meta">replay of {{ r.replay }}</span>{% endif %}</td>
+      <td>{% if r.status == 'succeeded' %}Succeeded{% else %}<span class="urgent">Failed</span><span class="meta">{{ r.error }}</span>{% endif %}</td>
+      <td class="num">{{ r.counts.pulled if r.counts else '—' }}</td>
+      <td class="num">{{ r.counts.live if r.counts else '—' }}</td>
+      <td class="num">{{ r.counts.new if r.counts else '—' }}</td>
+      <td class="num">{{ r.counts.ai_reviewed if r.counts else '—' }}</td>
+      <td class="num">{{ r.counts.errors if r.counts else '—' }}</td>
+      <td class="num">{{ '%.0f'|format(r.duration_s) if r.duration_s else '—' }} s</td>
+    </tr>
+  {% else %}
+    <tr><td colspan="8">No runs recorded yet.</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+{% if runs and runs[0] and runs[0].stages %}
+<h2>Latest run, stage by stage</h2>
+{% set s = runs[0].stages %}
+<dl class="facts">
+  <dt>1. Ingest</dt><dd>{{ s.ingest.pulled }} pulled{% if s.ingest.details_fetched is defined %}; {{ s.ingest.details_fetched }} details fetched, {{ s.ingest.details_cached }} reused from cache; {{ s.ingest.keywords }} keyword searches recorded for the baseline{% endif %}</dd>
+  <dt>2. Normalize</dt><dd>{{ s.normalize.records_out }} live; {{ s.normalize.dropped_closed_or_admin }} closed, archived or administrative dropped; {{ s.normalize.duplicates_dropped }} duplicates; {{ s.normalize.low_quality }} flagged as incomplete (kept, not dropped)</dd>
+  <dt>3. Score</dt><dd>{{ s.score.scored }} scored with {{ s.score.method }}; agency list confidence: {% for k, v in s.score.by_confidence_agency_track.items() %}{{ k }} {{ v }}{% if not loop.last %}, {% endif %}{% endfor %}</dd>
+  <dt>4. Summarize</dt><dd>{{ s.summarize.reviewed or 0 }} AI rationales{% if s.summarize.problems_caught %}; {{ s.summarize.problems_caught }} problems caught by the checks{% endif %}</dd>
+</dl>
+{% if runs[0].errors %}<h3>Errors (the run continued)</h3><ul>{% for e in runs[0].errors %}<li>{{ e }}</li>{% endfor %}</ul>{% endif %}
+{% endif %}
+{% endblock %}

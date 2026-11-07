@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}Shortlist{% endblock %} · Federal Funds Matchmaker</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
+<link rel="icon" href="{{ url_for('static', filename='favicon.svg') }}" type="image/svg+xml">
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<div class="proto-banner" role="note">
+  <div class="wrap">Prototype built for the UNC Solve-a-thon 2026. Not an official NC DHHS website. Public data from Grants.gov and USAspending.gov.</div>
+</div>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand">
+      <a href="{{ url_for('shortlist') }}" class="brand-name">Federal Funds Matchmaker</a>
+      <span class="brand-sub">Federal grant opportunities ranked against the NC DHHS Strategic Plan</span>
+    </div>
+    <nav aria-label="Main">
+      <ul class="nav">
+        {% set ep = request.endpoint %}
+        <li><a href="{{ url_for('shortlist') }}" {% if ep in ('shortlist','detail') %}aria-current="page"{% endif %}>Shortlist</a></li>
+        <li><a href="{{ url_for('goals_view') }}" {% if ep == 'goals_view' %}aria-current="page"{% endif %}>Funding by goal</a></li>
+        <li><a href="{{ url_for('evaluation') }}" {% if ep in ('evaluation','label') %}aria-current="page"{% endif %}>Evaluation</a></li>
+        <li><a href="{{ url_for('status') }}" {% if ep == 'status' %}aria-current="page"{% endif %}>Data refresh</a></li>
+        <li><a href="{{ url_for('profile') }}" {% if ep == 'profile' %}aria-current="page"{% endif %}>Agency profile</a></li>
+        <li><a href="{{ url_for('method') }}" {% if ep == 'method' %}aria-current="page"{% endif %}>How it works</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="refresh-strip">
+  <div class="wrap">
+    {% if run %}
+      <strong>Last refreshed:</strong> {{ fmt_dt(run.finished_at) }}
+      · {{ "{:,}".format(run.counts.pulled or 0) }} Grants.gov listings checked
+      · {{ run.counts.new }} new since the previous refresh
+      · Refreshes automatically every day at 6:00 AM ET
+      {% if run.status != 'succeeded' %}<span class="warn">Last run: {{ run.status }}</span>{% endif %}
+    {% else %}
+      <strong>No data yet.</strong> The daily refresh has not run.
+    {% endif %}
+  </div>
+</div>
+<main id="main" class="wrap" tabindex="-1">
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}<div class="alert alert-success" role="status">{% for m in messages %}<p>{{ m }}</p>{% endfor %}</div>{% endif %}
+  {% endwith %}
+  {% block content %}{% endblock %}
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Scores are computed by a published formula (<a href="{{ url_for('method') }}">How it works</a>). AI writes the summaries and reasons; every quote is checked against the official listing. Staff make every decision.</p>
+    <p>Source plan: <a href="{{ agency.profile.plan_url }}">{{ agency.profile.plan_title }}</a>. Opportunity data: <a href="https://www.grants.gov">Grants.gov</a>. Award history: <a href="https://www.usaspending.gov">USAspending.gov</a>.</p>
+  </div>
+</footer>
+</body>
+</html>

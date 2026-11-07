@@ -13,21 +13,26 @@
       "objectives": [
         {
           "id": "G1.O1",
-          "text": "Build a culture and structure for increasing health access and reducing health disparities across the Department."
+          "text": "Build a culture and structure for increasing health access and reducing health disparities across the Department.",
+          "source": "Plan p. 7"
         },
         {
           "id": "G1.O2",
-          "text": "Use data, metrics and dashboards to track health disparities and outcomes and make benefits easier to apply for."
+          "text": "Use data, metrics and dashboards to track health disparities and outcomes and make benefits easier to apply for.",
+          "source": "Plan pp. 7-8"
         },
         {
           "id": "G1.O3",
-          "text": "Mitigate barriers to health services: telehealth and broadband, language access, culturally competent communication, rural and underserved primary care."
+          "text": "Mitigate barriers to health services: telehealth and broadband, language access, culturally competent communication, rural and underserved primary care.",
+          "source": "Plan p. 8"
         },
         {
           "id": "G1.O4",
-          "text": "Invest in partner capacity: community health workers, community-based organizations, justice-involved people's health access, Medicaid expansion enrollment."
+          "text": "Invest in partner capacity: community health workers, community-based organizations, justice-involved people's health access, Medicaid expansion enrollment.",
+          "source": "Plan p. 8"
         }
-      ]
+      ],
+      "source": "Strategic Plan 2023-2025, Section 3 (Goals, Objectives, and Performance Measures), pp. 7-8"
     },
     {
       "id": "G2",
@@ -36,21 +41,26 @@
       "objectives": [
         {
           "id": "G2.O1",
-          "text": "Meet the behavioral and mental health needs of children and families (youth mental health first aid, school health records, NC-PAL, specialty care for children with complex needs)."
+          "text": "Meet the behavioral and mental health needs of children and families (youth mental health first aid, school health records, NC-PAL, specialty care for children with complex needs).",
+          "source": "Plan p. 9"
         },
         {
           "id": "G2.O2",
-          "text": "Reform child welfare and social services to improve safety, permanency and well-being (foster care, child welfare information systems, county support)."
+          "text": "Reform child welfare and social services to improve safety, permanency and well-being (foster care, child welfare information systems, county support).",
+          "source": "Plan pp. 9-10"
         },
         {
           "id": "G2.O3",
-          "text": "Increase food security for children and families (WIC, FNS/SNAP enrollment, NCCARE360 referrals, breastfeeding support, Healthy Opportunities pilots)."
+          "text": "Increase food security for children and families (WIC, FNS/SNAP enrollment, NCCARE360 referrals, breastfeeding support, Healthy Opportunities pilots).",
+          "source": "Plan pp. 10-11"
         },
         {
           "id": "G2.O4",
-          "text": "Improve women's health and birth outcomes (prenatal care, maternal and newborn levels of care, doulas, reproductive life planning, infant mortality)."
+          "text": "Improve women's health and birth outcomes (prenatal care, maternal and newborn levels of care, doulas, reproductive life planning, infant mortality).",
+          "source": "Plan p. 11"
         }
-      ]
+      ],
+      "source": "Strategic Plan 2023-2025, Section 3 (Goals, Objectives, and Performance Measures), pp. 9-11"
     },
     {
       "id": "G3",
@@ -59,25 +69,31 @@
       "objectives": [
         {
           "id": "G3.O1",
-          "text": "Integrate behavioral and physical health care (Collaborative Care, certified community behavioral health clinics, Tailored Care Management)."
+          "text": "Integrate behavioral and physical health care (Collaborative Care, certified community behavioral health clinics, Tailored Care Management).",
+          "source": "Plan p. 12"
         },
         {
           "id": "G3.O2",
-          "text": "Expand behavioral health supports for people involved in the justice system (capacity restoration, diversion, re-entry)."
+          "text": "Expand behavioral health supports for people involved in the justice system (capacity restoration, diversion, re-entry).",
+          "source": "Plan p. 12"
         },
         {
           "id": "G3.O3",
-          "text": "Increase access to crisis services (988, suicide prevention, statewide behavioral health referral network)."
+          "text": "Increase access to crisis services (988, suicide prevention, statewide behavioral health referral network).",
+          "source": "Plan pp. 12-13"
         },
         {
           "id": "G3.O4",
-          "text": "Turn the tide on the opioid and substance use crisis (evidence-based treatment, harm reduction, drug checking, collegiate recovery)."
+          "text": "Turn the tide on the opioid and substance use crisis (evidence-based treatment, harm reduction, drug checking, collegiate recovery).",
+          "source": "Plan p. 13"
         },
         {
           "id": "G3.O5",
-          "text": "Improve behavioral health data infrastructure (behavioral health holds data, syndromic surveillance, electronic health records in state psychiatric hospitals)."
+          "text": "Improve behavioral health data infrastructure (behavioral health holds data, syndromic surveillance, electronic health records in state psychiatric hospitals).",
+          "source": "Plan p. 13"
         }
-      ]
+      ],
+      "source": "Strategic Plan 2023-2025, Section 3 (Goals, Objectives, and Performance Measures), pp. 12-13"
     },
     {
       "id": "G4",
@@ -86,21 +102,26 @@
       "objectives": [
         {
           "id": "G4.O1",
-          "text": "Invest in the caregiving and direct care workforce serving older adults and people with disabilities."
+          "text": "Invest in the caregiving and direct care workforce serving older adults and people with disabilities.",
+          "source": "Plan p. 15"
         },
         {
           "id": "G4.O2",
-          "text": "Invest in the early childhood workforce (teacher credentialing, educator compensation)."
+          "text": "Invest in the early childhood workforce (teacher credentialing, educator compensation).",
+          "source": "Plan p. 15"
         },
         {
           "id": "G4.O3",
-          "text": "Make NCDHHS an equitable workplace (recruitment, training, retention of Department staff)."
+          "text": "Make NCDHHS an equitable workplace (recruitment, training, retention of Department staff).",
+          "source": "Plan p. 16"
         },
         {
           "id": "G4.O4",
-          "text": "Support the public health and child welfare workforce at state and local levels."
+          "text": "Support the public health and child welfare workforce at state and local levels.",
+          "source": "Plan p. 16"
         }
-      ]
+      ],
+      "source": "Strategic Plan 2023-2025, Section 3 (Goals, Objectives, and Performance Measures), pp. 15-16"
     },
     {
       "id": "G5",
@@ -109,17 +130,21 @@
       "objectives": [
         {
           "id": "G5.O1",
-          "text": "Foster data-driven decision-making (data infrastructure, integration, dashboards, staff data skills)."
+          "text": "Foster data-driven decision-making (data infrastructure, integration, dashboards, staff data skills).",
+          "source": "Plan pp. 16-17"
         },
         {
           "id": "G5.O2",
-          "text": "Be effective stewards of state resources (tracking federal funding and block grants, contracting, websites, energy, invoicing)."
+          "text": "Be effective stewards of state resources (tracking federal funding and block grants, contracting, websites, energy, invoicing).",
+          "source": "Plan pp. 17-18"
         },
         {
           "id": "G5.O3",
-          "text": "Work across departments through shared processes and collaboration."
+          "text": "Work across departments through shared processes and collaboration.",
+          "source": "Plan pp. 18-19"
         }
-      ]
+      ],
+      "source": "Strategic Plan 2023-2025, Section 3 (Goals, Objectives, and Performance Measures), pp. 16-19"
     }
   ],
   "divisions": [
@@ -189,6 +214,73 @@
       "scope": "department-wide data, IT, HR, finance, and cross-division initiatives"
     }
   ],
+  "profile": {
+    "_comment": "Starter-kit profile fields (sec. 5.1). Drafted by our team from the plan, reviewed by a second teammate. Page numbers are the printed page numbers of the plan PDF.",
+    "agency_id": "ncdhhs",
+    "plan_title": "NCDHHS Strategic Plan 2023-2025",
+    "plan_url": "https://www.osbm.nc.gov/strategic-plan-ncdhhs/open",
+    "reviewed_by": "Team (two-person review)",
+    "program_areas": [
+      "Medicaid and health coverage",
+      "Public health and disease prevention",
+      "Behavioral health and substance use",
+      "Child welfare and social services",
+      "Food and nutrition (WIC, FNS)",
+      "Maternal and child health",
+      "Early childhood and child care",
+      "Aging and adult services",
+      "Disability, deaf and blind services, vocational rehabilitation",
+      "Rural health and primary care access",
+      "Health data, IT and operations",
+      "Health care workforce"
+    ],
+    "keywords": [
+      "Medicaid",
+      "public health",
+      "behavioral health",
+      "mental health",
+      "substance use",
+      "opioid",
+      "harm reduction",
+      "suicide prevention",
+      "988",
+      "crisis services",
+      "child welfare",
+      "foster care",
+      "maternal health",
+      "prenatal",
+      "infant mortality",
+      "WIC",
+      "nutrition",
+      "SNAP",
+      "food security",
+      "early childhood",
+      "child care",
+      "home visiting",
+      "immunization",
+      "epidemiology",
+      "surveillance",
+      "health disparities",
+      "rural health",
+      "telehealth",
+      "community health workers",
+      "primary care",
+      "older adults",
+      "aging",
+      "disabilities",
+      "direct care workforce",
+      "public health workforce",
+      "health information exchange",
+      "HIV",
+      "tuberculosis",
+      "emergency preparedness",
+      "vocational rehabilitation"
+    ],
+    "eligible_applicant_types": [
+      "state_governments"
+    ],
+    "eligibility_note": "NCDHHS applies as a state government agency. Grants open only to universities, tribes, local governments, nonprofits or individuals are low fit unless a state agency is named as a partner."
+  },
   "layer1": {
     "_comment": "Objective thresholds for Layer 1 (src/deterministic.py). Nothing here is semantic. deadline_score_points are [days_until_close, score 0-10] anchors, linearly interpolated; past the last anchor the score stays at its value. financial_value_score is log-scaled between the two USD anchors; total_only_cap limits grants where only total program funding (not a per-award figure) is known.",
     "data_pulled_date": "2026-08-18",

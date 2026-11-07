@@ -1,0 +1,291 @@
+"""Tests for the finals matchmaker: API mapping, scoring signals, AI checks, evaluation, storage, web app."""
+
+import json
+import sys
+from pathlib import Path
+
+import pandas as pd
+import pytest
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
+
+import config  # noqa: E402
+import evaluate  # noqa: E402
+import matcher  # noqa: E402
+import normalize  # noqa: E402
+import rationale  # noqa: E402
+from storage import ConflictError, LocalStore, Store, set_store  # noqa: E402
+
+AGENCY = config.load_agency()
+
+POSTED_HIT = {"id": "1001", "number": "CDC-RFA-26-0001", "title": "State Overdose Data to Action &ndash; States",
+              "agencyCode": "HHS-CDC", "agency": "Centers for Disease Control", "openDate": "10/01/2026",
+              "closeDate": "12/31/2026", "oppStatus": "posted", "docType": "synopsis", "cfdaList": ["93.136"]}
+POSTED_DETAIL = {
+    "id": 1001, "opportunityNumber": "CDC-RFA-26-0001", "opportunityTitle": "State Overdose Data to Action",
+    "opportunityCategory": {"description": "Discretionary"}, "docType": "synopsis",
+    "cfdas": [{"cfdaNumber": "93.136", "programTitle": "Injury Prevention and Control Research and State and Community Based Programs"}],
+    "synopsis": {
+        "synopsisDesc": "<p>This cooperative agreement funds state health departments to prevent opioid overdose "
+                        "deaths through surveillance and harm reduction programs across the state.</p>",
+        "responseDateStr": "2026-12-31-00-00-00", "postingDateStr": "2026-10-01-00-00-00",
+        "archiveDateStr": "2027-01-30-00-00-00", "costSharing": False, "numberOfAwards": 50,
+        "estimatedFunding": 100000000, "awardCeiling": 4000000, "awardFloor": 1000000,
+        "applicantEligibilityDesc": "Eligible applicants are state health departments.",
+        "applicantTypes": [{"id": "00", "description": "State governments"}],
+        "fundingInstruments": [{"id": "CA", "description": "Cooperative Agreement"}],
+        "fundingActivityCategories": [{"id": "HL", "description": "Health"}],
+        "agencyDetails": {"agencyName": "Centers for Disease Control"},
+        "topAgencyDetails": {"agencyName": "Department of Health and Human Services"},
+        "createTimeStampStr": "2026-10-01-00-00-00",
+    },
+}
+FORECAST_HIT = {"id": "1002", "number": "HRSA-27-001", "title": "Rural Health Network Development", "agencyCode": "HHS-HRSA",
+                "agency": "Health Resources and Services Administration", "openDate": "", "closeDate": "",
+                "oppStatus": "forecasted", "docType": "forecast", "cfdaList": ["93.912"]}
+FORECAST_DETAIL = {
+    "id": 1002, "docType": "forecast", "cfdas": [{"cfdaNumber": "93.912", "programTitle": "Rural Health Care"}],
+    "forecast": {"forecastDesc": "Supports rural health networks that improve access to primary care and telehealth in rural communities.",
+                 "estSynopsisPostingDateStr": "2027-01-15-00-00-00", "estApplicationResponseDateStr": "2027-03-15-00-00-00",
+                 "costSharing": True, "awardCeiling": 300000, "applicantTypes": [{"id": "12"}, {"id": "25"}],
+                 "applicantEligibilityDesc": "Rural nonprofit organizations.", "agencyDetails": {"agencyName": "HRSA"},
+                 "topAgencyDetails": {"agencyName": "Department of Health and Human Services"}},
+}
+CLOSED_HIT = {**POSTED_HIT, "id": "1003", "number": "OLD-1", "title": "Old grant", "closeDate": "01/15/2026"}
+CLOSED_DETAIL = json.loads(json.dumps(POSTED_DETAIL).replace("2026-12-31-00-00-00", "2026-01-15-00-00-00"))
+DUP_HIT = {**POSTED_HIT, "id": "1004"}
+
+
+def live_frame():
+    hits = [POSTED_HIT, FORECAST_HIT, CLOSED_HIT, DUP_HIT]
+    details = {"1001": POSTED_DETAIL, "1002": FORECAST_DETAIL, "1003": CLOSED_DETAIL, "1004": POSTED_DETAIL}
+    return normalize.normalize(hits, details, "2026-11-07", AGENCY)
+
+
+# ── Normalize ──
+
+def test_api_row_maps_fields():
+    row = normalize.api_to_row(POSTED_HIT, POSTED_DETAIL)
+    assert row["opportunity_title"] == "State Overdose Data to Action – States"  # HTML entity decoded
+    assert row["close_date"] == "2026-12-31"
+    assert row["applicant_types"] == "state_governments"
+    assert row["opportunity_assistance_listings"].startswith("93.136|")
+    assert row["is_forecast"] == "False"
+    f = normalize.api_to_row(FORECAST_HIT, FORECAST_DETAIL)
+    assert f["is_forecast"] == "True" and f["close_date"] == "" and f["forecasted_close_date"] == "2027-03-15"
+    assert f["applicant_types"] == "nonprofits_non_higher_education_with_501c3;other"
+
+
+def test_normalize_drops_closed_and_duplicates_and_flags_quality():
+    live, stats = live_frame()
+    assert stats["records_in"] == 4
+    assert stats["duplicates_dropped"] == 1
+    assert stats["dropped_closed_or_admin"] == 1
+    assert set(live["opportunity_number"]) == {"CDC-RFA-26-0001", "HRSA-27-001"}
+    posted = live[live["opportunity_number"] == "CDC-RFA-26-0001"].iloc[0]
+    assert posted["days_until_close"] == 54
+    rec = normalize.minimum_record(posted, "2026-11-07T11:00:00+00:00")
+    for k in ["id", "source", "number", "title", "agency", "status", "open_date", "close_date", "days_to_close",
+              "eligibility", "category", "award_ceiling", "description", "url", "ingested_at"]:
+        assert k in rec
+    assert rec["url"].endswith("/1001")
+
+
+def test_missing_detail_is_flagged_not_dropped():
+    live, stats = normalize.normalize([POSTED_HIT], {}, "2026-11-07", AGENCY)
+    assert len(live) == 1 and bool(live.iloc[0]["low_quality"])
+    assert "no detail record" in live.iloc[0]["quality_issues"]
+
+
+# ── Scoring ──
+
+@pytest.fixture()
+def tmp_store(tmp_path, monkeypatch):
+    monkeypatch.delenv("AOAI_ENDPOINT", raising=False)
+    monkeypatch.delenv("AOAI_KEY", raising=False)
+    s = Store(LocalStore(tmp_path))
+    s.write_json("cache/aln_history.json", {})  # no network in tests
+    set_store(s)
+    yield s
+    set_store(None)
+
+
+def test_score_breakdown_sums_to_total(tmp_store, monkeypatch):
+    monkeypatch.setattr(matcher, "aln_affinity", lambda *a, **k: {})
+    live, _ = live_frame()
+    scored, meta = matcher.score(live, AGENCY, tmp_store, log=lambda *_: None)
+    assert meta["method"] == "tfidf"
+    w = meta["weights"]
+    assert abs(sum(w.values()) - 1) < 1e-9
+    for _, r in scored.iterrows():
+        b = matcher.breakdown(r, w)
+        assert abs(sum(x["points"] for x in b) - r["score"]) < 0.3
+        assert 0 <= r["score"] <= 100
+    cdc = scored[scored["opportunity_number"] == "CDC-RFA-26-0001"].iloc[0]
+    assert cdc["matched_goal_id"] == "G3"           # opioid overdose -> behavioral health goal
+    assert cdc["s_eligibility"] == 1.0 and cdc["track"] == "agency"
+    hrsa = scored[scored["opportunity_number"] == "HRSA-27-001"].iloc[0]
+    assert hrsa["s_eligibility"] == 0.4             # nonprofits + 'other': unclear, not excluded
+
+
+def test_eligibility_and_timing_signals():
+    base = {"text_higher_ed_only": False, "text_tribal_only": False, "text_individuals_only": False,
+            "state_government_listed": False, "text_mentions_state_agency": False, "unrestricted_listed": False,
+            "other_listed": False, "applicant_types_blank": False}
+    assert matcher.eligibility_signal(pd.Series({**base, "state_government_listed": True}))[0] == 1.0
+    assert matcher.eligibility_signal(pd.Series({**base, "state_government_listed": True, "text_higher_ed_only": True}))[0] == 0.0
+    assert matcher.eligibility_signal(pd.Series(base))[0] == 0.0
+    t = {"is_forecast": True, "forecast_close_passed": True, "rolling_deadline": False}
+    assert matcher.timing_signal(pd.Series(t))[0] == 0.3
+    t = {"is_forecast": False, "rolling_deadline": False, "days_until_close": 5, "deadline_score": 1.43}
+    assert matcher.timing_signal(pd.Series(t))[0] == pytest.approx(0.143)
+
+
+def test_keyword_hits_title_counts_double():
+    pats = matcher.keyword_patterns(["opioid", "WIC", "988"])
+    t, b = matcher.keyword_hits("Opioid response", "Funds 988 crisis lines; the WICKED project", pats)
+    assert t == ["opioid"] and b == ["988"]      # 'WICKED' is not 'WIC'
+
+
+# ── AI checks ──
+
+def scored_row():
+    live, _ = live_frame()
+    r = live[live["opportunity_number"] == "CDC-RFA-26-0001"].iloc[0].copy()
+    r["matched_goal_id"], r["matched_objective_id"], r["s_eligibility"] = "G3", "G3.O4", 1.0
+    return r
+
+
+def test_ai_check_catches_fabricated_quote_and_unsupported_ineligible():
+    r = scored_row()
+    ans = {"summary": "s", "why_it_matches": "w", "fits_matched_goal": True, "better_goal_id": "",
+           "evidence_quote": "funds state health departments to prevent opioid overdose deaths",
+           "applicant_role": "ineligible", "eligibility_notes": "n",
+           "eligibility_quote": "Only universities may apply.", "owning_division": "NOPE",
+           "deadline_note": "d", "risk_or_gap": "r"}
+    clean, problems = rationale.check(ans, r, AGENCY)
+    kinds = {p["kind"] for p in problems}
+    assert clean["evidence_verified"] is True
+    assert clean["eligibility_verified"] is False
+    assert clean["applicant_role"] == "unclear"          # unverified 'ineligible' is not trusted
+    assert clean["owning_division"] == ""
+    assert {"quote_not_in_source", "unsupported_claim", "invalid_value"} <= kinds
+
+
+def test_ai_can_only_move_or_downgrade_never_rescore():
+    df = pd.DataFrame([{"grant_id": "a", "score": 70.0, "confidence": "High", "track": "agency", "matched_objective_id": "G3.O4"},
+                       {"grant_id": "b", "score": 65.0, "confidence": "High", "track": "agency", "matched_objective_id": "G1.O1"},
+                       {"grant_id": "c", "score": 60.0, "confidence": "High", "track": "agency", "matched_objective_id": "G2.O1"}])
+    reviews = {"a": {"applicant_role": "ineligible", "eligibility_verified": True, "fits_matched_goal": True},
+               "b": {"applicant_role": "lead", "eligibility_verified": True, "fits_matched_goal": False}}
+    out = rationale.apply(df, reviews).set_index("grant_id")
+    assert out.loc["a", "track"] == "not_eligible"
+    assert out.loc["b", "confidence"] == "Medium"
+    assert out.loc["c", "confidence"] == "High"
+    assert list(out["score"]) == [70.0, 65.0, 60.0]
+
+
+# ── Evaluation ──
+
+def rec(i, conf="High", kws=(), track="agency"):
+    return {"id": str(i), "title": f"t{i}", "track": track, "confidence": conf, "score": 100 - i,
+            "keywords_matched": list(kws), "keywords_in_title": []}
+
+
+def test_metrics_precision_recall_agreement():
+    recs = [rec(i, kws=["x"] * (i % 3)) for i in range(40)]
+    doc = {"run_id": "r", "as_of": "2026-11-07", "records": recs}
+    sample = evaluate.draw_sample(doc)
+    ids = [it["id"] for it in sample["items"]]
+    assert len(ids) == len(set(ids)) and 20 <= len(ids) <= 30
+    labels = []
+    for i in range(10):
+        labels.append({"id": str(i), "labeler": "A", "relevant": i < 8})
+        labels.append({"id": str(i), "labeler": "B", "relevant": i < 7})
+    m = evaluate.metrics(doc, sample, labels, {}, None)
+    # item 7 is a 1-1 tie: left unjudged until a third vote (e.g. after the team discusses it)
+    assert m["ours_p10"] == {"k": 10, "judged": 9, "relevant": 7, "precision": 0.78}
+    assert m["agreement"]["pairs"] == 10 and m["agreement"]["agree"] == 9
+    assert len(m["disagreements"]) == 1
+
+
+def test_labeler_order_is_shuffled_per_person_but_complete():
+    sample = {"items": [{"id": str(i)} for i in range(25)]}
+    a = [x["id"] for x in evaluate.labeler_order(sample, "Alex")]
+    b = [x["id"] for x in evaluate.labeler_order(sample, "Blake")]
+    assert sorted(a) == sorted(b) and a != b
+
+
+# ── Storage ──
+
+def test_update_json_detects_conflicts(tmp_path):
+    s = Store(LocalStore(tmp_path))
+    s.update_json("d.json", lambda cur: {"n": cur["n"] + 1}, default={"n": 0})
+    s.update_json("d.json", lambda cur: {"n": cur["n"] + 1}, default={"n": 0})
+    assert s.read_json("d.json") == {"n": 2}
+    v = s.version("d.json")
+    s.write_json("d.json", {"n": 99})
+    import os, time
+    os.utime(tmp_path / "d.json", ns=(time.time_ns(), time.time_ns() + 10))
+    with pytest.raises(ConflictError):
+        s.b.write_if_version("d.json", b"{}", v)
+
+
+def test_local_store_rejects_path_escape(tmp_path):
+    with pytest.raises(ValueError):
+        LocalStore(tmp_path).read_bytes("../outside.json")
+
+
+# ── Web app ──
+
+@pytest.fixture()
+def client(tmp_store, monkeypatch):
+    monkeypatch.setattr(matcher, "aln_affinity", lambda *a, **k: {})
+    import job
+    import grantsgov
+    hits = [POSTED_HIT, FORECAST_HIT] + [{**FORECAST_HIT, "id": str(2000 + i), "number": f"F-{i}"} for i in range(60)]
+    details = {h["id"]: (POSTED_DETAIL if h["id"] == "1001" else FORECAST_DETAIL) for h in hits}
+    monkeypatch.setattr(grantsgov, "ingest", lambda store, kws, today, log: {
+        "hits": hits, "details": details, "keyword_hits": {"opioid": ["1001"]}, "stats": {"pulled": len(hits)}, "errors": []})
+    job.run(log=lambda *_: None)
+    import webapp
+    webapp._cache.clear()
+    webapp.app.config["TESTING"] = True
+    return webapp.app.test_client()
+
+
+def _csrf(client, path):
+    html = client.get(path).get_data(as_text=True)
+    return html.split('name="csrf" value="')[1].split('"')[0]
+
+
+def test_pages_render(client):
+    for path in ["/", "/?track=all&confidence=all", "/goals", "/evaluation", "/status", "/profile", "/method",
+                 "/opportunity/1001", "/healthz", "/export.csv"]:
+        r = client.get(path)
+        assert r.status_code == 200, path
+    assert client.get("/opportunity/does-not-exist").status_code == 404
+    assert "Content-Security-Policy" in client.get("/").headers
+
+
+def test_decision_requires_csrf_and_is_saved(client, tmp_store):
+    assert client.post("/opportunity/1001/decision", data={"decision": "Pursue"}).status_code == 400
+    token = _csrf(client, "/opportunity/1001")
+    r = client.post("/opportunity/1001/decision", data={"csrf": token, "decision": "Pursue", "name": "PP", "note": "route to DMH"})
+    assert r.status_code == 302
+    saved = tmp_store.read_json("decisions/ncdhhs.json")["decisions"]["1001"][-1]
+    assert saved["decision"] == "Pursue" and saved["by"] == "PP" and saved["note"] == "route to DMH"
+    assert "Pursue" in client.get("/export.csv?track=all&confidence=all").get_data(as_text=True)
+    bad = client.post("/opportunity/1001/decision", data={"csrf": token, "decision": "Maybe", "next": "//evil.example"})
+    assert bad.headers["Location"].endswith("/opportunity/1001")
+
+
+def test_labeling_flow(client, tmp_store):
+    token = _csrf(client, "/evaluation")
+    assert client.post("/evaluation/sample", data={"csrf": token}).status_code == 302
+    sample = tmp_store.read_json("eval/sample.json")
+    first = sample["items"][0]["id"]
+    r = client.post("/evaluation/label", data={"csrf": token, "id": first, "labeler": "A", "relevant": "yes"})
+    assert r.status_code == 302
+    assert tmp_store.read_json("eval/labels.json")["labels"][0]["relevant"] is True
+    assert client.get("/evaluation").status_code == 200

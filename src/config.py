@@ -43,8 +43,14 @@ PROMPT_FIELDS = ("agency_name", "mission", "user", "strategic_priorities", "divi
 def prompt_fields(agency: dict) -> dict:
     """The parts of the agency config that are sent to a model. Only these go into
     the prompt-version hash, so tuning thresholds or Layer 4 weights does not
-    invalidate the cache of model answers."""
-    return {k: agency[k] for k in PROMPT_FIELDS}
+    invalidate the cache of model answers. Page citations ("source") added to goals for
+    the finals profile are not sent to the qualifier's models, so they are left out too."""
+    out = {k: agency[k] for k in PROMPT_FIELDS}
+    out["strategic_priorities"] = [
+        {"id": g["id"], "name": g["name"], "description": g["description"],
+         "objectives": [{"id": o["id"], "text": o["text"]} for o in g["objectives"]]}
+        for g in agency["strategic_priorities"]]
+    return out
 
 
 def objective_ids(agency: dict) -> set[str]:
