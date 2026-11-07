@@ -74,6 +74,7 @@ main:focus { outline: none; }
 .alert p { margin: .2rem 0; }
 .alert-success { background: var(--ok-bg); border-color: #00a91c; }
 .alert-warning { background: var(--warn-bg); border-color: #ffbe2e; }
+.alert-info { background: #e7f2f5; border-color: var(--primary); }
 
 .alert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: .75rem; margin: 1rem 0; }
 .alert-box { border: 1px solid var(--line); border-left: 6px solid var(--primary); padding: .6rem .9rem; background: #fff; }

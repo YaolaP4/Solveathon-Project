@@ -413,3 +413,29 @@ def test_funder_history_uses_each_agencys_own_name():
                        "nc_recipients": [{"name": "NORTH CAROLINA DEPARTMENT OF ENVIRONMENTAL QUALITY", "amount": 3e7}]}}
     s, reason, summary = matcher.affinity_signal(["66.458"], hist, deq["layer5_award_history"], True, deq)
     assert s == 1.0 and "NC DEQ received $30.0M" in reason and summary["agency"] == "NC DEQ"
+
+
+def test_feedback_moves_similar_opportunities_one_step(tmp_path, monkeypatch):
+    import numpy as np
+    import feedback
+    s = Store(LocalStore(tmp_path))
+    s.write_json("decisions/ncdhhs.json", {"decisions": {
+        "a": [{"decision": "Pass", "by": "PP"}], "d": [{"decision": "Pursue", "by": "PP"}]}})
+    df = pd.DataFrame([
+        {"grant_id": "a", "opportunity_title": "Grant A", "confidence": "High"},
+        {"grant_id": "b", "opportunity_title": "Grant B (repost of A)", "confidence": "High"},
+        {"grant_id": "c", "opportunity_title": "Grant C (unrelated)", "confidence": "Medium"},
+        {"grant_id": "d", "opportunity_title": "Grant D", "confidence": "Low"},
+        {"grant_id": "e", "opportunity_title": "Grant E (like D)", "confidence": "Low"}])
+    vecs = np.array([[1, 0, 0], [0.98, 0.2, 0], [0, 0, 1], [0, 1, 0], [0.05, 0.99, 0]], dtype=float)
+    vecs = vecs / np.linalg.norm(vecs, axis=1, keepdims=True)
+    monkeypatch.setattr(feedback.aoai, "available", lambda: True)
+    monkeypatch.setattr(feedback.matcher, "opportunity_text", lambda r: r["opportunity_title"])
+    monkeypatch.setattr(feedback.matcher, "embed_cached", lambda store, texts, log=None: vecs)
+    out, stats = feedback.apply(df, s, "ncdhhs", log=lambda *_: None)
+    out = out.set_index("grant_id")
+    assert out.loc["b", "confidence"] == "Medium" and "staff passed" in out.loc["b", "feedback_note"]
+    assert out.loc["e", "confidence"] == "Medium" and "staff pursued" in out.loc["e", "feedback_note"]
+    assert out.loc["c", "confidence"] == "Medium" and out.loc["c", "feedback_note"] == ""
+    assert out.loc["a", "confidence"] == "High" and out.loc["a", "feedback_note"] == ""     # not compared with itself
+    assert stats == {"decisions_used": 2, "raised": 1, "lowered": 1}

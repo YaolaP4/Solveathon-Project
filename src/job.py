@@ -29,6 +29,7 @@ import pandas as pd
 
 import aoai
 import config
+import feedback
 import grantsgov
 import matcher
 import normalize
@@ -82,6 +83,7 @@ def scored_record(r: pd.Series, w: dict, goals: dict, ingested_at: str) -> dict:
         "forecast_close_date": _iso(r["forecasted_close_date"]) if r["is_forecast"] else None,
         "ai": r["ai"] if isinstance(r["ai"], dict) else None,
         "review_adjustment": r["review_adjustment"],
+        "feedback_note": r.get("feedback_note", "") or "",
     })
     return rec
 
@@ -95,6 +97,11 @@ def publish_agency(agency: dict, live, store, today: str, now, run_id: str, kw_h
     scored, meta = matcher.score(live, agency, store, log)
     reviews, problems, rstats = rationale.review(scored, agency, store, log)
     scored = rationale.apply(scored, reviews)
+    try:   # learning from staff decisions must never stop the morning refresh
+        scored, fstats = feedback.apply(scored, store, aid, log)
+    except Exception as e:
+        log(f"  WARNING feedback step skipped: {str(e)[:150]}")
+        scored["feedback_note"], fstats = "", {"error": str(e)[:150]}
 
     w = meta["weights"]
     goals = {g["id"]: g for g in agency["strategic_priorities"]}
@@ -126,7 +133,8 @@ def publish_agency(agency: dict, live, store, today: str, now, run_id: str, kw_h
     store.write_json(f"alerts/{aid}/latest.json", alerts)
     return {"method": meta["method"], "scored": len(scored), "by_track": counts,
             "by_confidence_agency_track": scored.loc[scored["track"] == "agency", "confidence"].value_counts().to_dict(),
-            "new": len(alerts["new_since_last_run"]), "summarize": {**rstats, "problems_caught": len(problems)}}
+            "new": len(alerts["new_since_last_run"]), "summarize": {**rstats, "problems_caught": len(problems)},
+            "feedback": fstats}
 
 
 def run(replay: str | None = None, log=print) -> dict:

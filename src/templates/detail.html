@@ -9,6 +9,7 @@
   · <a href="{{ r.url }}">Official listing on Grants.gov</a></p>
 
 {% if r.review_adjustment %}<div class="alert alert-warning" role="note"><p><strong>AI review flag:</strong> {{ r.review_adjustment }}.</p></div>{% endif %}
+{% if r.feedback_note %}<div class="alert alert-info" role="note"><p><strong>Learned from your team’s decisions:</strong> {{ r.feedback_note }}.</p></div>{% endif %}
 {% if r.low_quality %}<div class="alert alert-warning" role="note"><p><strong>Incomplete listing:</strong> {{ r.quality_issues|join(', ') }}. Check the official listing.</p></div>{% endif %}
 
 <div class="detail-grid">
