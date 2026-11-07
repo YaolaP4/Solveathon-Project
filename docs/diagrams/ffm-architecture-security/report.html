@@ -158,7 +158,7 @@ footer{margin-top:40px;font-size:12px;color:#777;border-top:1px solid #DDD;paddi
     <text x="1000" y="722" font-size="13" font-weight="700" fill="#222">Azure Container Registry</text>
     <text x="1000" y="740" font-size="13" font-weight="700" fill="#222">acrffm4817</text>
     <text x="1000" y="760" font-size="12" fill="#444">[Platform: ACR, Basic SKU]</text>
-    <text x="1000" y="780" font-size="12" fill="#444">Image ffm:v2 deployed (v1 superseded)</text>
+    <text x="1000" y="780" font-size="12" fill="#444">Image ffm:v4 deployed (earlier tags superseded)</text>
     <text x="1000" y="797" font-size="12" fill="#444">one image: MODE=app or MODE=job</text>
     <text x="1000" y="817" font-size="12" fill="#444">Queued cloud build: az acr build</text>
     <text x="1000" y="834" font-size="12" fill="#444">--no-logs; deploy script polls status</text>
@@ -298,8 +298,8 @@ footer{margin-top:40px;font-size:12px;color:#777;border-top:1px solid #DDD;paddi
   <text x="596" y="974" font-size="14" font-weight="700" fill="#222">Flow key (set-up, then the daily job, then staff use)</text>
   <g font-size="12" fill="#222">
     <text x="596" y="996"><tspan font-weight="700">1</tspan><tspan x="622">Plan PDF → Team: one-time, hand-built profile agency/priorities.json (20 objectives with page cites, 40 keywords), second review</tspan></text>
-    <text x="596" y="1013"><tspan font-weight="700">2</tspan><tspan x="622">Team → ACR + Container Apps: queued az acr build --no-logs (image ffm:v2), az containerapp create/update · HTTPS, Azure CLI sign-in</tspan></text>
-    <text x="596" y="1030"><tspan font-weight="700">3</tspan><tspan x="622">ACR → Web App + Job: pull image ffm:v2 at start · HTTPS, ACR admin username/password (planned: managed identity)</tspan></text>
+    <text x="596" y="1013"><tspan font-weight="700">2</tspan><tspan x="622">Team → ACR + Container Apps: queued az acr build --no-logs (image ffm:v4), az containerapp create/update · HTTPS, Azure CLI sign-in</tspan></text>
+    <text x="596" y="1030"><tspan font-weight="700">3</tspan><tspan x="622">ACR → Web App + Job: pull image ffm:v4 at start · HTTPS, ACR admin username/password (planned: managed identity)</tspan></text>
     <text x="596" y="1047"><tspan font-weight="700">4</tspan><tspan x="622">Job → Grants.gov: search2 (all posted + forecasted; 40 keyword searches for the baseline only), fetchOpportunity · HTTPS/JSON, no key</tspan></text>
     <text x="596" y="1064"><tspan font-weight="700">5</tspan><tspan x="622">Job → USAspending.gov: award totals and recipients by assistance listing, FY2022-2025, cached · HTTPS/JSON, no key</tspan></text>
     <text x="596" y="1081"><tspan font-weight="700">6</tspan><tspan x="622">Job → Azure OpenAI embed: listing text, 20 plan objectives, 10 off-topic field descriptions → 512-dim vectors, cached by text hash · HTTPS, API key</tspan></text>
@@ -333,7 +333,7 @@ footer{margin-top:40px;font-size:12px;color:#777;border-top:1px solid #DDD;paddi
 <tr><td class="planned">Azure AI Search or Cosmos DB</td><td>Data store (planned)</td><td>Not chosen yet</td><td>Search and queries at larger scale</td><td>Facts sheet (planned)</td></tr>
 <tr><td>Log Analytics workspace</td><td>Platform (monitoring)</td><td>Auto-created with <code>cae-ffm</code></td><td>Console output of the app and the job, gunicorn access log</td><td>Facts sheet; <span class="assumed">ASSUMED</span> default log collection, no alert rules</td></tr>
 <tr><td>Container Apps secrets</td><td>Platform (secrets)</td><td><code>secretref</code> env vars: <code>storage-conn</code>, <code>aoai-key</code>, <code>flask-secret</code> (values ****)</td><td>Hold the storage connection string, Azure OpenAI key and Flask session key for the app and the job</td><td><code>deploy/02_deploy.sh</code> (SECRETS, ENVS)</td></tr>
-<tr><td>Azure Container Registry <code>acrffm4817</code></td><td>Platform (build / registry)</td><td>Basic SKU, admin user enabled; image <code>ffm:v2</code> deployed (<code>ffm:v1</code> superseded); built in the cloud with a queued <code>az acr build --no-logs</code>, and the script polls the run until it succeeds or fails</td><td>Stores the one image used by both the app and the job</td><td><code>deploy/01_resources.sh</code>, <code>deploy/02_deploy.sh</code> (step 6); deployed tag from the team (<code>deploy/env.sh</code> still defaults to <code>v1</code>, see A15)</td></tr>
+<tr><td>Azure Container Registry <code>acrffm4817</code></td><td>Platform (build / registry)</td><td>Basic SKU, admin user enabled; image <code>ffm:v4</code> deployed (<code>ffm:v1</code> superseded); built in the cloud with a queued <code>az acr build --no-logs</code>, and the script polls the run until it succeeds or fails</td><td>Stores the one image used by both the app and the job</td><td><code>deploy/01_resources.sh</code>, <code>deploy/02_deploy.sh</code> (step 6); deployed tag from the team (<code>deploy/env.sh</code> still defaults to <code>v1</code>, see A15)</td></tr>
 <tr><td class="planned">Microsoft Entra ID</td><td>Platform (identity), planned</td><td>Container Apps built-in authentication</td><td>Staff sign-in</td><td>Facts sheet (planned)</td></tr>
 <tr><td class="planned">Key Vault + managed identity</td><td>Platform (secrets), planned</td><td>Azure Key Vault, managed identity</td><td>Replace the connection string, OpenAI key and ACR admin credentials</td><td>Facts sheet (planned)</td></tr>
 <tr><td class="planned">Application Insights</td><td>Platform (monitoring), planned</td><td>Workspace-based</td><td>Request traces, errors, alerts on failed runs</td><td>Facts sheet (planned)</td></tr>
@@ -357,8 +357,8 @@ footer{margin-top:40px;font-size:12px;color:#777;border-top:1px solid #DDD;paddi
 <h2 id="flows">4. Data flows</h2>
 <table><tr><th>#</th><th>From → To</th><th>Data</th><th>Protocol / Auth</th><th>Classification</th></tr>
 <tr><td>1</td><td>Plan PDF → Team developers</td><td>Plan text read by people; hand-built profile <code>agency/priorities.json</code>, reviewed by a second teammate</td><td>Manual, one time</td><td>Public</td></tr>
-<tr><td>2</td><td>Team → ACR + Container Apps</td><td>Source code and profile sent to a queued cloud build (<code>az acr build --no-logs</code>, image <code>ffm:v2</code>; the script polls the run status); deploy commands; secrets read from Azure into shell variables and set as Container Apps secrets</td><td>HTTPS, Azure CLI sign-in</td><td>Internal (secrets Restricted)</td></tr>
-<tr><td>3</td><td>ACR → Web App + Job</td><td>Container image <code>ffm:v2</code> (<code>v1</code> superseded)</td><td>HTTPS, ACR admin username/password (planned: managed identity)</td><td>Internal (credentials Restricted)</td></tr>
+<tr><td>2</td><td>Team → ACR + Container Apps</td><td>Source code and profile sent to a queued cloud build (<code>az acr build --no-logs</code>, image <code>ffm:v4</code>; the script polls the run status); deploy commands; secrets read from Azure into shell variables and set as Container Apps secrets</td><td>HTTPS, Azure CLI sign-in</td><td>Internal (secrets Restricted)</td></tr>
+<tr><td>3</td><td>ACR → Web App + Job</td><td>Container image <code>ffm:v4</code> (<code>v1</code> superseded)</td><td>HTTPS, ACR admin username/password (planned: managed identity)</td><td>Internal (credentials Restricted)</td></tr>
 <tr><td>4</td><td>Job → Grants.gov</td><td>Search requests and listings: one broad pull, 40 keyword searches (baseline only), detail per listing</td><td>HTTPS/JSON, no key</td><td>Public</td></tr>
 <tr><td>5</td><td>Job → USAspending.gov</td><td>Award totals and top recipients per assistance listing</td><td>HTTPS/JSON, no key</td><td>Public</td></tr>
 <tr><td>6</td><td>Job → Azure OpenAI (<code>embed</code>)</td><td>Listing text, the 20 plan objectives and 10 short off-topic field descriptions written by the team; 512-dim vectors back, cached by text hash</td><td>HTTPS, API key</td><td>Public (key Restricted)</td></tr>
@@ -378,7 +378,7 @@ footer{margin-top:40px;font-size:12px;color:#777;border-top:1px solid #DDD;paddi
 <tr><td>Container Apps secrets</td><td>Storage connection string, Azure OpenAI key, Flask session key (values ****)</td><td>Restricted</td></tr>
 <tr><td><code>.env</code> on team laptops</td><td>Local settings and keys for laptop runs (not read for this report)</td><td>Restricted</td></tr>
 <tr><td>Log Analytics</td><td>Console output, request lines (paths, status codes)</td><td>Internal</td></tr>
-<tr><td>Container image <code>ffm:v2</code></td><td>Code, prompts, agency profile, cached public USAspending responses; no secrets (<code>.dockerignore</code>)</td><td>Internal</td></tr>
+<tr><td>Container image <code>ffm:v4</code></td><td>Code, prompts, agency profile, cached public USAspending responses; no secrets (<code>.dockerignore</code>)</td><td>Internal</td></tr>
 </table>
 <p class="meta">No residents' data and no personal data beyond staff-typed names or initials are stored (facts sheet).</p>
 
@@ -491,7 +491,7 @@ footer{margin-top:40px;font-size:12px;color:#777;border-top:1px solid #DDD;paddi
     <line x1="880" y1="640" x2="1120" y2="640" stroke="#2E7D32" stroke-width="3"/><line x1="880" y1="722" x2="1120" y2="722" stroke="#2E7D32" stroke-width="3"/>
     <text x="1000" y="660" font-size="13" font-weight="700" fill="#1B5E20">Container Registry acrffm4817</text>
     <text x="1000" y="677" font-size="12" fill="#1B5E20">[Data store: image, Internal]</text>
-    <text x="1000" y="695" font-size="12" fill="#1B5E20">ffm:v2 deployed (v1 superseded)</text>
+    <text x="1000" y="695" font-size="12" fill="#1B5E20">ffm:v4 deployed (earlier tags superseded)</text>
     <text x="1000" y="712" font-size="12" fill="#1B5E20">az acr build --no-logs · pulled at start</text>
 
     <rect x="1210" y="720" width="290" height="76" fill="#E8F5E9"/>
@@ -684,7 +684,7 @@ footer{margin-top:40px;font-size:12px;color:#777;border-top:1px solid #DDD;paddi
 
 <h2 id="assumptions">8. Assumptions &amp; open questions</h2>
 <p class="meta">Mirrors <code>assumptions.md</code>. The <code>.env</code> file was not opened; secret values are shown as ****.</p>
-<p class="callout">Changes in version 1.1: plan alignment is now a hybrid (0.5 &times; embedding margin against 10 off-topic field descriptions + 0.5 &times; TF-IDF; TF-IDF alone without Azure OpenAI); confidence bands are High &ge; 55 and Medium &ge; 45; image <code>ffm:v2</code> is deployed (<code>v1</code> superseded) and built with a queued <code>az acr build --no-logs</code>; Azure OpenAI capacity is 1,000K tokens/min (embed) and 500K tokens/min (chat); Blob paths now follow <code>docs/data_contract.md</code>, including <code>profiles/</code>; web-app controls added on 7 November (HSTS, <code>no-store</code>, spreadsheet-safe CSV, same-site redirects, required name on decisions, stale-refresh warning; see A17). Entra ID, Key Vault, managed identity, Application Insights and private endpoints are still planned.</p>
+<p class="callout">Changes in version 1.1: plan alignment is now a hybrid (0.5 &times; embedding margin against 10 off-topic field descriptions + 0.5 &times; TF-IDF; TF-IDF alone without Azure OpenAI); confidence bands are High &ge; 55 and Medium &ge; 45; image <code>ffm:v4</code> is deployed (<code>v1</code> superseded) and built with a queued <code>az acr build --no-logs</code>; Azure OpenAI capacity is 1,000K tokens/min (embed) and 500K tokens/min (chat); Blob paths now follow <code>docs/data_contract.md</code>, including <code>profiles/</code>; web-app controls added on 7 November (HSTS, <code>no-store</code>, spreadsheet-safe CSV, same-site redirects, required name on decisions, stale-refresh warning; see A17). Entra ID, Key Vault, managed identity, Application Insights and private endpoints are still planned.</p>
 <ul>
 <li><span class="assumed">ASSUMED</span> A1: the challenge sponsor is NC OSBM, which publishes the agency strategic plans.</li>
 <li><span class="assumed">ASSUMED</span> A2: NCDIT and the DHHS privacy/security office would approve a pilot; procurement/legal would handle any production contract.</li>
@@ -700,7 +700,7 @@ footer{margin-top:40px;font-size:12px;color:#777;border-top:1px solid #DDD;paddi
 <li>A12: the schedule <code>0 11 * * *</code> is in UTC: 6:00 AM Eastern Standard Time, 7:00 AM during daylight saving time. The <code>TZ=America/New_York</code> setting only changes the date the job writes, not when it runs.</li>
 <li><span class="assumed">ASSUMED</span> A13: free-text decision notes are classed as Internal.</li>
 <li>A14: roles and settings marked "Recommended" are our suggestions, not items in the team's plan.</li>
-<li>A15: <code>ffm:v2</code> is the image deployed to both the app and the job and <code>ffm:v1</code> is superseded (team statement; the repository cannot show this). <code>deploy/env.sh</code> still defaults <code>TAG</code> to <code>v1</code>, so rollouts must set <code>TAG</code> explicitly.</li>
+<li>A15: <code>ffm:v4</code> is the image deployed to both the app and the job and <code>ffm:v1</code> is superseded (team statement; the repository cannot show this). <code>deploy/env.sh</code> still defaults <code>TAG</code> to <code>v1</code>, so rollouts must set <code>TAG</code> explicitly.</li>
 <li>A16: the hybrid tuning figures (1,037 opportunities; AUC 0.91 against 0.84 for raw embeddings) come from <code>docs/tuning_report.md</code> (<code>src/tune_semantic.py</code>); this report did not re-run the measurement. An earlier comparison reported 0.84 against 0.78; <code>docs/finals_field_notes.md</code> says it double-counted repeated opportunities and was corrected.</li>
 <li><span class="assumed">ASSUMED</span> A17: the web-app controls added on 7 November (HSTS, <code>no-store</code>, spreadsheet-safe CSV, same-site redirects, required name on decisions, duplicate-submit check, stale-refresh warning) are in the code read for this report but not yet committed; we assume they are in the deployed image.</li>
 <li>Open question 1: for a pilot, which identities would sign in, and who may record decisions versus only view?</li>

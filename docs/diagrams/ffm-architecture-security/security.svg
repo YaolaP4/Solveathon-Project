@@ -105,7 +105,7 @@
     <line x1="880" y1="640" x2="1120" y2="640" stroke="#2E7D32" stroke-width="3"/><line x1="880" y1="722" x2="1120" y2="722" stroke="#2E7D32" stroke-width="3"/>
     <text x="1000" y="660" font-size="13" font-weight="700" fill="#1B5E20">Container Registry acrffm4817</text>
     <text x="1000" y="677" font-size="12" fill="#1B5E20">[Data store: image, Internal]</text>
-    <text x="1000" y="695" font-size="12" fill="#1B5E20">ffm:v2 deployed (v1 superseded)</text>
+    <text x="1000" y="695" font-size="12" fill="#1B5E20">ffm:v4 deployed (earlier tags superseded)</text>
     <text x="1000" y="712" font-size="12" fill="#1B5E20">az acr build --no-logs · pulled at start</text>
 
     <rect x="1210" y="720" width="290" height="76" fill="#E8F5E9"/>

@@ -119,7 +119,7 @@
     <text x="1000" y="722" font-size="13" font-weight="700" fill="#222">Azure Container Registry</text>
     <text x="1000" y="740" font-size="13" font-weight="700" fill="#222">acrffm4817</text>
     <text x="1000" y="760" font-size="12" fill="#444">[Platform: ACR, Basic SKU]</text>
-    <text x="1000" y="780" font-size="12" fill="#444">Image ffm:v2 deployed (v1 superseded)</text>
+    <text x="1000" y="780" font-size="12" fill="#444">Image ffm:v4 deployed (earlier tags superseded)</text>
     <text x="1000" y="797" font-size="12" fill="#444">one image: MODE=app or MODE=job</text>
     <text x="1000" y="817" font-size="12" fill="#444">Queued cloud build: az acr build</text>
     <text x="1000" y="834" font-size="12" fill="#444">--no-logs; deploy script polls status</text>
@@ -259,8 +259,8 @@
   <text x="596" y="974" font-size="14" font-weight="700" fill="#222">Flow key (set-up, then the daily job, then staff use)</text>
   <g font-size="12" fill="#222">
     <text x="596" y="996"><tspan font-weight="700">1</tspan><tspan x="622">Plan PDF → Team: one-time, hand-built profile agency/priorities.json (20 objectives with page cites, 40 keywords), second review</tspan></text>
-    <text x="596" y="1013"><tspan font-weight="700">2</tspan><tspan x="622">Team → ACR + Container Apps: queued az acr build --no-logs (image ffm:v2), az containerapp create/update · HTTPS, Azure CLI sign-in</tspan></text>
-    <text x="596" y="1030"><tspan font-weight="700">3</tspan><tspan x="622">ACR → Web App + Job: pull image ffm:v2 at start · HTTPS, ACR admin username/password (planned: managed identity)</tspan></text>
+    <text x="596" y="1013"><tspan font-weight="700">2</tspan><tspan x="622">Team → ACR + Container Apps: queued az acr build --no-logs (image ffm:v4), az containerapp create/update · HTTPS, Azure CLI sign-in</tspan></text>
+    <text x="596" y="1030"><tspan font-weight="700">3</tspan><tspan x="622">ACR → Web App + Job: pull image ffm:v4 at start · HTTPS, ACR admin username/password (planned: managed identity)</tspan></text>
     <text x="596" y="1047"><tspan font-weight="700">4</tspan><tspan x="622">Job → Grants.gov: search2 (all posted + forecasted; 40 keyword searches for the baseline only), fetchOpportunity · HTTPS/JSON, no key</tspan></text>
     <text x="596" y="1064"><tspan font-weight="700">5</tspan><tspan x="622">Job → USAspending.gov: award totals and recipients by assistance listing, FY2022-2025, cached · HTTPS/JSON, no key</tspan></text>
     <text x="596" y="1081"><tspan font-weight="700">6</tspan><tspan x="622">Job → Azure OpenAI embed: listing text, 20 plan objectives, 10 off-topic field descriptions → 512-dim vectors, cached by text hash · HTTPS, API key</tspan></text>
