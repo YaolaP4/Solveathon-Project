@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1560 1290" width="1560" height="1290" role="img" aria-labelledby="t d" font-family="Segoe UI, Arial, Helvetica, sans-serif">
-  <title id="t">Federal Funds Matchmaker for NC DHHS: Stakeholder Onion Diagram</title>
-  <desc id="d">Onion model with the matchmaker at the centre. Ring 2, the system: S1 federal-grants coordinator, S2 division program leads, S10 Team 14. Ring 3, the containing system: S3 DHHS executive leadership, S4 division directors, S5 division program staff, S6 NCDIT security and privacy, S7 DHHS privacy and security office, S8 procurement and legal, S9 NC OSBM. Ring 4, the wider environment: S11 Solve-a-thon hosts, S12 Microsoft Azure, S13 Grants.gov, S14 USAspending.gov, S15 federal awarding agencies, S16 local health departments and community organizations, S17 NC residents, S18 grant-writing consultants. Pill colour shows attitude; a dashed outline marks external stakeholders.</desc>
+  <title id="t">Federal Funds Matchmaker: Stakeholder Onion Diagram</title>
+  <desc id="d">Onion model with the matchmaker, a central tool for NC state agencies, at the centre. Ring 2, the system: S1 DHHS federal-grants coordinator, S2 DHHS division program leads, S10 Team 14, S19 NC DEQ grants coordinator. Ring 3, the containing system: S3 DHHS executive leadership, S4 DHHS division directors, S5 DHHS division program staff, S6 NCDIT security and privacy, S7 DHHS privacy and security office, S8 procurement and legal, S9 NC OSBM (sponsor and owner of the central tool), S20 NC DEQ leadership, S21 smaller agencies with limited grant capacity. Ring 4, the wider environment: S11 Solve-a-thon hosts, S12 Microsoft Azure, S13 Grants.gov, S14 USAspending.gov, S15 federal awarding agencies, S16 local recipients (local governments, utilities, community organizations), S17 NC residents, S18 grant-writing consultants. Pill colour shows attitude; a dashed outline marks external stakeholders.</desc>
   <rect width="1560" height="1290" fill="#FFF"/>
-  <text x="40" y="42" font-size="26" font-weight="700" fill="#08427B">Federal Funds Matchmaker for NC DHHS: Stakeholder Onion</text>
-  <text x="40" y="68" font-size="14" fill="#555">Team 14, UNC Solve-a-thon 2026 • Onion model (I. Alexander) • 2026-11-07 • v1.0</text>
+  <text x="40" y="42" font-size="26" font-weight="700" fill="#08427B">Federal Funds Matchmaker: Stakeholder Onion</text>
+  <text x="40" y="68" font-size="14" fill="#555">Team 14, UNC Solve-a-thon 2026 • Sponsor: NC OSBM • Agencies: NC DHHS, NC DEQ • Onion model (I. Alexander) • 2026-11-07 • v1.2</text>
   <circle cx="610" cy="680" r="590" fill="#EEF3FA" stroke="#9DB6D5" stroke-width="2"/>
   <circle cx="610" cy="680" r="420" fill="#DCE6F2" stroke="#7FA0C8" stroke-width="2"/>
   <circle cx="610" cy="680" r="250" fill="#C5D7EC" stroke="#5F88BB" stroke-width="2"/>
@@ -12,29 +12,32 @@
   <g font-size="13" font-weight="700" fill="#08427B" text-anchor="middle" letter-spacing="1">
     <text x="610" y="125">4 · WIDER ENVIRONMENT</text>
     <text x="610" y="330">3 · CONTAINING SYSTEM</text>
-    <text x="610" y="895">2 · THE SYSTEM</text>
+    <text x="610" y="908">2 · THE SYSTEM</text>
   </g>
   <text x="610" y="658" font-size="17" font-weight="700" fill="#FFF" text-anchor="middle">Federal Funds</text>
   <text x="610" y="680" font-size="17" font-weight="700" fill="#FFF" text-anchor="middle">Matchmaker</text>
-  <text x="610" y="700" font-size="13" fill="#FFF" text-anchor="middle">for NC DHHS</text>
+  <text x="610" y="700" font-size="13" fill="#FFF" text-anchor="middle">for NC state agencies</text>
   <text x="610" y="724" font-size="12" fill="#FFF" text-anchor="middle">1 · Product</text>
   <g font-size="12" font-weight="600" text-anchor="middle">
-    <rect x="490" y="480" width="241" height="30" rx="15" fill="#7FBF7B" stroke="#222" stroke-width="1.8"/><text x="610" y="500" fill="#222">S1 Federal-grants coordinator</text>
-    <rect x="504" y="520" width="211" height="30" rx="15" fill="#BDBDBD" stroke="#222" stroke-width="1.8"/><text x="610" y="540" fill="#222">S2 Division program leads</text>
-    <rect x="512" y="810" width="196" height="30" rx="15" fill="#1B7837" stroke="#222" stroke-width="1.8" stroke-dasharray="5 3"/><text x="610" y="830" fill="#FFF">S10 Team 14 (operators)</text>
-    <rect x="394" y="348" width="234" height="30" rx="15" fill="#BDBDBD" stroke="#222" stroke-width="1.8"/><text x="512" y="368" fill="#222">S3 DHHS executive leadership</text>
-    <rect x="644" y="348" width="181" height="30" rx="15" fill="#BDBDBD" stroke="#222" stroke-width="1.8"/><text x="735" y="368" fill="#222">S4 Division directors</text>
+    <rect x="500" y="480" width="219" height="30" rx="15" fill="#7FBF7B" stroke="#222" stroke-width="1.8"/><text x="610" y="500" fill="#222">S1 DHHS grants coordinator</text>
+    <rect x="500" y="520" width="219" height="30" rx="15" fill="#BDBDBD" stroke="#222" stroke-width="1.8"/><text x="610" y="540" fill="#222">S19 DEQ grants coordinator</text>
+    <rect x="486" y="810" width="249" height="30" rx="15" fill="#BDBDBD" stroke="#222" stroke-width="1.8"/><text x="610" y="830" fill="#222">S2 DHHS division program leads</text>
+    <rect x="512" y="850" width="196" height="30" rx="15" fill="#1B7837" stroke="#222" stroke-width="1.8" stroke-dasharray="5 3"/><text x="610" y="870" fill="#FFF">S10 Team 14 (operators)</text>
+    <rect x="372" y="348" width="226" height="30" rx="15" fill="#7FBF7B" stroke="#222" stroke-width="1.8"/><text x="485" y="368" fill="#222">S9 NC OSBM (sponsor, owner)</text>
+    <rect x="614" y="348" width="234" height="30" rx="15" fill="#BDBDBD" stroke="#222" stroke-width="1.8"/><text x="731" y="368" fill="#222">S3 DHHS executive leadership</text>
     <rect x="380" y="388" width="226" height="30" rx="15" fill="#F1A340" stroke="#222" stroke-width="1.8"/><text x="492" y="408" fill="#222">S6 NCDIT security &amp; privacy</text>
     <rect x="622" y="388" width="219" height="30" rx="15" fill="#BDBDBD" stroke="#222" stroke-width="1.8"/><text x="731" y="408" fill="#222">S7 DHHS privacy &amp; security</text>
-    <rect x="402" y="942" width="211" height="30" rx="15" fill="#F1A340" stroke="#222" stroke-width="1.8"/><text x="508" y="962" fill="#222">S5 Division program staff</text>
-    <rect x="629" y="942" width="189" height="30" rx="15" fill="#BDBDBD" stroke="#222" stroke-width="1.8"/><text x="724" y="962" fill="#222">S8 Procurement &amp; legal</text>
-    <rect x="523" y="982" width="174" height="30" rx="15" fill="#7FBF7B" stroke="#222" stroke-width="1.8"/><text x="610" y="1002" fill="#222">S9 NC OSBM (sponsor)</text>
+    <rect x="402" y="942" width="219" height="30" rx="15" fill="#BDBDBD" stroke="#222" stroke-width="1.8"/><text x="512" y="962" fill="#222">S4 DHHS division directors</text>
+    <rect x="637" y="942" width="181" height="30" rx="15" fill="#BDBDBD" stroke="#222" stroke-width="1.8"/><text x="728" y="962" fill="#222">S20 NC DEQ leadership</text>
+    <rect x="417" y="982" width="181" height="30" rx="15" fill="#F1A340" stroke="#222" stroke-width="1.8"/><text x="508" y="1002" fill="#222">S5 DHHS program staff</text>
+    <rect x="614" y="982" width="189" height="30" rx="15" fill="#BDBDBD" stroke="#222" stroke-width="1.8"/><text x="708" y="1002" fill="#222">S8 Procurement &amp; legal</text>
+    <rect x="467" y="1022" width="286" height="30" rx="15" fill="#7FBF7B" stroke="#222" stroke-width="1.8"/><text x="610" y="1042" fill="#222">S21 Smaller agencies (future users)</text>
     <rect x="454" y="138" width="129" height="30" rx="15" fill="#BDBDBD" stroke="#222" stroke-width="1.8" stroke-dasharray="5 3"/><text x="519" y="158" fill="#222">S13 Grants.gov</text>
     <rect x="600" y="138" width="166" height="30" rx="15" fill="#BDBDBD" stroke="#222" stroke-width="1.8" stroke-dasharray="5 3"/><text x="682" y="158" fill="#222">S14 USAspending.gov</text>
     <rect x="398" y="180" width="241" height="30" rx="15" fill="#BDBDBD" stroke="#222" stroke-width="1.8" stroke-dasharray="5 3"/><text x="519" y="200" fill="#222">S15 Federal awarding agencies</text>
     <rect x="656" y="180" width="166" height="30" rx="15" fill="#BDBDBD" stroke="#222" stroke-width="1.8" stroke-dasharray="5 3"/><text x="738" y="200" fill="#222">S12 Microsoft Azure</text>
-    <rect x="361" y="1150" width="241" height="30" rx="15" fill="#7FBF7B" stroke="#222" stroke-width="1.8" stroke-dasharray="5 3"/><text x="482" y="1170" fill="#222">S16 Local health depts &amp; orgs</text>
-    <rect x="618" y="1150" width="241" height="30" rx="15" fill="#F1A340" stroke="#222" stroke-width="1.8" stroke-dasharray="5 3"/><text x="738" y="1170" fill="#222">S18 Grant-writing consultants</text>
+    <rect x="346" y="1150" width="271" height="30" rx="15" fill="#7FBF7B" stroke="#222" stroke-width="1.8" stroke-dasharray="5 3"/><text x="482" y="1170" fill="#222">S16 Local govts, utilities &amp; orgs</text>
+    <rect x="633" y="1150" width="241" height="30" rx="15" fill="#F1A340" stroke="#222" stroke-width="1.8" stroke-dasharray="5 3"/><text x="754" y="1170" fill="#222">S18 Grant-writing consultants</text>
     <rect x="436" y="1192" width="144" height="30" rx="15" fill="#BDBDBD" stroke="#222" stroke-width="1.8" stroke-dasharray="5 3"/><text x="508" y="1212" fill="#222">S17 NC residents</text>
     <rect x="596" y="1192" width="189" height="30" rx="15" fill="#7FBF7B" stroke="#222" stroke-width="1.8" stroke-dasharray="5 3"/><text x="690" y="1212" fill="#222">S11 Solve-a-thon hosts</text>
   </g>
@@ -51,21 +54,21 @@
     <rect x="1246" y="280" width="34" height="16" rx="8" fill="#FFF" stroke="#222" stroke-width="1.8"/><text x="1288" y="293">Inside NC state government</text>
     <rect x="1246" y="306" width="34" height="16" rx="8" fill="#FFF" stroke="#222" stroke-width="1.8" stroke-dasharray="5 3"/><text x="1288" y="319">External to state government</text>
     <text x="1246" y="350" fill="#555">Dashed = external, not “planned”.</text>
-    <text x="1246" y="374" fill="#555">IDs (S1–S18) match the power/interest</text>
+    <text x="1246" y="374" fill="#555">IDs (S1–S21) match the power/interest</text>
     <text x="1246" y="390" fill="#555">grid and the stakeholder register.</text>
-    <text x="1246" y="414" fill="#555" font-style="italic">ASSUMED placements: validate with S1.</text>
+    <text x="1246" y="414" fill="#555" font-style="italic">ASSUMED placements: validate with S9.</text>
   </g>
   <rect x="1230" y="460" width="310" height="290" rx="8" fill="#FFF" stroke="#9E9E9E"/>
   <text x="1246" y="486" font-size="14" font-weight="700" fill="#222">Rings</text>
   <g font-size="12" fill="#222">
     <text x="1246" y="514" font-weight="700">1 · Product</text>
     <text x="1246" y="530">The matchmaker: daily job and web app.</text>
-    <text x="1246" y="558" font-weight="700">2 · The System (3)</text>
+    <text x="1246" y="558" font-weight="700">2 · The System (4)</text>
     <text x="1246" y="574">People who use or run it directly.</text>
-    <text x="1246" y="602" font-weight="700">3 · Containing System (7)</text>
-    <text x="1246" y="618">Decision makers, approvers, the</text>
-    <text x="1246" y="634">sponsor, and DHHS staff affected</text>
-    <text x="1246" y="650">by its output.</text>
+    <text x="1246" y="602" font-weight="700">3 · Containing System (9)</text>
+    <text x="1246" y="618">The sponsor and tool owner, decision</text>
+    <text x="1246" y="634">makers, approvers, affected staff, and</text>
+    <text x="1246" y="650">smaller agencies (future users).</text>
     <text x="1246" y="678" font-weight="700">4 · Wider Environment (8)</text>
     <text x="1246" y="694">Data providers, vendors, event hosts,</text>
     <text x="1246" y="710">beneficiaries, and those who may</text>

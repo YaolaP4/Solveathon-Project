@@ -186,6 +186,10 @@ def test_ai_can_only_move_or_downgrade_never_rescore():
     reviews["c"]["geographic_verified"] = True          # verified geographic limit: flagged and lowered, not removed
     c = rationale.apply(df, reviews).set_index("grant_id").loc["c"]
     assert c["track"] == "agency" and c["confidence"] == "Medium" and "geographic" in c["review_adjustment"]
+    # even when the model ALSO answers "ineligible" for a geographic limit, it is flagged, never removed
+    reviews["c"].update({"applicant_role": "ineligible", "eligibility_verified": True})
+    c = rationale.apply(df, reviews).set_index("grant_id").loc["c"]
+    assert c["track"] == "agency" and "geographic" in c["review_adjustment"]
     assert out.loc["b", "confidence"] == "Medium"
     assert out.loc["c", "confidence"] == "High"
     assert list(out["score"]) == [70.0, 65.0, 60.0]

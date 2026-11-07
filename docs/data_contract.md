@@ -6,7 +6,7 @@ the app and the evaluation work independently.
 
 | Path | Written by | Read by | Contents |
 |---|---|---|---|
-| `profiles/{agency}.json` | job (from the reviewed `agency/profiles/{agency}.json`) | app | Mission, 5 goals and 20 objectives with plan page citations, 12 program areas, 40 keywords, eligible applicant type, divisions |
+| `profiles/{agency}.json` | job (from the reviewed `agency/profiles/{agency}.json`) | app | Mission, goals and objectives with plan page citations (NC DHHS: 5 goals, 21 objectives, 4 priority areas; NC DEQ: 7 goals, 26 objectives), program areas, 40 keywords, eligible applicant type, divisions |
 | `raw/{yyyy-mm-dd}/grants.json` | job: ingest | job: replay | Untouched Grants.gov search results for the day + which ids each keyword search returned |
 | `details/{id}.json`, `details/index.json` | job: ingest | job | Untouched `fetchOpportunity` responses (cached; refetched when the listing changes or after 7 days) |
 | `opportunities/latest.json` | job: normalize | anyone | Clean records in the minimum schema (below) |
@@ -16,7 +16,8 @@ the app and the evaluation work independently.
 | `eval/{agency}/sample.json` | app (once per agency) | app | The fixed labeling sample, why each item is in it, and a snapshot of what labelers see |
 | `eval/{agency}/labels.json` | app | app | Relevant / not relevant / unsure per item per labeler |
 | `eval/keyword_baseline/{date}.json` | job | app | Which ids Grants.gov's own keyword search returns for each profile keyword |
-| `runs/{timestamp}.json`, `runs/latest.json` | job | app | Run log: counts per stage, errors, duration, status |
+| `runs/{timestamp}.json`, `runs/latest.json` | job | app | Run log: counts per stage and per agency, errors, duration, status |
+| `runs/last_attempt.json` | job (success or failure) | app | The most recent attempt; a failure shows a red warning in the app |
 | `cache/embeddings/*`, `cache/rationales/*`, `cache/aln_history.json` | job | job | Caches so daily re-runs only pay for new or changed records |
 
 ## Minimum opportunity schema (`opportunities/latest.json`)

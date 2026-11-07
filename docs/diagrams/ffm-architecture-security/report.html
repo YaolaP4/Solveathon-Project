@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Federal Funds Matchmaker for NC DHHS: Architecture &amp; Security Report</title>
+<title>Federal Funds Matchmaker for North Carolina Agencies: Architecture &amp; Security Report</title>
 <style>
 :root{--blue:#08427B;--mid:#1168BD}
 *{box-sizing:border-box} body{margin:0;background:#F4F6F9;color:#222;font:15px/1.55 "Segoe UI",Arial,Helvetica,sans-serif}
@@ -25,381 +25,404 @@ footer{margin-top:40px;font-size:12px;color:#777;border-top:1px solid #DDD;paddi
 </style>
 </head><body><main>
 <header>
-<h1>Federal Funds Matchmaker for NC DHHS: Architecture &amp; Security Report</h1>
-<div class="meta"><span><b>Team:</b> Team 14, UNC Solve-a-thon 2026</span><span><b>Date:</b> 2026-11-07</span><span><b>Version:</b> 1.1</span><span><b>Status:</b> Draft for finals submission</span></div>
+<h1>Federal Funds Matchmaker for North Carolina Agencies: Architecture &amp; Security Report</h1>
+<div class="meta"><span><b>Team:</b> Team 14, UNC Solve-a-thon 2026</span><span><b>Sponsor:</b> NC OSBM</span><span><b>Agencies:</b> NC DHHS, NC DEQ</span><span><b>Date:</b> 2026-11-07</span><span><b>Version:</b> 1.2</span><span><b>Status:</b> Draft for finals submission</span></div>
 <div class="meta">Generated with AI assistance; reviewed by: ____</div>
 </header>
 <nav><a href="#summary">Summary</a><a href="#arch">Architecture</a><a href="#components">Components</a><a href="#flows">Data flows</a><a href="#security">Security</a><a href="#threats">Threats</a><a href="#waf">Well-Architected</a><a href="#assumptions">Assumptions</a><a href="#next">Next steps</a><a href="#glossary">Glossary</a></nav>
 
 <h2 id="summary">1. Executive summary</h2>
-<p>Federal Funds Matchmaker helps the NC DHHS federal-grants coordinator find federal funding that fits the NCDHHS Strategic Plan 2023-2025. Every day at 11:00 UTC (6:00 AM Eastern Standard Time; 7:00 AM during daylight saving time) a Container Apps Job pulls all posted and forecasted Grants.gov opportunities (about 1,460) and scores each one from 0 to 100 against the plan's 20 objectives. The plan-alignment part of the score is a hybrid: half an Azure OpenAI embedding margin (closer to a plan objective than to ten unrelated fields such as defence, arts or physics) and half TF-IDF word similarity. For the top 45 records, Azure OpenAI also writes a short summary with two quotes that Python checks word for word. Staff use a Flask web app on Azure Container Apps to review the ranked shortlist and record Pursue / Maybe / Pass; the AI never sets the score, and a person makes every decision.</p>
-<p>The security posture is <b>reasonable for a prototype that holds almost only public data</b>: the app uses HTTPS with HSTS, CSRF tokens, a strict Content-Security-Policy, secure cookies, spreadsheet-safe CSV export and a non-root container, and keys are kept as Container Apps secrets rather than in code or the image. The main gaps are the <b>missing sign-in (T1, High)</b>, which lets anyone with the URL read and record decisions, and <b>shared keys and ACR admin credentials instead of managed identity (T5, T6)</b>; the team has planned fixes for all three (Entra ID sign-in, Key Vault and managed identity), and they should be in place before any pilot with real staff.</p>
+<p>Federal Funds Matchmaker helps North Carolina state agencies find federal funding that fits their own strategic plans. The challenge sponsor, the NC Office of State Budget and Management (OSBM), wants one central tool for all agencies, especially smaller agencies with limited grant capacity. The build covers two agencies on one standard profile template: NC DHHS, with a profile built from the new NCDHHS Strategic Plan 2026-2030 (published September 2026), and NC DEQ, from the NCDEQ Strategic Plan 2025-2029. Every day at 11:00 UTC (6:00 AM Eastern Standard Time; 7:00 AM during daylight saving time) a Container Apps Job pulls all posted and forecasted Grants.gov opportunities once (about 1,460) and normalizes them once, then scores, reviews and publishes them separately for each agency. Each score runs from 0 to 100; its plan-alignment part is half an Azure OpenAI embedding margin (closer to one of the agency's objectives than to ten unrelated fields) and half TF-IDF word similarity. For each agency's top 45 records, Azure OpenAI also writes a short review whose quotes Python checks word for word.</p>
+<p>Staff use a Flask web app on Azure Container Apps. An agency switcher, remembered for the browser session, shows each agency's ranked shortlist, where its coordinator records Pursue / Maybe / Pass. A Statewide page lets a central team such as OSBM see each agency's strong matches, deadlines and decisions, and the opportunities that fit more than one agency. The AI never sets the score, and a person makes every decision. The AI review can move a record to the "not eligible" list only with a verified eligibility quote. A verified quote showing a geographic limit that excludes North Carolina only flags the record and lowers its confidence one step; it never hides it.</p>
+<p>The security posture is <b>reasonable for a prototype that holds almost only public data</b>: the app uses HTTPS with HSTS, CSRF tokens, a strict Content-Security-Policy, secure cookies, spreadsheet-safe CSV export and a non-root container, and keys are kept as Container Apps secrets rather than in code or the image. The main gaps are the <b>missing sign-in (T1, High)</b>, which lets anyone with the URL read and record decisions for any agency; <b>shared keys and ACR admin credentials instead of managed identity (T5, T6)</b>; and, new with the multi-agency build, <b>no per-agency access control (T13)</b>. The team plans Entra ID sign-in, Key Vault and managed identity. We recommend adding per-agency roles with sign-in before the OSBM-run pilot (NC DHHS, NC DEQ and one smaller agency) uses real staff accounts.</p>
 
 <h2 id="arch">2. Architecture diagram</h2>
 <figure>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1560 1310" width="1560" height="1310" role="img" aria-labelledby="fig1-t fig1-d" font-family="Segoe UI, Arial, Helvetica, sans-serif">
-  <title id="fig1-t">Federal Funds Matchmaker for NC DHHS: Solution Architecture (C4 Container)</title>
-  <desc id="fig1-d">C4 container diagram. A daily Container Apps Job (11:00 UTC) pulls opportunities from Grants.gov and award history from USAspending.gov, scores them against the NCDHHS Strategic Plan with a hybrid plan-alignment signal (an Azure OpenAI embedding margin against off-topic fields, averaged with TF-IDF word similarity), writes checked AI summaries with Azure OpenAI chat, and stores everything as JSON in Azure Blob Storage. A Flask web app on Azure Container Apps reads Blob and lets the NC DHHS federal-grants coordinator record Pursue, Maybe or Pass decisions. The image is built in Azure Container Registry; logs go to Log Analytics. Planned items (Entra ID sign-in, Key Vault and managed identity, Application Insights, private endpoints, AI Search or Cosmos DB, SAM.gov, email or Teams alerts) are dashed.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1560 1350" width="1560" height="1350" role="img" aria-labelledby="fig1-t fig1-d" font-family="Segoe UI, Arial, Helvetica, sans-serif">
+  <title id="fig1-t">Federal Funds Matchmaker for North Carolina Agencies: Solution Architecture (C4 Container)</title>
+  <desc id="fig1-d">C4 container diagram. The sponsor is NC OSBM. A daily Container Apps Job (11:00 UTC) pulls Grants.gov opportunities once and normalizes them once. Then, for each agency profile (NC DHHS from the NCDHHS Strategic Plan 2026-2030, NC DEQ from the NCDEQ Strategic Plan 2025-2029), it scores them with a hybrid plan-alignment signal (an Azure OpenAI embedding margin against off-topic fields, averaged with TF-IDF word similarity) and funder history from USAspending.gov, runs a checked AI review with Azure OpenAI chat on the top 45, and publishes that agency's JSON files to Azure Blob Storage. A Flask web app on Azure Container Apps has an agency switcher, lets each agency's grants coordinator record Pursue, Maybe or Pass decisions, and has a Statewide page for the OSBM central team. One image, ffm:v6, is built in Azure Container Registry; logs go to Log Analytics. Planned items (Entra ID sign-in, Key Vault and managed identity, Application Insights, private endpoints, AI Search or Cosmos DB, SAM.gov, email or Teams alerts) are dashed.</desc>
   <defs>
     <marker id="fig1-arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#333"/></marker>
     <marker id="fig1-arwg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8A8A8A"/></marker>
   </defs>
-  <rect width="1560" height="1310" fill="#FFFFFF"/>
-  <text x="40" y="42" font-size="26" font-weight="700" fill="#08427B">Federal Funds Matchmaker for NC DHHS: Solution Architecture</text>
-  <text x="40" y="68" font-size="14" fill="#555">Team 14, UNC Solve-a-thon 2026 • C4 Level 2 (Container) with context • As-built (solid) + planned (dashed) • 2026-11-07 • v1.1</text>
+  <rect width="1560" height="1350" fill="#FFFFFF"/>
+  <text x="40" y="42" font-size="26" font-weight="700" fill="#08427B">Federal Funds Matchmaker for North Carolina Agencies: Solution Architecture</text>
+  <text x="40" y="68" font-size="14" fill="#555">Team 14, UNC Solve-a-thon 2026 • Sponsor: NC OSBM • Agencies: NC DHHS, NC DEQ • C4 Level 2 (Container) with context • As-built (solid) + planned (dashed) • 2026-11-07 • v1.2</text>
 
   <!-- People -->
   <g text-anchor="middle">
-    <rect x="60" y="88" width="260" height="90" rx="10" fill="#08427B" stroke="#052E56" stroke-width="2"/>
-    <text x="190" y="112" font-size="14" font-weight="700" fill="#FFF">Federal-Grants Coordinator</text>
-    <text x="190" y="130" font-size="12" fill="#FFF">[Person: NC DHHS, primary user]</text>
-    <text x="190" y="148" font-size="12" fill="#FFF">Reviews shortlist, records</text>
-    <text x="190" y="165" font-size="12" fill="#FFF">Pursue / Maybe / Pass, exports CSV</text>
-    <rect x="345" y="88" width="260" height="90" rx="10" fill="#08427B" stroke="#052E56" stroke-width="2"/>
-    <text x="475" y="112" font-size="14" font-weight="700" fill="#FFF">Program Leads &amp; Leadership</text>
-    <text x="475" y="130" font-size="12" fill="#FFF">[Person: NC DHHS, secondary]</text>
-    <text x="475" y="148" font-size="12" fill="#FFF">Receive routed opportunities;</text>
-    <text x="475" y="165" font-size="12" fill="#FFF">leaders use funding-by-goal view</text>
-    <rect x="630" y="88" width="230" height="90" rx="10" fill="#08427B" stroke="#052E56" stroke-width="2"/>
-    <text x="745" y="112" font-size="14" font-weight="700" fill="#FFF">Team 14 Labelers</text>
-    <text x="745" y="130" font-size="12" fill="#FFF">[Person: evaluators]</text>
-    <text x="745" y="148" font-size="12" fill="#FFF">Blind relevance labels on</text>
-    <text x="745" y="165" font-size="12" fill="#FFF">the Evaluation page</text>
+    <rect x="60" y="88" width="230" height="90" rx="10" fill="#08427B" stroke="#052E56" stroke-width="2"/>
+    <text x="175" y="112" font-size="14" font-weight="700" fill="#FFF">Agency Grants Coordinators</text>
+    <text x="175" y="130" font-size="12" fill="#FFF">[Person: NC DHHS, NC DEQ; primary]</text>
+    <text x="175" y="148" font-size="12" fill="#FFF">Switch agency, review shortlist,</text>
+    <text x="175" y="165" font-size="12" fill="#FFF">Pursue / Maybe / Pass, export CSV</text>
+    <rect x="314" y="88" width="230" height="90" rx="10" fill="#08427B" stroke="#052E56" stroke-width="2"/>
+    <text x="429" y="112" font-size="14" font-weight="700" fill="#FFF">Program Leads &amp; Leadership</text>
+    <text x="429" y="130" font-size="12" fill="#FFF">[Person: each agency, secondary]</text>
+    <text x="429" y="148" font-size="12" fill="#FFF">Receive routed opportunities;</text>
+    <text x="429" y="165" font-size="12" fill="#FFF">leaders use funding-by-goal view</text>
+    <rect x="568" y="88" width="240" height="90" rx="10" fill="#08427B" stroke="#052E56" stroke-width="2"/>
+    <text x="688" y="112" font-size="14" font-weight="700" fill="#FFF">OSBM Central Team</text>
+    <text x="688" y="130" font-size="12" fill="#FFF">[Person: NC OSBM, sponsor]</text>
+    <text x="688" y="148" font-size="12" fill="#FFF">Statewide page: counts, deadlines,</text>
+    <text x="688" y="165" font-size="12" fill="#FFF">decisions, multi-agency matches</text>
+    <rect x="832" y="88" width="230" height="90" rx="10" fill="#08427B" stroke="#052E56" stroke-width="2"/>
+    <text x="947" y="112" font-size="14" font-weight="700" fill="#FFF">Team 14 Labelers</text>
+    <text x="947" y="130" font-size="12" fill="#FFF">[Person: evaluators]</text>
+    <text x="947" y="148" font-size="12" fill="#FFF">Blind relevance labels on the</text>
+    <text x="947" y="165" font-size="12" fill="#FFF">Evaluation page, per agency</text>
   </g>
 
   <!-- Access note (not a component) -->
-  <rect x="1190" y="88" width="330" height="90" rx="8" fill="#FFF8E1" stroke="#F9A825" stroke-width="2"/>
+  <rect x="1190" y="88" width="330" height="102" rx="8" fill="#FFF8E1" stroke="#F9A825" stroke-width="2"/>
   <g font-size="12" fill="#222">
-    <text x="1206" y="110" font-size="13" font-weight="700">Prototype access (as built)</text>
-    <text x="1206" y="129">No sign-in: public HTTPS URL.</text>
-    <text x="1206" y="147">Decisions store a typed name or initials.</text>
-    <text x="1206" y="165">Entra ID sign-in is planned (dashed box).</text>
+    <text x="1206" y="109" font-size="13" font-weight="700">Prototype access (as built)</text>
+    <text x="1206" y="128">No sign-in: public HTTPS URL.</text>
+    <text x="1206" y="145">Decisions store a typed name or initials.</text>
+    <text x="1206" y="162">Any visitor can switch to any agency.</text>
+    <text x="1206" y="179">Entra ID sign-in is planned (dashed box).</text>
   </g>
 
   <!-- System boundary -->
-  <rect x="40" y="200" width="1110" height="730" rx="14" fill="#F7FAFD" stroke="#0B4884" stroke-width="2" stroke-dasharray="10 6"/>
+  <rect x="40" y="200" width="1110" height="748" rx="14" fill="#F7FAFD" stroke="#0B4884" stroke-width="2" stroke-dasharray="10 6"/>
   <text x="1130" y="224" font-size="15" font-weight="700" fill="#0B4884" text-anchor="end">[System] Federal Funds Matchmaker</text>
-  <text x="1130" y="920" font-size="12" fill="#0B4884" text-anchor="end">Azure subscription unc-sdis-solveathon-team14 · resource group rg-ffm-team14 · region eastus2</text>
+  <text x="1130" y="936" font-size="12" fill="#0B4884" text-anchor="end">Azure subscription unc-sdis-solveathon-team14 · resource group rg-ffm-team14 · region eastus2</text>
 
   <!-- Container Apps environment -->
-  <rect x="60" y="250" width="1070" height="228" rx="10" fill="#EEF4FB" stroke="#1168BD" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <rect x="60" y="250" width="1070" height="240" rx="10" fill="#EEF4FB" stroke="#1168BD" stroke-width="1.5" stroke-dasharray="4 3"/>
   <text x="1120" y="270" font-size="13" font-weight="700" fill="#0B4884" text-anchor="end">Container Apps environment cae-ffm (Consumption)</text>
 
   <!-- Containers -->
   <g text-anchor="middle">
-    <rect x="80" y="288" width="540" height="164" rx="8" fill="#1168BD" stroke="#0B4884" stroke-width="2"/>
-    <text x="350" y="314" font-size="15" font-weight="700" fill="#FFF">Staff Web App · app-ffm-web</text>
-    <text x="350" y="333" font-size="12" fill="#FFF">[Container: Azure Container App · Python Flask + gunicorn · MODE=app]</text>
-    <text x="350" y="355" font-size="12" fill="#FFF">Shortlist + filters, detail (reason, checked quote, score breakdown,</text>
-    <text x="350" y="372" font-size="12" fill="#FFF">award history, official link), Pursue / Maybe / Pass + note, CSV export,</text>
-    <text x="350" y="389" font-size="12" fill="#FFF">funding-by-goal, evaluation, run status and agency profile pages</text>
-    <text x="350" y="411" font-size="12" fill="#FFF">1 vCPU / 2 GiB · 1 replica · external HTTPS ingress → port 8000</text>
-    <text x="350" y="430" font-size="12" fill="#FFF">Reads and writes Blob only; never calls an AI model</text>
+    <rect x="80" y="288" width="620" height="184" rx="8" fill="#1168BD" stroke="#0B4884" stroke-width="2"/>
+    <text x="390" y="314" font-size="15" font-weight="700" fill="#FFF">Staff Web App · app-ffm-web</text>
+    <text x="390" y="333" font-size="12" fill="#FFF">[Container: Azure Container App · Python Flask + gunicorn · MODE=app]</text>
+    <text x="390" y="355" font-size="12" fill="#FFF">Agency switcher (remembered in the session) for each agency's shortlist,</text>
+    <text x="390" y="372" font-size="12" fill="#FFF">detail (reason, checked quotes, score breakdown, award history, official link),</text>
+    <text x="390" y="389" font-size="12" fill="#FFF">Pursue / Maybe / Pass + note, CSV export, funding-by-goal, evaluation, run status,</text>
+    <text x="390" y="406" font-size="12" fill="#FFF">agency profile; Statewide page (/statewide) for the OSBM central team</text>
+    <text x="390" y="429" font-size="12" fill="#FFF">1 vCPU / 2 GiB · 1 replica · external HTTPS ingress → port 8000</text>
+    <text x="390" y="448" font-size="12" fill="#FFF">Reads and writes Blob only; never calls an AI model</text>
 
-    <rect x="680" y="288" width="430" height="164" rx="8" fill="#1168BD" stroke="#0B4884" stroke-width="2"/>
-    <text x="895" y="312" font-size="15" font-weight="700" fill="#FFF">Daily Refresh Job · job-ffm-refresh</text>
-    <text x="895" y="330" font-size="12" fill="#FFF">[Container: Container Apps Job · Python · MODE=job]</text>
-    <text x="895" y="350" font-size="12" fill="#FFF">cron 0 11 * * * = 11:00 UTC (6 AM EST, 7 AM EDT)</text>
-    <text x="895" y="367" font-size="12" fill="#FFF">Ingest → normalize → score → summarize → publish</text>
-    <text x="895" y="384" font-size="12" fill="#FFF">Score 0-100: 45% plan alignment, 25% keyword, 15% eligibility,</text>
-    <text x="895" y="401" font-size="12" fill="#FFF">10% time to apply, 5% funder history · High ≥55, Medium ≥45</text>
-    <text x="895" y="418" font-size="12" fill="#FFF">Plan alignment = 0.5 × embedding margin + 0.5 × TF-IDF</text>
-    <text x="895" y="438" font-size="12" fill="#FFF">Retry 1 · timeout 3600 s · non-zero exit on failure</text>
+    <rect x="740" y="288" width="370" height="184" rx="8" fill="#1168BD" stroke="#0B4884" stroke-width="2"/>
+    <text x="925" y="312" font-size="15" font-weight="700" fill="#FFF">Daily Refresh Job · job-ffm-refresh</text>
+    <text x="925" y="330" font-size="12" fill="#FFF">[Container: Container Apps Job · Python · MODE=job]</text>
+    <text x="925" y="349" font-size="12" fill="#FFF">cron 0 11 * * * = 11:00 UTC (6 AM EST, 7 AM EDT)</text>
+    <text x="925" y="367" font-size="12" fill="#FFF">One Grants.gov pull, normalized once; then for each</text>
+    <text x="925" y="384" font-size="12" fill="#FFF">agency profile: score → AI review (top 45) → publish</text>
+    <text x="925" y="402" font-size="12" fill="#FFF">Score 0-100: 45% plan alignment, 25% keyword, 15%</text>
+    <text x="925" y="419" font-size="12" fill="#FFF">eligibility, 10% time to apply, 5% funder history</text>
+    <text x="925" y="436" font-size="12" fill="#FFF">High ≥55, Medium ≥45 · plan alignment: see note</text>
+    <text x="925" y="455" font-size="12" fill="#FFF">Retry 1 · timeout 3600 s · non-zero exit on failure</text>
   </g>
 
-  <!-- Planned data store -->
+  <!-- Agency profiles (configuration files in the image, one per agency) -->
+  <rect x="86" y="512" width="212" height="150" rx="6" fill="#E0E0E0" stroke="#9E9E9E"/>
+  <rect x="80" y="518" width="212" height="150" rx="6" fill="#F2F2F2" stroke="#9E9E9E"/>
   <g text-anchor="middle">
-    <rect x="80" y="522" width="200" height="112" rx="8" fill="#FFFFFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="6 4"/>
-    <text x="180" y="548" font-size="14" font-weight="700" fill="#555">AI Search / Cosmos DB</text>
-    <text x="180" y="566" font-size="12" fill="#555">[Planned: at larger scale]</text>
-    <text x="180" y="586" font-size="12" fill="#555">Faster search and queries</text>
-    <text x="180" y="603" font-size="12" fill="#555">if volumes outgrow JSON</text>
-    <text x="180" y="620" font-size="12" fill="#555">files in Blob</text>
+    <text x="186" y="540" font-size="14" font-weight="700" fill="#222">Agency profiles</text>
+    <text x="186" y="558" font-size="12" fill="#444">[Config: JSON files in the image]</text>
+    <text x="186" y="577" font-size="12" fill="#444">ncdhhs.json: NCDHHS Strategic</text>
+    <text x="186" y="593" font-size="12" fill="#444">Plan 2026-2030 · 21 objectives</text>
+    <text x="186" y="612" font-size="12" fill="#444">ncdeq.json: NCDEQ Strategic</text>
+    <text x="186" y="628" font-size="12" fill="#444">Plan 2025-2029 · 26 objectives</text>
+    <text x="186" y="649" font-size="12" fill="#444">One template; app + job read all</text>
   </g>
 
   <!-- Blob Storage (cylinder) -->
-  <path d="M340,530 a155,10 0 0,1 310,0 v116 a155,10 0 0,1 -310,0 z" fill="#2E7D32" stroke="#1B5E20" stroke-width="2"/>
-  <path d="M340,530 a155,10 0 0,0 310,0" fill="none" stroke="#1B5E20" stroke-width="2"/>
+  <path d="M360,528 a160,10 0 0,1 320,0 v132 a160,10 0 0,1 -320,0 z" fill="#2E7D32" stroke="#1B5E20" stroke-width="2"/>
+  <path d="M360,528 a160,10 0 0,0 320,0" fill="none" stroke="#1B5E20" stroke-width="2"/>
   <g text-anchor="middle" fill="#FFF">
-    <text x="495" y="558" font-size="15" font-weight="700">Azure Blob Storage · stffm4817</text>
-    <text x="495" y="577" font-size="12">[Data store: StorageV2 · Standard_LRS]</text>
-    <text x="495" y="596" font-size="12">ffm-data: JSON files (docs/data_contract.md)</text>
-    <text x="495" y="613" font-size="12">profiles/, raw/, details/, opportunities/, scored/,</text>
-    <text x="495" y="630" font-size="12">alerts/, decisions/, eval/, runs/, cache/</text>
+    <text x="520" y="558" font-size="15" font-weight="700">Azure Blob Storage · stffm4817</text>
+    <text x="520" y="577" font-size="12">[Data store: StorageV2 · LRS · container ffm-data]</text>
+    <text x="520" y="596" font-size="12"><tspan font-weight="700">Shared:</tspan> raw/, details/, opportunities/, runs/,</text>
+    <text x="520" y="613" font-size="12">cache/, eval/keyword_baseline/</text>
+    <text x="520" y="632" font-size="12"><tspan font-weight="700">Per agency:</tspan> profiles/{id}.json, scored/{id}/,</text>
+    <text x="520" y="649" font-size="12">alerts/{id}/, decisions/{id}.json, eval/{id}/</text>
   </g>
 
   <!-- Azure OpenAI -->
   <g text-anchor="middle">
-    <rect x="700" y="520" width="375" height="144" rx="8" fill="#6B4FBB" stroke="#4A3684" stroke-width="2"/>
-    <text x="887" y="544" font-size="15" font-weight="700" fill="#FFF">Azure OpenAI · aoai-ffm-4817 (S0)</text>
-    <text x="887" y="562" font-size="12" fill="#FFF">[AI service: GlobalStandard deployments]</text>
-    <text x="887" y="581" font-size="12" fill="#FFF">embed = text-embedding-3-small (512 dims)</text>
-    <text x="887" y="598" font-size="12" fill="#FFF">chat = gpt-4.1-mini (JSON mode, temperature 0)</text>
-    <text x="887" y="615" font-size="12" fill="#FFF">Capacity: embed 1,000K, chat 500K tokens/min</text>
-    <text x="887" y="634" font-size="12" fill="#FFF">Summaries for top 40 agency + top 5 research</text>
-    <text x="887" y="651" font-size="12" fill="#FFF">No tools; cannot act; never sets the score</text>
+    <rect x="715" y="518" width="350" height="150" rx="8" fill="#6B4FBB" stroke="#4A3684" stroke-width="2"/>
+    <text x="890" y="542" font-size="15" font-weight="700" fill="#FFF">Azure OpenAI · aoai-ffm-4817 (S0)</text>
+    <text x="890" y="560" font-size="12" fill="#FFF">[AI service: GlobalStandard deployments]</text>
+    <text x="890" y="579" font-size="12" fill="#FFF">embed = text-embedding-3-small (512 dims)</text>
+    <text x="890" y="596" font-size="12" fill="#FFF">chat = gpt-4.1-mini (JSON mode, temperature 0)</text>
+    <text x="890" y="613" font-size="12" fill="#FFF">Capacity: embed 1,000K, chat 500K tokens/min</text>
+    <text x="890" y="632" font-size="12" fill="#FFF">AI review: top 40 agency + top 5 research,</text>
+    <text x="890" y="649" font-size="12" fill="#FFF">per agency · no tools; never sets the score</text>
   </g>
 
   <!-- Platform band -->
-  <line x1="60" y1="672" x2="1130" y2="672" stroke="#BDBDBD" stroke-width="1"/>
-  <text x="70" y="692" font-size="13" font-weight="700" fill="#555">Platform &amp; operations</text>
+  <line x1="60" y1="686" x2="1130" y2="686" stroke="#BDBDBD" stroke-width="1"/>
+  <text x="70" y="704" font-size="13" font-weight="700" fill="#555">Platform &amp; operations</text>
   <g text-anchor="middle">
-    <rect x="70" y="700" width="330" height="72" rx="6" fill="#F2F2F2" stroke="#9E9E9E"/>
-    <text x="235" y="722" font-size="13" font-weight="700" fill="#222">Log Analytics workspace</text>
-    <text x="235" y="740" font-size="12" fill="#444">[Platform: auto-created with cae-ffm]</text>
-    <text x="235" y="758" font-size="12" fill="#444">App + job console logs, access log</text>
+    <rect x="70" y="714" width="270" height="92" rx="6" fill="#F2F2F2" stroke="#9E9E9E"/>
+    <text x="205" y="736" font-size="13" font-weight="700" fill="#222">Log Analytics workspace</text>
+    <text x="205" y="754" font-size="12" fill="#444">[Platform: created with cae-ffm]</text>
+    <text x="205" y="772" font-size="12" fill="#444">App + job console logs, access log</text>
 
-    <rect x="420" y="700" width="440" height="72" rx="6" fill="#F2F2F2" stroke="#9E9E9E"/>
-    <text x="640" y="722" font-size="13" font-weight="700" fill="#222">Container Apps secrets (secretref)</text>
-    <text x="640" y="740" font-size="12" fill="#444">[Platform: secrets on the app and the job]</text>
-    <text x="640" y="758" font-size="12" fill="#444">storage-conn, aoai-key, flask-secret · values ****</text>
+    <rect x="356" y="714" width="344" height="92" rx="6" fill="#F2F2F2" stroke="#9E9E9E"/>
+    <text x="528" y="736" font-size="13" font-weight="700" fill="#222">Container Apps secrets (secretref)</text>
+    <text x="528" y="754" font-size="12" fill="#444">[Platform: secrets on the app and the job]</text>
+    <text x="528" y="772" font-size="12" fill="#444">storage-conn, aoai-key, flask-secret · values ****</text>
 
-    <rect x="880" y="700" width="240" height="180" rx="6" fill="#F2F2F2" stroke="#9E9E9E"/>
-    <text x="1000" y="722" font-size="13" font-weight="700" fill="#222">Azure Container Registry</text>
-    <text x="1000" y="740" font-size="13" font-weight="700" fill="#222">acrffm4817</text>
-    <text x="1000" y="760" font-size="12" fill="#444">[Platform: ACR, Basic SKU]</text>
-    <text x="1000" y="780" font-size="12" fill="#444">Image ffm:v4 deployed (earlier tags superseded)</text>
-    <text x="1000" y="797" font-size="12" fill="#444">one image: MODE=app or MODE=job</text>
-    <text x="1000" y="817" font-size="12" fill="#444">Queued cloud build: az acr build</text>
-    <text x="1000" y="834" font-size="12" fill="#444">--no-logs; deploy script polls status</text>
-    <text x="1000" y="856" font-size="12" fill="#444">Admin user enabled for pulls</text>
+    <rect x="716" y="714" width="414" height="92" rx="6" fill="#F2F2F2" stroke="#9E9E9E"/>
+    <text x="923" y="736" font-size="13" font-weight="700" fill="#222">Azure Container Registry · acrffm4817</text>
+    <text x="923" y="754" font-size="12" fill="#444">[Platform: ACR, Basic SKU · admin user enabled for pulls]</text>
+    <text x="923" y="772" font-size="12" fill="#444">Image ffm:v6 deployed to app + job (one image, MODE=app|job)</text>
+    <text x="923" y="790" font-size="12" fill="#444">Queued az acr build --no-logs; the deploy script polls the run</text>
 
-    <rect x="70" y="792" width="185" height="88" rx="6" fill="#FFFFFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="6 4"/>
-    <text x="162.5" y="814" font-size="13" font-weight="700" fill="#555">Microsoft Entra ID</text>
-    <text x="162.5" y="832" font-size="12" fill="#555">[Planned: identity]</text>
-    <text x="162.5" y="850" font-size="12" fill="#555">Staff sign-in using</text>
-    <text x="162.5" y="867" font-size="12" fill="#555">Container Apps auth</text>
+    <rect x="70" y="822" width="200" height="86" rx="6" fill="#FFFFFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="170" y="844" font-size="13" font-weight="700" fill="#555">Microsoft Entra ID</text>
+    <text x="170" y="862" font-size="12" fill="#555">[Planned: identity]</text>
+    <text x="170" y="880" font-size="12" fill="#555">Staff sign-in using</text>
+    <text x="170" y="897" font-size="12" fill="#555">Container Apps auth</text>
 
-    <rect x="272" y="792" width="185" height="88" rx="6" fill="#FFFFFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="6 4"/>
-    <text x="364.5" y="814" font-size="13" font-weight="700" fill="#555">Key Vault + managed ID</text>
-    <text x="364.5" y="832" font-size="12" fill="#555">[Planned: secrets]</text>
-    <text x="364.5" y="850" font-size="12" fill="#555">Replaces connection</text>
-    <text x="364.5" y="867" font-size="12" fill="#555">string, keys, ACR admin</text>
+    <rect x="285" y="822" width="200" height="86" rx="6" fill="#FFFFFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="385" y="844" font-size="13" font-weight="700" fill="#555">Key Vault + managed ID</text>
+    <text x="385" y="862" font-size="12" fill="#555">[Planned: secrets]</text>
+    <text x="385" y="880" font-size="12" fill="#555">Replaces connection</text>
+    <text x="385" y="897" font-size="12" fill="#555">string, keys, ACR admin</text>
 
-    <rect x="474" y="792" width="185" height="88" rx="6" fill="#FFFFFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="6 4"/>
-    <text x="566.5" y="814" font-size="13" font-weight="700" fill="#555">Application Insights</text>
-    <text x="566.5" y="832" font-size="12" fill="#555">[Planned: monitoring]</text>
-    <text x="566.5" y="850" font-size="12" fill="#555">Traces, errors, alerts</text>
-    <text x="566.5" y="867" font-size="12" fill="#555">on failed job runs</text>
+    <rect x="500" y="822" width="200" height="86" rx="6" fill="#FFFFFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="600" y="844" font-size="13" font-weight="700" fill="#555">Application Insights</text>
+    <text x="600" y="862" font-size="12" fill="#555">[Planned: monitoring]</text>
+    <text x="600" y="880" font-size="12" fill="#555">Traces, errors, alerts</text>
+    <text x="600" y="897" font-size="12" fill="#555">on failed job runs</text>
 
-    <rect x="676" y="792" width="185" height="88" rx="6" fill="#FFFFFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="6 4"/>
-    <text x="768.5" y="814" font-size="13" font-weight="700" fill="#555">Private endpoints</text>
-    <text x="768.5" y="832" font-size="12" fill="#555">[Planned: network]</text>
-    <text x="768.5" y="850" font-size="12" fill="#555">VNet integration for</text>
-    <text x="768.5" y="867" font-size="12" fill="#555">Storage + Azure OpenAI</text>
+    <rect x="715" y="822" width="200" height="86" rx="6" fill="#FFFFFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="815" y="844" font-size="13" font-weight="700" fill="#555">Private endpoints</text>
+    <text x="815" y="862" font-size="12" fill="#555">[Planned: network]</text>
+    <text x="815" y="880" font-size="12" fill="#555">VNet integration for</text>
+    <text x="815" y="897" font-size="12" fill="#555">Storage + Azure OpenAI</text>
+
+    <rect x="930" y="822" width="200" height="86" rx="6" fill="#FFFFFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="1030" y="844" font-size="13" font-weight="700" fill="#555">AI Search / Cosmos DB</text>
+    <text x="1030" y="862" font-size="12" fill="#555">[Planned: at larger scale]</text>
+    <text x="1030" y="880" font-size="12" fill="#555">Faster search if volumes</text>
+    <text x="1030" y="897" font-size="12" fill="#555">outgrow JSON files in Blob</text>
   </g>
 
   <!-- External systems -->
   <g text-anchor="middle">
-    <rect x="1190" y="262" width="330" height="74" rx="8" fill="#8A8A8A" stroke="#6B6B6B" stroke-width="2"/>
-    <text x="1355" y="286" font-size="14" font-weight="700" fill="#FFF">Grants.gov Search API v1</text>
-    <text x="1355" y="304" font-size="12" fill="#FFF">[External system: public, no key]</text>
-    <text x="1355" y="322" font-size="12" fill="#FFF">search2 + fetchOpportunity (~1,460 listings)</text>
+    <rect x="1190" y="250" width="330" height="70" rx="8" fill="#8A8A8A" stroke="#6B6B6B" stroke-width="2"/>
+    <text x="1355" y="272" font-size="14" font-weight="700" fill="#FFF">Grants.gov Search API v1</text>
+    <text x="1355" y="290" font-size="12" fill="#FFF">[External system: public, no key]</text>
+    <text x="1355" y="308" font-size="12" fill="#FFF">search2 + fetchOpportunity (~1,460 listings)</text>
 
-    <rect x="1190" y="352" width="330" height="74" rx="8" fill="#8A8A8A" stroke="#6B6B6B" stroke-width="2"/>
-    <text x="1355" y="376" font-size="14" font-weight="700" fill="#FFF">USAspending.gov API v2</text>
-    <text x="1355" y="394" font-size="12" fill="#FFF">[External system: public, no key]</text>
-    <text x="1355" y="412" font-size="12" fill="#FFF">Awards by assistance listing, FY2022-2025</text>
+    <rect x="1190" y="334" width="330" height="70" rx="8" fill="#8A8A8A" stroke="#6B6B6B" stroke-width="2"/>
+    <text x="1355" y="356" font-size="14" font-weight="700" fill="#FFF">USAspending.gov API v2</text>
+    <text x="1355" y="374" font-size="12" fill="#FFF">[External system: public, no key]</text>
+    <text x="1355" y="392" font-size="12" fill="#FFF">Awards and NC recipients by listing, FY2022-2025</text>
 
-    <rect x="1190" y="442" width="330" height="66" rx="8" fill="#FFFFFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="6 4"/>
-    <text x="1355" y="464" font-size="14" font-weight="700" fill="#555">SAM.gov API</text>
-    <text x="1355" y="482" font-size="12" fill="#555">[Planned: second data source]</text>
-    <text x="1355" y="499" font-size="12" fill="#555">Second source of opportunities</text>
+    <rect x="1190" y="418" width="330" height="56" rx="8" fill="#FFFFFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="1355" y="440" font-size="14" font-weight="700" fill="#555">SAM.gov API</text>
+    <text x="1355" y="458" font-size="12" fill="#555">[Planned: second data source]</text>
 
-    <rect x="1190" y="524" width="330" height="66" rx="8" fill="#FFFFFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="6 4"/>
-    <text x="1355" y="546" font-size="14" font-weight="700" fill="#555">Email / Microsoft Teams</text>
-    <text x="1355" y="564" font-size="12" fill="#555">[Planned: deadline alerts]</text>
-    <text x="1355" y="581" font-size="12" fill="#555">New and closing-soon items</text>
+    <rect x="1190" y="488" width="330" height="56" rx="8" fill="#FFFFFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="1355" y="510" font-size="14" font-weight="700" fill="#555">Email / Microsoft Teams</text>
+    <text x="1355" y="528" font-size="12" fill="#555">[Planned: deadline alerts]</text>
 
-    <rect x="1190" y="670" width="330" height="78" rx="8" fill="#8A8A8A" stroke="#6B6B6B" stroke-width="2"/>
-    <text x="1355" y="692" font-size="14" font-weight="700" fill="#FFF">NCDHHS Strategic Plan 2023-2025</text>
-    <text x="1355" y="710" font-size="12" fill="#FFF">[External: public PDF from NC OSBM]</text>
-    <text x="1355" y="728" font-size="12" fill="#FFF">One-time seed for the agency profile</text>
+    <rect x="1190" y="572" width="330" height="90" rx="8" fill="#8A8A8A" stroke="#6B6B6B" stroke-width="2"/>
+    <text x="1355" y="594" font-size="14" font-weight="700" fill="#FFF">Agency strategic plans (PDF)</text>
+    <text x="1355" y="612" font-size="12" fill="#FFF">[External: public, NC OSBM website]</text>
+    <text x="1355" y="630" font-size="12" fill="#FFF">NCDHHS 2026-2030 (published Sept 2026)</text>
+    <text x="1355" y="648" font-size="12" fill="#FFF">NCDEQ 2025-2029 · seed for the profiles</text>
 
-    <rect x="1190" y="800" width="330" height="90" rx="10" fill="#08427B" stroke="#052E56" stroke-width="2"/>
-    <text x="1355" y="822" font-size="14" font-weight="700" fill="#FFF">Team 14 Developers</text>
-    <text x="1355" y="840" font-size="12" fill="#FFF">[Person: operators]</text>
-    <text x="1355" y="858" font-size="12" fill="#FFF">deploy/01_resources.sh + 02_deploy.sh</text>
-    <text x="1355" y="875" font-size="12" fill="#FFF">(Azure CLI); built agency/priorities.json</text>
+    <rect x="1190" y="714" width="330" height="92" rx="10" fill="#08427B" stroke="#052E56" stroke-width="2"/>
+    <text x="1355" y="736" font-size="14" font-weight="700" fill="#FFF">Team 14 Developers</text>
+    <text x="1355" y="754" font-size="12" fill="#FFF">[Person: operators]</text>
+    <text x="1355" y="772" font-size="12" fill="#FFF">deploy/01_resources.sh + 02_deploy.sh</text>
+    <text x="1355" y="790" font-size="12" fill="#FFF">(Azure CLI); built agency/profiles/*.json</text>
   </g>
 
   <!-- Flows (as-built) -->
   <g stroke="#333" stroke-width="2" fill="none" marker-end="url(#fig1-arw)">
-    <line x1="1355" y1="748" x2="1355" y2="798"/>
-    <line x1="1188" y1="845" x2="1122" y2="845"/>
-    <line x1="1100" y1="698" x2="1100" y2="482"/>
-    <line x1="1110" y1="312" x2="1188" y2="299"/>
-    <line x1="1110" y1="372" x2="1188" y2="389"/>
-    <line x1="830" y1="454" x2="830" y2="518"/>
-    <line x1="960" y1="454" x2="960" y2="518"/>
-    <line x1="700" y1="454" x2="628" y2="522" marker-start="url(#fig1-arw)"/>
-    <line x1="190" y1="178" x2="190" y2="286"/>
-    <line x1="475" y1="178" x2="475" y2="286"/>
-    <line x1="745" y1="178" x2="590" y2="286"/>
-    <line x1="470" y1="454" x2="470" y2="518" marker-start="url(#fig1-arw)"/>
-    <line x1="310" y1="480" x2="310" y2="698"/>
+    <line x1="1355" y1="662" x2="1355" y2="712"/>
+    <line x1="1188" y1="760" x2="1132" y2="760"/>
+    <line x1="1100" y1="712" x2="1100" y2="474"/>
+    <line x1="1112" y1="300" x2="1188" y2="286"/>
+    <line x1="1112" y1="360" x2="1188" y2="369"/>
+    <line x1="850" y1="474" x2="850" y2="516"/>
+    <line x1="980" y1="474" x2="980" y2="516"/>
+    <line x1="752" y1="474" x2="667" y2="525" marker-start="url(#fig1-arw)"/>
+    <line x1="175" y1="178" x2="175" y2="286"/>
+    <line x1="429" y1="178" x2="429" y2="286"/>
+    <line x1="640" y1="178" x2="640" y2="286"/>
+    <line x1="850" y1="178" x2="690" y2="286"/>
+    <line x1="500" y1="474" x2="500" y2="516" marker-start="url(#fig1-arw)"/>
+    <line x1="326" y1="474" x2="326" y2="712"/>
   </g>
   <!-- Flows (planned) -->
   <g stroke="#8A8A8A" stroke-width="2" fill="none" stroke-dasharray="6 4" marker-end="url(#fig1-arwg)">
-    <line x1="1110" y1="420" x2="1188" y2="470"/>
-    <line x1="1110" y1="446" x2="1188" y2="548"/>
+    <line x1="1112" y1="420" x2="1188" y2="446"/>
+    <line x1="1112" y1="450" x2="1188" y2="516"/>
   </g>
   <g font-size="12" fill="#333">
-    <text x="848" y="503">embeddings</text>
-    <text x="978" y="503">chat</text>
+    <text x="868" y="503">embeddings</text>
+    <text x="998" y="503">chat</text>
   </g>
 
   <!-- Flow number badges -->
   <g font-size="12" font-weight="700" text-anchor="middle">
-    <circle cx="1355" cy="773" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="1355" y="777">1</text>
-    <circle cx="1170" cy="845" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="1170" y="849">2</text>
-    <circle cx="1100" cy="590" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="1100" y="594">3</text>
-    <circle cx="1170" cy="302" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="1170" y="306">4</text>
-    <circle cx="1170" cy="385" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="1170" y="389">5</text>
-    <circle cx="830" cy="498" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="830" y="502">6</text>
-    <circle cx="960" cy="498" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="960" y="502">7</text>
-    <circle cx="651" cy="500" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="651" y="504">8</text>
-    <circle cx="190" cy="232" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="190" y="236">9</text>
-    <circle cx="475" cy="232" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="475" y="236">10</text>
-    <circle cx="668" cy="232" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="668" y="236">11</text>
-    <circle cx="470" cy="498" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="470" y="502">12</text>
-    <circle cx="310" cy="590" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="310" y="594">13</text>
-    <circle cx="1170" cy="458" r="12" fill="#FFF" stroke="#8A8A8A" stroke-width="2"/><text x="1170" y="462" fill="#555">14</text>
-    <circle cx="1170" cy="524" r="12" fill="#FFF" stroke="#8A8A8A" stroke-width="2"/><text x="1170" y="528" fill="#555">15</text>
+    <circle cx="1355" cy="687" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="1355" y="691">1</text>
+    <circle cx="1168" cy="760" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="1168" y="764">2</text>
+    <circle cx="1100" cy="600" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="1100" y="604">3</text>
+    <circle cx="1168" cy="290" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="1168" y="294">4</text>
+    <circle cx="1168" cy="367" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="1168" y="371">5</text>
+    <circle cx="850" cy="498" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="850" y="502">6</text>
+    <circle cx="980" cy="498" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="980" y="502">7</text>
+    <circle cx="710" cy="499" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="710" y="503">8</text>
+    <circle cx="175" cy="232" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="175" y="236">9</text>
+    <circle cx="429" cy="232" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="429" y="236">10</text>
+    <circle cx="640" cy="232" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="640" y="236">11</text>
+    <circle cx="770" cy="232" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="770" y="236">12</text>
+    <circle cx="500" cy="496" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="500" y="500">13</text>
+    <circle cx="326" cy="600" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="326" y="604">14</text>
+    <circle cx="1166" cy="438" r="12" fill="#FFF" stroke="#8A8A8A" stroke-width="2"/><text x="1166" y="442" fill="#555">15</text>
+    <circle cx="1166" cy="497" r="12" fill="#FFF" stroke="#8A8A8A" stroke-width="2"/><text x="1166" y="501" fill="#555">16</text>
   </g>
 
   <!-- Legend -->
-  <rect x="40" y="950" width="520" height="340" rx="8" fill="#FFF" stroke="#9E9E9E"/>
-  <text x="56" y="974" font-size="14" font-weight="700" fill="#222">Legend</text>
+  <rect x="40" y="968" width="520" height="362" rx="8" fill="#FFF" stroke="#9E9E9E"/>
+  <text x="56" y="992" font-size="14" font-weight="700" fill="#222">Legend</text>
   <g font-size="12" fill="#222">
-    <rect x="56" y="988" width="26" height="16" rx="3" fill="#08427B"/><text x="90" y="1001">Person / user role</text>
-    <rect x="56" y="1012" width="26" height="16" rx="3" fill="#1168BD"/><text x="90" y="1025">Container in our system</text>
-    <rect x="56" y="1036" width="26" height="16" rx="3" fill="#6B4FBB"/><text x="90" y="1049">AI / ML service</text>
-    <rect x="56" y="1060" width="26" height="16" rx="3" fill="#2E7D32"/><text x="90" y="1073">Data store (cylinder)</text>
-    <rect x="56" y="1084" width="26" height="16" rx="3" fill="#8A8A8A"/><text x="90" y="1097">External system</text>
-    <rect x="56" y="1108" width="26" height="16" rx="3" fill="#F2F2F2" stroke="#9E9E9E"/><text x="90" y="1121">Platform / shared service</text>
-    <rect x="56" y="1132" width="26" height="16" rx="3" fill="#EEF4FB" stroke="#1168BD" stroke-dasharray="4 3"/><text x="90" y="1145">Container Apps environment</text>
-    <rect x="300" y="988" width="26" height="16" rx="3" fill="#FFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="4 3"/><text x="342" y="1001">Planned (not built yet)</text>
-    <line x1="300" y1="1020" x2="326" y2="1020" stroke="#333" stroke-width="2" marker-end="url(#fig1-arw)"/><text x="342" y="1025">Data flow (as-built)</text>
-    <line x1="300" y1="1044" x2="326" y2="1044" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="5 3" marker-end="url(#fig1-arwg)"/><text x="342" y="1049">Planned flow</text>
-    <line x1="300" y1="1068" x2="334" y2="1068" stroke="#333" stroke-width="2" marker-start="url(#fig1-arw)" marker-end="url(#fig1-arw)"/><text x="342" y="1073">Read and write (two-way)</text>
-    <circle cx="313" cy="1092" r="9" fill="#FFF" stroke="#333" stroke-width="2"/><text x="342" y="1097">Flow number (see key)</text>
-    <rect x="300" y="1108" width="26" height="16" rx="3" fill="none" stroke="#0B4884" stroke-width="2" stroke-dasharray="5 3"/><text x="342" y="1121">System boundary</text>
-    <rect x="300" y="1132" width="26" height="16" rx="3" fill="#FFF8E1" stroke="#F9A825" stroke-width="2"/><text x="342" y="1145">Note (not a component)</text>
-    <text x="56" y="1182" fill="#555">Notation: C4 model, Level 2 (Container), with people and</text>
-    <text x="56" y="1200" fill="#555">external systems for context. Arrows point in the direction</text>
-    <text x="56" y="1218" fill="#555">of the request; responses flow back.</text>
-    <text x="56" y="1244" fill="#555">Secret values are never shown; they are masked as ****.</text>
-    <text x="56" y="1268" fill="#555">TF-IDF = word-based text similarity (see the note in the key).</text>
+    <rect x="56" y="1006" width="26" height="16" rx="3" fill="#08427B"/><text x="90" y="1019">Person / user role</text>
+    <rect x="56" y="1030" width="26" height="16" rx="3" fill="#1168BD"/><text x="90" y="1043">Container in our system</text>
+    <rect x="56" y="1054" width="26" height="16" rx="3" fill="#6B4FBB"/><text x="90" y="1067">AI / ML service</text>
+    <rect x="56" y="1078" width="26" height="16" rx="3" fill="#2E7D32"/><text x="90" y="1091">Data store (cylinder)</text>
+    <rect x="56" y="1102" width="26" height="16" rx="3" fill="#8A8A8A"/><text x="90" y="1115">External system</text>
+    <rect x="56" y="1126" width="26" height="16" rx="3" fill="#F2F2F2" stroke="#9E9E9E"/><text x="90" y="1139">Platform / shared service</text>
+    <rect x="56" y="1150" width="26" height="16" rx="3" fill="#EEF4FB" stroke="#1168BD" stroke-dasharray="4 3"/><text x="90" y="1163">Container Apps environment</text>
+    <rect x="60" y="1174" width="24" height="14" rx="2" fill="#E0E0E0" stroke="#9E9E9E"/><rect x="56" y="1178" width="24" height="14" rx="2" fill="#F2F2F2" stroke="#9E9E9E"/><text x="90" y="1189">Configuration files (one per agency)</text>
+    <rect x="300" y="1006" width="26" height="16" rx="3" fill="#FFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="4 3"/><text x="342" y="1019">Planned (not built yet)</text>
+    <line x1="300" y1="1038" x2="326" y2="1038" stroke="#333" stroke-width="2" marker-end="url(#fig1-arw)"/><text x="342" y="1043">Data flow (as-built)</text>
+    <line x1="300" y1="1062" x2="326" y2="1062" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="5 3" marker-end="url(#fig1-arwg)"/><text x="342" y="1067">Planned flow</text>
+    <line x1="300" y1="1086" x2="334" y2="1086" stroke="#333" stroke-width="2" marker-start="url(#fig1-arw)" marker-end="url(#fig1-arw)"/><text x="342" y="1091">Read and write (two-way)</text>
+    <circle cx="313" cy="1110" r="9" fill="#FFF" stroke="#333" stroke-width="2"/><text x="342" y="1115">Flow number (see key)</text>
+    <rect x="300" y="1126" width="26" height="16" rx="3" fill="none" stroke="#0B4884" stroke-width="2" stroke-dasharray="5 3"/><text x="342" y="1139">System boundary</text>
+    <rect x="300" y="1150" width="26" height="16" rx="3" fill="#FFF8E1" stroke="#F9A825" stroke-width="2"/><text x="342" y="1163">Note (not a component)</text>
+    <text x="56" y="1222" fill="#555">Notation: C4 model, Level 2 (Container), with people and</text>
+    <text x="56" y="1240" fill="#555">external systems for context. Arrows point in the direction</text>
+    <text x="56" y="1258" fill="#555">of the request; responses flow back.</text>
+    <text x="56" y="1280" fill="#555">{id} = agency id (ncdhhs, ncdeq): one file or folder per agency.</text>
+    <text x="56" y="1300" fill="#555">Secret values are never shown; they are masked as ****.</text>
+    <text x="56" y="1318" fill="#555">TF-IDF = word-based text similarity (see the note in the key).</text>
   </g>
 
   <!-- Flow key -->
-  <rect x="580" y="950" width="940" height="340" rx="8" fill="#FFF" stroke="#9E9E9E"/>
-  <text x="596" y="974" font-size="14" font-weight="700" fill="#222">Flow key (set-up, then the daily job, then staff use)</text>
+  <rect x="580" y="968" width="940" height="362" rx="8" fill="#FFF" stroke="#9E9E9E"/>
+  <text x="596" y="992" font-size="14" font-weight="700" fill="#222">Flow key (set-up, then the daily job, then staff use)</text>
   <g font-size="12" fill="#222">
-    <text x="596" y="996"><tspan font-weight="700">1</tspan><tspan x="622">Plan PDF → Team: one-time, hand-built profile agency/priorities.json (20 objectives with page cites, 40 keywords), second review</tspan></text>
-    <text x="596" y="1013"><tspan font-weight="700">2</tspan><tspan x="622">Team → ACR + Container Apps: queued az acr build --no-logs (image ffm:v4), az containerapp create/update · HTTPS, Azure CLI sign-in</tspan></text>
-    <text x="596" y="1030"><tspan font-weight="700">3</tspan><tspan x="622">ACR → Web App + Job: pull image ffm:v4 at start · HTTPS, ACR admin username/password (planned: managed identity)</tspan></text>
-    <text x="596" y="1047"><tspan font-weight="700">4</tspan><tspan x="622">Job → Grants.gov: search2 (all posted + forecasted; 40 keyword searches for the baseline only), fetchOpportunity · HTTPS/JSON, no key</tspan></text>
-    <text x="596" y="1064"><tspan font-weight="700">5</tspan><tspan x="622">Job → USAspending.gov: award totals and recipients by assistance listing, FY2022-2025, cached · HTTPS/JSON, no key</tspan></text>
-    <text x="596" y="1081"><tspan font-weight="700">6</tspan><tspan x="622">Job → Azure OpenAI embed: listing text, 20 plan objectives, 10 off-topic field descriptions → 512-dim vectors, cached by text hash · HTTPS, API key</tspan></text>
-    <text x="596" y="1098"><tspan font-weight="700">7</tspan><tspan x="622">Job → Azure OpenAI chat: listing + matched objective → JSON summary, reason, 2 quotes (checked in Python) · HTTPS, API key</tspan></text>
-    <text x="596" y="1115"><tspan font-weight="700">8</tspan><tspan x="622">Job ↔ Blob: read caches + earlier results; write profiles, raw/{date}, details, opportunities, scored, alerts, baseline, runs · HTTPS, connection string</tspan></text>
-    <text x="596" y="1132"><tspan font-weight="700">9</tspan><tspan x="622">Coordinator → Web App: shortlist, Pursue/Maybe/Pass + note, CSV for the weekly leadership email · HTTPS, no sign-in, CSRF token</tspan></text>
-    <text x="596" y="1149"><tspan font-weight="700">10</tspan><tspan x="622">Leads + leadership → Web App: detail and funding-by-goal pages (routed items arrive via the coordinator) · HTTPS, no sign-in</tspan></text>
-    <text x="596" y="1166"><tspan font-weight="700">11</tspan><tspan x="622">Labelers → Web App: blind relevance labels on the Evaluation page · HTTPS, no sign-in, typed labeler name</tspan></text>
-    <text x="596" y="1183"><tspan font-weight="700">12</tspan><tspan x="622">Web App ↔ Blob: read scored, alerts, runs, profile, baseline; write decisions and labels (ETag check), eval sample · HTTPS, connection string</tspan></text>
-    <text x="596" y="1200"><tspan font-weight="700">13</tspan><tspan x="622">Web App + Job → Log Analytics: console output and gunicorn access log · Container Apps platform</tspan></text>
-    <text x="596" y="1217" fill="#555"><tspan font-weight="700">14</tspan><tspan x="622">Job → SAM.gov (planned): second opportunity source · would need an API key (store it in Key Vault)</tspan></text>
-    <text x="596" y="1234" fill="#555"><tspan font-weight="700">15</tspan><tspan x="622">Job → Email / Teams (planned): deadline alerts for new and closing-soon items</tspan></text>
-    <text x="596" y="1258" fill="#555"><tspan font-weight="700">Note</tspan><tspan x="634">Plan alignment = 0.5 × embedding margin + 0.5 × TF-IDF similarity. Margin = similarity to a plan objective minus the best similarity</tspan></text>
-    <text x="634" y="1275" fill="#555">to 10 short off-topic field descriptions (e.g. defence, arts, physics). TF-IDF alone if Azure OpenAI is unavailable.</text>
+    <text x="596" y="1014"><tspan font-weight="700">1</tspan><tspan x="622">Plan PDFs (OSBM website) → Team: hand-built agency/profiles/ncdhhs.json (2026-2030 plan) and ncdeq.json (2025-2029 plan), one template, second review</tspan></text>
+    <text x="596" y="1031"><tspan font-weight="700">2</tspan><tspan x="622">Team → ACR + Container Apps: queued az acr build --no-logs (image ffm:v6, includes the profiles), az containerapp create/update · HTTPS, Azure CLI sign-in</tspan></text>
+    <text x="596" y="1048"><tspan font-weight="700">3</tspan><tspan x="622">ACR → Web App + Job: pull image ffm:v6 at start · HTTPS, ACR admin username/password (planned: managed identity)</tspan></text>
+    <text x="596" y="1065"><tspan font-weight="700">4</tspan><tspan x="622">Job → Grants.gov: one search2 pull for all agencies (posted + forecasted; 80 keyword searches for the baseline only), fetchOpportunity · HTTPS/JSON, no key</tspan></text>
+    <text x="596" y="1082"><tspan font-weight="700">5</tspan><tspan x="622">Job → USAspending.gov: awards and NC recipients per listing, FY2022-2025, cached; each agency matched by its recipient-name pattern · HTTPS/JSON, no key</tspan></text>
+    <text x="596" y="1099"><tspan font-weight="700">6</tspan><tspan x="622">Job → Azure OpenAI embed: listing text, each agency's objectives, 10 off-topic field descriptions → 512-dim vectors, cached by text hash · HTTPS, API key</tspan></text>
+    <text x="596" y="1116"><tspan font-weight="700">7</tspan><tspan x="622">Job → Azure OpenAI chat, top 45 per agency: listing + matched objective → JSON review with quotes checked in Python · HTTPS, API key</tspan></text>
+    <text x="596" y="1133"><tspan font-weight="700">8</tspan><tspan x="622">Job ↔ Blob: read caches, earlier results; write raw, details, opportunities, runs (shared); profiles, scored, alerts (per agency) · HTTPS, connection string</tspan></text>
+    <text x="596" y="1150"><tspan font-weight="700">9</tspan><tspan x="622">Coordinators → Web App: choose agency, shortlist, Pursue/Maybe/Pass + note, CSV for the weekly leadership email · HTTPS, no sign-in, CSRF token</tspan></text>
+    <text x="596" y="1167"><tspan font-weight="700">10</tspan><tspan x="622">Leads + leadership → Web App: detail and funding-by-goal pages (routed items arrive via the coordinator) · HTTPS, no sign-in</tspan></text>
+    <text x="596" y="1184"><tspan font-weight="700">11</tspan><tspan x="622">OSBM → Web App /statewide: per agency High/Medium, closing ≤ 10 days, forecasts, decisions; strong matches for 2+ agencies · HTTPS, no sign-in, read only</tspan></text>
+    <text x="596" y="1201"><tspan font-weight="700">12</tspan><tspan x="622">Labelers → Web App: blind relevance labels on the Evaluation page, per agency · HTTPS, no sign-in, typed labeler name</tspan></text>
+    <text x="596" y="1218"><tspan font-weight="700">13</tspan><tspan x="622">Web App ↔ Blob: read scored, alerts, profiles, runs, baseline; write decisions/{id}.json, eval/{id}/ labels (ETag check) and sample · HTTPS, connection string</tspan></text>
+    <text x="596" y="1235"><tspan font-weight="700">14</tspan><tspan x="622">Web App + Job → Log Analytics: console output and gunicorn access log · Container Apps platform</tspan></text>
+    <text x="596" y="1252" fill="#555"><tspan font-weight="700">15</tspan><tspan x="622">Job → SAM.gov (planned): second opportunity source · would need an API key (store it in Key Vault)</tspan></text>
+    <text x="596" y="1269" fill="#555"><tspan font-weight="700">16</tspan><tspan x="622">Job → Email / Teams (planned): deadline alerts for new and closing-soon items</tspan></text>
+    <text x="596" y="1295" fill="#555"><tspan font-weight="700">Note</tspan><tspan x="634">Plan alignment = 0.5 × embedding margin + 0.5 × TF-IDF similarity. Margin = similarity to a plan objective minus the best similarity to</tspan></text>
+    <text x="634" y="1312" fill="#555">10 short off-topic field descriptions (NC DHHS: e.g. defense, arts, physics; NC DEQ has its own, e.g. health care). TF-IDF alone without Azure OpenAI.</text>
   </g>
 </svg>
-<figcaption>Figure 1: C4 container view. Solid boxes and arrows are as-built; dashed boxes and arrows are planned (not built yet). Numbers map to the data-flow table in section 4. The yellow note is not a component. The note under the flow key explains the hybrid plan-alignment signal. The figure is scaled to fit the page; open <a href="architecture.svg">architecture.svg</a> to read it at full size.</figcaption></figure>
+<figcaption>Figure 1: C4 container view. Solid boxes and arrows are as-built; dashed boxes and arrows are planned (not built yet). Numbers map to the data-flow table in section 4. The stacked grey box is the set of agency profile files built into the image, one per agency; <code>{id}</code> in the Blob paths is the agency id (<code>ncdhhs</code>, <code>ncdeq</code>). The yellow note is not a component. The note under the flow key explains the hybrid plan-alignment signal. The figure is scaled to fit the page; open <a href="architecture.svg">architecture.svg</a> to read it at full size.</figcaption></figure>
 
 <h2 id="components">3. Component catalogue</h2>
 <table><tr><th>Component</th><th>Type</th><th>Technology</th><th>Purpose</th><th>Evidence / Assumed</th></tr>
-<tr><td>Federal-Grants Coordinator</td><td>Person (primary user)</td><td>Web browser</td><td>Reviews the ranked shortlist, records Pursue / Maybe / Pass with a note, exports CSV for the weekly leadership email</td><td>Facts sheet; <code>agency/priorities.json</code> ("user")</td></tr>
-<tr><td>Program Leads &amp; Leadership</td><td>Person (secondary users)</td><td>Web browser</td><td>Division leads receive routed opportunities; leaders use the funding-by-goal view</td><td>Facts sheet; <code>src/webapp.py</code> (<code>/goals</code>)</td></tr>
-<tr><td>Team 14 Labelers</td><td>Person (evaluators)</td><td>Web browser</td><td>Blind relevance labels for the evaluation sample</td><td><code>src/webapp.py</code> (<code>/evaluation/label</code>)</td></tr>
-<tr><td>Team 14 Developers</td><td>Person (operators)</td><td>Azure CLI, bash scripts</td><td>Create resources, build and deploy the image; hand-built the agency profile from the plan PDF</td><td><code>deploy/01_resources.sh</code>, <code>deploy/02_deploy.sh</code>; profile comment in <code>agency/priorities.json</code></td></tr>
-<tr><td>Anyone with the URL <i>(security view only)</i></td><td>External entity (unverified)</td><td>Any browser</td><td>Not a user group: shows what the missing sign-in allows</td><td><code>src/webapp.py</code> has no sign-in check on any route</td></tr>
-<tr><td>Staff Web App (<code>app-ffm-web</code>)</td><td>Container</td><td>Azure Container App; Python 3.13, Flask 3.1 + gunicorn 23 (2 workers × 4 threads); <code>MODE=app</code>; 1 vCPU / 2 GiB; 1 replica; external HTTPS ingress, port 8000</td><td>Shortlist with filters, detail page, Pursue / Maybe / Pass + note, CSV export, funding-by-goal, evaluation, run status, agency profile; never calls an AI model</td><td><code>Dockerfile</code>, <code>deploy/entrypoint.sh</code>, <code>deploy/02_deploy.sh</code> (step 7), <code>src/webapp.py</code></td></tr>
-<tr><td>Daily Refresh Job (<code>job-ffm-refresh</code>)</td><td>Container</td><td>Container Apps Job; schedule trigger <code>0 11 * * *</code> (11:00 UTC = 6:00 AM Eastern Standard Time, 7:00 AM during daylight saving time); retry 1; timeout 3600 s; Python; <code>MODE=job</code></td><td>Ingest, normalize, score, summarize, publish; exits non-zero on failure. Scoring is described in the table below.</td><td><code>deploy/02_deploy.sh</code> (step 8), <code>src/job.py</code>, <code>src/grantsgov.py</code>, <code>src/normalize.py</code>, <code>src/matcher.py</code>, <code>src/rationale.py</code></td></tr>
+<tr><td>Agency Grants Coordinators</td><td>Person (primary users)</td><td>Web browser</td><td>One per agency (NC DHHS, NC DEQ): choose the agency, review its ranked shortlist, record Pursue / Maybe / Pass with a note, export CSV for the weekly leadership email</td><td><code>user</code> field in <code>agency/profiles/ncdhhs.json</code> and <code>ncdeq.json</code>; <code>src/webapp.py</code> (<code>current_aid</code>)</td></tr>
+<tr><td>Program Leads &amp; Leadership</td><td>Person (secondary users)</td><td>Web browser</td><td>Division leads receive routed opportunities; leaders use their agency's funding-by-goal view</td><td><code>docs/solution_design.md</code>; <code>src/webapp.py</code> (<code>/goals</code>)</td></tr>
+<tr><td>OSBM Central Team</td><td>Person (sponsor; central user)</td><td>Web browser</td><td>Statewide page: each agency's High and Medium counts, matches closing within 10 days, forecasts, Pursue / Maybe / Pass counts, and opportunities that are strong matches for more than one agency</td><td>Challenge framing; <code>docs/solution_design.md</code>; <code>src/webapp.py</code> (<code>/statewide</code>), <code>src/templates/statewide.html</code></td></tr>
+<tr><td>Team 14 Labelers</td><td>Person (evaluators)</td><td>Web browser</td><td>Blind relevance labels on each agency's evaluation sample</td><td><code>src/webapp.py</code> (<code>/evaluation/label</code>), <code>src/evaluate.py</code></td></tr>
+<tr><td>Team 14 Developers</td><td>Person (operators)</td><td>Azure CLI, bash scripts</td><td>Create resources, build and deploy the image; hand-built each agency profile from its plan PDF</td><td><code>deploy/01_resources.sh</code>, <code>deploy/02_deploy.sh</code>; <code>_comment</code> in <code>agency/profiles/*.json</code></td></tr>
+<tr><td>Anyone with the URL <i>(security view only)</i></td><td>External entity (unverified)</td><td>Any browser</td><td>Not a user group: shows what the missing sign-in allows, including switching to any agency</td><td><code>src/webapp.py</code> has no sign-in or role check on any route</td></tr>
+<tr><td>Staff Web App (<code>app-ffm-web</code>)</td><td>Container</td><td>Azure Container App; Python 3.13, Flask 3.1 + gunicorn 23 (2 workers × 4 threads); <code>MODE=app</code>; 1 vCPU / 2 GiB; 1 replica; external HTTPS ingress, port 8000</td><td>Agency switcher (<code>?agency=</code>, remembered in the session); per-agency shortlist with filters, detail page, Pursue / Maybe / Pass + note, CSV export, funding-by-goal, evaluation, run status, agency profile; Statewide page (<code>/statewide</code>); never calls an AI model</td><td><code>Dockerfile</code>, <code>deploy/entrypoint.sh</code>, <code>deploy/02_deploy.sh</code> (step 7), <code>src/webapp.py</code>, <code>src/templates/</code></td></tr>
+<tr><td>Daily Refresh Job (<code>job-ffm-refresh</code>)</td><td>Container</td><td>Container Apps Job; schedule trigger <code>0 11 * * *</code> (11:00 UTC = 6:00 AM Eastern Standard Time, 7:00 AM during daylight saving time); retry 1; timeout 3600 s; Python; <code>MODE=job</code></td><td>One Grants.gov pull and one normalization shared by every agency; then, for each agency profile, score, AI review of the top 45, and publish that agency's files; exits non-zero on failure. Scoring is described in the table below.</td><td><code>deploy/02_deploy.sh</code> (step 8), <code>src/job.py</code> (<code>run</code>, <code>publish_agency</code>), <code>src/grantsgov.py</code>, <code>src/normalize.py</code>, <code>src/matcher.py</code>, <code>src/rationale.py</code></td></tr>
+<tr><td>Agency profiles (<code>agency/profiles/*.json</code>)</td><td>Configuration (in the image)</td><td>JSON, one standard template per agency; loaded by the app and the job at start (<code>src/config.py</code>, <code>load_profiles</code>), NC DHHS first</td><td><code>ncdhhs.json</code>: NCDHHS Strategic Plan 2026-2030 (published September 2026): 5 goals, 21 objectives with page citations, the plan's 4 priority areas linked to objectives, 12 program areas, 13 divisions, 40 keywords. <code>ncdeq.json</code>: NCDEQ Strategic Plan 2025-2029: 7 goals, 26 objectives, 11 program areas, 11 divisions, 40 keywords and its own 10 off-topic field descriptions. Each names its USAspending recipient-name pattern and related federal departments. Shared rule settings (Layer 1 rules, award-history window) come from <code>agency/priorities.json</code>, which otherwise holds only the qualifier's 2023-2025 profile.</td><td><code>agency/profiles/ncdhhs.json</code>, <code>agency/profiles/ncdeq.json</code>, <code>agency/priorities.json</code>, <code>src/config.py</code> (<code>SHARED_SETTINGS</code>)</td></tr>
 <tr><td>Container Apps environment <code>cae-ffm</code></td><td>Platform (hosting)</td><td>Consumption plan, eastus2</td><td>Hosts the web app and the job; created with a Log Analytics workspace</td><td><code>deploy/01_resources.sh</code> (step 5)</td></tr>
-<tr><td>Azure OpenAI <code>aoai-ffm-4817</code></td><td>AI service</td><td>S0; deployments <code>embed</code> = text-embedding-3-small (512 dims, capacity 1,000K tokens/min) and <code>chat</code> = gpt-4.1-mini (capacity 500K tokens/min), GlobalStandard</td><td>Embeddings of listing text, the 20 plan objectives and 10 off-topic field descriptions for the meaning-based half of plan alignment (45% of the score); JSON summaries with two quotes for the top 40 agency + top 5 research records</td><td><code>deploy/01_resources.sh</code> (step 3), <code>src/aoai.py</code>, <code>src/matcher.py</code>, <code>src/rationale.py</code>, <code>prompts/rationale.txt</code></td></tr>
-<tr><td>Azure Blob Storage <code>stffm4817</code>, container <code>ffm-data</code></td><td>Data store</td><td>StorageV2, Standard_LRS, TLS 1.2 minimum, public blob access disabled</td><td>All state as JSON (plus one <code>.npy</code> embeddings cache): profiles, raw, details, opportunities, scored, alerts, decisions, eval, runs, cache</td><td><code>deploy/01_resources.sh</code> (step 2), <code>src/storage.py</code>, <code>docs/data_contract.md</code></td></tr>
+<tr><td>Azure OpenAI <code>aoai-ffm-4817</code></td><td>AI service</td><td>S0; deployments <code>embed</code> = text-embedding-3-small (512 dims, capacity 1,000K tokens/min) and <code>chat</code> = gpt-4.1-mini (capacity 500K tokens/min), GlobalStandard</td><td>Embeddings of listing text, each agency's plan objectives and its 10 off-topic field descriptions for the meaning-based half of plan alignment (45% of the score); a JSON review with checked quotes for the top 40 agency + top 5 research records of each agency (45 per agency)</td><td><code>deploy/01_resources.sh</code> (step 3), <code>src/aoai.py</code>, <code>src/matcher.py</code>, <code>src/rationale.py</code>, <code>prompts/rationale.txt</code></td></tr>
+<tr><td>Azure Blob Storage <code>stffm4817</code>, container <code>ffm-data</code></td><td>Data store</td><td>StorageV2, Standard_LRS, TLS 1.2 minimum, public blob access disabled</td><td>All state as JSON (plus one <code>.npy</code> embeddings cache). Shared: <code>raw/</code>, <code>details/</code>, <code>opportunities/</code>, <code>runs/</code>, <code>cache/</code>, <code>eval/keyword_baseline/</code>. Per agency: <code>profiles/{agency}.json</code>, <code>scored/{agency}/</code>, <code>alerts/{agency}/</code>, <code>decisions/{agency}.json</code>, <code>eval/{agency}/sample.json</code> and <code>labels.json</code></td><td><code>deploy/01_resources.sh</code> (step 2), <code>src/storage.py</code>, <code>src/job.py</code>, <code>src/evaluate.py</code>, <code>docs/data_contract.md</code></td></tr>
 <tr><td class="planned">Azure AI Search or Cosmos DB</td><td>Data store (planned)</td><td>Not chosen yet</td><td>Search and queries at larger scale</td><td>Facts sheet (planned)</td></tr>
 <tr><td>Log Analytics workspace</td><td>Platform (monitoring)</td><td>Auto-created with <code>cae-ffm</code></td><td>Console output of the app and the job, gunicorn access log</td><td>Facts sheet; <span class="assumed">ASSUMED</span> default log collection, no alert rules</td></tr>
 <tr><td>Container Apps secrets</td><td>Platform (secrets)</td><td><code>secretref</code> env vars: <code>storage-conn</code>, <code>aoai-key</code>, <code>flask-secret</code> (values ****)</td><td>Hold the storage connection string, Azure OpenAI key and Flask session key for the app and the job</td><td><code>deploy/02_deploy.sh</code> (SECRETS, ENVS)</td></tr>
-<tr><td>Azure Container Registry <code>acrffm4817</code></td><td>Platform (build / registry)</td><td>Basic SKU, admin user enabled; image <code>ffm:v4</code> deployed (<code>ffm:v1</code> superseded); built in the cloud with a queued <code>az acr build --no-logs</code>, and the script polls the run until it succeeds or fails</td><td>Stores the one image used by both the app and the job</td><td><code>deploy/01_resources.sh</code>, <code>deploy/02_deploy.sh</code> (step 6); deployed tag from the team (<code>deploy/env.sh</code> still defaults to <code>v1</code>, see A15)</td></tr>
+<tr><td>Azure Container Registry <code>acrffm4817</code></td><td>Platform (build / registry)</td><td>Basic SKU, admin user enabled; image <code>ffm:v6</code> deployed to the app and the job (earlier tags superseded); built in the cloud with a queued <code>az acr build --no-logs</code>, and the script polls the run until it succeeds or fails</td><td>Stores the one image used by both the app and the job; the image holds the code, prompts and agency profiles</td><td><code>deploy/01_resources.sh</code>, <code>deploy/02_deploy.sh</code> (step 6), <code>Dockerfile</code>; deployed tag from the team (<code>deploy/env.sh</code> defaults to <code>v3</code>, see A15)</td></tr>
 <tr><td class="planned">Microsoft Entra ID</td><td>Platform (identity), planned</td><td>Container Apps built-in authentication</td><td>Staff sign-in</td><td>Facts sheet (planned)</td></tr>
 <tr><td class="planned">Key Vault + managed identity</td><td>Platform (secrets), planned</td><td>Azure Key Vault, managed identity</td><td>Replace the connection string, OpenAI key and ACR admin credentials</td><td>Facts sheet (planned)</td></tr>
 <tr><td class="planned">Application Insights</td><td>Platform (monitoring), planned</td><td>Workspace-based</td><td>Request traces, errors, alerts on failed runs</td><td>Facts sheet (planned)</td></tr>
 <tr><td class="planned">Private endpoints / VNet integration</td><td>Platform (network), planned</td><td>Private endpoints for Storage and Azure OpenAI</td><td>Remove internet exposure of the data and model endpoints</td><td>Facts sheet (planned)</td></tr>
-<tr><td>Grants.gov Search API v1</td><td>External system</td><td>REST/JSON over HTTPS, public, no key; <code>search2</code>, <code>fetchOpportunity</code></td><td>All posted and forecasted federal opportunities (about 1,460) and their full details</td><td><code>src/grantsgov.py</code></td></tr>
-<tr><td>USAspending.gov API v2</td><td>External system</td><td>REST/JSON over HTTPS, public, no key; <code>spending_over_time</code>, <code>spending_by_category/recipient</code></td><td>Funder history: who won awards under each assistance listing, FY2022-2025</td><td><code>src/award_history.py</code>, <code>src/matcher.py</code></td></tr>
-<tr><td>NCDHHS Strategic Plan 2023-2025 (PDF)</td><td>External system (document)</td><td>Public PDF from NC OSBM</td><td>One-time seed: 5 goals, 20 objectives with page citations, 40 keywords, program areas, divisions</td><td><code>agency/priorities.json</code> (<code>plan_url</code>)</td></tr>
+<tr><td>Grants.gov Search API v1</td><td>External system</td><td>REST/JSON over HTTPS, public, no key; <code>search2</code>, <code>fetchOpportunity</code></td><td>All posted and forecasted federal opportunities (about 1,460) and their full details, pulled once a day for all agencies; one keyword search per profile keyword (80 in all) records what keyword monitoring alone would find</td><td><code>src/grantsgov.py</code>, <code>src/job.py</code></td></tr>
+<tr><td>USAspending.gov API v2</td><td>External system</td><td>REST/JSON over HTTPS, public, no key; <code>spending_over_time</code>, <code>spending_by_category/recipient</code> (including North Carolina recipients)</td><td>Funder history: who won awards under each assistance listing, FY2022-FY2025, looked up once and shared by all agencies; each agency's own awards are found by the recipient-name pattern in its profile</td><td><code>src/award_history.py</code>, <code>src/matcher.py</code> (<code>aln_record</code>, <code>affinity_signal</code>)</td></tr>
+<tr><td>Agency strategic plans (PDF)</td><td>External system (documents)</td><td>Public PDFs on the NC OSBM website</td><td>NCDHHS Strategic Plan 2026-2030 (published September 2026) and NCDEQ Strategic Plan 2025-2029: the seed for each agency profile, rebuilt when an agency publishes a new plan</td><td><code>plan_url</code> in <code>agency/profiles/*.json</code></td></tr>
 <tr><td class="planned">SAM.gov API</td><td>External system, planned</td><td>REST/JSON, API key required</td><td>Second source of opportunities</td><td>Facts sheet (planned)</td></tr>
 <tr><td class="planned">Email / Microsoft Teams</td><td>External system, planned</td><td>Not chosen yet</td><td>Deadline alerts for new and closing-soon items</td><td>Facts sheet (planned)</td></tr>
 <tr><td><code>.env</code> on team laptops <i>(security view only)</i></td><td>Data store (Restricted)</td><td>Local file</td><td>Local copies of settings for laptop runs; git-ignored and excluded from the image (contents not read for this report)</td><td><code>.gitignore</code>, <code>.dockerignore</code>, <code>tests/test_no_secrets.py</code></td></tr>
 </table>
-<h3>How the daily job scores an opportunity (as built)</h3>
+<h3>How the daily job scores an opportunity for each agency (as built)</h3>
 <table><tr><th>Part</th><th>What the code does</th><th>Evidence</th></tr>
-<tr><td>Total score (0-100)</td><td>45% plan alignment + 25% keyword fit + 15% eligibility (state agency) + 10% time to apply + 5% funder history (USAspending.gov). Computed in Python; the AI cannot change it.</td><td><code>src/matcher.py</code> (<code>DEFAULT["weights"]</code>, <code>score</code>)</td></tr>
-<tr><td>Confidence band</td><td>High &ge; 55, Medium &ge; 45, Low below 45. The AI review can only lower a band one step, or move a record to "not eligible" with a verified quote.</td><td><code>src/matcher.py</code> (<code>DEFAULT["bands"]</code>), <code>src/rationale.py</code> (<code>apply</code>)</td></tr>
-<tr><td>Plan alignment (hybrid)</td><td>0.5 &times; embedding margin + 0.5 &times; TF-IDF similarity. The margin is the embedding similarity to each plan objective minus the best similarity to 10 short off-topic field descriptions (for example defence, arts, physics). The best objective becomes the matched goal.</td><td><code>src/matcher.py</code> (<code>similarity</code>, <code>off_topic_anchors</code>)</td></tr>
-<tr><td>Without Azure OpenAI</td><td>TF-IDF similarity alone; AI summaries are skipped and the score breakdown says the meaning-based part is unavailable.</td><td><code>src/matcher.py</code>, <code>src/rationale.py</code>, <code>src/aoai.py</code></td></tr>
-<tr><td>How it was tuned</td><td>On the 1,037 live opportunities the qualifier had already screened, against whether the qualifier judged them on topic for DHHS: AUC 0.91 for the hybrid (76% of its top 50 on topic), against 0.84 for raw embedding similarity (54%) and 0.81 for TF-IDF alone (50%). These are AI reference labels used for tuning; precision@10 on fresh human labels is on the Evaluation page. Not re-measured for this report (A16).</td><td><code>src/tune_semantic.py</code>, <code>docs/tuning_report.md</code>, <code>docs/finals_field_notes.md</code></td></tr>
+<tr><td>Total score (0-100)</td><td>45% plan alignment + 25% keyword fit + 15% eligibility (state agency) + 10% time to apply + 5% funder history (USAspending.gov). Computed in Python; the AI cannot change it. The same weights and bands apply to every agency today; neither profile overrides them.</td><td><code>src/matcher.py</code> (<code>DEFAULT["weights"]</code>, <code>mm_settings</code>, <code>score</code>)</td></tr>
+<tr><td>Confidence band</td><td>High &ge; 55, Medium &ge; 45, Low below 45. The AI review can (a) move a record to "not eligible" with a verified eligibility quote, (b) lower confidence one step when it says the match to the objective is weak, or (c) when it quotes, verified, a geographic limit that excludes North Carolina, lower confidence one step and flag the record "check eligibility". In case (c) the record stays on the shortlist.</td><td><code>src/matcher.py</code> (<code>DEFAULT["bands"]</code>), <code>src/rationale.py</code> (<code>check</code>, <code>apply</code>)</td></tr>
+<tr><td>Plan alignment (hybrid)</td><td>0.5 &times; embedding margin + 0.5 &times; TF-IDF similarity. The margin is the embedding similarity to each of the agency's objectives minus the best similarity to 10 short off-topic field descriptions. NC DHHS uses the default list (for example defense, arts, physics); NC DEQ's profile has its own (for example health care, law enforcement, early childhood education). The best objective becomes the matched goal.</td><td><code>src/matcher.py</code> (<code>similarity</code>, <code>off_topic_anchors</code>); <code>off_topic_anchors</code> in <code>agency/profiles/ncdeq.json</code></td></tr>
+<tr><td>Funder history</td><td>Awards under each assistance listing, FY2022-FY2025, looked up for each agency's top 250 candidates and cached for all agencies. An agency counts as a past recipient when awards to names matching its profile pattern reach $100,000; otherwise the share that goes to other state agencies is used.</td><td><code>src/matcher.py</code> (<code>aln_record</code>, <code>aln_affinity</code>, <code>affinity_signal</code>); <code>usaspending_recipient_pattern</code> in each profile</td></tr>
+<tr><td>Without Azure OpenAI</td><td>TF-IDF similarity alone; AI reviews are skipped and the score breakdown says the meaning-based part is unavailable.</td><td><code>src/matcher.py</code>, <code>src/rationale.py</code>, <code>src/aoai.py</code></td></tr>
+<tr><td>How it was tuned</td><td>On the 1,037 live opportunities the qualifier had already screened, against whether the qualifier judged them on topic for NC DHHS, using the 2026-2030 profile: AUC 0.90 for the hybrid (76% of its top 50 on topic), against 0.82 for raw embedding similarity (62%) and 0.82 for TF-IDF alone (54%). The full five-signal score reaches AUC 0.92 against "on topic and DHHS can apply". These are AI reference labels used for tuning; precision@10 on fresh human labels is on each agency's Evaluation page. NC DEQ uses the same settings untuned, because there is no DEQ reference set yet. Not re-measured for this report (A16).</td><td><code>src/tune_semantic.py</code>, <code>docs/tuning_report.md</code>, <code>docs/finals_field_notes.md</code></td></tr>
 </table>
 
 <h2 id="flows">4. Data flows</h2>
 <table><tr><th>#</th><th>From → To</th><th>Data</th><th>Protocol / Auth</th><th>Classification</th></tr>
-<tr><td>1</td><td>Plan PDF → Team developers</td><td>Plan text read by people; hand-built profile <code>agency/priorities.json</code>, reviewed by a second teammate</td><td>Manual, one time</td><td>Public</td></tr>
-<tr><td>2</td><td>Team → ACR + Container Apps</td><td>Source code and profile sent to a queued cloud build (<code>az acr build --no-logs</code>, image <code>ffm:v4</code>; the script polls the run status); deploy commands; secrets read from Azure into shell variables and set as Container Apps secrets</td><td>HTTPS, Azure CLI sign-in</td><td>Internal (secrets Restricted)</td></tr>
-<tr><td>3</td><td>ACR → Web App + Job</td><td>Container image <code>ffm:v4</code> (<code>v1</code> superseded)</td><td>HTTPS, ACR admin username/password (planned: managed identity)</td><td>Internal (credentials Restricted)</td></tr>
-<tr><td>4</td><td>Job → Grants.gov</td><td>Search requests and listings: one broad pull, 40 keyword searches (baseline only), detail per listing</td><td>HTTPS/JSON, no key</td><td>Public</td></tr>
-<tr><td>5</td><td>Job → USAspending.gov</td><td>Award totals and top recipients per assistance listing</td><td>HTTPS/JSON, no key</td><td>Public</td></tr>
-<tr><td>6</td><td>Job → Azure OpenAI (<code>embed</code>)</td><td>Listing text, the 20 plan objectives and 10 short off-topic field descriptions written by the team; 512-dim vectors back, cached by text hash</td><td>HTTPS, API key</td><td>Public (key Restricted)</td></tr>
-<tr><td>7</td><td>Job → Azure OpenAI (<code>chat</code>)</td><td>Prompt with public listing text and the matched public objective; JSON answer back</td><td>HTTPS, API key; JSON mode, temperature 0</td><td>Public (key Restricted)</td></tr>
-<tr><td>8</td><td>Job ↔ Blob Storage</td><td>Reads caches and the scored list from an earlier day (for "new since last refresh"); writes <code>profiles/{agency}.json</code>, <code>raw/{date}/grants.json</code>, <code>details/</code>, <code>opportunities/</code>, <code>scored/</code>, <code>alerts/</code>, keyword baseline, <code>runs/{timestamp}.json</code> and <code>runs/last_attempt.json</code> (also on failure), caches (paths per <code>docs/data_contract.md</code>)</td><td>HTTPS, connection string (account key)</td><td>Public + Internal (run logs)</td></tr>
-<tr><td>9</td><td>Coordinator → Web App</td><td>Page views, Pursue / Maybe / Pass with typed name and note, CSV export</td><td>HTTPS, no sign-in, CSRF token, session cookie</td><td>Internal</td></tr>
+<tr><td>1</td><td>Plan PDFs → Team developers</td><td>Plan text read by people; hand-built profiles <code>agency/profiles/ncdhhs.json</code> (NCDHHS Strategic Plan 2026-2030) and <code>ncdeq.json</code> (NCDEQ Strategic Plan 2025-2029) on one standard template, each reviewed by a second teammate</td><td>Manual, once per plan</td><td>Public</td></tr>
+<tr><td>2</td><td>Team → ACR + Container Apps</td><td>Source code, prompts and agency profiles sent to a queued cloud build (<code>az acr build --no-logs</code>, image <code>ffm:v6</code>; the script polls the run status); deploy commands; secrets read from Azure into shell variables and set as Container Apps secrets</td><td>HTTPS, Azure CLI sign-in</td><td>Internal (secrets Restricted)</td></tr>
+<tr><td>3</td><td>ACR → Web App + Job</td><td>Container image <code>ffm:v6</code> (earlier tags superseded)</td><td>HTTPS, ACR admin username/password (planned: managed identity)</td><td>Internal (credentials Restricted)</td></tr>
+<tr><td>4</td><td>Job → Grants.gov</td><td>One broad pull of all posted and forecasted listings, shared by every agency; one keyword search per profile keyword (80, for the baseline only); detail per listing</td><td>HTTPS/JSON, no key</td><td>Public</td></tr>
+<tr><td>5</td><td>Job → USAspending.gov</td><td>Award totals, top recipients and North Carolina recipients per assistance listing; cached once and shared by all agencies</td><td>HTTPS/JSON, no key</td><td>Public</td></tr>
+<tr><td>6</td><td>Job → Azure OpenAI (<code>embed</code>)</td><td>Listing text, each agency's plan objectives (NC DHHS objectives carry the linked priority-area text) and that agency's 10 short off-topic field descriptions written by the team; 512-dim vectors back, cached by text hash, so listing vectors are reused across agencies</td><td>HTTPS, API key</td><td>Public (key Restricted)</td></tr>
+<tr><td>7</td><td>Job → Azure OpenAI (<code>chat</code>)</td><td>For each agency's top 45: prompt with public listing text and the agency's name, mission, matched objective, other goals and divisions; JSON answer back with summary, reason, applicant role, eligibility and geographic-limit answers, and verbatim quotes</td><td>HTTPS, API key; JSON mode, temperature 0</td><td>Public (key Restricted)</td></tr>
+<tr><td>8</td><td>Job ↔ Blob Storage</td><td>Reads caches and each agency's scored list from an earlier day (for "new since last refresh"). Writes, shared: <code>raw/{date}/grants.json</code>, <code>details/</code>, <code>opportunities/latest.json</code>, <code>eval/keyword_baseline/</code>, <code>runs/{timestamp}.json</code>, <code>runs/latest.json</code> and <code>runs/last_attempt.json</code> (also on failure), caches. Writes, per agency: <code>profiles/{agency}.json</code>, <code>scored/{agency}/latest.json</code> (+ dated copy), <code>alerts/{agency}/latest.json</code> (paths per <code>docs/data_contract.md</code>)</td><td>HTTPS, connection string (account key)</td><td>Public + Internal (run logs)</td></tr>
+<tr><td>9</td><td>Coordinators → Web App</td><td>Agency choice, page views, Pursue / Maybe / Pass with typed name and note, CSV export</td><td>HTTPS, no sign-in, CSRF token, session cookie</td><td>Internal</td></tr>
 <tr><td>10</td><td>Leads + leadership → Web App</td><td>Detail and funding-by-goal page views</td><td>HTTPS, no sign-in</td><td>Public + Internal</td></tr>
-<tr><td>11</td><td>Labelers → Web App</td><td>Relevance labels with labeler name and note</td><td>HTTPS, no sign-in, CSRF token</td><td>Internal</td></tr>
-<tr><td>12</td><td>Web App ↔ Blob Storage</td><td>Reads scored list, alerts, runs, profile, keyword baseline; writes <code>decisions/ncdhhs.json</code>, <code>eval/labels.json</code> and <code>eval/sample.json</code></td><td>HTTPS, connection string; ETag check on decision and label writes</td><td>Internal</td></tr>
-<tr><td>13</td><td>Web App + Job → Log Analytics</td><td>Console output and gunicorn access log</td><td>Container Apps platform</td><td>Internal</td></tr>
-<tr><td class="planned">14</td><td class="planned">Job → SAM.gov (planned)</td><td>Opportunity listings</td><td>HTTPS, API key (store in Key Vault)</td><td>Public (key Restricted)</td></tr>
-<tr><td class="planned">15</td><td class="planned">Job → Email / Teams (planned)</td><td>Titles, links and dates of new and closing-soon items</td><td>Not designed yet</td><td>Internal</td></tr>
+<tr><td>11</td><td>OSBM central team → Web App</td><td>Statewide page views (<code>/statewide</code>): per agency High / Medium counts, matches closing within 10 days, forecasts, Pursue / Maybe / Pass counts; up to 25 opportunities that are strong matches for two or more agencies</td><td>HTTPS, no sign-in, read only (GET)</td><td>Public + Internal</td></tr>
+<tr><td>12</td><td>Labelers → Web App</td><td>Relevance labels with labeler name and note, per agency</td><td>HTTPS, no sign-in, CSRF token</td><td>Internal</td></tr>
+<tr><td>13</td><td>Web App ↔ Blob Storage</td><td>Reads <code>scored/{agency}/latest.json</code>, <code>alerts/{agency}/latest.json</code>, <code>profiles/{agency}.json</code>, runs and the keyword baseline (the Statewide page reads every agency's scored list and decisions); writes <code>decisions/{agency}.json</code>, <code>eval/{agency}/labels.json</code> and <code>eval/{agency}/sample.json</code></td><td>HTTPS, connection string; ETag check on decision and label writes</td><td>Internal</td></tr>
+<tr><td>14</td><td>Web App + Job → Log Analytics</td><td>Console output and gunicorn access log</td><td>Container Apps platform</td><td>Internal</td></tr>
+<tr><td class="planned">15</td><td class="planned">Job → SAM.gov (planned)</td><td>Opportunity listings</td><td>HTTPS, API key (store in Key Vault)</td><td>Public (key Restricted)</td></tr>
+<tr><td class="planned">16</td><td class="planned">Job → Email / Teams (planned)</td><td>Titles, links and dates of new and closing-soon items</td><td>Not designed yet</td><td>Internal</td></tr>
 </table>
 <h3>Data classification by store</h3>
 <table><tr><th>Store</th><th>What it holds</th><th>Classification</th></tr>
-<tr><td>Blob container <code>ffm-data</code></td><td>Grants.gov raw responses and details, normalized opportunities, scores, AI summaries, alerts, keyword baseline, USAspending aggregates, agency profile <code>profiles/ncdhhs.json</code>, embedding and answer caches (Public); staff decisions with typed name or initials, free-text note and time, evaluation labels with labeler name, run logs (Internal)</td><td>Internal (highest item)</td></tr>
+<tr><td>Blob container <code>ffm-data</code></td><td>Shared: Grants.gov raw responses and details, normalized opportunities, keyword baseline, USAspending aggregates with recipient organization names, embedding and answer caches (Public); run logs (Internal). Per agency: profile, scores, AI reviews, alerts (Public); staff decisions with typed name or initials, free-text note and time, evaluation labels with labeler name (Internal)</td><td>Internal (highest item)</td></tr>
 <tr><td>Container Apps secrets</td><td>Storage connection string, Azure OpenAI key, Flask session key (values ****)</td><td>Restricted</td></tr>
 <tr><td><code>.env</code> on team laptops</td><td>Local settings and keys for laptop runs (not read for this report)</td><td>Restricted</td></tr>
 <tr><td>Log Analytics</td><td>Console output, request lines (paths, status codes)</td><td>Internal</td></tr>
-<tr><td>Container image <code>ffm:v4</code></td><td>Code, prompts, agency profile, cached public USAspending responses; no secrets (<code>.dockerignore</code>)</td><td>Internal</td></tr>
+<tr><td>Container image <code>ffm:v6</code></td><td>Code, prompts, agency profiles (<code>agency/profiles/*.json</code> and the qualifier's <code>agency/priorities.json</code>), cached public USAspending responses; no secrets (<code>.dockerignore</code>)</td><td>Internal</td></tr>
 </table>
-<p class="meta">No residents' data and no personal data beyond staff-typed names or initials are stored (facts sheet).</p>
+<p class="meta">No residents' data and no personal data beyond staff-typed names or initials are stored (facts sheet). The agency profiles hold only public plan content.</p>
 
 <h2 id="security">5. Security diagram</h2>
 <figure>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1560 1300" width="1560" height="1300" role="img" aria-labelledby="fig2-t fig2-d" font-family="Segoe UI, Arial, Helvetica, sans-serif">
-  <title id="fig2-t">Federal Funds Matchmaker for NC DHHS: Security Threat Model (Data-Flow Diagram)</title>
-  <desc id="fig2-d">Data-flow diagram with five trust boundaries: internet and staff devices, the Azure subscription, the AI model boundary, public third-party sources, and team workstations. Twelve STRIDE and OWASP LLM threats (T1 to T12) sit on the flows or elements they affect. Green chips are controls in place, red-outlined chips are gaps, and dashed boxes are planned controls.</desc>
+  <title id="fig2-t">Federal Funds Matchmaker for North Carolina Agencies: Security Threat Model (Data-Flow Diagram)</title>
+  <desc id="fig2-d">Data-flow diagram with five trust boundaries: internet and staff devices, the Azure subscription, the AI model boundary, public third-party sources, and team workstations. Users are agency staff (NC DHHS and NC DEQ), the OSBM central team, team labelers and, because there is no sign-in, anyone with the URL. Thirteen STRIDE and OWASP LLM threats (T1 to T13) sit on the flows or elements they affect. Green chips are controls in place, red-outlined chips are gaps, and dashed boxes are planned controls.</desc>
   <defs>
     <marker id="fig2-arw" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="13" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#333"/></marker>
     <marker id="fig2-arwg" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8A8A8A"/></marker>
   </defs>
   <rect width="1560" height="1300" fill="#FFF"/>
-  <text x="40" y="42" font-size="26" font-weight="700" fill="#08427B">Federal Funds Matchmaker for NC DHHS: Security Threat Model</text>
-  <text x="40" y="68" font-size="14" fill="#555">Team 14, UNC Solve-a-thon 2026 • Data-flow diagram + STRIDE + OWASP Top 10 for LLM Apps (2025) • As-built + planned • 2026-11-07 • v1.1</text>
+  <text x="40" y="42" font-size="26" font-weight="700" fill="#08427B">Federal Funds Matchmaker for North Carolina Agencies: Security Threat Model</text>
+  <text x="40" y="68" font-size="14" fill="#555">Team 14, UNC Solve-a-thon 2026 • Data-flow diagram + STRIDE + OWASP Top 10 for LLM Apps (2025) • As-built + planned • 2026-11-07 • v1.2</text>
 
   <!-- Trust boundaries -->
   <g fill="none" stroke="#C62828" stroke-width="2" stroke-dasharray="8 4">
     <rect x="40" y="100" width="260" height="420" rx="6"/>
     <rect x="340" y="100" width="810" height="740" rx="6"/>
-    <rect x="860" y="370" width="270" height="212" rx="6"/>
+    <rect x="860" y="370" width="270" height="236" rx="6"/>
     <rect x="1190" y="100" width="330" height="380" rx="6"/>
     <rect x="1190" y="520" width="330" height="320" rx="6"/>
   </g>
@@ -413,19 +436,23 @@ footer{margin-top:40px;font-size:12px;color:#777;border-top:1px solid #DDD;paddi
 
   <!-- External entities -->
   <g text-anchor="middle">
-    <rect x="60" y="140" width="220" height="76" fill="#08427B" stroke="#052E56" stroke-width="2"/>
-    <text x="170" y="166" font-size="14" font-weight="700" fill="#FFF">NC DHHS staff</text>
-    <text x="170" y="184" font-size="12" fill="#FFF">[External entity: users]</text>
-    <text x="170" y="202" font-size="12" fill="#FFF">coordinator, leads, leaders</text>
-    <rect x="60" y="250" width="220" height="76" fill="#08427B" stroke="#052E56" stroke-width="2"/>
-    <text x="170" y="276" font-size="14" font-weight="700" fill="#FFF">Team 14 labelers</text>
-    <text x="170" y="294" font-size="12" fill="#FFF">[External entity: users]</text>
-    <text x="170" y="312" font-size="12" fill="#FFF">blind evaluation labels</text>
+    <rect x="60" y="136" width="220" height="64" fill="#08427B" stroke="#052E56" stroke-width="2"/>
+    <text x="170" y="158" font-size="14" font-weight="700" fill="#FFF">Agency staff</text>
+    <text x="170" y="175" font-size="12" fill="#FFF">[External entity: users]</text>
+    <text x="170" y="192" font-size="12" fill="#FFF">NC DHHS + NC DEQ grants teams</text>
+    <rect x="60" y="214" width="220" height="64" fill="#08427B" stroke="#052E56" stroke-width="2"/>
+    <text x="170" y="236" font-size="14" font-weight="700" fill="#FFF">OSBM central team</text>
+    <text x="170" y="253" font-size="12" fill="#FFF">[External entity: users]</text>
+    <text x="170" y="270" font-size="12" fill="#FFF">Statewide page, read only</text>
+    <rect x="60" y="292" width="220" height="64" fill="#08427B" stroke="#052E56" stroke-width="2"/>
+    <text x="170" y="314" font-size="14" font-weight="700" fill="#FFF">Team 14 labelers</text>
+    <text x="170" y="331" font-size="12" fill="#FFF">[External entity: users]</text>
+    <text x="170" y="348" font-size="12" fill="#FFF">blind labels, per agency</text>
     <rect x="60" y="380" width="220" height="96" fill="#8A8A8A" stroke="#6B6B6B" stroke-width="2"/>
     <text x="170" y="404" font-size="14" font-weight="700" fill="#FFF">Anyone with the URL</text>
     <text x="170" y="422" font-size="12" fill="#FFF">[External entity: unverified]</text>
-    <text x="170" y="440" font-size="12" fill="#FFF">Public HTTPS endpoint;</text>
-    <text x="170" y="457" font-size="12" fill="#FFF">no sign-in in the prototype</text>
+    <text x="170" y="440" font-size="12" fill="#FFF">Public HTTPS endpoint; no</text>
+    <text x="170" y="457" font-size="12" fill="#FFF">sign-in; can pick any agency</text>
 
     <rect x="1210" y="140" width="290" height="60" fill="#8A8A8A" stroke="#6B6B6B" stroke-width="2"/>
     <text x="1355" y="166" font-size="14" font-weight="700" fill="#FFF">Grants.gov API v1</text>
@@ -437,9 +464,9 @@ footer{margin-top:40px;font-size:12px;color:#777;border-top:1px solid #DDD;paddi
     <text x="1355" y="324" font-size="14" font-weight="700" fill="#555">SAM.gov API</text>
     <text x="1355" y="342" font-size="12" fill="#555">[Planned: needs an API key]</text>
     <rect x="1210" y="380" width="290" height="70" fill="#8A8A8A" stroke="#6B6B6B" stroke-width="2"/>
-    <text x="1355" y="404" font-size="14" font-weight="700" fill="#FFF">NCDHHS Strategic Plan PDF</text>
-    <text x="1355" y="422" font-size="12" fill="#FFF">[External entity: Public, NC OSBM]</text>
-    <text x="1355" y="440" font-size="12" fill="#FFF">2023-2025 · one-time seed</text>
+    <text x="1355" y="404" font-size="14" font-weight="700" fill="#FFF">Agency strategic plan PDFs</text>
+    <text x="1355" y="422" font-size="12" fill="#FFF">[External entity: Public, NC OSBM site]</text>
+    <text x="1355" y="440" font-size="12" fill="#FFF">NCDHHS 2026-2030 · NCDEQ 2025-2029</text>
 
     <rect x="1210" y="600" width="290" height="76" fill="#08427B" stroke="#052E56" stroke-width="2"/>
     <text x="1355" y="626" font-size="14" font-weight="700" fill="#FFF">Team 14 developers</text>
@@ -450,13 +477,15 @@ footer{margin-top:40px;font-size:12px;color:#777;border-top:1px solid #DDD;paddi
   <!-- Processes -->
   <g text-anchor="middle">
     <rect x="400" y="212" width="260" height="90" rx="30" fill="#1168BD" stroke="#0B4884" stroke-width="2"/>
-    <text x="530" y="242" font-size="14" font-weight="700" fill="#FFF">Staff Web App</text>
-    <text x="530" y="260" font-size="12" fill="#FFF">[Process: Flask + gunicorn]</text>
-    <text x="530" y="278" font-size="12" fill="#FFF">app-ffm-web, port 8000</text>
+    <text x="530" y="236" font-size="14" font-weight="700" fill="#FFF">Staff Web App</text>
+    <text x="530" y="254" font-size="12" fill="#FFF">[Process: Flask + gunicorn]</text>
+    <text x="530" y="271" font-size="12" fill="#FFF">app-ffm-web, port 8000</text>
+    <text x="530" y="288" font-size="12" fill="#FFF">agency switcher · /statewide</text>
     <rect x="860" y="212" width="260" height="90" rx="30" fill="#1168BD" stroke="#0B4884" stroke-width="2"/>
-    <text x="990" y="242" font-size="14" font-weight="700" fill="#FFF">Daily Refresh Job</text>
-    <text x="990" y="260" font-size="12" fill="#FFF">[Process: Python, scheduled]</text>
-    <text x="990" y="278" font-size="12" fill="#FFF">job-ffm-refresh, 11:00 UTC daily</text>
+    <text x="990" y="236" font-size="14" font-weight="700" fill="#FFF">Daily Refresh Job</text>
+    <text x="990" y="254" font-size="12" fill="#FFF">[Process: Python, scheduled]</text>
+    <text x="990" y="271" font-size="12" fill="#FFF">job-ffm-refresh, 11:00 UTC daily</text>
+    <text x="990" y="288" font-size="12" fill="#FFF">one pull, published per agency</text>
     <rect x="885" y="418" width="220" height="84" rx="30" fill="#6B4FBB" stroke="#4A3684" stroke-width="2"/>
     <text x="995" y="446" font-size="14" font-weight="700" fill="#FFF">Azure OpenAI</text>
     <text x="995" y="464" font-size="12" fill="#FFF">[Process: LLM inference]</text>
@@ -473,12 +502,13 @@ footer{margin-top:40px;font-size:12px;color:#777;border-top:1px solid #DDD;paddi
     <text x="460" y="471" font-size="12" fill="#1B5E20">flask-secret (values ****)</text>
     <text x="460" y="488" font-size="12" fill="#1B5E20">secretref env vars</text>
 
-    <rect x="580" y="400" width="260" height="82" fill="#E8F5E9"/>
-    <line x1="580" y1="400" x2="840" y2="400" stroke="#2E7D32" stroke-width="3"/><line x1="580" y1="482" x2="840" y2="482" stroke="#2E7D32" stroke-width="3"/>
+    <rect x="580" y="400" width="260" height="98" fill="#E8F5E9"/>
+    <line x1="580" y1="400" x2="840" y2="400" stroke="#2E7D32" stroke-width="3"/><line x1="580" y1="498" x2="840" y2="498" stroke="#2E7D32" stroke-width="3"/>
     <text x="710" y="420" font-size="13" font-weight="700" fill="#1B5E20">Blob container ffm-data</text>
     <text x="710" y="437" font-size="12" fill="#1B5E20">[Data store: Public + Internal]</text>
-    <text x="710" y="455" font-size="12" fill="#1B5E20">listings, scores, AI summaries,</text>
-    <text x="710" y="471" font-size="12" fill="#1B5E20">decisions, labels, run logs</text>
+    <text x="710" y="455" font-size="12" fill="#1B5E20">listings, run logs (shared); scores,</text>
+    <text x="710" y="471" font-size="12" fill="#1B5E20">AI reviews, decisions, labels</text>
+    <text x="710" y="488" font-size="12" fill="#1B5E20">(one set per agency)</text>
 
     <rect x="370" y="600" width="180" height="78" fill="#E8F5E9"/>
     <line x1="370" y1="600" x2="550" y2="600" stroke="#2E7D32" stroke-width="3"/><line x1="370" y1="678" x2="550" y2="678" stroke="#2E7D32" stroke-width="3"/>
@@ -491,7 +521,7 @@ footer{margin-top:40px;font-size:12px;color:#777;border-top:1px solid #DDD;paddi
     <line x1="880" y1="640" x2="1120" y2="640" stroke="#2E7D32" stroke-width="3"/><line x1="880" y1="722" x2="1120" y2="722" stroke="#2E7D32" stroke-width="3"/>
     <text x="1000" y="660" font-size="13" font-weight="700" fill="#1B5E20">Container Registry acrffm4817</text>
     <text x="1000" y="677" font-size="12" fill="#1B5E20">[Data store: image, Internal]</text>
-    <text x="1000" y="695" font-size="12" fill="#1B5E20">ffm:v4 deployed (earlier tags superseded)</text>
+    <text x="1000" y="695" font-size="12" fill="#1B5E20">ffm:v6 deployed (earlier tags superseded)</text>
     <text x="1000" y="712" font-size="12" fill="#1B5E20">az acr build --no-logs · pulled at start</text>
 
     <rect x="1210" y="720" width="290" height="76" fill="#E8F5E9"/>
@@ -503,25 +533,26 @@ footer{margin-top:40px;font-size:12px;color:#777;border-top:1px solid #DDD;paddi
 
   <!-- Planned controls -->
   <g text-anchor="middle">
-    <rect x="580" y="596" width="260" height="52" rx="6" fill="#FFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="6 4"/>
-    <text x="710" y="616" font-size="13" font-weight="700" fill="#555">Microsoft Entra ID sign-in</text>
-    <text x="710" y="636" font-size="12" fill="#555">[Planned: Container Apps auth]</text>
-    <rect x="580" y="660" width="260" height="52" rx="6" fill="#FFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="6 4"/>
-    <text x="710" y="680" font-size="13" font-weight="700" fill="#555">Key Vault + managed identity</text>
-    <text x="710" y="700" font-size="12" fill="#555">[Planned: replaces shared keys]</text>
-    <rect x="580" y="724" width="260" height="52" rx="6" fill="#FFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="6 4"/>
-    <text x="710" y="744" font-size="13" font-weight="700" fill="#555">Private endpoints / VNet</text>
-    <text x="710" y="764" font-size="12" fill="#555">[Planned: Storage + OpenAI]</text>
-    <rect x="370" y="724" width="180" height="52" rx="6" fill="#FFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="6 4"/>
-    <text x="460" y="744" font-size="13" font-weight="700" fill="#555">Application Insights</text>
-    <text x="460" y="764" font-size="12" fill="#555">[Planned: monitoring]</text>
+    <rect x="580" y="600" width="260" height="52" rx="6" fill="#FFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="710" y="620" font-size="13" font-weight="700" fill="#555">Microsoft Entra ID sign-in</text>
+    <text x="710" y="640" font-size="12" fill="#555">[Planned: Container Apps auth]</text>
+    <rect x="580" y="664" width="260" height="52" rx="6" fill="#FFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="710" y="684" font-size="13" font-weight="700" fill="#555">Key Vault + managed identity</text>
+    <text x="710" y="704" font-size="12" fill="#555">[Planned: replaces shared keys]</text>
+    <rect x="580" y="728" width="260" height="52" rx="6" fill="#FFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="710" y="748" font-size="13" font-weight="700" fill="#555">Private endpoints / VNet</text>
+    <text x="710" y="768" font-size="12" fill="#555">[Planned: Storage + OpenAI]</text>
+    <rect x="370" y="728" width="180" height="52" rx="6" fill="#FFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="460" y="748" font-size="13" font-weight="700" fill="#555">Application Insights</text>
+    <text x="460" y="768" font-size="12" fill="#555">[Planned: monitoring]</text>
   </g>
 
   <!-- Flows: thick = crosses a trust boundary -->
   <g stroke="#333" fill="none" marker-end="url(#fig2-arw)">
-    <line x1="280" y1="178" x2="398" y2="236" stroke-width="3.5"/>
-    <line x1="280" y1="288" x2="398" y2="262" stroke-width="3.5"/>
-    <line x1="280" y1="428" x2="398" y2="290" stroke-width="3.5"/>
+    <line x1="280" y1="168" x2="398" y2="236" stroke-width="3.5"/>
+    <line x1="280" y1="246" x2="398" y2="256" stroke-width="3.5"/>
+    <line x1="280" y1="324" x2="398" y2="276" stroke-width="3.5"/>
+    <line x1="280" y1="428" x2="398" y2="296" stroke-width="3.5"/>
     <line x1="620" y1="304" x2="660" y2="398" stroke-width="2" marker-start="url(#fig2-arw)"/>
     <line x1="880" y1="304" x2="800" y2="398" stroke-width="2" marker-start="url(#fig2-arw)"/>
     <line x1="1060" y1="304" x2="1060" y2="416" stroke-width="3.5"/>
@@ -534,7 +565,7 @@ footer{margin-top:40px;font-size:12px;color:#777;border-top:1px solid #DDD;paddi
   <line x1="460" y1="398" x2="460" y2="306" stroke="#8A8A8A" stroke-width="1.5" stroke-dasharray="2 3" marker-end="url(#fig2-arwg)"/>
   <g font-size="12" fill="#555">
     <text x="468" y="356">env vars</text>
-    <text x="1438" y="505" text-anchor="end">one-time manual seed</text>
+    <text x="1438" y="505" text-anchor="end">manual seed, one profile per plan</text>
   </g>
 
   <!-- Control chips (green = in place, red outline = gap) -->
@@ -548,10 +579,11 @@ footer{margin-top:40px;font-size:12px;color:#777;border-top:1px solid #DDD;paddi
       <rect x="852" y="178" width="70" height="20" rx="10"/><rect x="928" y="178" width="105" height="20" rx="10"/>
       <rect x="370" y="506" width="77" height="20" rx="10"/><rect x="453" y="506" width="98" height="20" rx="10"/>
       <rect x="370" y="530" width="119" height="20" rx="10"/>
-      <rect x="580" y="490" width="91" height="20" rx="10"/><rect x="677" y="490" width="112" height="20" rx="10"/>
-      <rect x="580" y="514" width="91" height="20" rx="10"/><rect x="677" y="514" width="98" height="20" rx="10"/>
+      <rect x="580" y="506" width="91" height="20" rx="10"/><rect x="677" y="506" width="112" height="20" rx="10"/>
+      <rect x="580" y="530" width="91" height="20" rx="10"/><rect x="677" y="530" width="98" height="20" rx="10"/>
       <rect x="872" y="512" width="84" height="20" rx="10"/><rect x="962" y="512" width="91" height="20" rx="10"/>
       <rect x="872" y="536" width="70" height="20" rx="10"/><rect x="948" y="536" width="84" height="20" rx="10"/><rect x="1038" y="536" width="56" height="20" rx="10"/>
+      <rect x="872" y="560" width="140" height="20" rx="10"/><rect x="1018" y="560" width="98" height="20" rx="10"/>
       <rect x="370" y="688" width="112" height="20" rx="10"/>
       <rect x="880" y="732" width="91" height="20" rx="10"/><rect x="977" y="732" width="91" height="20" rx="10"/>
       <rect x="1210" y="806" width="126" height="20" rx="10"/><rect x="1342" y="806" width="105" height="20" rx="10"/>
@@ -565,41 +597,45 @@ footer{margin-top:40px;font-size:12px;color:#777;border-top:1px solid #DDD;paddi
       <text x="887" y="192">Non-root</text><text x="980.5" y="192">Fail = exit 1</text>
       <text x="408.5" y="520">secretref</text><text x="502" y="520">Not in image</text>
       <text x="429.5" y="544">Read from Azure</text>
-      <text x="625.5" y="504">TLS 1.2 min</text><text x="733" y="504">No public blob</text>
-      <text x="625.5" y="528">ETag writes</text><text x="726" y="528">Enc. at rest</text>
+      <text x="625.5" y="520">TLS 1.2 min</text><text x="733" y="520">No public blob</text>
+      <text x="625.5" y="544">ETag writes</text><text x="726" y="544">Enc. at rest</text>
       <text x="914" y="526">JSON check</text><text x="1007.5" y="526">Quote check</text>
       <text x="907" y="550">No tools</text><text x="990" y="550">Top N only</text><text x="1066" y="550">Temp 0</text>
+      <text x="942" y="574">Geo limit: flag only</text><text x="1067" y="574">Human decides</text>
       <text x="426" y="702">Logs collected</text>
       <text x="925.5" y="746">Cloud build</text><text x="1022.5" y="746">Pinned deps</text>
       <text x="1273" y="820">.env git-ignored</text><text x="1394.5" y="820">.dockerignore</text>
     </g>
     <g fill="#FFF" stroke="#C62828" stroke-width="1.5">
+      <rect x="676" y="130" width="140" height="20" rx="10"/>
       <rect x="468" y="178" width="119" height="20" rx="10"/><rect x="593" y="178" width="112" height="20" rx="10"/>
-      <rect x="580" y="538" width="119" height="20" rx="10"/>
+      <rect x="580" y="554" width="119" height="20" rx="10"/>
       <rect x="880" y="756" width="119" height="20" rx="10"/>
     </g>
     <g fill="#C62828">
+      <text x="746" y="144">GAP: no agency roles</text>
       <text x="527.5" y="192">GAP: no sign-in</text><text x="649" y="192">GAP: 1 replica</text>
-      <text x="639.5" y="552">GAP: shared key</text>
+      <text x="639.5" y="568">GAP: shared key</text>
       <text x="939.5" y="770">GAP: admin user</text>
     </g>
   </g>
 
   <!-- Threat badges -->
   <g font-size="12" font-weight="700" text-anchor="middle">
-    <circle cx="320" cy="381" r="15" fill="#C62828"/><text x="320" y="385" fill="#FFF">T1</text>
-    <circle cx="362" cy="332" r="15" fill="#EF6C00"/><text x="362" y="336" fill="#FFF">T2</text>
-    <circle cx="362" cy="218" r="15" fill="#EF6C00"/><text x="362" y="222" fill="#FFF">T3</text>
+    <circle cx="320" cy="383" r="15" fill="#C62828"/><text x="320" y="387" fill="#FFF">T1</text>
+    <circle cx="361" cy="337" r="15" fill="#EF6C00"/><text x="361" y="341" fill="#FFF">T2</text>
+    <circle cx="362" cy="215" r="15" fill="#EF6C00"/><text x="362" y="219" fill="#FFF">T3</text>
     <circle cx="640" cy="351" r="15" fill="#EF6C00"/><text x="640" y="355" fill="#FFF">T4</text>
     <circle cx="550" cy="400" r="15" fill="#EF6C00"/><text x="550" y="404" fill="#FFF">T5</text>
     <circle cx="1170" cy="663" r="15" fill="#EF6C00"/><text x="1170" y="667" fill="#FFF">T6</text>
     <circle cx="1170" cy="197" r="15" fill="#EF6C00"/><text x="1170" y="201" fill="#FFF">T7</text>
     <circle cx="1170" cy="255" r="15" fill="#EF6C00"/><text x="1170" y="259" fill="#FFF">T7</text>
-    <circle cx="320" cy="198" r="15" fill="#F9A825"/><text x="320" y="202" fill="#222">T8</text>
+    <circle cx="320" cy="191" r="15" fill="#F9A825"/><text x="320" y="195" fill="#222">T8</text>
     <circle cx="1060" cy="350" r="15" fill="#EF6C00"/><text x="1060" y="354" fill="#FFF">T9</text>
     <circle cx="1105" cy="460" r="15" fill="#EF6C00"/><text x="1105" y="464" fill="#FFF">T10</text>
     <circle cx="1060" cy="398" r="15" fill="#F9A825"/><text x="1060" y="402" fill="#222">T11</text>
     <circle cx="885" cy="460" r="15" fill="#F9A825"/><text x="885" y="464" fill="#222">T12</text>
+    <circle cx="660" cy="257" r="15" fill="#EF6C00"/><text x="660" y="261" fill="#FFF">T13</text>
   </g>
 
   <!-- Legend -->
@@ -629,94 +665,100 @@ footer{margin-top:40px;font-size:12px;color:#777;border-top:1px solid #DDD;paddi
   <rect x="500" y="870" width="1020" height="410" rx="8" fill="#FFF" stroke="#9E9E9E"/>
   <text x="516" y="894" font-size="14" font-weight="700" fill="#222">Threat key (full register with status in report.html; flow numbers match architecture.svg)</text>
   <g font-size="12" fill="#222">
-    <text x="516" y="924"><tspan font-weight="700" fill="#C62828">T1 High</tspan><tspan x="596">Spoofing (flows 9-11): no sign-in, so anyone with the URL can act as staff → planned Entra ID sign-in; today CSRF token only</tspan></text>
-    <text x="516" y="953"><tspan font-weight="700" fill="#EF6C00">T2 Med</tspan><tspan x="596">Information disclosure: staff names, notes, labels and run logs are readable by anyone with the URL → planned Entra ID sign-in</tspan></text>
-    <text x="516" y="982"><tspan font-weight="700" fill="#EF6C00">T3 Med</tspan><tspan x="596">Repudiation (flow 9): a decision carries only a typed name (now required) → append-only history with time, score, run id; planned signed-in user</tspan></text>
-    <text x="516" y="1011"><tspan font-weight="700" fill="#EF6C00">T4 Med</tspan><tspan x="596">Tampering (flow 12): visitors can add decisions or redraw the evaluation sample → ETag writes, history kept, confirm step</tspan></text>
-    <text x="516" y="1040"><tspan font-weight="700" fill="#EF6C00">T5 Med</tspan><tspan x="596">Information disclosure: shared keys (storage connection string, OpenAI key) → Container Apps secrets; Key Vault + MI planned</tspan></text>
-    <text x="516" y="1069"><tspan font-weight="700" fill="#EF6C00">T6 Med</tspan><tspan x="596">Elevation of privilege (flows 2-3): ACR admin user could push a changed image → planned managed identity, admin user off</tspan></text>
-    <text x="516" y="1098"><tspan font-weight="700" fill="#EF6C00">T7 Med</tspan><tspan x="596">Denial of service / tampering (flows 4-5): API outage, limits or bad data → retries, caches, 50-listing rule, raw replay, HTTPS, stale-data warning in the app</tspan></text>
-    <text x="516" y="1127"><tspan font-weight="700" fill="#9E7700">T8 Low</tspan><tspan x="596">Denial of service: one replica, no rate limit on a public URL → input length limits; recommended: sign-in, 2+ replicas</tspan></text>
-    <text x="516" y="1156"><tspan font-weight="700" fill="#EF6C00">T9 Med</tspan><tspan x="596">LLM01 Prompt injection via third-party listing text (flow 7) → no tools, JSON validated, quotes checked, AI cannot set the score</tspan></text>
-    <text x="516" y="1185"><tspan font-weight="700" fill="#EF6C00">T10 Med</tspan><tspan x="596">LLM09 Misinformation: wrong summary, reason or ranking, over-reliance → verified quotes, score breakdown, AI error log, human decision</tspan></text>
-    <text x="516" y="1214"><tspan font-weight="700" fill="#9E7700">T11 Low</tspan><tspan x="596">LLM02 Sensitive data in prompts (flows 6-7) → only public listing and plan text and 10 off-topic field descriptions are sent; no staff data</tspan></text>
-    <text x="516" y="1243"><tspan font-weight="700" fill="#9E7700">T12 Low</tspan><tspan x="596">LLM10 Unbounded consumption: cost spikes → top 40 + 5 only, max 1,200 output tokens, caches; rate caps 1,000K (embed) / 500K (chat) tokens/min</tspan></text>
-    <text x="516" y="1268" fill="#555">MI = managed identity · ETag = version check that stops lost updates · Sec. headers = CSP, HSTS, X-Frame-Options DENY, nosniff · CSV guard = no spreadsheet formulas in exports</text>
+    <text x="516" y="920"><tspan font-weight="700" fill="#C62828">T1 High</tspan><tspan x="596">Spoofing (flows 9-12): no sign-in, so anyone with the URL can act as staff of any agency → planned Entra ID sign-in; today CSRF token only</tspan></text>
+    <text x="516" y="946"><tspan font-weight="700" fill="#EF6C00">T2 Med</tspan><tspan x="596">Information disclosure: names, notes, labels, run logs and every agency's decisions are readable by anyone with the URL → planned Entra ID sign-in</tspan></text>
+    <text x="516" y="972"><tspan font-weight="700" fill="#EF6C00">T3 Med</tspan><tspan x="596">Repudiation (flow 9): a decision carries only a typed name (required) → append-only history with time, score, run id; planned signed-in user</tspan></text>
+    <text x="516" y="998"><tspan font-weight="700" fill="#EF6C00">T4 Med</tspan><tspan x="596">Tampering (flow 13): visitors can add decisions or labels, or draw an agency's sample first → ETag writes, history kept, sample fixed once drawn</tspan></text>
+    <text x="516" y="1024"><tspan font-weight="700" fill="#EF6C00">T5 Med</tspan><tspan x="596">Information disclosure (flows 6-8, 13): shared keys (storage connection string, OpenAI key) → Container Apps secrets; Key Vault + MI planned</tspan></text>
+    <text x="516" y="1050"><tspan font-weight="700" fill="#EF6C00">T6 Med</tspan><tspan x="596">Elevation of privilege (flows 2-3): ACR admin user could push a changed image → planned managed identity, admin user off</tspan></text>
+    <text x="516" y="1076"><tspan font-weight="700" fill="#EF6C00">T7 Med</tspan><tspan x="596">Denial of service / tampering (flows 4-5): API outage, limits or bad data → retries, caches, 50-listing rule, raw replay, HTTPS, stale-data warning in the app</tspan></text>
+    <text x="516" y="1102"><tspan font-weight="700" fill="#9E7700">T8 Low</tspan><tspan x="596">Denial of service: one replica, no rate limit on a public URL → input length limits; recommended: sign-in, 2+ replicas</tspan></text>
+    <text x="516" y="1128"><tspan font-weight="700" fill="#EF6C00">T9 Med</tspan><tspan x="596">LLM01 Prompt injection via third-party listing text (flow 7) → no tools, JSON validated, quotes checked, AI cannot set the score</tspan></text>
+    <text x="516" y="1154"><tspan font-weight="700" fill="#EF6C00">T10 Med</tspan><tspan x="596">LLM09 Misinformation, over-reliance (flow 7): wrong summary or eligibility call → quotes verified; geographic limit only flags, never hides; a person decides</tspan></text>
+    <text x="516" y="1180"><tspan font-weight="700" fill="#9E7700">T11 Low</tspan><tspan x="596">LLM02 Sensitive data in prompts (flows 6-7) → only public listing and plan text and off-topic field descriptions are sent; no staff data</tspan></text>
+    <text x="516" y="1206"><tspan font-weight="700" fill="#9E7700">T12 Low</tspan><tspan x="596">LLM10 Unbounded consumption: cost spikes → top 45 per agency, max 1,600 output tokens (one retry at 3,000), caches; caps 1,000K / 500K tokens/min</tspan></text>
+    <text x="516" y="1232"><tspan font-weight="700" fill="#EF6C00">T13 Med</tspan><tspan x="596">Elevation of privilege (flows 9-13): the agency switcher lets anyone view or record any agency's decisions → recommended: per-agency roles with sign-in</tspan></text>
+    <text x="516" y="1262" fill="#555">MI = managed identity · ETag = version check that stops lost updates · Sec. headers = CSP, HSTS, X-Frame-Options DENY, nosniff · CSV guard = no spreadsheet formulas in exports</text>
   </g>
 </svg>
-<figcaption>Figure 2: Data-flow threat model with five trust boundaries (red dashed). Threat badges T1-T12 sit on the element or boundary-crossing flow they affect (T7 appears on both upstream API flows). Green chips are controls in place; red-outlined chips are gaps; dashed boxes are planned controls. The figure is scaled to fit the page; open <a href="security.svg">security.svg</a> to read it at full size.</figcaption></figure>
+<figcaption>Figure 2: Data-flow threat model with five trust boundaries (red dashed). Threat badges T1-T13 sit on the element or boundary-crossing flow they affect (T7 appears on both upstream API flows; T13 sits on the web app, whose agency switcher has no access check). Green chips are controls in place; red-outlined chips are gaps; dashed boxes are planned controls. The figure is scaled to fit the page; open <a href="security.svg">security.svg</a> to read it at full size.</figcaption></figure>
 
 <h2 id="threats">6. Threat register</h2>
 <p>Severity is likelihood × impact for this prototype. Status describes the main mitigation: <span class="chip ok">Implemented</span> in code or Azure today, <span class="chip plan">Planned</span> by the team, <span class="chip gap">Gap</span> not in place. Items marked "Recommended" are our suggestions, not part of the team's plan.</p>
 <table><tr><th>ID</th><th>Category</th><th>Element / flow</th><th>Threat</th><th>Severity</th><th>Mitigation</th><th>Framework tags</th><th>Status</th></tr>
-<tr><td>T1</td><td>STRIDE: Spoofing</td><td>Flows 9-11 (TB1→TB2)</td><td>The prototype has no sign-in. Anyone who has the public URL can open the app and record Pursue / Maybe / Pass decisions or evaluation labels under any name.</td><td><span class="chip high">High</span></td><td>Today: CSRF token on every POST (stops forged cross-site forms, not direct use); URL shared only with the team and judges (<span class="assumed">ASSUMED</span>). Planned: Microsoft Entra ID sign-in through Container Apps built-in authentication, limited to NC DHHS accounts.</td><td>Zero Trust: verify explicitly · NIST CSF PR.AA · MCSB IM</td><td><span class="chip gap">Gap</span> fix planned</td></tr>
-<tr><td>T2</td><td>STRIDE: Information disclosure</td><td>Staff Web App (flows 9-11)</td><td>Internal data is visible to any visitor: decision history with typed names and notes on detail pages, evaluation labels, and run logs with error text on the Status page.</td><td><span class="chip med">Med</span></td><td>Data is limited: no residents' data and no personal data beyond staff-typed names or initials. Implemented: HSTS header and <code>Cache-Control: no-store</code> on form posts and CSV exports; the error page for server errors shows no internal details. Planned: Entra ID sign-in. Recommended: show run error details only to signed-in staff.</td><td>Zero Trust: least privilege · NIST PR.DS · MCSB DP</td><td><span class="chip gap">Gap</span></td></tr>
-<tr><td>T3</td><td>STRIDE: Repudiation</td><td>Flow 9 → flow 12 (decisions)</td><td>A decision records only a typed name or initials, so it cannot be tied to a real person.</td><td><span class="chip med">Med</span></td><td>Implemented: append-only history per opportunity with UTC time, score and confidence at decision time, and run id; a decision is refused unless a name or initials is entered (no anonymous default). Planned: store the signed-in Entra ID user; Application Insights for request records.</td><td>NIST DE.CM · MCSB LT</td><td><span class="chip plan">Planned</span></td></tr>
-<tr><td>T4</td><td>STRIDE: Tampering</td><td>Flow 12 (Web App ↔ Blob)</td><td>Visitors can add misleading decisions or labels, or redraw the evaluation sample, which would skew precision@10 and labeler agreement. Two people saving at once could overwrite each other.</td><td><span class="chip med">Med</span></td><td>Implemented: ETag optimistic concurrency (no lost writes; tested in <code>tests/test_finals.py</code>); decisions appended, not replaced; an identical repeat within 10 seconds is not recorded twice; redrawing the sample needs an explicit confirm; allowed choices checked on the server; input length limits; redirects after a save go only to same-site paths; CSV export prefixes cells that start with <code>=</code>, <code>+</code>, <code>-</code> or <code>@</code> so a spreadsheet shows them as text instead of running them as formulas. Planned: sign-in. Recommended: an evaluation-admin role.</td><td>NIST PR.DS · WAF Reliability</td><td><span class="chip plan">Planned</span></td></tr>
-<tr><td>T5</td><td>STRIDE: Information disclosure</td><td>Container Apps secrets; flows 6-8, 12</td><td>The storage connection string (account key) gives full read and write access to all Blob data, and the Azure OpenAI key allows model use billed to the subscription. Both are long-lived shared secrets.</td><td><span class="chip med">Med</span></td><td>Implemented: values held only as Container Apps secrets (<code>secretref</code>), read from Azure at deploy time into shell variables, never in code or the image; <code>.env</code> git-ignored and excluded by <code>.dockerignore</code>; <code>tests/test_no_secrets.py</code> scans committable files (its patterns do not yet match Azure keys or <code>AccountKey=</code>). Planned: Key Vault + managed identity. Recommended: Storage Blob Data Contributor and Cognitive Services OpenAI User roles, then disable shared-key access and rotate keys.</td><td>Zero Trust: least privilege · NIST PR.AA, PR.DS · MCSB IM, DP</td><td><span class="chip plan">Planned</span></td></tr>
-<tr><td>T6</td><td>STRIDE: Elevation of privilege</td><td>Flows 2-3 (ACR)</td><td>The ACR admin user is a shared username and password. Anyone holding it could push a changed <code>ffm</code> image that the app and the job would run with access to every secret.</td><td><span class="chip med">Med</span></td><td>Implemented: image built in the cloud with <code>az acr build</code>; pinned Python packages (<code>requirements-app.txt</code>); non-root container user. Planned: managed identity for image pulls and admin user disabled. Recommended: pin the base image by digest; give every build a new tag (<code>deploy/env.sh</code> still defaults <code>TAG</code> to <code>v1</code>, so a run without <code>TAG=</code> would rebuild and redeploy the superseded tag name).</td><td>Zero Trust: assume breach · NIST PR.PS · MCSB PA, DS</td><td><span class="chip plan">Planned</span></td></tr>
-<tr><td>T7</td><td>STRIDE: Denial of service / Tampering</td><td>Flows 4-5 (TB2→TB4)</td><td>Grants.gov or USAspending.gov is down, rate-limits the job, or returns incomplete or malformed data.</td><td><span class="chip med">Med</span></td><td>Implemented: HTTPS with certificate checks; retries with exponential back-off; API error-code check; detail cache (refetched when a listing changes or after 7 days); the job refuses to publish if fewer than 50 listings are pulled, so yesterday's results stay live; funder-history failures do not stop the run; <code>raw/{date}/grants.json</code> allows replay; non-zero exit marks the execution Failed; retry 1. In the app: days to close are recomputed each day, listings that closed since the last refresh are hidden, and a red warning appears when the last refresh attempt failed (the job writes <code>runs/last_attempt.json</code> on success and on failure) or when there has been no successful refresh for more than 26 hours. Planned: Application Insights alert.</td><td>WAF Reliability · NIST DE.CM, RC.RP</td><td><span class="chip ok">Implemented</span></td></tr>
-<tr><td>T8</td><td>STRIDE: Denial of service</td><td>Web App ingress (flows 9-11)</td><td>A public URL with one replica and no request rate limit could be slowed by heavy traffic, or flooded with form posts that grow <code>decisions/ncdhhs.json</code>.</td><td><span class="chip low">Low</span></td><td>Implemented: input length limits (name 60, note 1,000 characters); repeated identical decisions within 10 seconds are not stored twice; gunicorn timeouts; CSRF token required. Planned: sign-in removes anonymous traffic. Recommended: 2 or more replicas or a scale rule; rate limiting.</td><td>WAF Reliability, Performance Efficiency · NIST PR.IR</td><td><span class="chip gap">Gap</span></td></tr>
-<tr><td>T9</td><td>OWASP LLM01: Prompt injection</td><td>Flow 7 (TB2→TB3)</td><td>Third-party listing text goes into the prompt and could carry instructions that try to steer the summary, the reason or the eligibility call.</td><td><span class="chip med">Med</span></td><td>Implemented: the model has no tools and cannot act; JSON-mode output is parsed and validated (allowed values, known ids); quotes are checked word for word against the source and hidden if not found; the AI cannot set the score and can only move a record to "not eligible" with a verified quote or lower confidence one step; Jinja auto-escaping and the Content-Security-Policy stop script injection into pages; a person makes every decision. Recommended: Azure AI Content Safety Prompt Shields on listing text.</td><td>Zero Trust: assume breach · NIST PR.DS</td><td><span class="chip ok">Implemented</span></td></tr>
-<tr><td>T10</td><td>OWASP LLM09: Misinformation</td><td>Flow 7 output → Web App</td><td>A summary or "why it matches" may be wrong or overstated, and staff may rely on it too much. Ranking errors: false positives from long, generic announcements or generic words; false negatives from short or vague listings, or from relevant listings that read close to one of the 10 off-topic fields (for example research or education).</td><td><span class="chip med">Med</span></td><td>Implemented: two verbatim quotes checked in Python; score computed in code with a published breakdown (the plan-alignment reason shows the word similarity, the meaning similarity and the nearest off-topic field); hybrid plan-alignment signal measured on 1,037 opportunities the qualifier had already reviewed (AUC 0.91, against 0.84 for raw embeddings; <code>docs/tuning_report.md</code>); if Azure OpenAI is unavailable the job uses TF-IDF alone and the breakdown says the meaning-based part is unavailable; AI problems listed on the Evaluation page; blind labeling with precision@10 against the keyword baseline and labeler agreement; detail page marks AI text as AI-written and links the official listing; temperature 0.</td><td>NIST AI RMF (Measure) · WAF Reliability</td><td><span class="chip ok">Implemented</span></td></tr>
-<tr><td>T11</td><td>OWASP LLM02: Sensitive information disclosure</td><td>Flows 6-7</td><td>Internal data could reach the model through prompts.</td><td><span class="chip low">Low</span></td><td>Implemented: chat prompts contain only public listing text and the public plan goals, objective and divisions; embedding requests contain only listing text, the public plan objectives and 10 short off-topic field descriptions written by the team; staff names, notes and decisions are never sent (the web app never calls the model).</td><td>NIST PR.DS · MCSB DP</td><td><span class="chip ok">Implemented</span></td></tr>
-<tr><td>T12</td><td>OWASP LLM10: Unbounded consumption</td><td>Azure OpenAI (flows 6-7)</td><td>Large runs or repeated retries push token cost up.</td><td><span class="chip low">Low</span></td><td>Implemented: summaries for the top 40 agency + top 5 research records only; at most 1,200 output tokens; embeddings cached by text hash and answers cached by prompt version in Blob; 6,000-character cap per embedded text. Deployment capacities are 1,000K tokens per minute (embed) and 500K tokens per minute (chat); they limit the rate, not the daily total, so they do little to cap cost. Recommended: Azure budget alert.</td><td>WAF Cost Optimization</td><td><span class="chip ok">Implemented</span></td></tr>
+<tr><td>T1</td><td>STRIDE: Spoofing</td><td>Flows 9-12 (TB1→TB2)</td><td>The prototype has no sign-in. Anyone who has the public URL can open the app, switch to any agency, and record Pursue / Maybe / Pass decisions or evaluation labels under any name.</td><td><span class="chip high">High</span></td><td>Today: CSRF token on every POST (stops forged cross-site forms, not direct use); URL shared only with the team, judges and sponsor contacts (<span class="assumed">ASSUMED</span>). Planned: Microsoft Entra ID sign-in through Container Apps built-in authentication, limited to state accounts. Per-agency limits: see T13.</td><td>Zero Trust: verify explicitly · NIST CSF PR.AA · MCSB IM</td><td><span class="chip gap">Gap</span> fix planned</td></tr>
+<tr><td>T2</td><td>STRIDE: Information disclosure</td><td>Staff Web App (flows 9-12)</td><td>Internal data is visible to any visitor: decision history with typed names and notes on detail pages, every agency's decision counts on the Statewide page, evaluation labels, and run logs with error text on the Status page.</td><td><span class="chip med">Med</span></td><td>Data is limited: no residents' data and no personal data beyond staff-typed names or initials. Implemented: HSTS header and <code>Cache-Control: no-store</code> on form posts and CSV exports; the error page for server errors shows no internal details. Planned: Entra ID sign-in. Recommended: show run error details only to signed-in staff; decide who may see other agencies' decisions (open question 6).</td><td>Zero Trust: least privilege · NIST PR.DS · MCSB DP</td><td><span class="chip gap">Gap</span></td></tr>
+<tr><td>T3</td><td>STRIDE: Repudiation</td><td>Flow 9 → flow 13 (decisions)</td><td>A decision records only a typed name or initials, so it cannot be tied to a real person.</td><td><span class="chip med">Med</span></td><td>Implemented: append-only history per opportunity in each agency's decisions file, with UTC time, score and confidence at decision time, and run id; a decision is refused unless a name or initials is entered (no anonymous default). Planned: store the signed-in Entra ID user; Application Insights for request records.</td><td>NIST DE.CM · MCSB LT</td><td><span class="chip plan">Planned</span></td></tr>
+<tr><td>T4</td><td>STRIDE: Tampering</td><td>Flow 13 (Web App ↔ Blob)</td><td>Visitors can add misleading decisions or labels for any agency, or draw an agency's evaluation sample before staff do, which would skew precision@10 and labeler agreement. Two people saving at once could overwrite each other.</td><td><span class="chip med">Med</span></td><td>Implemented: ETag optimistic concurrency (no lost writes; tested in <code>tests/test_finals.py</code>); decisions appended, not replaced, in a separate file per agency; an identical repeat within 10 seconds is not recorded twice; each agency's sample is drawn once and cannot be replaced from the web (an administrator deletes it in storage to start over); allowed choices checked on the server; input length limits; redirects after a save go only to same-site paths; CSV export prefixes cells that start with <code>=</code>, <code>+</code>, <code>-</code> or <code>@</code> so a spreadsheet shows them as text instead of running them as formulas. Planned: sign-in. Recommended: an evaluation-admin role.</td><td>NIST PR.DS · WAF Reliability</td><td><span class="chip plan">Planned</span></td></tr>
+<tr><td>T5</td><td>STRIDE: Information disclosure</td><td>Container Apps secrets; flows 6-8, 13</td><td>The storage connection string (account key) gives full read and write access to all Blob data for every agency, and the Azure OpenAI key allows model use billed to the subscription. Both are long-lived shared secrets.</td><td><span class="chip med">Med</span></td><td>Implemented: values held only as Container Apps secrets (<code>secretref</code>), read from Azure at deploy time into shell variables, never in code or the image; <code>.env</code> git-ignored and excluded by <code>.dockerignore</code>; <code>tests/test_no_secrets.py</code> scans committable files (its patterns do not yet match Azure keys or <code>AccountKey=</code>). Planned: Key Vault + managed identity. Recommended: Storage Blob Data Contributor and Cognitive Services OpenAI User roles, then disable shared-key access and rotate keys.</td><td>Zero Trust: least privilege · NIST PR.AA, PR.DS · MCSB IM, DP</td><td><span class="chip plan">Planned</span></td></tr>
+<tr><td>T6</td><td>STRIDE: Elevation of privilege</td><td>Flows 2-3 (ACR)</td><td>The ACR admin user is a shared username and password. Anyone holding it could push a changed <code>ffm</code> image that the app and the job would run with access to every secret.</td><td><span class="chip med">Med</span></td><td>Implemented: image built in the cloud with <code>az acr build</code>; pinned Python packages (<code>requirements-app.txt</code>); non-root container user. Planned: managed identity for image pulls and admin user disabled. Recommended: pin the base image by digest; give every build a new tag (<code>deploy/env.sh</code> defaults <code>TAG</code> to <code>v3</code>, so a run without <code>TAG=</code> would rebuild and redeploy an old tag name).</td><td>Zero Trust: assume breach · NIST PR.PS · MCSB PA, DS</td><td><span class="chip plan">Planned</span></td></tr>
+<tr><td>T7</td><td>STRIDE: Denial of service / Tampering</td><td>Flows 4-5 (TB2→TB4)</td><td>Grants.gov or USAspending.gov is down, rate-limits the job, or returns incomplete or malformed data. One pull serves every agency, so an outage affects all of them at once.</td><td><span class="chip med">Med</span></td><td>Implemented: HTTPS with certificate checks; retries with exponential back-off; API error-code check; detail cache (refetched when a listing changes or after 7 days); the job refuses to publish if fewer than 50 listings are pulled, so yesterday's results stay live; funder-history failures do not stop the run; <code>raw/{date}/grants.json</code> allows replay; non-zero exit marks the execution Failed; retry 1. In the app: days to close are recomputed each day, listings that closed since the last refresh are hidden, and a red warning appears when the last refresh attempt failed (the job writes <code>runs/last_attempt.json</code> on success and on failure) or when there has been no successful refresh for more than 26 hours. Planned: Application Insights alert.</td><td>WAF Reliability · NIST DE.CM, RC.RP</td><td><span class="chip ok">Implemented</span></td></tr>
+<tr><td>T8</td><td>STRIDE: Denial of service</td><td>Web App ingress (flows 9-12)</td><td>A public URL with one replica and no request rate limit could be slowed by heavy traffic, or flooded with form posts that grow an agency's <code>decisions/{agency}.json</code>.</td><td><span class="chip low">Low</span></td><td>Implemented: input length limits (name 60, note 1,000 characters); repeated identical decisions within 10 seconds are not stored twice; gunicorn timeouts; CSRF token required. Planned: sign-in removes anonymous traffic. Recommended: 2 or more replicas or a scale rule; rate limiting.</td><td>WAF Reliability, Performance Efficiency · NIST PR.IR</td><td><span class="chip gap">Gap</span></td></tr>
+<tr><td>T9</td><td>OWASP LLM01: Prompt injection</td><td>Flow 7 (TB2→TB3)</td><td>Third-party listing text goes into the prompt and could carry instructions that try to steer the summary, the reason, or the eligibility and geographic-limit answers.</td><td><span class="chip med">Med</span></td><td>Implemented: the model has no tools and cannot act; JSON-mode output is parsed and validated (allowed values, known goal and division ids); quotes are checked word for word against the listing and hidden if not found; the AI cannot set the score. It can only move a record to "not eligible" with a verified eligibility quote (the record stays visible on that list), lower confidence one step, or flag a verified geographic limit. Jinja auto-escaping and the Content-Security-Policy stop script injection into pages; a person makes every decision. Recommended: Azure AI Content Safety Prompt Shields on listing text.</td><td>Zero Trust: assume breach · NIST PR.DS</td><td><span class="chip ok">Implemented</span></td></tr>
+<tr><td>T10</td><td>OWASP LLM09: Misinformation (hallucination, over-reliance)</td><td>Flow 7 output → Web App</td><td>A summary, "why it matches" or eligibility answer may be wrong or overstated, and staff may rely on it too much. A quote can be real but misread: the model once read HHS's standard clause that territories may also apply as a geographic limit, which would have hidden a program for women living with HIV in the South. Ranking errors: false positives from long, generic announcements or from eligibility limits the score cannot see (an EPA grant open only to tribes ranked #11 for NC DEQ; a RESTORE Act grant for Gulf Coast states only ranked #1 for NC DEQ); false negatives from short or vague listings, or from listings that read close to one of the agency's off-topic fields.</td><td><span class="chip med">Med</span></td><td>Implemented: the review asks an agency-neutral question (can this North Carolina state agency apply?) and, separately, whether the funding is limited to states or regions that exclude North Carolina, each with a verbatim quote checked in Python. A verified "ineligible" quote moves the record to the "not eligible" list, where staff can still open it. A verified geographic-limit quote only flags the record ("check eligibility", with the quote shown) and lowers confidence one step; it never hides the record. An unverified claim is logged and not acted on (tested in <code>tests/test_finals.py</code>). A cut-off answer is retried once with more room. The score is computed in code with a published breakdown; hybrid plan alignment measured on 1,037 opportunities for NC DHHS (AUC 0.90, against 0.82 for raw embeddings; <code>docs/tuning_report.md</code>); TF-IDF fallback; AI problems listed on the Evaluation page; blind labeling per agency with precision@10 against the keyword baseline; the detail page marks AI text as written by AI and links the official listing; temperature 0. To check: the prompt's applicant-role instruction also names a geographic limit as a reason to answer "ineligible", so a limit reported that way is still moved to the not-eligible list (A20). NC DEQ scoring is untuned (no reference set).</td><td>NIST AI RMF (Measure, Manage) · WAF Reliability</td><td><span class="chip ok">Implemented</span></td></tr>
+<tr><td>T11</td><td>OWASP LLM02: Sensitive information disclosure</td><td>Flows 6-7</td><td>Internal data could reach the model through prompts.</td><td><span class="chip low">Low</span></td><td>Implemented: chat prompts contain only public listing text and the agency's public mission, plan goals, objective and divisions; embedding requests contain only listing text, the public plan objectives and the off-topic field descriptions written by the team; staff names, notes and decisions are never sent (the web app never calls the model).</td><td>NIST PR.DS · MCSB DP</td><td><span class="chip ok">Implemented</span></td></tr>
+<tr><td>T12</td><td>OWASP LLM10: Unbounded consumption</td><td>Azure OpenAI (flows 6-7)</td><td>Large runs, repeated retries or more agencies push token cost up.</td><td><span class="chip low">Low</span></td><td>Implemented: reviews only for the top 40 agency + top 5 research records per agency (45 per agency a day; about 30,000 new tokens per agency on a normal day, per <code>docs/finals_field_notes.md</code>); at most 1,600 output tokens per answer, with one retry at 3,000 when an answer is cut off; embeddings cached by text hash (listing vectors reused across agencies) and answers cached by prompt version in Blob; 6,000-character cap per embedded text. Deployment capacities are 1,000K tokens per minute (embed) and 500K tokens per minute (chat); they limit the rate, not the daily total, so they do little to cap cost. Each added agency adds its own 45 reviews a day. Recommended: Azure budget alert.</td><td>WAF Cost Optimization</td><td><span class="chip ok">Implemented</span></td></tr>
+<tr><td>T13</td><td>STRIDE: Elevation of privilege</td><td>Staff Web App: agency switcher (flows 9-13)</td><td>Any user can switch to any agency (<code>?agency=</code>, remembered in the session) and view or record decisions and labels in that agency's files; the Statewide page shows every agency's decisions. With sign-in alone, an NC DEQ user could still record an NC DHHS decision, and a user who switched agencies earlier could save a decision to the wrong agency by mistake.</td><td><span class="chip med">Med</span></td><td>Today: decisions and labels are stored per agency; the switcher on every page shows the agency being viewed, and the decision form names it ("Should NC DEQ pursue this?"). Recommended (not in the team's plan): with Entra ID sign-in, map users to agencies through app roles or groups, check the role on the server for every write, save the agency and signed-in user with each decision, and give OSBM a read-only statewide role.</td><td>Zero Trust: least privilege · NIST PR.AA · MCSB IM, PA</td><td><span class="chip gap">Gap</span></td></tr>
 </table>
 <h3>Boundary-crossing flows: coverage check</h3>
 <table><tr><th>Flow</th><th>Crosses</th><th>Threats or note</th></tr>
-<tr><td>1 Plan PDF → Team</td><td>TB4 → TB5</td><td>No security threat: a public document read by people. Integrity risk (a misread or out-of-date plan) is handled by page citations and a second teammate's review; the 2023-2025 plan going stale is a known risk.</td></tr>
+<tr><td>1 Plan PDFs → Team</td><td>TB4 → TB5</td><td>No security threat: public documents read by people. Integrity risk (a misread plan, or a profile built from an out-of-date plan) is handled by page citations and a second teammate's review; the NC DHHS profile was rebuilt from the 2026-2030 plan during the event. The NC DEQ division list still needs checking against the current organization chart (A18).</td></tr>
 <tr><td>2 Team → ACR + Container Apps</td><td>TB5 → TB2</td><td>T5, T6. Uses each developer's Azure CLI sign-in (<span class="assumed">ASSUMED</span>; MFA status unknown).</td></tr>
 <tr><td>4, 5 Job → Grants.gov, USAspending.gov</td><td>TB2 → TB4</td><td>T7.</td></tr>
 <tr><td>6, 7 Job → Azure OpenAI</td><td>TB2 → TB3</td><td>T5 (API key), T9, T10, T11, T12.</td></tr>
-<tr><td>9, 10, 11 Users → Web App</td><td>TB1 → TB2</td><td>T1, T2, T3, T4, T8.</td></tr>
-<tr><td>3, 8, 12, 13 (inside TB2)</td><td>None (but Storage and Azure OpenAI have public endpoints)</td><td>T4, T5, T6. Log flow 13: no direct threat; logs hold request paths (Internal) and are protected by Azure access control on the workspace. Planned private endpoints would remove internet exposure.</td></tr>
-<tr><td class="planned">14, 15 (planned)</td><td>TB2 → TB4 / Microsoft 365</td><td>Not built. SAM.gov needs an API key: store it in Key Vault and reuse the T7 outage handling. Alerts should carry only titles, links and dates.</td></tr>
+<tr><td>9, 10, 11, 12 Users → Web App</td><td>TB1 → TB2</td><td>T1, T2, T3, T4, T8, T13.</td></tr>
+<tr><td>3, 8, 13, 14 (inside TB2)</td><td>None (but Storage and Azure OpenAI have public endpoints)</td><td>T4, T5, T6, T13. Log flow 14: no direct threat; logs hold request paths (Internal) and are protected by Azure access control on the workspace. Planned private endpoints would remove internet exposure.</td></tr>
+<tr><td class="planned">15, 16 (planned)</td><td>TB2 → TB4 / Microsoft 365</td><td>Not built. SAM.gov needs an API key: store it in Key Vault and reuse the T7 outage handling. Alerts should carry only titles, links and dates, and go only to the agency they concern.</td></tr>
 </table>
 
 <h2 id="waf">7. Azure Well-Architected quick check</h2>
 <table><tr><th>Pillar</th><th>Status</th><th>Note</th></tr>
-<tr><td>Reliability</td><td>⚠️</td><td>The daily job has retries, back-off, a 50-listing safety rule, raw snapshots for replay and a Failed status; if Azure OpenAI is unavailable it still runs, using TF-IDF alone for plan alignment and skipping summaries. The app warns staff when the last refresh failed or results are more than 26 hours old. The web app runs as 1 replica in one region with locally redundant storage, and no alert fires on a failed run yet (Application Insights planned).</td></tr>
-<tr><td>Security</td><td>⚠️</td><td>Good application-layer controls and secrets kept out of code and the image. Close T1 (sign-in) and T5/T6 (managed identity, no ACR admin user) before any pilot with real staff.</td></tr>
-<tr><td>Cost Optimization</td><td>✅</td><td>Consumption Container Apps, Basic ACR and Standard_LRS storage; embeddings and AI answers cached; summaries only for the top 45 records. Add a budget alert.</td></tr>
-<tr><td>Operational Excellence</td><td>⚠️</td><td>Repeatable Azure CLI scripts, one image for two roles, pinned packages, run log and status page, unit tests in <code>tests/</code>, and a teardown script. No CI/CD pipeline or infrastructure-as-code template (for example Bicep) yet.</td></tr>
-<tr><td>Performance Efficiency</td><td>✅</td><td>Scores are computed once a day; embeddings are cached so daily runs only embed new or changed listings, and deployment capacity (1,000K tokens/min embed, 500K chat) keeps a full first pass short. The app serves JSON from Blob with a 30-second cache. AI Search or Cosmos DB is planned if volumes grow.</td></tr>
+<tr><td>Reliability</td><td>⚠️</td><td>The daily job has retries, back-off, a 50-listing safety rule, raw snapshots for replay and a Failed status; if Azure OpenAI is unavailable it still runs, using TF-IDF alone and skipping AI reviews. One pull serves every agency, and agencies are published one after another in the same run: if a later agency fails, the run is marked Failed and that agency keeps its previous list, while an agency already published in that run has its new list. The app warns staff when the last refresh failed or results are more than 26 hours old. The web app runs as 1 replica in one region with locally redundant storage, and no alert fires on a failed run yet (Application Insights planned).</td></tr>
+<tr><td>Security</td><td>⚠️</td><td>Good application-layer controls and secrets kept out of code and the image. Close T1 (sign-in), T13 (per-agency roles) and T5/T6 (managed identity, no ACR admin user) before the OSBM pilot with real staff.</td></tr>
+<tr><td>Cost Optimization</td><td>✅</td><td>Consumption Container Apps, Basic ACR and Standard_LRS storage; one Grants.gov pull and one set of listing embeddings serve every agency; AI reviews only for the top 45 records per agency. Each added agency adds its own reviews. Add a budget alert.</td></tr>
+<tr><td>Operational Excellence</td><td>⚠️</td><td>A new agency is one profile file on the standard template, with no code change. Repeatable Azure CLI scripts, one image for two roles, pinned packages, run log and status page, unit tests in <code>tests/</code> (including per-agency publishing, the agency switcher and the Statewide page), and a teardown script. No CI/CD pipeline or infrastructure-as-code template (for example Bicep) yet.</td></tr>
+<tr><td>Performance Efficiency</td><td>✅</td><td>Scores are computed once a day; embeddings are cached, so daily runs only embed new or changed listings and every agency reuses the same listing vectors; deployment capacity (1,000K tokens/min embed, 500K chat) keeps a full first pass short. The app serves JSON from Blob with a 30-second cache. AI Search or Cosmos DB is planned if volumes grow.</td></tr>
 </table>
 
 <h2 id="assumptions">8. Assumptions &amp; open questions</h2>
 <p class="meta">Mirrors <code>assumptions.md</code>. The <code>.env</code> file was not opened; secret values are shown as ****.</p>
-<p class="callout">Changes in version 1.1: plan alignment is now a hybrid (0.5 &times; embedding margin against 10 off-topic field descriptions + 0.5 &times; TF-IDF; TF-IDF alone without Azure OpenAI); confidence bands are High &ge; 55 and Medium &ge; 45; image <code>ffm:v4</code> is deployed (<code>v1</code> superseded) and built with a queued <code>az acr build --no-logs</code>; Azure OpenAI capacity is 1,000K tokens/min (embed) and 500K tokens/min (chat); Blob paths now follow <code>docs/data_contract.md</code>, including <code>profiles/</code>; web-app controls added on 7 November (HSTS, <code>no-store</code>, spreadsheet-safe CSV, same-site redirects, required name on decisions, stale-refresh warning; see A17). Entra ID, Key Vault, managed identity, Application Insights and private endpoints are still planned.</p>
+<p class="callout">Changes in version 1.2 (multi-agency build): two agency profiles in <code>agency/profiles/</code> on one standard template (NC DHHS from the NCDHHS Strategic Plan 2026-2030, published September 2026; NC DEQ from the NCDEQ Strategic Plan 2025-2029); <code>agency/priorities.json</code> now holds only the qualifier's 2023-2025 profile and the shared rule settings. The daily job pulls Grants.gov once and normalizes once, then scores, AI-reviews (top 45 per agency) and publishes for each agency (<code>scored/{agency}/</code>, <code>alerts/{agency}/</code>, <code>profiles/{agency}.json</code>; decisions and evaluation files are per agency too). The web app has an agency switcher and a Statewide page for OSBM (new flow 11; later flows renumbered 12-16). Funder history matches each agency by its USAspending recipient-name pattern. The AI review asks an agency-neutral eligibility question and checks for a geographic limit that excludes North Carolina: a verified limit flags the record and lowers confidence one step but never hides it (T9, T10). New threat T13 (cross-agency access). Image <code>ffm:v6</code>. Tuning figures updated to the re-measured 2026-2030 values. The sponsor is NC OSBM (A1 is no longer an assumption). Entra ID, Key Vault, managed identity, Application Insights and private endpoints are still planned. Version 1.1 (earlier the same day) introduced the hybrid plan-alignment signal, the High &ge; 55 / Medium &ge; 45 bands and the 7 November web-app controls.</p>
 <ul>
-<li><span class="assumed">ASSUMED</span> A1: the challenge sponsor is NC OSBM, which publishes the agency strategic plans.</li>
-<li><span class="assumed">ASSUMED</span> A2: NCDIT and the DHHS privacy/security office would approve a pilot; procurement/legal would handle any production contract.</li>
-<li>A3: the qualifier pipeline described in <code>docs/qualifier_design.md</code> (Vercel AI Gateway with Jev and DeepSeek; <code>src/config.py</code>, <code>src/clients.py</code>) is not used by the deployed system, so it is not drawn. <code>src/job.py</code> and <code>src/webapp.py</code> never import <code>src/clients.py</code>, and no AI Gateway key is deployed, but the qualifier modules are still copied into the image.</li>
+<li>A1: the challenge sponsor and problem owner is NC OSBM, which wants one central tool for all agencies, especially smaller agencies with limited grant capacity. The pilot would be run by OSBM with NC DHHS, NC DEQ and one smaller agency (challenge framing; <code>docs/solution_design.md</code>, sections 1 and 7).</li>
+<li><span class="assumed">ASSUMED</span> A2: NCDIT, OSBM and each pilot agency's privacy/security office would approve a pilot; procurement/legal would handle any production contract.</li>
+<li>A3: the qualifier pipeline described in <code>docs/qualifier_design.md</code> (Vercel AI Gateway with Jev and DeepSeek; <code>src/clients.py</code>) is not used by the deployed system, so it is not drawn. <code>agency/priorities.json</code> is the qualifier's 2023-2025 profile; the matchmaker reads only its shared rule settings (<code>src/config.py</code>, <code>load_profiles</code>). The qualifier modules are still copied into the image.</li>
 <li><span class="assumed">ASSUMED</span> A4: Log Analytics receives the console output of the app and the job (Container Apps default); no alert rules are set up.</li>
 <li><span class="assumed">ASSUMED</span> A5: Blob Storage uses the Azure default encryption at rest (Microsoft-managed keys).</li>
 <li><span class="assumed">ASSUMED</span> A6: Container Apps ingress keeps the default HTTP-to-HTTPS redirect.</li>
-<li><span class="assumed">ASSUMED</span> A7: the app URL is shared only with the team and judges.</li>
+<li><span class="assumed">ASSUMED</span> A7: the app URL is shared only with the team, the judges and sponsor contacts.</li>
 <li><span class="assumed">ASSUMED</span> A8: each developer deploys with their own Azure CLI sign-in; MFA status unknown.</li>
-<li><span class="assumed">ASSUMED</span> A9: no retention or lifecycle policy is set on Blob data.</li>
-<li><span class="assumed">ASSUMED</span> A10: program leads receive routed opportunities outside the system (the coordinator's CSV and weekly email).</li>
+<li><span class="assumed">ASSUMED</span> A9: no retention or lifecycle policy is set on Blob data; dated copies now grow once per agency per day.</li>
+<li><span class="assumed">ASSUMED</span> A10: program leads receive routed opportunities outside the system (each coordinator's CSV and weekly email).</li>
 <li><span class="assumed">ASSUMED</span> A11: Azure OpenAI content filtering is at its default; the design does not rely on it.</li>
 <li>A12: the schedule <code>0 11 * * *</code> is in UTC: 6:00 AM Eastern Standard Time, 7:00 AM during daylight saving time. The <code>TZ=America/New_York</code> setting only changes the date the job writes, not when it runs.</li>
 <li><span class="assumed">ASSUMED</span> A13: free-text decision notes are classed as Internal.</li>
-<li>A14: roles and settings marked "Recommended" are our suggestions, not items in the team's plan.</li>
-<li>A15: <code>ffm:v4</code> is the image deployed to both the app and the job and <code>ffm:v1</code> is superseded (team statement; the repository cannot show this). <code>deploy/env.sh</code> still defaults <code>TAG</code> to <code>v1</code>, so rollouts must set <code>TAG</code> explicitly.</li>
-<li>A16: the hybrid tuning figures (1,037 opportunities; AUC 0.91 against 0.84 for raw embeddings) come from <code>docs/tuning_report.md</code> (<code>src/tune_semantic.py</code>); this report did not re-run the measurement. An earlier comparison reported 0.84 against 0.78; <code>docs/finals_field_notes.md</code> says it double-counted repeated opportunities and was corrected.</li>
-<li><span class="assumed">ASSUMED</span> A17: the web-app controls added on 7 November (HSTS, <code>no-store</code>, spreadsheet-safe CSV, same-site redirects, required name on decisions, duplicate-submit check, stale-refresh warning) are in the code read for this report but not yet committed; we assume they are in the deployed image.</li>
-<li>Open question 1: for a pilot, which identities would sign in, and who may record decisions versus only view?</li>
+<li>A14: roles and settings marked "Recommended" (including per-agency roles, T13) are our suggestions, not items in the team's plan.</li>
+<li>A15: <code>ffm:v6</code> is the image deployed to both the app and the job; earlier tags are superseded (team statement; the repository cannot show this). <code>deploy/env.sh</code> defaults <code>TAG</code> to <code>v3</code>, so rollouts must set <code>TAG</code> explicitly.</li>
+<li>A16: the tuning figures (1,037 opportunities, NC DHHS 2026-2030 profile; hybrid AUC 0.90 against 0.82 for raw embeddings and 0.82 for TF-IDF; full score 0.92) come from <code>docs/tuning_report.md</code> (<code>src/tune_semantic.py</code>) and <code>docs/finals_field_notes.md</code>; this report did not re-run the measurement. NC DEQ is untuned (no reference set).</li>
+<li><span class="assumed">ASSUMED</span> A17: image <code>ffm:v6</code> was built from code that includes the multi-agency build (commit <code>c38e257</code>) and the AI-review rule (commit <code>9b59d7b</code>). This report was drawn from the code at <code>9b59d7b</code>.</li>
+<li>A18: the NC DEQ division list is the team's summary of the DEQ organization and should be checked against the current organization chart (profile comment). In the NC DHHS profile, the links between the plan's four priority areas and its objectives are the team's mapping.</li>
+<li><span class="assumed">ASSUMED</span> A19: the smaller pilot agency is not chosen or profiled yet; it would get one profile file on the same template, and the job, the switcher and the Statewide page would include it without code changes.</li>
+<li>A20: <code>prompts/rationale.txt</code> also tells the model to answer applicant role "ineligible" when the funding is limited to states or regions that do not include North Carolina, and <code>src/rationale.py</code> (<code>apply</code>) moves any verified "ineligible" to the not-eligible list before it looks at the geographic flag. A geographic limit reported that way is therefore still moved (it stays visible on the Not eligible list), not only flagged. This report describes the rule as the team states it and flags this for the team to confirm; <code>tests/test_finals.py</code> covers only the geographic-flag path.</li>
+<li>Open question 1: for a pilot, which identities would sign in, who may record decisions for which agency, and who at OSBM may see every agency's decisions?</li>
 <li>Open question 2: how long should raw snapshots, decisions, labels and run logs be kept, and who may delete them?</li>
-<li>Open question 3: who updates the agency profile when the next NCDHHS strategic plan is published, and who approves changes to scoring weights, confidence bands, the 10 off-topic field descriptions and their calibration?</li>
+<li>Open question 3: who maintains each agency profile when a new plan is published, and who approves changes to scoring weights, confidence bands, off-topic field descriptions and their calibration?</li>
 <li>Open question 4: would a pilot run in a state-managed subscription instead of the event subscription?</li>
 <li>Open question 5: may staff notes name partner organizations or internal plans? If so, notes may need a higher classification.</li>
+<li>Open question 6: should agency staff see other agencies' matches and decisions on the Statewide page, or only OSBM?</li>
 </ul>
 
 <h2 id="next">9. Recommended next steps</h2>
 <ol>
-<li><b>Turn on Entra ID sign-in</b> (planned) through Container Apps built-in authentication, limited to NC DHHS accounts, and save the signed-in user with each decision and label (T1, T2, T3, T4).</li>
+<li><b>Turn on Entra ID sign-in</b> (planned) through Container Apps built-in authentication, and <b>add per-agency roles</b> (recommended): limit decisions and labels to the user's own agency, give OSBM a read-only statewide role, and save the signed-in user and agency with each decision and label (T1, T2, T3, T4, T13).</li>
 <li><b>Replace keys with managed identity and Key Vault</b> (planned): data-plane roles for Storage and Azure OpenAI and pull-only access to ACR; then disable shared-key access and the ACR admin user, and rotate the current keys (T5, T6).</li>
-<li><b>Add Application Insights</b> (planned) with alerts on failed job executions and on runs below the 50-listing threshold; add an Azure budget alert (T7, T12).</li>
+<li><b>Add Application Insights</b> (planned) with alerts on failed job executions and on runs below the 50-listing threshold; add an Azure budget alert that grows with the number of agencies (T7, T12).</li>
 <li><b>Add private endpoints / VNet integration</b> (planned) for Storage and Azure OpenAI so the data and model cannot be reached from the internet, even with a key (T5).</li>
-<li><b>Keep the AI checks measurable</b>: re-run the blind evaluation after any prompt, weight, band or off-topic-description change, consider Prompt Shields, extend <code>tests/test_no_secrets.py</code> to Azure key formats, and refresh the profile when the next NCDHHS strategic plan is published (T9, T10).</li>
+<li><b>Keep the AI checks measurable for each agency</b>: re-run the blind evaluation per agency after any prompt, weight, band or off-topic change (NC DEQ is untuned); decide whether the prompt's "ineligible" instruction should still include geographic limits (A20); consider Prompt Shields; extend <code>tests/test_no_secrets.py</code> to Azure key formats; and rebuild a profile, with a second review, whenever an agency publishes a new plan, starting with the pilot's smaller agency (T9, T10).</li>
 </ol>
 
 <h2 id="glossary">10. Glossary</h2>
@@ -724,11 +766,15 @@ footer{margin-top:40px;font-size:12px;color:#777;border-top:1px solid #DDD;paddi
 <dt>C4 model</dt><dd>A way to draw software architecture at four zoom levels: Context, Container, Component, Code.</dd>
 <dt>Container (C4)</dt><dd>A separately running part of a system, such as a web app, a scheduled job or a database. Not the same as a Docker container, although here each one does run in a container.</dd>
 <dt>Container Apps Job</dt><dd>An Azure Container Apps resource that starts a container on a schedule, runs it to completion and records whether it succeeded or failed.</dd>
+<dt>Agency profile</dt><dd>One JSON file per agency on a standard template (mission, goals and objectives with plan page numbers, divisions, keywords, eligible applicant type), built from the agency's strategic plan. Adding an agency means adding a profile.</dd>
+<dt>Statewide view</dt><dd>A page that puts every agency's results side by side for a central team such as OSBM, including opportunities that fit more than one agency.</dd>
+<dt>OSBM</dt><dd>The NC Office of State Budget and Management: the challenge sponsor, which publishes the agency strategic plans.</dd>
 <dt>Data-flow diagram (DFD)</dt><dd>A diagram of how data moves between people, processes and data stores. It is the basis of most threat models.</dd>
 <dt>Trust boundary</dt><dd>A line where the level of trust changes, such as between the internet and the Azure subscription. Threats cluster where data crosses it.</dd>
 <dt>STRIDE</dt><dd>Six threat types: Spoofing, Tampering, Repudiation, Information disclosure, Denial of service, Elevation of privilege.</dd>
 <dt>OWASP Top 10 for LLM Apps</dt><dd>A list of the most important security risks for applications that use large language models, such as prompt injection (LLM01).</dd>
 <dt>Prompt injection</dt><dd>Text placed in a model's input that tries to make the model ignore its instructions.</dd>
+<dt>Hallucination / over-reliance</dt><dd>A model stating something that is not supported by its source, and people trusting model output without checking it. Here the AI never changes the score, and it can move a record to the not-eligible list, or flag a geographic limit, only with a quote that Python finds word for word in the listing.</dd>
 <dt>Managed identity</dt><dd>An identity that Azure manages for a service, so it can reach other Azure services without a stored key or password.</dd>
 <dt>Key Vault</dt><dd>An Azure service that stores secrets and keys and controls who can read them.</dd>
 <dt>secretref</dt><dd>A Container Apps setting that passes a stored secret into the container as an environment variable without writing the value in configuration.</dd>
@@ -738,13 +784,14 @@ footer{margin-top:40px;font-size:12px;color:#777;border-top:1px solid #DDD;paddi
 <dt>HSTS</dt><dd>HTTP Strict Transport Security: a header that tells the browser to use only HTTPS for the site from then on.</dd>
 <dt>CSV (formula) injection</dt><dd>Text in an exported spreadsheet cell that starts with <code>=</code> and runs as a formula when opened. The export adds a leading apostrophe so it shows as text.</dd>
 <dt>Embedding</dt><dd>A list of numbers that represents the meaning of a text, so similar texts can be compared.</dd>
-<dt>Embedding margin</dt><dd>How much closer a listing is to a plan objective than to the nearest of 10 unrelated fields (such as defence, arts or physics). It stops long, generic announcements from looking like good matches.</dd>
+<dt>Embedding margin</dt><dd>How much closer a listing is to one of the agency's plan objectives than to the nearest of 10 unrelated fields (such as defense, arts or physics for NC DHHS). It stops long, generic announcements from looking like good matches.</dd>
 <dt>TF-IDF</dt><dd>A word-count method of comparing texts. Here it is half of the plan-alignment signal, and the whole signal when Azure OpenAI is unavailable.</dd>
 <dt>AUC</dt><dd>Area under the ROC curve: the chance that a randomly chosen relevant grant is ranked above a randomly chosen irrelevant one (0.5 = guessing, 1.0 = perfect).</dd>
 <dt>Precision@10</dt><dd>Of the top 10 results, the share that a human labeler marked as relevant.</dd>
 <dt>Zero Trust</dt><dd>A security approach: verify explicitly, use least privilege, assume breach.</dd>
 <dt>Well-Architected Framework</dt><dd>Microsoft's five pillars for reviewing cloud workloads: Reliability, Security, Cost Optimization, Operational Excellence, Performance Efficiency.</dd>
 <dt>NIST CSF 2.0</dt><dd>The U.S. cybersecurity framework with six functions: Govern, Identify, Protect, Detect, Respond, Recover. Tags such as PR.AA name categories within them.</dd>
+<dt>NIST AI RMF</dt><dd>The NIST AI Risk Management Framework, with four functions: Govern, Map, Measure, Manage.</dd>
 <dt>MCSB</dt><dd>Microsoft cloud security benchmark. Control families used here: IM (identity), PA (privileged access), DP (data protection), LT (logging), DS (DevOps security).</dd>
 </dl>
 <footer>Generated with AI assistance using the <i>architecture-security-diagram</i> skill from the team's facts sheet and repository. Verify against the deployed Azure resources before submission. This report does not claim compliance with any standard; framework tags show which controls each mitigation aligns with.</footer>

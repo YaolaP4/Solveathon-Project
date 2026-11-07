@@ -102,7 +102,7 @@ September 2026; we rebuilt its profile from it during the event (the qualifier r
 
 ## Known limitations
 
-- The 2023–2025 plan may lag current NC DHHS priorities.
+- Each profile is only as current as the agency's plan; when a plan changes, the profile must be rebuilt (done for NC DHHS 2026–2030).
 - Grants.gov only: no SAM.gov, foundations or state pass-through funds yet.
 - Short or vague listings can score low (false negatives); Low matches are hidden by default but one click away.
 - No sign-in in the prototype: anyone with the URL can record a decision. A pilot would add Entra ID sign-in

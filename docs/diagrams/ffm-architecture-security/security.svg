@@ -1,19 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1560 1300" width="1560" height="1300" role="img" aria-labelledby="t d" font-family="Segoe UI, Arial, Helvetica, sans-serif">
-  <title id="t">Federal Funds Matchmaker for NC DHHS: Security Threat Model (Data-Flow Diagram)</title>
-  <desc id="d">Data-flow diagram with five trust boundaries: internet and staff devices, the Azure subscription, the AI model boundary, public third-party sources, and team workstations. Twelve STRIDE and OWASP LLM threats (T1 to T12) sit on the flows or elements they affect. Green chips are controls in place, red-outlined chips are gaps, and dashed boxes are planned controls.</desc>
+  <title id="t">Federal Funds Matchmaker for North Carolina Agencies: Security Threat Model (Data-Flow Diagram)</title>
+  <desc id="d">Data-flow diagram with five trust boundaries: internet and staff devices, the Azure subscription, the AI model boundary, public third-party sources, and team workstations. Users are agency staff (NC DHHS and NC DEQ), the OSBM central team, team labelers and, because there is no sign-in, anyone with the URL. Thirteen STRIDE and OWASP LLM threats (T1 to T13) sit on the flows or elements they affect. Green chips are controls in place, red-outlined chips are gaps, and dashed boxes are planned controls.</desc>
   <defs>
     <marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="13" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#333"/></marker>
     <marker id="arwg" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8A8A8A"/></marker>
   </defs>
   <rect width="1560" height="1300" fill="#FFF"/>
-  <text x="40" y="42" font-size="26" font-weight="700" fill="#08427B">Federal Funds Matchmaker for NC DHHS: Security Threat Model</text>
-  <text x="40" y="68" font-size="14" fill="#555">Team 14, UNC Solve-a-thon 2026 • Data-flow diagram + STRIDE + OWASP Top 10 for LLM Apps (2025) • As-built + planned • 2026-11-07 • v1.1</text>
+  <text x="40" y="42" font-size="26" font-weight="700" fill="#08427B">Federal Funds Matchmaker for North Carolina Agencies: Security Threat Model</text>
+  <text x="40" y="68" font-size="14" fill="#555">Team 14, UNC Solve-a-thon 2026 • Data-flow diagram + STRIDE + OWASP Top 10 for LLM Apps (2025) • As-built + planned • 2026-11-07 • v1.2</text>
 
   <!-- Trust boundaries -->
   <g fill="none" stroke="#C62828" stroke-width="2" stroke-dasharray="8 4">
     <rect x="40" y="100" width="260" height="420" rx="6"/>
     <rect x="340" y="100" width="810" height="740" rx="6"/>
-    <rect x="860" y="370" width="270" height="212" rx="6"/>
+    <rect x="860" y="370" width="270" height="236" rx="6"/>
     <rect x="1190" y="100" width="330" height="380" rx="6"/>
     <rect x="1190" y="520" width="330" height="320" rx="6"/>
   </g>
@@ -27,19 +27,23 @@
 
   <!-- External entities -->
   <g text-anchor="middle">
-    <rect x="60" y="140" width="220" height="76" fill="#08427B" stroke="#052E56" stroke-width="2"/>
-    <text x="170" y="166" font-size="14" font-weight="700" fill="#FFF">NC DHHS staff</text>
-    <text x="170" y="184" font-size="12" fill="#FFF">[External entity: users]</text>
-    <text x="170" y="202" font-size="12" fill="#FFF">coordinator, leads, leaders</text>
-    <rect x="60" y="250" width="220" height="76" fill="#08427B" stroke="#052E56" stroke-width="2"/>
-    <text x="170" y="276" font-size="14" font-weight="700" fill="#FFF">Team 14 labelers</text>
-    <text x="170" y="294" font-size="12" fill="#FFF">[External entity: users]</text>
-    <text x="170" y="312" font-size="12" fill="#FFF">blind evaluation labels</text>
+    <rect x="60" y="136" width="220" height="64" fill="#08427B" stroke="#052E56" stroke-width="2"/>
+    <text x="170" y="158" font-size="14" font-weight="700" fill="#FFF">Agency staff</text>
+    <text x="170" y="175" font-size="12" fill="#FFF">[External entity: users]</text>
+    <text x="170" y="192" font-size="12" fill="#FFF">NC DHHS + NC DEQ grants teams</text>
+    <rect x="60" y="214" width="220" height="64" fill="#08427B" stroke="#052E56" stroke-width="2"/>
+    <text x="170" y="236" font-size="14" font-weight="700" fill="#FFF">OSBM central team</text>
+    <text x="170" y="253" font-size="12" fill="#FFF">[External entity: users]</text>
+    <text x="170" y="270" font-size="12" fill="#FFF">Statewide page, read only</text>
+    <rect x="60" y="292" width="220" height="64" fill="#08427B" stroke="#052E56" stroke-width="2"/>
+    <text x="170" y="314" font-size="14" font-weight="700" fill="#FFF">Team 14 labelers</text>
+    <text x="170" y="331" font-size="12" fill="#FFF">[External entity: users]</text>
+    <text x="170" y="348" font-size="12" fill="#FFF">blind labels, per agency</text>
     <rect x="60" y="380" width="220" height="96" fill="#8A8A8A" stroke="#6B6B6B" stroke-width="2"/>
     <text x="170" y="404" font-size="14" font-weight="700" fill="#FFF">Anyone with the URL</text>
     <text x="170" y="422" font-size="12" fill="#FFF">[External entity: unverified]</text>
-    <text x="170" y="440" font-size="12" fill="#FFF">Public HTTPS endpoint;</text>
-    <text x="170" y="457" font-size="12" fill="#FFF">no sign-in in the prototype</text>
+    <text x="170" y="440" font-size="12" fill="#FFF">Public HTTPS endpoint; no</text>
+    <text x="170" y="457" font-size="12" fill="#FFF">sign-in; can pick any agency</text>
 
     <rect x="1210" y="140" width="290" height="60" fill="#8A8A8A" stroke="#6B6B6B" stroke-width="2"/>
     <text x="1355" y="166" font-size="14" font-weight="700" fill="#FFF">Grants.gov API v1</text>
@@ -51,9 +55,9 @@
     <text x="1355" y="324" font-size="14" font-weight="700" fill="#555">SAM.gov API</text>
     <text x="1355" y="342" font-size="12" fill="#555">[Planned: needs an API key]</text>
     <rect x="1210" y="380" width="290" height="70" fill="#8A8A8A" stroke="#6B6B6B" stroke-width="2"/>
-    <text x="1355" y="404" font-size="14" font-weight="700" fill="#FFF">NCDHHS Strategic Plan PDF</text>
-    <text x="1355" y="422" font-size="12" fill="#FFF">[External entity: Public, NC OSBM]</text>
-    <text x="1355" y="440" font-size="12" fill="#FFF">2023-2025 · one-time seed</text>
+    <text x="1355" y="404" font-size="14" font-weight="700" fill="#FFF">Agency strategic plan PDFs</text>
+    <text x="1355" y="422" font-size="12" fill="#FFF">[External entity: Public, NC OSBM site]</text>
+    <text x="1355" y="440" font-size="12" fill="#FFF">NCDHHS 2026-2030 · NCDEQ 2025-2029</text>
 
     <rect x="1210" y="600" width="290" height="76" fill="#08427B" stroke="#052E56" stroke-width="2"/>
     <text x="1355" y="626" font-size="14" font-weight="700" fill="#FFF">Team 14 developers</text>
@@ -64,13 +68,15 @@
   <!-- Processes -->
   <g text-anchor="middle">
     <rect x="400" y="212" width="260" height="90" rx="30" fill="#1168BD" stroke="#0B4884" stroke-width="2"/>
-    <text x="530" y="242" font-size="14" font-weight="700" fill="#FFF">Staff Web App</text>
-    <text x="530" y="260" font-size="12" fill="#FFF">[Process: Flask + gunicorn]</text>
-    <text x="530" y="278" font-size="12" fill="#FFF">app-ffm-web, port 8000</text>
+    <text x="530" y="236" font-size="14" font-weight="700" fill="#FFF">Staff Web App</text>
+    <text x="530" y="254" font-size="12" fill="#FFF">[Process: Flask + gunicorn]</text>
+    <text x="530" y="271" font-size="12" fill="#FFF">app-ffm-web, port 8000</text>
+    <text x="530" y="288" font-size="12" fill="#FFF">agency switcher · /statewide</text>
     <rect x="860" y="212" width="260" height="90" rx="30" fill="#1168BD" stroke="#0B4884" stroke-width="2"/>
-    <text x="990" y="242" font-size="14" font-weight="700" fill="#FFF">Daily Refresh Job</text>
-    <text x="990" y="260" font-size="12" fill="#FFF">[Process: Python, scheduled]</text>
-    <text x="990" y="278" font-size="12" fill="#FFF">job-ffm-refresh, 11:00 UTC daily</text>
+    <text x="990" y="236" font-size="14" font-weight="700" fill="#FFF">Daily Refresh Job</text>
+    <text x="990" y="254" font-size="12" fill="#FFF">[Process: Python, scheduled]</text>
+    <text x="990" y="271" font-size="12" fill="#FFF">job-ffm-refresh, 11:00 UTC daily</text>
+    <text x="990" y="288" font-size="12" fill="#FFF">one pull, published per agency</text>
     <rect x="885" y="418" width="220" height="84" rx="30" fill="#6B4FBB" stroke="#4A3684" stroke-width="2"/>
     <text x="995" y="446" font-size="14" font-weight="700" fill="#FFF">Azure OpenAI</text>
     <text x="995" y="464" font-size="12" fill="#FFF">[Process: LLM inference]</text>
@@ -87,12 +93,13 @@
     <text x="460" y="471" font-size="12" fill="#1B5E20">flask-secret (values ****)</text>
     <text x="460" y="488" font-size="12" fill="#1B5E20">secretref env vars</text>
 
-    <rect x="580" y="400" width="260" height="82" fill="#E8F5E9"/>
-    <line x1="580" y1="400" x2="840" y2="400" stroke="#2E7D32" stroke-width="3"/><line x1="580" y1="482" x2="840" y2="482" stroke="#2E7D32" stroke-width="3"/>
+    <rect x="580" y="400" width="260" height="98" fill="#E8F5E9"/>
+    <line x1="580" y1="400" x2="840" y2="400" stroke="#2E7D32" stroke-width="3"/><line x1="580" y1="498" x2="840" y2="498" stroke="#2E7D32" stroke-width="3"/>
     <text x="710" y="420" font-size="13" font-weight="700" fill="#1B5E20">Blob container ffm-data</text>
     <text x="710" y="437" font-size="12" fill="#1B5E20">[Data store: Public + Internal]</text>
-    <text x="710" y="455" font-size="12" fill="#1B5E20">listings, scores, AI summaries,</text>
-    <text x="710" y="471" font-size="12" fill="#1B5E20">decisions, labels, run logs</text>
+    <text x="710" y="455" font-size="12" fill="#1B5E20">listings, run logs (shared); scores,</text>
+    <text x="710" y="471" font-size="12" fill="#1B5E20">AI reviews, decisions, labels</text>
+    <text x="710" y="488" font-size="12" fill="#1B5E20">(one set per agency)</text>
 
     <rect x="370" y="600" width="180" height="78" fill="#E8F5E9"/>
     <line x1="370" y1="600" x2="550" y2="600" stroke="#2E7D32" stroke-width="3"/><line x1="370" y1="678" x2="550" y2="678" stroke="#2E7D32" stroke-width="3"/>
@@ -105,7 +112,7 @@
     <line x1="880" y1="640" x2="1120" y2="640" stroke="#2E7D32" stroke-width="3"/><line x1="880" y1="722" x2="1120" y2="722" stroke="#2E7D32" stroke-width="3"/>
     <text x="1000" y="660" font-size="13" font-weight="700" fill="#1B5E20">Container Registry acrffm4817</text>
     <text x="1000" y="677" font-size="12" fill="#1B5E20">[Data store: image, Internal]</text>
-    <text x="1000" y="695" font-size="12" fill="#1B5E20">ffm:v4 deployed (earlier tags superseded)</text>
+    <text x="1000" y="695" font-size="12" fill="#1B5E20">ffm:v6 deployed (earlier tags superseded)</text>
     <text x="1000" y="712" font-size="12" fill="#1B5E20">az acr build --no-logs · pulled at start</text>
 
     <rect x="1210" y="720" width="290" height="76" fill="#E8F5E9"/>
@@ -117,25 +124,26 @@
 
   <!-- Planned controls -->
   <g text-anchor="middle">
-    <rect x="580" y="596" width="260" height="52" rx="6" fill="#FFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="6 4"/>
-    <text x="710" y="616" font-size="13" font-weight="700" fill="#555">Microsoft Entra ID sign-in</text>
-    <text x="710" y="636" font-size="12" fill="#555">[Planned: Container Apps auth]</text>
-    <rect x="580" y="660" width="260" height="52" rx="6" fill="#FFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="6 4"/>
-    <text x="710" y="680" font-size="13" font-weight="700" fill="#555">Key Vault + managed identity</text>
-    <text x="710" y="700" font-size="12" fill="#555">[Planned: replaces shared keys]</text>
-    <rect x="580" y="724" width="260" height="52" rx="6" fill="#FFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="6 4"/>
-    <text x="710" y="744" font-size="13" font-weight="700" fill="#555">Private endpoints / VNet</text>
-    <text x="710" y="764" font-size="12" fill="#555">[Planned: Storage + OpenAI]</text>
-    <rect x="370" y="724" width="180" height="52" rx="6" fill="#FFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="6 4"/>
-    <text x="460" y="744" font-size="13" font-weight="700" fill="#555">Application Insights</text>
-    <text x="460" y="764" font-size="12" fill="#555">[Planned: monitoring]</text>
+    <rect x="580" y="600" width="260" height="52" rx="6" fill="#FFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="710" y="620" font-size="13" font-weight="700" fill="#555">Microsoft Entra ID sign-in</text>
+    <text x="710" y="640" font-size="12" fill="#555">[Planned: Container Apps auth]</text>
+    <rect x="580" y="664" width="260" height="52" rx="6" fill="#FFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="710" y="684" font-size="13" font-weight="700" fill="#555">Key Vault + managed identity</text>
+    <text x="710" y="704" font-size="12" fill="#555">[Planned: replaces shared keys]</text>
+    <rect x="580" y="728" width="260" height="52" rx="6" fill="#FFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="710" y="748" font-size="13" font-weight="700" fill="#555">Private endpoints / VNet</text>
+    <text x="710" y="768" font-size="12" fill="#555">[Planned: Storage + OpenAI]</text>
+    <rect x="370" y="728" width="180" height="52" rx="6" fill="#FFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="460" y="748" font-size="13" font-weight="700" fill="#555">Application Insights</text>
+    <text x="460" y="768" font-size="12" fill="#555">[Planned: monitoring]</text>
   </g>
 
   <!-- Flows: thick = crosses a trust boundary -->
   <g stroke="#333" fill="none" marker-end="url(#arw)">
-    <line x1="280" y1="178" x2="398" y2="236" stroke-width="3.5"/>
-    <line x1="280" y1="288" x2="398" y2="262" stroke-width="3.5"/>
-    <line x1="280" y1="428" x2="398" y2="290" stroke-width="3.5"/>
+    <line x1="280" y1="168" x2="398" y2="236" stroke-width="3.5"/>
+    <line x1="280" y1="246" x2="398" y2="256" stroke-width="3.5"/>
+    <line x1="280" y1="324" x2="398" y2="276" stroke-width="3.5"/>
+    <line x1="280" y1="428" x2="398" y2="296" stroke-width="3.5"/>
     <line x1="620" y1="304" x2="660" y2="398" stroke-width="2" marker-start="url(#arw)"/>
     <line x1="880" y1="304" x2="800" y2="398" stroke-width="2" marker-start="url(#arw)"/>
     <line x1="1060" y1="304" x2="1060" y2="416" stroke-width="3.5"/>
@@ -148,7 +156,7 @@
   <line x1="460" y1="398" x2="460" y2="306" stroke="#8A8A8A" stroke-width="1.5" stroke-dasharray="2 3" marker-end="url(#arwg)"/>
   <g font-size="12" fill="#555">
     <text x="468" y="356">env vars</text>
-    <text x="1438" y="505" text-anchor="end">one-time manual seed</text>
+    <text x="1438" y="505" text-anchor="end">manual seed, one profile per plan</text>
   </g>
 
   <!-- Control chips (green = in place, red outline = gap) -->
@@ -162,10 +170,11 @@
       <rect x="852" y="178" width="70" height="20" rx="10"/><rect x="928" y="178" width="105" height="20" rx="10"/>
       <rect x="370" y="506" width="77" height="20" rx="10"/><rect x="453" y="506" width="98" height="20" rx="10"/>
       <rect x="370" y="530" width="119" height="20" rx="10"/>
-      <rect x="580" y="490" width="91" height="20" rx="10"/><rect x="677" y="490" width="112" height="20" rx="10"/>
-      <rect x="580" y="514" width="91" height="20" rx="10"/><rect x="677" y="514" width="98" height="20" rx="10"/>
+      <rect x="580" y="506" width="91" height="20" rx="10"/><rect x="677" y="506" width="112" height="20" rx="10"/>
+      <rect x="580" y="530" width="91" height="20" rx="10"/><rect x="677" y="530" width="98" height="20" rx="10"/>
       <rect x="872" y="512" width="84" height="20" rx="10"/><rect x="962" y="512" width="91" height="20" rx="10"/>
       <rect x="872" y="536" width="70" height="20" rx="10"/><rect x="948" y="536" width="84" height="20" rx="10"/><rect x="1038" y="536" width="56" height="20" rx="10"/>
+      <rect x="872" y="560" width="140" height="20" rx="10"/><rect x="1018" y="560" width="98" height="20" rx="10"/>
       <rect x="370" y="688" width="112" height="20" rx="10"/>
       <rect x="880" y="732" width="91" height="20" rx="10"/><rect x="977" y="732" width="91" height="20" rx="10"/>
       <rect x="1210" y="806" width="126" height="20" rx="10"/><rect x="1342" y="806" width="105" height="20" rx="10"/>
@@ -179,41 +188,45 @@
       <text x="887" y="192">Non-root</text><text x="980.5" y="192">Fail = exit 1</text>
       <text x="408.5" y="520">secretref</text><text x="502" y="520">Not in image</text>
       <text x="429.5" y="544">Read from Azure</text>
-      <text x="625.5" y="504">TLS 1.2 min</text><text x="733" y="504">No public blob</text>
-      <text x="625.5" y="528">ETag writes</text><text x="726" y="528">Enc. at rest</text>
+      <text x="625.5" y="520">TLS 1.2 min</text><text x="733" y="520">No public blob</text>
+      <text x="625.5" y="544">ETag writes</text><text x="726" y="544">Enc. at rest</text>
       <text x="914" y="526">JSON check</text><text x="1007.5" y="526">Quote check</text>
       <text x="907" y="550">No tools</text><text x="990" y="550">Top N only</text><text x="1066" y="550">Temp 0</text>
+      <text x="942" y="574">Geo limit: flag only</text><text x="1067" y="574">Human decides</text>
       <text x="426" y="702">Logs collected</text>
       <text x="925.5" y="746">Cloud build</text><text x="1022.5" y="746">Pinned deps</text>
       <text x="1273" y="820">.env git-ignored</text><text x="1394.5" y="820">.dockerignore</text>
     </g>
     <g fill="#FFF" stroke="#C62828" stroke-width="1.5">
+      <rect x="676" y="130" width="140" height="20" rx="10"/>
       <rect x="468" y="178" width="119" height="20" rx="10"/><rect x="593" y="178" width="112" height="20" rx="10"/>
-      <rect x="580" y="538" width="119" height="20" rx="10"/>
+      <rect x="580" y="554" width="119" height="20" rx="10"/>
       <rect x="880" y="756" width="119" height="20" rx="10"/>
     </g>
     <g fill="#C62828">
+      <text x="746" y="144">GAP: no agency roles</text>
       <text x="527.5" y="192">GAP: no sign-in</text><text x="649" y="192">GAP: 1 replica</text>
-      <text x="639.5" y="552">GAP: shared key</text>
+      <text x="639.5" y="568">GAP: shared key</text>
       <text x="939.5" y="770">GAP: admin user</text>
     </g>
   </g>
 
   <!-- Threat badges -->
   <g font-size="12" font-weight="700" text-anchor="middle">
-    <circle cx="320" cy="381" r="15" fill="#C62828"/><text x="320" y="385" fill="#FFF">T1</text>
-    <circle cx="362" cy="332" r="15" fill="#EF6C00"/><text x="362" y="336" fill="#FFF">T2</text>
-    <circle cx="362" cy="218" r="15" fill="#EF6C00"/><text x="362" y="222" fill="#FFF">T3</text>
+    <circle cx="320" cy="383" r="15" fill="#C62828"/><text x="320" y="387" fill="#FFF">T1</text>
+    <circle cx="361" cy="337" r="15" fill="#EF6C00"/><text x="361" y="341" fill="#FFF">T2</text>
+    <circle cx="362" cy="215" r="15" fill="#EF6C00"/><text x="362" y="219" fill="#FFF">T3</text>
     <circle cx="640" cy="351" r="15" fill="#EF6C00"/><text x="640" y="355" fill="#FFF">T4</text>
     <circle cx="550" cy="400" r="15" fill="#EF6C00"/><text x="550" y="404" fill="#FFF">T5</text>
     <circle cx="1170" cy="663" r="15" fill="#EF6C00"/><text x="1170" y="667" fill="#FFF">T6</text>
     <circle cx="1170" cy="197" r="15" fill="#EF6C00"/><text x="1170" y="201" fill="#FFF">T7</text>
     <circle cx="1170" cy="255" r="15" fill="#EF6C00"/><text x="1170" y="259" fill="#FFF">T7</text>
-    <circle cx="320" cy="198" r="15" fill="#F9A825"/><text x="320" y="202" fill="#222">T8</text>
+    <circle cx="320" cy="191" r="15" fill="#F9A825"/><text x="320" y="195" fill="#222">T8</text>
     <circle cx="1060" cy="350" r="15" fill="#EF6C00"/><text x="1060" y="354" fill="#FFF">T9</text>
     <circle cx="1105" cy="460" r="15" fill="#EF6C00"/><text x="1105" y="464" fill="#FFF">T10</text>
     <circle cx="1060" cy="398" r="15" fill="#F9A825"/><text x="1060" y="402" fill="#222">T11</text>
     <circle cx="885" cy="460" r="15" fill="#F9A825"/><text x="885" y="464" fill="#222">T12</text>
+    <circle cx="660" cy="257" r="15" fill="#EF6C00"/><text x="660" y="261" fill="#FFF">T13</text>
   </g>
 
   <!-- Legend -->
@@ -243,18 +256,19 @@
   <rect x="500" y="870" width="1020" height="410" rx="8" fill="#FFF" stroke="#9E9E9E"/>
   <text x="516" y="894" font-size="14" font-weight="700" fill="#222">Threat key (full register with status in report.html; flow numbers match architecture.svg)</text>
   <g font-size="12" fill="#222">
-    <text x="516" y="924"><tspan font-weight="700" fill="#C62828">T1 High</tspan><tspan x="596">Spoofing (flows 9-11): no sign-in, so anyone with the URL can act as staff → planned Entra ID sign-in; today CSRF token only</tspan></text>
-    <text x="516" y="953"><tspan font-weight="700" fill="#EF6C00">T2 Med</tspan><tspan x="596">Information disclosure: staff names, notes, labels and run logs are readable by anyone with the URL → planned Entra ID sign-in</tspan></text>
-    <text x="516" y="982"><tspan font-weight="700" fill="#EF6C00">T3 Med</tspan><tspan x="596">Repudiation (flow 9): a decision carries only a typed name (now required) → append-only history with time, score, run id; planned signed-in user</tspan></text>
-    <text x="516" y="1011"><tspan font-weight="700" fill="#EF6C00">T4 Med</tspan><tspan x="596">Tampering (flow 12): visitors can add decisions or redraw the evaluation sample → ETag writes, history kept, confirm step</tspan></text>
-    <text x="516" y="1040"><tspan font-weight="700" fill="#EF6C00">T5 Med</tspan><tspan x="596">Information disclosure: shared keys (storage connection string, OpenAI key) → Container Apps secrets; Key Vault + MI planned</tspan></text>
-    <text x="516" y="1069"><tspan font-weight="700" fill="#EF6C00">T6 Med</tspan><tspan x="596">Elevation of privilege (flows 2-3): ACR admin user could push a changed image → planned managed identity, admin user off</tspan></text>
-    <text x="516" y="1098"><tspan font-weight="700" fill="#EF6C00">T7 Med</tspan><tspan x="596">Denial of service / tampering (flows 4-5): API outage, limits or bad data → retries, caches, 50-listing rule, raw replay, HTTPS, stale-data warning in the app</tspan></text>
-    <text x="516" y="1127"><tspan font-weight="700" fill="#9E7700">T8 Low</tspan><tspan x="596">Denial of service: one replica, no rate limit on a public URL → input length limits; recommended: sign-in, 2+ replicas</tspan></text>
-    <text x="516" y="1156"><tspan font-weight="700" fill="#EF6C00">T9 Med</tspan><tspan x="596">LLM01 Prompt injection via third-party listing text (flow 7) → no tools, JSON validated, quotes checked, AI cannot set the score</tspan></text>
-    <text x="516" y="1185"><tspan font-weight="700" fill="#EF6C00">T10 Med</tspan><tspan x="596">LLM09 Misinformation: wrong summary, reason or ranking, over-reliance → verified quotes, score breakdown, AI error log, human decision</tspan></text>
-    <text x="516" y="1214"><tspan font-weight="700" fill="#9E7700">T11 Low</tspan><tspan x="596">LLM02 Sensitive data in prompts (flows 6-7) → only public listing and plan text and 10 off-topic field descriptions are sent; no staff data</tspan></text>
-    <text x="516" y="1243"><tspan font-weight="700" fill="#9E7700">T12 Low</tspan><tspan x="596">LLM10 Unbounded consumption: cost spikes → top 40 + 5 only, max 1,200 output tokens, caches; rate caps 1,000K (embed) / 500K (chat) tokens/min</tspan></text>
-    <text x="516" y="1268" fill="#555">MI = managed identity · ETag = version check that stops lost updates · Sec. headers = CSP, HSTS, X-Frame-Options DENY, nosniff · CSV guard = no spreadsheet formulas in exports</text>
+    <text x="516" y="920"><tspan font-weight="700" fill="#C62828">T1 High</tspan><tspan x="596">Spoofing (flows 9-12): no sign-in, so anyone with the URL can act as staff of any agency → planned Entra ID sign-in; today CSRF token only</tspan></text>
+    <text x="516" y="946"><tspan font-weight="700" fill="#EF6C00">T2 Med</tspan><tspan x="596">Information disclosure: names, notes, labels, run logs and every agency's decisions are readable by anyone with the URL → planned Entra ID sign-in</tspan></text>
+    <text x="516" y="972"><tspan font-weight="700" fill="#EF6C00">T3 Med</tspan><tspan x="596">Repudiation (flow 9): a decision carries only a typed name (required) → append-only history with time, score, run id; planned signed-in user</tspan></text>
+    <text x="516" y="998"><tspan font-weight="700" fill="#EF6C00">T4 Med</tspan><tspan x="596">Tampering (flow 13): visitors can add decisions or labels, or draw an agency's sample first → ETag writes, history kept, sample fixed once drawn</tspan></text>
+    <text x="516" y="1024"><tspan font-weight="700" fill="#EF6C00">T5 Med</tspan><tspan x="596">Information disclosure (flows 6-8, 13): shared keys (storage connection string, OpenAI key) → Container Apps secrets; Key Vault + MI planned</tspan></text>
+    <text x="516" y="1050"><tspan font-weight="700" fill="#EF6C00">T6 Med</tspan><tspan x="596">Elevation of privilege (flows 2-3): ACR admin user could push a changed image → planned managed identity, admin user off</tspan></text>
+    <text x="516" y="1076"><tspan font-weight="700" fill="#EF6C00">T7 Med</tspan><tspan x="596">Denial of service / tampering (flows 4-5): API outage, limits or bad data → retries, caches, 50-listing rule, raw replay, HTTPS, stale-data warning in the app</tspan></text>
+    <text x="516" y="1102"><tspan font-weight="700" fill="#9E7700">T8 Low</tspan><tspan x="596">Denial of service: one replica, no rate limit on a public URL → input length limits; recommended: sign-in, 2+ replicas</tspan></text>
+    <text x="516" y="1128"><tspan font-weight="700" fill="#EF6C00">T9 Med</tspan><tspan x="596">LLM01 Prompt injection via third-party listing text (flow 7) → no tools, JSON validated, quotes checked, AI cannot set the score</tspan></text>
+    <text x="516" y="1154"><tspan font-weight="700" fill="#EF6C00">T10 Med</tspan><tspan x="596">LLM09 Misinformation, over-reliance (flow 7): wrong summary or eligibility call → quotes verified; geographic limit only flags, never hides; a person decides</tspan></text>
+    <text x="516" y="1180"><tspan font-weight="700" fill="#9E7700">T11 Low</tspan><tspan x="596">LLM02 Sensitive data in prompts (flows 6-7) → only public listing and plan text and off-topic field descriptions are sent; no staff data</tspan></text>
+    <text x="516" y="1206"><tspan font-weight="700" fill="#9E7700">T12 Low</tspan><tspan x="596">LLM10 Unbounded consumption: cost spikes → top 45 per agency, max 1,600 output tokens (one retry at 3,000), caches; caps 1,000K / 500K tokens/min</tspan></text>
+    <text x="516" y="1232"><tspan font-weight="700" fill="#EF6C00">T13 Med</tspan><tspan x="596">Elevation of privilege (flows 9-13): the agency switcher lets anyone view or record any agency's decisions → recommended: per-agency roles with sign-in</tspan></text>
+    <text x="516" y="1262" fill="#555">MI = managed identity · ETag = version check that stops lost updates · Sec. headers = CSP, HSTS, X-Frame-Options DENY, nosniff · CSV guard = no spreadsheet formulas in exports</text>
   </g>
 </svg>

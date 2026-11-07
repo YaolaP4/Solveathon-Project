@@ -377,7 +377,7 @@ def export():
                     f"{r['matched_goal']['id']} {r['matched_goal']['name']}", r["matched_objective"]["id"], why,
                     ai.get("risk_or_gap", ""), ai.get("owning_division", ""), d.get("decision", ""), d.get("by", ""),
                     d.get("note", ""), r["url"]]])
-    name = f"ncdhhs-shortlist-{doc['as_of']}.csv"
+    name = f"{current_aid()}-shortlist-{doc['as_of']}.csv"
     return Response("﻿" + buf.getvalue(), mimetype="text/csv",
                     headers={"Content-Disposition": f"attachment; filename={name}"})
 
@@ -427,7 +427,7 @@ def make_sample():
     store = get_store()
     if store.read_json(evaluate.sample_path(current_aid())):
         # Drawn once, never replaced from the web: every label is tied to this sample. To start over,
-        # an administrator deletes eval/sample.json and eval/labels.json in storage.
+        # an administrator deletes eval/{agency}/sample.json and eval/{agency}/labels.json in storage.
         flash("A sample already exists. Labels are kept with their items.")
         return redirect(url_for("evaluation"))
     store.write_json(evaluate.sample_path(current_aid()), evaluate.draw_sample(doc), indent=2)

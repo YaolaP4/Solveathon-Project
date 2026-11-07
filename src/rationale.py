@@ -207,10 +207,11 @@ def apply(scored: pd.DataFrame, reviews: dict) -> pd.DataFrame:
         a = r["ai"]
         note = ""
         if isinstance(a, dict):
-            if a["applicant_role"] == "ineligible" and a["eligibility_verified"] and r["track"] == "agency":
+            geographic = bool(a.get("excludes_north_carolina") and a.get("geographic_verified"))
+            if a["applicant_role"] == "ineligible" and a["eligibility_verified"] and r["track"] == "agency" and not geographic:
                 out.at[i, "track"] = "not_eligible"
                 note = "moved to 'not eligible': AI review quoted eligibility text that excludes this agency"
-            elif a.get("excludes_north_carolina") and a.get("geographic_verified") and r["track"] == "agency":
+            elif geographic and r["track"] == "agency":
                 # Flag, do not remove: the model once read a standard "territories may also apply" clause as a
                 # limit and would have hidden an HIV program for the South. A missed grant costs more than a
                 # minute spent passing a bad match, so staff see it with the quote and decide.

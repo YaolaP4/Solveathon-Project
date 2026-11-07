@@ -13,5 +13,5 @@ export ACR="acr${PREFIX}${SUFFIX}"
 export CAE="cae-$PREFIX"
 export APP="app-$PREFIX-web"
 export JOB="job-$PREFIX-refresh"
-export TAG="${TAG:-v3}"   # bump for every rollout (TAG=v4 bash deploy/02_deploy.sh)
+export TAG="${TAG:-v8}"   # the deployed tag; bump it for every rollout (TAG=v9 bash deploy/02_deploy.sh)
 export IMAGE="$ACR.azurecr.io/ffm:$TAG"
