@@ -53,17 +53,29 @@ SIGNAL_LABELS = {"semantic": "Plan alignment (semantic)", "keyword": "Keyword / 
 def mm_settings(agency: dict) -> dict:
     cfg = {**DEFAULT, **{k: v for k, v in (agency.get("matchmaker") or {}).items() if not k.startswith("_")}}
     cfg["weights"] = {**DEFAULT["weights"], **cfg.get("weights", {})}
+    # "Unrelated fields" depend on the agency: environment is off-topic for health, and the reverse.
+    anchors = (agency.get("profile") or {}).get("off_topic_anchors")
+    if anchors:
+        cfg["off_topic_anchors"] = anchors
     return cfg
+
+
+def agency_short(agency: dict) -> str:
+    return agency.get("agency_short") or agency["profile"]["agency_id"].upper()
 
 
 # ── Plan documents ──────────────────────────────────────────────────────────
 
 def objective_docs(agency: dict) -> list[dict]:
+    priorities = {p["id"]: p["text"] for p in agency.get("department_priorities") or []}
     docs = []
     for g in agency["strategic_priorities"]:
         for o in g["objectives"]:
+            text = f"{g['name']}: {g['description']} Objective: {o['text']}"
+            if o.get("related_priority") in priorities:      # the plan's priority area this objective serves
+                text += f" Department priority: {priorities[o['related_priority']]}"
             docs.append({"goal_id": g["id"], "goal_name": g["name"], "objective_id": o["id"], "objective": o["text"],
-                         "source": o.get("source", ""), "text": f"{g['name']}: {g['description']} Objective: {o['text']}"})
+                         "source": o.get("source", ""), "text": text})
     return docs
 
 
@@ -191,35 +203,60 @@ def timing_signal(r: pd.Series) -> tuple[float, str]:
     return float(r["deadline_score"]) / 10, f"closes in {d} day{'s' if d != 1 else ''}"
 
 
+def aln_record(client, aln: str, cfg: dict) -> dict:
+    """Award history for one assistance listing (qualifier Layer 5), plus every North Carolina recipient
+    and amount, so any agency's own awards can be found by its name pattern."""
+    res = aln_history(client, aln, cfg)
+    res["nc_recipients"] = []
+    if res.get("total", 0) > 0 and not res.get("error"):
+        filters = {"program_numbers": [aln], "award_type_codes": cfg["award_type_codes"],
+                   "time_period": [{"start_date": cfg["start_date"], "end_date": cfg["end_date"]}],
+                   "recipient_locations": [{"country": "USA", "state": "NC"}]}
+        try:   # same request aln_history just made, so it comes from the response cache
+            nc = client.post("/search/spending_by_category/recipient/", {"filters": filters, "limit": 100, "page": 1})
+            res["nc_recipients"] = [{"name": str(r.get("name") or ""), "amount": float(r.get("amount") or 0)}
+                                    for r in nc.get("results", [])]
+        except RuntimeError as e:
+            res["error"] = str(e)[:200]
+    return res
+
+
 def aln_affinity(store, alns_per_row: list[list[str]], agency: dict, log=print) -> dict[str, dict]:
-    """Award history per assistance listing, cached in storage for 30 days (qualifier Layer 5 code)."""
+    """Award history per assistance listing, cached in storage and shared by every agency."""
     cfg = agency["layer5_award_history"]
     cache = store.read_json("cache/aln_history.json", default={}) or {}
     codes = sorted({a for row in alns_per_row for a in row})
-    todo = [a for a in codes if a not in cache]
+    todo = [a for a in codes if a not in cache or "nc_recipients" not in cache[a]]
     if todo:
         log(f"  funder history: {len(codes) - len(todo)} listings cached, {len(todo)} to look up on USAspending.gov")
         client = Client(offline=False)
         with ThreadPoolExecutor(6) as pool:
-            for res in pool.map(lambda a: aln_history(client, a, cfg), todo):
+            for res in pool.map(lambda a: aln_record(client, a, cfg), todo):
                 if not res.get("error") or res.get("total", 0) > 0:
                     cache[res["aln"]] = res
         store.write_json("cache/aln_history.json", cache)
     return cache
 
 
-def affinity_signal(alns: list[str], hist: dict, cfg: dict, hhs: bool) -> tuple[float, str, dict]:
+def affinity_signal(alns: list[str], hist: dict, cfg: dict, related_funder: bool, agency: dict) -> tuple[float, str, dict]:
+    short = agency_short(agency)
+    pattern = re.compile((agency.get("profile") or {}).get("usaspending_recipient_pattern") or r"$^")
     rows = [hist[a] for a in alns if a in hist]
     if not rows:
-        return (0.5 if hhs else 0.3), ("HHS program; no award history looked up" if hhs else "no award history looked up"), {}
-    agg = {k: sum(float(r.get(k) or 0) for r in rows) for k in ["total", *CLASSES, "nc_dhhs", "nc_state_agency"]}
+        if related_funder:
+            return 0.5, "a federal department that often funds this kind of agency; award history not looked up", {}
+        return 0.3, "award history not looked up", {}
+    agg = {k: sum(float(r.get(k) or 0) for r in rows) for k in ["total", *CLASSES, "nc_state_agency"]}
+    agency_usd = sum(x["amount"] for r in rows for x in r.get("nc_recipients", []) if pattern.search(x["name"].upper()))
+    agg["nc_dhhs"] = agency_usd            # verdict() calls this field "NC DHHS"; it is this agency's own awards
     agg["error"] = ""
-    v = verdict(pd.Series(agg), cfg)
+    v = verdict(pd.Series(agg), cfg).replace("NC DHHS", short)
     share = agg["state_agency"] / agg["total"] if agg["total"] else 0
-    summary = {"verdict": v, "nc_dhhs_usd": agg["nc_dhhs"], "total_usd": agg["total"], "state_agency_share": round(share, 3),
+    summary = {"verdict": v, "agency_usd": agency_usd, "agency": short, "total_usd": agg["total"],
+               "state_agency_share": round(share, 3),
                "top_recipients": " | ".join(r.get("top_recipients", "") for r in rows if r.get("top_recipients"))[:300]}
-    if agg["nc_dhhs"] >= cfg["nc_dhhs_min_usd"]:
-        return 1.0, f"NC DHHS received ${agg['nc_dhhs'] / 1e6:,.1f}M under this listing ({cfg['fiscal_years_label']})", summary
+    if agency_usd >= cfg["nc_dhhs_min_usd"]:
+        return 1.0, f"{short} received ${agency_usd / 1e6:,.1f}M under this listing ({cfg['fiscal_years_label']})", summary
     if share >= cfg["state_agency_share_threshold"]:
         return 0.7, f"other state agencies receive {share:.0%} of this listing's awards", summary
     if agg["total"] <= 0:
@@ -276,7 +313,8 @@ def score(live: pd.DataFrame, agency: dict, store, log=print) -> tuple[pd.DataFr
         log(f"  WARNING funder history unavailable ({str(e)[:120]})")
         hist = {}
     acfg = agency["layer5_award_history"]
-    af = [affinity_signal(r["alns"], hist, acfg, bool(r["federal_agency_is_hhs"])) for _, r in out.iterrows()]
+    related = set((agency.get("profile") or {}).get("related_federal_agencies") or [])
+    af = [affinity_signal(r["alns"], hist, acfg, r["top_level_agency_name"] in related, agency) for _, r in out.iterrows()]
     out["s_affinity"], out["affinity_reason"] = [a[0] for a in af], [a[1] for a in af]
     out["award_history"] = [a[2] for a in af]
 

@@ -44,11 +44,13 @@ def agency_id(agency: dict) -> str:
 
 
 def profile_document(agency: dict) -> dict:
-    """The starter kit's standard profile template, built from agency/priorities.json."""
+    """The starter kit's standard profile template, built from agency/profiles/{agency}.json."""
     p = agency["profile"]
     return {
-        "agency_id": p["agency_id"], "agency_name": agency["agency_name"], "mission": agency["mission"],
-        "user": agency["user"], "source": {"title": p["plan_title"], "url": p["plan_url"]},
+        "agency_id": p["agency_id"], "agency_name": agency["agency_name"], "agency_short": agency.get("agency_short", ""),
+        "mission": agency["mission"], "user": agency["user"],
+        "source": {"title": p["plan_title"], "url": p["plan_url"], "published": p.get("plan_published", "")},
+        "department_priorities": agency.get("department_priorities", []),
         "reviewed_by": p["reviewed_by"],
         "goals": [{"id": g["id"], "name": g["name"], "description": g["description"], "source": g.get("source", ""),
                    "objectives": g["objectives"]} for g in agency["strategic_priorities"]],
@@ -84,67 +86,19 @@ def scored_record(r: pd.Series, w: dict, goals: dict, ingested_at: str) -> dict:
     return rec
 
 
-def run(replay: str | None = None, log=print) -> dict:
-    t0 = time.time()
-    store = get_store()
-    agency = config.load_agency()
+def publish_agency(agency: dict, live, store, today: str, now, run_id: str, kw_hits: dict, log=print) -> dict:
+    """Score, review and publish one agency's ranked list. Returns that agency's stage stats."""
     aid = agency_id(agency)
-    now = datetime.now(timezone.utc).replace(microsecond=0)
-    today = (replay or now.astimezone(ET).strftime("%Y-%m-%d"))
-    run_id = now.strftime("%Y-%m-%dT%H-%M-%SZ")
-    stages, errors = {}, []
-    log(f"Daily refresh {run_id} for {aid} (storage: {store.describe()}, Azure OpenAI: "
-        f"{'on' if aoai.available() else 'off'})")
-
-    # 0. Profile (one-time seed, refreshed from the reviewed repo file every run)
+    log(f"== {agency.get('agency_short', aid)}")
     store.write_json(f"profiles/{aid}.json", profile_document(agency), indent=2)
 
-    # 1. Ingest
-    log("1/5 ingest")
-    if replay:
-        raw = store.read_json(f"raw/{replay}/grants.json")
-        if raw is None:
-            raise SystemExit(f"no raw/{replay}/grants.json to replay")
-        hits = raw["hits"]
-        details = {h["id"]: store.read_json(f"details/{h['id']}.json") for h in hits}
-        details = {k: v for k, v in details.items() if v}
-        kw_hits = raw.get("keyword_hits", {})
-        stages["ingest"] = {"pulled": len(hits), "replayed_from": replay}
-    else:
-        ing = grantsgov.ingest(store, agency["profile"]["keywords"], today, log)
-        hits, details, kw_hits = ing["hits"], ing["details"], ing["keyword_hits"]
-        stages["ingest"] = ing["stats"]
-        errors += ing["errors"]
-    if len(hits) < 50:
-        raise RuntimeError(f"only {len(hits)} opportunities pulled; refusing to overwrite yesterday's results")
-
-    # 2. Normalize
-    log("2/5 normalize")
-    live, nstats = normalize.normalize(hits, details, today, agency)
-    stages["normalize"] = nstats
-    ingested_at = now.isoformat()
-    store.write_json("opportunities/latest.json", [normalize.minimum_record(r, ingested_at) for _, r in live.iterrows()])
-    log(f"  {nstats['records_out']} live records ({nstats['posted']} posted, {nstats['forecasted']} forecasted), "
-        f"{nstats['dropped_closed_or_admin']} closed/admin dropped, {nstats['duplicates_dropped']} duplicates, "
-        f"{nstats['low_quality']} flagged low quality")
-
-    # 3. Score
-    log("3/5 score")
     scored, meta = matcher.score(live, agency, store, log)
-    stages["score"] = {**meta, "scored": len(scored),
-                       "by_track": scored["track"].value_counts().to_dict(),
-                       "by_confidence_agency_track": scored.loc[scored["track"] == "agency", "confidence"].value_counts().to_dict()}
-
-    # 4. Summarize (top N only)
-    log("4/5 AI rationales")
     reviews, problems, rstats = rationale.review(scored, agency, store, log)
     scored = rationale.apply(scored, reviews)
-    stages["summarize"] = {**rstats, "problems_caught": len(problems)}
 
-    # 5. Publish: scored list, alerts, keyword baseline, run log
-    log("5/5 publish")
     w = meta["weights"]
     goals = {g["id"]: g for g in agency["strategic_priorities"]}
+    ingested_at = now.isoformat()
     records = [scored_record(r, w, goals, ingested_at) for _, r in scored.iterrows()]
     # "New" means new since the last refresh on an EARLIER day, so re-running today (by hand, or the job's
     # retry) reproduces the same alerts instead of wiping them.
@@ -152,14 +106,14 @@ def run(replay: str | None = None, log=print) -> dict:
                      if re.fullmatch(rf"scored/{re.escape(aid)}/\d{{4}}-\d{{2}}-\d{{2}}\.json", p) and p[-15:-5] < today)
     previous = store.read_json(earlier[-1]) if earlier else None
     prev_ids = set(previous["seen_ids"]) if previous and previous.get("seen_ids") else None
-    prev_ids_all = prev_ids if prev_ids is not None else set()
     for rec in records:
-        rec["new_since_last_run"] = prev_ids is not None and rec["id"] not in prev_ids_all
+        rec["new_since_last_run"] = prev_ids is not None and rec["id"] not in prev_ids
         rec["closing_soon"] = rec["days_to_close"] is not None and 0 <= rec["days_to_close"] <= ALERT_DAYS
+    counts = scored["track"].value_counts().to_dict()
     doc = {
-        "agency_id": aid, "run_id": run_id, "generated_at": now.isoformat(), "as_of": today,
-        "method": meta, "counts": stages["score"]["by_track"], "seen_ids": [r["id"] for r in records],
-        "previous_run_id": previous.get("run_id") if previous else None,
+        "agency_id": aid, "agency_short": agency.get("agency_short", aid), "run_id": run_id,
+        "generated_at": now.isoformat(), "as_of": today, "method": meta, "counts": counts,
+        "seen_ids": [r["id"] for r in records], "previous_run_id": previous.get("run_id") if previous else None,
         "ai_checks": problems, "ai_stats": rstats, "records": records,
     }
     store.write_json(f"scored/{aid}/latest.json", doc)
@@ -170,15 +124,68 @@ def run(replay: str | None = None, log=print) -> dict:
                                and r["confidence"] in ("High", "Medium")],
               "first_run": prev_ids is None}
     store.write_json(f"alerts/{aid}/latest.json", alerts)
+    return {"method": meta["method"], "scored": len(scored), "by_track": counts,
+            "by_confidence_agency_track": scored.loc[scored["track"] == "agency", "confidence"].value_counts().to_dict(),
+            "new": len(alerts["new_since_last_run"]), "summarize": {**rstats, "problems_caught": len(problems)}}
+
+
+def run(replay: str | None = None, log=print) -> dict:
+    t0 = time.time()
+    store = get_store()
+    agencies = config.load_profiles()
+    now = datetime.now(timezone.utc).replace(microsecond=0)
+    today = (replay or now.astimezone(ET).strftime("%Y-%m-%d"))
+    run_id = now.strftime("%Y-%m-%dT%H-%M-%SZ")
+    stages, errors = {}, []
+    log(f"Daily refresh {run_id} for {', '.join(agency_id(a) for a in agencies)} (storage: {store.describe()}, "
+        f"Azure OpenAI: {'on' if aoai.available() else 'off'})")
+
+    # 1. Ingest: ONE pull of Grants.gov serves every agency; keyword searches cover all profiles' keywords.
+    log("1/5 ingest")
+    keywords = sorted({k for a in agencies for k in a["profile"]["keywords"]}, key=str.lower)
+    if replay:
+        raw = store.read_json(f"raw/{replay}/grants.json")
+        if raw is None:
+            raise SystemExit(f"no raw/{replay}/grants.json to replay")
+        hits = raw["hits"]
+        details = {h["id"]: store.read_json(f"details/{h['id']}.json") for h in hits}
+        details = {k: v for k, v in details.items() if v}
+        kw_hits = raw.get("keyword_hits", {})
+        stages["ingest"] = {"pulled": len(hits), "replayed_from": replay}
+    else:
+        ing = grantsgov.ingest(store, keywords, today, log)
+        hits, details, kw_hits = ing["hits"], ing["details"], ing["keyword_hits"]
+        stages["ingest"] = ing["stats"]
+        errors += ing["errors"]
+    if len(hits) < 50:
+        raise RuntimeError(f"only {len(hits)} opportunities pulled; refusing to overwrite yesterday's results")
+
+    # 2. Normalize (once, shared)
+    log("2/5 normalize")
+    live, nstats = normalize.normalize(hits, details, today, agencies[0])
+    stages["normalize"] = nstats
+    store.write_json("opportunities/latest.json", [normalize.minimum_record(r, now.isoformat()) for _, r in live.iterrows()])
+    log(f"  {nstats['records_out']} live records ({nstats['posted']} posted, {nstats['forecasted']} forecasted), "
+        f"{nstats['dropped_closed_or_admin']} closed/admin dropped, {nstats['duplicates_dropped']} duplicates, "
+        f"{nstats['low_quality']} flagged low quality")
+
+    # 3-5. Score, AI rationales and publish, per agency profile
+    log("3-5/5 score, AI rationales and publish for each agency")
+    per_agency = {}
+    for agency in agencies:
+        per_agency[agency_id(agency)] = publish_agency(agency, live, store, today, now, run_id, kw_hits, log)
+    stages["agencies"] = per_agency
     store.write_json(f"eval/keyword_baseline/{today}.json", {"date": today, "keyword_hits": kw_hits})
     store.write_json("eval/keyword_baseline/latest.json", {"date": today, "keyword_hits": kw_hits})
 
-    run_log = {"run_id": run_id, "agency_id": aid, "started_at": now.isoformat(),
+    first = per_agency[agency_id(agencies[0])]
+    run_log = {"run_id": run_id, "agencies": list(per_agency), "started_at": now.isoformat(),
                "finished_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
                "duration_s": round(time.time() - t0, 1), "status": "succeeded", "replay": replay,
                "counts": {"pulled": stages["ingest"].get("pulled"), "live": nstats["records_out"],
-                          "new": len(alerts["new_since_last_run"]), "scored": len(scored),
-                          "ai_reviewed": rstats.get("reviewed", 0), "errors": len(errors)},
+                          "new": first["new"], "scored": first["scored"],
+                          "ai_reviewed": sum(a["summarize"].get("reviewed", 0) for a in per_agency.values()),
+                          "agencies": len(per_agency), "errors": len(errors)},
                "stages": stages, "errors": errors[:50]}
     store.write_json(f"runs/{run_id}.json", run_log)
     store.write_json("runs/latest.json", run_log)

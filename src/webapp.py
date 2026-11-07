@@ -25,9 +25,9 @@ import evaluate
 from storage import get_store
 
 ET = ZoneInfo("America/New_York")
-AGENCY = config.load_agency()
-AID = AGENCY["profile"]["agency_id"]
-DECISIONS = f"decisions/{AID}.json"
+PROFILES = config.load_profiles()                     # one standard profile per agency
+BY_ID = {p["profile"]["agency_id"]: p for p in PROFILES}
+DEFAULT_AID = PROFILES[0]["profile"]["agency_id"]
 CHOICES = ("Pursue", "Maybe", "Pass")
 PAGE_SIZE = 50
 TRACKS = {"agency": "Agency can apply", "research": "Research (university partner)", "not_eligible": "Not eligible"}
@@ -60,14 +60,32 @@ def _cached(path: str, default):
     return value
 
 
+def current_aid() -> str:
+    """The agency being viewed: ?agency=... switches it (and is remembered), else the last one chosen."""
+    a = request.args.get("agency", "")
+    if a in BY_ID:
+        session["agency"] = a
+        return a
+    a = session.get("agency", "")
+    return a if a in BY_ID else DEFAULT_AID
+
+
+def current_agency() -> dict:
+    return BY_ID[current_aid()]
+
+
+def decisions_path(aid: str | None = None) -> str:
+    return f"decisions/{aid or current_aid()}.json"
+
+
 def today_et() -> date:
     return datetime.now(ET).date()
 
 
-def scored() -> dict | None:
+def scored(aid: str | None = None) -> dict | None:
     """The latest results, with days-to-close recomputed for today, so a late or failed refresh
     never shows a deadline that has already passed as still open."""
-    doc = _cached(f"scored/{AID}/latest.json", None)
+    doc = _cached(f"scored/{aid or current_aid()}/latest.json", None)
     if doc and doc.get("_days_for") != today_et().isoformat():
         t = today_et()
         for r in doc["records"]:
@@ -82,12 +100,12 @@ def scored() -> dict | None:
     return doc
 
 
-def decisions() -> dict:
-    return (get_store().read_json(DECISIONS, default={}) or {}).get("decisions", {})
+def decisions(aid: str | None = None) -> dict:
+    return (get_store().read_json(decisions_path(aid), default={}) or {}).get("decisions", {})
 
 
 def labels() -> list:
-    return (get_store().read_json(evaluate.LABELS_PATH, default={}) or {}).get("labels", [])
+    return (get_store().read_json(evaluate.labels_path(current_aid()), default={}) or {}).get("labels", [])
 
 
 def latest_run() -> dict | None:
@@ -149,9 +167,11 @@ def money(v) -> str:
 
 @app.context_processor
 def inject():
-    return {"fmt_dt": fmt_dt, "money": money, "applicants": applicants, "refresh_warning": refresh_warning, "agency": AGENCY, "TRACKS": TRACKS, "csrf_token": csrf_token,
-            "goals": {g["id"]: g for g in AGENCY["strategic_priorities"]},
-            "divisions": {d["id"]: d for d in AGENCY["divisions"]}, "run": latest_run()}
+    ag = current_agency()
+    return {"fmt_dt": fmt_dt, "money": money, "applicants": applicants, "refresh_warning": refresh_warning,
+            "agency": ag, "agencies": PROFILES, "aid": current_aid(), "TRACKS": TRACKS, "csrf_token": csrf_token,
+            "goals": {g["id"]: g for g in ag["strategic_priorities"]},
+            "divisions": {d["id"]: d for d in ag["divisions"]}, "run": latest_run()}
 
 
 def csrf_token() -> str:
@@ -252,7 +272,7 @@ def shortlist():
     page = max(1, request.args.get("page", 1, type=int))
     pages = max(1, (len(rows) + PAGE_SIZE - 1) // PAGE_SIZE)
     page = min(page, pages)
-    alerts = get_store().read_json(f"alerts/{AID}/latest.json", default={}) or {}
+    alerts = get_store().read_json(f"alerts/{current_aid()}/latest.json", default={}) or {}
     by_id = {r["id"]: r for r in doc["records"]}
     return render_template("shortlist.html", doc=doc, rows=rows[(page - 1) * PAGE_SIZE: page * PAGE_SIZE], name=session.get("name", ""),
                            total=len(rows), page=page, pages=pages, f=f, decided=decided, query_with=query_with,
@@ -320,7 +340,7 @@ def decide(oid):
         if not duplicate:        # a double-click or resubmit does not add a second entry
             hist.append(entry)
         return cur
-    get_store().update_json(DECISIONS, add, default={"decisions": {}})
+    get_store().update_json(decisions_path(), add, default={"decisions": {}})
     flash(f"Saved: {choice} on “{rec['title'][:80]}”.")
     return redirect(safe_next(request.form.get("next", ""), url_for("detail", oid=oid, back=back or None)))
 
@@ -369,7 +389,7 @@ def goals_view():
         return render_template("empty.html")
     rows = []
     agency_recs = [r for r in doc["records"] if r["track"] == "agency"]
-    for g in AGENCY["strategic_priorities"]:
+    for g in current_agency()["strategic_priorities"]:
         rs = [r for r in agency_recs if r["matched_goal"]["id"] == g["id"]]
         strong = [r for r in rs if r["confidence"] in ("High", "Medium")]
         objs = []
@@ -392,8 +412,10 @@ def evaluation():
     if not doc:
         return render_template("empty.html")
     store = get_store()
-    sample = store.read_json(evaluate.SAMPLE_PATH)
-    kw = (store.read_json("eval/keyword_baseline/latest.json", default={}) or {}).get("keyword_hits")
+    sample = store.read_json(evaluate.sample_path(current_aid()))
+    kw = (store.read_json("eval/keyword_baseline/latest.json", default={}) or {}).get("keyword_hits") or {}
+    mine = set(current_agency()["profile"]["keywords"])
+    kw = {k: v for k, v in kw.items() if k in mine} or None
     m = evaluate.metrics(doc, sample, labels(), decisions(), kw)
     by_id = {r["id"]: r for r in doc["records"]}
     return render_template("evaluation.html", m=m, sample=sample, by_id=by_id, doc=doc)
@@ -403,12 +425,12 @@ def evaluation():
 def make_sample():
     doc = scored()
     store = get_store()
-    if store.read_json(evaluate.SAMPLE_PATH):
+    if store.read_json(evaluate.sample_path(current_aid())):
         # Drawn once, never replaced from the web: every label is tied to this sample. To start over,
         # an administrator deletes eval/sample.json and eval/labels.json in storage.
         flash("A sample already exists. Labels are kept with their items.")
         return redirect(url_for("evaluation"))
-    store.write_json(evaluate.SAMPLE_PATH, evaluate.draw_sample(doc), indent=2)
+    store.write_json(evaluate.sample_path(current_aid()), evaluate.draw_sample(doc), indent=2)
     flash("Labeling sample drawn: our top 10, the keyword baseline's top 10, and 10 more from the rest.")
     return redirect(url_for("label"))
 
@@ -416,7 +438,7 @@ def make_sample():
 @app.route("/evaluation/label", methods=["GET", "POST"])
 def label():
     store = get_store()
-    sample = store.read_json(evaluate.SAMPLE_PATH)
+    sample = store.read_json(evaluate.sample_path(current_aid()))
     if not sample:
         return redirect(url_for("evaluation"))
     if request.method == "POST":
@@ -430,7 +452,7 @@ def label():
                  "at": datetime.now(timezone.utc).replace(microsecond=0).isoformat()}
         if entry["id"] not in {i["id"] for i in sample["items"]}:
             abort(400)
-        store.update_json(evaluate.LABELS_PATH, lambda cur: {"labels": (cur or {}).get("labels", []) + [entry]},
+        store.update_json(evaluate.labels_path(current_aid()), lambda cur: {"labels": (cur or {}).get("labels", []) + [entry]},
                           default={"labels": []})
         return redirect(url_for("label"))
     name = request.args.get("labeler", session.get("labeler", "")).strip()
@@ -452,6 +474,32 @@ def label():
     return render_template("label.html", name=name, item=item, done=len(order) - len(todo), total=len(order))
 
 
+@app.route("/statewide")
+def statewide():
+    """The central (OSBM) view: every agency's matches side by side, and opportunities that fit several."""
+    rows, strong_by_opp = [], {}
+    for prof in PROFILES:
+        aid = prof["profile"]["agency_id"]
+        doc = scored(aid)
+        if not doc:
+            continue
+        recs = [r for r in doc["records"] if r["track"] == "agency" and not r.get("closed_since_refresh")]
+        strong = [r for r in recs if r["confidence"] in ("High", "Medium")]
+        dec = decisions(aid)
+        latest = [h[-1]["decision"] for h in dec.values() if h]
+        for r in strong:
+            strong_by_opp.setdefault(r["id"], []).append((prof, r))
+        rows.append({"p": prof, "aid": aid, "high": sum(r["confidence"] == "High" for r in recs),
+                     "medium": sum(r["confidence"] == "Medium" for r in recs),
+                     "closing10": sum(1 for r in strong if r["days_to_close"] is not None and r["days_to_close"] <= 10),
+                     "forecast": sum(r["status"] == "forecasted" for r in strong),
+                     "pursue": latest.count("Pursue"), "maybe": latest.count("Maybe"), "pass": latest.count("Pass"),
+                     "plan": prof["profile"]["plan_title"], "generated": doc.get("generated_at")})
+    shared = sorted(([v for v in strong_by_opp.values() if len(v) > 1]),
+                    key=lambda v: -max(r["score"] for _, r in v))
+    return render_template("statewide.html", rows=rows, shared=shared[:25], n_shared=len(shared))
+
+
 @app.route("/status")
 def status():
     store = get_store()
@@ -468,7 +516,7 @@ def status():
 
 @app.route("/profile")
 def profile():
-    return render_template("profile.html", p=get_store().read_json(f"profiles/{AID}.json"))
+    return render_template("profile.html", p=get_store().read_json(f"profiles/{current_aid()}.json"))
 
 
 @app.route("/method")
@@ -479,7 +527,8 @@ def method():
 @app.route("/healthz")
 def healthz():
     run = latest_run()
-    return {"ok": True, "last_run": (run or {}).get("run_id"), "storage": get_store().kind}
+    return {"ok": True, "last_run": (run or {}).get("run_id"), "storage": get_store().kind,
+            "agencies": [p["profile"]["agency_id"] for p in PROFILES]}
 
 
 class _ServerError:

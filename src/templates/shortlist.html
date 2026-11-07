@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block title %}Shortlist{% endblock %}
 {% block content %}
-<h1>Funding opportunities for NC DHHS</h1>
+<h1>Funding opportunities for {{ agency.agency_short }}</h1>
 <p class="lede">Every posted and forecasted federal opportunity on Grants.gov, ranked against the goals of the
-<a href="{{ url_for('profile') }}">NC DHHS Strategic Plan 2023–2025</a>. Open one to see why it matches, then record a decision.</p>
+<a href="{{ url_for('profile') }}">{{ agency.profile.plan_title }}</a>. Open one to see why it matches, then record a decision.</p>
 
 {% if f.track == 'agency' and (closing or new_items or first_run) %}
 <section class="alerts" aria-labelledby="alerts-h">

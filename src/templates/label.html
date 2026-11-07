@@ -4,7 +4,7 @@
 <p class="backlink"><a href="{{ url_for('evaluation') }}">Back to Evaluation</a></p>
 <h1>Label opportunities</h1>
 {% if not name %}
-<p class="lede">You will see each sampled opportunity <strong>without its score or rank</strong>. Decide whether it is relevant for NC DHHS:
+<p class="lede">You will see each sampled opportunity <strong>without its score or rank</strong>. Decide whether it is relevant for {{ agency.agency_short }}:
 would the grants coordinator want to look at it? Each person labels on their own.</p>
 <form method="get" action="{{ url_for('label') }}" class="narrow">
   <label for="labeler">Your name</label>
@@ -35,7 +35,7 @@ would the grants coordinator want to look at it? Each person labels on their own
   <label for="note">Note (optional: why?)</label>
   <input id="note" name="note" type="text" maxlength="500">
   <fieldset class="label-buttons">
-    <legend>Is this relevant for NC DHHS?</legend>
+    <legend>Is this relevant for {{ agency.agency_short }}?</legend>
     <button type="submit" name="relevant" value="yes" class="btn">Relevant</button>
     <button type="submit" name="relevant" value="no" class="btn btn-secondary">Not relevant</button>
     <button type="submit" name="relevant" value="unsure" class="btn btn-outline">Unsure</button>

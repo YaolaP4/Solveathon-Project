@@ -2,7 +2,7 @@
 {% block title %}Funding by goal{% endblock %}
 {% block content %}
 <h1>Open federal funding by strategic goal</h1>
-<p class="lede">How many High and Medium matches each goal of the NC DHHS Strategic Plan has right now (agency-eligible list only).
+<p class="lede">How many High and Medium matches each goal of the {{ agency.profile.plan_title }} has right now (agency-eligible list only).
 Use it to see which goals have money available and which have little.</p>
 
 <div class="table-scroll" role="region" aria-labelledby="goals-cap" tabindex="0">
@@ -27,7 +27,7 @@ Use it to see which goals have money available and which have little.</p>
   </tbody>
 </table>
 </div>
-<p class="note">“Sum of award ceilings” adds the largest single award of each matching opportunity. It shows scale, not money NC DHHS would receive.</p>
+<p class="note">“Sum of award ceilings” adds the largest single award of each matching opportunity. It shows scale, not money {{ agency.agency_short }} would receive.</p>
 
 <h2>By objective</h2>
 {% for row in rows %}

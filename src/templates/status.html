@@ -46,8 +46,9 @@ Storage: {{ storage }}.</p>
 <dl class="facts">
   <dt>1. Ingest</dt><dd>{{ s.ingest.pulled }} pulled{% if s.ingest.details_fetched is defined %}; {{ s.ingest.details_fetched }} details fetched, {{ s.ingest.details_cached }} reused from cache; {{ s.ingest.keywords }} keyword searches recorded for the baseline{% endif %}</dd>
   <dt>2. Normalize</dt><dd>{{ s.normalize.records_out }} live; {{ s.normalize.dropped_closed_or_admin }} closed, archived or administrative dropped; {{ s.normalize.duplicates_dropped }} duplicates; {{ s.normalize.low_quality }} flagged as incomplete (kept, not dropped)</dd>
-  <dt>3. Score</dt><dd>{{ s.score.scored }} scored with {{ s.score.method }}; agency list confidence: {% for k, v in s.score.by_confidence_agency_track.items() %}{{ k }} {{ v }}{% if not loop.last %}, {% endif %}{% endfor %}</dd>
-  <dt>4. Summarize</dt><dd>{{ s.summarize.reviewed or 0 }} AI rationales{% if s.summarize.problems_caught %}; {{ s.summarize.problems_caught }} problems caught by the checks{% endif %}</dd>
+  {% for a_id, a in (s.agencies or {}).items() %}
+  <dt>3–4. {{ a_id|upper }}</dt><dd>{{ a.scored }} scored with {{ a.method }}; agency list confidence: {% for k, v in a.by_confidence_agency_track.items() %}{{ k }} {{ v }}{% if not loop.last %}, {% endif %}{% endfor %}; {{ a.summarize.reviewed or 0 }} AI rationales{% if a.summarize.problems_caught %}, {{ a.summarize.problems_caught }} problems caught by the checks{% endif %}</dd>
+  {% endfor %}
 </dl>
 {% if runs[0].errors %}<h3>Errors (the run continued)</h3><ul>{% for e in runs[0].errors %}<li>{{ e }}</li>{% endfor %}</ul>{% endif %}
 {% endif %}

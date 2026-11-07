@@ -42,7 +42,8 @@ def reference() -> pd.DataFrame:
 
 
 def main(date: str) -> None:
-    store, agency = get_store(), config.load_agency()
+    store = get_store()
+    agency = next(p for p in config.load_profiles() if p["profile"]["agency_id"] == "ncdhhs")   # the finals DHHS profile
     raw = store.read_json(f"raw/{date}/grants.json")
     details = {h["id"]: store.read_json(f"details/{h['id']}.json") for h in raw["hits"]}
     live, _ = normalize.normalize(raw["hits"], {k: v for k, v in details.items() if v}, date, agency)

@@ -18,8 +18,12 @@ Metrics   precision@10 (ours vs baseline), recall@25 on the labeled set, relevan
 import hashlib
 import random
 
-SAMPLE_PATH = "eval/sample.json"
-LABELS_PATH = "eval/labels.json"
+def sample_path(aid: str) -> str:
+    return f"eval/{aid}/sample.json"
+
+
+def labels_path(aid: str) -> str:
+    return f"eval/{aid}/labels.json"
 
 
 def baseline_order(records: list[dict]) -> list[dict]:

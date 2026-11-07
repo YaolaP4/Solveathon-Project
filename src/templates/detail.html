@@ -39,7 +39,7 @@
         <dl class="facts">
           <dt>Who can apply</dt><dd>{{ r.ai.eligibility_notes }}
             {% if r.ai.eligibility_quote and r.ai.eligibility_verified %}<span class="cite">Listing says: “{{ r.ai.eligibility_quote }}” (checked word for word)</span>{% endif %}</dd>
-          <dt>Role for NC DHHS</dt><dd>{{ {'lead':'Can apply as the lead applicant','partner':'Partner only','atypical':'Technically eligible, but aimed at others','ineligible':'Not eligible','unclear':'Unclear from the listing'}[r.ai.applicant_role] }}</dd>
+          <dt>Role for {{ agency.agency_short }}</dt><dd>{{ {'lead':'Can apply as the lead applicant','partner':'Partner only','atypical':'Technically eligible, but aimed at others','ineligible':'Not eligible','unclear':'Unclear from the listing'}[r.ai.applicant_role] }}</dd>
           <dt>Likely owning division</dt><dd>{{ divisions[r.ai.owning_division].name if r.ai.owning_division else 'not suggested' }}</dd>
           <dt>Deadline</dt><dd>{{ r.ai.deadline_note }}</dd>
           <dt>Biggest risk or gap</dt><dd>{{ r.ai.risk_or_gap }}</dd>
@@ -75,7 +75,7 @@
       <h2 id="ah-h">Who has won this funding before</h2>
       <p><strong>{{ r.award_history.verdict }}</strong> (USAspending.gov, awards under assistance listing {{ r.assistance_listings.split('|')[0] }}, FY2022–FY2025).</p>
       <dl class="facts">
-        <dt>NC DHHS received</dt><dd>{{ money(r.award_history.nc_dhhs_usd) }}</dd>
+        <dt>{{ agency.agency_short }} received</dt><dd>{{ money(r.award_history.agency_usd) }}</dd>
         <dt>Total awarded nationally</dt><dd>{{ money(r.award_history.total_usd) }}</dd>
         <dt>Share to state agencies</dt><dd>{{ '%.0f'|format(r.award_history.state_agency_share * 100) }}%</dd>
         {% if r.award_history.top_recipients %}<dt>Largest recipients</dt><dd>{{ r.award_history.top_recipients }}</dd>{% endif %}
@@ -105,7 +105,7 @@
         <input type="hidden" name="csrf" value="{{ csrf_token() }}">
         <input type="hidden" name="back" value="{{ back }}">
         <fieldset>
-          <legend>Should NC DHHS pursue this?</legend>
+          <legend>Should {{ agency.agency_short }} pursue this?</legend>
           {% set cur = (history[-1].decision if history else '') %}
           {% for c, hint in (('Pursue','route to a division'),('Maybe','look again later'),('Pass','not for us')) %}
           <div class="radio"><input type="radio" id="d-{{ c }}" name="decision" value="{{ c }}" required {% if cur == c %}checked{% endif %}><label for="d-{{ c }}">{{ c }} <span class="meta">{{ hint }}</span></label></div>

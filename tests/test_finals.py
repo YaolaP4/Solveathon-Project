@@ -283,11 +283,11 @@ def test_decision_requires_csrf_and_is_saved(client, tmp_store):
 def test_labeling_flow(client, tmp_store):
     token = _csrf(client, "/evaluation")
     assert client.post("/evaluation/sample", data={"csrf": token}).status_code == 302
-    sample = tmp_store.read_json("eval/sample.json")
+    sample = tmp_store.read_json("eval/ncdhhs/sample.json")
     first = sample["items"][0]["id"]
     r = client.post("/evaluation/label", data={"csrf": token, "id": first, "labeler": "A", "relevant": "yes"})
     assert r.status_code == 302
-    assert tmp_store.read_json("eval/labels.json")["labels"][0]["relevant"] is True
+    assert tmp_store.read_json("eval/ncdhhs/labels.json")["labels"][0]["relevant"] is True
     assert client.get("/evaluation").status_code == 200
 
 
@@ -326,25 +326,25 @@ def test_records_closed_since_the_refresh_are_hidden(client, monkeypatch):
     from datetime import date
     webapp._cache.clear()
     monkeypatch.setattr(webapp, "today_et", lambda: date(2027, 1, 5))    # after the CDC close date
-    html = client.get("/?track=all&confidence=all").get_data(as_text=True)
+    html = client.get("/?track=all&confidence=all&q=Overdose").get_data(as_text=True)
     assert "State Overdose Data to Action" not in html
     monkeypatch.setattr(webapp, "today_et", lambda: date(2026, 12, 30))
     webapp._cache.clear()
-    html = client.get("/?track=all&confidence=all").get_data(as_text=True)
+    html = client.get("/?track=all&confidence=all&q=Overdose").get_data(as_text=True)
     assert "State Overdose Data to Action" in html and "1 days" in html
 
 
 def test_label_page_uses_snapshot_when_item_is_gone(client, tmp_store):
     token = _csrf(client, "/evaluation")
     client.post("/evaluation/sample", data={"csrf": token})
-    sample = tmp_store.read_json("eval/sample.json")
+    sample = tmp_store.read_json("eval/ncdhhs/sample.json")
     assert all("snapshot" in it for it in sample["items"])
     # Keep only an item that is no longer in today's results.
     sample["items"] = [{"id": "gone", "stratum": "test", "title": "Closed grant",
                         "snapshot": {"number": "X-1", "agency": "A", "status": "posted", "close_date": "2026-11-08",
                                      "eligibility": "state_governments", "url": "https://www.grants.gov/x",
                                      "description": "desc", "eligibility_text": ""}}]
-    tmp_store.write_json("eval/sample.json", sample)
+    tmp_store.write_json("eval/ncdhhs/sample.json", sample)
     page = client.get("/evaluation/label?labeler=A").get_data(as_text=True)
     assert "Closed grant" in page and "you labeled all" not in page     # shown, not skipped as "done"
 
@@ -371,3 +371,39 @@ def test_concurrent_decisions_are_never_lost(tmp_path):
     with ThreadPoolExecutor(8) as pool:
         list(pool.map(lambda i: s.update_json("d.json", lambda cur: {"n": cur["n"] + [i]}, default={"n": []}), range(40)))
     assert sorted(s.read_json("d.json")["n"]) == list(range(40))
+
+
+# ── Multi-agency ──
+
+def test_every_profile_follows_the_template():
+    profiles = config.load_profiles()
+    assert [p["profile"]["agency_id"] for p in profiles][:1] == ["ncdhhs"] and len(profiles) >= 2
+    for p in profiles:
+        assert p["profile"]["plan_url"].startswith("https://www.osbm.nc.gov/")
+        assert 20 <= len(p["profile"]["keywords"]) <= 40
+        ids = [o["id"] for g in p["strategic_priorities"] for o in g["objectives"]]
+        assert len(ids) == len(set(ids)) and len(ids) >= 15
+        assert all(g.get("source") for g in p["strategic_priorities"])
+        assert all(o.get("source") for g in p["strategic_priorities"] for o in g["objectives"])
+        assert {"layer1", "layer5_award_history"} <= set(p)
+        import re as _re
+        _re.compile(p["profile"]["usaspending_recipient_pattern"])
+
+
+def test_job_publishes_a_list_per_agency_and_the_app_switches(client, tmp_store):
+    assert tmp_store.read_json("scored/ncdhhs/latest.json") and tmp_store.read_json("scored/ncdeq/latest.json")
+    assert tmp_store.read_json("profiles/ncdeq.json")["agency_short"] == "NC DEQ"
+    html = client.get("/?agency=ncdeq").get_data(as_text=True)
+    assert "Funding opportunities for NC DEQ" in html
+    assert "NCDEQ Strategic Plan" in client.get("/profile").get_data(as_text=True)     # remembered in the session
+    page = client.get("/statewide").get_data(as_text=True)
+    assert client.get("/statewide").status_code == 200 and "NC DHHS" in page and "NC DEQ" in page
+
+
+def test_funder_history_uses_each_agencys_own_name():
+    deq = next(p for p in config.load_profiles() if p["profile"]["agency_id"] == "ncdeq")
+    hist = {"66.458": {"total": 5e8, "state_agency": 4e8, "university": 0, "tribal": 0, "local_government": 1e8,
+                       "nonprofit_or_other": 0, "unclassified": 0, "nc_state_agency": 3e7, "top_recipients": "",
+                       "nc_recipients": [{"name": "NORTH CAROLINA DEPARTMENT OF ENVIRONMENTAL QUALITY", "amount": 3e7}]}}
+    s, reason, summary = matcher.affinity_signal(["66.458"], hist, deq["layer5_award_history"], True, deq)
+    assert s == 1.0 and "NC DEQ received $30.0M" in reason and summary["agency"] == "NC DEQ"

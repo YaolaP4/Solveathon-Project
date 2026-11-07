@@ -33,8 +33,33 @@ def api_key() -> str:
 
 
 def load_agency() -> dict:
+    """The qualifier's agency config (NCDHHS, 2023-2025 plan). The daily matchmaker uses load_profiles()."""
     with open(AGENCY_CONFIG, encoding="utf-8") as f:
         return json.load(f)
+
+
+PROFILES_DIR = ROOT / "agency" / "profiles"
+SHARED_SETTINGS = ("layer1", "layer5_award_history", "matchmaker")
+
+
+def load_profiles() -> list[dict]:
+    """Every agency profile in agency/profiles/*.json (one standard template per agency), NCDHHS first.
+    Rule settings that are the same for every agency (Layer 1 rules, award-history window) come from
+    agency/priorities.json unless a profile overrides them."""
+    base = load_agency()
+    out = []
+    for path in sorted(PROFILES_DIR.glob("*.json")):
+        with open(path, encoding="utf-8") as f:
+            prof = json.load(f)
+        for key in SHARED_SETTINGS:
+            if key not in prof and key in base:
+                prof[key] = base[key]
+        prof.setdefault("as_of_date", base.get("as_of_date"))
+        out.append(prof)
+    out.sort(key=lambda p: (p["profile"]["agency_id"] != "ncdhhs", p["profile"]["agency_id"]))
+    if not out:
+        raise RuntimeError(f"no agency profiles in {PROFILES_DIR}")
+    return out
 
 
 PROMPT_FIELDS = ("agency_name", "mission", "user", "strategic_priorities", "divisions")

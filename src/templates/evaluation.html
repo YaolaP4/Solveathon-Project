@@ -2,7 +2,7 @@
 {% block title %}Evaluation{% endblock %}
 {% block content %}
 <h1>Are the matches good?</h1>
-<p class="lede">Team members label a fixed sample of opportunities as relevant or not relevant for NC DHHS <strong>without seeing the score</strong>.
+<p class="lede">Team members label a fixed sample of opportunities as relevant or not relevant for {{ agency.agency_short }} <strong>without seeing the score</strong>.
 This page compares our ranking with a keyword-only ranking on those labels. Numbers update as labels come in.</p>
 
 {% if not sample %}
@@ -41,8 +41,8 @@ This page compares our ranking with a keyword-only ranking on those labels. Numb
     {% endif %}
     <tr><th scope="row">Labeler agreement</th>
       <td colspan="2">{% if m.agreement.pairs %}{{ m.agreement.agree }} of {{ m.agreement.pairs }} items labeled by both {{ m.agreement.labelers|join(' and ') }}{% if m.agreement.kappa is not none %} (Cohen's kappa {{ m.agreement.kappa }}){% endif %}{% else %}needs two labelers on the same items{% endif %}</td></tr>
-    <tr><th scope="row">Tuning check against the qualifier's AI-reviewed grants</th>
-      <td colspan="2">AUC 0.91 on 1,037 live grants the qualifier pipeline had already reviewed (reference labels, used for tuning only; <code>docs/tuning_report.md</code>)</td></tr>
+    {% if aid == 'ncdhhs' %}<tr><th scope="row">Tuning check against the qualifier's AI-reviewed grants</th>
+      <td colspan="2">See <code>docs/tuning_report.md</code>: AUC on the 1,037 live grants our qualifier pipeline had already reviewed (reference labels, used for tuning only)</td></tr>{% endif %}
     <tr><th scope="row">AI quotes checked word for word (latest refresh)</th>
       <td colspan="2">{% if doc.ai_stats and doc.ai_stats.reviewed %}{{ doc.ai_stats.quotes_verified }} of {{ doc.ai_stats.quotes_checked }} verified; {{ doc.ai_checks|length }} problems caught (below){% else %}AI rationales were not run in the latest refresh{% endif %}</td></tr>
   </tbody>

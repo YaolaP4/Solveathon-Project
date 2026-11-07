@@ -5,7 +5,7 @@
 <h1>Agency profile: {{ p.agency_name }}</h1>
 <p class="lede">What the matcher compares every opportunity against. Our team drafted it from the
 <a href="{{ p.source.url }}">{{ p.source.title }}</a> and a second teammate reviewed it. Every goal cites the plan's page numbers.
-To add another agency, copy this template (<code>agency/priorities.json</code>) and fill it in from that agency's plan.</p>
+Every agency uses the same template (<code>agency/profiles/</code>); adding one means filling it in from that agency's plan.</p>
 
 <section class="card">
   <h2>Mission</h2>
@@ -13,6 +13,12 @@ To add another agency, copy this template (<code>agency/priorities.json</code>) 
   <h2>Who uses the results</h2>
   <p>{{ p.user }}</p>
 </section>
+
+{% if p.department_priorities %}
+<h2>Department priority areas</h2>
+<ul>{% for d in p.department_priorities %}<li><strong>{{ d.id }}</strong> {{ d.text }} <span class="cite">({{ d.source }})</span></li>{% endfor %}</ul>
+<p class="note">Our team linked each priority area to the objectives it most relates to; the matcher reads it as extra context for those objectives.</p>
+{% endif %}
 
 <h2>Goals and objectives</h2>
 {% for g in p.goals %}

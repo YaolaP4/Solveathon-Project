@@ -1,0 +1,122 @@
+{
+  "agency_name": "North Carolina Department of Environmental Quality (NCDEQ)",
+  "agency_short": "NC DEQ",
+  "mission": "Providing science-based environmental stewardship for the health and prosperity of all North Carolinians.",
+  "user": "The NCDEQ grants coordinator, who watches federal funding notices for the department, decides which are worth pursuing, and routes each one to the division that would own the application.",
+  "strategic_priorities": [
+    {
+      "id": "G1", "name": "Environmental and Public Health Protection",
+      "description": "Protect public health by setting and implementing science-based standards and by providing technical, compliance, permitting and financial assistance to residents, communities, businesses, and local governments to meet or exceed requirements, prevent pollution, and improve public health.",
+      "source": "NCDEQ Strategic Plan 2025-2029, Goal 1, pp. 4-5",
+      "objectives": [
+        {"id": "1.A", "text": "Sustain and enhance water quality: water supply planning, invest state and federal water infrastructure funding in drinking water and wastewater projects for communities with the greatest need, manage pathogens, toxins and nutrients, and improve stormwater compliance.", "source": "Plan p. 4"},
+        {"id": "1.B", "text": "Protect outdoor, ambient air quality: air quality monitoring for hazardous and criteria pollutants, air permits, and compliance through inspections and technical assistance.", "source": "Plan p. 4"},
+        {"id": "1.C", "text": "Preserve and enhance land quality: brownfields redevelopment, assessment and remediation of solid waste, hazardous waste and Superfund sites, waste reduction and recovery, and dam safety.", "source": "Plan pp. 4-5"},
+        {"id": "1.D", "text": "Protect coastal resources and marine life: coastal habitat and fisheries management plans, watershed restoration with nature-based solutions, and enforcement in coastal waters.", "source": "Plan p. 5"},
+        {"id": "1.E", "text": "Promote environmental stewardship and sustainable practices among businesses and local governments through compliance and pollution prevention assistance, natural resource conservation and recycling programs.", "source": "Plan p. 5"}
+      ]
+    },
+    {
+      "id": "G2", "name": "Community Restoration and Resilience",
+      "description": "Support and accelerate the long-term recovery of communities devastated by Hurricane Helene and other natural disasters, and lead state efforts to strengthen communities' resiliency to future disasters.",
+      "source": "NCDEQ Strategic Plan 2025-2029, Goal 2, pp. 6-7",
+      "objectives": [
+        {"id": "2.A", "text": "Coordinate with state and local government on resilience partnerships and integrate data and science into grant programs and community projects.", "source": "Plan p. 6"},
+        {"id": "2.B", "text": "Support communities' efforts to build resilience to natural hazards and increasingly extreme weather and integrate resilience into long-term recovery.", "source": "Plan p. 6"},
+        {"id": "2.C", "text": "Support community flood resilience planning and projects using the North Carolina Flood Resiliency Blueprint across river basins.", "source": "Plan p. 6"},
+        {"id": "2.D", "text": "Use department resources to reduce the impacts of natural hazards such as flooding, landslides and dam breaches, and administer resilience grants directly to communities.", "source": "Plan p. 7"}
+      ]
+    },
+    {
+      "id": "G3", "name": "Forever Chemicals (PFAS)",
+      "description": "Protect North Carolina's people and natural resources from exposure to PFAS and other forever chemicals, using a transparent, collaborative, and science-based decision-making process.",
+      "source": "NCDEQ Strategic Plan 2025-2029, Goal 3, pp. 8-9",
+      "objectives": [
+        {"id": "3.A", "text": "Identify communities at risk of PFAS exposure, test private wells and provide alternate drinking water, reduce PFAS discharges, and expand scientific knowledge of PFAS health risks.", "source": "Plan p. 8"},
+        {"id": "3.B", "text": "Protect drinking water through science-based PFAS monitoring, reporting and pollution prevention requirements and technical assistance.", "source": "Plan p. 8"},
+        {"id": "3.C", "text": "Clean up existing PFAS contamination by remediating known sites that impact communities.", "source": "Plan pp. 8-9"},
+        {"id": "3.D", "text": "Communicate with and educate impacted communities and partners about forever chemicals.", "source": "Plan p. 9"}
+      ]
+    },
+    {
+      "id": "G4", "name": "Environmental Infrastructure",
+      "description": "Strengthen North Carolina's infrastructure through thoughtful and strategic investments.",
+      "source": "NCDEQ Strategic Plan 2025-2029, Goal 4, p. 10",
+      "objectives": [
+        {"id": "4.A", "text": "Use a unified approach across programs for infrastructure funding, in partnership with local governments and universities.", "source": "Plan p. 10"},
+        {"id": "4.B", "text": "Administer funding and programs for reliable, resilient and viable environmental infrastructure such as drinking water, wastewater and stormwater systems.", "source": "Plan p. 10"},
+        {"id": "4.C", "text": "Help utilities plan viable infrastructure, with a focus on distressed local government units, and make communities aware of infrastructure funding.", "source": "Plan p. 10"},
+        {"id": "4.D", "text": "Use federal and state funding efficiently for Hurricane Helene recovery and other disaster recovery, with technical assistance to grantees.", "source": "Plan p. 10"}
+      ]
+    },
+    {
+      "id": "G5", "name": "Community Engagement and Public Participation",
+      "description": "Ensure the meaningful involvement and fair treatment of all people with respect to the development, implementation, and enforcement of environmental laws, health safeguards, and policies.",
+      "source": "NCDEQ Strategic Plan 2025-2029, Goal 5, p. 11",
+      "objectives": [
+        {"id": "5.A", "text": "Make funding processes transparent and understandable to all communities, and alert residents and businesses to state and federal grant opportunities.", "source": "Plan p. 11"},
+        {"id": "5.B", "text": "Inform stakeholders about regulatory programs, provide community-level information and language access, and increase public participation.", "source": "Plan p. 11"},
+        {"id": "5.C", "text": "Encourage stakeholder engagement on issues of concern to economically disadvantaged communities.", "source": "Plan p. 11"}
+      ]
+    },
+    {
+      "id": "G6", "name": "Modernize DEQ",
+      "description": "Modernize processes and foster innovation to enhance efficiency in services, increase transparency, and strengthen partnerships to better serve all stakeholders and the general public.",
+      "source": "NCDEQ Strategic Plan 2025-2029, Goal 6, p. 12",
+      "objectives": [
+        {"id": "6.A", "text": "Modernize permit, compliance and inspection processes and reduce permit backlogs.", "source": "Plan p. 12"},
+        {"id": "6.B", "text": "Develop secure digital solutions, cyber security, and explore artificial intelligence for agency business.", "source": "Plan p. 12"},
+        {"id": "6.C", "text": "Enhance technical assistance and regional office support for permit applicants, businesses and the public.", "source": "Plan p. 12"}
+      ]
+    },
+    {
+      "id": "G7", "name": "Work Environment",
+      "description": "Create a work environment where employees feel valued and are empowered to be active participants in developing science-based solutions to better protect public health and the environment.",
+      "source": "NCDEQ Strategic Plan 2025-2029, Goal 7, p. 13",
+      "objectives": [
+        {"id": "7.A", "text": "Foster creativity, collaboration and joint research projects with academia and external partners.", "source": "Plan p. 13"},
+        {"id": "7.B", "text": "Provide professional development, career pathways and recruitment for environmental workforce.", "source": "Plan p. 13"},
+        {"id": "7.C", "text": "Cultivate leadership, mentoring and teamwork across divisions.", "source": "Plan p. 13"}
+      ]
+    }
+  ],
+  "divisions": [
+    {"id": "DAQ", "name": "Division of Air Quality", "scope": "air quality monitoring, air permits, emissions, mobile sources, compliance"},
+    {"id": "DWR", "name": "Division of Water Resources", "scope": "water quality standards and monitoring, water supply planning, nonpoint source and nutrient management, wetlands, groundwater"},
+    {"id": "DWI", "name": "Division of Water Infrastructure", "scope": "drinking water and clean water state revolving funds, wastewater and stormwater infrastructure grants and loans, lead service lines, viable utilities"},
+    {"id": "DWM", "name": "Division of Waste Management", "scope": "solid and hazardous waste, Superfund, brownfields, underground storage tanks, PFAS remediation"},
+    {"id": "DEMLR", "name": "Division of Energy, Mineral and Land Resources", "scope": "stormwater permits, erosion and sediment control, dam safety, mining, geological survey"},
+    {"id": "DCM", "name": "Division of Coastal Management", "scope": "coastal zone management, coastal resilience, estuarine reserves, coastal permits"},
+    {"id": "DMF", "name": "Division of Marine Fisheries", "scope": "marine and estuarine fisheries management, habitat protection, fisheries enforcement"},
+    {"id": "DEACS", "name": "Division of Environmental Assistance and Customer Service", "scope": "pollution prevention, recycling and waste reduction, environmental stewardship, permit assistance"},
+    {"id": "SEO", "name": "State Energy Office", "scope": "energy efficiency, clean energy, weatherization and energy programs"},
+    {"id": "DMS", "name": "Division of Mitigation Services", "scope": "stream and wetland restoration, watershed mitigation"},
+    {"id": "OSEC", "name": "Office of the Secretary and central administration", "scope": "resilience coordination, PFAS science, community engagement, digital services, workforce, federal funds"}
+  ],
+  "profile": {
+    "_comment": "Starter-kit profile fields (sec. 5.1). Objective text condenses the plan's objective and its listed strategies in the plan's own words. Division list is our summary of the DEQ organization and should be checked against the current org chart.",
+    "agency_id": "ncdeq",
+    "plan_title": "NCDEQ Strategic Plan 2025-2029",
+    "plan_url": "https://www.osbm.nc.gov/strategic-plan-deq/download?attachment",
+    "plan_published": "2025",
+    "reviewed_by": "Team (two-person review)",
+    "program_areas": ["Drinking water and wastewater infrastructure", "Water quality and stormwater", "Air quality", "Brownfields, Superfund and waste management", "PFAS and emerging contaminants", "Coastal resources and marine fisheries", "Flood resilience and disaster recovery", "Dam safety and land resources", "Energy efficiency and clean energy", "Pollution prevention and recycling", "Environmental data, permitting and digital services"],
+    "keywords": ["water quality", "drinking water", "wastewater", "stormwater", "water infrastructure", "clean water", "state revolving fund", "lead service line", "PFAS", "forever chemicals", "emerging contaminants", "air quality", "air monitoring", "emissions", "brownfields", "Superfund", "hazardous waste", "solid waste", "recycling", "dam safety", "coastal", "estuarine", "fisheries", "marine", "watershed", "wetlands", "flood", "resilience", "hurricane", "disaster recovery", "nonpoint source", "nutrient", "groundwater", "erosion", "sediment", "pollution prevention", "energy efficiency", "clean energy", "weatherization", "environmental monitoring"],
+    "eligible_applicant_types": ["state_governments"],
+    "eligibility_note": "NCDEQ applies as a state government agency. Many water and resilience programs also fund local governments directly; those are flagged so DEQ can support or pass through.",
+    "related_federal_agencies": ["Environmental Protection Agency", "Department of Commerce", "Department of the Interior", "Department of Energy", "Department of Homeland Security", "Department of Agriculture"],
+    "usaspending_recipient_pattern": "NORTH CAROLINA DEP(ARTMEN)?T\\.? OF ENVIRONMENT|ENVIRONMENTAL QUALITY,? NORTH CAROLINA|\\bN\\.?C\\.? DEP(ARTMEN)?T\\.? OF ENVIRONMENT",
+    "off_topic_anchors": [
+      "Health care, Medicaid, hospitals, behavioral health, substance use treatment and social services for individuals and families.",
+      "Defense, military, Navy, Army, Air Force and national security research, technology development and procurement.",
+      "Arts, humanities, museums, libraries, archives and cultural heritage projects.",
+      "International development, foreign assistance, diplomacy, embassy public diplomacy and international exchange programs abroad.",
+      "Biomedical laboratory research on disease mechanisms, genetics, molecular biology and clinical trials at research institutions.",
+      "Small business innovation research, technology commercialization and economic development for businesses.",
+      "Higher education, STEM education, graduate fellowships and postdoctoral research training.",
+      "Law enforcement, courts, criminal justice, victim services and juvenile justice programs.",
+      "Early childhood education, K-12 schools, child care and youth development programs.",
+      "Basic scientific research in physics, astronomy, chemistry and mathematics led by universities."
+    ]
+  }
+}

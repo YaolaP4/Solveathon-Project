@@ -10,18 +10,26 @@
 <body>
 <a class="skip" href="#main">Skip to main content</a>
 <div class="proto-banner" role="note">
-  <div class="wrap">Prototype built for the UNC Solve-a-thon 2026. Not an official NC DHHS website. Public data from Grants.gov and USAspending.gov.</div>
+  <div class="wrap">Prototype built for the UNC Solve-a-thon 2026. Not an official State of North Carolina website. Public data from Grants.gov and USAspending.gov.</div>
 </div>
 <header class="site-header">
   <div class="wrap header-inner">
     <div class="brand">
       <a href="{{ url_for('shortlist') }}" class="brand-name">Federal Funds Matchmaker</a>
-      <span class="brand-sub">Federal grant opportunities ranked against the NC DHHS Strategic Plan</span>
+      <span class="brand-sub">Federal grant opportunities ranked against each agency’s own strategic plan</span>
     </div>
+    <form method="get" action="{{ request.path if request.endpoint not in ('detail', 'decide') else url_for('shortlist') }}" class="agency-switch">
+      <label for="agency-select">Agency</label>
+      <select id="agency-select" name="agency">
+        {% for a in agencies %}<option value="{{ a.profile.agency_id }}" {% if a.profile.agency_id == aid %}selected{% endif %}>{{ a.agency_short }}</option>{% endfor %}
+      </select>
+      <button type="submit" class="btn-small">Show</button>
+    </form>
     <nav aria-label="Main">
       <ul class="nav">
         {% set ep = request.endpoint %}
         <li><a href="{{ url_for('shortlist') }}" {% if ep in ('shortlist','detail') %}aria-current="page"{% endif %}>Shortlist</a></li>
+        <li><a href="{{ url_for('statewide') }}" {% if ep == 'statewide' %}aria-current="page"{% endif %}>Statewide</a></li>
         <li><a href="{{ url_for('goals_view') }}" {% if ep == 'goals_view' %}aria-current="page"{% endif %}>Funding by goal</a></li>
         <li><a href="{{ url_for('evaluation') }}" {% if ep in ('evaluation','label') %}aria-current="page"{% endif %}>Evaluation</a></li>
         <li><a href="{{ url_for('status') }}" {% if ep == 'status' %}aria-current="page"{% endif %}>Data refresh</a></li>

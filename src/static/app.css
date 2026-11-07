@@ -47,6 +47,10 @@ pre { padding: .75rem; overflow-x: auto; }
 .header-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem 2rem; padding-top: .9rem; padding-bottom: .9rem; }
 .brand-name { color: #fff !important; font-size: 1.35rem; font-weight: 700; text-decoration: none; display: block; }
 .brand-sub { color: #d9e8f6; font-size: .9rem; }
+.agency-switch { display: flex; align-items: center; gap: .4rem; }
+.agency-switch label { color: #fff; font-weight: 600; margin: 0; }
+.agency-switch select { width: auto; min-height: 2rem; padding: .2rem .4rem; }
+.agency-switch .btn-small { margin: 0; }
 .nav { list-style: none; display: flex; flex-wrap: wrap; gap: .25rem 1.1rem; margin: 0; padding: 0; }
 .nav a { color: #fff; text-decoration: none; padding: .35rem 0; display: inline-block; border-bottom: 3px solid transparent; }
 .nav a:hover, .nav a[aria-current="page"] { border-bottom-color: #73b3e7; }
@@ -170,10 +174,10 @@ tr.gap th, tr.gap td { background: #fff8f0; }
   .detail-grid > *, .card { min-width: 0; }
   .breakdown .pts { white-space: normal; }
   .breakdown meter { width: 100%; display: block; }
-  table.results thead, table.labeled thead, table.runs thead { position: absolute; left: -9999px; }
-  table.results tr, table.labeled tr, table.runs tr { display: block; border: 1px solid var(--line); margin-bottom: .75rem; padding: .25rem .5rem; }
-  table.results td, table.labeled td, table.runs td { display: block; border: 0; padding: .3rem 0; text-align: left !important; }
-  table.results td::before, table.labeled td::before, table.runs td::before { content: attr(data-label); display: block; font-size: .78rem; font-weight: 700; color: var(--muted); text-transform: uppercase; }
+  table.results thead, table.labeled thead, table.runs thead, table.statewide thead, table.shared thead { position: absolute; left: -9999px; }
+  table.results tr, table.labeled tr, table.runs tr, table.statewide tr, table.shared tr { display: block; border: 1px solid var(--line); margin-bottom: .75rem; padding: .25rem .5rem; }
+  table.results td, table.labeled td, table.runs td, table.statewide td, table.statewide th, table.shared td { display: block; border: 0; padding: .3rem 0; text-align: left !important; }
+  table.results td::before, table.labeled td::before, table.runs td::before, table.statewide td::before, table.shared td::before { content: attr(data-label); display: block; font-size: .78rem; font-weight: 700; color: var(--muted); text-transform: uppercase; }
   table.results td.num::before { display: inline; margin-right: .5rem; }
   .facts { grid-template-columns: 1fr; }
   .facts dd { margin-bottom: .4rem; }
