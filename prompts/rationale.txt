@@ -41,9 +41,11 @@ Return this JSON object:
   "fits_matched_goal": <true if the funded activity genuinely advances the matched objective, otherwise false>,
   "better_goal_id": "<a different goal id (G1-G5) if it fits another goal better, else empty string>",
   "evidence_quote": "<verbatim phrase from the ANNOUNCEMENT TEXT that shows what the grant funds>",
-  "applicant_role": "<lead | partner | atypical | ineligible | unclear: can a state health and human services agency apply as the lead applicant, only as a partner, technically but unusually (e.g. research grants aimed at universities), not at all, or unclear>",
-  "eligibility_notes": "<one sentence on who can apply and whether a state agency can; 'not stated' if the text says nothing>",
+  "applicant_role": "<lead | partner | atypical | ineligible | unclear: can {agency_name}, a North Carolina state agency, apply as the lead applicant, only as a partner, technically but unusually (e.g. research grants aimed at universities), not at all, or unclear. Use ineligible when the text limits applicants to types that exclude state agencies, or limits the funding to states or regions that do not include North Carolina, and give that text as eligibility_quote>",
+  "eligibility_notes": "<one sentence on who can apply and whether a North Carolina state agency can, including any geographic limit; 'not stated' if the text says nothing>",
   "eligibility_quote": "<verbatim phrase from the ELIGIBILITY TEXT or ANNOUNCEMENT TEXT about who may apply; empty string if there is none>",
+  "excludes_north_carolina": <true only if the text limits the funding to specific states or regions that do not include North Carolina (for example only Gulf Coast or only Western states), otherwise false>,
+  "geographic_quote": "<verbatim phrase from the text that states that geographic limit; empty string if there is none>",
   "owning_division": "<division id from the list, or none>",
   "deadline_note": "<the application deadline and any other dates stated, or 'not stated'>",
   "risk_or_gap": "<the single biggest risk, requirement or gap (cost share, required partners, narrow eligibility, small award, short timeline); 'none stated' if none>"

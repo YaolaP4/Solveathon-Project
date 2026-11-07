@@ -177,9 +177,15 @@ def test_ai_can_only_move_or_downgrade_never_rescore():
                        {"grant_id": "b", "score": 65.0, "confidence": "High", "track": "agency", "matched_objective_id": "G1.O1"},
                        {"grant_id": "c", "score": 60.0, "confidence": "High", "track": "agency", "matched_objective_id": "G2.O1"}])
     reviews = {"a": {"applicant_role": "ineligible", "eligibility_verified": True, "fits_matched_goal": True},
-               "b": {"applicant_role": "lead", "eligibility_verified": True, "fits_matched_goal": False}}
+               "b": {"applicant_role": "lead", "eligibility_verified": True, "fits_matched_goal": False},
+               "c": {"applicant_role": "lead", "eligibility_verified": True, "fits_matched_goal": True,
+                     "excludes_north_carolina": True, "geographic_verified": False}}     # unverified: not acted on
     out = rationale.apply(df, reviews).set_index("grant_id")
     assert out.loc["a", "track"] == "not_eligible"
+    assert out.loc["c", "track"] == "agency"
+    reviews["c"]["geographic_verified"] = True          # verified geographic limit: flagged and lowered, not removed
+    c = rationale.apply(df, reviews).set_index("grant_id").loc["c"]
+    assert c["track"] == "agency" and c["confidence"] == "Medium" and "geographic" in c["review_adjustment"]
     assert out.loc["b", "confidence"] == "Medium"
     assert out.loc["c", "confidence"] == "High"
     assert list(out["score"]) == [70.0, 65.0, 60.0]

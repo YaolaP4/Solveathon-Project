@@ -38,7 +38,8 @@
         <p>{{ r.ai.summary }}</p>
         <dl class="facts">
           <dt>Who can apply</dt><dd>{{ r.ai.eligibility_notes }}
-            {% if r.ai.eligibility_quote and r.ai.eligibility_verified %}<span class="cite">Listing says: “{{ r.ai.eligibility_quote }}” (checked word for word)</span>{% endif %}</dd>
+            {% if r.ai.eligibility_quote and r.ai.eligibility_verified %}<span class="cite">Listing says: “{{ r.ai.eligibility_quote }}” (checked word for word)</span>{% endif %}
+            {% if r.ai.excludes_north_carolina and r.ai.geographic_verified %}<span class="cite"><strong>Geographic limit excludes North Carolina:</strong> “{{ r.ai.geographic_quote }}” (checked word for word)</span>{% endif %}</dd>
           <dt>Role for {{ agency.agency_short }}</dt><dd>{{ {'lead':'Can apply as the lead applicant','partner':'Partner only','atypical':'Technically eligible, but aimed at others','ineligible':'Not eligible','unclear':'Unclear from the listing'}[r.ai.applicant_role] }}</dd>
           <dt>Likely owning division</dt><dd>{{ divisions[r.ai.owning_division].name if r.ai.owning_division else 'not suggested' }}</dd>
           <dt>Deadline</dt><dd>{{ r.ai.deadline_note }}</dd>

@@ -93,13 +93,23 @@ unique text once and asserting the cache stays in step.
 (50,000 tokens a minute); the first full embedding pass would have taken about 30 minutes. We raised it to
 1,000 for embeddings and 500 for chat (billing is per token, so it costs the same).
 
-**5. A false positive we have not fixed yet (NC DEQ).** An EPA opportunity open only to Indian tribes and
-intertribal consortia ranks #11 for DEQ: its text is squarely environmental, and our eligibility rule only
-catches "tribes only" when the eligibility field says so in set words. Staff see the eligibility list on the
-record, so it would be passed in seconds; the fix is to read the funding-instrument eligibility codes more
-strictly and to let the AI review's "ineligible" verdict demote it (it already can, with a verified quote).
+**5. A false positive our rules missed (NC DEQ).** An EPA opportunity open only to Indian tribes and
+intertribal consortia ranked #11 for DEQ: its text is squarely environmental, and our eligibility rule only
+catches "tribes only" when the eligibility field says so in set words. The AI review now quotes the eligibility
+text that excludes state agencies, and a verified quote moves it to the "not eligible" list, where staff can
+still see it.
 
-**6. An independent AI review of our own app found 19 problems.** We asked a separate AI reviewer to try to
+**6. The AI caught a false positive our score could not, then made one of its own.** NC DEQ's #1 match was a
+RESTORE Act grant that only funds Gulf Coast states. The score cannot see geography, but the AI review's risk
+line said so. We added an explicit "excludes North Carolina?" answer with its own verified quote, and at first
+let a verified "yes" move the record off the shortlist. That correctly removed the RESTORE Act grants and
+Western-states-only WaterSMART programs, but it also hid a DHHS program for **women living with HIV in the
+South**: the model read HHS's standard clause that territories *may also* apply as a limit. The quote was
+real, so the checker passed it; the reading was wrong. *What we changed:* a geographic limit now **flags the
+record and lowers confidence one step**, with the quote shown, instead of removing it. A missed grant costs more
+than a minute spent passing a bad match, so the human sees it and decides.
+
+**7. An independent AI review of our own app found 19 problems.** We asked a separate AI reviewer to try to
 break the web app. It found real issues we had missed, including the detail page being 6,800 px wide on a
 phone, spreadsheet formulas being injectable through the CSV export, deadlines going stale when a refresh
 fails, and anonymous decisions. We checked each finding against the code and fixed 18; the 19th (no sign-in)

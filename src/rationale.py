@@ -11,8 +11,9 @@ Python then checks the model's work, as in the qualifier's Layer 3:
 Every caught problem goes to the AI check log shown on the Evaluation page.
 
 The model never changes the score. It can only (a) move a record to the "not eligible" list
-when it proves, with a verified quote, that a state agency cannot apply, and (b) lower the
-confidence band one step when it says the match to the plan objective is wrong.
+when it proves, with a verified quote, that a state agency cannot apply, (b) lower the confidence
+band one step when it says the match to the plan objective is wrong, and (c) lower it one step and
+flag it when it quotes a geographic limit that would exclude North Carolina.
 
 Answers are cached in storage (cache/rationales/), keyed by the prompt version, the record's
 text and its matched objective, so the daily job only pays for new or changed records.
@@ -92,10 +93,11 @@ def check(answer: dict, r: pd.Series, agency: dict) -> tuple[dict, list[dict]]:
 
     a = {k: answer.get(k) for k in ["summary", "why_it_matches", "fits_matched_goal", "better_goal_id", "evidence_quote",
                                     "applicant_role", "eligibility_notes", "eligibility_quote", "owning_division",
-                                    "deadline_note", "risk_or_gap"]}
-    for k in ["summary", "why_it_matches", "eligibility_notes", "deadline_note", "risk_or_gap", "evidence_quote", "eligibility_quote"]:
+                                    "deadline_note", "risk_or_gap", "excludes_north_carolina", "geographic_quote"]}
+    for k in ["summary", "why_it_matches", "eligibility_notes", "deadline_note", "risk_or_gap", "evidence_quote",
+              "eligibility_quote", "geographic_quote"]:
         a[k] = str(a[k] or "").strip()
-    for k in ["evidence_quote", "eligibility_quote"]:       # "no quote" answers are not quotes
+    for k in ["evidence_quote", "eligibility_quote", "geographic_quote"]:       # "no quote" answers are not quotes
         if a[k].lower().strip(" .'\"") in {"not stated", "n/a", "na", "none", "no quote"}:
             a[k] = ""
     a["evidence_verified"] = quote_in_source(_q(a["evidence_quote"]), src)
@@ -104,6 +106,12 @@ def check(answer: dict, r: pd.Series, agency: dict) -> tuple[dict, list[dict]]:
     a["eligibility_verified"] = quote_in_source(_q(a["eligibility_quote"]), src)
     if a["eligibility_quote"] and not a["eligibility_verified"]:
         log("quote_not_in_source", f"eligibility quote not found verbatim: '{a['eligibility_quote'][:120]}'")
+    a["geographic_verified"] = quote_in_source(_q(a["geographic_quote"]), src)
+    excl = a["excludes_north_carolina"]
+    a["excludes_north_carolina"] = excl is True or str(excl).lower() == "true"
+    if a["excludes_north_carolina"] and not a["geographic_verified"]:
+        log("unsupported_claim", "said the funding excludes North Carolina but gave no verified quote; not acted on")
+        a["excludes_north_carolina"] = False
     role = str(a["applicant_role"] or "").strip().lower()
     if role not in ROLES:
         log("invalid_value", f"applicant_role '{role}' is not one of {sorted(ROLES)}")
@@ -134,12 +142,16 @@ def review_one(r: pd.Series, agency: dict, store) -> tuple[dict | None, list[dic
     cached = store.read_json(key)
     usage = {}
     if cached is None:
-        content, usage = aoai.chat_json(system, user)
+        content, usage = aoai.chat_json(system, user, max_tokens=1600)
         try:
             answer = json.loads(content)
-        except json.JSONDecodeError:
-            return None, [{"grant_id": r["grant_id"], "title": r["opportunity_title"], "kind": "invalid_json",
-                           "detail": content[:200]}], usage
+        except json.JSONDecodeError:      # usually a cut-off answer: retry once with more room
+            content, usage = aoai.chat_json(system, user, max_tokens=3000)
+            try:
+                answer = json.loads(content)
+            except json.JSONDecodeError:
+                return None, [{"grant_id": r["grant_id"], "title": r["opportunity_title"], "kind": "invalid_json",
+                               "detail": content[:200]}], usage
         store.write_json(key, {"answer": answer, "model": aoai.chat_deployment()})
     else:
         answer = cached["answer"]
@@ -197,7 +209,14 @@ def apply(scored: pd.DataFrame, reviews: dict) -> pd.DataFrame:
         if isinstance(a, dict):
             if a["applicant_role"] == "ineligible" and a["eligibility_verified"] and r["track"] == "agency":
                 out.at[i, "track"] = "not_eligible"
-                note = "moved to 'not eligible': AI review quoted eligibility text that excludes state agencies"
+                note = "moved to 'not eligible': AI review quoted eligibility text that excludes this agency"
+            elif a.get("excludes_north_carolina") and a.get("geographic_verified") and r["track"] == "agency":
+                # Flag, do not remove: the model once read a standard "territories may also apply" clause as a
+                # limit and would have hidden an HIV program for the South. A missed grant costs more than a
+                # minute spent passing a bad match, so staff see it with the quote and decide.
+                out.at[i, "confidence"] = DOWNGRADE[r["confidence"]]
+                note = (f"check eligibility: AI review quoted a possible geographic limit that excludes North Carolina"
+                        f" (confidence lowered from {r['confidence']})")
             elif not a["fits_matched_goal"] and r["confidence"] != "Low":
                 out.at[i, "confidence"] = DOWNGRADE[r["confidence"]]
                 note = f"confidence lowered from {r['confidence']}: AI review says the match to {r['matched_objective_id']} is weak"
