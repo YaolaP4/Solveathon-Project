@@ -457,7 +457,7 @@ def status():
     store = get_store()
     runs = []
     for p in sorted(store.list("runs/"), reverse=True):
-        if p.endswith("latest.json"):
+        if p.endswith(("latest.json", "last_attempt.json")):   # pointers, not runs
             continue
         runs.append(store.read_json(p))
         if len(runs) >= 14:
