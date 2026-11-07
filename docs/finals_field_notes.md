@@ -81,8 +81,7 @@ Re-running it as a script exposed this; the numbers above are from the corrected
   deployed run, apparently blending "DSS" and "DCFW").
 *How we caught it:* every quote is checked against the listing text by code; a failed quote is hidden from
 staff and logged on the Evaluation page; unknown ids are dropped. An unverified "not eligible" claim is never
-acted on. In the deployed run on 7 November: **77 of 90 quotes verified word for word, 3 rejected and hidden,
-the rest left blank** (the model said there was no quote); 6 problems logged in all.
+acted on. In the first deployed run (NC DHHS only) 77 of 90 quotes were verified word for word; in the final 7 November run for both agencies, **162 of 178** were, and every failure is listed on the Evaluation page.
 
 **3. Our AI coding assistant introduced a cache bug.** Re-running the job showed "0 cached, 1,443 new"
 embeddings. Three identical re-posted listings were embedded twice but stored once, so the cache's row count
