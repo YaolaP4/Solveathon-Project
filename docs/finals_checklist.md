@@ -57,13 +57,14 @@ prototype "is expected to run on Azure". It is deployed:
 
 | Deliverable | Status |
 |---|---|
-| Working prototype on Azure (test on a phone hotspot) | ✅ / 👥 deployed; someone should open it on a phone |
-| Backup: screen recording + screenshots in the slides | 👥 record after the job has run (script in the deck notes) |
-| 6-minute deck | ⏳ |
-| Solution Design document | ⏳ architecture + security diagrams generated with the provided skill (`docs/diagrams/`) |
-| GenAI Field Notes | ⏳ |
-| Repository + README a state developer could pick up | ⏳ |
+| Working prototype on Azure (test on a phone hotspot) | ✅ / 👥 deployed and checked at phone width; someone should open it on a real phone |
+| Backup: screen recording + screenshots in the slides | ✅ screenshots on slides 5–6 / 👥 record the live demo (script in the slide notes) |
+| 6-minute deck | ✅ 12 slides with speaker notes (Slides artifact; download as PowerPoint or PDF). 👥 Fill the bracketed precision@10 and agreement numbers after labeling |
+| Solution Design document | ✅ `docs/solution_design.pdf` (architecture, services, data contract, scoring, threats); full diagrams and threat model in `docs/diagrams/` |
+| GenAI Field Notes | ✅ `docs/finals_field_notes.pdf` |
+| Repository + README a state developer could pick up | ✅ `README.md`; pull request #10 |
 | No secrets in the repo | ✅ keys only as Container Apps secrets; `.env` ignored by git and by the image build |
+| Stakeholder map (provided skill) | ✅ `docs/diagrams/ffm-stakeholder-map/report.html`. 👥 fill in "reviewed by" |
 
 ## Azure resources (team subscription `unc-sdis-solveathon-team14`, resource group `rg-ffm-team14`)
 
