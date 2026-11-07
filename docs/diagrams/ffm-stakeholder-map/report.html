@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FFM Stakeholder Map</title>
+<style>
+:root{--blue:#08427B;--mid:#1168BD}
+*{box-sizing:border-box} body{margin:0;background:#F4F6F9;color:#222;font:15px/1.55 "Segoe UI",Arial,Helvetica,sans-serif}
+main{max-width:1180px;margin:0 auto;background:#FFF;padding:40px 48px;box-shadow:0 0 12px rgba(0,0,0,.08)}
+header{border-bottom:4px solid var(--mid);margin-bottom:24px;padding-bottom:12px}
+h1{color:var(--blue);margin:0 0 6px;font-size:30px;line-height:1.25} h2{color:var(--blue);border-bottom:1px solid #DDD;padding-bottom:4px;margin-top:36px}
+.meta{color:#555;font-size:14px} header .meta span{margin-right:18px;display:inline-block}
+nav{background:#F2F6FB;border:1px solid #DCE6F2;padding:10px 16px;border-radius:6px;font-size:14px} nav a{margin-right:14px;color:var(--mid);text-decoration:none;display:inline-block}
+figure{margin:16px 0;border:1px solid #DDD;border-radius:6px;padding:8px;background:#FFF} figure svg{width:100%;height:auto;display:block} figcaption{font-size:13px;color:#555;padding:6px 4px 0}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13.5px;margin:10px 0} th{background:var(--blue);color:#FFF;text-align:left;padding:7px 8px;vertical-align:bottom} td{border-bottom:1px solid #E3E3E3;padding:6px 8px;vertical-align:top} tr:nth-child(even) td{background:#F8FAFC}
+.chip{display:inline-block;padding:1px 9px;border-radius:10px;font-size:12px;font-weight:700;color:#FFF;white-space:nowrap}
+.high{background:#C62828}.med{background:#EF6C00}.low{background:#F9A825;color:#222}
+.champ{background:#1B7837}.supp{background:#7FBF7B;color:#222}.neut{background:#BDBDBD;color:#222}.scep{background:#F1A340;color:#222}.block{background:#B2182B}
+.assumed{color:#8A5A00;font-weight:600}
+.callout{background:#FFF8E1;border-left:4px solid #F9A825;padding:10px 14px;border-radius:4px;font-size:14px}
+td.raci{text-align:center;font-weight:700;white-space:nowrap}
+tr:nth-child(even) td.r,td.r{background:#1168BD;color:#FFF} tr:nth-child(even) td.a,td.a{background:#08427B;color:#FFF}
+tr:nth-child(even) td.c,td.c{background:#DCE6F2} tr:nth-child(even) td.i,td.i{background:#F2F2F2}
+dl{display:grid;grid-template-columns:200px 1fr;gap:6px 14px;font-size:14px} dt{font-weight:700}
+footer{margin-top:40px;font-size:12px;color:#777;border-top:1px solid #DDD;padding-top:10px}
+@media (max-width:700px){main{padding:20px 16px} dl{grid-template-columns:1fr}}
+@media print{body{background:#FFF} main{box-shadow:none;padding:0;max-width:none} nav{display:none} figure,tr{page-break-inside:avoid} h2{page-break-after:avoid} .tablewrap{overflow:visible}}
+</style>
+</head><body><main>
+<header>
+<h1>Federal Funds Matchmaker for NC DHHS: Stakeholder Map</h1>
+<div class="meta"><span><b>Team:</b> Team 14, UNC Solve-a-thon 2026</span><span><b>Date:</b> 2026-11-07</span><span><b>Version:</b> 1.0</span><span><b>Status:</b> Draft for review</span></div>
+<div class="meta">Generated with AI assistance; reviewed by: ____</div>
+</header>
+<nav><a href="#summary">Summary</a><a href="#grid">Power/Interest</a><a href="#register">Register</a><a href="#onion">Onion</a><a href="#raci">RACI</a><a href="#engage">Engagement</a><a href="#risks">Risks</a><a href="#assumptions">Assumptions</a><a href="#glossary">Glossary</a></nav>
+
+<h2 id="summary">1. Summary</h2>
+<p>The matchmaker succeeds or fails with the <b>DHHS federal-grants coordinator</b> (S1), who reviews the daily shortlist and records Pursue / Maybe / Pass, and with the <b>division program leads</b> (S2) who receive routed opportunities; together with <b>DHHS executive leadership</b> (S3) and <b>division directors</b> (S4), who decide whether to apply, they sit in <i>Manage Closely</i>. <b>NCDIT</b> (S6) and the <b>DHHS privacy and security office</b> (S7) can approve or stop a pilot but have little reason to look at the prototype yet, so the biggest stakeholder lever is to engage them early with the team's architecture and security diagrams and a plain list of known gaps (no sign-in yet; a connection string and keys instead of managed identity). <b>Division program staff</b> (S5) may be sceptical of AI recommendations and extra work; the design answers this with verbatim-checked quotes, a visible score breakdown, an AI that cannot set the score, and a person making every decision. Two dependencies sit outside state government: <b>Grants.gov</b> (S13), whose public API feeds every run, and the <b>event Azure subscription</b> (S11), which the team will delete after judging (deploy/99_teardown.sh), so a named DHHS owner and host are needed before any pilot.</p>
+<p class="callout">All power, interest and attitude scores are team estimates (<span class="assumed">ASSUMED</span>) until checked with the stakeholders themselves; see section 8.</p>
+
+<h2 id="grid">2. Power/interest grid</h2>
+<figure>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1440 1010" width="1440" height="1010" role="img" aria-labelledby="fig1-t fig1-d" font-family="Segoe UI, Arial, Helvetica, sans-serif">
+  <title id="fig1-t">Federal Funds Matchmaker for NC DHHS: Stakeholder Power/Interest Grid</title>
+  <desc id="fig1-d">Mendelow power/interest grid placing 18 stakeholders in four quadrants. Manage Closely: S1 federal-grants coordinator, S2 division program leads, S3 DHHS executive leadership, S4 division directors, S9 NC OSBM. Keep Satisfied: S6 NCDIT security and privacy, S7 DHHS privacy and security office, S8 procurement and legal, S11 Solve-a-thon hosts, S13 Grants.gov. Keep Informed: S5 division program staff, S10 Team 14, S16 local health departments and community organizations. Monitor: S12 Microsoft Azure, S14 USAspending.gov, S15 federal awarding agencies, S17 NC residents, S18 grant-writing consultants. Marker colour shows attitude; a solid outline marks stakeholders inside NC state government and a dashed outline marks external stakeholders; dashed arrows show the desired rise in interest for S3, S6 and S7.</desc>
+  <defs><marker id="fig1-arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker></defs>
+  <rect width="1440" height="1010" fill="#FFF"/>
+  <text x="40" y="42" font-size="26" font-weight="700" fill="#08427B">Federal Funds Matchmaker for NC DHHS: Stakeholder Power/Interest Grid</text>
+  <text x="40" y="68" font-size="14" fill="#555">Team 14, UNC Solve-a-thon 2026 • Mendelow power/interest matrix • 2026-11-07 • v1.0</text>
+  <rect x="140" y="110" width="410" height="410" fill="#FFF4E5"/>
+  <rect x="550" y="110" width="410" height="410" fill="#FDECEA"/>
+  <rect x="140" y="520" width="410" height="410" fill="#F5F5F5"/>
+  <rect x="550" y="520" width="410" height="410" fill="#E8F1FB"/>
+  <rect x="140" y="110" width="820" height="820" fill="none" stroke="#9E9E9E" stroke-width="1.5"/>
+  <line x1="550" y1="110" x2="550" y2="930" stroke="#9E9E9E" stroke-width="1.5"/>
+  <line x1="140" y1="520" x2="960" y2="520" stroke="#9E9E9E" stroke-width="1.5"/>
+  <g font-size="17" font-weight="700" fill="#555">
+    <text x="156" y="138">KEEP SATISFIED</text>
+    <text x="944" y="138" text-anchor="end">MANAGE CLOSELY</text>
+    <text x="156" y="900">MONITOR</text>
+    <text x="944" y="900" text-anchor="end">KEEP INFORMED</text>
+  </g>
+  <g font-size="12" fill="#555">
+    <text x="156" y="156">Concise briefings on their priorities</text>
+    <text x="944" y="156" text-anchor="end">Co-design, frequent updates</text>
+    <text x="156" y="918">Light-touch updates</text>
+    <text x="944" y="918" text-anchor="end">Demos, feedback loops</text>
+  </g>
+  <g stroke="#333" stroke-width="2" fill="none"><line x1="140" y1="930" x2="975" y2="930" marker-end="url(#fig1-arw)"/><line x1="140" y1="930" x2="140" y2="96" marker-end="url(#fig1-arw)"/></g>
+  <g font-size="12" fill="#333" text-anchor="middle">
+    <text x="222" y="950">1</text><text x="124" y="852">1</text>
+    <text x="386" y="950">2</text><text x="124" y="688">2</text>
+    <text x="550" y="950">3</text><text x="124" y="524">3</text>
+    <text x="714" y="950">4</text><text x="124" y="360">4</text>
+    <text x="878" y="950">5</text><text x="124" y="196">5</text>
+  </g>
+  <text x="550" y="985" font-size="15" font-weight="700" fill="#222" text-anchor="middle">INTEREST in the solution  (Low → High)</text>
+  <text x="80" y="520" font-size="15" font-weight="700" fill="#222" text-anchor="middle" transform="rotate(-90 80 520)">POWER / INFLUENCE  (Low → High)</text>
+  <g stroke="#555" stroke-width="2" stroke-dasharray="6 4" fill="none" marker-end="url(#fig1-arw)">
+    <line x1="632" y1="196" x2="700" y2="196"/>
+    <line x1="408" y1="292" x2="572" y2="292"/>
+    <line x1="408" y1="378" x2="572" y2="378"/>
+  </g>
+  <g font-size="12" fill="#555" font-style="italic" text-anchor="middle">
+    <text x="666" y="188">target</text>
+    <text x="490" y="284">target</text>
+    <text x="490" y="370">target</text>
+  </g>
+  <g>
+    <circle cx="878" cy="462" r="17" fill="#7FBF7B" stroke="#222" stroke-width="2"/><text x="878" y="466" font-size="12" font-weight="700" fill="#222" text-anchor="middle">S1</text>
+    <text x="878" y="491" font-size="12" fill="#222" text-anchor="middle">Federal-grants</text>
+    <text x="878" y="505" font-size="12" fill="#222" text-anchor="middle">coordinator</text>
+    <circle cx="714" cy="462" r="17" fill="#BDBDBD" stroke="#222" stroke-width="2"/><text x="714" y="466" font-size="12" font-weight="700" fill="#222" text-anchor="middle">S2</text>
+    <text x="714" y="491" font-size="12" fill="#222" text-anchor="middle">Division</text>
+    <text x="714" y="505" font-size="12" fill="#222" text-anchor="middle">program leads</text>
+    <circle cx="610" cy="196" r="17" fill="#BDBDBD" stroke="#222" stroke-width="2"/><text x="610" y="200" font-size="12" font-weight="700" fill="#222" text-anchor="middle">S3</text>
+    <text x="610" y="225" font-size="12" fill="#222" text-anchor="middle">DHHS executive</text>
+    <text x="610" y="239" font-size="12" fill="#222" text-anchor="middle">leadership</text>
+    <circle cx="600" cy="335" r="17" fill="#BDBDBD" stroke="#222" stroke-width="2"/><text x="600" y="339" font-size="12" font-weight="700" fill="#222" text-anchor="middle">S4</text>
+    <text x="622" y="339" font-size="12" fill="#222">Division directors</text>
+    <circle cx="605" cy="630" r="17" fill="#F1A340" stroke="#222" stroke-width="2"/><text x="605" y="634" font-size="12" font-weight="700" fill="#222" text-anchor="middle">S5</text>
+    <text x="605" y="659" font-size="12" fill="#222" text-anchor="middle">Division</text>
+    <text x="605" y="673" font-size="12" fill="#222" text-anchor="middle">program staff</text>
+    <circle cx="386" cy="292" r="17" fill="#F1A340" stroke="#222" stroke-width="2"/><text x="386" y="296" font-size="12" font-weight="700" fill="#222" text-anchor="middle">S6</text>
+    <text x="386" y="321" font-size="12" fill="#222" text-anchor="middle">NCDIT state IT</text>
+    <text x="386" y="335" font-size="12" fill="#222" text-anchor="middle">security &amp; privacy</text>
+    <circle cx="386" cy="378" r="17" fill="#BDBDBD" stroke="#222" stroke-width="2"/><text x="386" y="382" font-size="12" font-weight="700" fill="#222" text-anchor="middle">S7</text>
+    <text x="386" y="407" font-size="12" fill="#222" text-anchor="middle">DHHS privacy &amp;</text>
+    <text x="386" y="421" font-size="12" fill="#222" text-anchor="middle">security office</text>
+    <circle cx="222" cy="335" r="17" fill="#BDBDBD" stroke="#222" stroke-width="2"/><text x="222" y="339" font-size="12" font-weight="700" fill="#222" text-anchor="middle">S8</text>
+    <text x="222" y="364" font-size="12" fill="#222" text-anchor="middle">Procurement &amp;</text>
+    <text x="222" y="378" font-size="12" fill="#222" text-anchor="middle">legal</text>
+    <circle cx="600" cy="462" r="17" fill="#7FBF7B" stroke="#222" stroke-width="2"/><text x="600" y="466" font-size="12" font-weight="700" fill="#222" text-anchor="middle">S9</text>
+    <text x="600" y="491" font-size="12" fill="#222" text-anchor="middle">NC OSBM</text>
+    <text x="600" y="505" font-size="12" fill="#222" text-anchor="middle">(sponsor)</text>
+    <circle cx="878" cy="660" r="17" fill="#1B7837" stroke="#222" stroke-width="2" stroke-dasharray="4 3"/><text x="878" y="664" font-size="12" font-weight="700" fill="#FFF" text-anchor="middle">S10</text>
+    <text x="878" y="689" font-size="12" fill="#222" text-anchor="middle">Team 14 (builders,</text>
+    <text x="878" y="703" font-size="12" fill="#222" text-anchor="middle">operators, labelers)</text>
+    <circle cx="386" cy="462" r="17" fill="#7FBF7B" stroke="#222" stroke-width="2" stroke-dasharray="4 3"/><text x="386" y="466" font-size="12" font-weight="700" fill="#222" text-anchor="middle">S11</text>
+    <text x="386" y="491" font-size="12" fill="#222" text-anchor="middle">Solve-a-thon hosts</text>
+    <text x="386" y="505" font-size="12" fill="#222" text-anchor="middle">(Azure subscription)</text>
+    <circle cx="222" cy="630" r="17" fill="#BDBDBD" stroke="#222" stroke-width="2" stroke-dasharray="4 3"/><text x="222" y="634" font-size="12" font-weight="700" fill="#222" text-anchor="middle">S12</text>
+    <text x="222" y="659" font-size="12" fill="#222" text-anchor="middle">Microsoft Azure</text>
+    <text x="222" y="673" font-size="12" fill="#222" text-anchor="middle">(cloud &amp; AI vendor)</text>
+    <circle cx="222" cy="462" r="17" fill="#BDBDBD" stroke="#222" stroke-width="2" stroke-dasharray="4 3"/><text x="222" y="466" font-size="12" font-weight="700" fill="#222" text-anchor="middle">S13</text>
+    <text x="222" y="491" font-size="12" fill="#222" text-anchor="middle">Grants.gov</text>
+    <text x="222" y="505" font-size="12" fill="#222" text-anchor="middle">(listings API)</text>
+    <circle cx="222" cy="815" r="17" fill="#BDBDBD" stroke="#222" stroke-width="2" stroke-dasharray="4 3"/><text x="222" y="819" font-size="12" font-weight="700" fill="#222" text-anchor="middle">S14</text>
+    <text x="222" y="844" font-size="12" fill="#222" text-anchor="middle">USAspending.gov</text>
+    <text x="222" y="858" font-size="12" fill="#222" text-anchor="middle">(award history)</text>
+    <circle cx="222" cy="715" r="17" fill="#BDBDBD" stroke="#222" stroke-width="2" stroke-dasharray="4 3"/><text x="222" y="719" font-size="12" font-weight="700" fill="#222" text-anchor="middle">S15</text>
+    <text x="222" y="744" font-size="12" fill="#222" text-anchor="middle">Federal awarding</text>
+    <text x="222" y="758" font-size="12" fill="#222" text-anchor="middle">agencies</text>
+    <circle cx="600" cy="715" r="17" fill="#7FBF7B" stroke="#222" stroke-width="2" stroke-dasharray="4 3"/><text x="600" y="719" font-size="12" font-weight="700" fill="#222" text-anchor="middle">S16</text>
+    <text x="622" y="712" font-size="12" fill="#222">Local health depts,</text>
+    <text x="622" y="726" font-size="12" fill="#222">counties, community orgs</text>
+    <circle cx="335" cy="815" r="17" fill="#BDBDBD" stroke="#222" stroke-width="2" stroke-dasharray="4 3"/><text x="335" y="819" font-size="12" font-weight="700" fill="#222" text-anchor="middle">S17</text>
+    <text x="335" y="844" font-size="12" fill="#222" text-anchor="middle">NC residents</text>
+    <circle cx="445" cy="815" r="17" fill="#F1A340" stroke="#222" stroke-width="2" stroke-dasharray="4 3"/><text x="445" y="819" font-size="12" font-weight="700" fill="#222" text-anchor="middle">S18</text>
+    <text x="445" y="844" font-size="12" fill="#222" text-anchor="middle">Grant-writing</text>
+    <text x="445" y="858" font-size="12" fill="#222" text-anchor="middle">consultants</text>
+  </g>
+  <rect x="1000" y="100" width="400" height="345" rx="8" fill="#FFF" stroke="#9E9E9E"/>
+  <text x="1016" y="126" font-size="14" font-weight="700" fill="#222">Legend</text>
+  <g font-size="12" fill="#222">
+    <text x="1016" y="150" font-weight="700">Marker colour = attitude</text>
+    <circle cx="1028" cy="170" r="9" fill="#1B7837" stroke="#222" stroke-width="1"/><text x="1044" y="174">Champion</text>
+    <circle cx="1140" cy="170" r="9" fill="#7FBF7B" stroke="#222" stroke-width="1"/><text x="1156" y="174">Supporter</text>
+    <circle cx="1252" cy="170" r="9" fill="#BDBDBD" stroke="#222" stroke-width="1"/><text x="1268" y="174">Neutral</text>
+    <circle cx="1028" cy="196" r="9" fill="#F1A340" stroke="#222" stroke-width="1"/><text x="1044" y="200">Sceptic</text>
+    <circle cx="1140" cy="196" r="9" fill="#B2182B" stroke="#222" stroke-width="1"/><text x="1156" y="200">Blocker</text>
+    <text x="1016" y="230" font-weight="700">Outline = relationship</text>
+    <circle cx="1028" cy="250" r="9" fill="#FFF" stroke="#222" stroke-width="2"/><text x="1044" y="254">Inside NC state government</text>
+    <circle cx="1028" cy="276" r="9" fill="#FFF" stroke="#222" stroke-width="2" stroke-dasharray="4 3"/><text x="1044" y="280">External to state government</text>
+    <line x1="1018" y1="306" x2="1042" y2="306" stroke="#555" stroke-width="2" stroke-dasharray="5 3" marker-end="url(#fig1-arw)"/><text x="1050" y="310">Desired shift (raise interest early)</text>
+    <text x="1016" y="340" fill="#555">Scores 1–5. A score of 3 counts as High</text>
+    <text x="1016" y="356" fill="#555">(drawn just inside the upper/right half).</text>
+    <text x="1016" y="382" fill="#555">Dashed outline here means external, not</text>
+    <text x="1016" y="398" fill="#555">“planned” as in the architecture diagrams.</text>
+    <text x="1016" y="424" fill="#555">Grid: Mendelow (1991) power/interest matrix.</text>
+  </g>
+  <rect x="1000" y="460" width="400" height="522" rx="8" fill="#FFF" stroke="#9E9E9E"/>
+  <text x="1016" y="486" font-size="14" font-weight="700" fill="#222">Stakeholder key (Power / Interest)</text>
+  <g font-size="12" fill="#222">
+    <text x="1016" y="514" font-weight="700">S1</text><text x="1052" y="514">DHHS federal-grants coordinator (3/5)</text>
+    <text x="1016" y="538" font-weight="700">S2</text><text x="1052" y="538">DHHS division program leads (3/4)</text>
+    <text x="1016" y="562" font-weight="700">S3</text><text x="1052" y="562">DHHS executive leadership (5/3)</text>
+    <text x="1016" y="586" font-weight="700">S4</text><text x="1052" y="586">DHHS division directors (4/3)</text>
+    <text x="1016" y="610" font-weight="700">S5</text><text x="1052" y="610">DHHS division program staff (2/3)</text>
+    <text x="1016" y="634" font-weight="700">S6</text><text x="1052" y="634">NCDIT state IT security &amp; privacy (4/2)</text>
+    <text x="1016" y="658" font-weight="700">S7</text><text x="1052" y="658">DHHS privacy &amp; security office (4/2)</text>
+    <text x="1016" y="682" font-weight="700">S8</text><text x="1052" y="682">Procurement &amp; legal (4/1)</text>
+    <text x="1016" y="706" font-weight="700">S9</text><text x="1052" y="706">NC OSBM: sponsor, plan publisher (3/3)</text>
+    <text x="1016" y="730" font-weight="700">S10</text><text x="1052" y="730">Team 14: builders, operators, labelers (2/5)</text>
+    <text x="1016" y="754" font-weight="700">S11</text><text x="1052" y="754">Solve-a-thon hosts: Azure subscription (3/2)</text>
+    <text x="1016" y="778" font-weight="700">S12</text><text x="1052" y="778">Microsoft Azure: cloud &amp; AI vendor (2/1)</text>
+    <text x="1016" y="802" font-weight="700">S13</text><text x="1052" y="802">Grants.gov: listings API (3/1)</text>
+    <text x="1016" y="826" font-weight="700">S14</text><text x="1052" y="826">USAspending.gov: award history API (1/1)</text>
+    <text x="1016" y="850" font-weight="700">S15</text><text x="1052" y="850">Federal awarding agencies (2/1)</text>
+    <text x="1016" y="874" font-weight="700">S16</text><text x="1052" y="874">Local health depts, counties, orgs (2/3)</text>
+    <text x="1016" y="898" font-weight="700">S17</text><text x="1052" y="898">NC residents served by DHHS (1/2)</text>
+    <text x="1016" y="922" font-weight="700">S18</text><text x="1052" y="922">Grant-writing consultants (1/2)</text>
+    <text x="1016" y="952" fill="#555" font-style="italic">Scores and attitudes are ASSUMED team estimates.</text>
+  </g>
+</svg>
+<figcaption>Figure 1: Mendelow power/interest grid for 18 stakeholders. Colour shows attitude, a dashed outline marks stakeholders outside NC state government, and dashed arrows show the desired rise in interest for S3, S6 and S7.</figcaption></figure>
+
+<h2 id="register">3. Stakeholder register</h2>
+<p class="meta">P = power, I = interest (1-5). Int = inside NC state government; Ext = external. The Evidence column says where the stakeholder's role comes from: the team's facts sheet or a repository file.</p>
+<div class="tablewrap"><table><tr><th>ID</th><th>Stakeholder</th><th>Org</th><th>Category</th><th>Int/Ext</th><th>P</th><th>I</th><th>Attitude</th><th>Key needs</th><th>Key concerns</th><th>Evidence / Assumed</th></tr>
+<tr><td>S1</td><td>DHHS federal-grants coordinator</td><td>NC DHHS</td><td>Primary user</td><td>Int</td><td>3</td><td>5</td><td><span class="chip supp">Supporter</span></td><td>A short ranked list with a reason, a checked quote and a risk for each item; record Pursue / Maybe / Pass in seconds; CSV for the weekly leadership email</td><td>False positives waste review time; a relevant notice is still missed; with no sign-in, anyone with the URL can record a decision</td><td>Facts sheet (users); agency/priorities.json &quot;user&quot;; attitude and scores <span class="assumed">ASSUMED</span></td></tr>
+<tr><td>S2</td><td>DHHS division program leads (13 divisions, e.g. Public Health, MH/DD/SUS, NC Medicaid)</td><td>NC DHHS divisions</td><td>Secondary user</td><td>Int</td><td>3</td><td>4</td><td><span class="chip neut">Neutral</span></td><td>Opportunities routed to the division that would own them, with eligibility notes and the deadline</td><td>Extra workload; items routed to the wrong division</td><td>Facts sheet (secondary users); 13 divisions in agency/priorities.json; scores <span class="assumed">ASSUMED</span></td></tr>
+<tr><td>S3</td><td>DHHS executive leadership (Office of the Secretary)</td><td>NC DHHS</td><td>Decision maker</td><td>Int</td><td>5</td><td>3</td><td><span class="chip neut">Neutral</span></td><td>Federal funding mapped to the five plan goals (funding-by-goal view)</td><td>Staff capacity; cost-share and match commitments; the plan covers 2023-2025</td><td>Facts sheet (decision makers, goal funding view); scores <span class="assumed">ASSUMED</span></td></tr>
+<tr><td>S4</td><td>DHHS division directors</td><td>NC DHHS divisions</td><td>Decision maker</td><td>Int</td><td>4</td><td>3</td><td><span class="chip neut">Neutral</span></td><td>Early notice (forecasts, items closing in 10 days or less) to plan staff time</td><td>Applications that fit poorly or need cost share the division cannot meet</td><td>Facts sheet (decision makers); scores <span class="assumed">ASSUMED</span></td></tr>
+<tr><td>S5</td><td>DHHS division program staff / subject-matter experts</td><td>NC DHHS divisions</td><td>Possible resistor</td><td>Int</td><td>2</td><td>3</td><td><span class="chip scep">Sceptic</span></td><td>Relevant opportunities for their own programs</td><td>AI recommendations replacing expert judgement; extra workload</td><td>Facts sheet (possible resistors); scores <span class="assumed">ASSUMED</span></td></tr>
+<tr><td>S6</td><td>NCDIT state IT security and privacy</td><td>NC Department of Information Technology</td><td>Approver / oversight</td><td>Int</td><td>4</td><td>2</td><td><span class="chip scep">Sceptic</span></td><td>Data classification, secure configuration and an honest list of known gaps</td><td>Public URL with no sign-in; connection string and keys instead of managed identity; ACR admin credentials; use of a generative AI service</td><td>Facts sheet (approvers, security gaps); attitude and scores <span class="assumed">ASSUMED</span></td></tr>
+<tr><td>S7</td><td>DHHS privacy and security office</td><td>NC DHHS</td><td>Approver / oversight</td><td>Int</td><td>4</td><td>2</td><td><span class="chip neut">Neutral</span></td><td>Confirmation that no residents&#x27; data, and no personal data beyond staff-typed names or initials, is stored</td><td>Free-text decision notes could hold sensitive text; where the data is hosted</td><td>Facts sheet (approvers, data sensitivity); attitude and scores <span class="assumed">ASSUMED</span></td></tr>
+<tr><td>S8</td><td>Procurement and legal (for a production contract)</td><td>NC DHHS / State of NC</td><td>Approver (production)</td><td>Int</td><td>4</td><td>1</td><td><span class="chip neut">Neutral</span></td><td>Clear ownership, hosting and service terms before any production contract</td><td>Cloud and AI service terms; who owns and maintains the code</td><td><span class="assumed">ASSUMED</span> (facts sheet marks this as assumed)</td></tr>
+<tr><td>S9</td><td>NC OSBM (challenge sponsor; publishes the agency strategic plans)</td><td>NC Office of State Budget and Management</td><td>Sponsor / data provider</td><td>Int</td><td>3</td><td>3</td><td><span class="chip supp">Supporter</span></td><td>An approach that other agencies could reuse with their own strategic plans</td><td>Accurate use of the published plan; the 2023-2025 plan may be out of date</td><td>Sponsor role <span class="assumed">ASSUMED</span> (facts sheet); plan source in agency/priorities.json</td></tr>
+<tr><td>S10</td><td>Team 14 (builders, current operators, evaluation labelers)</td><td>UNC Solve-a-thon 2026</td><td>Builder / operator</td><td>Ext</td><td>2</td><td>5</td><td><span class="chip champ">Champion</span></td><td>Feedback from real users; a named owner and host after the event</td><td>Handover and upkeep; the team will delete the event resources after judging</td><td>Facts sheet; deploy/02_deploy.sh; deploy/99_teardown.sh</td></tr>
+<tr><td>S11</td><td>Solve-a-thon hosts (event Azure subscription unc-sdis-solveathon-team14)</td><td>UNC Solve-a-thon 2026</td><td>Partner / host</td><td>Ext</td><td>3</td><td>2</td><td><span class="chip supp">Supporter</span></td><td>Resources kept to one resource group and removed after judging</td><td>Cost and clean-up of event resources</td><td>Facts sheet (subscription); deploy/env.sh; host role <span class="assumed">ASSUMED</span></td></tr>
+<tr><td>S12</td><td>Microsoft Azure (cloud platform and Azure OpenAI)</td><td>Microsoft</td><td>Vendor</td><td>Ext</td><td>2</td><td>1</td><td><span class="chip neut">Neutral</span></td><td>Services used within their terms</td><td>For the team: model versions, quotas and prices can change</td><td>Facts sheet (cloud services built); deploy/01_resources.sh</td></tr>
+<tr><td>S13</td><td>Grants.gov (HHS-managed federal portal)</td><td>U.S. Department of Health and Human Services</td><td>Data provider</td><td>Ext</td><td>3</td><td>1</td><td><span class="chip neut">Neutral</span></td><td>Reasonable use of the public search2 and fetchOpportunity endpoints</td><td>Load on the public API (details are cached and refetched only when changed or older than 7 days)</td><td>Facts sheet (external APIs); src/grantsgov.py</td></tr>
+<tr><td>S14</td><td>USAspending.gov (U.S. Treasury)</td><td>U.S. Department of the Treasury</td><td>Data provider</td><td>Ext</td><td>1</td><td>1</td><td><span class="chip neut">Neutral</span></td><td>Reasonable use of the public API</td><td>Load on the public API (responses are cached)</td><td>Facts sheet (external APIs); data/cache/usaspending/</td></tr>
+<tr><td>S15</td><td>Federal awarding agencies that write the listings (e.g. HRSA, CDC, SAMHSA, ACF)</td><td>U.S. federal government</td><td>Funder / listing author</td><td>Ext</td><td>2</td><td>1</td><td><span class="chip neut">Neutral</span></td><td>Eligible, well-prepared applications</td><td>Applicants relying on a summary instead of the official notice (the app links to the official listing)</td><td><span class="assumed">ASSUMED</span> (not in facts sheet)</td></tr>
+<tr><td>S16</td><td>Local health departments, counties and community organizations (pass-through recipients)</td><td>NC local governments and nonprofits</td><td>Beneficiary</td><td>Ext</td><td>2</td><td>3</td><td><span class="chip supp">Supporter</span></td><td>More federal pass-through funds reaching local programs</td><td>Fair coverage across regions and program areas</td><td>Facts sheet (beneficiaries); attitude and scores <span class="assumed">ASSUMED</span></td></tr>
+<tr><td>S17</td><td>NC residents served by DHHS programs</td><td>Public</td><td>Ultimate beneficiary</td><td>Ext</td><td>1</td><td>2</td><td><span class="chip neut">Neutral</span></td><td>Better-funded health and human services</td><td>Responsible use of AI in government</td><td>Facts sheet (beneficiaries); attitude and scores <span class="assumed">ASSUMED</span></td></tr>
+<tr><td>S18</td><td>Grant-writing consultants</td><td>Private sector</td><td>Possibly negatively affected</td><td>Ext</td><td>1</td><td>2</td><td><span class="chip scep">Sceptic</span></td><td>Continued demand for application writing</td><td>Less need for paid opportunity-search services</td><td><span class="assumed">ASSUMED</span> (facts sheet marks this as assumed)</td></tr>
+</table></div>
+
+<h2 id="onion">4. Onion diagram</h2>
+<figure>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1560 1290" width="1560" height="1290" role="img" aria-labelledby="fig2-t fig2-d" font-family="Segoe UI, Arial, Helvetica, sans-serif">
+  <title id="fig2-t">Federal Funds Matchmaker for NC DHHS: Stakeholder Onion Diagram</title>
+  <desc id="fig2-d">Onion model with the matchmaker at the centre. Ring 2, the system: S1 federal-grants coordinator, S2 division program leads, S10 Team 14. Ring 3, the containing system: S3 DHHS executive leadership, S4 division directors, S5 division program staff, S6 NCDIT security and privacy, S7 DHHS privacy and security office, S8 procurement and legal, S9 NC OSBM. Ring 4, the wider environment: S11 Solve-a-thon hosts, S12 Microsoft Azure, S13 Grants.gov, S14 USAspending.gov, S15 federal awarding agencies, S16 local health departments and community organizations, S17 NC residents, S18 grant-writing consultants. Pill colour shows attitude; a dashed outline marks external stakeholders.</desc>
+  <rect width="1560" height="1290" fill="#FFF"/>
+  <text x="40" y="42" font-size="26" font-weight="700" fill="#08427B">Federal Funds Matchmaker for NC DHHS: Stakeholder Onion</text>
+  <text x="40" y="68" font-size="14" fill="#555">Team 14, UNC Solve-a-thon 2026 • Onion model (I. Alexander) • 2026-11-07 • v1.0</text>
+  <circle cx="610" cy="680" r="590" fill="#EEF3FA" stroke="#9DB6D5" stroke-width="2"/>
+  <circle cx="610" cy="680" r="420" fill="#DCE6F2" stroke="#7FA0C8" stroke-width="2"/>
+  <circle cx="610" cy="680" r="250" fill="#C5D7EC" stroke="#5F88BB" stroke-width="2"/>
+  <circle cx="610" cy="680" r="105" fill="#1168BD" stroke="#0B4884" stroke-width="2"/>
+  <g font-size="13" font-weight="700" fill="#08427B" text-anchor="middle" letter-spacing="1">
+    <text x="610" y="125">4 · WIDER ENVIRONMENT</text>
+    <text x="610" y="330">3 · CONTAINING SYSTEM</text>
+    <text x="610" y="895">2 · THE SYSTEM</text>
+  </g>
+  <text x="610" y="658" font-size="17" font-weight="700" fill="#FFF" text-anchor="middle">Federal Funds</text>
+  <text x="610" y="680" font-size="17" font-weight="700" fill="#FFF" text-anchor="middle">Matchmaker</text>
+  <text x="610" y="700" font-size="13" fill="#FFF" text-anchor="middle">for NC DHHS</text>
+  <text x="610" y="724" font-size="12" fill="#FFF" text-anchor="middle">1 · Product</text>
+  <g font-size="12" font-weight="600" text-anchor="middle">
+    <rect x="490" y="480" width="241" height="30" rx="15" fill="#7FBF7B" stroke="#222" stroke-width="1.8"/><text x="610" y="500" fill="#222">S1 Federal-grants coordinator</text>
+    <rect x="504" y="520" width="211" height="30" rx="15" fill="#BDBDBD" stroke="#222" stroke-width="1.8"/><text x="610" y="540" fill="#222">S2 Division program leads</text>
+    <rect x="512" y="810" width="196" height="30" rx="15" fill="#1B7837" stroke="#222" stroke-width="1.8" stroke-dasharray="5 3"/><text x="610" y="830" fill="#FFF">S10 Team 14 (operators)</text>
+    <rect x="394" y="348" width="234" height="30" rx="15" fill="#BDBDBD" stroke="#222" stroke-width="1.8"/><text x="512" y="368" fill="#222">S3 DHHS executive leadership</text>
+    <rect x="644" y="348" width="181" height="30" rx="15" fill="#BDBDBD" stroke="#222" stroke-width="1.8"/><text x="735" y="368" fill="#222">S4 Division directors</text>
+    <rect x="380" y="388" width="226" height="30" rx="15" fill="#F1A340" stroke="#222" stroke-width="1.8"/><text x="492" y="408" fill="#222">S6 NCDIT security &amp; privacy</text>
+    <rect x="622" y="388" width="219" height="30" rx="15" fill="#BDBDBD" stroke="#222" stroke-width="1.8"/><text x="731" y="408" fill="#222">S7 DHHS privacy &amp; security</text>
+    <rect x="402" y="942" width="211" height="30" rx="15" fill="#F1A340" stroke="#222" stroke-width="1.8"/><text x="508" y="962" fill="#222">S5 Division program staff</text>
+    <rect x="629" y="942" width="189" height="30" rx="15" fill="#BDBDBD" stroke="#222" stroke-width="1.8"/><text x="724" y="962" fill="#222">S8 Procurement &amp; legal</text>
+    <rect x="523" y="982" width="174" height="30" rx="15" fill="#7FBF7B" stroke="#222" stroke-width="1.8"/><text x="610" y="1002" fill="#222">S9 NC OSBM (sponsor)</text>
+    <rect x="454" y="138" width="129" height="30" rx="15" fill="#BDBDBD" stroke="#222" stroke-width="1.8" stroke-dasharray="5 3"/><text x="519" y="158" fill="#222">S13 Grants.gov</text>
+    <rect x="600" y="138" width="166" height="30" rx="15" fill="#BDBDBD" stroke="#222" stroke-width="1.8" stroke-dasharray="5 3"/><text x="682" y="158" fill="#222">S14 USAspending.gov</text>
+    <rect x="398" y="180" width="241" height="30" rx="15" fill="#BDBDBD" stroke="#222" stroke-width="1.8" stroke-dasharray="5 3"/><text x="519" y="200" fill="#222">S15 Federal awarding agencies</text>
+    <rect x="656" y="180" width="166" height="30" rx="15" fill="#BDBDBD" stroke="#222" stroke-width="1.8" stroke-dasharray="5 3"/><text x="738" y="200" fill="#222">S12 Microsoft Azure</text>
+    <rect x="361" y="1150" width="241" height="30" rx="15" fill="#7FBF7B" stroke="#222" stroke-width="1.8" stroke-dasharray="5 3"/><text x="482" y="1170" fill="#222">S16 Local health depts &amp; orgs</text>
+    <rect x="618" y="1150" width="241" height="30" rx="15" fill="#F1A340" stroke="#222" stroke-width="1.8" stroke-dasharray="5 3"/><text x="738" y="1170" fill="#222">S18 Grant-writing consultants</text>
+    <rect x="436" y="1192" width="144" height="30" rx="15" fill="#BDBDBD" stroke="#222" stroke-width="1.8" stroke-dasharray="5 3"/><text x="508" y="1212" fill="#222">S17 NC residents</text>
+    <rect x="596" y="1192" width="189" height="30" rx="15" fill="#7FBF7B" stroke="#222" stroke-width="1.8" stroke-dasharray="5 3"/><text x="690" y="1212" fill="#222">S11 Solve-a-thon hosts</text>
+  </g>
+  <rect x="1230" y="110" width="310" height="330" rx="8" fill="#FFF" stroke="#9E9E9E"/>
+  <text x="1246" y="136" font-size="14" font-weight="700" fill="#222">Legend</text>
+  <g font-size="12" fill="#222">
+    <text x="1246" y="160" font-weight="700">Pill colour = attitude</text>
+    <rect x="1246" y="172" width="34" height="16" rx="8" fill="#1B7837" stroke="#222" stroke-width="1"/><text x="1288" y="185">Champion</text>
+    <rect x="1390" y="172" width="34" height="16" rx="8" fill="#7FBF7B" stroke="#222" stroke-width="1"/><text x="1432" y="185">Supporter</text>
+    <rect x="1246" y="198" width="34" height="16" rx="8" fill="#BDBDBD" stroke="#222" stroke-width="1"/><text x="1288" y="211">Neutral</text>
+    <rect x="1390" y="198" width="34" height="16" rx="8" fill="#F1A340" stroke="#222" stroke-width="1"/><text x="1432" y="211">Sceptic</text>
+    <rect x="1246" y="224" width="34" height="16" rx="8" fill="#B2182B" stroke="#222" stroke-width="1"/><text x="1288" y="237">Blocker</text>
+    <text x="1246" y="268" font-weight="700">Outline = relationship</text>
+    <rect x="1246" y="280" width="34" height="16" rx="8" fill="#FFF" stroke="#222" stroke-width="1.8"/><text x="1288" y="293">Inside NC state government</text>
+    <rect x="1246" y="306" width="34" height="16" rx="8" fill="#FFF" stroke="#222" stroke-width="1.8" stroke-dasharray="5 3"/><text x="1288" y="319">External to state government</text>
+    <text x="1246" y="350" fill="#555">Dashed = external, not “planned”.</text>
+    <text x="1246" y="374" fill="#555">IDs (S1–S18) match the power/interest</text>
+    <text x="1246" y="390" fill="#555">grid and the stakeholder register.</text>
+    <text x="1246" y="414" fill="#555" font-style="italic">ASSUMED placements: validate with S1.</text>
+  </g>
+  <rect x="1230" y="460" width="310" height="290" rx="8" fill="#FFF" stroke="#9E9E9E"/>
+  <text x="1246" y="486" font-size="14" font-weight="700" fill="#222">Rings</text>
+  <g font-size="12" fill="#222">
+    <text x="1246" y="514" font-weight="700">1 · Product</text>
+    <text x="1246" y="530">The matchmaker: daily job and web app.</text>
+    <text x="1246" y="558" font-weight="700">2 · The System (3)</text>
+    <text x="1246" y="574">People who use or run it directly.</text>
+    <text x="1246" y="602" font-weight="700">3 · Containing System (7)</text>
+    <text x="1246" y="618">Decision makers, approvers, the</text>
+    <text x="1246" y="634">sponsor, and DHHS staff affected</text>
+    <text x="1246" y="650">by its output.</text>
+    <text x="1246" y="678" font-weight="700">4 · Wider Environment (8)</text>
+    <text x="1246" y="694">Data providers, vendors, event hosts,</text>
+    <text x="1246" y="710">beneficiaries, and those who may</text>
+    <text x="1246" y="726">lose out.</text>
+  </g>
+</svg>
+<figcaption>Figure 2: Stakeholder onion. The closer a stakeholder is to the centre, the more directly they use, run or are affected by the matchmaker.</figcaption></figure>
+
+<h2 id="raci">5. RACI matrix</h2>
+<div class="tablewrap"><table><tr><th>Activity</th><th>S1 Coordinator</th><th>S2 Program leads</th><th>S3 Exec leadership</th><th>S4 Division directors</th><th>S6 NCDIT</th><th>S7 DHHS privacy &amp; security</th><th>S9 NC OSBM</th><th>S10 Team 14</th></tr>
+<tr><td>Maintain the agency profile (5 goals, 20 objectives with page citations, 40 keywords)</td><td class="raci a">A</td><td class="raci c">C</td><td class="raci c">C</td><td></td><td></td><td></td><td class="raci i">I</td><td class="raci r">R</td></tr>
+<tr><td>Run the daily refresh job and fix failed runs (during the event)</td><td class="raci i">I</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="raci a">A/R</td></tr>
+<tr><td>Triage the shortlist: record Pursue / Maybe / Pass; export CSV for the weekly leadership email</td><td class="raci a">A/R</td><td class="raci c">C</td><td class="raci i">I</td><td class="raci i">I</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Decide whether to apply for an opportunity</td><td class="raci c">C</td><td class="raci r">R</td><td class="raci c">C</td><td class="raci a">A</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Measure match quality (blind labels, precision@10 vs keyword baseline, AI error log)</td><td class="raci a">A</td><td class="raci c">C</td><td class="raci i">I</td><td></td><td></td><td></td><td></td><td class="raci r">R</td></tr>
+<tr><td>Security and privacy review before a pilot</td><td class="raci i">I</td><td></td><td class="raci i">I</td><td></td><td class="raci a">A</td><td class="raci c">C</td><td></td><td class="raci r">R</td></tr>
+<tr><td>Pilot go / no-go decision</td><td class="raci r">R</td><td class="raci c">C</td><td class="raci a">A</td><td class="raci c">C</td><td class="raci c">C</td><td class="raci c">C</td><td class="raci i">I</td><td class="raci i">I</td></tr>
+</table></div>
+<p class="meta">R = Responsible (does the work) · A = Accountable (exactly one owner per activity; signs off) · C = Consulted (two-way) · I = Informed (one-way). A/R = the same role is accountable and does the work. Columns show the stakeholders with a part in these activities; S5, S8 and S11-S18 have none.</p>
+
+<h2 id="engage">6. Engagement plan</h2>
+<p class="meta">For every stakeholder with power or interest of 3 or more. Frequencies are proposals for a pilot period (<span class="assumed">ASSUMED</span>).</p>
+<div class="tablewrap"><table><tr><th>Stakeholder</th><th>Objective</th><th>Key message</th><th>Channel</th><th>Frequency</th><th>Owner</th></tr>
+<tr><td>S1 Federal-grants coordinator</td><td>Confirm the shortlist saves time and catches notices that are missed today</td><td>“Every posted and forecasted listing is re-ranked each morning (the job starts at 11:00 UTC: 6 AM EST, 7 AM EDT) with a score breakdown; the top items also show the reason and a checked quote.”</td><td>Hands-on session with the live app; the note saved with each Pursue / Maybe / Pass decision</td><td>Weekly during a pilot</td><td>Team 14 lead</td></tr>
+<tr><td>S2 Division program leads</td><td>Check that routing to divisions is right and useful</td><td>“AI-reviewed items carry a suggested owning division, eligibility notes and the deadline. You decide.”</td><td>Short demo; filtered CSV for their division</td><td>Every 2 weeks</td><td>Coordinator (S1) with Team 14</td></tr>
+<tr><td>S3 DHHS executive leadership</td><td>Raise interest; confirm the plan goals still reflect current priorities</td><td>“See federal funding by plan goal: High and Medium matches, closing in 30 days, total award ceiling.”</td><td>One-page brief with the funding-by-goal view</td><td>Monthly</td><td>Coordinator (S1)</td></tr>
+<tr><td>S4 Division directors</td><td>Agree how alerts feed the decision to apply</td><td>“New items and items closing in 10 days or less are flagged; forecasts show up before they open.”</td><td>Leadership meeting slot; weekly CSV</td><td>Monthly</td><td>Coordinator (S1)</td></tr>
+<tr><td>S5 Division program staff</td><td>Turn sceptics into supporters</td><td>“The AI cannot set the score; every quote is checked word for word; people make the call.”</td><td>Demo and Q&amp;A; Evaluation page walkthrough</td><td>Monthly</td><td>Team 14 lead</td></tr>
+<tr><td>S6 NCDIT security &amp; privacy</td><td>Early review so a pilot is not delayed</td><td>“Public data only, no residents' data. Known gaps: no sign-in yet, keys instead of managed identity, ACR admin credentials. Planned: Entra ID sign-in, Key Vault with managed identity, private endpoints.”</td><td>Architecture and security review using the team's architecture and security diagrams</td><td>At design and before a pilot</td><td>Team 14 tech lead</td></tr>
+<tr><td>S7 DHHS privacy &amp; security office</td><td>Confirm data classification</td><td>“Stored: public listings, scores and AI summaries; internal: staff decisions (typed name or initials, note, time), evaluation labels, run logs. No personal data beyond staff-typed names or initials; no residents' data.”</td><td>Data inventory review</td><td>Before a pilot</td><td>Team 14 tech lead</td></tr>
+<tr><td>S8 Procurement &amp; legal</td><td>Understand what a production version would need</td><td>“The prototype runs in an event subscription; a production version needs an owner, a host and service terms.”</td><td>Briefing note</td><td>Only if a pilot is approved</td><td>DHHS sponsor (to be named)</td></tr>
+<tr><td>S9 NC OSBM</td><td>Keep sponsorship; explore reuse for other agencies</td><td>“The agency profile is a reviewed file built from the published plan with page citations; another agency's plan could be loaded the same way.”</td><td>Finals presentation; follow-up meeting</td><td>At finals, then quarterly</td><td>Team 14 lead</td></tr>
+<tr><td>S10 Team 14</td><td>Keep the evaluation honest and the handover ready</td><td>“Label the blind sample; log every AI error; keep the deploy scripts runnable.”</td><td>Team stand-up</td><td>Daily during the event</td><td>Team 14 lead</td></tr>
+<tr><td>S11 Solve-a-thon hosts</td><td>Stay within event rules for cloud use</td><td>“All resources sit in one resource group (rg-ffm-team14) and will be removed after judging with one script (deploy/99_teardown.sh).”</td><td>Event channel</td><td>At deploy and after judging</td><td>Team 14 tech lead</td></tr>
+<tr><td>S13 Grants.gov</td><td>Use the public API responsibly</td><td>“Details are cached and refetched only when a listing changes or is older than 7 days; one run a day.”</td><td>Watch API notices and change logs</td><td>Monthly check</td><td>Team 14 tech lead</td></tr>
+<tr><td>S16 Local health depts &amp; community orgs</td><td>Understand which pass-through programs matter locally</td><td>“DHHS can find more of the federal funds that flow to local programs.”</td><td>Existing DHHS division channels</td><td>Quarterly, if a pilot runs</td><td>Division program leads (S2)</td></tr>
+</table></div>
+
+<h2 id="risks">7. Stakeholder risks &amp; mitigations</h2>
+<div class="tablewrap"><table><tr><th>Risk</th><th>Stakeholders</th><th>Likelihood</th><th>Mitigation</th></tr>
+<tr><td>Low trust in AI recommendations</td><td>S1, S2, S5</td><td><span class="chip med">Med</span></td><td>AI never sets the score; quotes are checked verbatim and hidden if not found; score breakdown on every item; Evaluation page shows precision@10 against the keyword baseline and the AI error log; a person records every decision</td></tr>
+<tr><td>Worry about extra workload</td><td>S2, S5</td><td><span class="chip med">Med</span></td><td>One ranked list replaces manual scanning; Pursue / Maybe / Pass takes seconds; division filter and CSV export; measure time saved with the coordinator</td></tr>
+<tr><td>Security approval delays a pilot</td><td>S6, S7</td><td><span class="chip high">High</span></td><td>Engage at design time with the architecture and security diagrams; close the listed gaps first (planned: Entra ID sign-in, Key Vault and managed identity, no ACR admin credentials)</td></tr>
+<tr><td>Anyone with the URL can record a decision (no sign-in in the prototype)</td><td>S1, S6, S7</td><td><span class="chip high">High</span></td><td>Decisions are added, never overwritten, with typed name, time and score at decision; ETag checks stop lost updates; planned Entra ID sign-in before a pilot</td></tr>
+<tr><td>No owner or host after the event</td><td>S1, S3, S10, S11</td><td><span class="chip high">High</span></td><td>Name a DHHS product owner and an operator; one container image, scripted deployment (deploy/*.sh) and the Blob data contract listed in src/job.py make handover possible; the team will delete the event resources after judging</td></tr>
+<tr><td>Plan goals out of date (2023-2025 plan)</td><td>S3, S9</td><td><span class="chip med">Med</span></td><td>Profile is one reviewed JSON file; ask leadership to confirm current priorities; update when a newer plan is published</td></tr>
+<tr><td>Uneven coverage: short or vague listings, smaller divisions, local programs</td><td>S2, S16</td><td><span class="chip med">Med</span></td><td>Medium and Low lists stay visible; filters by division and goal; track misses found by labelers and decisions</td></tr>
+<tr><td>Grants.gov API change or outage</td><td>S13</td><td><span class="chip low">Low</span></td><td>Job refuses to publish if fewer than 50 listings are pulled, so the last good list stays; raw snapshots allow replay</td></tr>
+<tr><td>Perceived threat to grant-writing consultants</td><td>S18</td><td><span class="chip low">Low</span></td><td>Frame as discovery support; writing strong applications still needs people</td></tr>
+</table></div>
+
+<h2 id="assumptions">8. Assumptions &amp; validation questions</h2>
+<ul>
+<li><span class="assumed">ASSUMED</span> <b>A1.</b> NC OSBM is the Solve-a-thon challenge sponsor (S9). <i>Validate with: Solve-a-thon organizers.</i></li>
+<li><span class="assumed">ASSUMED</span> <b>A2.</b> All power, interest and attitude scores are team estimates, including the coordinator&#x27;s attitude (S1 Supporter). <i>Validate with: The federal-grants coordinator and one division program lead.</i></li>
+<li><span class="assumed">ASSUMED</span> <b>A3.</b> NCDIT and the DHHS privacy and security office must approve a pilot; NCDIT is accountable for the security review in the RACI. <i>Validate with: DHHS privacy and security office.</i></li>
+<li><span class="assumed">ASSUMED</span> <b>A4.</b> NCDIT is sceptical of the prototype because of the known gaps (no sign-in, keys instead of managed identity), not from contact with NCDIT. <i>Validate with: NCDIT security reviewer.</i></li>
+<li><span class="assumed">ASSUMED</span> <b>A5.</b> Procurement and legal (S8) are involved only for a production contract. <i>Validate with: DHHS procurement.</i></li>
+<li><span class="assumed">ASSUMED</span> <b>A6.</b> Division directors are accountable for the decision to apply; executive leadership is consulted for large or cross-division awards. <i>Validate with: Federal-grants coordinator.</i></li>
+<li><span class="assumed">ASSUMED</span> <b>A7.</b> The coordinator is the DHHS-side owner of the agency profile and of match-quality checks. <i>Validate with: DHHS executive leadership.</i></li>
+<li><span class="assumed">ASSUMED</span> <b>A8.</b> Division program staff are sceptical of AI recommendations and grant-writing consultants may see the tool as a threat. <i>Validate with: Interviews with 2-3 program staff; optional consultant interview.</i></li>
+<li><span class="assumed">ASSUMED</span> <b>A9.</b> The Solve-a-thon hosts provide the Azure subscription (unc-sdis-solveathon-team14) and expect resources to be removed after judging. <i>Validate with: Solve-a-thon organizers.</i></li>
+<li><span class="assumed">ASSUMED</span> <b>A10.</b> HRSA, CDC, SAMHSA and ACF are examples of federal awarding agencies; the list is illustrative. <i>Validate with: Not needed for decisions.</i></li>
+<li><span class="assumed">ASSUMED</span> <b>A11.</b> Engagement owners inside Team 14 (lead, tech lead) and frequencies are proposals for a pilot period. <i>Validate with: Team 14.</i></li>
+<li><span class="assumed">ASSUMED</span> <b>A12.</b> In these stakeholder diagrams a dashed outline means external to NC state government; it does not mean “planned” as in the architecture diagrams. <i>Validate with: Not needed (reading note).</i></li>
+</ul>
+<p><b>Questions to ask</b></p>
+<ol>
+<li>Who owns the matchmaker after the event, and who would host and operate it (DHHS, NCDIT or another team)? <i>Ask: DHHS executive leadership; NCDIT.</i></li>
+<li>What is the review process for a pilot that uses Azure OpenAI, and who signs off? <i>Ask: NCDIT; DHHS privacy and security office.</i></li>
+<li>Who decides whether to apply: division directors, executive leadership, or both depending on award size? <i>Ask: Federal-grants coordinator.</i></li>
+<li>How many hours a week does scanning Grants.gov take today, and how often is a relevant notice found too late? <i>Ask: Federal-grants coordinator.</i></li>
+<li>Is there a newer NCDHHS strategic plan or priority list to replace the 2023-2025 plan? <i>Ask: NC OSBM; DHHS executive leadership.</i></li>
+<li>Which divisions should receive routed opportunities first in a pilot? <i>Ask: Federal-grants coordinator; division directors.</i></li>
+</ol>
+
+<h2 id="glossary">9. Glossary</h2>
+<dl>
+<dt>Stakeholder</dt><dd>Anyone who affects, or is affected by, the solution.</dd>
+<dt>Power/interest grid</dt><dd>Mendelow's 2×2 matrix for deciding how closely to engage each stakeholder: Manage Closely, Keep Satisfied, Keep Informed, Monitor.</dd>
+<dt>Onion model</dt><dd>Concentric rings showing how directly each stakeholder interacts with the product (Ian Alexander).</dd>
+<dt>RACI</dt><dd>Responsible, Accountable, Consulted, Informed: who does what for each activity.</dd>
+<dt>Champion / Supporter / Neutral / Sceptic / Blocker</dt><dd>Attitude scale, from an active advocate to an active opponent of the solution.</dd>
+<dt>Pass-through funds</dt><dd>Federal money that a state agency receives and passes on to local health departments, counties or community organizations.</dd>
+<dt>ASSUMED</dt><dd>A team estimate not yet confirmed by the stakeholder.</dd>
+</dl>
+<footer>Federal Funds Matchmaker for NC DHHS · Team 14, UNC Solve-a-thon 2026 · v1.0 · 2026-11-07. Generated with AI assistance using the <i>stakeholder-map</i> skill; validate with real stakeholders before relying on it.</footer>
+</main></body></html>

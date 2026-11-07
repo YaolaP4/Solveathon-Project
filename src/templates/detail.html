@@ -94,7 +94,7 @@
         <dt>Total program funding</dt><dd>{{ money(r.total_funding) }}</dd>
         <dt>Expected awards</dt><dd>{{ r.expected_awards if r.expected_awards else 'not stated' }}</dd>
         <dt>Cost sharing</dt><dd>{{ {'True':'Required','False':'Not required','Unknown':'Not stated'}[r.cost_sharing] }}</dd>
-        <dt>Eligible applicants</dt><dd>{{ r.eligibility.replace('_', ' ').replace(';', '; ') or 'not stated' }}</dd>
+        <dt>Eligible applicants</dt><dd>{{ applicants(r.eligibility) }}</dd>
         <dt>Assistance listing</dt><dd>{{ r.assistance_listings.replace('|', ' ').replace(';', '; ') or 'not stated' }}</dd>
       </dl>
     </section>
@@ -103,6 +103,7 @@
       <h2 id="dec-h">Your decision</h2>
       <form method="post" action="{{ url_for('decide', oid=r.id) }}" class="decision-form">
         <input type="hidden" name="csrf" value="{{ csrf_token() }}">
+        <input type="hidden" name="back" value="{{ back }}">
         <fieldset>
           <legend>Should NC DHHS pursue this?</legend>
           {% set cur = (history[-1].decision if history else '') %}
@@ -111,7 +112,7 @@
           {% endfor %}
         </fieldset>
         <label for="name">Your name or initials</label>
-        <input id="name" name="name" type="text" value="{{ name }}" autocomplete="name" maxlength="60">
+        <input id="name" name="name" type="text" value="{{ name }}" autocomplete="name" maxlength="60" required>
         <label for="note">Note (optional)</label>
         <textarea id="note" name="note" rows="3" maxlength="1000"></textarea>
         <button type="submit" class="btn">Save decision</button>

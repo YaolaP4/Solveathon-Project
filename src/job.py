@@ -18,6 +18,7 @@ Writes (data contract, docs/data_contract.md):
 """
 
 import argparse
+import re
 import sys
 import time
 import traceback
@@ -145,7 +146,11 @@ def run(replay: str | None = None, log=print) -> dict:
     w = meta["weights"]
     goals = {g["id"]: g for g in agency["strategic_priorities"]}
     records = [scored_record(r, w, goals, ingested_at) for _, r in scored.iterrows()]
-    previous = store.read_json(f"scored/{aid}/latest.json", default=None)
+    # "New" means new since the last refresh on an EARLIER day, so re-running today (by hand, or the job's
+    # retry) reproduces the same alerts instead of wiping them.
+    earlier = sorted(p for p in store.list(f"scored/{aid}/")
+                     if re.fullmatch(rf"scored/{re.escape(aid)}/\d{{4}}-\d{{2}}-\d{{2}}\.json", p) and p[-15:-5] < today)
+    previous = store.read_json(earlier[-1]) if earlier else None
     prev_ids = set(previous["seen_ids"]) if previous and previous.get("seen_ids") else None
     prev_ids_all = prev_ids if prev_ids is not None else set()
     for rec in records:
@@ -177,6 +182,7 @@ def run(replay: str | None = None, log=print) -> dict:
                "stages": stages, "errors": errors[:50]}
     store.write_json(f"runs/{run_id}.json", run_log)
     store.write_json("runs/latest.json", run_log)
+    store.write_json("runs/last_attempt.json", run_log)
     log(f"Done in {run_log['duration_s']} s: {run_log['counts']}")
     return run_log
 
@@ -192,9 +198,9 @@ def main() -> int:
         traceback.print_exc()
         try:
             now = datetime.now(timezone.utc).replace(microsecond=0)
-            get_store().write_json(f"runs/{now.strftime('%Y-%m-%dT%H-%M-%SZ')}.json",
-                                   {"run_id": now.isoformat(), "status": "failed", "error": str(e)[:500],
-                                    "finished_at": now.isoformat()})
+            failed = {"run_id": now.isoformat(), "status": "failed", "error": str(e)[:500], "finished_at": now.isoformat()}
+            get_store().write_json(f"runs/{now.strftime('%Y-%m-%dT%H-%M-%SZ')}.json", failed)
+            get_store().write_json("runs/last_attempt.json", failed)   # the app shows a red warning
         except Exception:
             pass
         return 1

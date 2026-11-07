@@ -51,7 +51,12 @@ pre { padding: .75rem; overflow-x: auto; }
 .nav a { color: #fff; text-decoration: none; padding: .35rem 0; display: inline-block; border-bottom: 3px solid transparent; }
 .nav a:hover, .nav a[aria-current="page"] { border-bottom-color: #73b3e7; }
 .refresh-strip { background: #e7f2f5; border-bottom: 1px solid var(--line); font-size: .92rem; padding: .5rem 0; }
-.warn { color: var(--urgent); font-weight: 700; margin-left: .5rem; }
+.warn { color: var(--urgent); font-weight: 700; margin: .3rem 0 0; }
+.name-bar { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem .75rem; margin: .25rem 0 .5rem; font-size: .95rem; }
+.name-bar p { margin: 0; }
+.name-bar label { font-weight: 600; margin: 0; }
+.name-bar input[type="text"] { width: auto; min-width: 12rem; flex: 0 1 16rem; }
+.table-scroll { overflow-x: auto; max-width: 100%; }
 
 main { padding-bottom: 2.5rem; display: block; }
 main:focus { outline: none; }
@@ -161,11 +166,14 @@ tr.gap th, tr.gap td { background: #fff8f0; }
 @media (max-width: 760px) {
   h1 { font-size: 1.5rem; }
   .field.wide { grid-column: auto; }
-  .detail-grid, .two-col { grid-template-columns: 1fr; }
+  .detail-grid, .two-col { grid-template-columns: minmax(0, 1fr); }
+  .detail-grid > *, .card { min-width: 0; }
+  .breakdown .pts { white-space: normal; }
+  .breakdown meter { width: 100%; display: block; }
   table.results thead, table.labeled thead, table.runs thead { position: absolute; left: -9999px; }
   table.results tr, table.labeled tr, table.runs tr { display: block; border: 1px solid var(--line); margin-bottom: .75rem; padding: .25rem .5rem; }
   table.results td, table.labeled td, table.runs td { display: block; border: 0; padding: .3rem 0; text-align: left !important; }
-  table.results td::before { content: attr(data-label); display: block; font-size: .78rem; font-weight: 700; color: var(--muted); text-transform: uppercase; }
+  table.results td::before, table.labeled td::before, table.runs td::before { content: attr(data-label); display: block; font-size: .78rem; font-weight: 700; color: var(--muted); text-transform: uppercase; }
   table.results td.num::before { display: inline; margin-right: .5rem; }
   .facts { grid-template-columns: 1fr; }
   .facts dd { margin-bottom: .4rem; }

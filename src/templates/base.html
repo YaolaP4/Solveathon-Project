@@ -37,11 +37,12 @@
       <strong>Last refreshed:</strong> {{ fmt_dt(run.finished_at) }}
       · {{ "{:,}".format(run.counts.pulled or 0) }} Grants.gov listings checked
       · {{ run.counts.new }} new since the previous refresh
-      · Refreshes automatically every day at 6:00 AM ET
-      {% if run.status != 'succeeded' %}<span class="warn">Last run: {{ run.status }}</span>{% endif %}
+      · Refreshes automatically every morning (about 6 AM Eastern)
     {% else %}
       <strong>No data yet.</strong> The daily refresh has not run.
     {% endif %}
+    {% set warning = refresh_warning() %}
+    {% if warning %}<p class="warn" role="alert">{{ warning }}</p>{% endif %}
   </div>
 </div>
 <main id="main" class="wrap" tabindex="-1">

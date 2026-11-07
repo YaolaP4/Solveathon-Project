@@ -49,17 +49,25 @@ to everything.
 *How we caught it:* we read the top 25 instead of trusting the numbers.
 *What we changed:* (a) we also embed ten short descriptions of unrelated fields (defence, arts, physics,
 agriculture …) and score the **margin**: closer to the DHHS plan than to the nearest unrelated field?
-(b) we average that with plain TF-IDF word similarity. Measured on the 1,037 grants the qualifier had already
-screened that are still live:
+(b) we average that with plain TF-IDF word similarity (which is also the fallback if Azure OpenAI is down).
+Measured on the 1,037 live opportunities the qualifier's pipeline had already reviewed, against whether it
+judged them on topic for DHHS (`python src/tune_semantic.py`, full table in `docs/tuning_report.md`):
 
-| Semantic signal | AUC vs qualifier relevance | Share of top 50 judged relevant |
+| Plan-alignment signal | AUC | Share of top 50 on topic |
 |---|---|---|
-| Raw embedding similarity | 0.78 | 40% |
-| TF-IDF only | 0.77 | 50% |
-| Embedding margin vs off-topic fields | 0.82 | 60% |
-| **Hybrid (what we ship)** | **0.84** | **68%** |
+| Raw embedding similarity | 0.84 | 54% |
+| TF-IDF only | 0.81 | 50% |
+| Embedding margin vs off-topic fields | 0.91 | 74% |
+| **Hybrid (what we ship)** | **0.91** | **76%** |
 
-The full score (all five signals) reaches AUC 0.87 on the same set.
+The margin is the real fix; TF-IDF adds a little and keeps the matcher working without AI. The full five-signal
+score reaches AUC 0.91 against "on topic and DHHS can apply". Its top 50 is slightly less on topic (66–68%)
+because it also weighs deadlines and award history, which the reference does not judge. These are AI reference
+labels from the qualifier, used for tuning; the real test is precision@10 on fresh human labels.
+
+*A mistake in our own analysis:* our first comparison reported lower numbers (0.78 → 0.84, 40% → 68%) because it
+counted opportunities listed twice in the qualifier data twice and compared capped scores with many ties.
+Re-running it as a script exposed this; the numbers above are from the corrected script.
 
 **2. The model's "verbatim" quotes were not always verbatim.** On the first full run, our checker rejected
 8 of 90 quotes. Reading each one:
@@ -67,10 +75,12 @@ The full score (all five signals) reaches AUC 0.87 on the same set.
   quoted the applicant-type list exactly as our prompt displayed it. We fixed the **checker**, not the model.
 - The rest were real errors: it **joined two sentences that are not next to each other** into one quote,
   dropped list numbering ("1. 1 Letter of Commitment" became "1 Letter of Commitment"), returned "N/A" as a
-  quote, and once **invented a division id** ("DSCFS") that is not in our list.
+  quote, and **invented division ids** that are not in our list ("DSCFS" in one run, "DSCFW" twice in the
+  deployed run, apparently blending "DSS" and "DCFW").
 *How we caught it:* every quote is checked against the listing text by code; a failed quote is hidden from
-staff and logged on the Evaluation page. An unverified "not eligible" claim is never acted on.
-After the fix: 76 of 90 quotes verified; the remaining failures are listed in the app.
+staff and logged on the Evaluation page; unknown ids are dropped. An unverified "not eligible" claim is never
+acted on. In the deployed run on 7 November: **77 of 90 quotes verified word for word, 3 rejected and hidden,
+the rest left blank** (the model said there was no quote); 6 problems logged in all.
 
 **3. Our AI coding assistant introduced a cache bug.** Re-running the job showed "0 cached, 1,443 new"
 embeddings. Three identical re-posted listings were embedded twice but stored once, so the cache's row count

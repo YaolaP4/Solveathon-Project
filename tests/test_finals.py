@@ -289,3 +289,85 @@ def test_labeling_flow(client, tmp_store):
     assert r.status_code == 302
     assert tmp_store.read_json("eval/labels.json")["labels"][0]["relevant"] is True
     assert client.get("/evaluation").status_code == 200
+
+
+# ── Review fixes ──
+
+def test_csv_cells_cannot_run_formulas():
+    import webapp
+    assert webapp.cell("=HYPERLINK(1)") == "'=HYPERLINK(1)"
+    assert webapp.cell("+1") == "'+1" and webapp.cell("@x") == "'@x" and webapp.cell("-2") == "'-2"
+    assert webapp.cell("Plain text") == "Plain text" and webapp.cell(42) == 42 and webapp.cell(None) == ""
+
+
+def test_safe_next_rejects_offsite_and_control_characters():
+    import webapp
+    assert webapp.safe_next("/?q=1#opp-2", "/x") == "/?q=1#opp-2"
+    for bad in ["//evil.example", "https://evil.example", "/\t/evil.example", r"/\evil", "/a\r\nb", ""]:
+        assert webapp.safe_next(bad, "/x") == "/x", bad
+
+
+def test_quick_decision_without_a_name_is_not_saved(client, tmp_store):
+    with client.session_transaction() as s:
+        s.pop("name", None)
+    token = _csrf(client, "/")
+    r = client.post("/opportunity/1001/decision", data={"csrf": token, "decision": "Pass"})
+    assert r.status_code == 302 and "#dec-h" in r.headers["Location"]
+    assert not (tmp_store.read_json("decisions/ncdhhs.json") or {}).get("decisions", {}).get("1001")
+    client.post("/name", data={"csrf": token, "name": "AB", "next": "/"})
+    client.post("/opportunity/1001/decision", data={"csrf": token, "decision": "Pass"})
+    client.post("/opportunity/1001/decision", data={"csrf": token, "decision": "Pass"})   # double click
+    hist = tmp_store.read_json("decisions/ncdhhs.json")["decisions"]["1001"]
+    assert len(hist) == 1 and hist[0]["by"] == "AB"
+
+
+def test_records_closed_since_the_refresh_are_hidden(client, monkeypatch):
+    import webapp
+    from datetime import date
+    webapp._cache.clear()
+    monkeypatch.setattr(webapp, "today_et", lambda: date(2027, 1, 5))    # after the CDC close date
+    html = client.get("/?track=all&confidence=all").get_data(as_text=True)
+    assert "State Overdose Data to Action" not in html
+    monkeypatch.setattr(webapp, "today_et", lambda: date(2026, 12, 30))
+    webapp._cache.clear()
+    html = client.get("/?track=all&confidence=all").get_data(as_text=True)
+    assert "State Overdose Data to Action" in html and "1 days" in html
+
+
+def test_label_page_uses_snapshot_when_item_is_gone(client, tmp_store):
+    token = _csrf(client, "/evaluation")
+    client.post("/evaluation/sample", data={"csrf": token})
+    sample = tmp_store.read_json("eval/sample.json")
+    assert all("snapshot" in it for it in sample["items"])
+    # Keep only an item that is no longer in today's results.
+    sample["items"] = [{"id": "gone", "stratum": "test", "title": "Closed grant",
+                        "snapshot": {"number": "X-1", "agency": "A", "status": "posted", "close_date": "2026-11-08",
+                                     "eligibility": "state_governments", "url": "https://www.grants.gov/x",
+                                     "description": "desc", "eligibility_text": ""}}]
+    tmp_store.write_json("eval/sample.json", sample)
+    page = client.get("/evaluation/label?labeler=A").get_data(as_text=True)
+    assert "Closed grant" in page and "you labeled all" not in page     # shown, not skipped as "done"
+
+
+def test_new_since_compares_with_an_earlier_day(tmp_store, monkeypatch):
+    import grantsgov
+    import job
+    monkeypatch.setattr(matcher, "aln_affinity", lambda *a, **k: {})
+    hits = [POSTED_HIT, FORECAST_HIT] + [{**FORECAST_HIT, "id": str(3000 + i), "number": f"G-{i}"} for i in range(60)]
+    details = {h["id"]: (POSTED_DETAIL if h["id"] == "1001" else FORECAST_DETAIL) for h in hits}
+    monkeypatch.setattr(grantsgov, "ingest", lambda store, kws, today, log: {
+        "hits": hits, "details": details, "keyword_hits": {}, "stats": {"pulled": len(hits)}, "errors": []})
+    earlier = {"seen_ids": [h["id"] for h in hits if h["id"] != "1001"], "run_id": "old"}
+    tmp_store.write_json("scored/ncdhhs/2000-01-01.json", earlier)
+    for _ in range(2):                                   # a same-day re-run keeps the same alert
+        job.run(log=lambda *_: None)
+        assert tmp_store.read_json("alerts/ncdhhs/latest.json")["new_since_last_run"] == ["1001"]
+    assert tmp_store.read_json("runs/last_attempt.json")["status"] == "succeeded"
+
+
+def test_concurrent_decisions_are_never_lost(tmp_path):
+    from concurrent.futures import ThreadPoolExecutor
+    s = Store(LocalStore(tmp_path))
+    with ThreadPoolExecutor(8) as pool:
+        list(pool.map(lambda i: s.update_json("d.json", lambda cur: {"n": cur["n"] + [i]}, default={"n": []}), range(40)))
+    assert sorted(s.read_json("d.json")["n"]) == list(range(40))

@@ -98,6 +98,20 @@
   <p role="status"><strong>{{ total }}</strong> opportunit{{ 'y' if total == 1 else 'ies' }} shown{% if f.confidence == 'hm' %} (Low-confidence matches hidden){% endif %}.</p>
   <a class="btn btn-secondary" href="{{ url_for('export') }}?{{ query_with(f) }}">Download this list (CSV)</a>
 </div>
+<form method="post" action="{{ url_for('set_name') }}" class="name-bar">
+  <input type="hidden" name="csrf" value="{{ csrf_token() }}">
+  <input type="hidden" name="next" value="{{ request.full_path }}">
+  {% if name %}
+    <p>Recording decisions as <strong>{{ name }}</strong>.</p>
+    <label for="who" class="visually-hidden">Change your name or initials</label>
+    <input id="who" name="name" type="text" maxlength="60" autocomplete="name" placeholder="Change name">
+    <button type="submit" class="btn-small">Change</button>
+  {% else %}
+    <label for="who">Your name or initials (needed for the Pursue / Maybe / Pass buttons)</label>
+    <input id="who" name="name" type="text" maxlength="60" autocomplete="name" required>
+    <button type="submit" class="btn-small">Save</button>
+  {% endif %}
+</form>
 
 {% if rows %}
 <table class="results">
@@ -115,10 +129,10 @@
   <tbody>
   {% for r in rows %}
     {% set d = (decided.get(r.id) or [{}])[-1] %}
-    <tr>
+    <tr id="opp-{{ r.id }}">
       <td data-label="Rank" class="num">{{ r.rank }}</td>
       <td data-label="Opportunity" class="opp">
-        <a href="{{ url_for('detail', oid=r.id) }}?back={{ query_with(f)|urlencode }}" class="opp-title">{{ r.title }}</a>
+        <a href="{{ url_for('detail', oid=r.id) }}?back={{ query_with(f, page=page)|urlencode }}" class="opp-title">{{ r.title }}</a>
         <span class="meta">{{ r.number }} · {{ r.agency }}</span>
         <span class="meta">
           <span class="tag tag-{{ r.status }}">{{ 'Posted' if r.status == 'posted' else 'Forecast' }}</span>
@@ -144,9 +158,10 @@
         {% if d.decision %}<span class="dec dec-{{ d.decision|lower }}">{{ d.decision }}</span><span class="meta">by {{ d.by }}</span>{% endif %}
         <form method="post" action="{{ url_for('decide', oid=r.id) }}" class="quick">
           <input type="hidden" name="csrf" value="{{ csrf_token() }}">
-          <input type="hidden" name="next" value="{{ request.full_path }}">
+          <input type="hidden" name="next" value="{{ request.full_path }}#opp-{{ r.id }}">
+          <input type="hidden" name="back" value="{{ query_with(f, page=page) }}">
           <fieldset><legend class="visually-hidden">Decision for {{ r.title }}</legend>
-          {% for c in ('Pursue','Maybe','Pass') %}<button type="submit" name="decision" value="{{ c }}" class="btn-small{% if d.decision == c %} is-set{% endif %}" aria-label="{{ c }}: {{ r.title }}">{{ c }}</button>{% endfor %}
+          {% for c in ('Pursue','Maybe','Pass') %}<button type="submit" name="decision" value="{{ c }}" class="btn-small{% if d.decision == c %} is-set{% endif %}" aria-pressed="{{ 'true' if d.decision == c else 'false' }}" aria-label="{{ c }}: {{ r.title }}">{{ c }}</button>{% endfor %}
           </fieldset>
         </form>
       </td>

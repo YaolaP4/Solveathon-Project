@@ -16,7 +16,7 @@ prototype "is expected to run on Azure". It is deployed:
 | Real Grants.gov data | ✅ | Live API every day: ~1,460 posted + forecasted listings, full details for each |
 | A ranked list with an explanation per item | ✅ | Every record has a 5-signal score breakdown; the top 45 also get an AI reason with checked quotes |
 | A human decision button | ✅ | Pursue / Maybe / Pass with name and note, from the list or the detail page; full history kept |
-| One evaluation number + one honest failure | ✅ / 👥 | Against the qualifier's 1,037 reviewed grants still live: AUC 0.87. Precision@10 on fresh human labels needs two teammates to label the sample (about 20 minutes, Evaluation page). Failures in `docs/finals_field_notes.md` |
+| One evaluation number + one honest failure | ✅ / 👥 | Against the qualifier's 1,037 reviewed grants still live: AUC 0.91 (`docs/tuning_report.md`). Precision@10 on fresh human labels needs two teammates to label the sample (about 20 minutes, Evaluation page). Failures in `docs/finals_field_notes.md` |
 
 ## What the team must build (kit section 5)
 

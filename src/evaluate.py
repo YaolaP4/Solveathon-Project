@@ -42,7 +42,11 @@ def draw_sample(doc: dict, seed: int = 42) -> dict:
     def add(r, stratum):
         if r["id"] not in chosen:
             chosen.add(r["id"])
-            items.append({"id": r["id"], "stratum": stratum, "title": r["title"]})
+            # A snapshot of what the labeler sees, so an item stays labelable after it closes.
+            snap = {k: r.get(k) for k in ("number", "agency", "status", "close_date", "eligibility", "url")}
+            snap["description"] = (r.get("description") or "")[:1500]
+            snap["eligibility_text"] = (r.get("eligibility_text") or "")[:1500]
+            items.append({"id": r["id"], "stratum": stratum, "title": r["title"], "snapshot": snap})
 
     for r in ours:
         add(r, "our top 10")
@@ -114,16 +118,24 @@ def metrics(doc: dict, sample: dict | None, labels: list[dict], decisions: dict,
     brank = {r["id"]: i + 1 for i, r in enumerate(base)}
     res = resolved(labels)
 
-    # Labeler agreement on items with at least two labelers who gave a yes/no.
+    # Agreement for ONE fixed pair of labelers (the two who labeled most), so rater A and rater B are the
+    # same people on every item, as Cohen's kappa assumes. Disagreements are listed for any labelers.
+    labelers = sorted({l["labeler"].strip() for l in labels})
+    counts = {}
+    for (iid, who), l in _latest_labels(labels).items():
+        if l["relevant"] is not None:
+            counts[who] = counts.get(who, 0) + 1
+    pair = sorted(sorted(counts, key=lambda w: (-counts[w], w))[:2])
     pairs, disagreements = [], []
     for iid, v in res.items():
         yn = [l for l in v["votes"] if l["relevant"] is not None]
-        if len(yn) >= 2:
-            pairs.append((bool(yn[0]["relevant"]), bool(yn[1]["relevant"])))
-            if v["disagree"]:
-                disagreements.append({"id": iid, "votes": [{"labeler": l["labeler"], "relevant": l["relevant"],
-                                                             "note": l.get("note", "")} for l in yn]})
-    labelers = sorted({l["labeler"].strip() for l in labels})
+        by = {l["labeler"].strip().lower(): bool(l["relevant"]) for l in yn}
+        if len(pair) == 2 and all(p in by for p in pair):
+            pairs.append((by[pair[0]], by[pair[1]]))
+        if v["disagree"]:
+            disagreements.append({"id": iid, "votes": [{"labeler": l["labeler"], "relevant": l["relevant"],
+                                                         "note": l.get("note", "")} for l in yn]})
+    names = {l["labeler"].strip().lower(): l["labeler"].strip() for l in labels}
     relevant_ids = [i for i, v in res.items() if v["label"] is True and i in rank]
     in25 = [i for i in relevant_ids if rank[i] <= 25]
     base25 = [i for i in relevant_ids if brank.get(i, 10 ** 9) <= 25]
@@ -159,7 +171,8 @@ def metrics(doc: dict, sample: dict | None, labels: list[dict], decisions: dict,
                      "ours": round(len(in25) / len(relevant_ids), 2) if relevant_ids else None,
                      "baseline": round(len(base25) / len(relevant_ids), 2) if relevant_ids else None},
         "found_not_baseline": found_not_baseline,
-        "agreement": {"pairs": len(pairs), "agree": sum(a == b for a, b in pairs), "kappa": cohen_kappa(pairs)},
+        "agreement": {"pairs": len(pairs), "agree": sum(a == b for a, b in pairs), "kappa": cohen_kappa(pairs),
+                      "labelers": [names.get(p, p) for p in pair]},
         "disagreements": disagreements, "keyword_search": kw_missed, "feedback": feedback,
         "ours_rank": rank, "baseline_rank": brank, "resolved": res,
     }

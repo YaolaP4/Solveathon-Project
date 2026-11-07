@@ -126,8 +126,9 @@ def similarity(store, opp_texts: list[str], docs: list[dict], cfg: dict, log=pri
         announcements (a Navy research BAA, a National Park Service agreement) near the top;
         the margin asks "closer to the DHHS plan than to unrelated fields?";
       * word-based: TF-IDF similarity to the objective.
-    Tuned on the qualifier's 1,037 Jev-screened and 253 DeepSeek-reviewed grants that are still
-    live: AUC 0.84 vs 0.78 (raw embeddings) and 0.77 (TF-IDF alone). See docs/finals_field_notes.md.
+    Tuned on the 1,037 live opportunities the qualifier's pipeline had already reviewed: AUC 0.91 and 76%
+    of the top 50 on topic, vs 0.84 / 54% for raw embeddings and 0.81 / 50% for TF-IDF alone
+    (src/tune_semantic.py, docs/tuning_report.md).
     tfidf (fallback if Azure OpenAI is unavailable): the word-based part alone.
     """
     plan = [d["text"] for d in docs]

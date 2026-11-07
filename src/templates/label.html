@@ -25,7 +25,7 @@ would the grants coordinator want to look at it? Each person labels on their own
   <h3>Description</h3>
   <p class="desc">{{ item.description[:1500] }}{% if item.description|length > 1500 %}…{% endif %}</p>
   <h3>Eligibility</h3>
-  <p>{{ item.eligibility.replace('_', ' ').replace(';', '; ') or 'not stated' }}</p>
+  <p>{{ applicants(item.eligibility) }}</p>
   {% if item.eligibility_text %}<p class="desc">{{ item.eligibility_text|striptags|truncate(800) }}</p>{% endif %}
 </article>
 <form method="post" action="{{ url_for('label') }}" class="label-form">

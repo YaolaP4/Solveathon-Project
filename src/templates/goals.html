@@ -5,8 +5,9 @@
 <p class="lede">How many High and Medium matches each goal of the NC DHHS Strategic Plan has right now (agency-eligible list only).
 Use it to see which goals have money available and which have little.</p>
 
+<div class="table-scroll" role="region" aria-labelledby="goals-cap" tabindex="0">
 <table class="goals">
-  <caption>Matches per goal, data as of {{ doc.as_of }}</caption>
+  <caption id="goals-cap">Matches per goal, data as of {{ doc.as_of }}</caption>
   <thead>
     <tr><th scope="col">Goal</th><th scope="col">High</th><th scope="col">Medium</th><th scope="col">Strong matches</th>
         <th scope="col">Posted / forecast</th><th scope="col">Closing within 30 days</th><th scope="col">Sum of award ceilings</th></tr>
@@ -25,6 +26,7 @@ Use it to see which goals have money available and which have little.</p>
   {% endfor %}
   </tbody>
 </table>
+</div>
 <p class="note">“Sum of award ceilings” adds the largest single award of each matching opportunity. It shows scale, not money NC DHHS would receive.</p>
 
 <h2>By objective</h2>

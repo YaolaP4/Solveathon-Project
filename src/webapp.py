@@ -14,7 +14,8 @@ import os
 import secrets
 import time
 from datetime import datetime, timezone
-from urllib.parse import urlencode
+from datetime import date
+from urllib.parse import urlencode, urlsplit
 from zoneinfo import ZoneInfo
 
 from flask import Flask, Response, abort, flash, redirect, render_template, request, session, url_for
@@ -32,6 +33,9 @@ PAGE_SIZE = 50
 TRACKS = {"agency": "Agency can apply", "research": "Research (university partner)", "not_eligible": "Not eligible"}
 
 app = Flask(__name__, template_folder="templates", static_folder="static")
+if os.getenv("MODE") == "app" and not os.getenv("FLASK_SECRET_KEY"):
+    # Every gunicorn worker must share one key, or form tokens fail at random.
+    raise RuntimeError("FLASK_SECRET_KEY must be set when MODE=app")
 app.secret_key = os.getenv("FLASK_SECRET_KEY") or secrets.token_hex(32)
 app.config.update(SESSION_COOKIE_HTTPONLY=True, SESSION_COOKIE_SAMESITE="Lax",
                   SESSION_COOKIE_SECURE=os.getenv("COOKIE_SECURE", "1") == "1" and os.getenv("MODE") == "app")
@@ -56,8 +60,26 @@ def _cached(path: str, default):
     return value
 
 
+def today_et() -> date:
+    return datetime.now(ET).date()
+
+
 def scored() -> dict | None:
-    return _cached(f"scored/{AID}/latest.json", None)
+    """The latest results, with days-to-close recomputed for today, so a late or failed refresh
+    never shows a deadline that has already passed as still open."""
+    doc = _cached(f"scored/{AID}/latest.json", None)
+    if doc and doc.get("_days_for") != today_et().isoformat():
+        t = today_et()
+        for r in doc["records"]:
+            try:
+                d = (date.fromisoformat(r["close_date"]) - t).days if r["status"] == "posted" else None
+            except (TypeError, ValueError):
+                d = None
+            r["days_to_close"] = d
+            r["closed_since_refresh"] = d is not None and d < 0
+            r["closing_soon"] = d is not None and 0 <= d <= 10
+        doc["_days_for"] = t.isoformat()
+    return doc
 
 
 def decisions() -> dict:
@@ -72,6 +94,23 @@ def latest_run() -> dict | None:
     return _cached("runs/latest.json", None)
 
 
+def last_attempt() -> dict | None:
+    return _cached("runs/last_attempt.json", None)
+
+
+def refresh_warning() -> str:
+    """Shown in red under the banner when the daily refresh failed or is overdue."""
+    att, run = last_attempt(), latest_run()
+    if att and att.get("status") == "failed":
+        return (f"The last refresh attempt failed ({fmt_dt(att.get('finished_at'))}). "
+                "The list below is from the last successful refresh.")
+    if run and run.get("finished_at"):
+        age_h = (datetime.now(ET) - datetime.fromisoformat(run["finished_at"]).astimezone(ET)).total_seconds() / 3600
+        if age_h > 26:
+            return f"No successful refresh for {age_h / 24:.0f} day(s). Check the Data refresh page."
+    return ""
+
+
 # ── Helpers available in templates ──
 
 def fmt_dt(iso: str | None) -> str:
@@ -79,6 +118,27 @@ def fmt_dt(iso: str | None) -> str:
         return "never"
     dt = datetime.fromisoformat(iso).astimezone(ET)
     return dt.strftime("%a %-d %b %Y, %-I:%M %p ET") if os.name != "nt" else dt.strftime("%a %d %b %Y, %I:%M %p ET")
+
+
+APPLICANT_LABELS = {
+    "state_governments": "State governments", "county_governments": "County governments",
+    "city_or_township_governments": "City or township governments", "special_district_governments": "Special district governments",
+    "independent_school_districts": "Independent school districts",
+    "public_and_state_institutions_of_higher_education": "Public and state universities and colleges",
+    "private_institutions_of_higher_education": "Private universities and colleges",
+    "federally_recognized_native_american_tribal_governments": "Federally recognized tribal governments",
+    "other_native_american_tribal_organizations": "Other Native American tribal organizations",
+    "public_and_indian_housing_authorities": "Public and Indian housing authorities",
+    "nonprofits_non_higher_education_with_501c3": "Nonprofits with 501(c)(3) status",
+    "nonprofits_non_higher_education_without_501c3": "Nonprofits without 501(c)(3) status",
+    "for_profit_organizations_other_than_small_businesses": "For-profit organizations", "small_businesses": "Small businesses",
+    "individuals": "Individuals", "other": "Other (see the eligibility text)", "unrestricted": "Anyone (unrestricted)",
+}
+
+
+def applicants(codes: str) -> str:
+    names = [APPLICANT_LABELS.get(c.strip(), c.strip().replace("_", " ")) for c in (codes or "").split(";") if c.strip()]
+    return "; ".join(names) or "not stated"
 
 
 def money(v) -> str:
@@ -89,7 +149,7 @@ def money(v) -> str:
 
 @app.context_processor
 def inject():
-    return {"fmt_dt": fmt_dt, "money": money, "agency": AGENCY, "TRACKS": TRACKS, "csrf_token": csrf_token,
+    return {"fmt_dt": fmt_dt, "money": money, "applicants": applicants, "refresh_warning": refresh_warning, "agency": AGENCY, "TRACKS": TRACKS, "csrf_token": csrf_token,
             "goals": {g["id"]: g for g in AGENCY["strategic_priorities"]},
             "divisions": {d["id"]: d for d in AGENCY["divisions"]}, "run": latest_run()}
 
@@ -113,7 +173,12 @@ def security_headers(resp):
     resp.headers.setdefault("Referrer-Policy", "same-origin")
     resp.headers.setdefault("X-Frame-Options", "DENY")
     resp.headers.setdefault("Content-Security-Policy",
-                            "default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; form-action 'self'")
+                            "default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; form-action 'self'; "
+                            "base-uri 'none'; object-src 'none'; frame-ancestors 'none'")
+    if os.getenv("MODE") == "app":   # served only over HTTPS behind Container Apps ingress
+        resp.headers.setdefault("Strict-Transport-Security", "max-age=31536000; includeSubDomains")
+    if request.method == "POST" or request.path.endswith(".csv"):
+        resp.headers.setdefault("Cache-Control", "no-store")
     return resp
 
 
@@ -133,6 +198,8 @@ def apply_filters(records: list[dict], f: dict, decided: dict) -> list[dict]:
     out = []
     q = f["q"].lower()
     for r in records:
+        if r.get("closed_since_refresh"):
+            continue
         if f["track"] != "all" and r["track"] != f["track"]:
             continue
         if f["confidence"] == "hm" and r["confidence"] == "Low":
@@ -187,7 +254,7 @@ def shortlist():
     page = min(page, pages)
     alerts = get_store().read_json(f"alerts/{AID}/latest.json", default={}) or {}
     by_id = {r["id"]: r for r in doc["records"]}
-    return render_template("shortlist.html", doc=doc, rows=rows[(page - 1) * PAGE_SIZE: page * PAGE_SIZE],
+    return render_template("shortlist.html", doc=doc, rows=rows[(page - 1) * PAGE_SIZE: page * PAGE_SIZE], name=session.get("name", ""),
                            total=len(rows), page=page, pages=pages, f=f, decided=decided, query_with=query_with,
                            new_items=[by_id[i] for i in alerts.get("new_since_last_run", []) if i in by_id],
                            closing=[by_id[i] for i in alerts.get("closing_soon", []) if i in by_id],
@@ -205,6 +272,26 @@ def detail(oid):
                            name=session.get("name", ""), back=request.args.get("back", ""))
 
 
+def safe_next(nxt: str, fallback: str) -> str:
+    """Only same-site relative paths: no scheme, no host, no control characters or backslashes."""
+    nxt = nxt or ""
+    u = urlsplit(nxt)
+    bad = any(c in nxt for c in ("\t", "\r", "\n", "\\"))
+    if nxt.startswith("/") and not nxt.startswith("//") and not u.scheme and not u.netloc and not bad:
+        return nxt
+    return fallback
+
+
+@app.route("/name", methods=["POST"])
+def set_name():
+    """Remember who is recording decisions (until Entra ID sign-in replaces this in a pilot)."""
+    name = request.form.get("name", "").strip()[:60]
+    if name:
+        session["name"] = name
+        flash(f"Decisions will be recorded as {name}.")
+    return redirect(safe_next(request.form.get("next", ""), url_for("shortlist")))
+
+
 @app.route("/opportunity/<oid>/decision", methods=["POST"])
 def decide(oid):
     doc = scored()
@@ -214,7 +301,11 @@ def decide(oid):
     choice = request.form.get("decision", "")
     if choice not in CHOICES:
         abort(400, "Choose Pursue, Maybe or Pass.")
-    name = request.form.get("name", "").strip()[:60] or session.get("name", "") or "staff"
+    name = request.form.get("name", "").strip()[:60] or session.get("name", "")
+    back = request.form.get("back", "")
+    if not name:   # never record an anonymous decision
+        flash("Enter your name or initials, then save the decision.")
+        return redirect(url_for("detail", oid=oid, back=back or None) + "#dec-h")
     session["name"] = name
     entry = {"decision": choice, "by": name, "note": request.form.get("note", "").strip()[:1000],
              "at": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
@@ -222,12 +313,25 @@ def decide(oid):
 
     def add(cur):
         cur = cur or {"decisions": {}}
-        cur.setdefault("decisions", {}).setdefault(oid, []).append(entry)
+        hist = cur.setdefault("decisions", {}).setdefault(oid, [])
+        last = hist[-1] if hist else None
+        duplicate = bool(last) and all(last.get(k) == entry[k] for k in ("decision", "by", "note")) and (
+            datetime.fromisoformat(entry["at"]) - datetime.fromisoformat(last["at"])).total_seconds() < 10
+        if not duplicate:        # a double-click or resubmit does not add a second entry
+            hist.append(entry)
         return cur
     get_store().update_json(DECISIONS, add, default={"decisions": {}})
     flash(f"Saved: {choice} on “{rec['title'][:80]}”.")
-    nxt = request.form.get("next", "")
-    return redirect(nxt if nxt.startswith("/") and not nxt.startswith("//") else url_for("detail", oid=oid))
+    return redirect(safe_next(request.form.get("next", ""), url_for("detail", oid=oid, back=back or None)))
+
+
+def cell(v):
+    """Spreadsheet-safe cell: text starting with = + - @ (or a tab or CR) gets a leading ' so Excel
+    shows it instead of running it as a formula. Numbers stay numbers."""
+    if isinstance(v, (int, float)):
+        return v
+    s = "" if v is None else str(v)
+    return "'" + s if s[:1] in ("=", "+", "-", "@", "\t", "\r") else s
 
 
 @app.route("/export.csv")
@@ -240,19 +344,19 @@ def export():
     rows = apply_filters(doc["records"], f, decided)
     buf = io.StringIO()
     w = csv.writer(buf)
-    w.writerow(["rank", "score", "confidence", "title", "opportunity_number", "funder", "status", "close_date",
+    w.writerow(["list", "rank", "score", "confidence", "title", "opportunity_number", "funder", "status", "close_date",
                 "days_to_close", "award_ceiling", "matched_goal", "matched_objective", "why_it_matches",
                 "risk_or_gap", "owning_division", "decision", "decided_by", "decision_note", "grants_gov_link"])
     for r in rows:
         ai = r.get("ai") or {}
         d = (decided.get(r["id"]) or [{}])[-1]
         why = ai.get("why_it_matches") or "; ".join(b["reason"] for b in r["breakdown"][:2])
-        w.writerow([r["rank"], r["score"], r["confidence"], r["title"], r["number"], r["agency"], r["status"],
+        w.writerow([cell(x) for x in [TRACKS.get(r["track"], r["track"]), r["rank"], r["score"], r["confidence"], r["title"], r["number"], r["agency"], r["status"],
                     r["close_date"], "" if r["days_to_close"] is None else r["days_to_close"],
                     "" if r["award_ceiling"] is None else int(r["award_ceiling"]),
                     f"{r['matched_goal']['id']} {r['matched_goal']['name']}", r["matched_objective"]["id"], why,
                     ai.get("risk_or_gap", ""), ai.get("owning_division", ""), d.get("decision", ""), d.get("by", ""),
-                    d.get("note", ""), r["url"]])
+                    d.get("note", ""), r["url"]]])
     name = f"ncdhhs-shortlist-{doc['as_of']}.csv"
     return Response("﻿" + buf.getvalue(), mimetype="text/csv",
                     headers={"Content-Disposition": f"attachment; filename={name}"})
@@ -299,7 +403,9 @@ def evaluation():
 def make_sample():
     doc = scored()
     store = get_store()
-    if store.read_json(evaluate.SAMPLE_PATH) and request.form.get("confirm") != "replace":
+    if store.read_json(evaluate.SAMPLE_PATH):
+        # Drawn once, never replaced from the web: every label is tied to this sample. To start over,
+        # an administrator deletes eval/sample.json and eval/labels.json in storage.
         flash("A sample already exists. Labels are kept with their items.")
         return redirect(url_for("evaluation"))
     store.write_json(evaluate.SAMPLE_PATH, evaluate.draw_sample(doc), indent=2)
@@ -336,7 +442,13 @@ def label():
     todo = [i for i in order if i["id"] not in mine]
     doc = scored()
     by_id = {r["id"]: r for r in (doc or {}).get("records", [])}
-    item = by_id.get(todo[0]["id"]) if todo else None
+    item = None
+    if todo:
+        nxt = todo[0]
+        # Prefer today's record; fall back to the snapshot taken when the sample was drawn (item closed since).
+        item = by_id.get(nxt["id"]) or {"id": nxt["id"], "title": nxt["title"], **(nxt.get("snapshot") or {})}
+        item.setdefault("description", "")
+        item.setdefault("eligibility", "")
     return render_template("label.html", name=name, item=item, done=len(order) - len(todo), total=len(order))
 
 
@@ -370,10 +482,21 @@ def healthz():
     return {"ok": True, "last_run": (run or {}).get("run_id"), "storage": get_store().kind}
 
 
+class _ServerError:
+    code = 500
+    description = "Something went wrong on our side. Try again in a minute."
+
+
 @app.errorhandler(400)
 @app.errorhandler(404)
+@app.errorhandler(405)
 def error_page(e):
     return render_template("error.html", e=e), e.code
+
+
+@app.errorhandler(500)
+def server_error(e):
+    return render_template("error.html", e=_ServerError()), 500
 
 
 if __name__ == "__main__":
