@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}How it works{% endblock %}
+{% block content %}
+<h1>How it works</h1>
+<p class="lede">The system ranks and explains. Staff decide. Here is exactly how a score is made, what the AI does and does not do,
+and what the tool cannot see.</p>
+
+<section class="card">
+  <h2>Every morning (about 6 AM Eastern)</h2>
+  <ol>
+    <li><strong>Pull</strong> every posted and forecasted opportunity from the Grants.gov public API (about 1,500), plus the full listing for each. The untouched responses are kept for audit.</li>
+    <li><strong>Clean</strong>: parse dates and amounts, drop closed, archived and administrative notices, remove duplicates, and flag incomplete listings instead of hiding them.</li>
+    <li><strong>Score</strong> every opportunity against the objectives of each agency’s strategic plan with the formula below (one Grants.gov pull, one ranked list per agency).</li>
+    <li><strong>Explain</strong>: for the top 40 agency-eligible matches and the top 5 research matches, an AI model writes a summary and a reason, with quotes that our code checks against the listing.</li>
+    <li><strong>Learn</strong> from staff decisions: a new opportunity very similar to one your team passed is lowered one confidence step, and one similar to a pursued grant is raised one step, with the reason shown. The score itself never changes.</li>
+    <li><strong>Publish</strong> the ranked list, alerts (new since yesterday, closing within 10 days) and a run log. Staff record Pursue, Maybe or Pass.</li>
+  </ol>
+</section>
+
+<section class="card">
+  <h2>The score (0 to 100)</h2>
+  {% set w = doc.method.weights if doc else {} %}
+  <table class="method">
+    <caption class="visually-hidden">Score signals and weights</caption>
+    <thead><tr><th scope="col">Signal</th><th scope="col">Weight</th><th scope="col">How it is measured</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Plan alignment</th><td class="num">{{ '%.0f'|format((w.semantic or 0.45) * 100) }}%</td><td>How closely the opportunity matches each objective of the agency’s plan. Half is meaning-based (Azure OpenAI text-embedding-3-small), measured against ten unrelated fields such as defence, arts and physics, so a long generic announcement does not look relevant just because it is long. Half is word-based (TF-IDF). The closest objective becomes the matched goal. If Azure OpenAI is down, the word-based half is used alone.</td></tr>
+      <tr><th scope="row">Keyword / program fit</th><td class="num">{{ '%.0f'|format((w.keyword or 0.25) * 100) }}%</td><td>How many of the profile's 40 keywords appear; a keyword in the title counts double. Full credit at 4.</td></tr>
+      <tr><th scope="row">Eligibility</th><td class="num">{{ '%.0f'|format((w.eligibility or 0.15) * 100) }}%</td><td>1 if state governments are listed as eligible (or the text names state agencies), lower if unclear, 0 if the text limits applicants to universities, tribes or individuals. Those go to a separate “not eligible” list.</td></tr>
+      <tr><th scope="row">Time to apply</th><td class="num">{{ '%.0f'|format((w.timing or 0.10) * 100) }}%</td><td>Full credit at 60+ days left, none at 0. Forecasts get a fixed middle value and a “watch” status.</td></tr>
+      <tr><th scope="row">Funder history</th><td class="num">{{ '%.0f'|format((w.affinity or 0.05) * 100) }}%</td><td>From USAspending.gov: did this agency (or other state agencies) actually receive awards under this assistance listing in FY2022–FY2025?</td></tr>
+    </tbody>
+  </table>
+  <p>Confidence: <strong>High</strong> at {{ doc.method.bands.high if doc else 60 }} or more, <strong>Medium</strong> at {{ doc.method.bands.medium if doc else 42 }} or more, otherwise <strong>Low</strong>. Low matches are hidden by default but one click away.</p>
+  <p>NIH-style research grants (R01, U01 and similar) go to a separate “research” list: a state agency would join them as a partner of a university, not lead them.</p>
+</section>
+
+<section class="card">
+  <h2>What the AI does, and the checks on it</h2>
+  <ul>
+    <li>Writes a 2–3 sentence summary, why it matches the plan objective, who can apply, the deadline, and the biggest risk. It is told to write “not stated” instead of guessing.</li>
+    <li>Must quote the listing word for word. Our code checks every quote; a quote that is not found is hidden and logged on the Evaluation page.</li>
+    <li><strong>It never sets the score.</strong> It can only move a record to “not eligible” when it quotes eligibility text that proves it, or lower the confidence one step when it says the match is weak. Both are shown on the record.</li>
+    <li>Runs on Azure OpenAI inside the team's Azure subscription. Only public Grants.gov text and the public strategic plan are sent to it.</li>
+  </ul>
+</section>
+
+<section class="card">
+  <h2>Known limitations</h2>
+  <ul>
+    <li>Matches are only as good as the plan: agencies with vaguer plans get vaguer matches. A standard profile template and plan page citations make gaps visible.</li>
+    <li>Grants.gov only. State pass-through funds, foundations and SAM.gov contract notices are not included.</li>
+    <li>A short or vague listing can score low even when it fits (a false negative). Low matches are kept, one click away.</li>
+    <li>Eligibility is read from structured fields and text; edge cases (for example “other, see text”) need a human check.</li>
+    <li>Prototype: no sign-in yet. A pilot would use Entra ID sign-in so decisions are tied to real accounts.</li>
+  </ul>
+</section>
+{% endblock %}

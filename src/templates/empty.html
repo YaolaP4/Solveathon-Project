@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}No data yet{% endblock %}
+{% block content %}
+<h1>No results yet</h1>
+<p>The daily refresh job has not written any results to storage. Run it once:</p>
+<pre>python src/job.py</pre>
+<p>In Azure: <code>az containerapp job start -n job-ffm-refresh -g rg-ffm-team14</code></p>
+{% endblock %}

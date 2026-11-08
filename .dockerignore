@@ -1,0 +1,21 @@
+# Never send secrets or bulky local data to the image build.
+.env
+.env.*
+!.env.example
+.git
+.claude
+**/__pycache__
+.pytest_cache
+data/store
+data/raw
+data/results
+data/processed
+data/validation
+data/cache/layer2_jev
+data/cache/layer3_deep
+data/cache_mock
+submission
+docs
+tests
+*.pdf
+*.xlsx

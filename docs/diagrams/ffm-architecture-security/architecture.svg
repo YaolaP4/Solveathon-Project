@@ -1,0 +1,297 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1560 1350" width="1560" height="1350" role="img" aria-labelledby="t d" font-family="Segoe UI, Arial, Helvetica, sans-serif">
+  <title id="t">Federal Funds Matchmaker for North Carolina Agencies: Solution Architecture (C4 Container)</title>
+  <desc id="d">C4 container diagram. The sponsor is NC OSBM. A daily Container Apps Job (11:00 UTC) pulls Grants.gov opportunities once and normalizes them once. Then, for each agency profile (NC DHHS from the NCDHHS Strategic Plan 2026-2030, NC DEQ from the NCDEQ Strategic Plan 2025-2029), it scores them with a hybrid plan-alignment signal (an Azure OpenAI embedding margin against off-topic fields, averaged with TF-IDF word similarity) and funder history from USAspending.gov, runs a checked AI review with Azure OpenAI chat on the top 45, and publishes that agency's JSON files to Azure Blob Storage. A Flask web app on Azure Container Apps has an agency switcher, lets each agency's grants coordinator record Pursue, Maybe or Pass decisions, and has a Statewide page for the OSBM central team. One image, ffm:v6, is built in Azure Container Registry; logs go to Log Analytics. Planned items (Entra ID sign-in, Key Vault and managed identity, Application Insights, private endpoints, AI Search or Cosmos DB, SAM.gov, email or Teams alerts) are dashed.</desc>
+  <defs>
+    <marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#333"/></marker>
+    <marker id="arwg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8A8A8A"/></marker>
+  </defs>
+  <rect width="1560" height="1350" fill="#FFFFFF"/>
+  <text x="40" y="42" font-size="26" font-weight="700" fill="#08427B">Federal Funds Matchmaker for North Carolina Agencies: Solution Architecture</text>
+  <text x="40" y="68" font-size="14" fill="#555">Team 14, UNC Solve-a-thon 2026 • Sponsor: NC OSBM • Agencies: NC DHHS, NC DEQ • C4 Level 2 (Container) with context • As-built (solid) + planned (dashed) • 2026-11-07 • v1.2</text>
+
+  <!-- People -->
+  <g text-anchor="middle">
+    <rect x="60" y="88" width="230" height="90" rx="10" fill="#08427B" stroke="#052E56" stroke-width="2"/>
+    <text x="175" y="112" font-size="14" font-weight="700" fill="#FFF">Agency Grants Coordinators</text>
+    <text x="175" y="130" font-size="12" fill="#FFF">[Person: NC DHHS, NC DEQ; primary]</text>
+    <text x="175" y="148" font-size="12" fill="#FFF">Switch agency, review shortlist,</text>
+    <text x="175" y="165" font-size="12" fill="#FFF">Pursue / Maybe / Pass, export CSV</text>
+    <rect x="314" y="88" width="230" height="90" rx="10" fill="#08427B" stroke="#052E56" stroke-width="2"/>
+    <text x="429" y="112" font-size="14" font-weight="700" fill="#FFF">Program Leads &amp; Leadership</text>
+    <text x="429" y="130" font-size="12" fill="#FFF">[Person: each agency, secondary]</text>
+    <text x="429" y="148" font-size="12" fill="#FFF">Receive routed opportunities;</text>
+    <text x="429" y="165" font-size="12" fill="#FFF">leaders use funding-by-goal view</text>
+    <rect x="568" y="88" width="240" height="90" rx="10" fill="#08427B" stroke="#052E56" stroke-width="2"/>
+    <text x="688" y="112" font-size="14" font-weight="700" fill="#FFF">OSBM Central Team</text>
+    <text x="688" y="130" font-size="12" fill="#FFF">[Person: NC OSBM, sponsor]</text>
+    <text x="688" y="148" font-size="12" fill="#FFF">Statewide page: counts, deadlines,</text>
+    <text x="688" y="165" font-size="12" fill="#FFF">decisions, multi-agency matches</text>
+    <rect x="832" y="88" width="230" height="90" rx="10" fill="#08427B" stroke="#052E56" stroke-width="2"/>
+    <text x="947" y="112" font-size="14" font-weight="700" fill="#FFF">Team 14 Labelers</text>
+    <text x="947" y="130" font-size="12" fill="#FFF">[Person: evaluators]</text>
+    <text x="947" y="148" font-size="12" fill="#FFF">Blind relevance labels on the</text>
+    <text x="947" y="165" font-size="12" fill="#FFF">Evaluation page, per agency</text>
+  </g>
+
+  <!-- Access note (not a component) -->
+  <rect x="1190" y="88" width="330" height="102" rx="8" fill="#FFF8E1" stroke="#F9A825" stroke-width="2"/>
+  <g font-size="12" fill="#222">
+    <text x="1206" y="109" font-size="13" font-weight="700">Prototype access (as built)</text>
+    <text x="1206" y="128">No sign-in: public HTTPS URL.</text>
+    <text x="1206" y="145">Decisions store a typed name or initials.</text>
+    <text x="1206" y="162">Any visitor can switch to any agency.</text>
+    <text x="1206" y="179">Entra ID sign-in is planned (dashed box).</text>
+  </g>
+
+  <!-- System boundary -->
+  <rect x="40" y="200" width="1110" height="748" rx="14" fill="#F7FAFD" stroke="#0B4884" stroke-width="2" stroke-dasharray="10 6"/>
+  <text x="1130" y="224" font-size="15" font-weight="700" fill="#0B4884" text-anchor="end">[System] Federal Funds Matchmaker</text>
+  <text x="1130" y="936" font-size="12" fill="#0B4884" text-anchor="end">Azure subscription unc-sdis-solveathon-team14 · resource group rg-ffm-team14 · region eastus2</text>
+
+  <!-- Container Apps environment -->
+  <rect x="60" y="250" width="1070" height="240" rx="10" fill="#EEF4FB" stroke="#1168BD" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="1120" y="270" font-size="13" font-weight="700" fill="#0B4884" text-anchor="end">Container Apps environment cae-ffm (Consumption)</text>
+
+  <!-- Containers -->
+  <g text-anchor="middle">
+    <rect x="80" y="288" width="620" height="184" rx="8" fill="#1168BD" stroke="#0B4884" stroke-width="2"/>
+    <text x="390" y="314" font-size="15" font-weight="700" fill="#FFF">Staff Web App · app-ffm-web</text>
+    <text x="390" y="333" font-size="12" fill="#FFF">[Container: Azure Container App · Python Flask + gunicorn · MODE=app]</text>
+    <text x="390" y="355" font-size="12" fill="#FFF">Agency switcher (remembered in the session) for each agency's shortlist,</text>
+    <text x="390" y="372" font-size="12" fill="#FFF">detail (reason, checked quotes, score breakdown, award history, official link),</text>
+    <text x="390" y="389" font-size="12" fill="#FFF">Pursue / Maybe / Pass + note, CSV export, funding-by-goal, evaluation, run status,</text>
+    <text x="390" y="406" font-size="12" fill="#FFF">agency profile; Statewide page (/statewide) for the OSBM central team</text>
+    <text x="390" y="429" font-size="12" fill="#FFF">1 vCPU / 2 GiB · 1 replica · external HTTPS ingress → port 8000</text>
+    <text x="390" y="448" font-size="12" fill="#FFF">Reads and writes Blob only; never calls an AI model</text>
+
+    <rect x="740" y="288" width="370" height="184" rx="8" fill="#1168BD" stroke="#0B4884" stroke-width="2"/>
+    <text x="925" y="312" font-size="15" font-weight="700" fill="#FFF">Daily Refresh Job · job-ffm-refresh</text>
+    <text x="925" y="330" font-size="12" fill="#FFF">[Container: Container Apps Job · Python · MODE=job]</text>
+    <text x="925" y="349" font-size="12" fill="#FFF">cron 0 11 * * * = 11:00 UTC (6 AM EST, 7 AM EDT)</text>
+    <text x="925" y="367" font-size="12" fill="#FFF">One Grants.gov pull, normalized once; then for each</text>
+    <text x="925" y="384" font-size="12" fill="#FFF">agency profile: score → AI review (top 45) → publish</text>
+    <text x="925" y="402" font-size="12" fill="#FFF">Score 0-100: 45% plan alignment, 25% keyword, 15%</text>
+    <text x="925" y="419" font-size="12" fill="#FFF">eligibility, 10% time to apply, 5% funder history</text>
+    <text x="925" y="436" font-size="12" fill="#FFF">High ≥55, Medium ≥45 · plan alignment: see note</text>
+    <text x="925" y="455" font-size="12" fill="#FFF">Retry 1 · timeout 3600 s · non-zero exit on failure</text>
+  </g>
+
+  <!-- Agency profiles (configuration files in the image, one per agency) -->
+  <rect x="86" y="512" width="212" height="150" rx="6" fill="#E0E0E0" stroke="#9E9E9E"/>
+  <rect x="80" y="518" width="212" height="150" rx="6" fill="#F2F2F2" stroke="#9E9E9E"/>
+  <g text-anchor="middle">
+    <text x="186" y="540" font-size="14" font-weight="700" fill="#222">Agency profiles</text>
+    <text x="186" y="558" font-size="12" fill="#444">[Config: JSON files in the image]</text>
+    <text x="186" y="577" font-size="12" fill="#444">ncdhhs.json: NCDHHS Strategic</text>
+    <text x="186" y="593" font-size="12" fill="#444">Plan 2026-2030 · 21 objectives</text>
+    <text x="186" y="612" font-size="12" fill="#444">ncdeq.json: NCDEQ Strategic</text>
+    <text x="186" y="628" font-size="12" fill="#444">Plan 2025-2029 · 26 objectives</text>
+    <text x="186" y="649" font-size="12" fill="#444">One template; app + job read all</text>
+  </g>
+
+  <!-- Blob Storage (cylinder) -->
+  <path d="M360,528 a160,10 0 0,1 320,0 v132 a160,10 0 0,1 -320,0 z" fill="#2E7D32" stroke="#1B5E20" stroke-width="2"/>
+  <path d="M360,528 a160,10 0 0,0 320,0" fill="none" stroke="#1B5E20" stroke-width="2"/>
+  <g text-anchor="middle" fill="#FFF">
+    <text x="520" y="558" font-size="15" font-weight="700">Azure Blob Storage · stffm4817</text>
+    <text x="520" y="577" font-size="12">[Data store: StorageV2 · LRS · container ffm-data]</text>
+    <text x="520" y="596" font-size="12"><tspan font-weight="700">Shared:</tspan> raw/, details/, opportunities/, runs/,</text>
+    <text x="520" y="613" font-size="12">cache/, eval/keyword_baseline/</text>
+    <text x="520" y="632" font-size="12"><tspan font-weight="700">Per agency:</tspan> profiles/{id}.json, scored/{id}/,</text>
+    <text x="520" y="649" font-size="12">alerts/{id}/, decisions/{id}.json, eval/{id}/</text>
+  </g>
+
+  <!-- Azure OpenAI -->
+  <g text-anchor="middle">
+    <rect x="715" y="518" width="350" height="150" rx="8" fill="#6B4FBB" stroke="#4A3684" stroke-width="2"/>
+    <text x="890" y="542" font-size="15" font-weight="700" fill="#FFF">Azure OpenAI · aoai-ffm-4817 (S0)</text>
+    <text x="890" y="560" font-size="12" fill="#FFF">[AI service: GlobalStandard deployments]</text>
+    <text x="890" y="579" font-size="12" fill="#FFF">embed = text-embedding-3-small (512 dims)</text>
+    <text x="890" y="596" font-size="12" fill="#FFF">chat = gpt-4.1-mini (JSON mode, temperature 0)</text>
+    <text x="890" y="613" font-size="12" fill="#FFF">Capacity: embed 1,000K, chat 500K tokens/min</text>
+    <text x="890" y="632" font-size="12" fill="#FFF">AI review: top 40 agency + top 5 research,</text>
+    <text x="890" y="649" font-size="12" fill="#FFF">per agency · no tools; never sets the score</text>
+  </g>
+
+  <!-- Platform band -->
+  <line x1="60" y1="686" x2="1130" y2="686" stroke="#BDBDBD" stroke-width="1"/>
+  <text x="70" y="704" font-size="13" font-weight="700" fill="#555">Platform &amp; operations</text>
+  <g text-anchor="middle">
+    <rect x="70" y="714" width="270" height="92" rx="6" fill="#F2F2F2" stroke="#9E9E9E"/>
+    <text x="205" y="736" font-size="13" font-weight="700" fill="#222">Log Analytics workspace</text>
+    <text x="205" y="754" font-size="12" fill="#444">[Platform: created with cae-ffm]</text>
+    <text x="205" y="772" font-size="12" fill="#444">App + job console logs, access log</text>
+
+    <rect x="356" y="714" width="344" height="92" rx="6" fill="#F2F2F2" stroke="#9E9E9E"/>
+    <text x="528" y="736" font-size="13" font-weight="700" fill="#222">Container Apps secrets (secretref)</text>
+    <text x="528" y="754" font-size="12" fill="#444">[Platform: secrets on the app and the job]</text>
+    <text x="528" y="772" font-size="12" fill="#444">storage-conn, aoai-key, flask-secret · values ****</text>
+
+    <rect x="716" y="714" width="414" height="92" rx="6" fill="#F2F2F2" stroke="#9E9E9E"/>
+    <text x="923" y="736" font-size="13" font-weight="700" fill="#222">Azure Container Registry · acrffm4817</text>
+    <text x="923" y="754" font-size="12" fill="#444">[Platform: ACR, Basic SKU · admin user enabled for pulls]</text>
+    <text x="923" y="772" font-size="12" fill="#444">Image ffm:v6 deployed to app + job (one image, MODE=app|job)</text>
+    <text x="923" y="790" font-size="12" fill="#444">Queued az acr build --no-logs; the deploy script polls the run</text>
+
+    <rect x="70" y="822" width="200" height="86" rx="6" fill="#FFFFFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="170" y="844" font-size="13" font-weight="700" fill="#555">Microsoft Entra ID</text>
+    <text x="170" y="862" font-size="12" fill="#555">[Planned: identity]</text>
+    <text x="170" y="880" font-size="12" fill="#555">Staff sign-in using</text>
+    <text x="170" y="897" font-size="12" fill="#555">Container Apps auth</text>
+
+    <rect x="285" y="822" width="200" height="86" rx="6" fill="#FFFFFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="385" y="844" font-size="13" font-weight="700" fill="#555">Key Vault + managed ID</text>
+    <text x="385" y="862" font-size="12" fill="#555">[Planned: secrets]</text>
+    <text x="385" y="880" font-size="12" fill="#555">Replaces connection</text>
+    <text x="385" y="897" font-size="12" fill="#555">string, keys, ACR admin</text>
+
+    <rect x="500" y="822" width="200" height="86" rx="6" fill="#FFFFFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="600" y="844" font-size="13" font-weight="700" fill="#555">Application Insights</text>
+    <text x="600" y="862" font-size="12" fill="#555">[Planned: monitoring]</text>
+    <text x="600" y="880" font-size="12" fill="#555">Traces, errors, alerts</text>
+    <text x="600" y="897" font-size="12" fill="#555">on failed job runs</text>
+
+    <rect x="715" y="822" width="200" height="86" rx="6" fill="#FFFFFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="815" y="844" font-size="13" font-weight="700" fill="#555">Private endpoints</text>
+    <text x="815" y="862" font-size="12" fill="#555">[Planned: network]</text>
+    <text x="815" y="880" font-size="12" fill="#555">VNet integration for</text>
+    <text x="815" y="897" font-size="12" fill="#555">Storage + Azure OpenAI</text>
+
+    <rect x="930" y="822" width="200" height="86" rx="6" fill="#FFFFFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="1030" y="844" font-size="13" font-weight="700" fill="#555">AI Search / Cosmos DB</text>
+    <text x="1030" y="862" font-size="12" fill="#555">[Planned: at larger scale]</text>
+    <text x="1030" y="880" font-size="12" fill="#555">Faster search if volumes</text>
+    <text x="1030" y="897" font-size="12" fill="#555">outgrow JSON files in Blob</text>
+  </g>
+
+  <!-- External systems -->
+  <g text-anchor="middle">
+    <rect x="1190" y="250" width="330" height="70" rx="8" fill="#8A8A8A" stroke="#6B6B6B" stroke-width="2"/>
+    <text x="1355" y="272" font-size="14" font-weight="700" fill="#FFF">Grants.gov Search API v1</text>
+    <text x="1355" y="290" font-size="12" fill="#FFF">[External system: public, no key]</text>
+    <text x="1355" y="308" font-size="12" fill="#FFF">search2 + fetchOpportunity (~1,460 listings)</text>
+
+    <rect x="1190" y="334" width="330" height="70" rx="8" fill="#8A8A8A" stroke="#6B6B6B" stroke-width="2"/>
+    <text x="1355" y="356" font-size="14" font-weight="700" fill="#FFF">USAspending.gov API v2</text>
+    <text x="1355" y="374" font-size="12" fill="#FFF">[External system: public, no key]</text>
+    <text x="1355" y="392" font-size="12" fill="#FFF">Awards and NC recipients by listing, FY2022-2025</text>
+
+    <rect x="1190" y="418" width="330" height="56" rx="8" fill="#FFFFFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="1355" y="440" font-size="14" font-weight="700" fill="#555">SAM.gov API</text>
+    <text x="1355" y="458" font-size="12" fill="#555">[Planned: second data source]</text>
+
+    <rect x="1190" y="488" width="330" height="56" rx="8" fill="#FFFFFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="1355" y="510" font-size="14" font-weight="700" fill="#555">Email / Microsoft Teams</text>
+    <text x="1355" y="528" font-size="12" fill="#555">[Planned: deadline alerts]</text>
+
+    <rect x="1190" y="572" width="330" height="90" rx="8" fill="#8A8A8A" stroke="#6B6B6B" stroke-width="2"/>
+    <text x="1355" y="594" font-size="14" font-weight="700" fill="#FFF">Agency strategic plans (PDF)</text>
+    <text x="1355" y="612" font-size="12" fill="#FFF">[External: public, NC OSBM website]</text>
+    <text x="1355" y="630" font-size="12" fill="#FFF">NCDHHS 2026-2030 (published Sept 2026)</text>
+    <text x="1355" y="648" font-size="12" fill="#FFF">NCDEQ 2025-2029 · seed for the profiles</text>
+
+    <rect x="1190" y="714" width="330" height="92" rx="10" fill="#08427B" stroke="#052E56" stroke-width="2"/>
+    <text x="1355" y="736" font-size="14" font-weight="700" fill="#FFF">Team 14 Developers</text>
+    <text x="1355" y="754" font-size="12" fill="#FFF">[Person: operators]</text>
+    <text x="1355" y="772" font-size="12" fill="#FFF">deploy/01_resources.sh + 02_deploy.sh</text>
+    <text x="1355" y="790" font-size="12" fill="#FFF">(Azure CLI); built agency/profiles/*.json</text>
+  </g>
+
+  <!-- Flows (as-built) -->
+  <g stroke="#333" stroke-width="2" fill="none" marker-end="url(#arw)">
+    <line x1="1355" y1="662" x2="1355" y2="712"/>
+    <line x1="1188" y1="760" x2="1132" y2="760"/>
+    <line x1="1100" y1="712" x2="1100" y2="474"/>
+    <line x1="1112" y1="300" x2="1188" y2="286"/>
+    <line x1="1112" y1="360" x2="1188" y2="369"/>
+    <line x1="850" y1="474" x2="850" y2="516"/>
+    <line x1="980" y1="474" x2="980" y2="516"/>
+    <line x1="752" y1="474" x2="667" y2="525" marker-start="url(#arw)"/>
+    <line x1="175" y1="178" x2="175" y2="286"/>
+    <line x1="429" y1="178" x2="429" y2="286"/>
+    <line x1="640" y1="178" x2="640" y2="286"/>
+    <line x1="850" y1="178" x2="690" y2="286"/>
+    <line x1="500" y1="474" x2="500" y2="516" marker-start="url(#arw)"/>
+    <line x1="326" y1="474" x2="326" y2="712"/>
+  </g>
+  <!-- Flows (planned) -->
+  <g stroke="#8A8A8A" stroke-width="2" fill="none" stroke-dasharray="6 4" marker-end="url(#arwg)">
+    <line x1="1112" y1="420" x2="1188" y2="446"/>
+    <line x1="1112" y1="450" x2="1188" y2="516"/>
+  </g>
+  <g font-size="12" fill="#333">
+    <text x="868" y="503">embeddings</text>
+    <text x="998" y="503">chat</text>
+  </g>
+
+  <!-- Flow number badges -->
+  <g font-size="12" font-weight="700" text-anchor="middle">
+    <circle cx="1355" cy="687" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="1355" y="691">1</text>
+    <circle cx="1168" cy="760" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="1168" y="764">2</text>
+    <circle cx="1100" cy="600" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="1100" y="604">3</text>
+    <circle cx="1168" cy="290" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="1168" y="294">4</text>
+    <circle cx="1168" cy="367" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="1168" y="371">5</text>
+    <circle cx="850" cy="498" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="850" y="502">6</text>
+    <circle cx="980" cy="498" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="980" y="502">7</text>
+    <circle cx="710" cy="499" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="710" y="503">8</text>
+    <circle cx="175" cy="232" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="175" y="236">9</text>
+    <circle cx="429" cy="232" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="429" y="236">10</text>
+    <circle cx="640" cy="232" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="640" y="236">11</text>
+    <circle cx="770" cy="232" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="770" y="236">12</text>
+    <circle cx="500" cy="496" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="500" y="500">13</text>
+    <circle cx="326" cy="600" r="12" fill="#FFF" stroke="#333" stroke-width="2"/><text x="326" y="604">14</text>
+    <circle cx="1166" cy="438" r="12" fill="#FFF" stroke="#8A8A8A" stroke-width="2"/><text x="1166" y="442" fill="#555">15</text>
+    <circle cx="1166" cy="497" r="12" fill="#FFF" stroke="#8A8A8A" stroke-width="2"/><text x="1166" y="501" fill="#555">16</text>
+  </g>
+
+  <!-- Legend -->
+  <rect x="40" y="968" width="520" height="362" rx="8" fill="#FFF" stroke="#9E9E9E"/>
+  <text x="56" y="992" font-size="14" font-weight="700" fill="#222">Legend</text>
+  <g font-size="12" fill="#222">
+    <rect x="56" y="1006" width="26" height="16" rx="3" fill="#08427B"/><text x="90" y="1019">Person / user role</text>
+    <rect x="56" y="1030" width="26" height="16" rx="3" fill="#1168BD"/><text x="90" y="1043">Container in our system</text>
+    <rect x="56" y="1054" width="26" height="16" rx="3" fill="#6B4FBB"/><text x="90" y="1067">AI / ML service</text>
+    <rect x="56" y="1078" width="26" height="16" rx="3" fill="#2E7D32"/><text x="90" y="1091">Data store (cylinder)</text>
+    <rect x="56" y="1102" width="26" height="16" rx="3" fill="#8A8A8A"/><text x="90" y="1115">External system</text>
+    <rect x="56" y="1126" width="26" height="16" rx="3" fill="#F2F2F2" stroke="#9E9E9E"/><text x="90" y="1139">Platform / shared service</text>
+    <rect x="56" y="1150" width="26" height="16" rx="3" fill="#EEF4FB" stroke="#1168BD" stroke-dasharray="4 3"/><text x="90" y="1163">Container Apps environment</text>
+    <rect x="60" y="1174" width="24" height="14" rx="2" fill="#E0E0E0" stroke="#9E9E9E"/><rect x="56" y="1178" width="24" height="14" rx="2" fill="#F2F2F2" stroke="#9E9E9E"/><text x="90" y="1189">Configuration files (one per agency)</text>
+    <rect x="300" y="1006" width="26" height="16" rx="3" fill="#FFF" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="4 3"/><text x="342" y="1019">Planned (not built yet)</text>
+    <line x1="300" y1="1038" x2="326" y2="1038" stroke="#333" stroke-width="2" marker-end="url(#arw)"/><text x="342" y="1043">Data flow (as-built)</text>
+    <line x1="300" y1="1062" x2="326" y2="1062" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="5 3" marker-end="url(#arwg)"/><text x="342" y="1067">Planned flow</text>
+    <line x1="300" y1="1086" x2="334" y2="1086" stroke="#333" stroke-width="2" marker-start="url(#arw)" marker-end="url(#arw)"/><text x="342" y="1091">Read and write (two-way)</text>
+    <circle cx="313" cy="1110" r="9" fill="#FFF" stroke="#333" stroke-width="2"/><text x="342" y="1115">Flow number (see key)</text>
+    <rect x="300" y="1126" width="26" height="16" rx="3" fill="none" stroke="#0B4884" stroke-width="2" stroke-dasharray="5 3"/><text x="342" y="1139">System boundary</text>
+    <rect x="300" y="1150" width="26" height="16" rx="3" fill="#FFF8E1" stroke="#F9A825" stroke-width="2"/><text x="342" y="1163">Note (not a component)</text>
+    <text x="56" y="1222" fill="#555">Notation: C4 model, Level 2 (Container), with people and</text>
+    <text x="56" y="1240" fill="#555">external systems for context. Arrows point in the direction</text>
+    <text x="56" y="1258" fill="#555">of the request; responses flow back.</text>
+    <text x="56" y="1280" fill="#555">{id} = agency id (ncdhhs, ncdeq): one file or folder per agency.</text>
+    <text x="56" y="1300" fill="#555">Secret values are never shown; they are masked as ****.</text>
+    <text x="56" y="1318" fill="#555">TF-IDF = word-based text similarity (see the note in the key).</text>
+  </g>
+
+  <!-- Flow key -->
+  <rect x="580" y="968" width="940" height="362" rx="8" fill="#FFF" stroke="#9E9E9E"/>
+  <text x="596" y="992" font-size="14" font-weight="700" fill="#222">Flow key (set-up, then the daily job, then staff use)</text>
+  <g font-size="12" fill="#222">
+    <text x="596" y="1014"><tspan font-weight="700">1</tspan><tspan x="622">Plan PDFs (OSBM website) → Team: hand-built agency/profiles/ncdhhs.json (2026-2030 plan) and ncdeq.json (2025-2029 plan), one template, second review</tspan></text>
+    <text x="596" y="1031"><tspan font-weight="700">2</tspan><tspan x="622">Team → ACR + Container Apps: queued az acr build --no-logs (image ffm:v6, includes the profiles), az containerapp create/update · HTTPS, Azure CLI sign-in</tspan></text>
+    <text x="596" y="1048"><tspan font-weight="700">3</tspan><tspan x="622">ACR → Web App + Job: pull image ffm:v6 at start · HTTPS, ACR admin username/password (planned: managed identity)</tspan></text>
+    <text x="596" y="1065"><tspan font-weight="700">4</tspan><tspan x="622">Job → Grants.gov: one search2 pull for all agencies (posted + forecasted; 80 keyword searches for the baseline only), fetchOpportunity · HTTPS/JSON, no key</tspan></text>
+    <text x="596" y="1082"><tspan font-weight="700">5</tspan><tspan x="622">Job → USAspending.gov: awards and NC recipients per listing, FY2022-2025, cached; each agency matched by its recipient-name pattern · HTTPS/JSON, no key</tspan></text>
+    <text x="596" y="1099"><tspan font-weight="700">6</tspan><tspan x="622">Job → Azure OpenAI embed: listing text, each agency's objectives, 10 off-topic field descriptions → 512-dim vectors, cached by text hash · HTTPS, API key</tspan></text>
+    <text x="596" y="1116"><tspan font-weight="700">7</tspan><tspan x="622">Job → Azure OpenAI chat, top 45 per agency: listing + matched objective → JSON review with quotes checked in Python · HTTPS, API key</tspan></text>
+    <text x="596" y="1133"><tspan font-weight="700">8</tspan><tspan x="622">Job ↔ Blob: read caches, earlier results; write raw, details, opportunities, runs (shared); profiles, scored, alerts (per agency) · HTTPS, connection string</tspan></text>
+    <text x="596" y="1150"><tspan font-weight="700">9</tspan><tspan x="622">Coordinators → Web App: choose agency, shortlist, Pursue/Maybe/Pass + note, CSV for the weekly leadership email · HTTPS, no sign-in, CSRF token</tspan></text>
+    <text x="596" y="1167"><tspan font-weight="700">10</tspan><tspan x="622">Leads + leadership → Web App: detail and funding-by-goal pages (routed items arrive via the coordinator) · HTTPS, no sign-in</tspan></text>
+    <text x="596" y="1184"><tspan font-weight="700">11</tspan><tspan x="622">OSBM → Web App /statewide: per agency High/Medium, closing ≤ 10 days, forecasts, decisions; strong matches for 2+ agencies · HTTPS, no sign-in, read only</tspan></text>
+    <text x="596" y="1201"><tspan font-weight="700">12</tspan><tspan x="622">Labelers → Web App: blind relevance labels on the Evaluation page, per agency · HTTPS, no sign-in, typed labeler name</tspan></text>
+    <text x="596" y="1218"><tspan font-weight="700">13</tspan><tspan x="622">Web App ↔ Blob: read scored, alerts, profiles, runs, baseline; write decisions/{id}.json, eval/{id}/ labels (ETag check) and sample · HTTPS, connection string</tspan></text>
+    <text x="596" y="1235"><tspan font-weight="700">14</tspan><tspan x="622">Web App + Job → Log Analytics: console output and gunicorn access log · Container Apps platform</tspan></text>
+    <text x="596" y="1252" fill="#555"><tspan font-weight="700">15</tspan><tspan x="622">Job → SAM.gov (planned): second opportunity source · would need an API key (store it in Key Vault)</tspan></text>
+    <text x="596" y="1269" fill="#555"><tspan font-weight="700">16</tspan><tspan x="622">Job → Email / Teams (planned): deadline alerts for new and closing-soon items</tspan></text>
+    <text x="596" y="1295" fill="#555"><tspan font-weight="700">Note</tspan><tspan x="634">Plan alignment = 0.5 × embedding margin + 0.5 × TF-IDF similarity. Margin = similarity to a plan objective minus the best similarity to</tspan></text>
+    <text x="634" y="1312" fill="#555">10 short off-topic field descriptions (NC DHHS: e.g. defense, arts, physics; NC DEQ has its own, e.g. health care). TF-IDF alone without Azure OpenAI.</text>
+  </g>
+</svg>

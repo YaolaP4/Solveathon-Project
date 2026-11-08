@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1440 1080" width="1440" height="1080" role="img" aria-labelledby="t d" font-family="Segoe UI, Arial, Helvetica, sans-serif">
+  <title id="t">Federal Funds Matchmaker: Stakeholder Power/Interest Grid</title>
+  <desc id="d">Mendelow power/interest grid placing 21 stakeholders in four quadrants. Manage Closely: S1 DHHS federal-grants coordinator, S2 DHHS division program leads, S3 DHHS executive leadership, S4 DHHS division directors, S9 NC OSBM (sponsor and owner of the central tool), S19 NC DEQ grants coordinator, S20 NC DEQ leadership. Keep Satisfied: S6 NCDIT security and privacy, S7 DHHS privacy and security office, S8 procurement and legal, S11 Solve-a-thon hosts, S13 Grants.gov. Keep Informed: S5 DHHS division program staff, S10 Team 14, S16 local recipients (local governments, utilities, community organizations), S21 smaller agencies with limited grant capacity. Monitor: S12 Microsoft Azure, S14 USAspending.gov, S15 federal awarding agencies, S17 NC residents, S18 grant-writing consultants. Marker colour shows attitude; a solid outline marks stakeholders inside NC state government and a dashed outline marks external stakeholders; dashed arrows show the desired rise in interest for S3, S6 and S7.</desc>
+  <defs><marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker></defs>
+  <rect width="1440" height="1080" fill="#FFF"/>
+  <text x="40" y="42" font-size="26" font-weight="700" fill="#08427B">Federal Funds Matchmaker: Stakeholder Power/Interest Grid</text>
+  <text x="40" y="68" font-size="14" fill="#555">Team 14, UNC Solve-a-thon 2026 • Sponsor: NC OSBM • Agencies: NC DHHS, NC DEQ • Mendelow power/interest matrix • 2026-11-07 • v1.2</text>
+  <rect x="140" y="110" width="410" height="410" fill="#FFF4E5"/>
+  <rect x="550" y="110" width="410" height="410" fill="#FDECEA"/>
+  <rect x="140" y="520" width="410" height="410" fill="#F5F5F5"/>
+  <rect x="550" y="520" width="410" height="410" fill="#E8F1FB"/>
+  <rect x="140" y="110" width="820" height="820" fill="none" stroke="#9E9E9E" stroke-width="1.5"/>
+  <line x1="550" y1="110" x2="550" y2="930" stroke="#9E9E9E" stroke-width="1.5"/>
+  <line x1="140" y1="520" x2="960" y2="520" stroke="#9E9E9E" stroke-width="1.5"/>
+  <g font-size="17" font-weight="700" fill="#555">
+    <text x="156" y="138">KEEP SATISFIED</text>
+    <text x="944" y="138" text-anchor="end">MANAGE CLOSELY</text>
+    <text x="156" y="900">MONITOR</text>
+    <text x="944" y="900" text-anchor="end">KEEP INFORMED</text>
+  </g>
+  <g font-size="12" fill="#555">
+    <text x="156" y="156">Concise briefings on their priorities</text>
+    <text x="944" y="156" text-anchor="end">Co-design, frequent updates</text>
+    <text x="156" y="918">Light-touch updates</text>
+    <text x="944" y="918" text-anchor="end">Demos, feedback loops</text>
+  </g>
+  <g stroke="#333" stroke-width="2" fill="none"><line x1="140" y1="930" x2="975" y2="930" marker-end="url(#arw)"/><line x1="140" y1="930" x2="140" y2="96" marker-end="url(#arw)"/></g>
+  <g font-size="12" fill="#333" text-anchor="middle">
+    <text x="222" y="950">1</text><text x="124" y="852">1</text>
+    <text x="386" y="950">2</text><text x="124" y="688">2</text>
+    <text x="550" y="950">3</text><text x="124" y="524">3</text>
+    <text x="714" y="950">4</text><text x="124" y="360">4</text>
+    <text x="878" y="950">5</text><text x="124" y="196">5</text>
+  </g>
+  <text x="550" y="985" font-size="15" font-weight="700" fill="#222" text-anchor="middle">INTEREST in the solution  (Low → High)</text>
+  <text x="80" y="520" font-size="15" font-weight="700" fill="#222" text-anchor="middle" transform="rotate(-90 80 520)">POWER / INFLUENCE  (Low → High)</text>
+  <g stroke="#555" stroke-width="2" stroke-dasharray="6 4" fill="none" marker-end="url(#arw)">
+    <line x1="632" y1="196" x2="700" y2="196"/>
+    <line x1="408" y1="292" x2="572" y2="292"/>
+    <line x1="408" y1="378" x2="572" y2="378"/>
+  </g>
+  <g font-size="12" fill="#555" font-style="italic" text-anchor="middle">
+    <text x="666" y="188">target</text>
+    <text x="490" y="284">target</text>
+    <text x="490" y="370">target</text>
+  </g>
+  <g>
+    <circle cx="835" cy="462" r="17" fill="#7FBF7B" stroke="#222" stroke-width="2"/><text x="835" y="466" font-size="12" font-weight="700" fill="#222" text-anchor="middle">S1</text>
+    <text x="835" y="491" font-size="12" fill="#222" text-anchor="middle">DHHS grants</text>
+    <text x="835" y="505" font-size="12" fill="#222" text-anchor="middle">coordinator</text>
+    <circle cx="714" cy="462" r="17" fill="#BDBDBD" stroke="#222" stroke-width="2"/><text x="714" y="466" font-size="12" font-weight="700" fill="#222" text-anchor="middle">S2</text>
+    <text x="714" y="491" font-size="12" fill="#222" text-anchor="middle">DHHS division</text>
+    <text x="714" y="505" font-size="12" fill="#222" text-anchor="middle">program leads</text>
+    <circle cx="610" cy="196" r="17" fill="#BDBDBD" stroke="#222" stroke-width="2"/><text x="610" y="200" font-size="12" font-weight="700" fill="#222" text-anchor="middle">S3</text>
+    <text x="610" y="225" font-size="12" fill="#222" text-anchor="middle">DHHS executive</text>
+    <text x="610" y="239" font-size="12" fill="#222" text-anchor="middle">leadership</text>
+    <circle cx="600" cy="335" r="17" fill="#BDBDBD" stroke="#222" stroke-width="2"/><text x="600" y="339" font-size="12" font-weight="700" fill="#222" text-anchor="middle">S4</text>
+    <text x="622" y="339" font-size="12" fill="#222">DHHS division directors</text>
+    <circle cx="605" cy="630" r="17" fill="#F1A340" stroke="#222" stroke-width="2"/><text x="605" y="634" font-size="12" font-weight="700" fill="#222" text-anchor="middle">S5</text>
+    <text x="605" y="659" font-size="12" fill="#222" text-anchor="middle">DHHS division</text>
+    <text x="605" y="673" font-size="12" fill="#222" text-anchor="middle">program staff</text>
+    <circle cx="386" cy="292" r="17" fill="#F1A340" stroke="#222" stroke-width="2"/><text x="386" y="296" font-size="12" font-weight="700" fill="#222" text-anchor="middle">S6</text>
+    <text x="386" y="321" font-size="12" fill="#222" text-anchor="middle">NCDIT state IT</text>
+    <text x="386" y="335" font-size="12" fill="#222" text-anchor="middle">security &amp; privacy</text>
+    <circle cx="386" cy="378" r="17" fill="#BDBDBD" stroke="#222" stroke-width="2"/><text x="386" y="382" font-size="12" font-weight="700" fill="#222" text-anchor="middle">S7</text>
+    <text x="386" y="407" font-size="12" fill="#222" text-anchor="middle">DHHS privacy &amp;</text>
+    <text x="386" y="421" font-size="12" fill="#222" text-anchor="middle">security office</text>
+    <circle cx="222" cy="335" r="17" fill="#BDBDBD" stroke="#222" stroke-width="2"/><text x="222" y="339" font-size="12" font-weight="700" fill="#222" text-anchor="middle">S8</text>
+    <text x="222" y="364" font-size="12" fill="#222" text-anchor="middle">Procurement &amp;</text>
+    <text x="222" y="378" font-size="12" fill="#222" text-anchor="middle">legal</text>
+    <circle cx="735" cy="245" r="17" fill="#7FBF7B" stroke="#222" stroke-width="2"/><text x="735" y="249" font-size="12" font-weight="700" fill="#222" text-anchor="middle">S9</text>
+    <text x="757" y="242" font-size="12" fill="#222">NC OSBM (sponsor,</text>
+    <text x="757" y="256" font-size="12" fill="#222">central tool owner)</text>
+    <circle cx="878" cy="660" r="17" fill="#1B7837" stroke="#222" stroke-width="2" stroke-dasharray="4 3"/><text x="878" y="664" font-size="12" font-weight="700" fill="#FFF" text-anchor="middle">S10</text>
+    <text x="878" y="689" font-size="12" fill="#222" text-anchor="middle">Team 14 (builders,</text>
+    <text x="878" y="703" font-size="12" fill="#222" text-anchor="middle">operators, labelers)</text>
+    <circle cx="386" cy="462" r="17" fill="#7FBF7B" stroke="#222" stroke-width="2" stroke-dasharray="4 3"/><text x="386" y="466" font-size="12" font-weight="700" fill="#222" text-anchor="middle">S11</text>
+    <text x="386" y="491" font-size="12" fill="#222" text-anchor="middle">Solve-a-thon hosts</text>
+    <text x="386" y="505" font-size="12" fill="#222" text-anchor="middle">(Azure subscription)</text>
+    <circle cx="222" cy="630" r="17" fill="#BDBDBD" stroke="#222" stroke-width="2" stroke-dasharray="4 3"/><text x="222" y="634" font-size="12" font-weight="700" fill="#222" text-anchor="middle">S12</text>
+    <text x="222" y="659" font-size="12" fill="#222" text-anchor="middle">Microsoft Azure</text>
+    <text x="222" y="673" font-size="12" fill="#222" text-anchor="middle">(cloud &amp; AI vendor)</text>
+    <circle cx="222" cy="462" r="17" fill="#BDBDBD" stroke="#222" stroke-width="2" stroke-dasharray="4 3"/><text x="222" y="466" font-size="12" font-weight="700" fill="#222" text-anchor="middle">S13</text>
+    <text x="222" y="491" font-size="12" fill="#222" text-anchor="middle">Grants.gov</text>
+    <text x="222" y="505" font-size="12" fill="#222" text-anchor="middle">(listings API)</text>
+    <circle cx="222" cy="815" r="17" fill="#BDBDBD" stroke="#222" stroke-width="2" stroke-dasharray="4 3"/><text x="222" y="819" font-size="12" font-weight="700" fill="#222" text-anchor="middle">S14</text>
+    <text x="222" y="844" font-size="12" fill="#222" text-anchor="middle">USAspending.gov</text>
+    <text x="222" y="858" font-size="12" fill="#222" text-anchor="middle">(award history)</text>
+    <circle cx="222" cy="715" r="17" fill="#BDBDBD" stroke="#222" stroke-width="2" stroke-dasharray="4 3"/><text x="222" y="719" font-size="12" font-weight="700" fill="#222" text-anchor="middle">S15</text>
+    <text x="222" y="744" font-size="12" fill="#222" text-anchor="middle">Federal awarding</text>
+    <text x="222" y="758" font-size="12" fill="#222" text-anchor="middle">agencies</text>
+    <circle cx="600" cy="715" r="17" fill="#7FBF7B" stroke="#222" stroke-width="2" stroke-dasharray="4 3"/><text x="600" y="719" font-size="12" font-weight="700" fill="#222" text-anchor="middle">S16</text>
+    <text x="622" y="712" font-size="12" fill="#222">Local govts, utilities,</text>
+    <text x="622" y="726" font-size="12" fill="#222">community orgs</text>
+    <circle cx="335" cy="815" r="17" fill="#BDBDBD" stroke="#222" stroke-width="2" stroke-dasharray="4 3"/><text x="335" y="819" font-size="12" font-weight="700" fill="#222" text-anchor="middle">S17</text>
+    <text x="335" y="844" font-size="12" fill="#222" text-anchor="middle">NC residents</text>
+    <circle cx="445" cy="815" r="17" fill="#F1A340" stroke="#222" stroke-width="2" stroke-dasharray="4 3"/><text x="445" y="819" font-size="12" font-weight="700" fill="#222" text-anchor="middle">S18</text>
+    <text x="445" y="844" font-size="12" fill="#222" text-anchor="middle">Grant-writing</text>
+    <text x="445" y="858" font-size="12" fill="#222" text-anchor="middle">consultants</text>
+    <circle cx="918" cy="462" r="17" fill="#BDBDBD" stroke="#222" stroke-width="2"/><text x="918" y="466" font-size="12" font-weight="700" fill="#222" text-anchor="middle">S19</text>
+    <text x="918" y="491" font-size="12" fill="#222" text-anchor="middle">DEQ grants</text>
+    <text x="918" y="505" font-size="12" fill="#222" text-anchor="middle">coordinator</text>
+    <circle cx="605" cy="415" r="17" fill="#BDBDBD" stroke="#222" stroke-width="2"/><text x="605" y="419" font-size="12" font-weight="700" fill="#222" text-anchor="middle">S20</text>
+    <text x="627" y="419" font-size="12" fill="#222">NC DEQ leadership</text>
+    <circle cx="714" cy="640" r="17" fill="#7FBF7B" stroke="#222" stroke-width="2"/><text x="714" y="644" font-size="12" font-weight="700" fill="#222" text-anchor="middle">S21</text>
+    <text x="714" y="669" font-size="12" fill="#222" text-anchor="middle">Smaller agencies</text>
+    <text x="714" y="683" font-size="12" fill="#222" text-anchor="middle">(future users)</text>
+  </g>
+  <rect x="1000" y="100" width="400" height="345" rx="8" fill="#FFF" stroke="#9E9E9E"/>
+  <text x="1016" y="126" font-size="14" font-weight="700" fill="#222">Legend</text>
+  <g font-size="12" fill="#222">
+    <text x="1016" y="150" font-weight="700">Marker colour = attitude</text>
+    <circle cx="1028" cy="170" r="9" fill="#1B7837" stroke="#222" stroke-width="1"/><text x="1044" y="174">Champion</text>
+    <circle cx="1140" cy="170" r="9" fill="#7FBF7B" stroke="#222" stroke-width="1"/><text x="1156" y="174">Supporter</text>
+    <circle cx="1252" cy="170" r="9" fill="#BDBDBD" stroke="#222" stroke-width="1"/><text x="1268" y="174">Neutral</text>
+    <circle cx="1028" cy="196" r="9" fill="#F1A340" stroke="#222" stroke-width="1"/><text x="1044" y="200">Sceptic</text>
+    <circle cx="1140" cy="196" r="9" fill="#B2182B" stroke="#222" stroke-width="1"/><text x="1156" y="200">Blocker</text>
+    <text x="1016" y="230" font-weight="700">Outline = relationship</text>
+    <circle cx="1028" cy="250" r="9" fill="#FFF" stroke="#222" stroke-width="2"/><text x="1044" y="254">Inside NC state government</text>
+    <circle cx="1028" cy="276" r="9" fill="#FFF" stroke="#222" stroke-width="2" stroke-dasharray="4 3"/><text x="1044" y="280">External to state government</text>
+    <line x1="1018" y1="306" x2="1042" y2="306" stroke="#555" stroke-width="2" stroke-dasharray="5 3" marker-end="url(#arw)"/><text x="1050" y="310">Desired shift (raise interest early)</text>
+    <text x="1016" y="340" fill="#555">Scores 1–5. A score of 3 counts as High</text>
+    <text x="1016" y="356" fill="#555">(drawn just inside the upper/right half).</text>
+    <text x="1016" y="382" fill="#555">Dashed outline here means external, not</text>
+    <text x="1016" y="398" fill="#555">“planned” as in the architecture diagrams.</text>
+    <text x="1016" y="424" fill="#555">Grid: Mendelow (1991) power/interest matrix.</text>
+  </g>
+  <rect x="1000" y="460" width="400" height="594" rx="8" fill="#FFF" stroke="#9E9E9E"/>
+  <text x="1016" y="486" font-size="14" font-weight="700" fill="#222">Stakeholder key (Power / Interest)</text>
+  <g font-size="12" fill="#222">
+    <text x="1016" y="514" font-weight="700">S1</text><text x="1052" y="514">DHHS federal-grants coordinator (3/5)</text>
+    <text x="1016" y="538" font-weight="700">S2</text><text x="1052" y="538">DHHS division program leads (3/4)</text>
+    <text x="1016" y="562" font-weight="700">S3</text><text x="1052" y="562">DHHS executive leadership (5/3)</text>
+    <text x="1016" y="586" font-weight="700">S4</text><text x="1052" y="586">DHHS division directors (4/3)</text>
+    <text x="1016" y="610" font-weight="700">S5</text><text x="1052" y="610">DHHS division program staff (2/3)</text>
+    <text x="1016" y="634" font-weight="700">S6</text><text x="1052" y="634">NCDIT state IT security &amp; privacy (4/2)</text>
+    <text x="1016" y="658" font-weight="700">S7</text><text x="1052" y="658">DHHS privacy &amp; security office (4/2)</text>
+    <text x="1016" y="682" font-weight="700">S8</text><text x="1052" y="682">Procurement &amp; legal (4/1)</text>
+    <text x="1016" y="706" font-weight="700">S9</text><text x="1052" y="706">NC OSBM: sponsor, central tool owner (5/4)</text>
+    <text x="1016" y="730" font-weight="700">S10</text><text x="1052" y="730">Team 14: builders, operators, labelers (2/5)</text>
+    <text x="1016" y="754" font-weight="700">S11</text><text x="1052" y="754">Solve-a-thon hosts: Azure subscription (3/2)</text>
+    <text x="1016" y="778" font-weight="700">S12</text><text x="1052" y="778">Microsoft Azure: cloud &amp; AI vendor (2/1)</text>
+    <text x="1016" y="802" font-weight="700">S13</text><text x="1052" y="802">Grants.gov: listings API (3/1)</text>
+    <text x="1016" y="826" font-weight="700">S14</text><text x="1052" y="826">USAspending.gov: award history API (1/1)</text>
+    <text x="1016" y="850" font-weight="700">S15</text><text x="1052" y="850">Federal awarding agencies (2/1)</text>
+    <text x="1016" y="874" font-weight="700">S16</text><text x="1052" y="874">Local govts, utilities, community orgs (2/3)</text>
+    <text x="1016" y="898" font-weight="700">S17</text><text x="1052" y="898">NC residents served by DHHS and DEQ (1/2)</text>
+    <text x="1016" y="922" font-weight="700">S18</text><text x="1052" y="922">Grant-writing consultants (1/2)</text>
+    <text x="1016" y="946" font-weight="700">S19</text><text x="1052" y="946">NC DEQ grants coordinator (3/5)</text>
+    <text x="1016" y="970" font-weight="700">S20</text><text x="1052" y="970">NC DEQ leadership (4/3)</text>
+    <text x="1016" y="994" font-weight="700">S21</text><text x="1052" y="994">Smaller agencies: limited grant capacity (2/4)</text>
+    <text x="1016" y="1024" fill="#555" font-style="italic">Scores and attitudes are ASSUMED team estimates.</text>
+  </g>
+</svg>

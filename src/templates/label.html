@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Label opportunities{% endblock %}
+{% block content %}
+<p class="backlink"><a href="{{ url_for('evaluation') }}">Back to Evaluation</a></p>
+<h1>Label opportunities</h1>
+{% if not name %}
+<p class="lede">You will see each sampled opportunity <strong>without its score or rank</strong>. Decide whether it is relevant for {{ agency.agency_short }}:
+would the grants coordinator want to look at it? Each person labels on their own.</p>
+<form method="get" action="{{ url_for('label') }}" class="narrow">
+  <label for="labeler">Your name</label>
+  <input id="labeler" name="labeler" type="text" required maxlength="40" autocomplete="name">
+  <button type="submit" class="btn">Start labeling</button>
+</form>
+{% elif not item %}
+<div class="alert alert-success" role="status"><p>Done, {{ name }}: you labeled all {{ total }} items. Thank you.</p></div>
+<p><a href="{{ url_for('evaluation') }}">See the results</a> · <a href="{{ url_for('label', labeler='') }}">Label as someone else</a></p>
+{% else %}
+<p class="progress-line">Labeling as <strong>{{ name }}</strong> · item {{ done + 1 }} of {{ total }}
+  <progress max="{{ total }}" value="{{ done }}">{{ done }} of {{ total }}</progress>
+  · <a href="{{ url_for('label', labeler='') }}">not you?</a></p>
+<article class="card label-card">
+  <h2>{{ item.title }}</h2>
+  <p class="meta-line">{{ item.number }} · {{ item.agency }} · {{ 'Posted' if item.status == 'posted' else 'Forecast' }}
+    · closes {{ item.close_date }} · <a href="{{ item.url }}" target="_blank" rel="noopener">Official listing (opens in a new tab)</a></p>
+  <h3>Description</h3>
+  <p class="desc">{{ item.description[:1500] }}{% if item.description|length > 1500 %}…{% endif %}</p>
+  <h3>Eligibility</h3>
+  <p>{{ applicants(item.eligibility) }}</p>
+  {% if item.eligibility_text %}<p class="desc">{{ item.eligibility_text|striptags|truncate(800) }}</p>{% endif %}
+</article>
+<form method="post" action="{{ url_for('label') }}" class="label-form">
+  <input type="hidden" name="csrf" value="{{ csrf_token() }}">
+  <input type="hidden" name="id" value="{{ item.id }}">
+  <input type="hidden" name="labeler" value="{{ name }}">
+  <label for="note">Note (optional: why?)</label>
+  <input id="note" name="note" type="text" maxlength="500">
+  <fieldset class="label-buttons">
+    <legend>Is this relevant for {{ agency.agency_short }}?</legend>
+    <button type="submit" name="relevant" value="yes" class="btn">Relevant</button>
+    <button type="submit" name="relevant" value="no" class="btn btn-secondary">Not relevant</button>
+    <button type="submit" name="relevant" value="unsure" class="btn btn-outline">Unsure</button>
+  </fieldset>
+</form>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}Statewide{% endblock %}
+{% block content %}
+<h1>Statewide view</h1>
+<p class="lede">One daily Grants.gov pull, ranked separately against each agency’s own strategic plan. For a central team (such as OSBM)
+to see which agencies have strong open matches, what is closing soon, what each agency decided, and which opportunities fit more than one agency.</p>
+
+<table class="statewide">
+  <caption>Agencies on the matchmaker</caption>
+  <thead>
+    <tr><th scope="col">Agency</th><th scope="col">High</th><th scope="col">Medium</th><th scope="col">Closing within 10 days</th>
+        <th scope="col">Forecast (prepare early)</th><th scope="col">Decisions: Pursue / Maybe / Pass</th><th scope="col">Profile built from</th></tr>
+  </thead>
+  <tbody>
+  {% for row in rows %}
+    <tr>
+      <th scope="row"><a href="{{ url_for('shortlist', agency=row.aid) }}">{{ row.p.agency_short }}</a></th>
+      <td class="num" data-label="High">{{ row.high }}</td>
+      <td class="num" data-label="Medium">{{ row.medium }}</td>
+      <td class="num" data-label="Closing within 10 days">{% if row.closing10 %}<span class="urgent">{{ row.closing10 }}</span>{% else %}0{% endif %}</td>
+      <td class="num" data-label="Forecast">{{ row.forecast }}</td>
+      <td class="num" data-label="Decisions">{{ row.pursue }} / {{ row.maybe }} / {{ row.pass }}</td>
+      <td data-label="Profile">{{ row.plan }}</td>
+    </tr>
+  {% else %}
+    <tr><td colspan="7">No results yet. The daily refresh has not run.</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+<h2>Opportunities that fit more than one agency ({{ n_shared }})</h2>
+<p>A strong match (High or Medium) for two or more agencies. These are candidates for a joint application or for agreeing early who leads.</p>
+{% if shared %}
+<table class="shared">
+  <caption class="visually-hidden">Opportunities matching several agencies</caption>
+  <thead><tr><th scope="col">Opportunity</th><th scope="col">Closes</th><th scope="col">Matches</th></tr></thead>
+  <tbody>
+  {% for group in shared %}
+    {% set first = group[0][1] %}
+    <tr>
+      <td data-label="Opportunity"><a href="{{ url_for('detail', oid=first.id, agency=group[0][0].profile.agency_id) }}">{{ first.title }}</a><span class="meta">{{ first.number }} · {{ first.agency }}</span></td>
+      <td data-label="Closes">{% if first.days_to_close is not none %}{{ first.close_date }} ({{ first.days_to_close }} days){% elif first.status == 'forecasted' %}Forecast{% else %}{{ first.close_date }}{% endif %}</td>
+      <td data-label="Matches">{% for p, r in group %}<a href="{{ url_for('detail', oid=r.id, agency=p.profile.agency_id) }}">{{ p.agency_short }}</a>: {{ '%.0f'|format(r.score) }} ({{ r.confidence }}), goal {{ r.matched_goal.id }} {{ r.matched_goal.name }}{% if not loop.last %}<br>{% endif %}{% endfor %}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p class="empty">No opportunity is a strong match for more than one agency today.</p>
+{% endif %}
+
+<section class="card">
+  <h2>Adding an agency</h2>
+  <p>Each agency gets one profile file in the same template (mission, goals and objectives with plan page numbers, divisions,
+  keywords, eligible applicant type), built from its strategic plan on the OSBM website and checked by a second person.
+  Nothing else changes: the same daily pull, scoring and app serve every agency.</p>
+</section>
+{% endblock %}

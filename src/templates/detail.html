@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+{% block title %}{{ r.title }}{% endblock %}
+{% block content %}
+<p class="backlink"><a href="{{ url_for('shortlist') }}{% if back %}?{{ back }}{% endif %}">Back to the shortlist</a></p>
+
+<h1 class="detail-title">{{ r.title }}</h1>
+<p class="meta-line">{{ r.number }} · {{ r.agency }}{% if r.top_agency and r.top_agency != r.agency %} ({{ r.top_agency }}){% endif %}
+  · <span class="tag tag-{{ r.status }}">{{ 'Posted' if r.status == 'posted' else 'Forecast' }}</span>
+  · <a href="{{ r.url }}">Official listing on Grants.gov</a></p>
+
+{% if r.review_adjustment %}<div class="alert alert-warning" role="note"><p><strong>AI review flag:</strong> {{ r.review_adjustment }}.</p></div>{% endif %}
+{% if r.feedback_note %}<div class="alert alert-info" role="note"><p><strong>Learned from your team’s decisions:</strong> {{ r.feedback_note }}.</p></div>{% endif %}
+{% if r.low_quality %}<div class="alert alert-warning" role="note"><p><strong>Incomplete listing:</strong> {{ r.quality_issues|join(', ') }}. Check the official listing.</p></div>{% endif %}
+
+<div class="detail-grid">
+  <div class="detail-main">
+    <section aria-labelledby="why-h" class="card">
+      <h2 id="why-h">Why it matches</h2>
+      <p><strong>Matched goal:</strong> {{ r.matched_goal.id }} {{ r.matched_goal.name }}.<br>
+         <strong>Objective {{ r.matched_objective.id }}:</strong> {{ r.matched_objective.text }}
+         <span class="cite">({{ r.matched_objective.source }} of the strategic plan)</span></p>
+      {% if r.ai %}
+        <p>{{ r.ai.why_it_matches }}</p>
+        {% if r.ai.evidence_quote and r.ai.evidence_verified %}
+          <figure class="quote">
+            <blockquote>{{ r.ai.evidence_quote }}</blockquote>
+            <figcaption>Quoted from the Grants.gov listing. Checked: the text appears word for word.</figcaption>
+          </figure>
+        {% endif %}
+        {% if r.ai.better_goal_id %}<p class="note">The AI review thinks this fits goal {{ r.ai.better_goal_id }} ({{ goals[r.ai.better_goal_id].name }}) better.</p>{% endif %}
+      {% else %}
+        <p class="note">No AI rationale for this record (only the top-ranked records get one each day). The score breakdown below explains the rank.</p>
+      {% endif %}
+    </section>
+
+    <section aria-labelledby="sum-h" class="card">
+      <h2 id="sum-h">Summary</h2>
+      {% if r.ai %}
+        <p>{{ r.ai.summary }}</p>
+        <dl class="facts">
+          <dt>Who can apply</dt><dd>{{ r.ai.eligibility_notes }}
+            {% if r.ai.eligibility_quote and r.ai.eligibility_verified %}<span class="cite">Listing says: “{{ r.ai.eligibility_quote }}” (checked word for word)</span>{% endif %}
+            {% if r.ai.excludes_north_carolina and r.ai.geographic_verified %}<span class="cite"><strong>Geographic limit excludes North Carolina:</strong> “{{ r.ai.geographic_quote }}” (checked word for word)</span>{% endif %}</dd>
+          <dt>Role for {{ agency.agency_short }}</dt><dd>{{ {'lead':'Can apply as the lead applicant','partner':'Partner only','atypical':'Technically eligible, but aimed at others','ineligible':'Not eligible','unclear':'Unclear from the listing'}[r.ai.applicant_role] }}</dd>
+          <dt>Likely owning division</dt><dd>{{ divisions[r.ai.owning_division].name if r.ai.owning_division else 'not suggested' }}</dd>
+          <dt>Deadline</dt><dd>{{ r.ai.deadline_note }}</dd>
+          <dt>Biggest risk or gap</dt><dd>{{ r.ai.risk_or_gap }}</dd>
+        </dl>
+        <p class="ai-note">Written by AI (Azure OpenAI) from the listing text and the matched plan objective. It says “not stated” rather than guessing. Check the official listing before acting.</p>
+      {% else %}
+        <p>{{ r.description[:700] }}{% if r.description|length > 700 %}…{% endif %}</p>
+        <p class="ai-note">Opening of the official description. <a href="{{ r.url }}">Read the full listing</a>.</p>
+      {% endif %}
+    </section>
+
+    <section aria-labelledby="bd-h" class="card">
+      <h2 id="bd-h">Score breakdown: {{ '%.1f'|format(r.score) }} out of 100 <span class="badge badge-{{ r.confidence|lower }}">{{ r.confidence }} confidence</span></h2>
+      <table class="breakdown">
+        <caption class="visually-hidden">How the score was computed</caption>
+        <thead><tr><th scope="col">Signal</th><th scope="col">Points</th><th scope="col">Why</th></tr></thead>
+        <tbody>
+        {% for b in r.breakdown %}
+          <tr>
+            <th scope="row">{{ b.label }}<span class="meta">weight {{ '%.0f'|format(b.weight * 100) }}%</span></th>
+            <td class="pts"><meter min="0" max="{{ b.max_points }}" value="{{ b.points }}">{{ b.points }} of {{ b.max_points }}</meter>
+              <span>{{ b.points }} / {{ b.max_points }}</span></td>
+            <td>{{ b.reason }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+      <p class="note">Score = 100 × the weighted sum of five signals, each between 0 and 1. The formula is fixed and published; AI does not set the score. <a href="{{ url_for('method') }}">How it works</a>.</p>
+    </section>
+
+    {% if r.award_history and r.award_history.verdict %}
+    <section aria-labelledby="ah-h" class="card">
+      <h2 id="ah-h">Who has won this funding before</h2>
+      <p><strong>{{ r.award_history.verdict }}</strong> (USAspending.gov, awards under assistance listing {{ r.assistance_listings.split('|')[0] }}, FY2022–FY2025).</p>
+      <dl class="facts">
+        <dt>{{ agency.agency_short }} received</dt><dd>{{ money(r.award_history.agency_usd) }}</dd>
+        <dt>Total awarded nationally</dt><dd>{{ money(r.award_history.total_usd) }}</dd>
+        <dt>Share to state agencies</dt><dd>{{ '%.0f'|format(r.award_history.state_agency_share * 100) }}%</dd>
+        {% if r.award_history.top_recipients %}<dt>Largest recipients</dt><dd>{{ r.award_history.top_recipients }}</dd>{% endif %}
+      </dl>
+    </section>
+    {% endif %}
+  </div>
+
+  <aside class="detail-side" aria-label="Key facts and decision">
+    <section class="card">
+      <h2>Key facts</h2>
+      <dl class="facts">
+        <dt>Closes</dt><dd>{% if r.days_to_close is not none %}<span class="{% if r.days_to_close <= 14 %}urgent{% endif %}">{{ r.close_date }} ({{ r.days_to_close }} days)</span>{% elif r.status == 'forecasted' %}Forecast; estimated close {{ r.forecast_close_date or 'not stated' }}{% else %}{{ r.close_date }}{% endif %}</dd>
+        {% if r.status == 'forecasted' %}<dt>Expected posting</dt><dd>{{ r.forecast_post_date or 'not stated' }}</dd>{% endif %}
+        <dt>Award ceiling</dt><dd>{{ money(r.award_ceiling) }}</dd>
+        <dt>Total program funding</dt><dd>{{ money(r.total_funding) }}</dd>
+        <dt>Expected awards</dt><dd>{{ r.expected_awards if r.expected_awards else 'not stated' }}</dd>
+        <dt>Cost sharing</dt><dd>{{ {'True':'Required','False':'Not required','Unknown':'Not stated'}[r.cost_sharing] }}</dd>
+        <dt>Eligible applicants</dt><dd>{{ applicants(r.eligibility) }}</dd>
+        <dt>Assistance listing</dt><dd>{{ r.assistance_listings.replace('|', ' ').replace(';', '; ') or 'not stated' }}</dd>
+      </dl>
+    </section>
+
+    <section class="card" aria-labelledby="dec-h">
+      <h2 id="dec-h">Your decision</h2>
+      <form method="post" action="{{ url_for('decide', oid=r.id) }}" class="decision-form">
+        <input type="hidden" name="csrf" value="{{ csrf_token() }}">
+        <input type="hidden" name="back" value="{{ back }}">
+        <fieldset>
+          <legend>Should {{ agency.agency_short }} pursue this?</legend>
+          {% set cur = (history[-1].decision if history else '') %}
+          {% for c, hint in (('Pursue','route to a division'),('Maybe','look again later'),('Pass','not for us')) %}
+          <div class="radio"><input type="radio" id="d-{{ c }}" name="decision" value="{{ c }}" required {% if cur == c %}checked{% endif %}><label for="d-{{ c }}">{{ c }} <span class="meta">{{ hint }}</span></label></div>
+          {% endfor %}
+        </fieldset>
+        <label for="name">Your name or initials</label>
+        <input id="name" name="name" type="text" value="{{ name }}" autocomplete="name" maxlength="60" required>
+        <label for="note">Note (optional)</label>
+        <textarea id="note" name="note" rows="3" maxlength="1000"></textarea>
+        <button type="submit" class="btn">Save decision</button>
+      </form>
+      {% if history %}
+      <h3>History</h3>
+      <ul class="history">
+        {% for h in history|reverse %}<li><strong>{{ h.decision }}</strong> by {{ h.by }}, {{ fmt_dt(h.at) }}{% if h.note %}: “{{ h.note }}”{% endif %} <span class="meta">score then: {{ h.score_at_decision }} ({{ h.confidence_at_decision }})</span></li>{% endfor %}
+      </ul>
+      {% endif %}
+    </section>
+  </aside>
+</div>
+{% endblock %}

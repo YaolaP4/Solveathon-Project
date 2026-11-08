@@ -1,0 +1,327 @@
+{
+  "agency_name": "North Carolina Department of Health and Human Services (NCDHHS)",
+  "agency_short": "NC DHHS",
+  "mission": "In collaboration with our partners, DHHS provides essential services to improve the health, safety and well-being of all North Carolinians.",
+  "user": "The NCDHHS federal-grants coordinator, who reviews new federal funding opportunities each week, decides which are worth pursuing, and routes each one to the division that would own the application.",
+  "department_priorities": [
+    {
+      "id": "P1",
+      "text": "Deliver critical services to improve the health and well-being of North Carolinians: timely, coordinated implementation of NC Medicaid, SNAP, child welfare and child care services, supporting state and county DSS partners.",
+      "source": "Plan p. 2"
+    },
+    {
+      "id": "P2",
+      "text": "Transform rural health: strengthen and sustain programs, including the Rural Health Transformation Program, that enable rural communities to thrive, leveraging full federal investments.",
+      "source": "Plan p. 2"
+    },
+    {
+      "id": "P3",
+      "text": "Strengthen behavioral health crisis care and its coordination with the justice system.",
+      "source": "Plan p. 2"
+    },
+    {
+      "id": "P4",
+      "text": "Partner with key stakeholders to drive reforms that promote affordable and accessible health care for every North Carolinian.",
+      "source": "Plan p. 2"
+    }
+  ],
+  "strategic_priorities": [
+    {
+      "id": "G1",
+      "name": "Access to Care",
+      "description": "Support North Carolinians' ability to safely, easily and fully access the services, programs and systems of care of NCDHHS and our partners.",
+      "source": "NCDHHS Strategic Plan 2026-2030, Goal 1, p. 4",
+      "objectives": [
+        {
+          "id": "1.1",
+          "text": "Maintain access to health and human services in traditional and non-traditional settings to meet North Carolinians where they are.",
+          "source": "Plan p. 4"
+        },
+        {
+          "id": "1.2",
+          "text": "Mitigate the social, cultural and literacy barriers that prevent North Carolinians from accessing health and human services.",
+          "source": "Plan p. 4"
+        },
+        {
+          "id": "1.3",
+          "text": "Support affordable care options that North Carolinians can access easily.",
+          "source": "Plan p. 4",
+          "related_priority": "P4"
+        },
+        {
+          "id": "1.4",
+          "text": "Promote policies and remove barriers that improve North Carolinians' ability to access health and human services.",
+          "source": "Plan p. 4",
+          "related_priority": "P1"
+        }
+      ]
+    },
+    {
+      "id": "G2",
+      "name": "Whole Person Well-Being",
+      "description": "Improve the well-being of North Carolinians by delivering comprehensive, high-quality services that address complex factors shaping outcomes for individuals and families.",
+      "source": "NCDHHS Strategic Plan 2026-2030, Goal 2, p. 5",
+      "objectives": [
+        {
+          "id": "2.1",
+          "text": "Coordinate and integrate health and human services systems to support a healthy North Carolina.",
+          "source": "Plan p. 5",
+          "related_priority": "P1"
+        },
+        {
+          "id": "2.2",
+          "text": "Simplify the processes for families and individuals to navigate mental health, substance use disorder, intellectual/developmental disability (I/DD) and traumatic brain injury (TBI) systems and services.",
+          "source": "Plan p. 5",
+          "related_priority": "P3"
+        },
+        {
+          "id": "2.3",
+          "text": "Improve systems that address non-medical drivers of health such as access to healthy food.",
+          "source": "Plan p. 5",
+          "related_priority": "P1"
+        },
+        {
+          "id": "2.4",
+          "text": "Strengthen service delivery across all of NCDHHS points of contact by improving quality, efficiency, and reliability.",
+          "source": "Plan p. 5"
+        }
+      ]
+    },
+    {
+      "id": "G3",
+      "name": "Transform and Modernize Health Care",
+      "description": "Transform North Carolina's health care ecosystem by modernizing delivery, strengthening community and rural care, and optimizing strategic partnerships to expand access, improve outcomes and manage costs.",
+      "source": "NCDHHS Strategic Plan 2026-2030, Goal 3, p. 6",
+      "objectives": [
+        {
+          "id": "3.1",
+          "text": "Align policy, finance and operations to manage costs and improve care.",
+          "source": "Plan p. 6",
+          "related_priority": "P4"
+        },
+        {
+          "id": "3.2",
+          "text": "Leverage volume purchasing power and develop strategic partnerships to increase access and reduce costs.",
+          "source": "Plan p. 6",
+          "related_priority": "P4"
+        },
+        {
+          "id": "3.3",
+          "text": "Leverage the expertise of state-operated health care facilities to support individuals with complex needs.",
+          "source": "Plan p. 6",
+          "related_priority": "P3"
+        },
+        {
+          "id": "3.4",
+          "text": "Promote a sustainable rural health delivery system that improves health outcomes for all North Carolinians.",
+          "source": "Plan p. 6",
+          "related_priority": "P2"
+        }
+      ]
+    },
+    {
+      "id": "G4",
+      "name": "Sustainable Workforce",
+      "description": "Develop a skilled workforce that supports North Carolinians' health and well-being through training, career pathways and innovative strategies to attract and retain talent.",
+      "source": "NCDHHS Strategic Plan 2026-2030, Goal 4, p. 7",
+      "objectives": [
+        {
+          "id": "4.1",
+          "text": "Develop and strengthen career pathways that address critical service gaps in health and human services workforces.",
+          "source": "Plan p. 7"
+        },
+        {
+          "id": "4.2",
+          "text": "Provide all workforce members supporting the health and well-being of North Carolinians the necessary training, skills and compensation to deliver high-quality care and services.",
+          "source": "Plan p. 7"
+        },
+        {
+          "id": "4.3",
+          "text": "Support individuals with employment barriers to obtain work, build financial security, increase independence, and strengthen social capital.",
+          "source": "Plan p. 7"
+        },
+        {
+          "id": "4.4",
+          "text": "Leverage financial incentives, data and innovative practices to recruit and retain individuals to health and human services workforces.",
+          "source": "Plan p. 7"
+        },
+        {
+          "id": "4.5",
+          "text": "Operate required workforce programs to efficiently and effectively meet the needs of eligible North Carolinians.",
+          "source": "Plan p. 7"
+        }
+      ]
+    },
+    {
+      "id": "G5",
+      "name": "Organizational Excellence",
+      "description": "Promote efficient and effective operations through continuous improvement, leveraging data, modernizing systems, using resources wisely and strengthening accountability and transparency across the department.",
+      "source": "NCDHHS Strategic Plan 2026-2030, Goal 5, p. 8",
+      "objectives": [
+        {
+          "id": "5.1",
+          "text": "Modernize technology systems to enhance efficiency and collaboration.",
+          "source": "Plan p. 8"
+        },
+        {
+          "id": "5.2",
+          "text": "Foster a culture of data-driven decision-making across NCDHHS.",
+          "source": "Plan p. 8"
+        },
+        {
+          "id": "5.3",
+          "text": "Strengthen governance systems that promote accountability, manage risks and align activities with NCDHHS goals.",
+          "source": "Plan p. 8"
+        },
+        {
+          "id": "5.4",
+          "text": "Steward state resources and continuously improve organizational processes and practices.",
+          "source": "Plan p. 8"
+        }
+      ]
+    }
+  ],
+  "divisions": [
+    {
+      "id": "DPH",
+      "name": "Division of Public Health",
+      "scope": "disease prevention and surveillance, epidemiology, immunization, chronic disease, environmental health, maternal and child health, WIC, local health departments, public health preparedness, laboratory"
+    },
+    {
+      "id": "DMHDDSUS",
+      "name": "Division of Mental Health, Developmental Disabilities and Substance Use Services",
+      "scope": "mental health, substance use and opioid services, intellectual and developmental disabilities, traumatic brain injury, crisis services and 988, behavioral health for justice-involved people"
+    },
+    {
+      "id": "MEDICAID",
+      "name": "Division of Health Benefits (NC Medicaid)",
+      "scope": "Medicaid and NC Health Choice, managed care, Medicaid expansion, Healthy Opportunities, health care financing and affordability"
+    },
+    {
+      "id": "DCFW",
+      "name": "Division of Child and Family Well-Being",
+      "scope": "child and family health and nutrition programs, school health, early childhood well-being, child behavioral health"
+    },
+    {
+      "id": "DSS",
+      "name": "Division of Social Services",
+      "scope": "child welfare, foster care, adoption, adult services, food and nutrition services (SNAP), work supports, county DSS partners"
+    },
+    {
+      "id": "DAGING",
+      "name": "Division of Aging",
+      "scope": "older adults, family caregivers, adult protective services, aging network, direct care workforce"
+    },
+    {
+      "id": "DCDEE",
+      "name": "Division of Child Development and Early Education",
+      "scope": "child care subsidy and regulation, early childhood education, early childhood workforce"
+    },
+    {
+      "id": "ORH",
+      "name": "Office of Rural Health",
+      "scope": "rural health, primary care access, critical access hospitals, rural health centers, Rural Health Transformation Program, health workforce recruitment"
+    },
+    {
+      "id": "DEIPD",
+      "name": "Division of Employment and Independence for People with Disabilities",
+      "scope": "vocational rehabilitation, independent living, employment for people with disabilities"
+    },
+    {
+      "id": "DSBDHH",
+      "name": "Divisions of Services for the Blind and for the Deaf and Hard of Hearing",
+      "scope": "services for people who are blind, deaf, hard of hearing or deaf-blind"
+    },
+    {
+      "id": "DHSR",
+      "name": "Division of Health Service Regulation",
+      "scope": "licensure and certification of health care facilities, emergency medical services, certificate of need"
+    },
+    {
+      "id": "DSOHF",
+      "name": "Division of State Operated Healthcare Facilities",
+      "scope": "state psychiatric hospitals, developmental centers, alcohol and drug treatment centers, neuro-medical treatment centers"
+    },
+    {
+      "id": "OSEC",
+      "name": "Office of the Secretary and central administration",
+      "scope": "department-wide data, technology, budget, federal funds tracking, workforce, operations"
+    }
+  ],
+  "profile": {
+    "_comment": "Starter-kit profile fields (sec. 5.1). Drafted by our team from the plan and reviewed by a second teammate. The plan's four priority areas are linked to the objectives they most relate to (our mapping, marked related_priority); the matcher reads them as extra context for those objectives.",
+    "agency_id": "ncdhhs",
+    "plan_title": "NCDHHS Strategic Plan 2026-2030",
+    "plan_url": "https://www.osbm.nc.gov/dhhs-2026-2030-strategic-plan/download?attachment",
+    "plan_published": "September 2026",
+    "reviewed_by": "Team (two-person review)",
+    "program_areas": [
+      "Medicaid and health coverage",
+      "Public health and disease prevention",
+      "Behavioral health, substance use, I/DD and TBI",
+      "Child welfare and social services",
+      "Food and nutrition (SNAP, WIC)",
+      "Maternal and child health",
+      "Early childhood and child care",
+      "Aging and adult services",
+      "Disability services and vocational rehabilitation",
+      "Rural health and primary care access",
+      "Health and human services workforce",
+      "Health data, IT and operations"
+    ],
+    "keywords": [
+      "Medicaid",
+      "SNAP",
+      "child welfare",
+      "foster care",
+      "child care",
+      "public health",
+      "behavioral health",
+      "mental health",
+      "substance use",
+      "opioid",
+      "crisis",
+      "988",
+      "justice-involved",
+      "developmental disabilities",
+      "traumatic brain injury",
+      "rural health",
+      "Rural Health Transformation",
+      "primary care",
+      "telehealth",
+      "health workforce",
+      "community health workers",
+      "maternal health",
+      "infant",
+      "home visiting",
+      "WIC",
+      "nutrition",
+      "food security",
+      "early childhood",
+      "older adults",
+      "aging",
+      "caregivers",
+      "disabilities",
+      "vocational rehabilitation",
+      "immunization",
+      "epidemiology",
+      "surveillance",
+      "HIV",
+      "health care affordability",
+      "health information",
+      "emergency preparedness"
+    ],
+    "eligible_applicant_types": [
+      "state_governments"
+    ],
+    "eligibility_note": "NCDHHS applies as a state government agency. Grants open only to universities, tribes, local governments, nonprofits or individuals are low fit unless a state agency is named as a partner.",
+    "related_federal_agencies": [
+      "Department of Health and Human Services",
+      "Department of Agriculture",
+      "Department of Labor",
+      "Department of Justice",
+      "Department of Education"
+    ],
+    "usaspending_recipient_pattern": "NORTH CAROLINA DEP(ARTMEN)?T\\.? OF HEALTH|HEALTH (AND|&) HUMAN SERVICES,? NORTH CAROLINA|\\bN\\.?C\\.? DEP(ARTMEN)?T\\.? OF HEALTH"
+  }
+}

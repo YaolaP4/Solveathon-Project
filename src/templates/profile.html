@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Agency profile{% endblock %}
+{% block content %}
+{% if not p %}<h1>Agency profile</h1><p>No profile in storage yet. Run the daily job once.</p>{% else %}
+<h1>Agency profile: {{ p.agency_name }}</h1>
+<p class="lede">What the matcher compares every opportunity against. Our team drafted it from the
+<a href="{{ p.source.url }}">{{ p.source.title }}</a> and a second teammate reviewed it. Every goal cites the plan's page numbers.
+Every agency uses the same template (<code>agency/profiles/</code>); adding one means filling it in from that agency's plan.</p>
+
+<section class="card">
+  <h2>Mission</h2>
+  <p>{{ p.mission }}</p>
+  <h2>Who uses the results</h2>
+  <p>{{ p.user }}</p>
+</section>
+
+{% if p.department_priorities %}
+<h2>Department priority areas</h2>
+<ul>{% for d in p.department_priorities %}<li><strong>{{ d.id }}</strong> {{ d.text }} <span class="cite">({{ d.source }})</span></li>{% endfor %}</ul>
+<p class="note">Our team linked each priority area to the objectives it most relates to; the matcher reads it as extra context for those objectives.</p>
+{% endif %}
+
+<h2>Goals and objectives</h2>
+{% for g in p.goals %}
+<section class="card">
+  <h3>{{ g.id }} {{ g.name }}</h3>
+  <p>{{ g.description }} <span class="cite">({{ g.source }})</span></p>
+  <ul>{% for o in g.objectives %}<li><strong>{{ o.id }}</strong> {{ o.text }} <span class="cite">({{ o.source }})</span></li>{% endfor %}</ul>
+</section>
+{% endfor %}
+
+<div class="two-col">
+  <section class="card">
+    <h2>Program areas</h2>
+    <ul>{% for a in p.program_areas %}<li>{{ a }}</li>{% endfor %}</ul>
+    <h2>Eligible applicant type</h2>
+    <p>{{ p.eligible_applicant_types|join(', ')|replace('_', ' ') }}. {{ p.eligibility_note }}</p>
+  </section>
+  <section class="card">
+    <h2>Keywords ({{ p.keywords|length }})</h2>
+    <p>{{ p.keywords|join(' · ') }}</p>
+    <h2>Divisions</h2>
+    <ul>{% for d in p.divisions %}<li><strong>{{ d.name }}</strong>: {{ d.scope }}</li>{% endfor %}</ul>
+  </section>
+</div>
+<p class="note">Reviewed by: {{ p.reviewed_by }}.</p>
+{% endif %}
+{% endblock %}

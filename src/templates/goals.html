@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}Funding by goal{% endblock %}
+{% block content %}
+<h1>Open federal funding by strategic goal</h1>
+<p class="lede">How many High and Medium matches each goal of the {{ agency.profile.plan_title }} has right now (agency-eligible list only).
+Use it to see which goals have money available and which have little.</p>
+
+<div class="table-scroll" role="region" aria-labelledby="goals-cap" tabindex="0">
+<table class="goals">
+  <caption id="goals-cap">Matches per goal, data as of {{ doc.as_of }}</caption>
+  <thead>
+    <tr><th scope="col">Goal</th><th scope="col">High</th><th scope="col">Medium</th><th scope="col">Strong matches</th>
+        <th scope="col">Posted / forecast</th><th scope="col">Closing within 30 days</th><th scope="col">Sum of award ceilings</th></tr>
+  </thead>
+  <tbody>
+  {% for row in rows %}
+    <tr>
+      <th scope="row"><a href="{{ url_for('shortlist', goal=row.g.id) }}">{{ row.g.id }} {{ row.g.name }}</a><span class="meta">{{ row.g.source }}</span></th>
+      <td class="num">{{ row.high }}</td>
+      <td class="num">{{ row.medium }}</td>
+      <td><meter min="0" max="{{ peak }}" value="{{ row.high + row.medium }}">{{ row.high + row.medium }}</meter> {{ row.high + row.medium }}</td>
+      <td class="num">{{ row.posted }} / {{ row.forecast }}</td>
+      <td class="num">{{ row.closing30 }}</td>
+      <td class="num">{{ money(row.ceiling) if row.ceiling else 'not stated' }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+<p class="note">“Sum of award ceilings” adds the largest single award of each matching opportunity. It shows scale, not money {{ agency.agency_short }} would receive.</p>
+
+<h2>By objective</h2>
+{% for row in rows %}
+<section class="card">
+  <h3>{{ row.g.id }} {{ row.g.name }}</h3>
+  <table class="objectives">
+    <caption class="visually-hidden">Objectives of {{ row.g.name }}</caption>
+    <thead><tr><th scope="col">Objective</th><th scope="col">Strong matches</th><th scope="col">Best matches</th></tr></thead>
+    <tbody>
+    {% for o in row.objectives %}
+      <tr {% if o.n == 0 %}class="gap"{% endif %}>
+        <th scope="row">{{ o.o.id }}<span class="meta">{{ o.o.text }}</span></th>
+        <td class="num">{{ o.n }}{% if o.n == 0 %} <span class="meta">no open funding found</span>{% endif %}</td>
+        <td>{% for r in o.top %}<a href="{{ url_for('detail', oid=r.id) }}">{{ r.title }}</a>{% if not loop.last %}; {% endif %}{% endfor %}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endfor %}
+{% endblock %}

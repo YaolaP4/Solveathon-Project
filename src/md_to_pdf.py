@@ -20,12 +20,15 @@ th { background: #16243A; color: #F4F1EA; text-align: left; padding: 4px 6px; }
 td { border-bottom: 1px solid #DDD8CC; padding: 4px 6px; vertical-align: top; }
 code { background: #F2EFE8; padding: 0 3px; font-size: 9pt; }
 li { margin: 2px 0; } tr { page-break-inside: avoid; }
+blockquote { margin: 8px 0; padding: 6px 12px; border-left: 4px solid #2A6F97; background: #F2EFE8; font-style: italic; }
+img { max-width: 100%; }
 h1, h2, h3 { break-after: avoid; page-break-after: avoid; } a { color: #2A6F97; }"""
 
 
 def inline(t: str) -> str:
     t = html.escape(t)
     t = re.sub(r"`([^`]+)`", r"<code>\1</code>", t)
+    t = re.sub(r"!\[([^\]]*)\]\(([^)\s]+)\)", r"<img alt='\1' src='\2'>", t)   # images before links
     t = re.sub(r"\[([^\]]+)\]\(([^)\s]+)\)", r"<a href='\2'>\1</a>", t)
     t = re.sub(r"\*\*([^*]+)\*\*", r"<b>\1</b>", t)
     t = re.sub(r"(?<!\*)\*([^*]+)\*(?!\*)", r"<i>\1</i>", t)
@@ -66,15 +69,34 @@ def convert(md: str) -> str:
                 close_lists(indent)
                 if not stack:
                     out.append(f"<{tag}>"); stack.append((tag, indent))
-            out.append(f"<li>{inline(m.group(3))}</li>"); i += 1; continue
+            text = m.group(3)
+            i += 1
+            # A wrapped list item continues on indented lines that are not new items.
+            while i < len(lines) and lines[i].startswith(" ") and lines[i].strip() \
+                    and not re.match(r"^\s*([-*]|\d+\.)\s+", lines[i]):
+                text += " " + lines[i].strip(); i += 1
+            out.append(f"<li>{inline(text)}</li>"); continue
         close_lists()
-        if line.startswith("## "):
-            out.append(f"<h2>{inline(line[3:])}</h2>")
+        if line.startswith("### "):
+            out.append(f"<h3>{inline(line[4:])}</h3>"); i += 1
+        elif line.startswith("## "):
+            out.append(f"<h2>{inline(line[3:])}</h2>"); i += 1
         elif line.startswith("# "):
-            out.append(f"<h1>{inline(line[2:])}</h1>")
+            out.append(f"<h1>{inline(line[2:])}</h1>"); i += 1
+        elif line.startswith(">"):
+            quote = []
+            while i < len(lines) and lines[i].startswith(">"):
+                quote.append(lines[i].lstrip(">").strip()); i += 1
+            out.append(f"<blockquote>{inline(' '.join(quote))}</blockquote>")
         elif line.strip():
-            out.append(f"<p>{inline(line)}</p>")
-        i += 1
+            # A paragraph runs until a blank line or the start of another block.
+            para = [line.strip()]
+            i += 1
+            while i < len(lines) and lines[i].strip() and not re.match(r"^(#|>|\||```|\s*([-*]|\d+\.)\s+)", lines[i]):
+                para.append(lines[i].strip()); i += 1
+            out.append(f"<p>{inline(' '.join(para))}</p>")
+        else:
+            i += 1
     close_lists()
     return "\n".join(out)
 

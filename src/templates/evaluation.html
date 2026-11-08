@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% block title %}Evaluation{% endblock %}
+{% block content %}
+<h1>Are the matches good?</h1>
+<p class="lede">Team members label a fixed sample of opportunities as relevant or not relevant for {{ agency.agency_short }} <strong>without seeing the score</strong>.
+This page compares our ranking with a keyword-only ranking on those labels. Numbers update as labels come in.</p>
+
+{% if not sample %}
+<section class="card">
+  <h2>Step 1: draw the labeling sample</h2>
+  <p>About 30 opportunities: our top 10, the keyword baseline's top 10, 5 from our ranks 11 to 100, and 5 at random from the rest.
+  The sample is fixed once drawn so labels stay comparable.</p>
+  <form method="post" action="{{ url_for('make_sample') }}">
+    <input type="hidden" name="csrf" value="{{ csrf_token() }}">
+    <button class="btn" type="submit">Draw the sample</button>
+  </form>
+</section>
+{% else %}
+<p><a class="btn" href="{{ url_for('label') }}">Label opportunities</a>
+  <span class="meta-inline">Sample of {{ m.sample_size }} drawn from the {{ sample.as_of }} refresh. Labelers so far: {{ m.labelers|join(', ') if m.labelers else 'none' }}.</span></p>
+{% endif %}
+
+<h2>Evidence</h2>
+<table class="evidence">
+  <caption class="visually-hidden">Evaluation numbers</caption>
+  <thead><tr><th scope="col">Measure</th><th scope="col">Ours</th><th scope="col">Keyword baseline</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Opportunities checked in the latest refresh</th><td colspan="2">{{ "{:,}".format(run.counts.pulled) if run else 'n/a' }} pulled, {{ "{:,}".format(run.counts.live) if run else 'n/a' }} still open or forecast</td></tr>
+    <tr><th scope="row">Precision@10 (share of the top 10 labeled relevant)</th>
+      <td>{% if m.ours_p10.precision is not none %}<strong>{{ m.ours_p10.relevant }} of {{ m.ours_p10.judged }}</strong> ({{ '%.0f'|format(m.ours_p10.precision * 100) }}%){% else %}needs labels{% endif %}</td>
+      <td>{% if m.baseline_p10.precision is not none %}{{ m.baseline_p10.relevant }} of {{ m.baseline_p10.judged }} ({{ '%.0f'|format(m.baseline_p10.precision * 100) }}%){% else %}needs labels{% endif %}</td></tr>
+    <tr><th scope="row">Recall: labeled-relevant items ranked in the top 25</th>
+      <td>{% if m.recall25.ours is not none %}{{ m.recall25.ours_in_top25 }} of {{ m.recall25.relevant }}{% else %}needs labels{% endif %}</td>
+      <td>{% if m.recall25.baseline is not none %}{{ m.recall25.baseline_in_top25 }} of {{ m.recall25.relevant }}{% else %}needs labels{% endif %}</td></tr>
+    <tr><th scope="row">Relevant items in our top 25 that the keyword ranking leaves out of its top 25</th>
+      <td colspan="2">{{ m.found_not_baseline|length }}{% for i in m.found_not_baseline %}{% if by_id[i] %}; <a href="{{ url_for('detail', oid=i) }}">{{ by_id[i].title }}</a>{% endif %}{% endfor %}</td></tr>
+    {% if m.keyword_search %}
+    <tr><th scope="row">Strong matches that no Grants.gov keyword search (our {{ m.keyword_search.keywords }} profile keywords) returns</th>
+      <td colspan="2">{{ m.keyword_search.missed_by_every_keyword_search|length }} of {{ m.keyword_search.strong_matches }}
+        {% for i in m.keyword_search.missed_by_every_keyword_search[:5] %}{% if by_id[i] %}; <a href="{{ url_for('detail', oid=i) }}">{{ by_id[i].title }}</a>{% endif %}{% endfor %}</td></tr>
+    {% endif %}
+    <tr><th scope="row">Labeler agreement</th>
+      <td colspan="2">{% if m.agreement.pairs %}{{ m.agreement.agree }} of {{ m.agreement.pairs }} items labeled by both {{ m.agreement.labelers|join(' and ') }}{% if m.agreement.kappa is not none %} (Cohen's kappa {{ m.agreement.kappa }}){% endif %}{% else %}needs two labelers on the same items{% endif %}</td></tr>
+    {% if aid == 'ncdhhs' %}<tr><th scope="row">Tuning check against the qualifier's AI-reviewed grants</th>
+      <td colspan="2">See <code>docs/tuning_report.md</code>: AUC on the 1,037 live grants our qualifier pipeline had already reviewed (reference labels, used for tuning only)</td></tr>{% endif %}
+    <tr><th scope="row">AI quotes checked word for word (latest refresh)</th>
+      <td colspan="2">{% if doc.ai_stats and doc.ai_stats.reviewed %}{{ doc.ai_stats.quotes_verified }} of {{ doc.ai_stats.quotes_checked }} verified; {{ doc.ai_checks|length }} problems caught (below){% else %}AI rationales were not run in the latest refresh{% endif %}</td></tr>
+  </tbody>
+</table>
+
+{% if m.disagreements %}
+<h2>Where labelers disagreed</h2>
+<ul>{% for d in m.disagreements %}<li><a href="{{ url_for('detail', oid=d.id) }}">{{ by_id[d.id].title if by_id[d.id] else d.id }}</a>:
+  {% for v in d.votes %}{{ v.labeler }} said {{ 'relevant' if v.relevant else 'not relevant' }}{% if v.note %} (“{{ v.note }}”){% endif %}{% if not loop.last %}; {% endif %}{% endfor %}</li>{% endfor %}</ul>
+{% endif %}
+
+{% if sample %}
+<h2>Labeled sample</h2>
+<table class="labeled">
+  <caption class="visually-hidden">Every sampled item with its labels and ranks</caption>
+  <thead><tr><th scope="col">Opportunity</th><th scope="col">Why sampled</th><th scope="col">Our rank</th><th scope="col">Keyword rank</th><th scope="col">Labels</th><th scope="col">Result</th></tr></thead>
+  <tbody>
+  {% for it in sample["items"] %}
+    {% set v = m.resolved.get(it.id) %}
+    <tr>
+      <td data-label="Opportunity">{% if by_id[it.id] %}<a href="{{ url_for('detail', oid=it.id) }}">{{ it.title }}</a>{% else %}{{ it.title }} <span class="meta">(no longer listed)</span>{% endif %}</td>
+      <td data-label="Why sampled">{{ it.stratum }}</td>
+      <td data-label="Our rank" class="num">{{ m.ours_rank.get(it.id, '—') }}</td>
+      <td data-label="Keyword rank" class="num">{{ m.baseline_rank.get(it.id, '—') }}</td>
+      <td data-label="Labels">{% if v %}{% for l in v.votes %}{{ l.labeler }}: {{ 'yes' if l.relevant else ('no' if l.relevant == false else 'unsure') }}{% if not loop.last %}, {% endif %}{% endfor %}{% else %}not labeled{% endif %}</td>
+      <td data-label="Result">{% if v and v.label is not none %}{{ 'Relevant' if v.label else 'Not relevant' }}{% elif v and v.disagree %}Tie (needs a third vote){% else %}—{% endif %}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+
+<h2>Feedback loop: staff decisions vs scores</h2>
+<p>A Pass on a High-confidence match is a possible false positive; a Pursue on a Low one is a hint the weights should change.
+Each morning the refresh also uses these decisions: opportunities very similar to one your team passed move down one confidence step, and ones similar to a pursued grant move up, with the reason shown on the record.</p>
+<table class="feedback">
+  <caption class="visually-hidden">Decisions compared with scores</caption>
+  <thead><tr><th scope="col">Decision</th><th scope="col">Count</th><th scope="col">Average score</th></tr></thead>
+  <tbody>{% for k in ('Pursue','Maybe','Pass') %}<tr><th scope="row">{{ k }}</th><td class="num">{{ m.feedback[k].n }}</td><td class="num">{{ m.feedback[k].mean_score if m.feedback[k].mean_score is not none else '—' }}</td></tr>{% endfor %}</tbody>
+</table>
+{% if m.feedback.pass_on_high %}<p><strong>Passed although High:</strong> {% for x in m.feedback.pass_on_high %}<a href="{{ url_for('detail', oid=x.id) }}">{{ x.title }}</a> ({{ x.score }}){% if not loop.last %}; {% endif %}{% endfor %}</p>{% endif %}
+{% if m.feedback.pursue_on_low %}<p><strong>Pursued although Low:</strong> {% for x in m.feedback.pursue_on_low %}<a href="{{ url_for('detail', oid=x.id) }}">{{ x.title }}</a> ({{ x.score }}){% if not loop.last %}; {% endif %}{% endfor %}</p>{% endif %}
+
+<h2>Where the AI was wrong (caught automatically)</h2>
+{% if doc.ai_checks %}
+<table class="aichecks">
+  <caption class="visually-hidden">Problems found in AI answers</caption>
+  <thead><tr><th scope="col">Opportunity</th><th scope="col">Problem</th><th scope="col">Detail</th></tr></thead>
+  <tbody>{% for p in doc.ai_checks %}<tr><td><a href="{{ url_for('detail', oid=p.grant_id) }}">{{ p.title }}</a></td><td>{{ p.kind.replace('_', ' ') }}</td><td>{{ p.detail }}</td></tr>{% endfor %}</tbody>
+</table>
+{% else %}<p>No problems logged in the latest refresh{% if not (doc.ai_stats and doc.ai_stats.reviewed) %} (AI rationales did not run){% endif %}.</p>{% endif %}
+{% endblock %}

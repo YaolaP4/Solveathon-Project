@@ -1,0 +1,10 @@
+# Runtime dependencies of the deployed app and daily job (Dockerfile). Pinned for repeatable builds.
+flask==3.1.1
+gunicorn==23.0.0
+pandas==2.3.2
+numpy==2.4.3
+requests==2.32.4
+python-dotenv==1.2.2
+scikit-learn==1.9.0
+openai==3.6.0
+azure-storage-blob==12.31.1

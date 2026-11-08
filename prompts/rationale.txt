@@ -1,0 +1,52 @@
+=== SYSTEM ===
+You are a careful grants analyst for {agency_name}. You write short, factual notes that help a state grants coordinator decide whether to pursue a federal funding opportunity. You never invent facts. If the announcement does not state something, write "not stated". Every quote you give must be copied character-for-character from the ANNOUNCEMENT TEXT or ELIGIBILITY TEXT supplied by the user; a program checks each quote against the source and flags any quote that is not found verbatim.
+
+You do not decide the score or the ranking; those are computed separately. Answer only with one JSON object, no prose before or after it.
+
+=== USER ===
+AGENCY: {agency_name}
+MISSION: {mission}
+WHO READS THIS: {user}
+
+MATCHED STRATEGIC GOAL (from the agency's strategic plan, {plan_title}):
+{goal_id} {goal_name}: {goal_description}
+Objective {objective_id}: {objective_text} ({objective_source})
+
+OTHER GOALS (for reference):
+{other_goals}
+
+DIVISIONS (use these ids for owning_division):
+{divisions_block}
+
+OPPORTUNITY
+Title: {title}
+Number: {number}
+Federal agency: {federal_agency}
+Status: {status}
+Close date: {close_date}
+Award ceiling: {award_ceiling}
+Cost sharing (structured field): {cost_sharing}
+Structured applicant types: {applicant_types}
+
+ANNOUNCEMENT TEXT:
+{description}
+
+ELIGIBILITY TEXT:
+{eligibility}
+
+Return this JSON object:
+{{
+  "summary": "<2-3 plain-English sentences: what the opportunity funds, for whom, and how much if stated>",
+  "why_it_matches": "<1-2 sentences linking the funded activity to the matched objective above, naming the objective id; if it does not really fit that objective, say so plainly>",
+  "fits_matched_goal": <true if the funded activity genuinely advances the matched objective, otherwise false>,
+  "better_goal_id": "<a different goal id (G1-G5) if it fits another goal better, else empty string>",
+  "evidence_quote": "<verbatim phrase from the ANNOUNCEMENT TEXT that shows what the grant funds>",
+  "applicant_role": "<lead | partner | atypical | ineligible | unclear: can {agency_name}, a North Carolina state agency, apply as the lead applicant, only as a partner, technically but unusually (e.g. research grants aimed at universities), not at all, or unclear. Use ineligible only when the text limits applicants to types that exclude state agencies (for example tribes only or universities only), and give that text as eligibility_quote. A geographic limit is NOT ineligible: report it in excludes_north_carolina instead>",
+  "eligibility_notes": "<one sentence on who can apply and whether a North Carolina state agency can, including any geographic limit; 'not stated' if the text says nothing>",
+  "eligibility_quote": "<verbatim phrase from the ELIGIBILITY TEXT or ANNOUNCEMENT TEXT about who may apply; empty string if there is none>",
+  "excludes_north_carolina": <true only if the text limits the funding to specific states or regions that do not include North Carolina (for example only Gulf Coast or only Western states), otherwise false>,
+  "geographic_quote": "<verbatim phrase from the text that states that geographic limit; empty string if there is none>",
+  "owning_division": "<division id from the list, or none>",
+  "deadline_note": "<the application deadline and any other dates stated, or 'not stated'>",
+  "risk_or_gap": "<the single biggest risk, requirement or gap (cost share, required partners, narrow eligibility, small award, short timeline); 'none stated' if none>"
+}}
