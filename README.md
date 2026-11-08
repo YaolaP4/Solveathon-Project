@@ -11,7 +11,7 @@ Agencies today, each from its current plan on the [OSBM website](https://www.osb
 and **NC DEQ** ([Strategic Plan 2025–2029](https://www.osbm.nc.gov/strategic-plan-deq/download?attachment)).
 Adding an agency is one profile file in the same template.
 
-UNC Solve-a-thon 2026, Team 14. Live prototype:
+UNC Solve-a-thon 2026, UNC Solvers (Team 14): Pavan Parola, Advik Jain, Mayank Puri, Aarav Kulkarni. Live prototype:
 **https://app-ffm-web.salmonmushroom-cf3974d2.eastus2.azurecontainerapps.io**
 (prototype; not an official NC DHHS website).
 
@@ -46,7 +46,7 @@ Python 3.12+.
 pip install -r requirements.txt
 python src/job.py          # pulls live data into data/store/ (about 1 minute; AI steps skipped without Azure OpenAI)
 python src/webapp.py       # http://localhost:8000
-python -m pytest tests -q  # 96 tests
+python -m pytest tests -q  # 97 tests
 ```
 
 Without Azure OpenAI the job uses TF-IDF matching and shows the score breakdown instead of AI summaries.
@@ -75,7 +75,7 @@ Names are in [`deploy/env.sh`](deploy/env.sh).
 ```bash
 bash deploy/01_resources.sh          # resource group, Blob Storage, Azure OpenAI + 2 models, registry, Container Apps environment
 bash deploy/02_deploy.sh             # build the image in the cloud, deploy the web app and the daily job, run the job once
-TAG=v3 bash deploy/02_deploy.sh      # roll out a code change
+TAG=v9 bash deploy/02_deploy.sh      # roll out a code change
 bash deploy/99_teardown.sh           # after judging: delete everything (asks for confirmation)
 ```
 
