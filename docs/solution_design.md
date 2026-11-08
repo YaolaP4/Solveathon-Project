@@ -1,6 +1,6 @@
 # Solution Design: Federal Funds Matchmaker
 
-Team 14 · UNC Solve-a-thon 2026 · Version 1.1, 7 November 2026 · Live: https://app-ffm-web.salmonmushroom-cf3974d2.eastus2.azurecontainerapps.io
+UNC Solvers (Team 14): Pavan Parola, Advik Jain, Mayank Puri, Aarav Kulkarni · UNC Solve-a-thon 2026 · Version 1.2, 8 November 2026 · Live: https://app-ffm-web.salmonmushroom-cf3974d2.eastus2.azurecontainerapps.io
 
 ## 1. Understand: the user and the problem
 
@@ -19,8 +19,18 @@ many to read.
 - Division program leads receive routed opportunities; agency leadership uses the funding-by-goal view.
 
 **What we learned from the sponsors, and what it changed.**
-[TEAM: fill in from the Friday Discovery Session: who you spoke with, what they told you about how grant
-discovery works today, and which of our original plans changed because of it.]
+The sponsors' main message at Friday's Discovery Session was **scale**: a tool that works for one agency is not
+enough; it has to extend to every department without a new project each time. That changed our plan in four ways:
+- **One shared pull, scored per agency.** Grants.gov is read once a day and every agency is scored from the same
+  data, so adding a department adds no new ingestion.
+- **A profile is a file, not code.** Each agency is one JSON profile in a standard template (goals, objectives
+  with plan page numbers, keywords, divisions, USAspending recipient name). The app and the daily job pick up
+  every profile in `agency/profiles/` automatically.
+- **We proved it with a second agency.** NC DEQ was added on the same template with no change to the pipeline,
+  and the app gained an agency switcher and a statewide view for OSBM.
+- **Cost stays flat.** The fixed cost (about $2–3 a day) is the always-on web app. Each added agency adds only
+  its AI review of the top 45 listings, about 30,000 tokens or under $0.10 a day; listing embeddings are cached
+  and shared across agencies.
 
 What changed between rounds, on the evidence we gathered ourselves:
 - **The audience is central, not one agency.** The final brief frames this as an OSBM tool for every agency, so
@@ -60,7 +70,7 @@ staff decisions. Full architecture and threat-model report: `docs/diagrams/ffm-a
 5. **Summarize:** only each agency's top 45 get an AI summary and "why it matches", with quotes our code verifies.
 6. **Serve:** the web app shows each agency's ranked shortlist (agency switcher) and a statewide view; staff
    decisions are written back to Blob per agency.
-7. **Learn:** hand labels and decisions feed the Evaluation page (precision@10, decisions vs scores).
+7. **Learn:** staff decisions feed back into the next run (similar to a passed or pursued grant moves confidence one step), and the Evaluation page supports blind hand labeling (precision@10 vs a keyword baseline) for the pilot.
 
 ## 3. Azure services
 
@@ -149,6 +159,13 @@ The main threats:
 coordinator each, weekly review. Coordinators keep their manual check so
 recall can be measured fairly. Success = hours saved per week, opportunities pursued that would otherwise have
 been missed, precision at or above target.
+
+**Scaling to every department:** writing a profile from an agency's strategic plan takes under a day (we
+rebuilt NC DHHS's from its new 2026–2030 plan during the event). Add the file, run the tests and redeploy; the
+next 6 AM run scores every opportunity for that agency and it appears in the agency switcher and the statewide
+view. One Grants.gov pull serves all agencies, listing embeddings are shared, and each agency adds under $0.10 a
+day of AI review. At 20+ agencies the job stays one scheduled run; Azure OpenAI capacity (currently 1M
+embedding tokens a minute) and Blob Storage are far from their limits.
 
 **To production:** Entra ID sign-in (Container Apps built-in authentication); Key Vault with managed identity
 for every secret; Application Insights; private endpoints for Storage and Azure OpenAI; a profile per agency

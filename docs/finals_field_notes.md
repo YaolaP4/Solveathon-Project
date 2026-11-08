@@ -1,6 +1,6 @@
 # GenAI Field Notes: Federal Funds Matchmaker (finals)
 
-Team 14 · UNC Solve-a-thon 2026 · NC DHHS and NC DEQ
+UNC Solvers (Team 14): Pavan Parola, Advik Jain, Mayank Puri, Aarav Kulkarni · UNC Solve-a-thon 2026 · NC DHHS and NC DEQ
 
 ## 1. Tools we used
 
@@ -64,8 +64,8 @@ judged them on topic for DHHS, using the NC DHHS profile from the current 2026�
 The margin is the real fix; TF-IDF keeps the matcher working without AI. The full five-signal score reaches
 **AUC 0.92** against "on topic and DHHS can apply", with 76% of its top 50 relevant. We first tuned on the
 2023–2025 plan; after switching the profile to the 2026–2030 plan the numbers held (hybrid 0.91 → 0.90, full
-score 0.91 → 0.92). These are AI reference labels from the qualifier, used for tuning; the real test is
-precision@10 on fresh human labels. NC DEQ uses the same settings untuned: there is no DEQ reference set yet.
+score 0.91 → 0.92). These are AI reference labels from the qualifier, used for tuning; a pilot should add
+precision@10 on fresh human labels, which the app's Evaluation page is built to collect. NC DEQ uses the same settings untuned: there is no DEQ reference set yet.
 
 *A mistake in our own analysis:* our first comparison reported lower numbers (0.78 → 0.84, 40% → 68%) because it
 counted opportunities listed twice in the qualifier data twice and compared capped scores with many ties.
