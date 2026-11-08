@@ -12,12 +12,8 @@ The website asks for **slides, field notes and repository**, plus the **link to 
 
 ## Fill in before submitting
 
-- [ ] **Discovery Session notes**: Section 1 of `docs/solution_design.md` ("What we learned from the sponsors") has a
-      `[TEAM: ...]` placeholder. Write 3–5 bullets, then rebuild the PDF: `python src/md_to_pdf.py docs/solution_design.md`
-      and `python src/submission_finals.py`.
-- [ ] **Slide 1**: team name and member names. **Slide 2**: one line on what the sponsors told you.
-- [ ] **Slide 8**: precision@10 and labeler agreement, after two people label on the Evaluation page (choose an agency
-      first; about 15 minutes each). Do not present the `[__]` placeholders.
+- [x] Discovery Session notes (scaling) in Section 1 of `docs/solution_design.md`; PDFs rebuilt.
+- [x] Slide 1 team name and members; slide 2 sponsor line; slide 8 uses only measured numbers (hand labeling skipped).
 - [ ] Fill "reviewed by" in the two diagram reports (`docs/diagrams/*/report.html`).
 - [ ] Open the app on a phone; record a backup demo (script in the slide notes).
 
