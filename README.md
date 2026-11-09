@@ -1,5 +1,7 @@
 # Federal Funds Matchmaker
 
+> **The live Azure prototype is offline.** The Azure resources were deleted after the UNC Solve-a-thon 2026 judging (8 November 2026), so the demo link below no longer works. Everything needed to run it is in this repository: see [Run it on a laptop](#run-it-on-a-laptop) or [Deploy to Azure](#deploy-to-azure). If you would like to see it running, open an issue or contact Pavan Parola ([@pavparola](https://github.com/pavparola)) and we can redeploy it.
+
 A daily, central tool that helps North Carolina state agencies catch federal funding. Every morning it pulls every
 posted and forecasted federal opportunity from Grants.gov **once**, ranks it separately against **each agency's own
 strategic plan**, explains why it matches (with quotes checked against the official listing), and lets each
@@ -11,8 +13,8 @@ Agencies today, each from its current plan on the [OSBM website](https://www.osb
 and **NC DEQ** ([Strategic Plan 2025–2029](https://www.osbm.nc.gov/strategic-plan-deq/download?attachment)).
 Adding an agency is one profile file in the same template.
 
-UNC Solve-a-thon 2026, UNC Solvers (Team 14): Pavan Parola, Advik Jain, Mayank Puri, Aarav Kulkarni. Live prototype:
-**https://app-ffm-web.salmonmushroom-cf3974d2.eastus2.azurecontainerapps.io**
+UNC Solve-a-thon 2026, UNC Solvers (Team 14): Pavan Parola, Advik Jain, Mayank Puri, Aarav Kulkarni. Prototype (offline since 8 Nov 2026):
+https://app-ffm-web.salmonmushroom-cf3974d2.eastus2.azurecontainerapps.io
 (prototype; not an official NC DHHS website).
 
 | Read this | For |
